@@ -5,1078 +5,103 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <!-- === SEO & METADATA (Essential - Do Not Remove) === -->
-    <title>Gautam Kumar Maurya | Full-Stack Developer & Cybersecurity Enthusiast</title>
-    <meta name="author" content="Gautam Kumar Maurya">
-    <meta name="description" content="Portfolio of Gautam Kumar Maurya, a B.Tech CSE student specializing in Full-Stack Development (React, Node, Python) and Cybersecurity (Ethical Hacking, OSINT).">
-    <meta name="keywords" content="Gautam Kumar Maurya, GKM, GKM563, Full-Stack Developer, React Developer, Python Developer, Cybersecurity, Ethical Hacking, OSINT, Portfolio, B.Tech, CSE, UIT Prayagraj">
-    <meta property="og:title" content="Gautam Kumar Maurya | Professional Portfolio">
-    <meta property="og:description" content="Exploring Full-Stack Development, AI, and Cybersecurity. Let's connect and build the future.">
+    <!-- === SEO & METADATA === -->
+    <title>Gautam Kumar Maurya (GKM) | Full-Stack & Data Science Engineer</title>
+    <meta name="author" content="Gautam Kumar Maurya (GKM)">
+    <meta name="description" content="Portfolio of Gautam Kumar Maurya (GKM), a B.Tech CSE (Data Science) student at UIT Prayagraj. Specializing in Full-Stack Development, Data Science, AI Agents, and Open Source.">
+    <meta name="keywords" content="Gautam Kumar Maurya, GKM, GKM563, Data Science Engineer, Full-Stack Developer, React Developer, Python Developer, Open Source, Wikimedia, PrayagrajRooms, UIT Prayagraj, B.Tech CSE, AKTU Topper, Portfolio">
+    <link rel="canonical" href="https://gkm563.github.io/">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://gkm563.github.io/"> <!-- Replace with your final GitHub Pages URL -->
-    <meta property="og:image" content="https://placehold.co/1200x630/0f172a/0ea5e9?text=Gautam+Kumar+Maurya"> <!-- Recommended: Create and upload a preview image (1200x630px) -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Gautam Kumar Maurya | Professional Portfolio">
-    <meta name="twitter:description" content="Exploring Full-Stack Development, AI, and Cybersecurity. Let's connect and build the future.">
-    <meta name="twitter:image" content="https://placehold.co/1200x630/0f172a/0ea5e9?text=Gautam+Kumar+Maurya"> <!-- Use the same image as og:image -->
-    <link rel="icon" type="image/x-icon" href="favicon.ico"> <!-- Favicon (Replace with your own favicon.ico) -->
+    <meta property="og:url" content="https://gkm563.github.io/">
+    <meta property="og:title" content="Gautam Kumar Maurya (GKM) | Portfolio">
+    <meta property="og:description" content="Data Science Engineer | Full-Stack Developer | Open Source Contributor | Tech Community Leader. Let's build the future together.">
+    <meta property="og:image" content="assets/images/Gautam_Kumar_Maurya.jpg">
 
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://gkm563.github.io/">
+    <meta name="twitter:title" content="Gautam Kumar Maurya (GKM) | Portfolio">
+    <meta name="twitter:description" content="Data Science Engineer | Full-Stack Developer | Open Source Contributor | Tech Community Leader. Let's build the future together.">
+    <meta name="twitter:image" content="assets/images/Gautam_Kumar_Maurya.jpg">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+    <!-- External Fonts & Stylesheets -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" xintegrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
-    <style>
-        :root {
-            --primary-color: #0ea5e9;
-            --secondary-color: #ec4899;
-            --background-color: #020617;
-            --text-color: #e2e8f0;
-            --card-color: #0f172a;
-            --card-color-glass: rgba(15, 23, 42, 0.7);
-            --border-color-glass: rgba(14, 165, 233, 0.2);
-            --success-color: #22c55e;
-            --error-color: #ef4444;
-            --header-font: 'Poppins', sans-serif;
-            --body-font: 'Poppins', sans-serif;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            scroll-behavior: smooth;
-            cursor: none;
-        }
-
-        body {
-            font-family: var(--body-font);
-            background-color: var(--background-color);
-            color: var(--text-color);
-            line-height: 1.7;
-            background-image: radial-gradient(rgba(14, 165, 233, 0.05) 1px, transparent 1px);
-            background-size: 16px 16px;
-            position: relative;
-            z-index: 1;
-        }
-
-        .aurora-wrapper {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100vh;
-            overflow: hidden;
-            z-index: -1;
-            filter: blur(100px);
-            opacity: 0.3;
-        }
-
-        .aurora-dot {
-            position: absolute;
-            border-radius: 50%;
-            animation: moveAurora 20s infinite alternate;
-        }
-
-        .aurora-dot:nth-child(1) {
-            width: 500px;
-            height: 500px;
-            background-color: var(--primary-color);
-            top: -100px;
-            left: -200px;
-            animation-duration: 15s;
-        }
-
-        .aurora-dot:nth-child(2) {
-            width: 400px;
-            height: 400px;
-            background-color: var(--secondary-color);
-            bottom: -150px;
-            right: -150px;
-            animation-duration: 20s;
-        }
-
-        .aurora-dot:nth-child(3) {
-            width: 300px;
-            height: 300px;
-            background-color: #3b82f6;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            animation-duration: 25s;
-        }
-
-        @keyframes moveAurora {
-            0% {
-                transform: translate(0, 0) rotate(0deg);
-            }
-            50% {
-                transform: translate(100px, 50px) rotate(180deg);
-            }
-            100% {
-                transform: translate(-50px, -100px) rotate(360deg);
-            }
-        }
-
-        .container {
-            max-width: 1100px;
-            margin: auto;
-            padding: 0 2rem;
-            overflow-x: hidden;
-        }
-
-        /* === CURSOR (BUG FIXED) === */
-        .cursor-dot,
-        .cursor-follower {
-            position: fixed;
-            top: 0;
-            left: 0;
-            transform: translate(-50%, -50%); /* This CSS centers the element ON the cursor */
-            border-radius: 50%;
-            z-index: 9999;
-            pointer-events: none;
-            transition: opacity 0.3s;
-        }
-
-        .cursor-dot {
-            width: 8px;
-            height: 8px;
-            background-color: var(--primary-color);
-            /* BUG FIX: Transition left/top for smooth, snappy feel */
-            transition: left 0.05s linear, top 0.05s linear, opacity 0.3s;
-        }
-
-        .cursor-follower {
-            width: 40px;
-            height: 40px;
-            background-color: rgba(14, 165, 233, 0.2);
-            border: 1px solid rgba(14, 165, 233, 0.4);
-            /* BUG FIX: Added left/top to transition + faster speeds */
-            transition: left 0.15s cubic-bezier(0.175, 0.885, 0.32, 1.275), top 0.15s cubic-bezier(0.175, 0.885, 0.32, 1.275), transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.3s, background-color 0.3s, box-shadow 0.3s;
-        }
-
-        /* This transform combines the centering with the new scale */
-        a:hover~.cursor-follower,
-        button:hover~.cursor-follower,
-        input:hover~.cursor-follower,
-        textarea:hover~.cursor-follower {
-            transform: translate(-50%, -50%) scale(1.5);
-            background-color: rgba(236, 72, 153, 0.3);
-            box-shadow: 0 0 20px rgba(236, 72, 153, 0.5);
-        }
-
-        .main-header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            z-index: 1000;
-            background: rgba(2, 6, 23, 0.7);
-            backdrop-filter: blur(12px);
-            padding: 1rem 0;
-            transition: background 0.3s ease, box-shadow 0.3s ease, padding 0.3s ease;
-            border-bottom: 1px solid rgba(14, 165, 233, 0.1);
-        }
-
-        .main-header.scrolled {
-            padding: 0.75rem 0;
-            background: rgba(2, 6, 23, 0.85);
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
-        }
-
-        .main-header .container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-size: 1.8rem;
-            font-weight: 700;
-            text-decoration: none;
-            letter-spacing: -1px;
-            transition: filter 0.3s ease; /* Removed transform to fix bug */
-            
-            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color), var(--primary-color));
-            background-size: 200% auto;
-            color: #fff;
-            background-clip: text;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            animation: textGradient 5s linear infinite;
-        }
-        
-        @keyframes textGradient {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-
-        /* BUG FIXED: Removed transform: scale() which caused scrollbar */
-        .logo:hover {
-            filter: drop-shadow(0 0 8px var(--primary-color));
-        }
-
-        .main-nav {
-            display: flex;
-            align-items: center;
-        }
-
-        .main-nav ul {
-            display: flex;
-            list-style: none;
-        }
-
-        /* RE-ADJUSTED MARGIN FOR NEW NAV ITEM */
-        .main-nav ul li {
-            margin-left: 2.2rem;
-        }
-
-        .main-nav ul li a {
-            color: var(--text-color);
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.3s ease, filter 0.3s ease;
-            position: relative;
-            padding-bottom: 5px;
-            font-size: 0.95rem; /* Adjusted for more items */
-        }
-
-        .main-nav ul li a::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--primary-color);
-            transition: width 0.3s ease;
-        }
-
-        .main-nav ul li a:hover {
-            color: var(--primary-color);
-            filter: drop-shadow(0 0 5px var(--primary-color));
-        }
-
-        .main-nav ul li a:hover::after {
-            width: 100%;
-        }
-
-        .hamburger {
-            display: none;
-            cursor: pointer;
-            z-index: 1001;
-        }
-
-        .hamburger .bar {
-            display: block;
-            width: 25px;
-            height: 3px;
-            margin: 5px auto;
-            background-color: var(--text-color);
-            transition: all 0.3s ease-in-out;
-        }
-
-        #hero {
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            text-align: center;
-            padding-top: 60px;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero-content {
-            z-index: 2;
-        }
-
-        @keyframes move-twink-back {
-            from { background-position: 0 0; }
-            to { background-position: -10000px 5000px; }
-        }
-
-        #stars,
-        #stars2,
-        #stars3 {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            width: 100%;
-            height: 100%;
-            display: block;
-            z-index: 0;
-        }
-
-        #stars {
-            background: transparent url(https://www.script-tutorials.com/demos/360/images/stars.png) repeat top center;
-            animation: move-twink-back 200s linear infinite;
-        }
-
-        #stars2 {
-            background: transparent url(https://www.script-tutorials.com/demos/360/images/twinkling.png) repeat top center;
-            animation: move-twink-back 150s linear infinite;
-        }
-
-        #stars3 {
-            background: transparent url(https://www.script-tutorials.com/demos/360/images/clouds.png) repeat top center;
-            animation: move-twink-back 100s linear infinite;
-            opacity: 0.5;
-        }
-
-        .hero-content h1 {
-            font-size: clamp(2.5rem, 5vw, 4rem);
-            font-weight: 700;
-            margin-bottom: 1rem;
-            line-height: 1.2;
-            text-shadow: 0 0 25px rgba(14, 165, 233, 0.4);
-        }
-
-        .hero-content h1 span {
-            color: var(--primary-color);
-        }
-
-        .hero-content .subtitle {
-            font-size: clamp(1rem, 2.5vw, 1.4rem);
-            font-weight: 300;
-            margin-bottom: 2.5rem;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
-            color: #bdc8d3;
-            min-height: 50px;
-        }
-
-        .hero-buttons {
-            display: flex;
-            justify-content: center;
-            gap: 1rem;
-            flex-wrap: wrap;
-        }
-
-        .hero-social-links {
-            margin-bottom: 2rem;
-        }
-
-        .hero-social-links a {
-            color: var(--text-color);
-            font-size: 1.8rem;
-            margin: 0 1rem;
-            transition: all 0.3s ease;
-        }
-
-        .hero-social-links a:hover {
-            color: var(--primary-color);
-            transform: translateY(-5px);
-            filter: drop-shadow(0 0 8px var(--primary-color));
-        }
-
-        .cta-button {
-            display: inline-block;
-            background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
-            color: #fff;
-            padding: 14px 35px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            border: none;
-            box-shadow: 0 4px 20px rgba(14, 165, 233, 0.4);
-        }
-
-        .cta-button:hover {
-            transform: translateY(-5px) scale(1.05);
-            box-shadow: 0 8px 25px rgba(236, 72, 153, 0.5);
-        }
-
-        .cta-button.secondary {
-            background: transparent;
-            border: 2px solid var(--primary-color);
-            box-shadow: none;
-        }
-
-        .cta-button.secondary:hover {
-            background: var(--primary-color);
-            box-shadow: 0 4px 20px rgba(14, 165, 233, 0.4);
-        }
-
-        .cta-button:disabled {
-            opacity: 0.7;
-            transform: none;
-            box-shadow: none;
-            cursor: not-allowed;
-        }
-
-        .scroll-down {
-            position: absolute;
-            bottom: 2rem;
-            left: 50%;
-            transform: translateX(-50%);
-            z-index: 3;
-            color: white;
-            font-size: 2rem;
-            animation: bounce 2s infinite;
-        }
-
-        @keyframes bounce {
-            0%, 20%, 50%, 80%, 100% { transform: translate(-50%, 0); }
-            40% { transform: translate(-50%, -20px); }
-            60% { transform: translate(-50%, -10px); }
-        }
-
-        section {
-            padding: 6rem 0;
-            position: relative;
-            z-index: 2;
-        }
-
-        .section-title {
-            text-align: center;
-            font-size: clamp(2rem, 5vw, 2.5rem);
-            font-weight: 700;
-            margin-bottom: 4rem;
-            position: relative;
-        }
-
-        .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: -15px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 100px;
-            height: 4px;
-            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color), var(--primary-color));
-            background-size: 200% auto;
-            border-radius: 2px;
-            animation: textGradient 5s linear infinite;
-        }
-
-        .section-wrapper {
-             background-color: var(--card-color-glass);
-             backdrop-filter: blur(12px);
-             border-radius: 10px;
-             padding: 6rem 0;
-             margin-bottom: 4rem;
-             border: 1px solid var(--border-color-glass);
-        }
-        
-        #about, #services, #education, #achievements, #contact {
-            padding: 0;
-            margin-bottom: 0;
-            border-radius: 0;
-            background: transparent;
-            backdrop-filter: none;
-            border: none;
-        }
-        
-         #skills, #projects {
-            padding: 6rem 0;
-         }
-
-        .about-content {
-            display: grid;
-            grid-template-columns: 1fr 2fr;
-            align-items: center;
-            gap: 3rem;
-        }
-
-        .about-image {
-            width: 100%;
-            max-width: 300px;
-            height: 300px;
-            border-radius: 50%;
-            object-fit: cover;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-            border: 3px solid var(--primary-color);
-            animation: pulse-border 4s infinite ease-in-out;
-        }
-
-        @keyframes pulse-border {
-            0% {
-                box-shadow: 0 0 0 0px rgba(14, 165, 233, 0.7), 0 10px 30px rgba(0, 0, 0, 0.3);
-            }
-            50% {
-                box-shadow: 0 0 0 10px rgba(14, 165, 233, 0), 0 10px 30px rgba(0, 0, 0, 0.4);
-            }
-            100% {
-                box-shadow: 0 0 0 0px rgba(14, 165, 233, 0), 0 10px 30px rgba(0, 0, 0, 0.3);
-            }
-        }
-
-        .about-text .highlight {
-            font-weight: 600;
-            color: var(--primary-color);
-        }
-
-        .about-text p {
-            margin-bottom: 1rem;
-        }
-
-        .about-text ul {
-            list-style: none;
-            padding-left: 0;
-            margin-top: 1.5rem;
-        }
-
-        .about-text ul li {
-            position: relative;
-            padding-left: 30px;
-            margin-bottom: 10px;
-        }
-        
-        .about-text ul li.highlight-item::before {
-             content: '\f00c';
-            font-family: 'Font Awesome 6 Free';
-            font-weight: 900;
-            position: absolute;
-            left: 0;
-            top: 4px;
-            color: var(--primary-color);
-        }
-        
-        .about-text ul li.tech-list {
-            padding-left: 1.5rem;
-            color: #94a3b8;
-        }
-        .about-text ul li.tech-list strong {
-            color: var(--text-color);
-        }
-
-        .skill-card,
-        .project-card,
-        .service-card {
-            background: var(--card-color-glass);
-            backdrop-filter: blur(12px);
-            padding: 2rem;
-            border-radius: 10px;
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-            border: 1px solid var(--border-color-glass);
-            z-index: 1;
-        }
-
-        .skill-card::before,
-        .project-card::before,
-        .service-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: radial-gradient(800px circle at var(--mouse-x) var(--mouse-y), rgba(14, 165, 233, 0.1), transparent 40%);
-            z-index: -1;
-            opacity: 0;
-            transition: opacity 0.5s;
-        }
-
-        .skill-card:hover::before,
-        .project-card:hover::before,
-        .service-card:hover::before {
-            opacity: 1;
-        }
-
-        .skill-card:hover,
-        .project-card:hover,
-        .service-card:hover {
-            border-color: rgba(14, 165, 233, 0.5);
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3), 0 0 20px rgba(236, 72, 153, 0.1);
-        }
-
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(1, 1fr);
-            gap: 2rem;
-        }
-        
-        @media (min-width: 768px) {
-            .skills-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-
-        .skill-card {
-            text-align: center;
-        }
-
-        .skill-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 1.5rem;
-            color: var(--primary-color);
-        }
-
-        .skill-items-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
-            gap: 1.5rem;
-            justify-items: center;
-        }
-
-        .skill-item {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-            gap: 0.5rem;
-        }
-
-        .skill-item i {
-            font-size: 2.5rem;
-            color: var(--primary-color);
-            transition: all 0.3s ease;
-            height: 40px;
-            width: 40px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        
-        .skill-item i.fa-react { color: #61DAFB; }
-        .skill-item i.fa-js { color: #F7DF1E; }
-        .skill-item i.fa-html5 { color: #E34F26; }
-        .skill-item i.fa-css3-alt { color: #1572B6; }
-        .skill-item i.fa-node-js { color: #339933; }
-        .skill-item i.fa-python { color: #3776AB; }
-        .skill-item i.fa-database { color: #4DB33D; }
-        .skill-item i.fa-shield-halved, .skill-item i.fa-user-secret { color: var(--secondary-color); }
-        
-
-        .skill-item span {
-            font-weight: 500;
-            font-size: 0.9rem;
-        }
-
-        .skill-item:hover i {
-            transform: scale(1.1) translateY(-5px);
-            filter: drop-shadow(0 0 8px currentColor);
-        }
-
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-
-        .project-card {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .project-content {
-            padding: 0;
-            flex-grow: 1;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .project-icon {
-            font-size: 2.5rem;
-            color: var(--primary-color);
-            margin-bottom: 1rem;
-        }
-
-        .project-content h3 {
-            font-size: 1.3rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .project-content p {
-            color: #94a3b8;
-            flex-grow: 1;
-            margin-bottom: 1.5rem;
-        }
-
-        .project-footer {
-            margin-top: auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .tech-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-        }
-
-        .tech-tag {
-            background: rgba(14, 165, 233, 0.1);
-            color: var(--primary-color);
-            padding: 0.3rem 0.7rem;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            font-weight: 600;
-        }
-
-        .project-link {
-            color: var(--secondary-color);
-            text-decoration: none;
-            font-weight: 600;
-            transition: color 0.3s ease;
-        }
-
-        .project-link:hover {
-            color: var(--primary-color);
-            filter: drop-shadow(0 0 5px var(--primary-color));
-        }
-
-        .project-link i {
-            margin-left: 5px;
-        }
-
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-        }
-
-        .service-card {
-            text-align: center;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .service-icon {
-            font-size: 3rem;
-            color: var(--primary-color);
-            margin-bottom: 1.5rem;
-        }
-
-        .service-card h3 {
-            font-size: 1.3rem;
-            margin-bottom: 1rem;
-        }
-
-        .service-card p {
-            color: #94a3b8;
-            flex-grow: 1;
-        }
-
-        .timeline {
-            position: relative;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .timeline::after {
-            content: '';
-            position: absolute;
-            width: 4px;
-            background: #0f172a;
-            top: 0;
-            bottom: 0;
-            left: 50%;
-            margin-left: -2px;
-        }
-
-        .timeline-item {
-            padding: 1rem 3rem;
-            position: relative;
-            width: 50%;
-        }
-
-        .timeline-item:nth-child(odd) {
-            left: 0;
-        }
-
-        .timeline-item:nth-child(even) {
-            left: 50%;
-        }
-
-        .timeline-item::after {
-            content: '';
-            position: absolute;
-            width: 20px;
-            height: 20px;
-            right: -10px;
-            background-color: var(--secondary-color);
-            border: 4px solid var(--border-color-glass);
-            top: 25px;
-            border-radius: 50%;
-            z-index: 1;
-            box-shadow: 0 0 10px var(--secondary-color);
-        }
-
-        .timeline-item:nth-child(even)::after {
-            left: -10px;
-        }
-        
-        /* Specific border color for achievement timeline dots */
-        #achievements .timeline-item::after {
-             border: 4px solid var(--border-color-glass); 
-        }
-
-        .timeline-content {
-            padding: 20px 30px;
-            background: var(--background-color);
-            position: relative;
-            border-radius: 8px;
-            border-left: 4px solid var(--primary-color);
-        }
-        
-        .timeline-content h3 {
-            font-size: 1.2rem;
-            color: var(--primary-color);
-            margin-bottom: 0.5rem;
-        }
-
-        .timeline-content .date {
-            font-size: 0.9rem;
-            font-weight: 300;
-            color: #94a3b8;
-            margin-bottom: 0.5rem;
-        }
-
-        .contact-form {
-            max-width: 700px;
-            margin: 0 auto;
-        }
-
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-
-        .form-group input,
-        .form-group textarea {
-            width: 100%;
-            padding: 1rem;
-            background: var(--background-color);
-            border: 1px solid rgba(14, 165, 233, 0.3);
-            border-radius: 5px;
-            color: var(--text-color);
-            font-family: var(--body-font);
-            transition: border-color 0.3s, box-shadow 0.3s;
-        }
-
-        .form-group input:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-color: var(--primary-color);
-            box-shadow: 0 0 10px rgba(14, 165, 233, 0.3), 0 0 10px rgba(236, 72, 153, 0.2);
-        }
-
-        .form-group textarea {
-            resize: vertical;
-            min-height: 150px;
-        }
-
-        #form-status {
-            margin-top: 1rem;
-            text-align: center;
-            font-weight: 500;
-        }
-
-        #form-status .success {
-            color: var(--success-color);
-        }
-
-        #form-status .error {
-            color: var(--error-color);
-        }
-
-        footer {
-            text-align: center;
-            padding: 4rem 0 2rem;
-            background-color: #020617;
-            margin-top: 4rem;
-            position: relative;
-            z-index: 2;
-        }
-
-        .footer-social-links {
-            margin-bottom: 1.5rem;
-        }
-
-        .footer-social-links a {
-            color: var(--text-color);
-            font-size: 1.8rem;
-            margin: 0 1rem;
-            transition: all 0.3s ease;
-            
-            --c1: var(--primary-color);
-            --c2: var(--secondary-color);
-            background: linear-gradient(90deg, var(--c1), var(--c2), var(--c1));
-            background-size: 300% auto;
-            background-position: 90% 50%;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .footer-social-links a:hover {
-            transform: translateY(-5px) scale(1.1);
-            filter: drop-shadow(0 0 8px var(--c1));
-            background-position: 10% 50%;
-        }
-
-        .footer-info {
-            font-size: 0.9rem;
-            color: #94a3b8;
-        }
-        
-        .footer-info p {
-            margin-bottom: 0.5rem;
-        }
-        
-        .footer-info a {
-            color: var(--primary-color);
-            text-decoration: none;
-            font-weight: 500;
-        }
-        
-        .footer-info .fa-heart {
-            color: var(--secondary-color);
-        }
-
-        /* === RESPONSIVE DESIGN === */
-        @media (max-width: 768px) {
-
-            .cursor-dot,
-            .cursor-follower {
-                display: none;
-            }
-
-            * { cursor: auto; }
-
-            .container {
-                padding: 0 1rem;
-            }
-            
-            .main-nav ul li {
-                margin-left: 0;
-            }
-
-            .main-nav ul {
-                position: fixed;
-                left: -100%;
-                top: 0;
-                width: 100%;
-                height: 100vh;
-                background: var(--background-color);
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
-                transition: left 0.3s ease-in-out;
-                z-index: 1000;
-            }
-
-            .main-nav ul.active {
-                left: 0;
-            }
-
-            .main-nav ul li {
-                margin: 1.5rem 0;
-            }
-            
-            .main-nav ul li a {
-                font-size: 1.2rem;
-            }
-
-            .hamburger {
-                display: block;
-                z-index: 1001;
-            }
-
-            .hamburger.active .bar:nth-child(2) {
-                opacity: 0;
-            }
-
-            .hamburger.active .bar:nth-child(1) {
-                transform: translateY(8px) rotate(45deg);
-            }
-
-            .hamburger.active .bar:nth-child(3) {
-                transform: translateY(-8px) rotate(-45deg);
-            }
-
-            .about-content {
-                grid-template-columns: 1fr;
-                text-align: center;
-            }
-
-            .about-image {
-                margin: 0 auto 2rem auto;
-                width: 250px;
-                height: 250px;
-            }
-
-            .about-text ul li {
-                padding-left: 0;
-                text-align: left;
-            }
-
-            .about-text ul li.highlight-item::before {
-                position: static;
-                padding-right: 10px;
-            }
-            .about-text ul li.tech-list {
-                padding-left: 1rem;
-            }
-
-            .timeline::after {
-                left: 20px;
-            }
-
-            .timeline-item {
-                width: 100%;
-                padding-left: 50px;
-                padding-right: 15px;
-            }
-
-            .timeline-item:nth-child(even) {
-                left: 0%;
-            }
-
-            .timeline-item::after {
-                left: 10px;
-            }
-            
-            .section-wrapper {
-                 padding: 4rem 1rem;
-                 margin-bottom: 2rem;
-            }
-            #skills, #projects {
-                padding: 4rem 0;
-            }
-        }
-        
-        @media (max-width: 380px) {
-            .skill-items-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-             .skill-item i {
-                font-size: 2rem;
-             }
-             .skill-item span {
-                font-size: 0.8rem;
-             }
-        }
-    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Consolidated Styling -->
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Gautam Kumar Maurya",
+      "alternateName": "GKM",
+      "url": "https://gkm563.github.io/",
+      "image": "https://gkm563.github.io/assets/images/Gautam_Kumar_Maurya.jpg",
+      "description": "Full-Stack Developer, Data Science Engineer, AI Agent Integration Specialist, and Open Source Contributor.",
+      "jobTitle": "Data Science & Full-Stack Engineer",
+      "alumniOf": {
+        "@type": "EducationalOrganization",
+        "name": "United Institute of Technology, Prayagraj"
+      },
+      "knowsAbout": [
+        "Full-Stack Web Development",
+        "Data Science",
+        "Machine Learning",
+        "AI Agents",
+        "React.js",
+        "Python",
+        "Open Source",
+        "Cybersecurity",
+        "Ethical Hacking"
+      ],
+      "sameAs": [
+        "https://github.com/gkm563",
+        "https://www.linkedin.com/in/gkm563/",
+        "https://x.com/gkm563",
+        "https://www.instagram.com/gkm3563/",
+        "https://www.youtube.com/@gkm563"
+      ]
+    }
+    </script>
 </head>
 
 <body>
+    <!-- Scroll Progress Indicator Bar -->
+    <div class="scroll-progress" id="scroll-progress"></div>
+
+    <!-- Background Animated Aurora Light Fields -->
     <div class="aurora-wrapper">
         <div class="aurora-dot"></div>
         <div class="aurora-dot"></div>
         <div class="aurora-dot"></div>
     </div>
 
+    <!-- Custom Cursor FOLLOWERS (Desktop only) -->
     <div class="cursor-dot"></div>
     <div class="cursor-follower"></div>
 
+    <!-- Navigation Header -->
     <header class="main-header" id="main-header">
         <div class="container">
             <a href="#" class="logo">G K M</a>
             <nav class="main-nav" id="main-nav">
-                <!-- NAVBAR UPDATED -->
                 <ul>
                     <li><a href="#hero">Home</a></li>
                     <li><a href="#about">About</a></li>
                     <li><a href="#skills">Skills</a></li>
                     <li><a href="#projects">Projects</a></li>
+
+                    <li><a href="#linkedin-section">LinkedIn Feed</a></li>
                     <li><a href="#services">Services</a></li>
                     <li><a href="#education">Education</a></li>
                     <li><a href="#achievements">Achievements</a></li>
@@ -1089,523 +114,621 @@
         </div>
     </header>
 
-    <section id="hero">
-        <div id="stars"></div>
-        <div id="stars2"></div>
-        <div id="stars3"></div>
-        <div class="container">
-            <div class="hero-content" data-aos="zoom-in">
-                <h1><span>Gautam Kumar Maurya</span></h1>
-                <p class="subtitle"><span id="typed-subtitle"></span></p>
-                <div class="hero-social-links">
-                    <a href="https://www.linkedin.com/in/gkm563/" target="_blank" aria-label="LinkedIn"><i
-                            class="fab fa-linkedin"></i></a>
-                    <a href="https://github.com/gkm563" target="_blank" aria-label="GitHub"><i
-                            class="fab fa-github"></i></a>
-                    <a href="https://x.com/gkm563" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                    <a href="https://www.instagram.com/gkm3563/" target="_blank" aria-label="Instagram"><i
-                            class="fab fa-instagram"></i></a>
-                    <a href="https://www.facebook.com/gkm563" target="_blank" aria-label="Facebook"><i
-                            class="fab fa-facebook"></i></a>
-                    <a href="https://www.youtube.com/@gkm563" target="_blank" aria-label="YouTube"><i
-                            class="fab fa-youtube"></i></a>
+    <!-- Main Content Container -->
+    <main>
+        
+        <!-- Hero Story Section -->
+        <section id="hero">
+            <div id="stars"></div>
+            <div id="stars2"></div>
+            <div id="stars3"></div>
+            <div class="container">
+                <div class="hero-content" data-aos="zoom-in">
+                    <h1><span>Gautam Kumar Maurya</span></h1>
+                    <p class="subtitle"><span id="typed-subtitle"></span></p>
+                    <div class="hero-social-links">
+                        <a href="https://www.linkedin.com/in/gkm563/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://github.com/gkm563" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="https://x.com/gkm563" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.instagram.com/gkm3563/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="mailto:maurgk212104@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                        <a href="https://www.youtube.com/@gkm563" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                    <div class="hero-buttons">
+                        <a href="#contact" class="cta-button">Get In Touch</a>
+                        <a href="assets/docs/Gautam_Kumar_Maurya_Resume.pdf" class="cta-button secondary" download>Download CV <i class="fas fa-download"></i></a>
+                    </div>
                 </div>
-                <div class="hero-buttons">
-                    <a href="#contact" class="cta-button">Get In Touch</a>
-                    <a href="Gautam_Kumar_Maurya_Resume.pdf" class="cta-button secondary" download>Download CV <i
-                            class="fas fa-download"></i></a>
-                </div>
+                <a href="#about" class="scroll-down" aria-label="Scroll down"><i class="fas fa-chevron-down"></i></a>
             </div>
-            <a href="#about" class="scroll-down" aria-label="Scroll down"><i class="fas fa-chevron-down"></i></a>
+        </section>
+
+        <!-- About Storytelling Section -->
+        <div class="section-wrapper" id="about">
+            <section style="padding: 0;">
+                <div class="container">
+                    <h2 class="section-title" data-aos="fade-up">About Me</h2>
+                    <div class="about-content">
+                        <div data-aos="fade-right" data-aos-delay="200" style="display: flex; flex-direction: column; align-items: center;">
+                            <img src="assets/images/Gautam_Kumar_Maurya.jpg" alt="Gautam Kumar Maurya" class="about-image">
+                            
+                            <!-- Voice Narrator Module -->
+                            <div class="voice-narrator-card">
+                                <div class="voice-player-info">
+                                    <span class="pulse-dot" id="voice-pulse"></span>
+                                    <strong>Gautam's Voice Narrator</strong>
+                                </div>
+                                <div class="voice-controls">
+                                    <button id="narrator-play-btn" class="narrator-btn" title="Play Story Narration"><i class="fas fa-play"></i></button>
+                                    <button id="narrator-stop-btn" class="narrator-btn" title="Stop Story Narration" disabled><i class="fas fa-stop"></i></button>
+                                    <div class="voice-selector-wrapper">
+                                        <select id="voice-gender" title="Select Voice Gender">
+                                            <option value="male">Male Voice</option>
+                                            <option value="female" selected>Female Voice</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="visualizer-wrapper" id="voice-visualizer">
+                                    <div class="bar"></div>
+                                    <div class="bar"></div>
+                                    <div class="bar"></div>
+                                    <div class="bar"></div>
+                                    <div class="bar"></div>
+                                    <div class="bar"></div>
+                                    <div class="bar"></div>
+                                    <div class="bar"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="about-text">
+                            <h3 data-aos="fade-up" data-aos-delay="300">My Code, My Story: Bridging Logic & Real-World Impact</h3>
+                            <p data-aos="fade-up" data-aos-delay="400">
+                                Hello! I'm <strong>Gautam Kumar Maurya (GKM)</strong>. My journey in technology is driven by a simple mission: to build intelligent, scalable solutions that solve real community challenges. As a B.Tech Computer Science student specializing in Data Science at United Institute of Technology, Prayagraj, I treat code not just as instructions, but as a medium for positive change.
+                            </p>
+                            <ul data-aos="fade-up" data-aos-delay="500">
+                                <li class="highlight-item"><span class="highlight">Co-founding PrayagrajRooms:</span> Driven by the struggles outstation students face, I co-founded <strong>PrayagrajRooms</strong> to simplify PG and room discovery, eliminating brokerage and bringing transparency to local student housing.</li>
+                                <li class="highlight-item"><span class="highlight">Global Open Source Contributions:</span> As an active contributor to the <strong>Wikimedia Foundation</strong> and Wikipedia core codebase, I regularly navigate peer-reviewed pipelines via Gerrit and Phabricator, merging patches that improve global digital knowledge.</li>
+                                <li class="highlight-item"><span class="highlight">Academic & Algorithms Focus:</span> Balancing build pipelines with rigorous computer science theory, I achieved **AKTU University Rank 5** in my first semester and hold Rank 1 in the Data Structures stream at UIT.</li>
+                            </ul>
+                            <p data-aos="fade-up" data-aos-delay="600">
+                                Whether engineering clean React interfaces, optimizing database structures in Django, or designing intelligent AI assistants, I am always focused on crafting premium, performant digital solutions.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
         </div>
-    </section>
 
-    <div class="section-wrapper">
-        <section id="about">
+        <!-- Technical Skills / Arsenal Section -->
+        <section id="skills">
             <div class="container">
-                <h2 class="section-title" data-aos="fade-up">About Me</h2>
-                <div class="about-content">
-                    <div data-aos="fade-right" data-aos-delay="200">
-                        <!-- TODO: Replace this placeholder with your actual image: <img src="Gautam_Kumar_Maurya.jpg" ... > -->
-                        <img src="Gautam_Kumar_Maurya.jpg" alt="Gautam Kumar Maurya" class="about-image">
-                    </div>
-                    <div class="about-text">
-                        <h3 data-aos="fade-up" data-aos-delay="300">Refining My Craft</h3>
-                        <p data-aos="fade-up" data-aos-delay="400">
-                            Hello! I'm Gautam Kumar Maurya. My journey in tech is driven by a passion for continuous learning and building practical, innovative solutions. Having completed my internship in ethical hacking, my focus has shifted to two key areas:
-                        </p>
-                        <ul data-aos="fade-up" data-aos-delay="500">
-                            <li class="highlight-item"><span class="highlight">Exploring New Frontiers:</span> I'm actively diving into the world of AI, experimenting with new tools and models to understand their potential.</li>
-                            <li class="highlight-item"><span class="highlight">Mastering the Fundamentals:</span> I am strengthening my core skills in Data Structures & Algorithms (DSA) and building a solid foundation across the full stack:</li>
-                            <li class="tech-list">
-                                <strong>Frontend:</strong> HTML, CSS, JavaScript, React.js
-                            </li>
-                            <li class="tech-list">
-                                <strong>Backend:</strong> Python, Node.js, Mongoose
-                            </li>
-                        </ul>
-                        <p data-aos="fade-up" data-aos-delay="600">
-                            I'm currently balancing my B.Tech studies with personal projects, always eager to connect with fellow developers and work on something new.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </div>
-
-    <section id="skills">
-        <div class="container">
-            <h2 class="section-title" data-aos="fade-up">Technical Skills</h2>
-            <div class="skills-grid">
-                
-                <div class="skill-card" data-aos="fade-up" data-aos-delay="100">
-                    <h3 data-aos="fade-up" data-aos-delay="150">Frontend Development</h3>
-                    <div class="skill-items-grid" data-aos="fade-up" data-aos-delay="200">
-                        <div class="skill-item">
-                            <i class="fab fa-react"></i>
-                            <span>React.js</span>
-                        </div>
-                        <div class="skill-item">
-                            <i class="fab fa-js"></i>
-                            <span>JavaScript</span>
-                        </div>
-                        <div class="skill-item">
-                            <i class="fab fa-html5"></i>
-                            <span>HTML5</span>
-                        </div>
-                        <div class="skill-item">
-                            <i class="fab fa-css3-alt"></i>
-                            <span>CSS3</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="skill-card" data-aos="fade-up" data-aos-delay="200">
-                    <h3 data-aos="fade-up" data-aos-delay="250">Backend Development</h3>
-                    <div class="skill-items-grid" data-aos="fade-up" data-aos-delay="300">
-                        <div class="skill-item">
-                            <i class="fab fa-node-js"></i>
-                            <span>Node.js</span>
-                        </div>
-                        <div class="skill-item">
-                            <i class="fab fa-python"></i>
-                            <span>Python</span>
-                        </div>
-                        <div class="skill-item">
-                            <i class="fas fa-database"></i>
-                            <span>MongoDB</span>
-                        </div>
-                         <div class="skill-item">
-                            <i class="fab fa-python" style="color: #fff;"></i>
-                            <span>Flask/Django</span>
-                        </div>
-                    </div>
-                </div>
-                
-                 <div class="skill-card" data-aos="fade-up" data-aos-delay="300">
-                    <h3 data-aos="fade-up" data-aos-delay="350">Specializations</h3>
-                    <div class="skill-items-grid" data-aos="fade-up" data-aos-delay="400">
-                        <div class="skill-item">
-                            <i class="fas fa-shield-halved"></i>
-                            <span>Cybersecurity</span>
-                        </div>
-                        <div class="skill-item">
-                            <i class="fas fa-user-secret"></i>
-                            <span>Ethical Hacking</span>
-                        </div>
-                        <div class="skill-item">
-                            <i class="fas fa-magnifying-glass-chart"></i>
-                            <span>OSINT</span>
-                        </div>
-                         <div class="skill-item">
-                            <i class="fas fa-robot"></i>
-                            <span>AI / ML</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="skill-card" data-aos="fade-up" data-aos-delay="400">
-                    <h3 data-aos="fade-up" data-aos-delay="450">Programming Languages</h3>
-                    <div class="skill-items-grid" data-aos="fade-up" data-aos-delay="500">
-                        <div class="skill-item">
-                            <i class="fab fa-python"></i>
-                            <span>Python</span>
-                        </div>
-                        <div class="skill-item">
-                            <i class="fas fa-c"></i>
-                            <span>C</span>
-                        </div>
-                        <div class="skill-item">
-                            <i class="fas fa-plus"></i>
-                            <span>C++</span>
-                        </div>
-                        <div class="skill-item">
-                            <i class="fab fa-js"></i>
-                            <span>JavaScript</span>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <section id="projects">
-        <div class="container">
-            <h2 class="section-title" data-aos="fade-up">My Projects</h2>
-            <div class="projects-grid">
-                <div class="project-card" data-aos="fade-up" data-aos-delay="100">
-                     <div class="project-content">
-                        <div class="project-icon" data-aos="zoom-in" data-aos-delay="150"><i class="fas fa-globe"></i></div>
-                        <h3 data-aos="fade-up" data-aos-delay="200">AI-Powered Browser</h3>
-                        <p data-aos="fade-up" data-aos-delay="250">A full-fledged browser with AI features, including new tabs, incognito mode, profiles, settings, and a download manager.</p>
-                        <div class="project-footer" data-aos="fade-up" data-aos-delay="300">
-                            <div class="tech-tags"><span class="tech-tag">Python</span><span class="tech-tag">AI</span><span class="tech-tag">GUI</span></div>
-                            <a href="https://github.com/gkm563/gkm-browser" class="project-link" target="_blank">View on GitHub <i class="fab fa-github"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="project-card" data-aos="fade-up" data-aos-delay="200">
-                    <div class="project-content">
-                        <div class="project-icon" data-aos="zoom-in" data-aos-delay="250"><i class="fab fa-linkedin"></i></div>
-                        <h3 data-aos="fade-up" data-aos-delay="300">LinkedIn Post Generator</h3>
-                        <p data-aos="fade-up" data-aos-delay="350">A website where users can set basic parameters to generate engaging LinkedIn posts automatically.</p>
-                        <div class="project-footer" data-aos="fade-up" data-aos-delay="400">
-                            <div class="tech-tags"><span class="tech-tag">Web App</span><span class="tech-tag">API</span><span class="tech-tag">AI</span></div>
-                            <a href="https://github.com/gkm563/linkedin-post-generator" class="project-link" target="_blank">View on GitHub <i class="fab fa-github"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="project-card" data-aos="fade-up" data-aos-delay="300">
-                    <div class="project-content">
-                        <div class="project-icon" data-aos="zoom-in" data-aos-delay="350"><i class="fas fa-house-user"></i></div>
-                        <h3 data-aos="fade-up" data-aos-delay="400">Prayagraj Rooms</h3>
-                        <p data-aos="fade-up" data-aos-delay="450">A professional UI website for students in Prayagraj to find rooms and for owners to list their properties.</p>
-                        <div class="project-footer" data-aos="fade-up" data-aos-delay="500">
-                            <div class="tech-tags"><span class="tech-tag">Web App</span><span class="tech-tag">UI/UX</span></div>
-                            <a href="https://github.com/gkm563/prayagraj-rooms" class="project-link" target="_blank">View on GitHub <i class="fab fa-github"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="project-card" data-aos="fade-up" data-aos-delay="100">
-                    <div class="project-content">
-                        <div class="project-icon" data-aos="zoom-in" data-aos-delay="150"><i class="fas fa-robot"></i></div>
-                        <h3 data-aos="fade-up" data-aos-delay="200">AI Smart Ad Blocker</h3>
-                        <p data-aos="fade-up" data-aos-delay="250">An intelligent ad blocker that uses AI to learn and block intrusive ads more effectively than traditional methods.</p>
-                        <div class="project-footer" data-aos="fade-up" data-aos-delay="300">
-                            <div class="tech-tags"><span class="tech-tag">AI/ML</span><span class="tech-tag">Python</span></div>
-                            <a href="https://github.com/gkm563/adblocker-extension" class="project-link" target="_blank">View on GitHub <i class="fab fa-github"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="project-card" data-aos="fade-up" data-aos-delay="200">
-                    <div class="project-content">
-                        <div class="project-icon" data-aos="zoom-in" data-aos-delay="250"><i class="fas fa-key"></i></div>
-                        <h3 data-aos="fade-up" data-aos-delay="300">Keylogger & Screenshot Logger</h3>
-                        <p data-aos="fade-up" data-aos-delay="350">A system developed for a hackathon to demonstrate security vulnerabilities, capturing keystrokes and screenshots.</p>
-                        <div class="project-footer" data-aos="fade-up" data-aos-delay="400">
-                            <div class="tech-tags"><span class="tech-tag">Python</span><span class="tech-tag">Security</span></div>
-                            <a href="https://github.com/gkm563/telegram-monitoring-tool" class="project-link" target="_blank">View on GitHub <i class="fab fa-github"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="project-card" data-aos="fade-up" data-aos-delay="300">
-                    <div class="project-content">
-                        <div class="project-icon" data-aos="zoom-in" data-aos-delay="350"><i class="fab fa-telegram-plane"></i></div>
-                        <h3 data-aos="fade-up" data-aos-delay="400">YouTube Downloader Bot</h3>
-                        <p data-aos="fade-up" data-aos-delay="450">A Telegram bot built for learning purposes that allows users to download YouTube videos directly through chat.</p>
-                        <div class="project-footer" data-aos="fade-up" data-aos-delay="500">
-                            <div class="tech-tags"><span class="tech-tag">Python</span><span class="tech-tag">API</span></div>
-                            <a href="https://github.com/gkm563/youtube-downloader" class="project-link" target="_blank">View on GitHub <i class="fab fa-github"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <div class="section-wrapper">
-        <section id="services">
-            <div class="container">
-                <h2 class="section-title" data-aos="fade-up">What I Offer</h2>
-                <div class="services-grid">
-                    <div class="service-card" data-aos="fade-up" data-aos-delay="100">
-                        <div class="service-icon" data-aos="zoom-in" data-aos-delay="150"><i class="fas fa-laptop-code"></i></div>
-                        <h3 data-aos="fade-up" data-aos-delay="200">Web Development</h3>
-                        <p data-aos="fade-up" data-aos-delay="250">Building responsive, modern, and high-performance websites using React.js, Node.js, and Python (Flask/Django).</p>
-                    </div>
-                    <div class="service-card" data-aos="fade-up" data-aos-delay="200">
-                        <div class="service-icon" data-aos="zoom-in" data-aos-delay="250"><i class="fas fa-brain"></i></div>
-                        <h3 data-aos="fade-up" data-aos-delay="300">AI & Automation</h3>
-                        <p data-aos="fade-up" data-aos-delay="350">Exploring and implementing AI/ML models for practical applications, automation scripts, and intelligent systems.</p>
-                    </div>
-                    <div class="service-card" data-aos="fade-up" data-aos-delay="300">
-                        <div class="service-icon" data-aos="zoom-in" data-aos-delay="350"><i class="fas fa-user-shield"></i></div>
-                        <h3 data-aos="fade-up" data-aos-delay="400">Security & OSINT</h3>
-                        <p data-aos="fade-up" data-aos-delay="450">Passionate about digital defense, offering basic vulnerability assessments, security awareness, and OSINT investigations.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </div>
-
-    <!-- === NEW, SEPARATE EDUCATION SECTION === -->
-    <div class="section-wrapper">
-        <section id="education">
-            <div class="container">
-                <h2 class="section-title" data-aos="fade-up">Education</h2>
-                <div class="timeline">
-                    
-                    <div class="timeline-item" data-aos="fade-right">
-                        <div class="timeline-content">
-                            <h3>B.Tech in Computer Science & Engineering</h3>
-                            <div class="date">2024 – 2028 (Currently Pursuing)</div>
-                            <p>United Institute of Technology, Prayagraj</p>
-                        </div>
-                    </div>
-                    
-                    <div class="timeline-item" data-aos="fade-left">
-                        <div class="timeline-content">
-                            <h3>Intermediate (12th Grade)</h3>
-                            <div class="date">2023</div>
-                            <p>Jwala Devi Saraswati Vidya Mandir Inter College</p>
-                            <p>Scored: <strong>92.67%</strong></p>
-                        </div>
-                    </div>
-                    
-                    <div class="timeline-item" data-aos="fade-right">
-                        <div class="timeline-content">
-                            <h3>High School (10th Grade)</h3>
-                            <div class="date">2021</div>
-                            <p>Jwala Devi Saraswati Vidya Mandir Inter College</p>
-                            <p>Scored: <strong>91%</strong></p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </div>
-    
-    <!-- === NEW, SEPARATE ACHIEVEMENTS SECTION === -->
-    <div class="section-wrapper">
-        <section id="achievements">
-            <div class="container">
-                <h2 class="section-title" data-aos="fade-up">Achievements</h2>
-                <div class="timeline">
-                    
-                    <div class="timeline-item" data-aos="fade-right">
-                        <div class="timeline-content">
-                            <h3>B.Tech 1st Year Topper</h3>
-                            <div class="date">2025</div>
-                            <p>Achieved <strong>5th Rank</strong> in the B.Tech 1st Year AKTU examinations.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="timeline-item" data-aos="fade-left">
-                        <div class="timeline-content">
-                            <h3>Top Intermediate Scorer</h3>
-                            <div class="date">2023</div>
-                            <p>Achieved an outstanding score of 92.67% in the Intermediate examinations.</p>
-                        </div>
-                    </div>
-
-                    <div class="timeline-item" data-aos="fade-right">
-                        <div class="timeline-content">
-                            <h3>Class Topper</h3>
-                            <div class="date">2022</div>
-                            <p>Secured 1st Rank in Class 11th, demonstrating academic excellence.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="timeline-item" data-aos="fade-left">
-                        <div class="timeline-content">
-                            <h3>High School Distinction</h3>
-                            <div class="date">2021</div>
-                            <p>Scored an impressive 91% in the High School examinations.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </div>
-    
-    <div class="section-wrapper">
-        <section id="contact">
-            <div class="container">
-                <h2 class="section-title" data-aos="fade-up">Get In Touch</h2>
-                <p style="text-align: center; max-width: 600px; margin: -2rem auto 3rem auto; color: #94a3b8;" data-aos="fade-up" data-aos-delay="50">
-                    Whether you have a project idea, a question about my work, or just want to connect, I'm always open to a conversation. Let's build something amazing together!
+                <h2 class="section-title" data-aos="fade-up">Technical Arsenal</h2>
+                <p style="text-align: center; max-width: 600px; margin: -2.5rem auto 3rem auto; color: #94a3b8;" data-aos="fade-up" data-aos-delay="50">
+                    My developer toolkit. I combine full-stack engineering frameworks, AI agent modules, and data science libraries to construct intelligent, scalable web solutions.
                 </p>
-                
-                <!-- 
-                  ==================================================================
-                  FORM IS NOW ACTIVE!
-                  Maine aapka Formspree URL (mnnlnaje) neeche paste kar diya hai.
-                  Ab yeh form 100% kaam karega.
-                  ==================================================================
-                -->
-                <form id="fs-frm" action="https://formspree.io/f/mnnlnaje" method="POST" class="contact-form" data-aos="fade-up" data-aos-delay="100">
-                    <div class="form-group">
-                        <input type="text" name="name" placeholder="Your Name" required>
+                <div class="skills-grid">
+                    
+                    <!-- Frontend skills -->
+                    <div class="skill-card" data-aos="fade-up" data-aos-delay="100">
+                        <h3>Frontend Development</h3>
+                        <div class="skill-items-grid">
+                            <div class="skill-item"><i class="fab fa-react"></i><span>React.js</span></div>
+                            <div class="skill-item"><i class="fab fa-js"></i><span>JavaScript</span></div>
+                            <div class="skill-item"><i class="fab fa-html5"></i><span>HTML5</span></div>
+                            <div class="skill-item"><i class="fab fa-css3-alt"></i><span>CSS3</span></div>
+                            <div class="skill-item"><i class="fab fa-bootstrap"></i><span>Bootstrap</span></div>
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <input type="email" name="email" placeholder="Your Email" required>
+
+                    <!-- Backend & DB skills -->
+                    <div class="skill-card" data-aos="fade-up" data-aos-delay="200">
+                        <h3>Backend & Databases</h3>
+                        <div class="skill-items-grid">
+                            <div class="skill-item"><i class="fab fa-node-js"></i><span>Node.js</span></div>
+                            <div class="skill-item"><i class="fab fa-python"></i><span>Django/Flask</span></div>
+                            <div class="skill-item"><i class="fab fa-php"></i><span>PHP</span></div>
+                            <div class="skill-item"><i class="fas fa-database"></i><span>MySQL/Postgres</span></div>
+                            <div class="skill-item"><i class="fas fa-leaf"></i><span>MongoDB</span></div>
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <textarea name="message" placeholder="Your Message" required></textarea>
+                    
+                    <!-- AI & Specialization -->
+                    <div class="skill-card" data-aos="fade-up" data-aos-delay="300">
+                        <h3>AI, ML & Cybersecurity</h3>
+                        <div class="skill-items-grid">
+                            <div class="skill-item"><i class="fas fa-brain"></i><span>AI / AI Agents</span></div>
+                            <div class="skill-item"><i class="fas fa-shield-halved"></i><span>Ethical Hacking</span></div>
+                            <div class="skill-item"><i class="fas fa-user-secret"></i><span>OSINT</span></div>
+                            <div class="skill-item"><i class="fas fa-eye"></i><span>OpenCV</span></div>
+                        </div>
                     </div>
-                    <input type="hidden" name="_subject" value="New Message from Portfolio Website!">
-                    <div style="text-align: center;">
-                        <button type="submit" class="cta-button" id="submit-btn">Send Message <i
-                                class="fas fa-paper-plane"></i></button>
+
+                    <!-- DevOps & Tools -->
+                    <div class="skill-card" data-aos="fade-up" data-aos-delay="400">
+                        <h3>Programming & DevOps</h3>
+                        <div class="skill-items-grid">
+                            <div class="skill-item"><i class="fab fa-python"></i><span>Python</span></div>
+                            <div class="skill-item"><i class="fas fa-plus"></i><span>C/C++</span></div>
+                            <div class="skill-item"><i class="fab fa-git-alt"></i><span>Git & GitHub</span></div>
+                            <div class="skill-item"><i class="fab fa-docker"></i><span>Docker</span></div>
+                        </div>
                     </div>
-                    <div id="form-status"></div>
-                </form>
+
+                </div>
             </div>
         </section>
-    </div>
 
-    <footer>
-        <div class="container">
-            <div class="footer-social-links">
-                <a href="https://www.linkedin.com/in/gkm563/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                <a href="https://github.com/gkm563" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
-                <a href="https://x.com/gkm563" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                <a href="https://www.instagram.com/gkm3563/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                <a href="https://www.facebook.com/gkm563" target="_blank" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
-                <a href="https://www.youtube.com/@gkm563" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+        <!-- Projects Grid Section -->
+        <section id="projects">
+            <div class="container">
+                <h2 class="section-title" data-aos="fade-up">Featured Projects</h2>
+                <p style="text-align: center; max-width: 600px; margin: -2.5rem auto 3rem auto; color: #94a3b8;" data-aos="fade-up" data-aos-delay="50">
+                    A curated showcase of applications I have designed and engineered, highlighting my focus on local community impact, database security, and user-centered design.
+                </p>
+                <div class="projects-grid">
+                    
+                    <!-- Project 1: CampusClick -->
+                    <div class="project-card" data-aos="fade-up" data-aos-delay="100">
+                         <div class="project-content">
+                            <div class="project-icon"><i class="fas fa-graduation-cap"></i></div>
+                            <h3>CampusClick</h3>
+                            <p>I built this interactive campus hub to streamline student notifications and event organization, reducing communication delays between departments and students by providing real-time scheduling dashboards.</p>
+                            <div class="project-footer">
+                                <div class="tech-tags"><span class="tech-tag">HTML/CSS</span><span class="tech-tag">JS</span><span class="tech-tag">UI/UX</span></div>
+                                <a href="https://github.com/gkm563/CampusClick" class="project-link" target="_blank">View Project <i class="fas fa-arrow-up-right-from-square"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 2: PDFBAZI -->
+                    <div class="project-card" data-aos="fade-up" data-aos-delay="200">
+                        <div class="project-content">
+                            <div class="project-icon"><i class="fas fa-file-pdf"></i></div>
+                            <h3>PDFBAZI</h3>
+                            <p>Frustrated by tools that compromise document privacy, I engineered this local-first PDF editor. It performs heavy splitting, merging, and compression operations directly in the browser, keeping sensitive data 100% secure.</p>
+                            <div class="project-footer">
+                                <div class="tech-tags"><span class="tech-tag">Python</span><span class="tech-tag">Web Tech</span><span class="tech-tag">LocalDB</span></div>
+                                <a href="https://github.com/gkm563/PDFBAZI" class="project-link" target="_blank">View Project <i class="fas fa-arrow-up-right-from-square"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 3: BuildX Hackathon -->
+                    <div class="project-card" data-aos="fade-up" data-aos-delay="300">
+                        <div class="project-content">
+                            <div class="project-icon"><i class="fas fa-laptop-code"></i></div>
+                            <h3>BuildX India Website</h3>
+                            <p>As the Lead Technical Developer, I designed and scaled the official registration engine and live metric dashboards for BuildX India 2026, seamlessly managing registration traffic for hundreds of developers.</p>
+                            <div class="project-footer">
+                                <div class="tech-tags"><span class="tech-tag">TypeScript</span><span class="tech-tag">JS</span><span class="tech-tag">UI/UX</span></div>
+                                <a href="https://github.com/gkm563/buildx-india-website-personal" class="project-link" target="_blank">View Project <i class="fas fa-arrow-up-right-from-square"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 4: NHAI Offline Biometrics -->
+                    <div class="project-card" data-aos="fade-up" data-aos-delay="100">
+                        <div class="project-content">
+                            <div class="project-icon"><i class="fas fa-fingerprint"></i></div>
+                            <h3>NHAI Offline Biometrics</h3>
+                            <p>I engineered an offline biometric verification tool for the National Highway Authority of India (NHAI), allowing remote toll operators to safely authenticate personnel without depending on unstable internet access.</p>
+                            <div class="project-footer">
+                                <div class="tech-tags"><span class="tech-tag">TypeScript</span><span class="tech-tag">Biometrics</span><span class="tech-tag">Security</span></div>
+                                <a href="https://github.com/gkm563/NHAI-offline-biometrics" class="project-link" target="_blank">View Project <i class="fas fa-arrow-up-right-from-square"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 5: TripSync -->
+                    <div class="project-card" data-aos="fade-up" data-aos-delay="200">
+                        <div class="project-content">
+                            <div class="project-icon"><i class="fas fa-route"></i></div>
+                            <h3>TripSync</h3>
+                            <p>I created this dynamic, real-time travel logistics platform to solve group coordination struggles. It synchronizes itineraries, maps, and expenses instantly, ensuring every traveler stays on the same page.</p>
+                            <div class="project-footer">
+                                <div class="tech-tags"><span class="tech-tag">TypeScript</span><span class="tech-tag">React</span><span class="tech-tag">Maps API</span></div>
+                                <a href="https://github.com/gkm563/TripSync" class="project-link" target="_blank">View Project <i class="fas fa-arrow-up-right-from-square"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 6: ugiNotes (UniNotes) -->
+                    <div class="project-card" data-aos="fade-up" data-aos-delay="300">
+                        <div class="project-content">
+                            <div class="project-icon"><i class="fas fa-book-open"></i></div>
+                            <h3>ugiNotes (UniNotes)</h3>
+                            <p>I developed a centralized, peer-to-peer academic repository for my peers at UIT, allowing thousands of students to upload lecture notes, share resources, and collaborate on exam preparation.</p>
+                            <div class="project-footer">
+                                <div class="tech-tags"><span class="tech-tag">TypeScript</span><span class="tech-tag">UIT Hub</span><span class="tech-tag">Study Tools</span></div>
+                                <a href="https://github.com/gkm563/uginotes" class="project-link" target="_blank">View Project <i class="fas fa-arrow-up-right-from-square"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- More GitHub Repositories Sub-section -->
+                <div class="github-repos-section" data-aos="fade-up" style="margin-top: 5rem; border-top: 1px dashed var(--border-color-glass); padding-top: 4rem;">
+                    <h3 style="text-align: center; font-size: 1.8rem; margin-bottom: 2.5rem; color: #fff; font-weight: 600;"><i class="fab fa-github" style="color: var(--primary-color); margin-right: 8px;"></i> Live GitHub Repositories</h3>
+                    <div class="projects-grid" id="github-repos-container" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem;">
+                        <!-- Repos fetched live from GitHub API will render here -->
+                    </div>
+                </div>
             </div>
-            <div class="footer-info">
+        </section>
+
+        <!-- Open Source Contributions Banner & Details -->
+        <div class="section-wrapper" id="opensource">
+            <section style="padding: 0;">
+                <div class="container">
+                    <h2 class="section-title" data-aos="fade-up">Open Source Impact</h2>
+                    <div class="about-content">
+                        <div class="about-text" style="grid-column: span 2;">
+                            <p data-aos="fade-up" style="text-align: center; margin-bottom: 2rem; color: #cbd5e1;">
+                                I believe in the power of open collaboration. I actively contribute code to global open-source software architectures, navigating complex peer-review pipelines to improve tools used by millions daily.
+                            </p>
+                            
+                            <div class="services-grid">
+                                <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+                                    <div class="service-icon"><i class="fab fa-wikipedia-w"></i></div>
+                                    <h3>Wikimedia Core Patches</h3>
+                                    <p>I regularly submit code contributions to the Wikimedia Foundation. Navigating their international code review systems, I help optimize features that power the Wikipedia digital ecosystem.</p>
+                                </div>
+                                <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+                                    <div class="service-icon"><i class="fas fa-code-commit"></i></div>
+                                    <h3>Enterprise Review Workflows</h3>
+                                    <p>I am highly comfortable working within peer-reviewed Git workflows, managing atomic commits, and resolving reviews across Gerrit, Phabricator, GitLab, and GitHub pipelines.</p>
+                                </div>
+                                <div class="service-card" data-aos="fade-up" data-aos-delay="300">
+                                    <div class="service-icon"><i class="fas fa-trophy"></i></div>
+                                    <h3>Sprints & Hackathons</h3>
+                                    <p>My speed and attention to detail earned me 1st Place in the WikiClub UIT Contribution Sprint, where I successfully merged 7 active patches and opened 10+ reviews in just one week.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+
+
+        <!-- Dynamic LinkedIn Updates Feed Section -->
+        <div class="section-wrapper" id="linkedin-section">
+            <section style="padding: 0;">
+                <div class="container">
+                    <h2 class="section-title" data-aos="fade-up">LinkedIn Updates</h2>
+                    <p style="text-align: center; max-width: 600px; margin: -2.5rem auto 3rem auto; color: #94a3b8;" data-aos="fade-up" data-aos-delay="50">
+                        With over 19k+ followers, I share my daily project commits, earnings, hackathon wins, and tech leadership stories. Connect with me!
+                    </p>
+
+                    <!-- LinkedIn category filters -->
+                    <div class="filter-tabs" data-aos="fade-up" data-aos-delay="100" id="li-category-tabs">
+                        <button class="filter-tab active" onclick="filterLiCategory('All')">All Activity</button>
+                        <button class="filter-tab" onclick="filterLiCategory('Hackathons')">Hackathons</button>
+                        <button class="filter-tab" onclick="filterLiCategory('Earnings')">Earnings</button>
+                        <button class="filter-tab" onclick="filterLiCategory('Events')">Events</button>
+                        <button class="filter-tab" onclick="filterLiCategory('Achievements')">Achievements</button>
+                        <button class="filter-tab" onclick="filterLiCategory('Behind the Scenes')">Behind the Scenes</button>
+                    </div>
+
+                    <!-- LinkedIn Grid Container -->
+                    <div class="linkedin-grid" id="linkedin-container" data-aos="fade-up" data-aos-delay="150">
+                        <!-- Dynamic posts render here -->
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Services Section -->
+        <div class="section-wrapper">
+            <section id="services">
+                <div class="container">
+                    <h2 class="section-title" data-aos="fade-up">How I Can Collaborate</h2>
+                    <div class="services-grid">
+                        <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+                            <div class="service-icon"><i class="fas fa-laptop-code"></i></div>
+                            <h3>Full-Stack Software Architecture</h3>
+                            <p>I architect highly responsive, lightning-fast, and premium web systems. Using React.js, modern CSS, Python, Node.js, and relational databases, I build applications that scale smoothly.</p>
+                        </div>
+                        <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+                            <div class="service-icon"><i class="fas fa-brain"></i></div>
+                            <h3>AI Integration & Automation</h3>
+                            <p>I design intelligent AI agent workflows, conversational widgets, automated data processing pipelines, and API integrations that replace manual tasks with smart logic.</p>
+                        </div>
+                        <div class="service-card" data-aos="fade-up" data-aos-delay="300">
+                            <div class="service-icon"><i class="fas fa-user-shield"></i></div>
+                            <h3>Cybersecurity & OSINT Audits</h3>
+                            <p>I help organizations identify security vulnerabilities. I execute reconnaissance audits, dorking directories, subdomain mapping, and scanning codebases for leak risks.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Academic Education Timeline Section -->
+        <div class="section-wrapper">
+            <section id="education">
+                <div class="container">
+                    <h2 class="section-title" data-aos="fade-up">My Academic Foundation</h2>
+                    <div class="timeline">
+                        
+                        <div class="timeline-item" data-aos="fade-right">
+                            <div class="timeline-content">
+                                <h3>B.Tech in Computer Science & Engineering (Data Science)</h3>
+                                <div class="date">2024 – 2028 (Currently Pursuing)</div>
+                                <p>United Institute of Technology, Prayagraj (AKTU)</p>
+                                <p>I am building my foundational data science skills here, maintaining top-tier grades and securing <strong>University Rank 5</strong> in my first semester AKTU exams.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="timeline-item" data-aos="fade-left">
+                            <div class="timeline-content">
+                                <h3>Intermediate (12th Grade)</h3>
+                                <div class="date">2023</div>
+                                <p>Jwala Devi Saraswati Vidya Mandir Inter College</p>
+                                <p>I completed my senior secondary education in the science stream, achieving <strong>92.67%</strong> and ranking in the top tier of UP Board candidates.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="timeline-item" data-aos="fade-right">
+                            <div class="timeline-content">
+                                <h3>High School (10th Grade)</h3>
+                                <div class="date">2021</div>
+                                <p>Jwala Devi Saraswati Vidya Mandir Inter College</p>
+                                <p>I initiated my academic milestones in secondary school, finishing with <strong>91.00%</strong> in science and mathematics.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        
+               <!-- Tech Leadership Timeline Section -->
+        <div class="section-wrapper">
+            <section id="leadership">
+                <div class="container">
+                    <h2 class="section-title" data-aos="fade-up">Tech Leadership Journey</h2>
+                    <p style="text-align: center; max-width: 600px; margin: -2.5rem auto 3rem auto; color: #94a3b8;" data-aos="fade-up" data-aos-delay="50">
+                        Empowering others while scaling tech communities. I drive regional developer events, mentor peer programmers, and guide campus technical chapters.
+                    </p>
+                    <div class="timeline">
+                        
+                        <div class="timeline-item" data-aos="fade-right">
+                            <div class="timeline-content">
+                                <h3>Technical Head</h3>
+                                <div class="date">GeeksforGeeks (GFG) Campus UIT</div>
+                                <p>I guide technical events for our campus developer community, organizing coding challenges for 500+ attendees and evaluating competitive submissions.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="timeline-item" data-aos="fade-left">
+                            <div class="timeline-content">
+                                <h3>Technical Head & Evaluator</h3>
+                                <div class="date">UDTech India</div>
+                                <p>I lead technical infrastructure and evaluate project submissions at national hackathons, designing secure dashboard systems to optimize participant tracking.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="timeline-item" data-aos="fade-right">
+                            <div class="timeline-content">
+                                <h3>Technical Associate & Content Specialist</h3>
+                                <div class="date">TechEra (Delhi NCR)</div>
+                                <p>I write tech reviews and contribute clean code to large-scale developer portals, coordinating cross-functional team sprints and drafting code quality guidelines.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="timeline-item" data-aos="fade-left">
+                            <div class="timeline-content">
+                                <h3>Core Team Member</h3>
+                                <div class="date">Google Developer Student Clubs (GSA) UIT</div>
+                                <p>I helped scale our campus tech community, organizing programming jams and hands-on developer workshops that engaged over 600+ student developers.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="timeline-item" data-aos="fade-right">
+                            <div class="timeline-content">
+                                <h3>Campus Ambassador & Volunteer</h3>
+                                <div class="date">GDG Prayagraj & MyGov India (IIT Delhi)</div>
+                                <p>I advocate for open digital governance and tech community building, supporting regional developer conferences (GDG) and driving digital awareness meetups.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+             <!-- Achievements Timeline Section -->
+        <div class="section-wrapper">
+            <section id="achievements">
+                <div class="container">
+                    <h2 class="section-title" data-aos="fade-up">My Key Milestones</h2>
+                    <p style="text-align: center; max-width: 600px; margin: -2.5rem auto 3rem auto; color: #94a3b8;" data-aos="fade-up" data-aos-delay="50">
+                        Moments of recognition that validate my commitment to code quality, algorithmic logic, and academic consistency.
+                    </p>
+                    <div class="timeline">
+                        
+                        <div class="timeline-item" data-aos="fade-right">
+                            <div class="timeline-content">
+                                <h3>1st Place – WebDie Hackathon</h3>
+                                <div class="date">ENIGMA XIII Tech Fest</div>
+                                <p>I led my team to victory at ENIGMA, securing the top spot by building an end-to-end full-stack dashboard in a high-pressure, 24-hour national code sprint.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="timeline-item" data-aos="fade-left">
+                            <div class="timeline-content">
+                                <h3>1st Place – GDG Tech Trivia</h3>
+                                <div class="date">Google Developer Group quiz</div>
+                                <p>I took the first prize in a regional tech challenge, testing speed and accuracy on web architectures, REST APIs, and core optimization logic.</p>
+                            </div>
+                        </div>
+ 
+                        <div class="timeline-item" data-aos="fade-right">
+                            <div class="timeline-content">
+                                <h3>1st Place – Wikimedia Sprint</h3>
+                                <div class="date">WikiClub UIT Contribution Challenge</div>
+                                <p>I won first place by successfully merging 7 peer-reviewed patches and initiating 10+ active code reviews in Wikimedia core projects within a 7-day challenge.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="timeline-item" data-aos="fade-left">
+                            <div class="timeline-content">
+                                <h3>Academic Distinction & Topper Honors</h3>
+                                <div class="date">Dainik Jagran & Salvete Advena</div>
+                                <p>I was honored by UP Board authorities and Dainik Jagran for outstanding academic topper rankings, and recognized with college honors at Salvete Advena 2025.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        
+        <!-- Get In Touch Section -->
+        <div class="section-wrapper">
+            <section id="contact">
+                <div class="container">
+                    <h2 class="section-title" data-aos="fade-up">Get In Touch</h2>
+                    <p style="text-align: center; max-width: 600px; margin: -2rem auto 3rem auto; color: #94a3b8;" data-aos="fade-up" data-aos-delay="50">
+                        Whether you want to discuss a project, query collaboration, hire me for full-stack freelance development, or just chat about AI and open source – feel free to drop me a message!
+                    </p>
+                    
+                    <form id="fs-frm" action="https://formspree.io/f/mnnlnaje" method="POST" class="contact-form" data-aos="fade-up" data-aos-delay="100">
+                        <div class="form-group">
+                            <input type="text" name="name" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" name="email" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea name="message" placeholder="Your Message" required></textarea>
+                        </div>
+                        <input type="hidden" name="_subject" value="New Message from Portfolio Website!">
+                        <div style="text-align: center;">
+                            <button type="submit" class="cta-button" id="submit-btn">Send Message <i class="fas fa-paper-plane"></i></button>
+                        </div>
+                        <div id="form-status"></div>
+                    </form>
+                </div>
+            </section>
+        </div>
+
+    </main>
+
+    <!-- Premium Footer Area -->
+    <footer class="footer" id="footer">
+        <div class="container footer-container">
+            <!-- Col 1: Brand & Bio -->
+            <div class="footer-col footer-brand" data-aos="fade-up" data-aos-delay="100">
+                <a href="#" class="logo footer-logo">G K M</a>
+                <p class="footer-bio">
+                    I am a B.Tech CSE (Data Science) student at UIT Prayagraj, co-founder of PrayagrajRooms, and open-source enthusiast. I design and build secure, premium, and performant web products that create real community impact.
+                </p>
+                <div class="footer-social-links">
+                    <a href="https://www.linkedin.com/in/gkm563/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://github.com/gkm563" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="https://x.com/gkm563" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.instagram.com/gkm3563/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="mailto:maurgk212104@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                    <a href="https://www.youtube.com/@gkm563" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            
+            <!-- Col 2: Navigation Links -->
+            <div class="footer-col footer-links" data-aos="fade-up" data-aos-delay="200">
+                <h4>Navigation</h4>
+                <ul>
+                    <li><a href="#hero"><i class="fas fa-chevron-right"></i> Home</a></li>
+                    <li><a href="#about"><i class="fas fa-chevron-right"></i> About Me</a></li>
+                    <li><a href="#skills"><i class="fas fa-chevron-right"></i> Technical Skills</a></li>
+                    <li><a href="#projects"><i class="fas fa-chevron-right"></i> Projects</a></li>
+                    <li><a href="#linkedin-section"><i class="fas fa-chevron-right"></i> LinkedIn Feed</a></li>
+                    <li><a href="#contact"><i class="fas fa-chevron-right"></i> Contact</a></li>
+                </ul>
+            </div>
+            
+            <!-- Col 3: Focus Areas / Services -->
+            <div class="footer-col footer-links" data-aos="fade-up" data-aos-delay="300">
+                <h4>Technical Focus</h4>
+                <ul>
+                    <li><a href="#services"><i class="fas fa-code"></i> Full-Stack Apps</a></li>
+                    <li><a href="#services"><i class="fas fa-brain"></i> AI Agent Systems</a></li>
+                    <li><a href="#opensource"><i class="fas fa-laptop-code"></i> Open Source Hub</a></li>
+                    <li><a href="#services"><i class="fas fa-shield-halved"></i> OSINT Audits</a></li>
+                    <li><a href="#education"><i class="fas fa-graduation-cap"></i> Data Science</a></li>
+                </ul>
+            </div>
+            
+            <!-- Col 4: Contact & Location details -->
+            <div class="footer-col footer-contact" data-aos="fade-up" data-aos-delay="400">
+                <h4>Connect</h4>
+                <p><i class="fas fa-envelope"></i> <a href="mailto:maurgk212104@gmail.com">maurgk212104@gmail.com</a></p>
+                <p><i class="fas fa-map-marker-alt"></i> Prayagraj, Uttar Pradesh, India</p>
+                <p><i class="fas fa-calendar-check"></i> <span style="color: var(--primary-color); font-weight: 500;">Available for Freelance</span></p>
+                <div class="footer-cta">
+                    <a href="#contact" class="cta-button footer-cta-btn">Hire Gautam <i class="fas fa-paper-plane"></i></a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Bottom copyright bar -->
+        <div class="footer-bottom">
+            <div class="container footer-bottom-container">
+                <p>&copy; 2026 Gautam Kumar Maurya (GKM). All Rights Reserved.</p>
                 <p>Made with <i class="fa-solid fa-heart"></i> & <i class="fa-solid fa-code"></i> in Prayagraj, India</p>
-                <p>&copy; 2025 <a href="https://www.linkedin.com/in/gkm563/"> Gautam Kumar Maurya</a>. All Rights Reserved.</p>
             </div>
         </div>
     </footer>
 
+    <!-- Floating Scroll-To-Top Button -->
+    <button id="scroll-to-top" class="scroll-to-top" aria-label="Scroll to top" title="Back to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Floating AI Chat Twin Widget -->
+    <div class="chatbot-toggle" id="chat-toggle">
+        <i class="fas fa-robot"></i>
+        <span class="badge">AI</span>
+    </div>
+
+    <div class="chatbot-window" id="chat-window">
+        <div class="chat-header">
+            <div class="chat-header-profile">
+                <img src="assets/images/Gautam_Kumar_Maurya.jpg" alt="Gautam Kumar Maurya" class="chat-header-avatar">
+                <div class="chat-header-info">
+                    <h4>Gautam's AI Twin</h4>
+                    <span>Active Digital Self</span>
+                </div>
+            </div>
+            <button class="chat-close-btn" id="chat-close" title="Close Chat"><i class="fas fa-times"></i></button>
+        </div>
+        
+        <div class="chat-messages" id="chat-messages">
+            <div class="chat-bubble bot">
+                Hey there! I am Gautam's Digital Twin. 🤖 I'm here to answer your questions about Gautam. What would you like to know?
+            </div>
+        </div>
+
+        <div class="chat-quick-options" id="chat-quick-options">
+            <button class="quick-opt-btn" onclick="sendQuickMessage('Tell me your story')">Tell me your story</button>
+            <button class="quick-opt-btn" onclick="sendQuickMessage('What is PDFBAZI?')">What is PDFBAZI?</button>
+            <button class="quick-opt-btn" onclick="sendQuickMessage('Show hackathon wins')">Show hackathon wins</button>
+            <button class="quick-opt-btn" onclick="sendQuickMessage('How can we collaborate?')">How can we collaborate?</button>
+        </div>
+
+        <form class="chat-input-bar" id="chat-input-form" onsubmit="handleChatSubmit(event)">
+            <input type="text" id="chat-user-input" placeholder="Type a message or click an option..." autocomplete="off">
+            <button type="submit" class="chat-send-btn" title="Send Message"><i class="fas fa-paper-plane"></i></button>
+        </form>
+    </div>
+
+
+
+    <!-- External Script Integrations -->
+    <script src="assets/js/data.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
     
-    <script>
-        AOS.init({
-            duration: 800,
-            once: true,
-            offset: 80,
-        });
-
-        const typed = new Typed('#typed-subtitle', {
-            strings: [
-                'B.Tech CSE ’28 | Data Science & Full-Stack Learner',
-                'Frontend: React · Tailwind · JS',
-                'Backend: Python · Flask · Django',
-                'Ethical Hacking & OSINT',
-                'Campus Ambassador @MyGov India',
-                'Exploring AI & Cybersecurity'
-                ],
-            typeSpeed: 50,
-            backSpeed: 25,
-            backDelay: 1500,
-            loop: true
-        });
-
-        const hamburger = document.getElementById('hamburger');
-        const navUL = document.querySelector('.main-nav ul');
-        const navLinks = document.querySelectorAll('.main-nav ul li a');
-
-        hamburger.addEventListener('click', () => {
-            hamburger.classList.toggle('active');
-            navUL.classList.toggle('active');
-        });
-
-        navLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                hamburger.classList.remove('active');
-                navUL.classList.remove('active');
-            });
-        });
-
-        document.querySelectorAll('.skill-card, .project-card, .service-card').forEach(card => {
-            card.onmousemove = e => {
-                const rect = card.getBoundingClientRect();
-                const x = e.clientX - rect.left;
-                const y = e.clientY - rect.top;
-                card.style.setProperty('--mouse-x', `${x}px`);
-                card.style.setProperty('--mouse-y', `${y}px`);
-            }
-        });
-
-        const header = document.getElementById('main-header');
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 50) {
-                header.classList.add('scrolled');
-            } else {
-                header.classList.remove('scrolled');
-            }
-        });
-
-        // === CURSOR JAVASCRIPT (BUG FIXED) ===
-        // This logic is reverted to the working v3 version.
-        if (!('ontouchstart' in window)) {
-            const cursorDot = document.querySelector('.cursor-dot');
-            const cursorFollower = document.querySelector('.cursor-follower');
-
-            window.addEventListener('mousemove', e => {
-                cursorDot.style.left = e.clientX + 'px';
-                cursorDot.style.top = e.clientY + 'px';
-                cursorFollower.style.left = e.clientX + 'px';
-                cursorFollower.style.top = e.clientY + 'px';
-            });
-        } else {
-            document.querySelector('.cursor-dot').style.display = 'none';
-            document.querySelector('.cursor-follower').style.display = 'none';
-            document.body.style.cursor = 'auto';
-        }
-        // === END CURSOR FIX ===
-
-        var form = document.getElementById("fs-frm");
-        var formStatus = document.getElementById("form-status");
-        var submitBtn = document.getElementById("submit-btn");
-
-        async function handleSubmit(event) {
-            event.preventDefault();
-            
-            submitBtn.disabled = true;
-            submitBtn.innerHTML = 'Sending... <i class="fas fa-spinner fa-spin"></i>';
-            formStatus.innerHTML = '';
-            
-            var data = new FormData(event.target);
-            
-            try {
-                const response = await fetch(event.target.action, {
-                    method: form.method,
-                    body: data,
-                    headers: {
-                        'Accept': 'application/json'
-                    }
-                });
-
-                if (response.ok) {
-                    formStatus.innerHTML = '<p class="success">Message sent successfully! Thank you.</p>';
-                    form.reset();
-                } else {
-                    response.json().then(data => {
-                        if (Object.hasOwn(data, 'errors')) {
-                            formStatus.innerHTML = `<p class="error">${data["errors"].map(error => error["message"]).join(", ")}</p>`;
-                        } else {
-                            formStatus.innerHTML = '<p class="error">Something went wrong. Please try again.</p>';
-                        }
-                    });
-                }
-            } catch (error) {
-                formStatus.innerHTML = '<p class="error">Something went wrong. Please try again.</p>';
-            } finally {
-                submitBtn.disabled = false;
-                submitBtn.innerHTML = 'Send Message <i class="fas fa-paper-plane"></i>';
-            }
-        }
-        
-        form.addEventListener("submit", handleSubmit);
-
-    </script>
+    <!-- Consolidated Engine -->
+    <script src="assets/js/main.js"></script>
 </body>
 
 </html>
