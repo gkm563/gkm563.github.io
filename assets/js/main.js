@@ -162,6 +162,9 @@ function renderLinkedInPosts() {
         `;
         container.appendChild(card);
     });
+    if (window.cacheSectionOffsets) {
+        setTimeout(window.cacheSectionOffsets, 100);
+    }
 }
 
 function filterLiCategory(category) {
@@ -247,6 +250,9 @@ async function fetchGitHubRepos() {
             `;
             container.appendChild(card);
         });
+        if (window.cacheSectionOffsets) {
+            setTimeout(window.cacheSectionOffsets, 100);
+        }
     } catch (err) {
         console.warn('GitHub repos load error, using static fallback:', err);
         renderFallbackGitHubRepos(container);
@@ -294,6 +300,9 @@ function renderFallbackGitHubRepos(container) {
         `;
         container.appendChild(card);
     });
+    if (window.cacheSectionOffsets) {
+        setTimeout(window.cacheSectionOffsets, 100);
+    }
 }
 
 // === VOICE NARRATOR LOGIC ===
@@ -522,6 +531,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // 1. Initial renders
     fetchLinkedInPosts();
     fetchGitHubRepos();
+    initMatrixRain();
     
     // 2. Setup voice narrator and chatbot
     setupVoiceNarrator();
@@ -569,22 +579,77 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // 6. Glowing card cursor tracker effect
-    document.querySelectorAll('.skill-card, .project-card, .service-card').forEach(card => {
-        card.onmousemove = e => {
-            const rect = card.getBoundingClientRect();
-            const x = e.clientX - rect.left;
-            const y = e.clientY - rect.top;
-            card.style.setProperty('--mouse-x', `${x}px`);
-            card.style.setProperty('--mouse-y', `${y}px`);
+    // 6. Glowing card cursor tracker effect with event delegation (handles dynamic cards and prevents layout thrashing)
+    let activeCard = null;
+    let activeCardRect = null;
+
+    document.addEventListener('mouseover', e => {
+        const card = e.target.closest('.skill-card, .project-card, .service-card, .linkedin-card');
+        if (card && card !== activeCard) {
+            activeCard = card;
+            activeCardRect = card.getBoundingClientRect();
         }
     });
 
-    // 7. Scrolled header, Scroll Progress, Scroll Spy & Scroll-to-Top
+    document.addEventListener('mousemove', e => {
+        if (activeCard) {
+            if (!activeCardRect) {
+                activeCardRect = activeCard.getBoundingClientRect();
+            }
+            const x = e.clientX - activeCardRect.left;
+            const y = e.clientY - activeCardRect.top;
+            activeCard.style.setProperty('--mouse-x', `${x}px`);
+            activeCard.style.setProperty('--mouse-y', `${y}px`);
+        }
+    });
+
+    document.addEventListener('mouseout', e => {
+        const card = e.target.closest('.skill-card, .project-card, .service-card, .linkedin-card');
+        if (card && (!e.relatedTarget || !e.relatedTarget.closest('.skill-card, .project-card, .service-card, .linkedin-card') || e.relatedTarget.closest('.skill-card, .project-card, .service-card, .linkedin-card') !== card)) {
+            activeCard = null;
+            activeCardRect = null;
+        }
+    });
+
+    // 7. Scrolled header, Scroll Progress, Scroll Spy & Scroll-to-Top (cached offsets & passive event listener)
     const header = document.getElementById('main-header');
     const scrollProgress = document.getElementById('scroll-progress');
     const scrollToTopBtn = document.getElementById('scroll-to-top');
     const sections = document.querySelectorAll('section, .section-wrapper');
+
+    let cachedSections = [];
+    function cacheSectionOffsets() {
+        cachedSections = Array.from(sections).map(section => {
+            let sectionId = '';
+            if (section.id) {
+                sectionId = section.id;
+            } else {
+                const firstSec = section.querySelector('section');
+                if (firstSec && firstSec.id) {
+                    sectionId = firstSec.id;
+                }
+            }
+            return {
+                id: sectionId,
+                top: section.offsetTop - 120, // offset for nav header height
+                height: section.offsetHeight
+            };
+        });
+    }
+
+    // Expose cached sections update helper globally
+    window.cacheSectionOffsets = cacheSectionOffsets;
+
+    // Initial cache run
+    cacheSectionOffsets();
+
+    // Rebuild cache on window load and debounced resize
+    window.addEventListener('load', cacheSectionOffsets);
+    let resizeTimer;
+    window.addEventListener('resize', () => {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(cacheSectionOffsets, 150);
+    });
 
     window.addEventListener('scroll', () => {
         const scrollY = window.scrollY;
@@ -607,23 +672,15 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
 
-        // Scroll Spy Active Section Highlighting
+        // Scroll Spy Active Section Highlighting via cached offsets
         let currentSectionId = '';
-        sections.forEach(section => {
-            const sectionTop = section.offsetTop - 120; // offset for nav header height
-            const sectionHeight = section.offsetHeight;
-            if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
-                if (section.id) {
-                    currentSectionId = section.id;
-                } else {
-                    // Fallback for wrappers that contain section elements
-                    const firstSec = section.querySelector('section');
-                    if (firstSec && firstSec.id) {
-                        currentSectionId = firstSec.id;
-                    }
-                }
+        for (let i = 0; i < cachedSections.length; i++) {
+            const sec = cachedSections[i];
+            if (scrollY >= sec.top && scrollY < sec.top + sec.height) {
+                currentSectionId = sec.id;
+                break;
             }
-        });
+        }
 
         if (currentSectionId) {
             navLinks.forEach(link => {
@@ -644,7 +701,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 scrollToTopBtn.classList.remove('show');
             }
         }
-    });
+    }, { passive: true });
 
     // Scroll-to-Top click handler
     if (scrollToTopBtn) {
@@ -765,3 +822,105 @@ document.addEventListener('DOMContentLoaded', () => {
         form.addEventListener("submit", handleSubmit);
     }
 });
+
+// === MATRIX DIGITAL CODE RAIN ENGINE ===
+function initMatrixRain() {
+    const canvas = document.getElementById('matrix-canvas');
+    if (!canvas) return;
+
+    const ctx = canvas.getContext('2d');
+    
+    // Set canvas dimensions
+    let width = canvas.width = window.innerWidth;
+    let height = canvas.height = window.innerHeight;
+
+    // Use glowing binary, braces and operator symbols for a data science / developer vibe
+    const chars = "010101{}[]()<>+-*/%&|^!=?:".split("");
+    const fontSize = 14;
+    let columns = Math.floor(width / fontSize);
+
+    // Track state of each rain column
+    let drops = [];
+    
+    function initDrops() {
+        columns = Math.floor(width / fontSize);
+        drops = [];
+        for (let i = 0; i < columns; i++) {
+            drops.push({
+                x: i * fontSize,
+                y: Math.random() * -height, // Start random distance off-screen
+                speed: 1 + Math.random() * 2, // Varied vertical speed
+                opacity: 0.15 + Math.random() * 0.85,
+                charIndex: Math.floor(Math.random() * chars.length)
+            });
+        }
+    }
+    
+    initDrops();
+
+    // Debounced Resize handler to prevent stuttering
+    let resizeTimer;
+    window.addEventListener('resize', () => {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(() => {
+            width = canvas.width = window.innerWidth;
+            height = canvas.height = window.innerHeight;
+            initDrops();
+        }, 150);
+    });
+
+    // Throttled drawing loop to run at 30 FPS for optimal performance and CPU efficiency
+    let lastTime = 0;
+    const fps = 30;
+    const interval = 1000 / fps;
+
+    function render(timestamp) {
+        requestAnimationFrame(render);
+
+        const delta = timestamp - lastTime;
+        if (delta < interval) return;
+        lastTime = timestamp - (delta % interval);
+
+        // Subtly clear the canvas with a trailing black layer
+        ctx.fillStyle = 'rgba(2, 6, 23, 0.12)'; // Fades trailing drops towards the background color
+        ctx.fillRect(0, 0, width, height);
+
+        ctx.font = `bold ${fontSize}px Courier New, monospace`;
+
+        for (let i = 0; i < drops.length; i++) {
+            const drop = drops[i];
+            
+            // Randomize character change frequency
+            if (Math.random() > 0.9) {
+                drop.charIndex = Math.floor(Math.random() * chars.length);
+            }
+            const text = chars[drop.charIndex];
+
+            // Render neon blue or pink character drops
+            const isPink = i % 3 === 0; // 33% pink, 67% blue
+            const isHead = Math.random() > 0.98; // Rare white glow head
+
+            if (isHead) {
+                ctx.fillStyle = `rgba(255, 255, 255, ${drop.opacity})`;
+            } else if (isPink) {
+                ctx.fillStyle = `rgba(236, 72, 153, ${drop.opacity * 0.7})`; // Pink
+            } else {
+                ctx.fillStyle = `rgba(14, 165, 233, ${drop.opacity * 0.7})`; // Blue
+            }
+
+            ctx.fillText(text, drop.x, drop.y);
+
+            // Move the drop
+            drop.y += fontSize * drop.speed * 0.45;
+
+            // Reset drop once it leaves the viewport
+            if (drop.y > height && Math.random() > 0.975) {
+                drop.y = -fontSize;
+                drop.speed = 1 + Math.random() * 2;
+                drop.opacity = 0.15 + Math.random() * 0.85;
+            }
+        }
+    }
+
+    requestAnimationFrame(render);
+}

@@ -42,6 +42,17 @@ body {
     opacity: 0.3;
 }
 
+#matrix-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+    pointer-events: none;
+    opacity: 0.15;
+}
+
 .aurora-dot {
     position: absolute;
     border-radius: 50%;
