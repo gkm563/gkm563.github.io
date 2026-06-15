@@ -54,5 +54,49 @@ window.PORTFOLIO_DATA = {
       link: "https://www.linkedin.com/in/gkm563",
       stats: { likes: 980, comments: 54 }
     }
+  ],
+  githubRepos: [
+    {
+      name: "CampusClick",
+      description: "An interactive campus announcement and event hub built to manage student bulletins and schedules.",
+      language: "JavaScript",
+      stargazers_count: 3,
+      html_url: "https://github.com/gkm563/CampusClick"
+    },
+    {
+      name: "PDFBAZI",
+      description: "A local-first browser utility to merge, split, compress, and edit PDF files completely offline for privacy.",
+      language: "Python",
+      stargazers_count: 5,
+      html_url: "https://github.com/gkm563/PDFBAZI"
+    },
+    {
+      name: "TripSync",
+      description: "A real-time travel logistics dashboard that synchronizes itineraries, maps, and travel expenses for groups.",
+      language: "TypeScript",
+      stargazers_count: 4,
+      html_url: "https://github.com/gkm563/TripSync"
+    },
+    {
+      name: "uginotes",
+      description: "A centralized academic notes repository and syllabus planner built for United Institute of Technology students.",
+      language: "TypeScript",
+      stargazers_count: 6,
+      html_url: "https://github.com/gkm563/uginotes"
+    },
+    {
+      name: "NHAI-offline-biometrics",
+      description: "A secure offline biometric authentication helper utility engineered for National Highway Authority operations.",
+      language: "TypeScript",
+      stargazers_count: 2,
+      html_url: "https://github.com/gkm563/NHAI-offline-biometrics"
+    },
+    {
+      name: "buildx-india-website-personal",
+      description: "Official registration dashboard and participant tracking platform for BuildX India 2026 Hackathon.",
+      language: "TypeScript",
+      stargazers_count: 8,
+      html_url: "https://github.com/gkm563/buildx-india-website-personal"
+    }
   ]
 };

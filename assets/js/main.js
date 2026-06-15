@@ -209,7 +209,7 @@ async function fetchGitHubRepos() {
 
         container.innerHTML = '';
         if (filteredRepos.length === 0) {
-            container.innerHTML = '<p style="grid-column: 1/-1; text-align: center; color: #94a3b8; padding: 2rem;">No public repositories found.</p>';
+            renderFallbackGitHubRepos(container);
             return;
         }
 
@@ -248,9 +248,52 @@ async function fetchGitHubRepos() {
             container.appendChild(card);
         });
     } catch (err) {
-        console.error('GitHub repos load error:', err);
-        container.innerHTML = '<p style="grid-column: 1/-1; text-align: center; color: #ef4444; padding: 2rem;">Failed to load live GitHub repositories. Please check back later.</p>';
+        console.warn('GitHub repos load error, using static fallback:', err);
+        renderFallbackGitHubRepos(container);
     }
+}
+
+function renderFallbackGitHubRepos(container) {
+    const repos = (window.PORTFOLIO_DATA && window.PORTFOLIO_DATA.githubRepos) ? window.PORTFOLIO_DATA.githubRepos : [];
+    container.innerHTML = '';
+    
+    if (repos.length === 0) {
+        container.innerHTML = '<p style="grid-column: 1/-1; text-align: center; color: #94a3b8; padding: 2rem;">No repositories available.</p>';
+        return;
+    }
+
+    repos.forEach(repo => {
+        const card = document.createElement('div');
+        card.className = 'project-card';
+        card.setAttribute('data-aos', 'fade-up');
+        
+        let langIcon = '<i class="fas fa-code"></i>';
+        if (repo.language) {
+            const lang = repo.language.toLowerCase();
+            if (lang === 'typescript') langIcon = '<i class="fab fa-js" style="color: #3178c6;"></i>';
+            else if (lang === 'javascript') langIcon = '<i class="fab fa-js" style="color: #f7df1e;"></i>';
+            else if (lang === 'html') langIcon = '<i class="fab fa-html5" style="color: #e34f26;"></i>';
+            else if (lang === 'css') langIcon = '<i class="fab fa-css3-alt" style="color: #1572b6;"></i>';
+            else if (lang === 'php') langIcon = '<i class="fab fa-php" style="color: #777bb4;"></i>';
+            else if (lang === 'python') langIcon = '<i class="fab fa-python" style="color: #3776ab;"></i>';
+        }
+
+        card.innerHTML = `
+            <div class="project-content" style="display: flex; flex-direction: column; height: 100%;">
+                <div class="project-icon">${langIcon}</div>
+                <h3 style="font-size: 1.25rem; font-weight: 600; margin-bottom: 0.5rem; color: #fff;">${repo.name}</h3>
+                <p style="font-size: 0.9rem; color: #94a3b8; flex-grow: 1; margin-bottom: 1.5rem; line-height: 1.6;">${repo.description}</p>
+                <div class="project-footer" style="margin-top: auto; display: flex; justify-content: space-between; align-items: center;">
+                    <div class="tech-tags">
+                        <span class="tech-tag" style="background: rgba(14, 165, 233, 0.1); color: var(--primary-color);">${repo.language || 'Code'}</span>
+                        <span class="tech-tag" style="background: rgba(236, 72, 153, 0.1); color: var(--secondary-color);"><i class="fas fa-star" style="margin-right: 4px;"></i>${repo.stargazers_count}</span>
+                    </div>
+                    <a href="${repo.html_url}" class="project-link" target="_blank" style="font-size: 0.9rem; font-weight: 600; text-decoration: none; color: var(--secondary-color);">Repo Link <i class="fas fa-arrow-up-right-from-square"></i></a>
+                </div>
+            </div>
+        `;
+        container.appendChild(card);
+    });
 }
 
 // === VOICE NARRATOR LOGIC ===
