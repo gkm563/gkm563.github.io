@@ -830,46 +830,92 @@ function initMatrixRain() {
 
     const ctx = canvas.getContext('2d');
     
-    // Set canvas dimensions
     let width = canvas.width = window.innerWidth;
     let height = canvas.height = window.innerHeight;
 
-    // Use glowing binary, braces and operator symbols for a data science / developer vibe
-    const chars = "010101{}[]()<>+-*/%&|^!=?:".split("");
-    const fontSize = 14;
-    let columns = Math.floor(width / fontSize);
+    // Rich set of characters: Katakana, Greek, math, binary, and developer syntax tokens
+    const charSets = [
+        "01", // Binary
+        "{}[]()<>=>&&||!=?+-*/%^", // Coding syntax
+        "ｦｧｨｩｪｫｬｭｮｯｰｱｲｳｴｵｶｷｸｹｺｻｼｽｾｿﾀﾁﾂﾃﾄﾅﾆﾇﾈﾉﾊﾋﾌﾍﾎﾏﾐﾑﾒﾓﾔﾕﾖﾗﾘﾙﾚﾛﾜﾝ", // Classic Matrix Katakana
+        "αβγδεζηθικλμνξοπρστυφχψω", // Greek
+        "π∑∫√∞≈≠" // Math
+    ];
+    const chars = charSets.join("").split("");
 
-    // Track state of each rain column
+    // Setup multi-layered drops to create a 3D depth effect
     let drops = [];
     
     function initDrops() {
-        columns = Math.floor(width / fontSize);
+        width = canvas.width = window.innerWidth;
+        height = canvas.height = window.innerHeight;
+        
+        // We will define columns based on a base grid size
+        const baseGrid = 16;
+        const columns = Math.floor(width / baseGrid);
         drops = [];
+        
         for (let i = 0; i < columns; i++) {
+            // Assign each column to one of 3 depth layers: 0 (back), 1 (mid), 2 (front)
+            const layer = Math.random() < 0.2 ? 2 : (Math.random() < 0.5 ? 1 : 0);
+            
+            let fontSize, speedMult, baseOpacity, glow;
+            if (layer === 2) {
+                fontSize = 18;      // Large front layer
+                speedMult = 1.6;     // Fast
+                baseOpacity = 0.75; // Highly visible
+                glow = true;
+            } else if (layer === 1) {
+                fontSize = 13;      // Mid layer
+                speedMult = 1.0;     // Normal
+                baseOpacity = 0.45; // Moderate visibility
+                glow = false;
+            } else {
+                fontSize = 9;       // Back layer
+                speedMult = 0.5;     // Slow
+                baseOpacity = 0.2;  // Faint background
+                glow = false;
+            }
+
             drops.push({
-                x: i * fontSize,
-                y: Math.random() * -height, // Start random distance off-screen
-                speed: 1 + Math.random() * 2, // Varied vertical speed
-                opacity: 0.15 + Math.random() * 0.85,
-                charIndex: Math.floor(Math.random() * chars.length)
+                x: i * baseGrid,
+                y: Math.random() * -height, // Random starting position off-screen
+                layer: layer,
+                fontSize: fontSize,
+                speed: speedMult * (0.8 + Math.random() * 0.4), // randomize speed slightly
+                baseOpacity: baseOpacity,
+                opacity: baseOpacity,
+                glow: glow,
+                charIndex: Math.floor(Math.random() * chars.length),
+                colorType: i % 4 === 0 ? 'pink' : (i % 4 === 1 ? 'cyan' : 'blue'), // Palette variety
+                highlightTimer: 0 // For mouse interaction flare
             });
         }
     }
     
     initDrops();
 
-    // Debounced Resize handler to prevent stuttering
+    // Mouse coordinates tracker
+    let mouseX = -1000;
+    let mouseY = -1000;
+    window.addEventListener('mousemove', e => {
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+    });
+    
+    // Clear mouse when it leaves screen
+    window.addEventListener('mouseleave', () => {
+        mouseX = -1000;
+        mouseY = -1000;
+    });
+
     let resizeTimer;
     window.addEventListener('resize', () => {
         clearTimeout(resizeTimer);
-        resizeTimer = setTimeout(() => {
-            width = canvas.width = window.innerWidth;
-            height = canvas.height = window.innerHeight;
-            initDrops();
-        }, 150);
+        resizeTimer = setTimeout(initDrops, 150);
     });
 
-    // Throttled drawing loop to run at 30 FPS for optimal performance and CPU efficiency
+    // Throttled draw at 30 FPS for low CPU/GPU load
     let lastTime = 0;
     const fps = 30;
     const interval = 1000 / fps;
@@ -881,45 +927,84 @@ function initMatrixRain() {
         if (delta < interval) return;
         lastTime = timestamp - (delta % interval);
 
-        // Subtly clear the canvas with a trailing black layer
-        ctx.fillStyle = 'rgba(2, 6, 23, 0.12)'; // Fades trailing drops towards the background color
+        // Trail fade background clear
+        ctx.fillStyle = 'rgba(2, 6, 23, 0.16)'; // Matches portfolio background dark color
         ctx.fillRect(0, 0, width, height);
-
-        ctx.font = `bold ${fontSize}px Courier New, monospace`;
 
         for (let i = 0; i < drops.length; i++) {
             const drop = drops[i];
-            
-            // Randomize character change frequency
-            if (Math.random() > 0.9) {
+
+            // Change character code periodically
+            if (Math.random() > 0.85) {
                 drop.charIndex = Math.floor(Math.random() * chars.length);
             }
             const text = chars[drop.charIndex];
 
-            // Render neon blue or pink character drops
-            const isPink = i % 3 === 0; // 33% pink, 67% blue
-            const isHead = Math.random() > 0.98; // Rare white glow head
+            // Mouse Interaction: If the drop falls close to the cursor, trigger a cyber-flare!
+            const dx = drop.x - mouseX;
+            const dy = drop.y - mouseY;
+            const distance = Math.sqrt(dx * dx + dy * dy);
+            
+            let isLit = false;
+            if (distance < 120) {
+                isLit = true;
+                drop.highlightTimer = 10; // flare duration
+            }
+
+            if (drop.highlightTimer > 0) {
+                drop.highlightTimer--;
+            }
+
+            // Render glowing head or standard trail character
+            const isHead = Math.random() > 0.97;
+            
+            // Set drawing state based on depth & mouse flare
+            ctx.font = `bold ${drop.fontSize}px 'Courier New', Courier, monospace`;
+            
+            if (drop.glow || isLit || drop.highlightTimer > 0) {
+                ctx.shadowBlur = isLit ? 15 : 8;
+                ctx.shadowColor = drop.colorType === 'pink' ? '#ec4899' : (drop.colorType === 'cyan' ? '#06b6d4' : '#0ea5e9');
+            } else {
+                ctx.shadowBlur = 0;
+            }
+
+            // Pick color style
+            let opacity = drop.baseOpacity;
+            if (isLit) {
+                opacity = 0.95; // Brighten up under cursor
+            } else if (drop.highlightTimer > 0) {
+                opacity = drop.baseOpacity + (0.95 - drop.baseOpacity) * (drop.highlightTimer / 10);
+            }
 
             if (isHead) {
-                ctx.fillStyle = `rgba(255, 255, 255, ${drop.opacity})`;
-            } else if (isPink) {
-                ctx.fillStyle = `rgba(236, 72, 153, ${drop.opacity * 0.7})`; // Pink
+                ctx.fillStyle = `rgba(255, 255, 255, ${opacity * 1.2})`;
             } else {
-                ctx.fillStyle = `rgba(14, 165, 233, ${drop.opacity * 0.7})`; // Blue
+                if (drop.colorType === 'pink') {
+                    ctx.fillStyle = `rgba(236, 72, 153, ${opacity})`; // Neon pink
+                } else if (drop.colorType === 'cyan') {
+                    ctx.fillStyle = `rgba(6, 182, 212, ${opacity})`; // Cyber cyan
+                } else {
+                    ctx.fillStyle = `rgba(14, 165, 233, ${opacity})`; // Neon blue
+                }
             }
 
             ctx.fillText(text, drop.x, drop.y);
 
-            // Move the drop
-            drop.y += fontSize * drop.speed * 0.45;
+            // Move drops down based on speed
+            const speed = drop.speed * (isLit ? 1.8 : 1.0); // speed up slightly when flared by mouse
+            drop.y += drop.fontSize * speed * 0.45;
 
-            // Reset drop once it leaves the viewport
+            // Reset drop loop
             if (drop.y > height && Math.random() > 0.975) {
-                drop.y = -fontSize;
-                drop.speed = 1 + Math.random() * 2;
-                drop.opacity = 0.15 + Math.random() * 0.85;
+                drop.y = -drop.fontSize * 2;
+                drop.speed = (drop.layer === 2 ? 1.6 : (drop.layer === 1 ? 1.0 : 0.5)) * (0.8 + Math.random() * 0.4);
+                drop.charIndex = Math.floor(Math.random() * chars.length);
+                drop.highlightTimer = 0;
             }
         }
+        
+        // Reset shadow blur for other canvas draws to be clean
+        ctx.shadowBlur = 0;
     }
 
     requestAnimationFrame(render);
