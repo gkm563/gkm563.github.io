@@ -3,6 +3,7 @@
 
 // === PORTFOLIO GLOBAL STATE ===
 let currentLiCategory = 'All';
+let isLinkedInExpanded = false;
 
 // === LINKEDIN HIGHLIGHTS LOGIC ===
 // Categorize posts automatically using keywords/hashtags
@@ -126,10 +127,31 @@ function renderLinkedInPosts() {
 
     if (filtered.length === 0) {
         container.innerHTML = `<p style="grid-column: 1/-1; text-align: center; color: #94a3b8; padding: 3rem;">No LinkedIn highlights found for this category.</p>`;
+        const toggleContainer = document.getElementById('linkedin-toggle-container');
+        if (toggleContainer) toggleContainer.style.display = 'none';
         return;
     }
 
-    filtered.forEach(post => {
+    // Toggle button visibility based on post count
+    const toggleContainer = document.getElementById('linkedin-toggle-container');
+    const toggleBtn = document.getElementById('linkedin-toggle-btn');
+    if (filtered.length > 3) {
+        if (toggleContainer) toggleContainer.style.display = 'block';
+        if (toggleBtn) {
+            if (isLinkedInExpanded) {
+                toggleBtn.innerHTML = 'Show Less Highlights <i class="fas fa-chevron-up"></i>';
+            } else {
+                toggleBtn.innerHTML = 'Show More Highlights <i class="fas fa-chevron-down"></i>';
+            }
+        }
+    } else {
+        if (toggleContainer) toggleContainer.style.display = 'none';
+    }
+
+    // Slice list to show only 3 posts if collapsed
+    const renderList = isLinkedInExpanded ? filtered : filtered.slice(0, 3);
+
+    renderList.forEach(post => {
         const card = document.createElement('div');
         card.className = 'linkedin-card';
         card.setAttribute('data-aos', 'fade-up');
@@ -169,6 +191,7 @@ function renderLinkedInPosts() {
 
 function filterLiCategory(category) {
     currentLiCategory = category;
+    isLinkedInExpanded = false; // Collapse feed when category changes
     const tabs = document.querySelectorAll('#li-category-tabs .filter-tab');
     tabs.forEach(tab => {
         const text = tab.textContent.trim();
@@ -532,6 +555,27 @@ document.addEventListener('DOMContentLoaded', () => {
     fetchLinkedInPosts();
     fetchGitHubRepos();
     initMatrixRain();
+
+    // LinkedIn Show More / Show Less handler
+    const liToggleBtn = document.getElementById('linkedin-toggle-btn');
+    if (liToggleBtn) {
+        liToggleBtn.addEventListener('click', () => {
+            isLinkedInExpanded = !isLinkedInExpanded;
+            renderLinkedInPosts();
+            
+            // Scroll back to top of the feed if collapsed
+            if (!isLinkedInExpanded) {
+                const liSection = document.getElementById('linkedin-section');
+                if (liSection) {
+                    const topPos = liSection.getBoundingClientRect().top + window.scrollY - 80;
+                    window.scrollTo({
+                        top: topPos,
+                        behavior: 'smooth'
+                    });
+                }
+            }
+        });
+    }
     
     // 2. Setup voice narrator and chatbot
     setupVoiceNarrator();

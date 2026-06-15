@@ -143,7 +143,7 @@ body {
     height: 40px;
     background-color: rgba(14, 165, 233, 0.2);
     border: 1px solid rgba(14, 165, 233, 0.4);
-    transition: opacity 0.3s, background-color 0.3s, border-color 0.3s, transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transition: opacity 0.3s, background-color 0.3s, border-color 0.3s;
 }
 
 .cursor-follower.hovering {
