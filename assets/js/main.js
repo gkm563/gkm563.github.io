@@ -3,7 +3,7 @@
 
 // === PORTFOLIO GLOBAL STATE ===
 let currentLiCategory = 'All';
-let isLinkedInExpanded = false;
+let linkedinCurrentSlide = 0;
 
 // === LINKEDIN HIGHLIGHTS LOGIC ===
 // Categorize posts automatically using keywords/hashtags
@@ -33,30 +33,23 @@ async function fetchLinkedInPosts() {
     container.innerHTML = `
         <div class="linkedin-skeleton-loader" style="grid-column: 1/-1; display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 2rem; width: 100%;">
             ${Array(3).fill().map(() => `
-                <div class="skeleton-card" style="background: rgba(15, 23, 42, 0.4); border-radius: 16px; border: 1px solid rgba(14, 165, 233, 0.15); padding: 1.5rem; display: flex; flex-direction: column; gap: 1rem;">
+                <div class="skeleton-card">
                     <div style="display: flex; align-items: center; gap: 1rem;">
-                        <div class="skeleton-avatar" style="width: 40px; height: 40px; border-radius: 50%; background: rgba(14, 165, 233, 0.15); animation: pulse 1.5s infinite ease-in-out;"></div>
+                        <div class="skeleton-avatar"></div>
                         <div style="flex-grow: 1; display: flex; flex-direction: column; gap: 0.5rem;">
-                            <div class="skeleton-line" style="height: 12px; width: 60%; background: rgba(14, 165, 233, 0.15); border-radius: 4px; animation: pulse 1.5s infinite ease-in-out;"></div>
-                            <div class="skeleton-line" style="height: 10px; width: 80%; background: rgba(14, 165, 233, 0.15); border-radius: 4px; animation: pulse 1.5s infinite ease-in-out;"></div>
+                            <div class="skeleton-line short"></div>
+                            <div class="skeleton-line medium"></div>
                         </div>
                     </div>
                     <div style="display: flex; flex-direction: column; gap: 0.5rem; margin-top: 1rem;">
-                        <div class="skeleton-line" style="height: 10px; width: 100%; background: rgba(14, 165, 233, 0.15); border-radius: 4px; animation: pulse 1.5s infinite ease-in-out;"></div>
-                        <div class="skeleton-line" style="height: 10px; width: 95%; background: rgba(14, 165, 233, 0.15); border-radius: 4px; animation: pulse 1.5s infinite ease-in-out;"></div>
-                        <div class="skeleton-line" style="height: 10px; width: 40%; background: rgba(14, 165, 233, 0.15); border-radius: 4px; animation: pulse 1.5s infinite ease-in-out;"></div>
+                        <div class="skeleton-line"></div>
+                        <div class="skeleton-line medium"></div>
+                        <div class="skeleton-line short"></div>
                     </div>
-                    <div class="skeleton-image" style="height: 180px; background: rgba(14, 165, 233, 0.1); border-radius: 8px; margin-top: 1rem; animation: pulse 1.5s infinite ease-in-out;"></div>
+                    <div class="skeleton-image"></div>
                 </div>
             `).join('')}
         </div>
-        <style>
-            @keyframes pulse {
-                0% { opacity: 0.6; }
-                50% { opacity: 0.3; }
-                100% { opacity: 0.6; }
-            }
-        </style>
     `;
 
     try {
@@ -119,6 +112,10 @@ function renderLinkedInPosts() {
     if (!container) return;
     container.innerHTML = '';
 
+    // Reset slide position when rendering/refreshing categories
+    linkedinCurrentSlide = 0;
+    container.style.transform = 'translateX(0px)';
+
     const posts = (window.PORTFOLIO_DATA && window.PORTFOLIO_DATA.linkedinPosts) ? window.PORTFOLIO_DATA.linkedinPosts : [];
 
     const filtered = posts.filter(post => {
@@ -126,39 +123,27 @@ function renderLinkedInPosts() {
     });
 
     if (filtered.length === 0) {
-        container.innerHTML = `<p style="grid-column: 1/-1; text-align: center; color: #94a3b8; padding: 3rem;">No LinkedIn highlights found for this category.</p>`;
-        const toggleContainer = document.getElementById('linkedin-toggle-container');
-        if (toggleContainer) toggleContainer.style.display = 'none';
+        container.innerHTML = `<p style="grid-column: 1/-1; text-align: center; color: #94a3b8; padding: 3rem; width: 100%;">No LinkedIn highlights found for this category.</p>`;
+        
+        // Hide arrows and dots
+        const prevBtn = document.getElementById('linkedin-prev-btn');
+        const nextBtn = document.getElementById('linkedin-next-btn');
+        const dotsContainer = document.getElementById('linkedin-dots-container');
+        if (prevBtn) prevBtn.style.display = 'none';
+        if (nextBtn) nextBtn.style.display = 'none';
+        if (dotsContainer) dotsContainer.innerHTML = '';
         return;
     }
 
-    // Toggle button visibility based on post count
-    const toggleContainer = document.getElementById('linkedin-toggle-container');
-    const toggleBtn = document.getElementById('linkedin-toggle-btn');
-    if (filtered.length > 3) {
-        if (toggleContainer) toggleContainer.style.display = 'block';
-        if (toggleBtn) {
-            if (isLinkedInExpanded) {
-                toggleBtn.innerHTML = 'Show Less Highlights <i class="fas fa-chevron-up"></i>';
-            } else {
-                toggleBtn.innerHTML = 'Show More Highlights <i class="fas fa-chevron-down"></i>';
-            }
-        }
-    } else {
-        if (toggleContainer) toggleContainer.style.display = 'none';
-    }
-
-    // Slice list to show only 3 posts if collapsed
-    const renderList = isLinkedInExpanded ? filtered : filtered.slice(0, 3);
-
-    renderList.forEach(post => {
+    // Render all filtered posts horizontally inside track
+    filtered.forEach(post => {
         const card = document.createElement('div');
         card.className = 'linkedin-card';
         card.setAttribute('data-aos', 'fade-up');
         card.innerHTML = `
             <div class="linkedin-header">
                 <div class="linkedin-user">
-                    <img src="assets/images/Gautam_Kumar_Maurya.jpg" alt="Gautam Kumar Maurya" class="linkedin-avatar">
+                    <img src="assets/images/Gautam_Kumar_Maurya.jpg" alt="Gautam Kumar Maurya - Data Science & Full-Stack Developer" class="linkedin-avatar">
                     <div class="linkedin-user-info">
                         <h4>Gautam Kumar Maurya</h4>
                         <span>B.Tech CSE (Data Science) student | UIT Prayagraj • ${post.date || 'Recent'}</span>
@@ -170,7 +155,7 @@ function renderLinkedInPosts() {
                 <p>${post.text.replace(/\n/g, '<br>')}</p>
                 ${post.image ? `
                     <div class="linkedin-image-wrapper">
-                        <img src="${post.image}" alt="Post Image" class="linkedin-image" loading="lazy">
+                        <img src="${post.image}" alt="${post.title ? post.title.replace(/"/g, '&quot;') : 'Gautam Kumar Maurya LinkedIn highlight update'}" class="linkedin-image" loading="lazy">
                     </div>
                 ` : ''}
             </div>
@@ -184,14 +169,19 @@ function renderLinkedInPosts() {
         `;
         container.appendChild(card);
     });
-    if (window.cacheSectionOffsets) {
-        setTimeout(window.cacheSectionOffsets, 100);
-    }
+
+    // Initialize/Update the slider layout metrics after content injection
+    setTimeout(() => {
+        updateLinkedInSlider();
+        if (window.cacheSectionOffsets) {
+            window.cacheSectionOffsets();
+        }
+    }, 100);
 }
 
 function filterLiCategory(category) {
     currentLiCategory = category;
-    isLinkedInExpanded = false; // Collapse feed when category changes
+    linkedinCurrentSlide = 0; // Reset slide index when category changes
     const tabs = document.querySelectorAll('#li-category-tabs .filter-tab');
     tabs.forEach(tab => {
         const text = tab.textContent.trim();
@@ -212,14 +202,14 @@ async function fetchGitHubRepos() {
 
     // Loading indicator skeletons
     container.innerHTML = Array(3).fill().map(() => `
-        <div class="project-card skeleton-card" style="padding: 2rem; display: flex; flex-direction: column; gap: 1rem; border: 1px solid rgba(14, 165, 233, 0.15); background: rgba(15, 23, 42, 0.4); border-radius: 10px;">
-            <div style="width: 40px; height: 40px; border-radius: 8px; background: rgba(14, 165, 233, 0.15); animation: pulse 1.5s infinite ease-in-out;"></div>
-            <div style="height: 16px; width: 70%; background: rgba(14, 165, 233, 0.15); border-radius: 4px; animation: pulse 1.5s infinite ease-in-out;"></div>
-            <div style="height: 10px; width: 100%; background: rgba(14, 165, 233, 0.15); border-radius: 4px; animation: pulse 1.5s infinite ease-in-out;"></div>
-            <div style="height: 10px; width: 90%; background: rgba(14, 165, 233, 0.15); border-radius: 4px; animation: pulse 1.5s infinite ease-in-out;"></div>
-            <div style="display: flex; justify-content: space-between; margin-top: auto; padding-top: 1rem;">
-                <div style="height: 12px; width: 30%; background: rgba(14, 165, 233, 0.15); border-radius: 4px; animation: pulse 1.5s infinite ease-in-out;"></div>
-                <div style="height: 12px; width: 25%; background: rgba(14, 165, 233, 0.15); border-radius: 4px; animation: pulse 1.5s infinite ease-in-out;"></div>
+        <div class="skeleton-card">
+            <div class="skeleton-avatar" style="border-radius: 8px;"></div>
+            <div class="skeleton-line heading"></div>
+            <div class="skeleton-line"></div>
+            <div class="skeleton-line medium"></div>
+            <div style="display: flex; justify-content: space-between; margin-top: auto; padding-top: 1rem; width: 100%;">
+                <div class="skeleton-line short" style="height: 12px;"></div>
+                <div class="skeleton-line short" style="height: 12px; width: 20%;"></div>
             </div>
         </div>
     `).join('');
@@ -556,30 +546,90 @@ document.addEventListener('DOMContentLoaded', () => {
     fetchGitHubRepos();
     initMatrixRain();
 
-    // LinkedIn Show More / Show Less handler
-    const liToggleBtn = document.getElementById('linkedin-toggle-btn');
-    if (liToggleBtn) {
-        liToggleBtn.addEventListener('click', () => {
-            isLinkedInExpanded = !isLinkedInExpanded;
-            renderLinkedInPosts();
-            
-            // Scroll back to top of the feed if collapsed
-            if (!isLinkedInExpanded) {
-                const liSection = document.getElementById('linkedin-section');
-                if (liSection) {
-                    const topPos = liSection.getBoundingClientRect().top + window.scrollY - 80;
-                    window.scrollTo({
-                        top: topPos,
-                        behavior: 'smooth'
-                    });
+    // LinkedIn Carousel Navigation handler
+    const prevBtn = document.getElementById('linkedin-prev-btn');
+    const nextBtn = document.getElementById('linkedin-next-btn');
+    if (prevBtn) {
+        prevBtn.addEventListener('click', () => {
+            if (linkedinCurrentSlide > 0) {
+                linkedinCurrentSlide--;
+                updateLinkedInSlider();
+            }
+        });
+    }
+    if (nextBtn) {
+        nextBtn.addEventListener('click', () => {
+            const container = document.getElementById('linkedin-container');
+            if (container) {
+                const cards = container.querySelectorAll('.linkedin-card');
+                const cardsPerView = getCardsPerView();
+                const maxSlide = Math.max(0, cards.length - cardsPerView);
+                if (linkedinCurrentSlide < maxSlide) {
+                    linkedinCurrentSlide++;
+                    updateLinkedInSlider();
                 }
             }
         });
+    }
+
+    // Touch swipe support for LinkedIn Carousel
+    const track = document.getElementById('linkedin-container');
+    if (track) {
+        let touchStartX = 0;
+        let touchEndX = 0;
+        
+        track.addEventListener('touchstart', e => {
+            touchStartX = e.changedTouches[0].screenX;
+        }, { passive: true });
+        
+        track.addEventListener('touchend', e => {
+            touchEndX = e.changedTouches[0].screenX;
+            handleSwipe();
+        }, { passive: true });
+        
+        function handleSwipe() {
+            const swipeThreshold = 50;
+            const diff = touchStartX - touchEndX;
+            const cards = track.querySelectorAll('.linkedin-card');
+            const cardsPerView = getCardsPerView();
+            const maxSlide = Math.max(0, cards.length - cardsPerView);
+            
+            if (diff > swipeThreshold) {
+                if (linkedinCurrentSlide < maxSlide) {
+                    linkedinCurrentSlide++;
+                    updateLinkedInSlider();
+                }
+            } else if (diff < -swipeThreshold) {
+                if (linkedinCurrentSlide > 0) {
+                    linkedinCurrentSlide--;
+                    updateLinkedInSlider();
+                }
+            }
+        }
     }
     
     // 2. Setup voice narrator and chatbot
     setupVoiceNarrator();
     setupChatbot();
+    
+    // Setup Profile Share Widget copy functionality
+    const copyLinkBtn = document.getElementById('share-copy-link');
+    if (copyLinkBtn) {
+        copyLinkBtn.addEventListener('click', () => {
+            const shareUrl = window.location.origin + window.location.pathname;
+            navigator.clipboard.writeText(shareUrl).then(() => {
+                const toast = document.getElementById('share-toast');
+                if (toast) {
+                    toast.classList.add('active');
+                    setTimeout(() => {
+                        toast.classList.remove('active');
+                    }, 3000);
+                }
+            }).catch(err => {
+                console.error('Could not copy link to clipboard: ', err);
+            });
+        });
+    }
     
     // 3. Initialize AOS (Animate on Scroll)
     AOS.init({
@@ -687,12 +737,18 @@ document.addEventListener('DOMContentLoaded', () => {
     // Initial cache run
     cacheSectionOffsets();
 
-    // Rebuild cache on window load and debounced resize
-    window.addEventListener('load', cacheSectionOffsets);
+    // Rebuild cache and update slider position on window load and debounced resize
+    window.addEventListener('load', () => {
+        cacheSectionOffsets();
+        updateLinkedInSlider();
+    });
     let resizeTimer;
     window.addEventListener('resize', () => {
         clearTimeout(resizeTimer);
-        resizeTimer = setTimeout(cacheSectionOffsets, 150);
+        resizeTimer = setTimeout(() => {
+            cacheSectionOffsets();
+            updateLinkedInSlider();
+        }, 150);
     });
 
     window.addEventListener('scroll', () => {
@@ -1052,4 +1108,77 @@ function initMatrixRain() {
     }
 
     requestAnimationFrame(render);
+}
+
+// === LINKEDIN SLIDER HELPER FUNCTIONS ===
+function getCardsPerView() {
+    if (window.innerWidth >= 1024) return 3;
+    if (window.innerWidth >= 768) return 2;
+    return 1;
+}
+
+function updateLinkedInSlider() {
+    const container = document.getElementById('linkedin-container');
+    if (!container) return;
+    const cards = container.querySelectorAll('.linkedin-card');
+    if (cards.length === 0) return;
+
+    const computedStyle = window.getComputedStyle(container);
+    const gap = parseFloat(computedStyle.gap) || 0;
+    const cardWidth = cards[0].getBoundingClientRect().width;
+
+    const cardsPerView = getCardsPerView();
+    const maxSlide = Math.max(0, cards.length - cardsPerView);
+    
+    if (linkedinCurrentSlide > maxSlide) {
+        linkedinCurrentSlide = maxSlide;
+    }
+    if (linkedinCurrentSlide < 0) {
+        linkedinCurrentSlide = 0;
+    }
+
+    // Slide track using computed coordinates
+    const offset = linkedinCurrentSlide * (cardWidth + gap);
+    container.style.transform = `translateX(-${offset}px)`;
+
+    // Enable/disable navigation arrows
+    const prevBtn = document.getElementById('linkedin-prev-btn');
+    const nextBtn = document.getElementById('linkedin-next-btn');
+    if (prevBtn) prevBtn.disabled = (linkedinCurrentSlide === 0);
+    if (nextBtn) nextBtn.disabled = (linkedinCurrentSlide >= maxSlide);
+
+    // Update dots indicator
+    updateLinkedInDots(cards.length, cardsPerView);
+}
+
+function updateLinkedInDots(totalCards, cardsPerView) {
+    const dotsContainer = document.getElementById('linkedin-dots-container');
+    if (!dotsContainer) return;
+    dotsContainer.innerHTML = '';
+
+    const maxSlide = Math.max(0, totalCards - cardsPerView);
+    const prevBtn = document.getElementById('linkedin-prev-btn');
+    const nextBtn = document.getElementById('linkedin-next-btn');
+
+    if (maxSlide === 0) {
+        if (prevBtn) prevBtn.style.display = 'none';
+        if (nextBtn) nextBtn.style.display = 'none';
+        dotsContainer.style.display = 'none';
+        return;
+    } else {
+        if (prevBtn) prevBtn.style.display = 'flex';
+        if (nextBtn) nextBtn.style.display = 'flex';
+        dotsContainer.style.display = 'flex';
+    }
+
+    for (let i = 0; i <= maxSlide; i++) {
+        const dot = document.createElement('div');
+        dot.className = `linkedin-dot ${i === linkedinCurrentSlide ? 'active' : ''}`;
+        dot.setAttribute('aria-label', `Go to slide ${i + 1}`);
+        dot.addEventListener('click', () => {
+            linkedinCurrentSlide = i;
+            updateLinkedInSlider();
+        });
+        dotsContainer.appendChild(dot);
+    }
 }
