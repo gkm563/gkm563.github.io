@@ -320,10 +320,12 @@ function renderFallbackGitHubRepos(container) {
 
 // === VOICE NARRATOR LOGIC ===
 // === 3D CYBERNETIC AVATAR ENGINE ===
+// === 3D CYBERNETIC AVATAR ENGINE ===
 let isAvatarSpeaking = false;
 let activeAvatarScenes = [];
 let targetMouseX = 0;
 let targetMouseY = 0;
+let faceTextureShared = null; // cache texture
 
 function initThreeDAvatar() {
     const toggleCanvas = document.getElementById('avatar-toggle-canvas');
@@ -331,11 +333,23 @@ function initThreeDAvatar() {
 
     activeAvatarScenes = []; // Reset list
 
+    // Crop face from photo and load as texture
+    createCroppedFaceTexture((texture) => {
+        faceTextureShared = texture;
+        // Apply texture to any already initialized materials
+        activeAvatarScenes.forEach(inst => {
+            if (inst.faceMesh && inst.faceMesh.material) {
+                inst.faceMesh.material.map = texture;
+                inst.faceMesh.material.needsUpdate = true;
+            }
+        });
+    });
+
     if (toggleCanvas) {
-        setupSingleAvatarInstance(toggleCanvas, { size: 60, zoom: 2.3, rotateSpeed: 0.01 });
+        setupSingleAvatarInstance(toggleCanvas, { size: 60, zoom: 2.2, rotateSpeed: 0.01 });
     }
     if (chatCanvas) {
-        setupSingleAvatarInstance(chatCanvas, { size: 36, zoom: 2.1, rotateSpeed: 0.008 });
+        setupSingleAvatarInstance(chatCanvas, { size: 36, zoom: 2.0, rotateSpeed: 0.008 });
     }
 
     // Capture cursor coordinate offsets
@@ -349,6 +363,64 @@ function initThreeDAvatar() {
 function onAvatarMouseMove(e) {
     targetMouseX = (e.clientX / window.innerWidth) * 2 - 1;
     targetMouseY = -(e.clientY / window.innerHeight) * 2 + 1;
+}
+
+// Cropping canvas helper
+function createCroppedFaceTexture(callback) {
+    const img = new Image();
+    img.crossOrigin = "anonymous";
+    img.src = "assets/images/Gautam_Kumar_Maurya.jpg";
+    img.onload = () => {
+        const canvas = document.createElement('canvas');
+        const ctx = canvas.getContext('2d');
+        const size = 512;
+        canvas.width = size;
+        canvas.height = size;
+
+        // Crop coordinates centered on Gautam's face in the photo
+        const w = img.naturalWidth;
+        const h = img.naturalHeight;
+        
+        // Estimating face location in 1:1 image: Center X=0.50, Y=0.285, Radius=0.18
+        const faceX = w * 0.50;
+        const faceY = h * 0.285;
+        const faceRadius = w * 0.18;
+
+        ctx.clearRect(0, 0, size, size);
+
+        // Circular feather mask
+        const grad = ctx.createRadialGradient(size/2, size/2, size/2 * 0.72, size/2, size/2, size/2);
+        grad.addColorStop(0, 'rgba(255, 255, 255, 1)');
+        grad.addColorStop(0.85, 'rgba(255, 255, 255, 0.95)');
+        grad.addColorStop(1, 'rgba(255, 255, 255, 0)');
+
+        ctx.fillStyle = grad;
+        ctx.beginPath();
+        ctx.arc(size/2, size/2, size/2, 0, Math.PI * 2);
+        ctx.fill();
+
+        // Overlay photo
+        ctx.globalCompositeOperation = 'source-in';
+        ctx.drawImage(
+            img,
+            faceX - faceRadius,
+            faceY - faceRadius,
+            faceRadius * 2,
+            faceRadius * 2,
+            0,
+            0,
+            size,
+            size
+        );
+        
+        ctx.globalCompositeOperation = 'source-over';
+
+        const texture = new THREE.CanvasTexture(canvas);
+        callback(texture);
+    };
+    img.onerror = () => {
+        console.error("Failed to load Gautam's photo for 3D model mapping.");
+    };
 }
 
 function setupSingleAvatarInstance(canvas, options) {
@@ -369,58 +441,105 @@ function setupSingleAvatarInstance(canvas, options) {
     const avatarGroup = new THREE.Group();
     scene.add(avatarGroup);
 
-    // Cybernetic Polyhedron Head
-    const headGeom = new THREE.IcosahedronGeometry(0.8, 1);
-    const headMat = new THREE.MeshBasicMaterial({
+    // Sculpted Face Plane Geometry (16x16 grid coordinates)
+    const faceGeom = new THREE.PlaneGeometry(1.2, 1.2, 16, 16);
+    const pos = faceGeom.attributes.position;
+    
+    // Mathematically sculpt 3D depth details
+    for (let i = 0; i < pos.count; i++) {
+        const x = pos.getX(i);
+        const y = pos.getY(i);
+        
+        let z = 0;
+        
+        // Round face edges backwards
+        z += 0.22 * (1.0 - (x * x) / (0.6 * 0.6));
+        
+        // Nose bridge ridge
+        const noseWidth = 0.14;
+        if (Math.abs(x) < noseWidth && y > -0.2 && y < 0.26) {
+            const noseFactor = 1.0 - Math.abs(x) / noseWidth;
+            const noseTip = 1.0 - Math.abs(y - 0.05) / 0.25;
+            z += 0.15 * noseFactor * Math.max(0, noseTip);
+        }
+        
+        // Cheeks rounding
+        if (Math.abs(x) > 0.2 && Math.abs(x) < 0.5 && y > -0.15 && y < 0.15) {
+            z += 0.04 * (1.0 - Math.abs(y) / 0.15);
+        }
+        
+        // Chin protrusion
+        if (Math.abs(x) < 0.18 && y < -0.3 && y > -0.5) {
+            const chinFactor = 1.0 - Math.abs(x) / 0.18;
+            z += 0.04 * chinFactor;
+        }
+
+        // Eye socket depressions
+        if (Math.abs(y - 0.16) < 0.08 && Math.abs(x) > 0.16 && Math.abs(x) < 0.36) {
+            z -= 0.03;
+        }
+        
+        pos.setZ(i, z);
+    }
+    
+    // Save sculpted coordinates as base positions
+    const sculptedPositions = new Float32Array(pos.array);
+    faceGeom.computeVertexNormals();
+
+    // Material with photo mapping
+    const faceMat = new THREE.MeshBasicMaterial({
+        color: 0xffffff,
+        side: THREE.DoubleSide,
+        transparent: true,
+        opacity: 0.96,
+        map: faceTextureShared || null
+    });
+    
+    const faceMesh = new THREE.Mesh(faceGeom, faceMat);
+    avatarGroup.add(faceMesh);
+
+    // Glowing cybernetic wireframe grid overlay
+    const wireGeom = faceGeom.clone();
+    const wireMat = new THREE.MeshBasicMaterial({
         color: 0x0ea5e9,
         wireframe: true,
         transparent: true,
-        opacity: 0.7
+        opacity: 0.25,
+        side: THREE.DoubleSide
     });
-    const headMesh = new THREE.Mesh(headGeom, headMat);
-    avatarGroup.add(headMesh);
+    const wireMesh = new THREE.Mesh(wireGeom, wireMat);
+    avatarGroup.add(wireMesh);
 
-    // Glowing coordinate points
-    const pointsMat = new THREE.PointsMaterial({
-        color: 0xec4899,
-        size: 0.05,
-        transparent: true,
-        opacity: 0.9
-    });
-    const headPoints = new THREE.Points(headGeom, pointsMat);
-    avatarGroup.add(headPoints);
-
-    // Holographic eyes/visor
-    const eyeGeom = new THREE.SphereGeometry(0.08, 8, 8);
-    const eyeMat = new THREE.MeshBasicMaterial({ color: 0x06b6d4, wireframe: true });
-    
-    const leftEye = new THREE.Mesh(eyeGeom, eyeMat);
-    leftEye.position.set(-0.25, 0.2, 0.6);
-    avatarGroup.add(leftEye);
-
-    const rightEye = new THREE.Mesh(eyeGeom, eyeMat);
-    rightEye.position.set(0.25, 0.2, 0.6);
-    avatarGroup.add(rightEye);
-
-    // Speech morphing mouth ring
-    const mouthGeom = new THREE.TorusGeometry(0.12, 0.025, 8, 16);
-    const mouthMat = new THREE.MeshBasicMaterial({ color: 0xec4899, wireframe: true });
-    const mouthMesh = new THREE.Mesh(mouthGeom, mouthMat);
-    mouthMesh.position.set(0, -0.28, 0.65);
-    mouthMesh.rotation.x = Math.PI / 2;
-    avatarGroup.add(mouthMesh);
-
-    // Scanner Ring
-    const ringGeom = new THREE.TorusGeometry(1.1, 0.015, 8, 32);
+    // Tilted scan loop scanner ring
+    const ringGeom = new THREE.TorusGeometry(1.05, 0.015, 8, 36);
     const ringMat = new THREE.MeshBasicMaterial({
         color: 0x0ea5e9,
         transparent: true,
-        opacity: 0.45,
+        opacity: 0.5,
         wireframe: true
     });
     const scannerRing = new THREE.Mesh(ringGeom, ringMat);
     scannerRing.rotation.x = Math.PI / 2.3;
     avatarGroup.add(scannerRing);
+
+    // Floating orbital neon particles
+    const particleCount = 25;
+    const particleGeom = new THREE.BufferGeometry();
+    const particlePositions = new Float32Array(particleCount * 3);
+    for (let i = 0; i < particleCount; i++) {
+        particlePositions[i * 3] = (Math.random() - 0.5) * 2.8;
+        particlePositions[i * 3 + 1] = (Math.random() - 0.5) * 2.8;
+        particlePositions[i * 3 + 2] = (Math.random() - 0.5) * 2.0 - 0.5;
+    }
+    particleGeom.setAttribute('position', new THREE.BufferAttribute(particlePositions, 3));
+    const particleMat = new THREE.PointsMaterial({
+        color: 0xec4899,
+        size: 0.035,
+        transparent: true,
+        opacity: 0.7
+    });
+    const particles = new THREE.Points(particleGeom, particleMat);
+    avatarGroup.add(particles);
 
     activeAvatarScenes.push({
         canvas,
@@ -428,11 +547,11 @@ function setupSingleAvatarInstance(canvas, options) {
         scene,
         camera,
         avatarGroup,
-        headMesh,
-        headPoints,
-        leftEye,
-        rightEye,
-        mouthMesh,
+        faceMesh,
+        faceGeom,
+        wireMesh,
+        wireGeom,
+        sculptedPositions,
         scannerRing,
         options,
         currentMouseX: 0,
@@ -452,6 +571,77 @@ function animateThreeDAvatars() {
         const isChatActive = chatWindow ? chatWindow.classList.contains('active') : false;
         const time = Date.now() * 0.001;
 
+        // Perform mouth vertex displacement lip-sync calculations
+        if (isAvatarSpeaking) {
+            const volSim = Math.abs(Math.sin(time * 25)) * 0.75 + Math.random() * 0.25;
+            const mouthCenterY = -0.22;
+            const mouthRadius = 0.20;
+
+            activeAvatarScenes.forEach(inst => {
+                if (!inst.faceGeom) return;
+                const pos = inst.faceGeom.attributes.position;
+
+                for (let i = 0; i < pos.count; i++) {
+                    const x = pos.getX(i);
+                    const y = pos.getY(i);
+                    const baseSlot = i * 3;
+                    const sculptedY = inst.sculptedPositions[baseSlot + 1];
+                    const sculptedZ = inst.sculptedPositions[baseSlot + 2];
+
+                    const dx = x;
+                    const dy = y - mouthCenterY;
+                    const dist = Math.sqrt(dx * dx + dy * dy);
+
+                    if (dist < mouthRadius) {
+                        const factor = (1.0 - dist / mouthRadius) * volSim * 0.08;
+                        // Displace Y down (jaw open), Z forward (lips speak)
+                        pos.setY(i, sculptedY - factor);
+                        pos.setZ(i, sculptedZ + factor * 0.5);
+                    } else {
+                        pos.setY(i, sculptedY);
+                        pos.setZ(i, sculptedZ);
+                    }
+                }
+                pos.needsUpdate = true;
+                inst.faceGeom.computeVertexNormals();
+                
+                // Sync grid overlay
+                if (inst.wireGeom) {
+                    const wPos = inst.wireGeom.attributes.position;
+                    for (let i = 0; i < wPos.count; i++) {
+                        wPos.setY(i, pos.getY(i));
+                        wPos.setZ(i, pos.getZ(i));
+                    }
+                    wPos.needsUpdate = true;
+                    inst.wireGeom.computeVertexNormals();
+                }
+            });
+        } else {
+            // Reset coordinates
+            activeAvatarScenes.forEach(inst => {
+                if (!inst.faceGeom) return;
+                const pos = inst.faceGeom.attributes.position;
+                for (let i = 0; i < pos.count; i++) {
+                    const baseSlot = i * 3;
+                    pos.setY(i, inst.sculptedPositions[baseSlot + 1]);
+                    pos.setZ(i, inst.sculptedPositions[baseSlot + 2]);
+                }
+                pos.needsUpdate = true;
+                inst.faceGeom.computeVertexNormals();
+                
+                if (inst.wireGeom) {
+                    const wPos = inst.wireGeom.attributes.position;
+                    for (let i = 0; i < wPos.count; i++) {
+                        const baseSlot = i * 3;
+                        wPos.setY(i, inst.sculptedPositions[baseSlot + 1]);
+                        wPos.setZ(i, inst.sculptedPositions[baseSlot + 2]);
+                    }
+                    wPos.needsUpdate = true;
+                    inst.wireGeom.computeVertexNormals();
+                }
+            });
+        }
+
         activeAvatarScenes.forEach(inst => {
             const isToggleCanvas = inst.canvas.id === 'avatar-toggle-canvas';
             
@@ -470,31 +660,12 @@ function animateThreeDAvatars() {
             inst.avatarGroup.rotation.y = inst.currentMouseX * 0.35 + (time * 0.1);
             inst.avatarGroup.rotation.x = -inst.currentMouseY * 0.22;
 
-            // Lip-Sync morphing
+            // Jitter face slightly when speaking
             if (isAvatarSpeaking) {
-                const volSim = Math.abs(Math.sin(time * 25)) * 0.75 + Math.random() * 0.25;
-                
-                // Scale mouth
-                inst.mouthMesh.scale.set(1 + volSim * 1.6, 1 + volSim * 1.6, 1);
-                
-                // Jitter head scale slightly
-                const s = 1.0 + volSim * 0.04;
-                inst.headMesh.scale.set(s, s, s);
-                inst.headPoints.scale.set(s, s, s);
-
-                // Morph neon colors between cyan-blue and pink
-                const shift = Math.sin(time * 8) * 0.5 + 0.5;
-                inst.headMesh.material.color.setHSL(0.55 + shift * 0.15, 0.9, 0.5);
-                inst.mouthMesh.material.color.setHSL(0.9 + shift * 0.1, 0.9, 0.55);
+                const talkShift = Math.sin(time * 12) * 0.5 + 0.5;
+                inst.wireMesh.material.color.setHSL(0.55 + talkShift * 0.15, 0.9, 0.5);
             } else {
-                // Reset scales
-                inst.mouthMesh.scale.set(1, 1, 1);
-                inst.headMesh.scale.set(1, 1, 1);
-                inst.headPoints.scale.set(1, 1, 1);
-
-                // Default neon colors
-                inst.headMesh.material.color.setHex(0x0ea5e9);
-                inst.mouthMesh.material.color.setHex(0xec4899);
+                inst.wireMesh.material.color.setHex(0x0ea5e9);
             }
 
             inst.renderer.render(inst.scene, inst.camera);
