@@ -319,15 +319,264 @@ function renderFallbackGitHubRepos(container) {
 }
 
 // === VOICE NARRATOR LOGIC ===
-let speechUtterance = null;
-let isSpeaking = false;
+// === 3D CYBERNETIC AVATAR ENGINE ===
+let isAvatarSpeaking = false;
+let activeAvatarScenes = [];
+let targetMouseX = 0;
+let targetMouseY = 0;
 
+function initThreeDAvatar() {
+    const toggleCanvas = document.getElementById('avatar-toggle-canvas');
+    const chatCanvas = document.getElementById('avatar-chat-canvas');
+
+    activeAvatarScenes = []; // Reset list
+
+    if (toggleCanvas) {
+        setupSingleAvatarInstance(toggleCanvas, { size: 60, zoom: 2.3, rotateSpeed: 0.01 });
+    }
+    if (chatCanvas) {
+        setupSingleAvatarInstance(chatCanvas, { size: 36, zoom: 2.1, rotateSpeed: 0.008 });
+    }
+
+    // Capture cursor coordinate offsets
+    window.removeEventListener('mousemove', onAvatarMouseMove);
+    window.addEventListener('mousemove', onAvatarMouseMove);
+    
+    // Start animation loop
+    animateThreeDAvatars();
+}
+
+function onAvatarMouseMove(e) {
+    targetMouseX = (e.clientX / window.innerWidth) * 2 - 1;
+    targetMouseY = -(e.clientY / window.innerHeight) * 2 + 1;
+}
+
+function setupSingleAvatarInstance(canvas, options) {
+    if (!window.THREE) return;
+    
+    const width = options.size || 60;
+    const height = options.size || 60;
+
+    const scene = new THREE.Scene();
+    
+    const renderer = new THREE.WebGLRenderer({ canvas: canvas, alpha: true, antialias: true });
+    renderer.setSize(width, height);
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+
+    const camera = new THREE.PerspectiveCamera(45, width / height, 0.1, 100);
+    camera.position.z = options.zoom || 2.5;
+
+    const avatarGroup = new THREE.Group();
+    scene.add(avatarGroup);
+
+    // Cybernetic Polyhedron Head
+    const headGeom = new THREE.IcosahedronGeometry(0.8, 1);
+    const headMat = new THREE.MeshBasicMaterial({
+        color: 0x0ea5e9,
+        wireframe: true,
+        transparent: true,
+        opacity: 0.7
+    });
+    const headMesh = new THREE.Mesh(headGeom, headMat);
+    avatarGroup.add(headMesh);
+
+    // Glowing coordinate points
+    const pointsMat = new THREE.PointsMaterial({
+        color: 0xec4899,
+        size: 0.05,
+        transparent: true,
+        opacity: 0.9
+    });
+    const headPoints = new THREE.Points(headGeom, pointsMat);
+    avatarGroup.add(headPoints);
+
+    // Holographic eyes/visor
+    const eyeGeom = new THREE.SphereGeometry(0.08, 8, 8);
+    const eyeMat = new THREE.MeshBasicMaterial({ color: 0x06b6d4, wireframe: true });
+    
+    const leftEye = new THREE.Mesh(eyeGeom, eyeMat);
+    leftEye.position.set(-0.25, 0.2, 0.6);
+    avatarGroup.add(leftEye);
+
+    const rightEye = new THREE.Mesh(eyeGeom, eyeMat);
+    rightEye.position.set(0.25, 0.2, 0.6);
+    avatarGroup.add(rightEye);
+
+    // Speech morphing mouth ring
+    const mouthGeom = new THREE.TorusGeometry(0.12, 0.025, 8, 16);
+    const mouthMat = new THREE.MeshBasicMaterial({ color: 0xec4899, wireframe: true });
+    const mouthMesh = new THREE.Mesh(mouthGeom, mouthMat);
+    mouthMesh.position.set(0, -0.28, 0.65);
+    mouthMesh.rotation.x = Math.PI / 2;
+    avatarGroup.add(mouthMesh);
+
+    // Scanner Ring
+    const ringGeom = new THREE.TorusGeometry(1.1, 0.015, 8, 32);
+    const ringMat = new THREE.MeshBasicMaterial({
+        color: 0x0ea5e9,
+        transparent: true,
+        opacity: 0.45,
+        wireframe: true
+    });
+    const scannerRing = new THREE.Mesh(ringGeom, ringMat);
+    scannerRing.rotation.x = Math.PI / 2.3;
+    avatarGroup.add(scannerRing);
+
+    activeAvatarScenes.push({
+        canvas,
+        renderer,
+        scene,
+        camera,
+        avatarGroup,
+        headMesh,
+        headPoints,
+        leftEye,
+        rightEye,
+        mouthMesh,
+        scannerRing,
+        options,
+        currentMouseX: 0,
+        currentMouseY: 0
+    });
+}
+
+// Single animation loop tracker to prevent stacking
+let avatarAnimFrameId = null;
+function animateThreeDAvatars() {
+    if (avatarAnimFrameId) cancelAnimationFrame(avatarAnimFrameId);
+    
+    function renderLoop() {
+        avatarAnimFrameId = requestAnimationFrame(renderLoop);
+
+        const chatWindow = document.getElementById('chat-window');
+        const isChatActive = chatWindow ? chatWindow.classList.contains('active') : false;
+        const time = Date.now() * 0.001;
+
+        activeAvatarScenes.forEach(inst => {
+            const isToggleCanvas = inst.canvas.id === 'avatar-toggle-canvas';
+            
+            // Performance throttle: don't render hidden elements
+            if (isToggleCanvas && isChatActive) return;
+            if (!isToggleCanvas && !isChatActive) return;
+
+            // Rotate scanner ring
+            inst.scannerRing.rotation.z += 0.015;
+
+            // Interpolate look-at cursor
+            inst.currentMouseX += (targetMouseX - inst.currentMouseX) * 0.08;
+            inst.currentMouseY += (targetMouseY - inst.currentMouseY) * 0.08;
+
+            // Apply rotation matrices
+            inst.avatarGroup.rotation.y = inst.currentMouseX * 0.35 + (time * 0.1);
+            inst.avatarGroup.rotation.x = -inst.currentMouseY * 0.22;
+
+            // Lip-Sync morphing
+            if (isAvatarSpeaking) {
+                const volSim = Math.abs(Math.sin(time * 25)) * 0.75 + Math.random() * 0.25;
+                
+                // Scale mouth
+                inst.mouthMesh.scale.set(1 + volSim * 1.6, 1 + volSim * 1.6, 1);
+                
+                // Jitter head scale slightly
+                const s = 1.0 + volSim * 0.04;
+                inst.headMesh.scale.set(s, s, s);
+                inst.headPoints.scale.set(s, s, s);
+
+                // Morph neon colors between cyan-blue and pink
+                const shift = Math.sin(time * 8) * 0.5 + 0.5;
+                inst.headMesh.material.color.setHSL(0.55 + shift * 0.15, 0.9, 0.5);
+                inst.mouthMesh.material.color.setHSL(0.9 + shift * 0.1, 0.9, 0.55);
+            } else {
+                // Reset scales
+                inst.mouthMesh.scale.set(1, 1, 1);
+                inst.headMesh.scale.set(1, 1, 1);
+                inst.headPoints.scale.set(1, 1, 1);
+
+                // Default neon colors
+                inst.headMesh.material.color.setHex(0x0ea5e9);
+                inst.mouthMesh.material.color.setHex(0xec4899);
+            }
+
+            inst.renderer.render(inst.scene, inst.camera);
+        });
+    }
+    
+    renderLoop();
+}
+
+// === UNIFIED NARRATOR & SPEECH ENGINE ===
+let avatarSpeechUtterance = null;
+let isSpeaking = false; // synced with narrator
+
+function speakAvatarText(text, onStartCallback, onEndCallback) {
+    if (!window.speechSynthesis) return;
+
+    window.speechSynthesis.cancel();
+
+    // Strip HTML formatting
+    const cleanText = text.replace(/<[^>]*>/g, '');
+    avatarSpeechUtterance = new SpeechSynthesisUtterance(cleanText);
+
+    // Apply voice preferences
+    const voiceGenderSelect = document.getElementById('voice-gender');
+    const selectedGender = voiceGenderSelect ? voiceGenderSelect.value : 'female';
+    const voices = window.speechSynthesis.getVoices();
+
+    let selectedVoice = null;
+    if (selectedGender === 'male') {
+        selectedVoice = voices.find(v => v.name.toLowerCase().includes('google uk english male') || 
+                                         v.name.toLowerCase().includes('david') ||
+                                         v.name.toLowerCase().includes('male') ||
+                                         v.lang.startsWith('en'));
+    } else {
+        selectedVoice = voices.find(v => v.name.toLowerCase().includes('google uk english female') || 
+                                         v.name.toLowerCase().includes('zira') ||
+                                         v.name.toLowerCase().includes('female') ||
+                                         v.lang.startsWith('en'));
+    }
+
+    if (selectedVoice) {
+        avatarSpeechUtterance.voice = selectedVoice;
+    }
+
+    avatarSpeechUtterance.rate = 1.0;
+    avatarSpeechUtterance.pitch = selectedGender === 'male' ? 0.95 : 1.05;
+
+    avatarSpeechUtterance.onstart = () => {
+        isAvatarSpeaking = true;
+        toggleVoiceWaveform(true);
+        if (onStartCallback) onStartCallback();
+    };
+
+    avatarSpeechUtterance.onend = () => {
+        isAvatarSpeaking = false;
+        toggleVoiceWaveform(false);
+        if (onEndCallback) onEndCallback();
+    };
+
+    avatarSpeechUtterance.onerror = () => {
+        isAvatarSpeaking = false;
+        toggleVoiceWaveform(false);
+        if (onEndCallback) onEndCallback();
+    };
+
+    window.speechSynthesis.speak(avatarSpeechUtterance);
+}
+
+function toggleVoiceWaveform(show) {
+    const wave = document.getElementById('chat-voice-wave');
+    if (wave) {
+        if (show) wave.classList.add('active');
+        else wave.classList.remove('active');
+    }
+}
+
+// === VOICE NARRATOR LOGIC ===
 function setupVoiceNarrator() {
     const playBtn = document.getElementById('narrator-play-btn');
     const stopBtn = document.getElementById('narrator-stop-btn');
     const pulseDot = document.getElementById('voice-pulse');
     const visualizer = document.getElementById('voice-visualizer');
-    const voiceGenderSelect = document.getElementById('voice-gender');
 
     if (!playBtn) return;
     
@@ -335,16 +584,20 @@ function setupVoiceNarrator() {
         if (isSpeaking) {
             window.speechSynthesis.pause();
             isSpeaking = false;
+            isAvatarSpeaking = false;
             playBtn.innerHTML = '<i class="fas fa-play"></i>';
             pulseDot.classList.remove('active');
             visualizer.classList.remove('active');
+            toggleVoiceWaveform(false);
         } else {
             if (window.speechSynthesis.paused) {
                 window.speechSynthesis.resume();
                 isSpeaking = true;
+                isAvatarSpeaking = true;
                 playBtn.innerHTML = '<i class="fas fa-pause"></i>';
                 pulseDot.classList.add('active');
                 visualizer.classList.add('active');
+                toggleVoiceWaveform(true);
             } else {
                 speakNarrator();
             }
@@ -354,78 +607,34 @@ function setupVoiceNarrator() {
     stopBtn.addEventListener('click', () => {
         window.speechSynthesis.cancel();
         isSpeaking = false;
+        isAvatarSpeaking = false;
         playBtn.innerHTML = '<i class="fas fa-play"></i>';
         stopBtn.disabled = true;
         pulseDot.classList.remove('active');
         visualizer.classList.remove('active');
+        toggleVoiceWaveform(false);
     });
 
     function speakNarrator() {
-        window.speechSynthesis.cancel();
-        
         const scriptText = "Hello there! I'm Gautam Kumar Maurya. Welcome to my digital portfolio! I am currently a B.Tech Computer Science and Engineering student at United Institute of Technology, Prayagraj, specializing in Data Science. I am an open source contributor with Wikimedia, a co-founder of the startup initiative PrayagrajRooms, and I love building full-stack applications with AI workflows. Feel free to explore my projects, check out my LinkedIn updates feed, or have a chat with my AI twin chatbot floating at the bottom right!";
         
-        speechUtterance = new SpeechSynthesisUtterance(scriptText);
-        
-        const voices = window.speechSynthesis.getVoices();
-        const selectedGender = voiceGenderSelect.value;
-        
-        let selectedVoice = null;
-        if (selectedGender === 'male') {
-            selectedVoice = voices.find(voice => voice.name.toLowerCase().includes('google uk english male') || 
-                                                 voice.name.toLowerCase().includes('david') ||
-                                                 voice.name.toLowerCase().includes('male') ||
-                                                 voice.name.toLowerCase().includes('en-us') && voice.name.toLowerCase().includes('guy') ||
-                                                 voice.name.toLowerCase().includes('natural') && voice.lang.startsWith('en'));
-        } else {
-            selectedVoice = voices.find(voice => voice.name.toLowerCase().includes('google uk english female') || 
-                                                 voice.name.toLowerCase().includes('zira') ||
-                                                 voice.name.toLowerCase().includes('female') ||
-                                                 voice.name.toLowerCase().includes('en-us') && voice.name.toLowerCase().includes('jessa') ||
-                                                 voice.lang.startsWith('en'));
-        }
-
-        if (selectedVoice) {
-            speechUtterance.voice = selectedVoice;
-        }
-        
-        speechUtterance.rate = 1.0;
-        speechUtterance.pitch = selectedGender === 'male' ? 0.95 : 1.05;
-        
-        speechUtterance.onstart = () => {
-            isSpeaking = true;
-            playBtn.innerHTML = '<i class="fas fa-pause"></i>';
-            stopBtn.disabled = false;
-            pulseDot.classList.add('active');
-            visualizer.classList.add('active');
-        };
-
-        speechUtterance.onend = () => {
-            isSpeaking = false;
-            playBtn.innerHTML = '<i class="fas fa-play"></i>';
-            stopBtn.disabled = true;
-            pulseDot.classList.remove('active');
-            visualizer.classList.remove('active');
-        };
-
-        speechUtterance.onerror = () => {
-            isSpeaking = false;
-            playBtn.innerHTML = '<i class="fas fa-play"></i>';
-            stopBtn.disabled = true;
-            pulseDot.classList.remove('active');
-            visualizer.classList.remove('active');
-        };
-
-        window.speechSynthesis.speak(speechUtterance);
-    }
-}
-
-if (window.speechSynthesis) {
-    window.speechSynthesis.getVoices();
-    if (window.speechSynthesis.onvoiceschanged !== undefined) {
-        window.speechSynthesis.onvoiceschanged = () => {
-            window.speechSynthesis.getVoices();
-        };
+        speakAvatarText(
+            scriptText,
+            () => {
+                isSpeaking = true;
+                playBtn.innerHTML = '<i class="fas fa-pause"></i>';
+                stopBtn.disabled = false;
+                pulseDot.classList.add('active');
+                visualizer.classList.add('active');
+            },
+            () => {
+                isSpeaking = false;
+                playBtn.innerHTML = '<i class="fas fa-play"></i>';
+                stopBtn.disabled = true;
+                pulseDot.classList.remove('active');
+                visualizer.classList.remove('active');
+            }
+        );
     }
 }
 
@@ -437,6 +646,19 @@ function setupChatbot() {
 
     if (!chatToggle) return;
     
+    // Inject the audio wave visualizer next to status
+    const headerInfo = document.querySelector('.chat-header-info');
+    if (headerInfo) {
+        let wave = document.getElementById('chat-voice-wave');
+        if (!wave) {
+            wave = document.createElement('div');
+            wave.className = 'chat-audio-wave';
+            wave.id = 'chat-voice-wave';
+            wave.innerHTML = '<span></span><span></span><span></span><span></span><span></span>';
+            headerInfo.appendChild(wave);
+        }
+    }
+    
     chatToggle.addEventListener('click', () => {
         chatWindow.classList.toggle('active');
         const badge = chatToggle.querySelector('.badge');
@@ -445,6 +667,9 @@ function setupChatbot() {
 
     chatClose.addEventListener('click', () => {
         chatWindow.classList.remove('active');
+        if (window.speechSynthesis) {
+            window.speechSynthesis.cancel();
+        }
     });
 }
 
@@ -475,6 +700,10 @@ function removeTypingIndicator() {
 }
 
 function sendQuickMessage(text) {
+    if (window.speechSynthesis) {
+        window.speechSynthesis.cancel();
+    }
+    
     addChatMessage(text, 'user');
     showTypingIndicator();
     
@@ -482,6 +711,7 @@ function sendQuickMessage(text) {
         removeTypingIndicator();
         const response = getChatResponse(text);
         addChatMessage(response, 'bot');
+        speakAvatarText(response);
     }, 1000);
 }
 
@@ -492,6 +722,11 @@ function handleChatSubmit(e) {
     if (!text) return;
 
     chatInput.value = '';
+    
+    if (window.speechSynthesis) {
+        window.speechSynthesis.cancel();
+    }
+    
     addChatMessage(text, 'user');
     showTypingIndicator();
     
@@ -499,6 +734,7 @@ function handleChatSubmit(e) {
         removeTypingIndicator();
         const response = getChatResponse(text);
         addChatMessage(response, 'bot');
+        speakAvatarText(response);
     }, 1000);
 }
 
@@ -545,6 +781,7 @@ document.addEventListener('DOMContentLoaded', () => {
     fetchLinkedInPosts();
     fetchGitHubRepos();
     initMatrixRain();
+    initThreeDAvatar();
 
     // LinkedIn Carousel Navigation handler
     const prevBtn = document.getElementById('linkedin-prev-btn');

@@ -736,14 +736,18 @@
 
     <!-- Floating AI Chat Twin Widget -->
     <div class="chatbot-toggle" id="chat-toggle">
-        <i class="fas fa-robot"></i>
+        <div class="avatar-toggle-container">
+            <canvas id="avatar-toggle-canvas"></canvas>
+        </div>
         <span class="badge">AI</span>
     </div>
 
     <div class="chatbot-window" id="chat-window">
         <div class="chat-header">
             <div class="chat-header-profile">
-                <img src="assets/images/Gautam_Kumar_Maurya.jpg" alt="Gautam Kumar Maurya - AI Twin Chatbot Avatar" class="chat-header-avatar">
+                <div class="chat-hologram-viewport">
+                    <canvas id="avatar-chat-canvas"></canvas>
+                </div>
                 <div class="chat-header-info">
                     <h4>Gautam's AI Twin</h4>
                     <span>Active Digital Self</span>
@@ -777,6 +781,7 @@
     <script src="assets/js/data.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     
     <!-- Consolidated Engine -->
     <script src="assets/js/main.js"></script>

@@ -2455,3 +2455,92 @@ section {
     color: var(--success-color);
 }
 
+/* === 3D CYBERNETIC AVATAR STYLES === */
+.avatar-toggle-container {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+}
+
+#avatar-toggle-canvas {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.chat-hologram-viewport {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: 2px solid var(--primary-color);
+    background: rgba(15, 23, 42, 0.6);
+    box-shadow: 0 0 10px rgba(14, 165, 233, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+    animation: hologram-pulse 2s infinite alternate;
+}
+
+#avatar-chat-canvas {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+@keyframes hologram-pulse {
+    0% {
+        border-color: var(--primary-color);
+        box-shadow: 0 0 8px rgba(14, 165, 233, 0.4);
+    }
+    100% {
+        border-color: var(--secondary-color);
+        box-shadow: 0 0 15px rgba(236, 72, 153, 0.6);
+    }
+}
+
+/* Premium Audio Waveform in Chatbot Header */
+.chat-audio-wave {
+    display: none; /* hidden by default, shown during speech */
+    align-items: center;
+    justify-content: center;
+    gap: 3px;
+    height: 20px;
+    margin-left: 0.5rem;
+}
+
+.chat-audio-wave.active {
+    display: flex;
+}
+
+.chat-audio-wave span {
+    display: block;
+    width: 3px;
+    height: 4px;
+    background: linear-gradient(to top, var(--primary-color), var(--secondary-color));
+    border-radius: 2px;
+    animation: bounce-wave 0.8s infinite ease-in-out;
+}
+
+.chat-audio-wave span:nth-child(2) { animation-delay: 0.15s; }
+.chat-audio-wave span:nth-child(3) { animation-delay: 0.3s; }
+.chat-audio-wave span:nth-child(4) { animation-delay: 0.45s; }
+.chat-audio-wave span:nth-child(5) { animation-delay: 0.6s; }
+
+@keyframes bounce-wave {
+    0%, 100% {
+        height: 4px;
+    }
+    50% {
+        height: 18px;
+    }
+}
+
+
