@@ -2543,4 +2543,261 @@ section {
     }
 }
 
+/* === BENTO GRID COLLABORATION SECTION === */
+.bento-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-top: 3rem;
+}
+
+.bento-card {
+    background: rgba(15, 23, 42, 0.45);
+    border: 1px solid rgba(14, 165, 233, 0.1);
+    border-radius: 20px;
+    padding: 2.25rem 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    position: relative;
+    overflow: hidden;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.bento-card:hover {
+    transform: translateY(-6px);
+    background: rgba(15, 23, 42, 0.6);
+}
+
+/* Bento Themes & Glows (Apple/Google Style Color Pops) */
+.bento-theme-blue {
+    border-color: rgba(14, 165, 233, 0.15);
+}
+.bento-theme-blue:hover {
+    border-color: rgba(14, 165, 233, 0.5);
+    box-shadow: 0 0 25px rgba(14, 165, 233, 0.25);
+}
+.bento-theme-blue .bento-icon {
+    color: var(--primary-color);
+    background: rgba(14, 165, 233, 0.1);
+    text-shadow: 0 0 10px rgba(14, 165, 233, 0.3);
+}
+.bento-theme-blue .bento-badge {
+    background: rgba(14, 165, 233, 0.15);
+    color: #38bdf8;
+    border: 1px solid rgba(14, 165, 233, 0.3);
+}
+
+.bento-theme-pink {
+    border-color: rgba(236, 72, 153, 0.15);
+}
+.bento-theme-pink:hover {
+    border-color: rgba(236, 72, 153, 0.5);
+    box-shadow: 0 0 25px rgba(236, 72, 153, 0.25);
+}
+.bento-theme-pink .bento-icon {
+    color: var(--secondary-color);
+    background: rgba(236, 72, 153, 0.1);
+    text-shadow: 0 0 10px rgba(236, 72, 153, 0.3);
+}
+.bento-theme-pink .bento-badge {
+    background: rgba(236, 72, 153, 0.15);
+    color: #f472b6;
+    border: 1px solid rgba(236, 72, 153, 0.3);
+}
+
+.bento-theme-orange {
+    border-color: rgba(249, 115, 22, 0.15);
+}
+.bento-theme-orange:hover {
+    border-color: rgba(249, 115, 22, 0.5);
+    box-shadow: 0 0 25px rgba(249, 115, 22, 0.25);
+}
+.bento-theme-orange .bento-icon {
+    color: #f97316;
+    background: rgba(249, 115, 22, 0.1);
+    text-shadow: 0 0 10px rgba(249, 115, 22, 0.3);
+}
+.bento-theme-orange .bento-badge {
+    background: rgba(249, 115, 22, 0.15);
+    color: #fb923c;
+    border: 1px solid rgba(249, 115, 22, 0.3);
+}
+
+.bento-theme-green {
+    border-color: rgba(34, 197, 94, 0.15);
+}
+.bento-theme-green:hover {
+    border-color: rgba(34, 197, 94, 0.5);
+    box-shadow: 0 0 25px rgba(34, 197, 94, 0.25);
+}
+.bento-theme-green .bento-icon {
+    color: #22c55e;
+    background: rgba(34, 197, 94, 0.1);
+    text-shadow: 0 0 10px rgba(34, 197, 94, 0.3);
+}
+.bento-theme-green .bento-badge {
+    background: rgba(34, 197, 94, 0.15);
+    color: #4ade80;
+    border: 1px solid rgba(34, 197, 94, 0.3);
+}
+
+.bento-theme-purple {
+    border-color: rgba(168, 85, 247, 0.15);
+}
+.bento-theme-purple:hover {
+    border-color: rgba(168, 85, 247, 0.5);
+    box-shadow: 0 0 25px rgba(168, 85, 247, 0.25);
+}
+.bento-theme-purple .bento-icon {
+    color: #a855f7;
+    background: rgba(168, 85, 247, 0.1);
+    text-shadow: 0 0 10px rgba(168, 85, 247, 0.3);
+}
+.bento-theme-purple .bento-badge {
+    background: rgba(168, 85, 247, 0.15);
+    color: #c084fc;
+    border: 1px solid rgba(168, 85, 247, 0.3);
+}
+
+.bento-theme-cyan {
+    border-color: rgba(6, 182, 212, 0.15);
+}
+.bento-theme-cyan:hover {
+    border-color: rgba(6, 182, 212, 0.5);
+    box-shadow: 0 0 25px rgba(6, 182, 212, 0.25);
+}
+.bento-theme-cyan .bento-icon {
+    color: #06b6d4;
+    background: rgba(6, 182, 212, 0.1);
+    text-shadow: 0 0 10px rgba(6, 182, 212, 0.3);
+}
+.bento-theme-cyan .bento-badge {
+    background: rgba(6, 182, 212, 0.15);
+    color: #22d3ee;
+    border: 1px solid rgba(6, 182, 212, 0.3);
+}
+
+.bento-theme-red {
+    border-color: rgba(239, 68, 68, 0.15);
+}
+.bento-theme-red:hover {
+    border-color: rgba(239, 68, 68, 0.5);
+    box-shadow: 0 0 25px rgba(239, 68, 68, 0.25);
+}
+.bento-theme-red .bento-icon {
+    color: #ef4444;
+    background: rgba(239, 68, 68, 0.1);
+    text-shadow: 0 0 10px rgba(239, 68, 68, 0.3);
+}
+.bento-theme-red .bento-badge {
+    background: rgba(239, 68, 68, 0.15);
+    color: #f87171;
+    border: 1px solid rgba(239, 68, 68, 0.3);
+}
+
+/* Bento Layout Span Overrides */
+.bento-card.col-span-2 {
+    grid-column: span 2;
+}
+
+@media (max-width: 1024px) {
+    .bento-card.col-span-2 {
+        grid-column: span 2;
+    }
+    .bento-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .bento-card.col-span-2 {
+        grid-column: span 1;
+    }
+    .bento-grid {
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+    }
+}
+
+/* Inner Bento Layout Components */
+.bento-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.bento-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.35rem;
+    transition: all 0.3s ease;
+}
+
+.bento-card:hover .bento-icon {
+    transform: scale(1.1) rotate(-5deg);
+}
+
+.bento-badge {
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    padding: 4px 12px;
+    border-radius: 30px;
+    text-transform: uppercase;
+}
+
+.bento-content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.65rem;
+    height: 100%;
+}
+
+.bento-content h3 {
+    font-size: 1.35rem;
+    font-weight: 600;
+    color: #fff;
+    transition: color 0.3s ease;
+}
+
+.bento-content p {
+    font-size: 0.92rem;
+    line-height: 1.6;
+    color: #94a3b8;
+    margin: 0;
+}
+
+.bento-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: auto;
+    padding-top: 1rem;
+}
+
+.bento-tag {
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: #cbd5e1;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 3px 10px;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+}
+
+.bento-card:hover .bento-tag {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.15);
+}
+
+
 
