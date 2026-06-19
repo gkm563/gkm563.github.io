@@ -969,7 +969,7 @@ function sendQuickMessage(text) {
     if (text === 'Tell me your story') userDisplayMessage = window.PORTFOLIO_TRANSLATIONS[activeLang].chat_opt_story;
     else if (text === 'What is PDFBAZI?') userDisplayMessage = window.PORTFOLIO_TRANSLATIONS[activeLang].chat_opt_pdfbazi;
     else if (text === 'Show hackathon wins') userDisplayMessage = window.PORTFOLIO_TRANSLATIONS[activeLang].chat_opt_wins;
-    else if (text === 'How can we collaborate?') userDisplayMessage = window.PORTFOLIO_TRANSLATIONS[activeLang].chat_opt_collab;
+    else if (text === 'How can I collaborate?') userDisplayMessage = window.PORTFOLIO_TRANSLATIONS[activeLang].chat_opt_collab;
     
     addChatMessage(userDisplayMessage, 'user');
     showTypingIndicator();

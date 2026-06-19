@@ -288,7 +288,7 @@ window.PORTFOLIO_TRANSLATIONS = {
         chat_opt_story: "Tell me your story",
         chat_opt_pdfbazi: "What is PDFBAZI?",
         chat_opt_wins: "Show hackathon wins",
-        chat_opt_collab: "How can we collaborate?",
+        chat_opt_collab: "How can I collaborate?",
 
         // Chat Responses
         chat_resp_story: "I am currently pursuing a B.Tech in Computer Science and Engineering, specializing in Data Science at United Institute of Technology, Prayagraj. I serve as CTO at two startups  <strong>Vidnya</strong> and <strong>PrayagrajRooms</strong>  and have been approached by 7+ startups for technical leadership. I have built 5+ AI agents, 9 cybersecurity tools, 4 OSINT tools, and 10+ websites. I also lead developer communities (GFG UIT, GSA, GDG), impacting 650+ members through GSA and 580+ through GFG, with 15+ technical events organized. For me, software development is about writing code that creates tangible, real-world impact.",
@@ -329,7 +329,7 @@ window.PORTFOLIO_TRANSLATIONS = {
         // About Section
         about_title: "मेरे बारे में",
         about_heading: "मेरा कोड, मेरी कहानी: तर्क और वास्तविक दुनिया के प्रभाव का मेल",
-        about_para_1: "नमस्कार! मैं <strong>गौतम कुमार मौर्य (GKM)</strong> हूँ। तकनीक के क्षेत्र में मेरा सफर एक सरल लक्ष्य से प्रेरित है: ऐसे समझदार और स्केलेबल समाधान बनाना जो हमारे समाज की वास्तविक समस्याओं को हल कर सकें। यूनाइटेड इंस्टीट्यूट ऑफ टेक्नोलॉजी, प्रयागराज से डेटा साइंस में विशेषता के साथ बी.टेक कंप्यूटर साइंस के छात्र के रूप में, मैं कोड को केवल निर्देश नहीं, बल्कि सकारात्मक बदलाव का एक माध्यम मानता हूँ।",
+        about_para_1: "नमस्कार! मैं <strong>गौतम कुमार मौर्य (GKM)</strong> हूँ। तकनीक के क्षेत्र में मेरा सफर एक सरल लक्ष्य से प्रेरित है: ऐसे समझदार और स्केलेबल समाधान बनाना जो समाज की वास्तविक समस्याओं को हल कर सकें। यूनाइटेड इंस्टीट्यूट ऑफ टेक्नोलॉजी, प्रयागराज से डेटा साइंस में विशेषता के साथ बी.टेक कंप्यूटर साइंस के छात्र के रूप में, मैं कोड को केवल निर्देश नहीं, बल्कि सकारात्मक बदलाव का एक माध्यम मानता हूँ।",
 
         // Narrator Module
         narrator_title: "गौतम का वॉयस नरेटर",
@@ -515,7 +515,7 @@ window.PORTFOLIO_TRANSLATIONS = {
         lead_card4_title: "कोर टीम सदस्य",
         lead_card4_inst: "गूगल डेवलपर स्टूडेंट क्लब्स (GDSC) यूआईटी",
         lead_card4_date: "गूगल डेवलपर समुदाय",
-        lead_card4_desc: "हमारे कैंपस टेक्नोलॉजी समुदाय को बढ़ाने में मदद की। कोडिंग सेशन आयोजित किए, स्पीकर पैनल का समन्वय किया और छात्रों के लिए व्यावहारिक कार्यशालाओं का नेतृत्व किया।",
+        lead_card4_desc: "कैंपस के टेक्नोलॉजी समुदाय को बढ़ाने में मदद की। कोडिंग सेशन आयोजित किए, स्पीकर पैनल का समन्वय किया और छात्रों के लिए व्यावहारिक कार्यशालाओं का नेतृत्व किया।",
         lead_card4_chip1: "600+ डेवलपर्स",
         lead_card4_chip2: "कार्यशाला प्रमुख",
         lead_card4_chip3: "GDSC कोर",
@@ -535,7 +535,7 @@ window.PORTFOLIO_TRANSLATIONS = {
         ach_card1_title: "प्रथम स्थान - वेबडाई हैकथॉन",
         ach_card1_inst: "एनिग्मा XIII टेक फेस्ट",
         ach_card1_date: "राष्ट्रीय स्तर",
-        ach_card1_desc: "एनिग्मा में अपनी टीम को जीत दिलाई, जहाँ हमने 24 घंटे की कठिन कोडिंग प्रतियोगिता में एक एंड-टू-एंड फुल-स्टैक डैशबोर्ड बनाया।",
+        ach_card1_desc: "एनिग्मा में अपनी टीम को जीत दिलाई, जहाँ मैंने 24 घंटे की कठिन कोडिंग प्रतियोगिता में एक एंड-टू-एंड फुल-स्टैक डैशबोर्ड बनाया।",
         ach_card1_chip1: "1st / 100+ टीमें",
         ach_card1_chip2: "फुल-स्टैक देव",
         ach_card1_chip3: "24 घंटे हैकथॉन",
@@ -600,7 +600,7 @@ window.PORTFOLIO_TRANSLATIONS = {
         chat_opt_story: "अपनी कहानी बताएं",
         chat_opt_pdfbazi: "PDFBAZI क्या है?",
         chat_opt_wins: "हैकथॉन जीतें दिखाएं",
-        chat_opt_collab: "हम कैसे सहयोग कर सकते हैं?",
+        chat_opt_collab: "मैं कैसे सहयोग कर सकता हूँ?",
 
         // Chat Responses
         chat_resp_story: "मैं वर्तमान में यूनाइटेड इंस्टीट्यूट ऑफ टेक्नोलॉजी, प्रयागराज से डेटा साइंस में स्पेशलाइजेशन के साथ कंप्यूटर साइंस (बी.टेक) की पढ़ाई कर रहा हूँ। मेरा लक्ष्य ऐसी तकनीक विकसित करना है जो लोगों के जीवन को आसान बनाए। मैं एकेडमिक्स में यूनिवर्सिटी रैंक 5 बनाए रखने के साथ-साथ प्रयागराज रूम्स स्टार्टअप और विकिमीडिया ओपन सोर्स में सक्रिय योगदान देता हूँ। मेरे लिए कोडिंग केवल प्रोग्रामिंग नहीं, बल्कि बदलाव लाने का ज़रिया है।",
