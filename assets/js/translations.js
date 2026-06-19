@@ -179,7 +179,7 @@ window.PORTFOLIO_TRANSLATIONS = {
         lead_card1_title: "Technical Head",
         lead_card1_inst: "GeeksforGeeks (GFG) Campus UIT",
         lead_card1_date: "Developer Community",
-        lead_card1_desc: "Guiding technical events for our campus developer ecosystem. I structure algorithm challenges, evaluate coding competition submissions, and coordinate study jams to improve algorithmic literacy.",
+        lead_card1_desc: "Guiding technical events for the campus developer ecosystem. I structure algorithm challenges, evaluate coding competition submissions, and coordinate study jams to improve algorithmic literacy.",
         lead_card1_chip1: "500+ Attendees",
         lead_card1_chip2: "DSA Challenges",
         lead_card1_chip3: "Mentorship",
@@ -203,7 +203,7 @@ window.PORTFOLIO_TRANSLATIONS = {
         lead_card4_title: "Core Team Member",
         lead_card4_inst: "Google Developer Student Clubs (GDSC) UIT",
         lead_card4_date: "Google Developer Community",
-        lead_card4_desc: "Helped scale our campus technology community. Organized programming jams, coordinated speaker panels, and led hands-on development workshops for student developers.",
+        lead_card4_desc: "Helped scale the campus technology community. Organized programming jams, coordinated speaker panels, and led hands-on development workshops for student developers.",
         lead_card4_chip1: "600+ Developers",
         lead_card4_chip2: "Workshop Leader",
         lead_card4_chip3: "GDSC Core",
@@ -292,7 +292,7 @@ window.PORTFOLIO_TRANSLATIONS = {
 
         // Chat Responses
         chat_resp_story: "I am currently pursuing a B.Tech in Computer Science and Engineering, specializing in Data Science at United Institute of Technology, Prayagraj. I serve as CTO at two startups  <strong>Vidnya</strong> and <strong>PrayagrajRooms</strong>  and have been approached by 7+ startups for technical leadership. I have built 5+ AI agents, 9 cybersecurity tools, 4 OSINT tools, and 10+ websites. I also lead developer communities (GFG UIT, GSA, GDG), impacting 650+ members through GSA and 580+ through GFG, with 15+ technical events organized. For me, software development is about writing code that creates tangible, real-world impact.",
-        chat_resp_rooms: "Praveen and I co-founded <strong>PrayagrajRooms</strong> to address a major student housing crisis in Prayagraj. Outstation B.Tech students faced endless broker fees and unverified room details. We built a verified, direct-contact web portal where students connect with property owners brokers-free. It has been a rewarding journey in local entrepreneurship and product design!",
+        chat_resp_rooms: "I co-founded <strong>PrayagrajRooms</strong> alongside my friend Praveen to address a major student housing crisis in Prayagraj. Outstation B.Tech students faced endless broker fees and unverified room details. I built a verified, direct-contact web portal where students connect with property owners brokers-free. It has been a rewarding journey in local entrepreneurship and product design!",
         chat_resp_pdfbazi: "<strong>PDFBAZI</strong> is a client-side web application designed to split, merge, compress, and watermark PDFs entirely offline. I built this tool to protect user privacy. All file operations happen securely inside the browser, eliminating the need to upload sensitive documents to external servers.",
         chat_resp_campusclick: "<strong>CampusClick</strong> is an interactive, unified student announcement and event registration portal. Built to replace cluttered WhatsApp groups, it enables college departments to broadcast official notices, manage registrations, and post digital bulletin updates directly to students in real-time.",
         chat_resp_hackathon: "ð  I love applying technical skills under pressure. Academically, I ranked <strong>Rank 5 university-wide</strong> in the AKTU 1st Year Exams and hold Rank 1 in Data Structures at UIT. In hackathons, I secured <strong>1st Place</strong> at WebDie (ENIGMA XIII), <strong>1st Place</strong> in the GDG Technical Quiz, and <strong>1st Place</strong> in the WikiClub UIT Open Source Contribution Sprint, where I successfully merged 7 core patches.",
@@ -355,7 +355,7 @@ window.PORTFOLIO_TRANSLATIONS = {
 
         project_desc_campusclick: "विभागों और छात्रों के बीच सूचनाओं के आदान-प्रदान को आसान बनाने के लिए मैंने इस कॉलेज पोर्टल का निर्माण किया। यह रियल-टाइम शेड्यूलिंग डैशबोर्ड की मदद से सूचनाओं की देरी को कम करता है।",
         project_desc_pdfbazi: "Frustrated by tools that compromise document privacy, I engineered this local-first PDF editor. It performs heavy splitting, merging, and compression operations directly in the browser, keeping sensitive data 100% secure.",
-        services_title: "हम कैसे साथ काम कर सकते हैं",
+        services_title: "मैं कैसे सहयोग कर सकता हूँ",
         services_badge_dev: "प्रोडक्शन डेव",
         services_badge_ai: "ऑटोमेशन एआई",
         services_badge_security: "साइबर सुरक्षा",
@@ -429,7 +429,7 @@ window.PORTFOLIO_TRANSLATIONS = {
         li_empty: "इस श्रेणी के लिए कोई लिंक्डइन अपडेट नहीं मिला।",
 
         // Bento Services Section
-        services_title: "हम कैसे साथ काम कर सकते हैं",
+        services_title: "मैं कैसे सहयोग कर सकता हूँ",
         services_subtitle: "मजबूत फुल-स्टैक इंजीनियरिंग, कस्टम एआई आर्किटेक्चर और व्यापक साइबर सुरक्षा ऑडिटिंग के साथ स्टार्टअप, ओपन-सोर्स समुदायों और एंटरप्राइज टीमों को सशक्त बनाना।",
         services_badge_dev: "डेवलपमेंट",
         services_badge_ai: "एआई सिस्टम",
@@ -604,7 +604,7 @@ window.PORTFOLIO_TRANSLATIONS = {
 
         // Chat Responses
         chat_resp_story: "मैं वर्तमान में यूनाइटेड इंस्टीट्यूट ऑफ टेक्नोलॉजी, प्रयागराज से डेटा साइंस में स्पेशलाइजेशन के साथ कंप्यूटर साइंस (बी.टेक) की पढ़ाई कर रहा हूँ। मेरा लक्ष्य ऐसी तकनीक विकसित करना है जो लोगों के जीवन को आसान बनाए। मैं एकेडमिक्स में यूनिवर्सिटी रैंक 5 बनाए रखने के साथ-साथ प्रयागराज रूम्स स्टार्टअप और विकिमीडिया ओपन सोर्स में सक्रिय योगदान देता हूँ। मेरे लिए कोडिंग केवल प्रोग्रामिंग नहीं, बल्कि बदलाव लाने का ज़रिया है।",
-        chat_resp_rooms: "**प्रयागराज रूम्स (PrayagrajRooms)** की शुरुआत मैंने और मेरे दोस्त प्रवीन ने मिलकर की थी। प्रयागराज में बाहर से आने वाले छात्रों को रहने के लिए कमरे और पीजी ढूंढने में काफी परेशानी होती थी और दलाल उनसे भारी कमीशन लेते थे। हमने एक ऐसा डायरेक्ट पोर्टल बनाया जहाँ छात्र सीधे मकान मालिकों से संपर्क कर सकते हैं, वह भी बिना किसी ब्रोकरेज के!",
+        chat_resp_rooms: "**प्रयागराज रूम्स (PrayagrajRooms)** की शुरुआत मैंने अपने मित्र प्रवीन के साथ मिलकर की थी। प्रयागराज में बाहर से आने वाले छात्रों को रहने के लिए कमरे और पीजी ढूंढने में काफी परेशानी होती थी और दलाल उनसे भारी कमीशन लेते थे। मैंने एक ऐसा डायरेक्ट पोर्टल बनाया जहाँ छात्र सीधे मकान मालिकों से संपर्क कर सकते हैं, वह भी बिना किसी ब्रोकरेज के!",
         chat_resp_pdfbazi: "**PDFBAZI** एक पूरी तरह से सुरक्षित और ऑफलाइन काम करने वाला पीडीएफ यूटिलिटी टूल है। कई बार ऑनलाइन पीडीएफ टूल्स पर संवेदनशील दस्तावेज अपलोड करने से डेटा लीक का खतरा रहता है। इसीलिए मैंने इसे इस तरह से बनाया कि सारा काम (मर्ज, स्प्लिट, कंप्रेस) सीधे आपके ब्राउज़र में ही हो जाए और डेटा 100% सुरक्षित रहे।",
         chat_resp_campusclick: "**CampusClick** कॉलेज कैंपस के लिए एक स्मार्ट इवेंट और घोषणा पोर्टल है। इसे व्हाट्सएप ग्रुपों के शोर को खत्म करने के लिए बनाया गया था, ताकि छात्र और कॉलेज विभाग बिना किसी देरी के सीधे और स्पष्ट रूप से महत्वपूर्ण सूचनाएं और इवेंट शेड्यूल साझा कर सकें।",
         chat_resp_hackathon: "🏆 अकादमिक रूप से, मैंने एकेटीयू (AKTU) के फर्स्ट ईयर यूनिवर्सिटी परीक्षा में **रैंक 5** हासिल की है और कॉलेज में डीएसए में प्रथम स्थान पर हूँ। प्रतियोगिताओं की बात करें तो मैंने WebDie (ENIGMA XIII) में **प्रथम स्थान**, GDG क्विज में **प्रथम स्थान** और विकीक्लब यूआईटी ओपन सोर्स स्प्रिंट में **प्रथम स्थान** हासिल किया है, जहाँ मैंने एक हफ्ते में 7 पैच मर्ज किए थे।",
@@ -622,7 +622,7 @@ window.PORTFOLIO_LINKEDIN_TRANSLATED = {
         {
             id: "li-1",
             title: "Co-founded PrayagrajRooms to solve student housing issues! 🏠✨",
-            text: "Excited to share that my friend Praveen and I have co-founded PrayagrajRooms! 🚀 Finding rooms and PG options in Prayagraj has been a major pain point for outstation B.Tech students. We are building a scalable, verified platform where students can search, contact owners, and filter listings without brokers. Grateful for the early support! #startup #prayagraj #studenthousing #proptech #founder #webdevelopment",
+            text: "Excited to share that I co-founded PrayagrajRooms alongside my friend Praveen! 🚀 Finding rooms and PG options in Prayagraj has been a major pain point for outstation B.Tech students. I am building a scalable, verified platform where students can search, contact owners, and filter listings without brokers. Grateful for the early support! #startup #prayagraj #studenthousing #proptech #founder #webdevelopment",
             date: "June 10, 2026",
             category: "Earnings",
             image: null,
@@ -632,7 +632,7 @@ window.PORTFOLIO_LINKEDIN_TRANSLATED = {
         {
             id: "li-2",
             title: "Designed and Deployed the Official BuildX India 2026 Hackathon Website! 💻🌐",
-            text: "Thrilled to have worked as the Website Developer and Technical Team Lead for BuildX India 2026! We built a high-performance, responsive registration portal managing hundreds of participants. Managing registration state, event schedules, and user queries in real-time was a massive learning experience in production scaling and UI/UX design. Check it out on my GitHub! #buildx #hackathon #webdev #javascript #leadership",
+            text: "Thrilled to have worked as the Website Developer and Technical Team Lead for BuildX India 2026! I built a high-performance, responsive registration portal managing hundreds of participants. Managing registration state, event schedules, and user queries in real-time was a massive learning experience in production scaling and UI/UX design. Check it out on my GitHub! #buildx #hackathon #webdev #javascript #leadership",
             date: "June 03, 2026",
             category: "Hackathons",
             image: null,
@@ -662,7 +662,7 @@ window.PORTFOLIO_LINKEDIN_TRANSLATED = {
         {
             id: "li-5",
             title: "Freelance Project Success: Digital Portal for Vindhya Millets! 🌾📊",
-            text: "Grateful to collaborate with Vindhya Millets, a local agricultural startup supported by Government of India ecosystem initiatives. We built their digital presence, setting up an optimization and catalog dashboard to improve outreach and catalog downloads. Applying tech to empower local agricultural startups is an incredibly rewarding experience! #freelance #startup #webdev #impactcoding #vindhyamillets",
+            text: "Grateful to collaborate with Vindhya Millets, a local agricultural startup supported by Government of India ecosystem initiatives. I built their digital presence, setting up an optimization and catalog dashboard to improve outreach and catalog downloads. Applying tech to empower local agricultural startups is an incredibly rewarding experience! #freelance #startup #webdev #impactcoding #vindhyamillets",
             date: "April 28, 2026",
             category: "Earnings",
             image: null,
@@ -674,7 +674,7 @@ window.PORTFOLIO_LINKEDIN_TRANSLATED = {
         {
             id: "li-1",
             title: "छात्रों की रहने की समस्या के समाधान के लिए प्रयागराज रूम्स की शुरुआत! 🏠✨",
-            text: "यह साझा करते हुए बेहद उत्साह हो रहा है कि मेरे मित्र प्रवीन और मैंने मिलकर प्रयागराज रूम्स (PrayagrajRooms) की सह-स्थापना की है! 🚀 प्रयागराज में बाहर से आने वाले बी.टेक छात्रों के लिए पीजी और कमरे ढूंढना एक बहुत बड़ा सिरदर्द रहा है। हम एक ऐसा स्केलेबल और सत्यापित प्लेटफॉर्म बना रहे हैं जहाँ छात्र बिना किसी दलाली के सीधे मकान मालिकों से संपर्क कर सकते हैं। शुरुआती सहयोग के लिए सभी का धन्यवाद! #startup #prayagraj #studenthousing #proptech #founder #webdevelopment",
+            text: "यह साझा करते हुए बेहद उत्साह हो रहा है कि मैंने अपने मित्र प्रवीन के साथ मिलकर प्रयागराज रूम्स (PrayagrajRooms) की सह-स्थापना की है! 🚀 प्रयागराज में बाहर से आने वाले बी.टेक छात्रों के लिए पीजी और कमरे ढूंढना एक बहुत बड़ा सिरदर्द रहा है। मैं एक ऐसा स्केलेबल और सत्यापित प्लेटफॉर्म बना रहा हूँ जहाँ छात्र बिना किसी दलाली के सीधे मकान मालिकों से संपर्क कर सकते हैं। शुरुआती सहयोग के लिए सभी का धन्यवाद! #startup #prayagraj #studenthousing #proptech #founder #webdevelopment",
             date: "10 जून, 2026",
             category: "Earnings",
             image: null,
@@ -684,7 +684,7 @@ window.PORTFOLIO_LINKEDIN_TRANSLATED = {
         {
             id: "li-2",
             title: "बिल्डएक्स इंडिया 2026 हैकथॉन की आधिकारिक वेबसाइट को लाइव किया! 💻🌐",
-            text: "बिल्डएक्स इंडिया 2026 के लिए लीड वेब डेवलपर और टेक्निकल टीम लीडर के रूप में काम करने का शानदार अनुभव! हमने सैकड़ों डेवलपर्स के पंजीकरण को सुचारू रूप से संभालने के लिए एक हाई-परफॉर्मेंस, सुरक्षित पोर्टल बनाया। वास्तविक समय में रजिस्ट्रेशन मैनेजमेंट, इवेंट शेड्यूलिंग और तकनीकी समस्याओं को सुलझाना मेरे लिए कोडिंग और लीडरशिप का एक बड़ा सबक रहा। कोड गिटहब पर उपलब्ध है! #buildx #hackathon #webdev #javascript #leadership",
+            text: "बिल्डएक्स इंडिया 2026 के लिए लीड वेब डेवलपर और टेक्निकल टीम लीडर के रूप में काम करने का शानदार अनुभव! मैंने सैकड़ों डेवलपर्स के पंजीकरण को सुचारू रूप से संभालने के लिए एक हाई-परफॉर्मेंस, सुरक्षित पोर्टल बनाया। वास्तविक समय में रजिस्ट्रेशन मैनेजमेंट, इवेंट शेड्यूलिंग और तकनीकी समस्याओं को सुलझाना मेरे लिए कोडिंग और लीडरशिप का एक बड़ा सबक रहा। कोड गिटहब पर उपलब्ध है! #buildx #hackathon #webdev #javascript #leadership",
             date: "03 जून, 2026",
             category: "Hackathons",
             image: null,
@@ -714,7 +714,7 @@ window.PORTFOLIO_LINKEDIN_TRANSLATED = {
         {
             id: "li-5",
             title: "फ्रीलांस प्रोजेक्ट की सफलता: विंध्य मिलेट्स के लिए डिजिटल पोर्टल बनाया! 🌾📊",
-            text: "भारत सरकार द्वारा समर्थित कृषि स्टार्टअप विंध्य मिलेट्स (Vindhya Millets) के साथ फ्रीलांस प्रोजेक्ट को सफलतापूर्वक पूरा किया! हमने उनका डिजिटल कैटलॉग पोर्टल और डाउनलोड डैशबोर्ड तैयार किया जिससे स्थानीय किसानों और उत्पादों की पहुंच बढ़ सके। अपनी कोडिंग स्किल्स का उपयोग स्थानीय स्टार्टअप्स को सशक्त बनाने में करना सच में संतोषजनक है। #freelance #startup #webdev #impactcoding #vindhyamillets",
+            text: "भारत सरकार द्वारा समर्थित कृषि स्टार्टअप विंध्य मिलेट्स (Vindhya Millets) के साथ फ्रीलांस प्रोजेक्ट को सफलतापूर्वक पूरा किया! मैंने उनका डिजिटल कैटलॉग पोर्टल और डाउनलोड डैशबोर्ड तैयार किया जिससे स्थानीय किसानों और उत्पादों की पहुंच बढ़ सके। अपनी कोडिंग स्किल्स का उपयोग स्थानीय स्टार्टअप्स को सशक्त बनाने में करना सच में संतोषजनक है। #freelance #startup #webdev #impactcoding #vindhyamillets",
             date: "28 अप्रैल, 2026",
             category: "Earnings",
             image: null,

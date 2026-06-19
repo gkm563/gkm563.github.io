@@ -7,7 +7,7 @@ window.PORTFOLIO_DATA = {
     {
       id: "li-1",
       title: "Co-founded PrayagrajRooms to solve student housing issues! 🏠✨",
-      text: "Excited to share that my friend Praveen and I have co-founded PrayagrajRooms! 🚀 Finding rooms and PG options in Prayagraj has been a major pain point for outstation B.Tech students. We are building a scalable, verified platform where students can search, contact owners, and filter listings without brokers. Grateful for the early support! #startup #prayagraj #studenthousing #proptech #founder #webdevelopment",
+      text: "Excited to share that I co-founded PrayagrajRooms alongside my friend Praveen! 🚀 Finding rooms and PG options in Prayagraj has been a major pain point for outstation B.Tech students. I am building a scalable, verified platform where students can search, contact owners, and filter listings without brokers. Grateful for the early support! #startup #prayagraj #studenthousing #proptech #founder #webdevelopment",
       date: "June 10, 2026",
       category: "Events",
       image: null,
@@ -17,7 +17,7 @@ window.PORTFOLIO_DATA = {
     {
       id: "li-2",
       title: "Designed and Deployed the Official BuildX India 2026 Hackathon Website! 💻🌐",
-      text: "Thrilled to have worked as the Website Developer and Technical Team Lead for BuildX India 2026! We built a high-performance, responsive registration portal managing hundreds of participants. Managing registration state, event schedules, and user queries in real-time was a massive learning experience in production scaling and UI/UX design. Check it out on my GitHub! #buildx #hackathon #webdev #javascript #leadership",
+      text: "Thrilled to have worked as the Website Developer and Technical Team Lead for BuildX India 2026! I built a high-performance, responsive registration portal managing hundreds of participants. Managing registration state, event schedules, and user queries in real-time was a massive learning experience in production scaling and UI/UX design. Check it out on my GitHub! #buildx #hackathon #webdev #javascript #leadership",
       date: "June 03, 2026",
       category: "Hackathons",
       image: null,
@@ -47,7 +47,7 @@ window.PORTFOLIO_DATA = {
     {
       id: "li-5",
       title: "Freelance Project Success: Digital Portal for Vindhya Millets! 🌾📊",
-      text: "Grateful to collaborate with Vindhya Millets, a local agricultural startup supported by Government of India ecosystem initiatives. We built their digital presence, setting up an optimization and catalog dashboard to improve outreach and catalog downloads. Applying tech to empower local agricultural startups is an incredibly rewarding experience! #freelance #startup #webdev #impactcoding #vindhyamillets",
+      text: "Grateful to collaborate with Vindhya Millets, a local agricultural startup supported by Government of India ecosystem initiatives. I built their digital presence, setting up an optimization and catalog dashboard to improve outreach and catalog downloads. Applying tech to empower local agricultural startups is an incredibly rewarding experience! #freelance #startup #webdev #impactcoding #vindhyamillets",
       date: "April 28, 2026",
       category: "Earnings",
       image: null,
