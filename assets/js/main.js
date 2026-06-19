@@ -190,15 +190,9 @@ function renderLinkedInPosts() {
     linkedinCurrentSlide = 0;
     container.style.transform = 'translateX(0px)';
 
-    const activeLang = localStorage.getItem('portfolio-lang') || 'en';
-    let posts = [];
-    if (activeLang === 'hi') {
-        posts = window.PORTFOLIO_LINKEDIN_TRANSLATED.hi;
-    } else {
-        posts = (window.PORTFOLIO_DATA && window.PORTFOLIO_DATA.linkedinPosts && window.PORTFOLIO_DATA.linkedinPosts.length > 0) 
-            ? window.PORTFOLIO_DATA.linkedinPosts 
-            : window.PORTFOLIO_LINKEDIN_TRANSLATED.en;
-    }
+    let posts = (window.PORTFOLIO_DATA && window.PORTFOLIO_DATA.linkedinPosts && window.PORTFOLIO_DATA.linkedinPosts.length > 0) 
+        ? window.PORTFOLIO_DATA.linkedinPosts 
+        : window.PORTFOLIO_LINKEDIN_TRANSLATED.en;
 
     const filtered = posts.filter(post => {
         return currentLiCategory === 'All' || post.category === currentLiCategory;

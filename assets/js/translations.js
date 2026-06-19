@@ -625,7 +625,7 @@ window.PORTFOLIO_LINKEDIN_TRANSLATED = {
             text: "Excited to share that my friend Praveen and I have co-founded PrayagrajRooms! 🚀 Finding rooms and PG options in Prayagraj has been a major pain point for outstation B.Tech students. We are building a scalable, verified platform where students can search, contact owners, and filter listings without brokers. Grateful for the early support! #startup #prayagraj #studenthousing #proptech #founder #webdevelopment",
             date: "June 10, 2026",
             category: "Earnings",
-            image: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=600&q=80",
+            image: null,
             link: "https://www.linkedin.com/in/gkm563",
             stats: { likes: 1420, comments: 112 }
         },
@@ -635,7 +635,7 @@ window.PORTFOLIO_LINKEDIN_TRANSLATED = {
             text: "Thrilled to have worked as the Website Developer and Technical Team Lead for BuildX India 2026! We built a high-performance, responsive registration portal managing hundreds of participants. Managing registration state, event schedules, and user queries in real-time was a massive learning experience in production scaling and UI/UX design. Check it out on my GitHub! #buildx #hackathon #webdev #javascript #leadership",
             date: "June 03, 2026",
             category: "Hackathons",
-            image: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=600&q=80",
+            image: null,
             link: "https://www.linkedin.com/in/gkm563",
             stats: { likes: 1180, comments: 94 }
         },
@@ -645,7 +645,7 @@ window.PORTFOLIO_LINKEDIN_TRANSLATED = {
             text: "Proud to share that I won 1st Place in the 1-week Open Source Contribution Sprint organized by WikiClub UIT! 🌍 I submitted and merged multiple patches to Wikimedia infrastructure, working with Phabricator and Gerrit review systems. Contributing to global open-source projects has improved my understanding of peer review, code quality, and git collaboration. Thank you to everyone for the guidance! #opensource #wikipedia #wikimedia #git #gerrit #hackathon",
             date: "May 25, 2026",
             category: "Achievements",
-            image: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=600&q=80",
+            image: null,
             link: "https://www.linkedin.com/in/gkm563",
             stats: { likes: 1560, comments: 135 }
         },
@@ -655,7 +655,7 @@ window.PORTFOLIO_LINKEDIN_TRANSLATED = {
             text: "Super happy to share that I secured Rank 5 across the entire college in my B.Tech 1st Year examinations at United Institute of Technology, Prayagraj (AKTU)! 📚 Balanced coding, community events, and academic studies. Hard work pays off, and being honored by Dainik Jagran and UP Board Secretary pushes me to maintain the momentum in my Data Science stream. Let's keep building! #academicexcellence #topper #aktu #university #datastructures #BTech",
             date: "May 12, 2026",
             category: "Achievements",
-            image: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=600&q=80",
+            image: null,
             link: "https://www.linkedin.com/in/gkm563",
             stats: { likes: 1890, comments: 167 }
         },
@@ -665,7 +665,7 @@ window.PORTFOLIO_LINKEDIN_TRANSLATED = {
             text: "Grateful to collaborate with Vindhya Millets, a local agricultural startup supported by Government of India ecosystem initiatives. We built their digital presence, setting up an optimization and catalog dashboard to improve outreach and catalog downloads. Applying tech to empower local agricultural startups is an incredibly rewarding experience! #freelance #startup #webdev #impactcoding #vindhyamillets",
             date: "April 28, 2026",
             category: "Earnings",
-            image: "https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=600&q=80",
+            image: null,
             link: "https://www.linkedin.com/in/gkm563",
             stats: { likes: 980, comments: 54 }
         }
@@ -677,7 +677,7 @@ window.PORTFOLIO_LINKEDIN_TRANSLATED = {
             text: "यह साझा करते हुए बेहद उत्साह हो रहा है कि मेरे मित्र प्रवीन और मैंने मिलकर प्रयागराज रूम्स (PrayagrajRooms) की सह-स्थापना की है! 🚀 प्रयागराज में बाहर से आने वाले बी.टेक छात्रों के लिए पीजी और कमरे ढूंढना एक बहुत बड़ा सिरदर्द रहा है। हम एक ऐसा स्केलेबल और सत्यापित प्लेटफॉर्म बना रहे हैं जहाँ छात्र बिना किसी दलाली के सीधे मकान मालिकों से संपर्क कर सकते हैं। शुरुआती सहयोग के लिए सभी का धन्यवाद! #startup #prayagraj #studenthousing #proptech #founder #webdevelopment",
             date: "10 जून, 2026",
             category: "Earnings",
-            image: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=600&q=80",
+            image: null,
             link: "https://www.linkedin.com/in/gkm563",
             stats: { likes: 1420, comments: 112 }
         },
@@ -687,7 +687,7 @@ window.PORTFOLIO_LINKEDIN_TRANSLATED = {
             text: "बिल्डएक्स इंडिया 2026 के लिए लीड वेब डेवलपर और टेक्निकल टीम लीडर के रूप में काम करने का शानदार अनुभव! हमने सैकड़ों डेवलपर्स के पंजीकरण को सुचारू रूप से संभालने के लिए एक हाई-परफॉर्मेंस, सुरक्षित पोर्टल बनाया। वास्तविक समय में रजिस्ट्रेशन मैनेजमेंट, इवेंट शेड्यूलिंग और तकनीकी समस्याओं को सुलझाना मेरे लिए कोडिंग और लीडरशिप का एक बड़ा सबक रहा। कोड गिटहब पर उपलब्ध है! #buildx #hackathon #webdev #javascript #leadership",
             date: "03 जून, 2026",
             category: "Hackathons",
-            image: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=600&q=80",
+            image: null,
             link: "https://www.linkedin.com/in/gkm563",
             stats: { likes: 1180, comments: 94 }
         },
@@ -697,7 +697,7 @@ window.PORTFOLIO_LINKEDIN_TRANSLATED = {
             text: "विकीक्लब यूआईटी द्वारा आयोजित 1 सप्ताह के ओपन सोर्स कंट्रीब्यूशन स्प्रिंट में प्रथम स्थान (1st Place) प्राप्त करने की खुशी साझा कर रहा हूँ! 🌍 मैंने गेरिट (Gerrit) और फैब्रिकेटर (Phabricator) के माध्यम से विकिमीडिया फाउंडेशन के कोडबेस में कई सुधार पैच सबमिट और मर्ज किए। वैश्विक ओपन सोर्स प्रोजेक्ट्स में काम करने से मेरे गिट सहयोग और कोड की गुणवत्ता में काफी सुधार हुआ है। सभी मेंटर्स का धन्यवाद! #opensource #wikipedia #wikimedia #git #gerrit #hackathon",
             date: "25 मई, 2026",
             category: "Achievements",
-            image: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=600&q=80",
+            image: null,
             link: "https://www.linkedin.com/in/gkm563",
             stats: { likes: 1560, comments: 135 }
         },
@@ -707,7 +707,7 @@ window.PORTFOLIO_LINKEDIN_TRANSLATED = {
             text: "यूनाइटेड इंस्टीट्यूट ऑफ टेक्नोलॉजी (UIT), प्रयागराज में बी.टेक प्रथम वर्ष की सेमेस्टर परीक्षाओं में पूरे कॉलेज में 5वां स्थान (Rank 5) हासिल करने की बेहद खुशी है! 📚 कोडिंग, तकनीकी आयोजनों और पढ़ाई में संतुलन बनाना चुनौतीपूर्ण था, लेकिन कड़ी मेहनत का फल मिला। दैनिक जागरण और यूपी बोर्ड सचिव द्वारा मिला सम्मान मुझे आगे भी सर्वश्रेष्ठ प्रदर्शन करने की प्रेरणा देता है। #academicexcellence #topper #aktu #university #datastructures #BTech",
             date: "12 मई, 2026",
             category: "Achievements",
-            image: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=600&q=80",
+            image: null,
             link: "https://www.linkedin.com/in/gkm563",
             stats: { likes: 1890, comments: 167 }
         },
@@ -717,7 +717,7 @@ window.PORTFOLIO_LINKEDIN_TRANSLATED = {
             text: "भारत सरकार द्वारा समर्थित कृषि स्टार्टअप विंध्य मिलेट्स (Vindhya Millets) के साथ फ्रीलांस प्रोजेक्ट को सफलतापूर्वक पूरा किया! हमने उनका डिजिटल कैटलॉग पोर्टल और डाउनलोड डैशबोर्ड तैयार किया जिससे स्थानीय किसानों और उत्पादों की पहुंच बढ़ सके। अपनी कोडिंग स्किल्स का उपयोग स्थानीय स्टार्टअप्स को सशक्त बनाने में करना सच में संतोषजनक है। #freelance #startup #webdev #impactcoding #vindhyamillets",
             date: "28 अप्रैल, 2026",
             category: "Earnings",
-            image: "https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=600&q=80",
+            image: null,
             link: "https://www.linkedin.com/in/gkm563",
             stats: { likes: 980, comments: 54 }
         }
