@@ -4,6 +4,80 @@
 // === PORTFOLIO GLOBAL STATE ===
 let currentLiCategory = 'All';
 let linkedinCurrentSlide = 0;
+let currentLang = 'en';
+
+// === BILINGUAL TRANSLATION SWITCHER ===
+function setLanguage(lang) {
+    currentLang = lang;
+    localStorage.setItem('portfolio-lang', lang);
+    
+    // Toggle active class on language toggle buttons
+    const btnEn = document.getElementById('lang-btn-en');
+    const btnHi = document.getElementById('lang-btn-hi');
+    if (btnEn && btnHi) {
+        if (lang === 'hi') {
+            btnEn.classList.remove('active');
+            btnHi.classList.add('active');
+            document.documentElement.lang = 'hi';
+        } else {
+            btnEn.classList.add('active');
+            btnHi.classList.remove('active');
+            document.documentElement.lang = 'en';
+        }
+    }
+
+    // Update all elements with data-translate attribute
+    const elements = document.querySelectorAll('[data-translate]');
+    elements.forEach(el => {
+        const key = el.getAttribute('data-translate');
+        const translation = window.PORTFOLIO_TRANSLATIONS[lang] && window.PORTFOLIO_TRANSLATIONS[lang][key];
+        if (translation !== undefined) {
+            if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
+                el.placeholder = translation;
+            } else {
+                el.innerHTML = translation;
+            }
+        }
+    });
+
+    // Refresh Typed.js subtitle strings
+    refreshTypedSubtitles(lang);
+
+    // Refresh LinkedIn posts
+    renderLinkedInPosts();
+    
+    // Refresh Wikipedia articles
+    renderWikiArticles();
+    
+    // Reset contact form status message to clear previous state messages
+    const formStatus = document.getElementById('form-status');
+    if (formStatus) formStatus.innerHTML = '';
+}
+
+function changeLanguage(lang) {
+    setLanguage(lang);
+}
+
+// Expose functions globally for HTML onclick handlers
+window.changeLanguage = changeLanguage;
+window.setLanguage = setLanguage;
+
+function refreshTypedSubtitles(lang) {
+    if (window.typedInstance) {
+        window.typedInstance.destroy();
+    }
+    
+    const strings = window.PORTFOLIO_TRANSLATIONS[lang] && window.PORTFOLIO_TRANSLATIONS[lang].hero_typed_strings;
+    if (strings && document.getElementById('typed-subtitle')) {
+        window.typedInstance = new Typed('#typed-subtitle', {
+            strings: strings,
+            typeSpeed: 50,
+            backSpeed: 25,
+            backDelay: 1500,
+            loop: true
+        });
+    }
+}
 
 // === LINKEDIN HIGHLIGHTS LOGIC ===
 // Categorize posts automatically using keywords/hashtags
@@ -116,7 +190,15 @@ function renderLinkedInPosts() {
     linkedinCurrentSlide = 0;
     container.style.transform = 'translateX(0px)';
 
-    const posts = (window.PORTFOLIO_DATA && window.PORTFOLIO_DATA.linkedinPosts) ? window.PORTFOLIO_DATA.linkedinPosts : [];
+    const activeLang = localStorage.getItem('portfolio-lang') || 'en';
+    let posts = [];
+    if (activeLang === 'hi') {
+        posts = window.PORTFOLIO_LINKEDIN_TRANSLATED.hi;
+    } else {
+        posts = (window.PORTFOLIO_DATA && window.PORTFOLIO_DATA.linkedinPosts && window.PORTFOLIO_DATA.linkedinPosts.length > 0) 
+            ? window.PORTFOLIO_DATA.linkedinPosts 
+            : window.PORTFOLIO_LINKEDIN_TRANSLATED.en;
+    }
 
     const filtered = posts.filter(post => {
         return currentLiCategory === 'All' || post.category === currentLiCategory;
@@ -184,9 +266,8 @@ function filterLiCategory(category) {
     linkedinCurrentSlide = 0; // Reset slide index when category changes
     const tabs = document.querySelectorAll('#li-category-tabs .filter-tab');
     tabs.forEach(tab => {
-        const text = tab.textContent.trim();
-        const targetText = category === 'All' ? 'All Activity' : (category === 'Behind the Scenes' ? 'Behind the Scenes' : category);
-        if (text === targetText) {
+        const onclickAttr = tab.getAttribute('onclick') || '';
+        if (onclickAttr.includes(`'${category}'`) || onclickAttr.includes(`"${category}"`)) {
             tab.classList.add('active');
         } else {
             tab.classList.remove('active');
@@ -688,26 +769,39 @@ function speakAvatarText(text, onStartCallback, onEndCallback) {
     const cleanText = text.replace(/<[^>]*>/g, '');
     avatarSpeechUtterance = new SpeechSynthesisUtterance(cleanText);
 
+    const activeLang = localStorage.getItem('portfolio-lang') || 'en';
+
     // Apply voice preferences
     const voiceGenderSelect = document.getElementById('voice-gender');
     const selectedGender = voiceGenderSelect ? voiceGenderSelect.value : 'female';
     const voices = window.speechSynthesis.getVoices();
 
     let selectedVoice = null;
-    if (selectedGender === 'male') {
-        selectedVoice = voices.find(v => v.name.toLowerCase().includes('google uk english male') || 
-                                         v.name.toLowerCase().includes('david') ||
-                                         v.name.toLowerCase().includes('male') ||
-                                         v.lang.startsWith('en'));
-    } else {
-        selectedVoice = voices.find(v => v.name.toLowerCase().includes('google uk english female') || 
-                                         v.name.toLowerCase().includes('zira') ||
-                                         v.name.toLowerCase().includes('female') ||
-                                         v.lang.startsWith('en'));
+    if (activeLang === 'hi') {
+        selectedVoice = voices.find(v => v.lang.startsWith('hi') || v.name.toLowerCase().includes('hindi') || v.name.toLowerCase().includes('india'));
+    }
+    
+    if (!selectedVoice) {
+        if (selectedGender === 'male') {
+            selectedVoice = voices.find(v => v.name.toLowerCase().includes('google uk english male') || 
+                                             v.name.toLowerCase().includes('david') ||
+                                             v.name.toLowerCase().includes('male') ||
+                                             v.lang.startsWith('en'));
+        } else {
+            selectedVoice = voices.find(v => v.name.toLowerCase().includes('google uk english female') || 
+                                             v.name.toLowerCase().includes('zira') ||
+                                             v.name.toLowerCase().includes('female') ||
+                                             v.lang.startsWith('en'));
+        }
     }
 
     if (selectedVoice) {
         avatarSpeechUtterance.voice = selectedVoice;
+        avatarSpeechUtterance.lang = selectedVoice.lang;
+    } else if (activeLang === 'hi') {
+        avatarSpeechUtterance.lang = 'hi-IN';
+    } else {
+        avatarSpeechUtterance.lang = 'en-US';
     }
 
     avatarSpeechUtterance.rate = 1.0;
@@ -787,7 +881,8 @@ function setupVoiceNarrator() {
     });
 
     function speakNarrator() {
-        const scriptText = "Hello there! I'm Gautam Kumar Maurya. Welcome to my digital portfolio! I am currently a B.Tech Computer Science and Engineering student at United Institute of Technology, Prayagraj, specializing in Data Science. I am an open source contributor with Wikimedia, a co-founder of the startup initiative PrayagrajRooms, and I love building full-stack applications with AI workflows. Feel free to explore my projects, check out my LinkedIn updates feed, or have a chat with my AI twin chatbot floating at the bottom right!";
+        const activeLang = localStorage.getItem('portfolio-lang') || 'en';
+        const scriptText = window.PORTFOLIO_TRANSLATIONS[activeLang].narrator_script;
         
         speakAvatarText(
             scriptText,
@@ -875,7 +970,14 @@ function sendQuickMessage(text) {
         window.speechSynthesis.cancel();
     }
     
-    addChatMessage(text, 'user');
+    let userDisplayMessage = text;
+    const activeLang = localStorage.getItem('portfolio-lang') || 'en';
+    if (text === 'Tell me your story') userDisplayMessage = window.PORTFOLIO_TRANSLATIONS[activeLang].chat_opt_story;
+    else if (text === 'What is PDFBAZI?') userDisplayMessage = window.PORTFOLIO_TRANSLATIONS[activeLang].chat_opt_pdfbazi;
+    else if (text === 'Show hackathon wins') userDisplayMessage = window.PORTFOLIO_TRANSLATIONS[activeLang].chat_opt_wins;
+    else if (text === 'How can we collaborate?') userDisplayMessage = window.PORTFOLIO_TRANSLATIONS[activeLang].chat_opt_collab;
+    
+    addChatMessage(userDisplayMessage, 'user');
     showTypingIndicator();
     
     setTimeout(() => {
@@ -910,49 +1012,64 @@ function handleChatSubmit(e) {
 }
 
 function getChatResponse(query) {
+    const activeLang = localStorage.getItem('portfolio-lang') || 'en';
     const q = query.toLowerCase();
     
-    if (q.includes('story') || q.includes('journey') || q.includes('about')) {
-        return "I am currently pursuing my B.Tech in Computer Science & Engineering (specializing in Data Science) at UIT Prayagraj. I love building real, useful products, solving problems in DSA, and contributing to open-source systems. Tech is my vehicle for creating local and global impact!";
+    if (q.includes('story') || q.includes('journey') || q.includes('about') || q.includes('कहानी') || q.includes('सफर') || q.includes('परिचय')) {
+        return window.PORTFOLIO_TRANSLATIONS[activeLang].chat_resp_story;
     }
-    if (q.includes('rooms') || q.includes('prayagrajrooms') || q.includes('room')) {
-        return "<b>PrayagrajRooms</b> is a startup Praveen and I co-founded! We are building a verified search platform that connects outstation students directly with PG and room owners in Prayagraj without intermediaries. It solves a huge local pain point.";
+    if (q.includes('rooms') || q.includes('prayagrajrooms') || q.includes('room') || q.includes('कमरा') || q.includes('पीजी')) {
+        return window.PORTFOLIO_TRANSLATIONS[activeLang].chat_resp_rooms;
     }
-    if (q.includes('campusclick') || q.includes('campus click')) {
-        return "<b>CampusClick</b> is an event and announcement student platform built using standard full-stack web tools to improve event coordination, teacher notifications, and student engagement in college campus environments.";
+    if (q.includes('campusclick') || q.includes('campus click') || q.includes('कॉलेज') || q.includes('कैंपस')) {
+        return window.PORTFOLIO_TRANSLATIONS[activeLang].chat_resp_campusclick;
     }
-    if (q.includes('pdfbazi') || q.includes('pdf bazi')) {
-        return "<b>PDFBAZI</b> is an all-in-one PDF utility tool to merge, split, watermark, and compress documents locally, prioritizing browser-side user privacy and high rendering speeds.";
+    if (q.includes('pdfbazi') || q.includes('pdf bazi') || q.includes('पीडीएफ')) {
+        return window.PORTFOLIO_TRANSLATIONS[activeLang].chat_resp_pdfbazi;
     }
-    if (q.includes('buildx') || q.includes('build x')) {
-        return "I designed and deployed the official hackathon website for **BuildX India 2026**. I also served on the technical management team, coordinating participant registrations and portal metrics.";
+    if (q.includes('buildx') || q.includes('build x') || q.includes('बिल्ड')) {
+        return window.PORTFOLIO_TRANSLATIONS[activeLang].chat_resp_buildx || window.PORTFOLIO_TRANSLATIONS[activeLang].chat_resp_hackathon;
     }
-    if (q.includes('hackathon') || q.includes('win') || q.includes('achieve') || q.includes('first rank')) {
-        return "🏆 Achievements include securing <b>1st Place</b> in WebDie (ENIGMA XIII), <b>1st Place</b> in GDG Quiz, and <b>1st Place</b> in the WikiClub UIT Contribution Sprint! Academically, I ranked <b>Top 5 (Rank 5)</b> in B.Tech 1st Year (1st Semester) under AKTU university.";
+    if (q.includes('hackathon') || q.includes('win') || q.includes('achieve') || q.includes('rank') || q.includes('जीत') || q.includes('सफलता') || q.includes('प्रथम') || q.includes('टॉपर')) {
+        return window.PORTFOLIO_TRANSLATIONS[activeLang].chat_resp_hackathon;
     }
-    if (q.includes('open source') || q.includes('wikipedia') || q.includes('wikimedia') || q.includes('gerrit') || q.includes('phabricator')) {
-        return "I am an active contributor to the **Wikimedia** ecosystem and Wikipedia. I have multiple merged patches and ongoing reviews using professional Gerrit and Phabricator collaboration workflows.";
+    if (q.includes('open source') || q.includes('wikipedia') || q.includes('wikimedia') || q.includes('gerrit') || q.includes('विकिपीडिया') || q.includes('ओपन सोर्स')) {
+        return window.PORTFOLIO_TRANSLATIONS[activeLang].chat_resp_opensource;
     }
-    if (q.includes('collaborate') || q.includes('connect') || q.includes('work') || q.includes('contact')) {
-        return "Let's work together! You can message me on <a href='https://linkedin.com/in/gkm563' target='_blank' style='color:#0ea5e9; font-weight:600;'>LinkedIn</a> or email me at <a href='mailto:maurgk212104@gmail.com' style='color:#ec4899; font-weight:600;'>maurgk212104@gmail.com</a>. You can also use the contact form on this page!";
+    if (q.includes('collaborate') || q.includes('connect') || q.includes('work') || q.includes('contact') || q.includes('संपर्क') || q.includes('सहयोग') || q.includes('काम')) {
+        return window.PORTFOLIO_TRANSLATIONS[activeLang].chat_resp_collaborate;
     }
-    if (q.includes('freelance') || q.includes('earning') || q.includes('milestone') || q.includes('millets')) {
-        return "Yes! I do freelance full-stack work. For example, I built the digital outreach page and catalog optimization interface for <b>Vindhya Millets</b>, a government-supported startup.";
+    if (q.includes('freelance') || q.includes('earning') || q.includes('milestone') || q.includes('millets') || q.includes('कमाई') || q.includes('फ्रीलांस')) {
+        return window.PORTFOLIO_TRANSLATIONS[activeLang].chat_resp_freelance;
     }
-    if (q.includes('skills') || q.includes('tech') || q.includes('languages')) {
-        return "My tech arsenal includes Python, C++, C, Java, JavaScript, TypeScript, React, Next.js, Django, Node.js, PHP, MySQL, MongoDB, Docker, Git, OpenCV, and cybersecurity tools.";
+    if (q.includes('skills') || q.includes('tech') || q.includes('languages') || q.includes('कौशल') || q.includes('तकनीक')) {
+        return window.PORTFOLIO_TRANSLATIONS[activeLang].chat_resp_skills;
     }
 
-    return "That's an interesting question! I am Gautam's Digital Twin, so I might not have all the details. Would you like to drop the real Gautam an email via the Contact Form? Or you can message him on LinkedIn!";
+    return window.PORTFOLIO_TRANSLATIONS[activeLang].chat_resp_default;
 }
 
 // === MAIN ENGINE INITIALIZER ===
 document.addEventListener('DOMContentLoaded', () => {
+    // Initialize active language
+    const savedLang = localStorage.getItem('portfolio-lang') || 'en';
+    setLanguage(savedLang);
+
     // 1. Initial renders
     fetchLinkedInPosts();
     fetchGitHubRepos();
+    renderWikiArticles();
     initMatrixRain();
     initThreeDAvatar();
+
+    // Wiki Search Input handler
+    const wikiSearchInput = document.getElementById('wiki-search');
+    if (wikiSearchInput) {
+        wikiSearchInput.addEventListener('input', (e) => {
+            wikiSearchQuery = e.target.value;
+            renderWikiArticles();
+        });
+    }
 
     // LinkedIn Carousel Navigation handler
     const prevBtn = document.getElementById('linkedin-prev-btn');
@@ -1046,21 +1163,7 @@ document.addEventListener('DOMContentLoaded', () => {
         offset: 80,
     });
 
-    // 4. Initialize Typed.js subtitle strings
-    const typed = new Typed('#typed-subtitle', {
-        strings: [
-            'AI & Data Science Engineer | Building Scalable AI Solutions',
-            'Technical Community Leader & Open Source Contributor',
-            'B.Tech CSE (Data Science) @ UIT Prayagraj',
-            'Co-founder @ PrayagrajRooms PG Startup',
-            'Technical Head @ GFG UIT & UDTech India',
-            'Active Patches Merged in Wikimedia & Wikipedia Core'
-        ],
-        typeSpeed: 50,
-        backSpeed: 25,
-        backDelay: 1500,
-        loop: true
-    });
+    // 4. Subtitles handled by language switcher initialization
 
     // 5. Hamburger toggle menu
     const hamburger = document.getElementById('hamburger');
@@ -1246,11 +1349,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // Smooth cursor update loop using linear interpolation (lerp)
             function updateCursorPositions() {
-                // Lerp formula: current + (target - current) * speed
-                dotX += (mouseX - dotX) * 0.25;
-                dotY += (mouseY - dotY) * 0.25;
-                followerX += (mouseX - followerX) * 0.12;
-                followerY += (mouseY - followerY) * 0.12;
+                // Eliminate lag by setting dot position directly to match hardware mouse coordinates instantly
+                dotX = mouseX;
+                dotY = mouseY;
+                followerX += (mouseX - followerX) * 0.15;
+                followerY += (mouseY - followerY) * 0.15;
 
                 cursorDot.style.transform = `translate3d(${dotX}px, ${dotY}px, 0) translate(-50%, -50%)`;
                 cursorFollower.style.transform = `translate3d(${followerX}px, ${followerY}px, 0) translate(-50%, -50%) scale(${followerScale})`;
@@ -1294,7 +1397,9 @@ document.addEventListener('DOMContentLoaded', () => {
             event.preventDefault();
             
             submitBtn.disabled = true;
-            submitBtn.innerHTML = 'Sending... <i class="fas fa-spinner fa-spin"></i>';
+            const activeLang = localStorage.getItem('portfolio-lang') || 'en';
+            const sendingText = activeLang === 'hi' ? 'भेज रहा हूँ...' : 'Sending...';
+            submitBtn.innerHTML = `${sendingText} <i class="fas fa-spinner fa-spin"></i>`;
             formStatus.innerHTML = '';
             
             const data = new FormData(event.target);
@@ -1309,27 +1414,70 @@ document.addEventListener('DOMContentLoaded', () => {
                 });
 
                 if (response.ok) {
-                    formStatus.innerHTML = '<p class="success">Message sent successfully! Thank you.</p>';
+                    const successMsg = activeLang === 'hi' 
+                        ? 'संदेश सफलतापूर्वक भेजा गया! धन्यवाद।' 
+                        : 'Message sent successfully! Thank you.';
+                    formStatus.innerHTML = `<p class="success">${successMsg}</p>`;
                     form.reset();
                 } else {
                     response.json().then(data => {
                         if (Object.hasOwn(data, 'errors')) {
                             formStatus.innerHTML = `<p class="error">${data["errors"].map(error => error["message"]).join(", ")}</p>`;
                         } else {
-                            formStatus.innerHTML = '<p class="error">Something went wrong. Please try again.</p>';
+                            const errorMsg = activeLang === 'hi'
+                                ? 'कुछ गड़बड़ हुई। कृपया पुनः प्रयास करें।'
+                                : 'Something went wrong. Please try again.';
+                            formStatus.innerHTML = `<p class="error">${errorMsg}</p>`;
                         }
                     });
                 }
             } catch (error) {
-                formStatus.innerHTML = '<p class="error">Something went wrong. Please try again.</p>';
+                const errorMsg = activeLang === 'hi'
+                    ? 'कुछ गड़बड़ हुई। कृपया पुनः प्रयास करें।'
+                    : 'Something went wrong. Please try again.';
+                formStatus.innerHTML = `<p class="error">${errorMsg}</p>`;
             } finally {
                 submitBtn.disabled = false;
-                submitBtn.innerHTML = 'Send Message <i class="fas fa-paper-plane"></i>';
+                const sendBtnText = window.PORTFOLIO_TRANSLATIONS[activeLang].contact_btn_email;
+                submitBtn.innerHTML = `<span data-translate="contact_btn_email">${sendBtnText}</span> <i class="fas fa-paper-plane"></i>`;
             }
         }
         form.addEventListener("submit", handleSubmit);
     }
 });
+
+// Global WhatsApp Message redirection helper
+function sendWhatsAppMessage() {
+    const nameInput = document.getElementById('contact-name');
+    const emailInput = document.getElementById('contact-email');
+    const messageInput = document.getElementById('contact-message');
+
+    if (!nameInput || !emailInput || !messageInput) return;
+
+    const name = nameInput.value.trim();
+    const email = emailInput.value.trim();
+    const message = messageInput.value.trim();
+
+    if (!name || !email || !message) {
+        const activeLang = localStorage.getItem('portfolio-lang') || 'en';
+        const alertMsg = activeLang === 'hi' 
+            ? 'कृपया व्हाट्सएप पर भेजने से पहले नाम, ईमेल और संदेश भरें!' 
+            : 'Please fill in Name, Email, and Message before sending via WhatsApp!';
+        alert(alertMsg);
+        return;
+    }
+
+    // TODO: Replace with your real WhatsApp number including country code (no + or spaces), e.g., "918318029013"
+    const phone = "91XXXXXXXXXX"; 
+    
+    // Format a premium, readable markdown text for WhatsApp
+    const text = `*💼 PORTFOLIO INQUIRY*\n\n*👤 Name:* ${name}\n*✉️ Email:* ${email}\n\n*💬 Message:*\n${message}`;
+    const encodedText = encodeURIComponent(text);
+    const whatsappUrl = `https://api.whatsapp.com/send?phone=${phone}&text=${encodedText}`;
+    
+    window.open(whatsappUrl, '_blank');
+}
+window.sendWhatsAppMessage = sendWhatsAppMessage;
 
 // === MATRIX DIGITAL CODE RAIN ENGINE ===
 function initMatrixRain() {
@@ -1590,3 +1738,82 @@ function updateLinkedInDots(totalCards, cardsPerView) {
         dotsContainer.appendChild(dot);
     }
 }
+
+// === WIKI EXPLORER STATE & ENGINE ===
+let currentWikiCategory = 'All';
+let wikiSearchQuery = '';
+
+function renderWikiArticles() {
+    const container = document.getElementById('wiki-articles-container');
+    if (!container) return;
+
+    const activeLang = localStorage.getItem('portfolio-lang') || 'en';
+    const articles = (window.PORTFOLIO_DATA && window.PORTFOLIO_DATA.wikiArticles) ? window.PORTFOLIO_DATA.wikiArticles : [];
+
+    container.innerHTML = '';
+    
+    // Filter articles
+    const filteredArticles = articles.filter(art => {
+        const matchesCategory = (currentWikiCategory === 'All' || art.category === currentWikiCategory);
+        const q = wikiSearchQuery.toLowerCase().trim();
+        const matchesSearch = (!q || 
+            art.titleHi.toLowerCase().includes(q) || 
+            art.titleEn.toLowerCase().includes(q));
+        return matchesCategory && matchesSearch;
+    });
+
+    if (filteredArticles.length === 0) {
+        const emptyMsg = activeLang === 'hi' ? 'कोई लेख नहीं मिला।' : 'No matching articles found.';
+        container.innerHTML = `<p style="text-align: center; color: #94a3b8; padding: 2rem;">${emptyMsg}</p>`;
+        return;
+    }
+
+    filteredArticles.forEach(art => {
+        const item = document.createElement('a');
+        item.className = `os-feed-item cat-${art.category || 'general'}`;
+        item.href = `https://hi.wikipedia.org/wiki/${encodeURIComponent(art.titleHi)}`;
+        item.target = '_blank';
+        item.rel = 'noopener noreferrer';
+        
+        const displayTitle = activeLang === 'hi' 
+            ? `<strong class="wiki-title-primary">${art.titleHi}</strong> <span class="wiki-title-secondary">(${art.titleEn})</span>`
+            : `<strong class="wiki-title-primary">${art.titleEn}</strong> <span class="wiki-title-secondary">(${art.titleHi})</span>`;
+            
+        const ptsText = window.PORTFOLIO_TRANSLATIONS[activeLang].os_pts || 'pts';
+        
+        item.innerHTML = `
+            <div class="wiki-item-info">
+                <span class="wiki-icon"><i class="fab fa-wikipedia-w"></i></span>
+                <div class="wiki-text">
+                    <div class="wiki-title-wrapper">${displayTitle}</div>
+                    <div class="wiki-meta">${art.date}</div>
+                </div>
+            </div>
+            <div style="display: flex; align-items: center; gap: 4px;">
+                <span class="wiki-pts-badge"><i class="fas fa-plus"></i> ${art.points} ${ptsText}</span>
+                <span class="wiki-status-badge">Live</span>
+            </div>
+        `;
+        container.appendChild(item);
+    });
+}
+
+function filterWikiCategory(category) {
+    currentWikiCategory = category;
+    
+    // Update active tab styles
+    const tabs = document.querySelectorAll('#wiki-category-tabs .wiki-filter-tab');
+    tabs.forEach(tab => {
+        const onclickAttr = tab.getAttribute('onclick');
+        if (onclickAttr && onclickAttr.includes(`'${category}'`)) {
+            tab.classList.add('active');
+        } else {
+            tab.classList.remove('active');
+        }
+    });
+    
+    renderWikiArticles();
+}
+
+window.renderWikiArticles = renderWikiArticles;
+window.filterWikiCategory = filterWikiCategory;

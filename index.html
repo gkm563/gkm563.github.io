@@ -31,7 +31,7 @@
     <link rel="icon" type="image/x-icon" href="favicon.ico">
 
     <!-- External Fonts & Stylesheets -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     
@@ -116,20 +116,25 @@
             <a href="#" class="logo">G K M</a>
             <nav class="main-nav" id="main-nav">
                 <ul>
-                    <li><a href="#hero">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#skills">Skills</a></li>
-                    <li><a href="#projects">Projects</a></li>
-
-                    <li><a href="#linkedin-section">LinkedIn Feed</a></li>
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="#education">Education</a></li>
-                    <li><a href="#achievements">Achievements</a></li>
-                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#hero" data-translate="nav_home">Home</a></li>
+                    <li><a href="#about" data-translate="nav_about">About</a></li>
+                    <li><a href="#skills" data-translate="nav_skills">Skills</a></li>
+                    <li><a href="#projects" data-translate="nav_projects">Projects</a></li>
+                    <li><a href="#linkedin-section" data-translate="nav_linkedin">LinkedIn Feed</a></li>
+                    <li><a href="#services" data-translate="nav_services">Services</a></li>
+                    <li><a href="#education" data-translate="nav_education">Education</a></li>
+                    <li><a href="#achievements" data-translate="nav_achievements">Achievements</a></li>
+                    <li><a href="#contact" data-translate="nav_contact">Contact</a></li>
                 </ul>
             </nav>
-            <div class="hamburger" id="hamburger">
-                <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+            <div class="header-actions">
+                <div class="lang-switch-capsule">
+                    <button class="lang-switch-btn active" id="lang-btn-en" onclick="changeLanguage('en')" aria-label="Switch to English">EN</button>
+                    <button class="lang-switch-btn" id="lang-btn-hi" onclick="changeLanguage('hi')" aria-label="Switch to Hindi">हिं</button>
+                </div>
+                <div class="hamburger" id="hamburger">
+                    <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+                </div>
             </div>
         </div>
     </header>
@@ -155,8 +160,8 @@
                         <a href="https://www.youtube.com/@gkm563" target="_blank" rel="me noopener noreferrer" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
                     </div>
                     <div class="hero-buttons">
-                        <a href="#contact" class="cta-button">Get In Touch</a>
-                        <a href="assets/docs/Gautam_Kumar_Maurya_Resume.pdf" class="cta-button secondary" download>Download CV <i class="fas fa-download"></i></a>
+                        <a href="#contact" class="cta-button" data-translate="hero_cta_touch">Get In Touch</a>
+                        <a href="assets/docs/Gautam_Kumar_Maurya_Resume.pdf" class="cta-button secondary" download><span data-translate="hero_cta_resume">Download CV</span> <i class="fas fa-download"></i></a>
                     </div>
                 </div>
                 <a href="#about" class="scroll-down" aria-label="Scroll down"><i class="fas fa-chevron-down"></i></a>
@@ -167,7 +172,7 @@
         <div class="section-wrapper" id="about">
             <section style="padding: 0;">
                 <div class="container">
-                    <h2 class="section-title" data-aos="fade-up">About Me</h2>
+                    <h2 class="section-title" data-aos="fade-up" data-translate="about_title">About Me</h2>
                     <div class="about-content">
                         <div data-aos="fade-right" data-aos-delay="200" style="display: flex; flex-direction: column; align-items: center;">
                             <img src="assets/images/Gautam_Kumar_Maurya.jpg" alt="Gautam Kumar Maurya - Data Science & Full-Stack Engineer Portfolio UIT Prayagraj" class="about-image">
@@ -176,15 +181,15 @@
                             <div class="voice-narrator-card">
                                 <div class="voice-player-info">
                                     <span class="pulse-dot" id="voice-pulse"></span>
-                                    <strong>Gautam's Voice Narrator</strong>
+                                    <strong data-translate="narrator_title">Gautam's Voice Narrator</strong>
                                 </div>
                                 <div class="voice-controls">
                                     <button id="narrator-play-btn" class="narrator-btn" title="Play Story Narration"><i class="fas fa-play"></i></button>
                                     <button id="narrator-stop-btn" class="narrator-btn" title="Stop Story Narration" disabled><i class="fas fa-stop"></i></button>
                                     <div class="voice-selector-wrapper">
                                         <select id="voice-gender" title="Select Voice Gender">
-                                            <option value="male">Male Voice</option>
-                                            <option value="female" selected>Female Voice</option>
+                                            <option value="male" data-translate="narrator_voice_male">Male Voice</option>
+                                            <option value="female" selected data-translate="narrator_voice_female">Female Voice</option>
                                         </select>
                                     </div>
                                 </div>
@@ -201,16 +206,16 @@
                             </div>
                         </div>
                         <div class="about-text">
-                            <h3 data-aos="fade-up" data-aos-delay="300">My Code, My Story: Bridging Logic & Real-World Impact</h3>
-                            <p data-aos="fade-up" data-aos-delay="400">
+                            <h3 data-aos="fade-up" data-aos-delay="300" data-translate="about_heading">My Code, My Story: Bridging Logic & Real-World Impact</h3>
+                            <p data-aos="fade-up" data-aos-delay="400" data-translate="about_para_1">
                                 Hello! I'm <strong>Gautam Kumar Maurya (GKM)</strong>. My journey in technology is driven by a simple mission: to build intelligent, scalable solutions that solve real community challenges. As a B.Tech Computer Science student specializing in Data Science at United Institute of Technology, Prayagraj, I treat code not just as instructions, but as a medium for positive change.
                             </p>
                             <ul data-aos="fade-up" data-aos-delay="500">
-                                <li class="highlight-item"><span class="highlight">Co-founding PrayagrajRooms:</span> Driven by the struggles outstation students face, I co-founded <strong>PrayagrajRooms</strong> to simplify PG and room discovery, eliminating brokerage and bringing transparency to local student housing.</li>
-                                <li class="highlight-item"><span class="highlight">Global Open Source Contributions:</span> As an active contributor to the <strong>Wikimedia Foundation</strong> and Wikipedia core codebase, I regularly navigate peer-reviewed pipelines via Gerrit and Phabricator, merging patches that improve global digital knowledge.</li>
-                                <li class="highlight-item"><span class="highlight">Academic & Algorithms Focus:</span> Balancing build pipelines with rigorous computer science theory, I achieved **AKTU University Rank 5** in my first semester and hold Rank 1 in the Data Structures stream at UIT.</li>
+                                <li class="highlight-item"><span class="highlight" data-translate="about_point_1_title">Co-founding PrayagrajRooms:</span> <span data-translate="about_point_1_text">Driven by the struggles outstation students face, I co-founded <strong>PrayagrajRooms</strong> to simplify PG and room discovery, eliminating brokerage and bringing transparency to local student housing.</span></li>
+                                <li class="highlight-item"><span class="highlight" data-translate="about_point_2_title">Global Open Source Contributions:</span> <span data-translate="about_point_2_text">As an active contributor to the <strong>Wikimedia Foundation</strong> and Wikipedia core codebase, I regularly navigate peer-reviewed pipelines via Gerrit and Phabricator, merging patches that improve global digital knowledge.</span></li>
+                                <li class="highlight-item"><span class="highlight" data-translate="about_point_3_title">Academic & Algorithms Focus:</span> <span data-translate="about_point_3_text">Balancing build pipelines with rigorous computer science theory, I achieved <strong>AKTU University Rank 5</strong> in my first semester and hold Rank 1 in the Data Structures stream at UIT.</span></li>
                             </ul>
-                            <p data-aos="fade-up" data-aos-delay="600">
+                            <p data-aos="fade-up" data-aos-delay="600" data-translate="about_para_2">
                                 Whether engineering clean React interfaces, optimizing database structures in Django, or designing intelligent AI assistants, I am always focused on crafting premium, performant digital solutions.
                             </p>
                         </div>
@@ -222,15 +227,15 @@
         <!-- Technical Skills / Arsenal Section -->
         <section id="skills">
             <div class="container">
-                <h2 class="section-title" data-aos="fade-up">Technical Arsenal</h2>
-                <p style="text-align: center; max-width: 600px; margin: -2.5rem auto 3rem auto; color: #94a3b8;" data-aos="fade-up" data-aos-delay="50">
+                <h2 class="section-title" data-aos="fade-up" data-translate="skills_title">Technical Arsenal</h2>
+                <p style="text-align: center; max-width: 600px; margin: -2.5rem auto 3rem auto; color: #94a3b8;" data-aos="fade-up" data-aos-delay="50" data-translate="skills_subtitle">
                     My developer toolkit. I combine full-stack engineering frameworks, AI agent modules, and data science libraries to construct intelligent, scalable web solutions.
                 </p>
                 <div class="skills-grid">
                     
                     <!-- Frontend skills -->
                     <div class="skill-card" data-aos="fade-up" data-aos-delay="100">
-                        <h3>Frontend Development</h3>
+                        <h3 data-translate="skills_cat_frontend">Frontend Development</h3>
                         <div class="skill-items-grid">
                             <div class="skill-item"><i class="fab fa-react"></i><span>React.js</span></div>
                             <div class="skill-item"><i class="fab fa-js"></i><span>JavaScript</span></div>
@@ -242,7 +247,7 @@
 
                     <!-- Backend & DB skills -->
                     <div class="skill-card" data-aos="fade-up" data-aos-delay="200">
-                        <h3>Backend & Databases</h3>
+                        <h3 data-translate="skills_cat_backend">Backend & Databases</h3>
                         <div class="skill-items-grid">
                             <div class="skill-item"><i class="fab fa-node-js"></i><span>Node.js</span></div>
                             <div class="skill-item"><i class="fab fa-python"></i><span>Django/Flask</span></div>
@@ -254,7 +259,7 @@
                     
                     <!-- AI & Specialization -->
                     <div class="skill-card" data-aos="fade-up" data-aos-delay="300">
-                        <h3>AI, ML & Cybersecurity</h3>
+                        <h3 data-translate="skills_cat_ai">AI, ML & Cybersecurity</h3>
                         <div class="skill-items-grid">
                             <div class="skill-item"><i class="fas fa-brain"></i><span>AI / AI Agents</span></div>
                             <div class="skill-item"><i class="fas fa-shield-halved"></i><span>Ethical Hacking</span></div>
@@ -265,7 +270,7 @@
 
                     <!-- DevOps & Tools -->
                     <div class="skill-card" data-aos="fade-up" data-aos-delay="400">
-                        <h3>Programming & DevOps</h3>
+                        <h3 data-translate="skills_cat_devops">Programming & DevOps</h3>
                         <div class="skill-items-grid">
                             <div class="skill-item"><i class="fab fa-python"></i><span>Python</span></div>
                             <div class="skill-item"><i class="fas fa-plus"></i><span>C/C++</span></div>
@@ -281,8 +286,8 @@
         <!-- Projects Grid Section -->
         <section id="projects">
             <div class="container">
-                <h2 class="section-title" data-aos="fade-up">Featured Projects</h2>
-                <p style="text-align: center; max-width: 600px; margin: -2.5rem auto 3rem auto; color: #94a3b8;" data-aos="fade-up" data-aos-delay="50">
+                <h2 class="section-title" data-aos="fade-up" data-translate="projects_title">Featured Projects</h2>
+                <p style="text-align: center; max-width: 600px; margin: -2.5rem auto 3rem auto; color: #94a3b8;" data-aos="fade-up" data-aos-delay="50" data-translate="projects_subtitle">
                     A curated showcase of applications I have designed and engineered, highlighting my focus on local community impact, database security, and user-centered design.
                 </p>
                 <div class="projects-grid">
@@ -292,10 +297,10 @@
                          <div class="project-content">
                             <div class="project-icon"><i class="fas fa-graduation-cap"></i></div>
                             <h3>CampusClick</h3>
-                            <p>I built this interactive campus hub to streamline student notifications and event organization, reducing communication delays between departments and students by providing real-time scheduling dashboards.</p>
+                            <p data-translate="project_desc_campusclick">I built this interactive campus hub to streamline student notifications and event organization, reducing communication delays between departments and students by providing real-time scheduling dashboards.</p>
                             <div class="project-footer">
                                 <div class="tech-tags"><span class="tech-tag">HTML/CSS</span><span class="tech-tag">JS</span><span class="tech-tag">UI/UX</span></div>
-                                <a href="https://github.com/gkm563/CampusClick" class="project-link" target="_blank">View Project <i class="fas fa-arrow-up-right-from-square"></i></a>
+                                <a href="https://github.com/gkm563/CampusClick" class="project-link" target="_blank"><span data-translate="project_view_btn">View Project</span> <i class="fas fa-arrow-up-right-from-square"></i></a>
                             </div>
                         </div>
                     </div>
@@ -305,10 +310,10 @@
                         <div class="project-content">
                             <div class="project-icon"><i class="fas fa-file-pdf"></i></div>
                             <h3>PDFBAZI</h3>
-                            <p>Frustrated by tools that compromise document privacy, I engineered this local-first PDF editor. It performs heavy splitting, merging, and compression operations directly in the browser, keeping sensitive data 100% secure.</p>
+                            <p data-translate="project_desc_pdfbazi">Frustrated by tools that compromise document privacy, I engineered this local-first PDF editor. It performs heavy splitting, merging, and compression operations directly in the browser, keeping sensitive data 100% secure.</p>
                             <div class="project-footer">
                                 <div class="tech-tags"><span class="tech-tag">Python</span><span class="tech-tag">Web Tech</span><span class="tech-tag">LocalDB</span></div>
-                                <a href="https://github.com/gkm563/PDFBAZI" class="project-link" target="_blank">View Project <i class="fas fa-arrow-up-right-from-square"></i></a>
+                                <a href="https://github.com/gkm563/PDFBAZI" class="project-link" target="_blank"><span data-translate="project_view_btn">View Project</span> <i class="fas fa-arrow-up-right-from-square"></i></a>
                             </div>
                         </div>
                     </div>
@@ -318,10 +323,10 @@
                         <div class="project-content">
                             <div class="project-icon"><i class="fas fa-laptop-code"></i></div>
                             <h3>BuildX India Website</h3>
-                            <p>As the Lead Technical Developer, I designed and scaled the official registration engine and live metric dashboards for BuildX India 2026, seamlessly managing registration traffic for hundreds of developers.</p>
+                            <p data-translate="project_desc_buildx">As the Lead Technical Developer, I designed and scaled the official registration engine and live metric dashboards for BuildX India 2026, seamlessly managing registration traffic for hundreds of developers.</p>
                             <div class="project-footer">
                                 <div class="tech-tags"><span class="tech-tag">TypeScript</span><span class="tech-tag">JS</span><span class="tech-tag">UI/UX</span></div>
-                                <a href="https://github.com/gkm563/buildx-india-website-personal" class="project-link" target="_blank">View Project <i class="fas fa-arrow-up-right-from-square"></i></a>
+                                <a href="https://github.com/gkm563/buildx-india-website-personal" class="project-link" target="_blank"><span data-translate="project_view_btn">View Project</span> <i class="fas fa-arrow-up-right-from-square"></i></a>
                             </div>
                         </div>
                     </div>
@@ -331,10 +336,10 @@
                         <div class="project-content">
                             <div class="project-icon"><i class="fas fa-fingerprint"></i></div>
                             <h3>NHAI Offline Biometrics</h3>
-                            <p>I engineered an offline biometric verification tool for the National Highway Authority of India (NHAI), allowing remote toll operators to safely authenticate personnel without depending on unstable internet access.</p>
+                            <p data-translate="project_desc_nhai">I engineered an offline biometric verification tool for the National Highway Authority of India (NHAI), allowing remote toll operators to safely authenticate personnel without depending on unstable internet access.</p>
                             <div class="project-footer">
                                 <div class="tech-tags"><span class="tech-tag">TypeScript</span><span class="tech-tag">Biometrics</span><span class="tech-tag">Security</span></div>
-                                <a href="https://github.com/gkm563/NHAI-offline-biometrics" class="project-link" target="_blank">View Project <i class="fas fa-arrow-up-right-from-square"></i></a>
+                                <a href="https://github.com/gkm563/NHAI-offline-biometrics" class="project-link" target="_blank"><span data-translate="project_view_btn">View Project</span> <i class="fas fa-arrow-up-right-from-square"></i></a>
                             </div>
                         </div>
                     </div>
@@ -344,10 +349,10 @@
                         <div class="project-content">
                             <div class="project-icon"><i class="fas fa-route"></i></div>
                             <h3>TripSync</h3>
-                            <p>I created this dynamic, real-time travel logistics platform to solve group coordination struggles. It synchronizes itineraries, maps, and expenses instantly, ensuring every traveler stays on the same page.</p>
+                            <p data-translate="project_desc_tripsync">I created this dynamic, real-time travel logistics platform to solve group coordination struggles. It synchronizes itineraries, maps, and expenses instantly, ensuring every traveler stays on the same page.</p>
                             <div class="project-footer">
                                 <div class="tech-tags"><span class="tech-tag">TypeScript</span><span class="tech-tag">React</span><span class="tech-tag">Maps API</span></div>
-                                <a href="https://github.com/gkm563/TripSync" class="project-link" target="_blank">View Project <i class="fas fa-arrow-up-right-from-square"></i></a>
+                                <a href="https://github.com/gkm563/TripSync" class="project-link" target="_blank"><span data-translate="project_view_btn">View Project</span> <i class="fas fa-arrow-up-right-from-square"></i></a>
                             </div>
                         </div>
                     </div>
@@ -357,10 +362,10 @@
                         <div class="project-content">
                             <div class="project-icon"><i class="fas fa-book-open"></i></div>
                             <h3>ugiNotes (UniNotes)</h3>
-                            <p>I developed a centralized, peer-to-peer academic repository for my peers at UIT, allowing thousands of students to upload lecture notes, share resources, and collaborate on exam preparation.</p>
+                            <p data-translate="project_desc_uginotes">I developed a centralized, peer-to-peer academic repository for my peers at UIT, allowing thousands of students to upload lecture notes, share resources, and collaborate on exam preparation.</p>
                             <div class="project-footer">
                                 <div class="tech-tags"><span class="tech-tag">TypeScript</span><span class="tech-tag">UIT Hub</span><span class="tech-tag">Study Tools</span></div>
-                                <a href="https://github.com/gkm563/uginotes" class="project-link" target="_blank">View Project <i class="fas fa-arrow-up-right-from-square"></i></a>
+                                <a href="https://github.com/gkm563/uginotes" class="project-link" target="_blank"><span data-translate="project_view_btn">View Project</span> <i class="fas fa-arrow-up-right-from-square"></i></a>
                             </div>
                         </div>
                     </div>
@@ -368,7 +373,7 @@
 
                 <!-- More GitHub Repositories Sub-section -->
                 <div class="github-repos-section" data-aos="fade-up" style="margin-top: 5rem; border-top: 1px dashed var(--border-color-glass); padding-top: 4rem;">
-                    <h3 style="text-align: center; font-size: 1.8rem; margin-bottom: 2.5rem; color: #fff; font-weight: 600;"><i class="fab fa-github" style="color: var(--primary-color); margin-right: 8px;"></i> Live GitHub Repositories</h3>
+                    <h3 style="text-align: center; font-size: 1.8rem; margin-bottom: 2.5rem; color: #fff; font-weight: 600;"><i class="fab fa-github" style="color: var(--primary-color); margin-right: 8px;"></i> <span data-translate="project_github_live">Live GitHub Repositories</span></h3>
                     <div class="projects-grid" id="github-repos-container" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem;">
                         <!-- Repos fetched live from GitHub API will render here -->
                     </div>
@@ -380,28 +385,124 @@
         <div class="section-wrapper" id="opensource">
             <section style="padding: 0;">
                 <div class="container">
-                    <h2 class="section-title" data-aos="fade-up">Open Source Impact</h2>
-                    <div class="about-content">
-                        <div class="about-text" style="grid-column: span 2;">
-                            <p data-aos="fade-up" style="text-align: center; margin-bottom: 2rem; color: #cbd5e1;">
-                                I believe in the power of open collaboration. I actively contribute code to global open-source software architectures, navigating complex peer-review pipelines to improve tools used by millions daily.
-                            </p>
-                            
-                            <div class="services-grid">
-                                <div class="service-card" data-aos="fade-up" data-aos-delay="100">
-                                    <div class="service-icon"><i class="fab fa-wikipedia-w"></i></div>
-                                    <h3>Wikimedia Core Patches</h3>
-                                    <p>I regularly submit code contributions to the Wikimedia Foundation. Navigating their international code review systems, I help optimize features that power the Wikipedia digital ecosystem.</p>
+                    <h2 class="section-title" data-aos="fade-up" data-translate="os_title">Open Source Impact</h2>
+                    <p data-aos="fade-up" style="text-align: center; max-width: 800px; margin: -2.5rem auto 3rem auto; color: #cbd5e1;" data-translate="os_subtitle">
+                        I believe in the power of open collaboration. I actively contribute code to global open-source software architectures, navigating complex peer-review pipelines to improve tools used by millions daily.
+                    </p>
+                    
+                    <!-- Stats Dashboard Grid -->
+                    <div class="os-stats-grid" data-aos="fade-up">
+                        <div class="os-stat-card os-theme-cyan">
+                            <div class="os-stat-icon"><i class="fab fa-wikipedia-w"></i></div>
+                            <div class="os-stat-info">
+                                <h4 class="os-stat-num">30+</h4>
+                                <span class="os-stat-label" data-translate="os_stat_articles">Articles Created</span>
+                            </div>
+                        </div>
+                        <div class="os-stat-card os-theme-pink">
+                            <div class="os-stat-icon"><i class="fas fa-images"></i></div>
+                            <div class="os-stat-info">
+                                <h4 class="os-stat-num">3+</h4>
+                                <span class="os-stat-label" data-translate="os_stat_commons">Commons Uploads</span>
+                            </div>
+                        </div>
+                        <div class="os-stat-card os-theme-orange">
+                            <div class="os-stat-icon"><i class="fas fa-trophy"></i></div>
+                            <div class="os-stat-info">
+                                <h4 class="os-stat-num">3+</h4>
+                                <span class="os-stat-label" data-translate="os_stat_contests">Contests Joined</span>
+                            </div>
+                        </div>
+                        <div class="os-stat-card os-theme-green">
+                            <div class="os-stat-icon"><i class="fas fa-code-branch"></i></div>
+                            <div class="os-stat-info">
+                                <h4 class="os-stat-num">Gerrit/Git</h4>
+                                <span class="os-stat-label" data-translate="os_stat_workflow">Review Pipeline</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Split Showcase Panel -->
+                    <div class="os-showcase-panel">
+                        <!-- Left Side: Contribution Platforms & Wiki Experience -->
+                        <div class="os-info-column" data-aos="fade-right">
+                            <div class="os-feature-card os-theme-blue">
+                                <h3><i class="fab fa-wikipedia-w" style="color: #0ea5e9;"></i> Wikipedia & Commons</h3>
+                                <p data-translate="os_wiki_details">Active writer on <strong>Hindi Wikipedia</strong> (contributed to 30+ articles) and contributor to <strong>English Wikipedia</strong> & <strong>Meta-Wiki</strong>. Uploaded media to <strong>Wikimedia Commons</strong>, and participated in 3+ Wiki contests.</p>
+                                <div class="os-badges">
+                                    <a href="https://hi.wikipedia.org/wiki/सदस्य:Gkm563" class="os-badge" target="_blank" rel="noopener noreferrer"><i class="fab fa-wikipedia-w"></i> Hindi Wiki</a>
+                                    <a href="https://en.wikipedia.org/wiki/User:Gkm563" class="os-badge" target="_blank" rel="noopener noreferrer"><i class="fab fa-wikipedia-w"></i> English Wiki</a>
+                                    <a href="https://meta.wikimedia.org/wiki/User:Gkm563" class="os-badge" target="_blank" rel="noopener noreferrer"><i class="fab fa-wikipedia-w"></i> Meta-Wiki</a>
+                                    <a href="https://commons.wikimedia.org/wiki/User:Gkm563" class="os-badge" target="_blank" rel="noopener noreferrer"><i class="fas fa-images"></i> Commons</a>
                                 </div>
-                                <div class="service-card" data-aos="fade-up" data-aos-delay="200">
-                                    <div class="service-icon"><i class="fas fa-code-commit"></i></div>
-                                    <h3>Enterprise Review Workflows</h3>
-                                    <p>I am highly comfortable working within peer-reviewed Git workflows, managing atomic commits, and resolving reviews across Gerrit, Phabricator, GitLab, and GitHub pipelines.</p>
+                            </div>
+                            <div class="os-feature-card os-theme-purple">
+                                <h3><i class="fas fa-code-merge" style="color: #a855f7;"></i> Enterprise Code Environments</h3>
+                                <p data-translate="os_code_details">Experienced in Wikimedia core codebase contributions. Navigating developer pipelines like <strong>Gerrit</strong> for git reviews and <strong>Phabricator</strong> for tracking project tickets. Also active on GitHub and GitLab.</p>
+                                <div class="os-badges">
+                                    <a href="https://gerrit.wikimedia.org/r/q/owner:gkm563" class="os-badge" target="_blank" rel="noopener noreferrer"><i class="fas fa-code-branch"></i> Gerrit</a>
+                                    <a href="https://phabricator.wikimedia.org/p/Gkm563/" class="os-badge" target="_blank" rel="noopener noreferrer"><i class="fas fa-tasks"></i> Phabricator</a>
+                                    <a href="https://github.com/gkm563" class="os-badge" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> GitHub</a>
+                                    <a href="https://gitlab.com/gkm563" class="os-badge" target="_blank" rel="noopener noreferrer"><i class="fab fa-gitlab"></i> GitLab</a>
                                 </div>
-                                <div class="service-card" data-aos="fade-up" data-aos-delay="300">
-                                    <div class="service-icon"><i class="fas fa-trophy"></i></div>
-                                    <h3>Sprints & Hackathons</h3>
-                                    <p>My speed and attention to detail earned me 1st Place in the WikiClub UIT Contribution Sprint, where I successfully merged 7 active patches and opened 10+ reviews in just one week.</p>
+                                
+                                <!-- Code Review Pipeline visual graphic -->
+                                <div class="os-pipeline-flow">
+                                    <div class="pipeline-step active-code">
+                                        <span class="pipeline-step-icon"><i class="fas fa-keyboard"></i></span>
+                                        <span class="pipeline-step-label" data-translate="os_pipeline_code">Code Written</span>
+                                    </div>
+                                    <span class="pipeline-arrow"><i class="fas fa-chevron-right"></i></span>
+                                    <div class="pipeline-step active-gerrit">
+                                        <span class="pipeline-step-icon"><i class="fas fa-code-branch"></i></span>
+                                        <span class="pipeline-step-label" data-translate="os_pipeline_gerrit">Gerrit Review</span>
+                                    </div>
+                                    <span class="pipeline-arrow"><i class="fas fa-chevron-right"></i></span>
+                                    <div class="pipeline-step active-ci">
+                                        <span class="pipeline-step-icon"><i class="fas fa-spinner fa-spin"></i></span>
+                                        <span class="pipeline-step-label" data-translate="os_pipeline_jenkins">CI/CD Test</span>
+                                    </div>
+                                    <span class="pipeline-arrow"><i class="fas fa-chevron-right"></i></span>
+                                    <div class="pipeline-step active-merge">
+                                        <span class="pipeline-step-icon"><i class="fas fa-check-circle"></i></span>
+                                        <span class="pipeline-step-label" data-translate="os_pipeline_merge">Merged</span>
+                                    </div>
+                                    <span class="pipeline-arrow"><i class="fas fa-chevron-right"></i></span>
+                                    <div class="pipeline-step active-phab">
+                                        <span class="pipeline-step-icon"><i class="fas fa-tasks"></i></span>
+                                        <span class="pipeline-step-label" data-translate="os_pipeline_phab">Ticket Closed</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Right Side: Recent Wikipedia Contributions Feed / Wiki Explorer -->
+                        <div class="os-feed-column" data-aos="fade-left">
+                            <div class="os-feed-card os-theme-blue">
+                                <div class="os-feed-header">
+                                    <div class="os-feed-title">
+                                        <i class="fab fa-wikipedia-w" style="color: #0ea5e9;"></i>
+                                        <span data-translate="os_feed_title">Recent Wikipedia Contributions Feed</span>
+                                    </div>
+                                    <a href="https://hi.wikipedia.org/wiki/सदस्य:Gkm563" class="os-feed-username" target="_blank" rel="noopener noreferrer"><i class="fab fa-wikipedia-w"></i> User: Gkm563</a>
+                                </div>
+                                
+                                <!-- Search and Category Filters -->
+                                <div class="wiki-controls-wrapper">
+                                    <div class="wiki-search-box">
+                                        <input type="text" id="wiki-search" class="wiki-search-input" data-translate="os_search_placeholder" placeholder="Search articles..." />
+                                        <i class="fas fa-search"></i>
+                                    </div>
+                                    <div class="wiki-filter-tabs" id="wiki-category-tabs">
+                                        <button class="wiki-filter-tab active" onclick="filterWikiCategory('All')" data-translate="os_cat_all">All Articles</button>
+                                        <button class="wiki-filter-tab" onclick="filterWikiCategory('tech')" data-translate="os_cat_tech">Technology</button>
+                                        <button class="wiki-filter-tab" onclick="filterWikiCategory('science')" data-translate="os_cat_science">Science</button>
+                                        <button class="wiki-filter-tab" onclick="filterWikiCategory('general')" data-translate="os_cat_general">General</button>
+                                    </div>
+                                </div>
+
+                                <div class="os-feed-list" id="wiki-articles-container">
+                                    <!-- Rendered dynamically by JavaScript -->
                                 </div>
                             </div>
                         </div>
@@ -416,19 +517,19 @@
         <div class="section-wrapper" id="linkedin-section">
             <section style="padding: 0;">
                 <div class="container">
-                    <h2 class="section-title" data-aos="fade-up">LinkedIn Updates</h2>
-                    <p style="text-align: center; max-width: 600px; margin: -2.5rem auto 3rem auto; color: #94a3b8;" data-aos="fade-up" data-aos-delay="50">
+                    <h2 class="section-title" data-aos="fade-up" data-translate="li_title">LinkedIn Updates</h2>
+                    <p style="text-align: center; max-width: 600px; margin: -2.5rem auto 3rem auto; color: #94a3b8;" data-aos="fade-up" data-aos-delay="50" data-translate="li_subtitle">
                         With over 19k+ followers, I share my daily project commits, earnings, hackathon wins, and tech leadership stories. Connect with me!
                     </p>
 
                     <!-- LinkedIn category filters -->
                     <div class="filter-tabs" data-aos="fade-up" data-aos-delay="100" id="li-category-tabs">
-                        <button class="filter-tab active" onclick="filterLiCategory('All')">All Activity</button>
-                        <button class="filter-tab" onclick="filterLiCategory('Hackathons')">Hackathons</button>
-                        <button class="filter-tab" onclick="filterLiCategory('Earnings')">Earnings</button>
-                        <button class="filter-tab" onclick="filterLiCategory('Events')">Events</button>
-                        <button class="filter-tab" onclick="filterLiCategory('Achievements')">Achievements</button>
-                        <button class="filter-tab" onclick="filterLiCategory('Behind the Scenes')">Behind the Scenes</button>
+                        <button class="filter-tab active" onclick="filterLiCategory('All')" data-translate="li_tab_all">All Activity</button>
+                        <button class="filter-tab" onclick="filterLiCategory('Hackathons')" data-translate="li_tab_hacks">Hackathons</button>
+                        <button class="filter-tab" onclick="filterLiCategory('Earnings')" data-translate="li_tab_earnings">Earnings</button>
+                        <button class="filter-tab" onclick="filterLiCategory('Events')" data-translate="li_tab_events">Events</button>
+                        <button class="filter-tab" onclick="filterLiCategory('Achievements')" data-translate="li_tab_achievements">Achievements</button>
+                        <button class="filter-tab" onclick="filterLiCategory('Behind the Scenes')" data-translate="li_tab_bts">Behind the Scenes</button>
                     </div>
 
                     <!-- LinkedIn Carousel Wrapper -->
@@ -455,23 +556,27 @@
         <div class="section-wrapper">
             <section id="services">
                 <div class="container">
-                    <h2 class="section-title" data-aos="fade-up">How I Can Collaborate</h2>
+                    <h2 class="section-title" data-aos="fade-up" data-translate="services_title">How I Can Collaborate</h2>
+                    <p class="section-subtitle" style="text-align: center; max-width: 700px; margin: -2.5rem auto 3rem auto; color: #94a3b8;" data-aos="fade-up" data-aos-delay="50" data-translate="services_subtitle">
+                        Empowering startups, open-source communities, and enterprise teams with robust full-stack engineering, custom AI architectures, and comprehensive cybersecurity auditing.
+                    </p>
                     <div class="bento-grid">
                         <!-- Card 1: Full-Stack Architectures (Blue Theme, col-span-2) -->
                         <div class="bento-card bento-theme-blue col-span-2" data-aos="fade-up" data-aos-delay="100">
                             <div class="bento-header">
                                 <div class="bento-icon"><i class="fas fa-laptop-code"></i></div>
-                                <span class="bento-badge">Core Dev</span>
+                                <span class="bento-badge" data-translate="services_badge_dev">Core Dev</span>
                             </div>
                             <div class="bento-content">
-                                <h3>Full-Stack Web Architectures</h3>
-                                <p>I engineer highly responsive, secure, and production-ready web platforms. Leveraging modern frameworks like React.js for interface design alongside Django/Flask and Node.js backend controllers, I construct unified database systems (Postgres, MongoDB) designed for maximum scale and fast page responses.</p>
+                                <div class="bento-metric" data-translate="service_fs_metric">10+ Sites Deployed</div>
+                                <h3 data-translate="service_fs_title">Full-Stack & Production</h3>
+                                <p data-translate="service_fs_desc">I architect end-to-end web applications, scaling them from idea to live production. Combining React/Next.js frontend logic with Django, Node.js, and PHP backends, I configure secure APIs, databases, and deploy containerized environments using Docker and Kubernetes. My complete workflow: Idea → Design → Development → GitHub → CI/CD → Cloud → Kubernetes → Production. I deliver SaaS platforms, dashboards, startup MVPs, portfolio sites, and business web applications.</p>
                                 <div class="bento-tags">
-                                    <span class="bento-tag">React.js</span>
-                                    <span class="bento-tag">Django</span>
-                                    <span class="bento-tag">Node.js</span>
-                                    <span class="bento-tag">REST APIs</span>
-                                    <span class="bento-tag">Databases</span>
+                                    <span class="bento-tag">React.js / Next.js</span>
+                                    <span class="bento-tag">Django / Node.js</span>
+                                    <span class="bento-tag">Docker & Kubernetes</span>
+                                    <span class="bento-tag">CI/CD Pipelines</span>
+                                    <span class="bento-tag">SaaS & MVPs</span>
                                 </div>
                             </div>
                         </div>
@@ -480,15 +585,17 @@
                         <div class="bento-card bento-theme-pink" data-aos="fade-up" data-aos-delay="200">
                             <div class="bento-header">
                                 <div class="bento-icon"><i class="fas fa-brain"></i></div>
-                                <span class="bento-badge">AI Systems</span>
+                                <span class="bento-badge" data-translate="services_badge_ai">AI Systems</span>
                             </div>
                             <div class="bento-content">
-                                <h3>AI & Agent Integration</h3>
-                                <p>I integrate large language models (LLMs) and develop custom agentic workflows, conversational widgets (like my interactive 3D twin avatar below), and automation script pipelines that convert manual procedures into autonomous, smart systems.</p>
+                                <div class="bento-metric" data-translate="service_ai_metric">5+ AI Agents | 3+ Systems</div>
+                                <h3 data-translate="service_ai_title">AI Agents & Automation</h3>
+                                <p data-translate="service_ai_desc">I design custom AI agents, cognitive workflows, and autonomous business automation pipelines. Services include: AI Agents Development, Generative AI Solutions, Business Automation, Workflow Optimization, AI-Powered Applications, Prompt Engineering, and AI Integration for Startups. Integrating LLMs, speech processing, and RAG architectures, I convert manual operations into self-optimizing systems.</p>
                                 <div class="bento-tags">
                                     <span class="bento-tag">AI Agents</span>
-                                    <span class="bento-tag">LLM Integration</span>
-                                    <span class="bento-tag">Speech Systems</span>
+                                    <span class="bento-tag">Generative AI</span>
+                                    <span class="bento-tag">Business Automation</span>
+                                    <span class="bento-tag">RAG & LLMs</span>
                                 </div>
                             </div>
                         </div>
@@ -497,15 +604,17 @@
                         <div class="bento-card bento-theme-orange" data-aos="fade-up" data-aos-delay="100">
                             <div class="bento-header">
                                 <div class="bento-icon"><i class="fas fa-user-shield"></i></div>
-                                <span class="bento-badge">Security</span>
+                                <span class="bento-badge" data-translate="services_badge_security">Security</span>
                             </div>
                             <div class="bento-content">
-                                <h3>Cybersecurity & OSINT Audits</h3>
-                                <p>I perform deep security code reviews and recon audits—leveraging advanced dorking, subdomain mapping, and vulnerability testing to protect corporate assets and secure digital codebases from leak vectors.</p>
+                                <div class="bento-metric" data-translate="service_sec_metric">9 Tools | 4 OSINT Projects</div>
+                                <h3 data-translate="service_sec_title">Cybersec & OSINT Audits</h3>
+                                <p data-translate="service_sec_desc">I build security tooling and conduct code reconnaissance auditing. Having developed 9 cybersecurity tools (including 4 active OSINT trackers), I perform Security Research, OSINT Investigations, Threat Intelligence analysis, and Security Automation to protect digital codebases from leak vectors.</p>
                                 <div class="bento-tags">
+                                    <span class="bento-tag">9 Cybersec Tools</span>
+                                    <span class="bento-tag">4 OSINT Tools</span>
+                                    <span class="bento-tag">Threat Intelligence</span>
                                     <span class="bento-tag">Recon</span>
-                                    <span class="bento-tag">Dorking</span>
-                                    <span class="bento-tag">Threat Intel</span>
                                 </div>
                             </div>
                         </div>
@@ -514,11 +623,12 @@
                         <div class="bento-card bento-theme-green" data-aos="fade-up" data-aos-delay="200">
                             <div class="bento-header">
                                 <div class="bento-icon"><i class="fab fa-wikipedia-w"></i></div>
-                                <span class="bento-badge">Open Source</span>
+                                <span class="bento-badge" data-translate="services_badge_os">Open Source</span>
                             </div>
                             <div class="bento-content">
-                                <h3>Open Source Collaboration</h3>
-                                <p>As an active Wikimedia Foundation core contributor, I submit robust patches to global codebases, managing reviews via Gerrit, Phabricator, and git-review pipelines with high standards for linting and unit tests.</p>
+                                <div class="bento-metric" data-translate="service_os_metric">Active Contributor</div>
+                                <h3 data-translate="service_os_title">Open Source Collaboration</h3>
+                                <p data-translate="service_os_desc">As an active Wikimedia Foundation core contributor, I submit robust patches to global codebases, managing reviews via Gerrit, Phabricator, and git-review pipelines with high standards for linting and unit tests.</p>
                                 <div class="bento-tags">
                                     <span class="bento-tag">Wikimedia</span>
                                     <span class="bento-tag">Gerrit Review</span>
@@ -531,15 +641,17 @@
                         <div class="bento-card bento-theme-purple" data-aos="fade-up" data-aos-delay="300">
                             <div class="bento-header">
                                 <div class="bento-icon"><i class="fas fa-building"></i></div>
-                                <span class="bento-badge">Startups</span>
+                                <span class="bento-badge" data-translate="services_badge_startups">CTO Advisory</span>
                             </div>
                             <div class="bento-content">
-                                <h3>Startup & Product Strategy</h3>
-                                <p>Co-founder of PrayagrajRooms, a local housing portal solving accommodation problems for students. I help design products from concept to live deployment, focusing on business growth and user conversion.</p>
+                                <div class="bento-metric" data-translate="service_startup_metric">CTO @ 2 Startups</div>
+                                <h3 data-translate="service_startup_title">CTO & Startup Strategy</h3>
+                                <p data-translate="service_startup_desc">Currently serving as CTO at Vidnya and PrayagrajRooms, and approached by 7+ startups for technical leadership and collaboration roles. I work with founders on Product Strategy, Technical Architecture, MVP Development, AI Integration, Team Coordination, and Technology Roadmaps — guiding startups from concept to live, scalable products.</p>
                                 <div class="bento-tags">
-                                    <span class="bento-tag">PrayagrajRooms</span>
-                                    <span class="bento-tag">Product Scaling</span>
-                                    <span class="bento-tag">Startup Growth</span>
+                                    <span class="bento-tag">CTO @ Vidnya</span>
+                                    <span class="bento-tag">CTO @ PrayagrajRooms</span>
+                                    <span class="bento-tag">7+ Startup Collab</span>
+                                    <span class="bento-tag">MVP Development</span>
                                 </div>
                             </div>
                         </div>
@@ -548,11 +660,12 @@
                         <div class="bento-card bento-theme-cyan" data-aos="fade-up" data-aos-delay="100">
                             <div class="bento-header">
                                 <div class="bento-icon"><i class="fas fa-chart-pie"></i></div>
-                                <span class="bento-badge">Data Science</span>
+                                <span class="bento-badge" data-translate="services_badge_ds">Data Science</span>
                             </div>
                             <div class="bento-content">
-                                <h3>Data Analytics & ML</h3>
-                                <p>Applying statistical models and custom algorithms to complex data. Specialize in designing clean pipelines, predictive modeling, data scraping, and computer vision utilities (OpenCV).</p>
+                                <div class="bento-metric" data-translate="service_ds_metric">ML Pipelines Deployed</div>
+                                <h3 data-translate="service_ds_title">Data Science & Analytics</h3>
+                                <p data-translate="service_ds_desc">Applying statistical models and custom algorithms to complex data. Specialize in designing clean pipelines, predictive modeling, data scraping, and computer vision utilities (OpenCV).</p>
                                 <div class="bento-tags">
                                     <span class="bento-tag">Pandas</span>
                                     <span class="bento-tag">OpenCV</span>
@@ -565,16 +678,18 @@
                         <div class="bento-card bento-theme-red col-span-2" data-aos="fade-up" data-aos-delay="200">
                             <div class="bento-header">
                                 <div class="bento-icon"><i class="fas fa-users"></i></div>
-                                <span class="bento-badge">Leadership</span>
+                                <span class="bento-badge" data-translate="services_badge_leadership">Community Leadership</span>
                             </div>
                             <div class="bento-content">
-                                <h3>Tech Leadership & Mentorship</h3>
-                                <p>I drive regional developer growth as Technical Head for GeeksforGeeks Campus UIT, Technical Head at UDTech India, and a core organizer for Google Developer Student Clubs. I have coordinate coding competitions for 500+ attendees, designed national hackathon tracker systems, and mentored hundreds of student programmers.</p>
+                                <div class="bento-metric" data-translate="service_lead_metric">650+ GSA | 580+ GFG Members</div>
+                                <h3 data-translate="service_lead_title">Community Leadership & Events</h3>
+                                <p data-translate="service_lead_desc">I actively build developer communities and technology ecosystems. Communities I serve: GFG UIT, GSA, GDG, and various student developer communities. Events: BuildX, Tech Era, Brahmastra, Hackathons, Workshops, Meetups, Technical Sessions. I handle Event Planning, Community Growth, Team Leadership, Speaker Coordination, Operations Management, and Strategic Decision Making — impacting 650+ members via GSA and 580+ members via GFG activities, with 15+ technical events organized.</p>
                                 <div class="bento-tags">
-                                    <span class="bento-tag">GFG UIT</span>
-                                    <span class="bento-tag">UDTech India</span>
-                                    <span class="bento-tag">GDSC</span>
-                                    <span class="bento-tag">Hackathon Evaluator</span>
+                                    <span class="bento-tag">GFG UIT — 580+ Members</span>
+                                    <span class="bento-tag">GSA — 650+ Members</span>
+                                    <span class="bento-tag">GDG Prayagraj</span>
+                                    <span class="bento-tag">15+ Events Organized</span>
+                                    <span class="bento-tag">Hackathon Organizer</span>
                                 </div>
                             </div>
                         </div>
@@ -587,7 +702,7 @@
         <div class="section-wrapper">
             <section id="education">
                 <div class="container">
-                    <h2 class="section-title" data-aos="fade-up">My Academic Foundation</h2>
+                    <h2 class="section-title" data-aos="fade-up" data-translate="edu_title">My Academic Foundation</h2>
                     <div class="premium-timeline">
                         
                         <!-- Item 1: B.Tech -->
@@ -596,14 +711,14 @@
                                 <i class="fas fa-graduation-cap"></i>
                             </div>
                             <div class="premium-timeline-card">
-                                <h3>B.Tech in Computer Science & Engineering</h3>
-                                <div class="institution">United Institute of Technology, Prayagraj (AKTU)</div>
-                                <div class="date">2024 – 2028 (Currently Pursuing)</div>
-                                <p>Specializing in Data Science. Building rigorous algorithmic logic, maintaining exceptional grades, and specializing in advanced data structures, systems architecture, and database management.</p>
+                                <h3 data-translate="edu_card1_title">B.Tech in Computer Science & Engineering</h3>
+                                <div class="institution" data-translate="edu_card1_inst">United Institute of Technology, Prayagraj (AKTU)</div>
+                                <div class="date" data-translate="edu_card1_date">2024 – 2028 (Currently Pursuing)</div>
+                                <p data-translate="edu_card1_desc">Specializing in Data Science. Building rigorous algorithmic logic, maintaining exceptional grades, and specializing in advanced data structures, systems architecture, and database management.</p>
                                 <div class="premium-timeline-chips">
-                                    <span class="premium-timeline-chip"><i class="fas fa-medal"></i> University Rank 5</span>
-                                    <span class="premium-timeline-chip"><i class="fas fa-star"></i> DS Stream Rank 1</span>
-                                    <span class="premium-timeline-chip">Data Science</span>
+                                    <span class="premium-timeline-chip"><i class="fas fa-medal"></i> <span data-translate="edu_card1_chip1">University Rank 5</span></span>
+                                    <span class="premium-timeline-chip"><i class="fas fa-star"></i> <span data-translate="edu_card1_chip2">DS Stream Rank 1</span></span>
+                                    <span class="premium-timeline-chip" data-translate="edu_card1_chip3">Data Science</span>
                                 </div>
                             </div>
                         </div>
@@ -614,13 +729,13 @@
                                 <i class="fas fa-school"></i>
                             </div>
                             <div class="premium-timeline-card">
-                                <h3>Intermediate (12th Grade)</h3>
-                                <div class="institution">Jwala Devi Saraswati Vidya Mandir Inter College</div>
-                                <div class="date">Completed 2023</div>
-                                <p>Senior secondary education focused in the science stream (Physics, Chemistry, Mathematics). Developed foundational analytical thinking and scientific logic.</p>
+                                <h3 data-translate="edu_card2_title">Intermediate (12th Grade)</h3>
+                                <div class="institution" data-translate="edu_card2_inst">Jwala Devi Saraswati Vidya Mandir Inter College</div>
+                                <div class="date" data-translate="edu_card2_date">Completed 2023</div>
+                                <p data-translate="edu_card2_desc">Senior secondary education focused in the science stream (Physics, Chemistry, Mathematics). Developed foundational analytical thinking and scientific logic.</p>
                                 <div class="premium-timeline-chips">
-                                    <span class="premium-timeline-chip">92.67% Score</span>
-                                    <span class="premium-timeline-chip">UP Board Topper Honors</span>
+                                    <span class="premium-timeline-chip" data-translate="edu_card2_chip1">92.67% Score</span>
+                                    <span class="premium-timeline-chip" data-translate="edu_card2_chip2">UP Board Topper Honors</span>
                                 </div>
                             </div>
                         </div>
@@ -631,13 +746,13 @@
                                 <i class="fas fa-book-open"></i>
                             </div>
                             <div class="premium-timeline-card">
-                                <h3>High School (10th Grade)</h3>
-                                <div class="institution">Jwala Devi Saraswati Vidya Mandir Inter College</div>
-                                <div class="date">Completed 2021</div>
-                                <p>Secondary education with active focus on mathematics, science, and computer literacy. Set early benchmarks in logical problem solving.</p>
+                                <h3 data-translate="edu_card3_title">High School (10th Grade)</h3>
+                                <div class="institution" data-translate="edu_card3_inst">Jwala Devi Saraswati Vidya Mandir Inter College</div>
+                                <div class="date" data-translate="edu_card3_date">Completed 2021</div>
+                                <p data-translate="edu_card3_desc">Secondary education with active focus on mathematics, science, and computer literacy. Set early benchmarks in logical problem solving.</p>
                                 <div class="premium-timeline-chips">
-                                    <span class="premium-timeline-chip">91.00% Score</span>
-                                    <span class="premium-timeline-chip">Mathematics Honors</span>
+                                    <span class="premium-timeline-chip" data-translate="edu_card3_chip1">91.00% Score</span>
+                                    <span class="premium-timeline-chip" data-translate="edu_card3_chip2">Mathematics Honors</span>
                                 </div>
                             </div>
                         </div>
@@ -650,8 +765,8 @@
         <div class="section-wrapper">
             <section id="leadership">
                 <div class="container">
-                    <h2 class="section-title" data-aos="fade-up">Tech Leadership Journey</h2>
-                    <p style="text-align: center; max-width: 600px; margin: -2.5rem auto 3rem auto; color: #94a3b8;" data-aos="fade-up" data-aos-delay="50">
+                    <h2 class="section-title" data-aos="fade-up" data-translate="lead_title">Tech Leadership Journey</h2>
+                    <p style="text-align: center; max-width: 600px; margin: -2.5rem auto 3rem auto; color: #94a3b8;" data-aos="fade-up" data-aos-delay="50" data-translate="lead_subtitle">
                         Empowering others while scaling tech communities. I drive regional developer events, mentor peer programmers, and guide campus technical chapters.
                     </p>
                     <div class="premium-timeline">
@@ -662,14 +777,14 @@
                                 <i class="fas fa-code"></i>
                             </div>
                             <div class="premium-timeline-card">
-                                <h3>Technical Head</h3>
-                                <div class="institution">GeeksforGeeks (GFG) Campus UIT</div>
-                                <div class="date">Developer Community</div>
-                                <p>Guiding technical events for our campus developer ecosystem. I structure algorithm challenges, evaluate coding competition submissions, and coordinate study jams to improve algorithmic literacy.</p>
+                                <h3 data-translate="lead_card1_title">Technical Head</h3>
+                                <div class="institution" data-translate="lead_card1_inst">GeeksforGeeks (GFG) Campus UIT</div>
+                                <div class="date" data-translate="lead_card1_date">Developer Community</div>
+                                <p data-translate="lead_card1_desc">Guiding technical events for our campus developer ecosystem. I structure algorithm challenges, evaluate coding competition submissions, and coordinate study jams to improve algorithmic literacy.</p>
                                 <div class="premium-timeline-chips">
-                                    <span class="premium-timeline-chip"><i class="fas fa-users"></i> 500+ Attendees</span>
-                                    <span class="premium-timeline-chip">DSA Challenges</span>
-                                    <span class="premium-timeline-chip">Mentorship</span>
+                                    <span class="premium-timeline-chip"><i class="fas fa-users"></i> <span data-translate="lead_card1_chip1">500+ Attendees</span></span>
+                                    <span class="premium-timeline-chip" data-translate="lead_card1_chip2">DSA Challenges</span>
+                                    <span class="premium-timeline-chip" data-translate="lead_card1_chip3">Mentorship</span>
                                 </div>
                             </div>
                         </div>
@@ -680,14 +795,14 @@
                                 <i class="fas fa-cubes"></i>
                             </div>
                             <div class="premium-timeline-card">
-                                <h3>Technical Head & Evaluator</h3>
-                                <div class="institution">UDTech India</div>
-                                <div class="date">National Platform</div>
-                                <p>Leading technical infrastructure and project evaluation at national hackathons. Architecting secure tracker dashboards and coordinating live evaluation panels to optimize project scoring pipelines.</p>
+                                <h3 data-translate="lead_card2_title">Technical Head & Evaluator</h3>
+                                <div class="institution" data-translate="lead_card2_inst">UDTech India</div>
+                                <div class="date" data-translate="lead_card2_date">National Platform</div>
+                                <p data-translate="lead_card2_desc">Leading technical infrastructure and project evaluation at national hackathons. Architecting secure tracker dashboards and coordinating live evaluation panels to optimize project scoring pipelines.</p>
                                 <div class="premium-timeline-chips">
-                                    <span class="premium-timeline-chip">National Hackathons</span>
-                                    <span class="premium-timeline-chip">Dashboard Architect</span>
-                                    <span class="premium-timeline-chip">System Evaluator</span>
+                                    <span class="premium-timeline-chip" data-translate="lead_card2_chip1">National Hackathons</span>
+                                    <span class="premium-timeline-chip" data-translate="lead_card2_chip2">Dashboard Architect</span>
+                                    <span class="premium-timeline-chip" data-translate="lead_card2_chip3">System Evaluator</span>
                                 </div>
                             </div>
                         </div>
@@ -698,14 +813,14 @@
                                 <i class="fas fa-pen-nib"></i>
                             </div>
                             <div class="premium-timeline-card">
-                                <h3>Technical Associate & Content Specialist</h3>
-                                <div class="institution">TechEra (Delhi NCR)</div>
-                                <div class="date">Technical Content</div>
-                                <p>Authoring in-depth technical reviews and contributing clean code to large-scale developer portals. Coordinating cross-functional sprint planning and drafting code quality guidelines.</p>
+                                <h3 data-translate="lead_card3_title">Technical Associate & Content Specialist</h3>
+                                <div class="institution" data-translate="lead_card3_inst">TechEra (Delhi NCR)</div>
+                                <div class="date" data-translate="lead_card3_date">Technical Content</div>
+                                <p data-translate="lead_card3_desc">Authoring in-depth technical reviews and contributing clean code to large-scale developer portals. Coordinating cross-functional sprint planning and drafting code quality guidelines.</p>
                                 <div class="premium-timeline-chips">
-                                    <span class="premium-timeline-chip">Tech Writing</span>
-                                    <span class="premium-timeline-chip">Sprint Coordination</span>
-                                    <span class="premium-timeline-chip">Git Workflows</span>
+                                    <span class="premium-timeline-chip" data-translate="lead_card3_chip1">Tech Writing</span>
+                                    <span class="premium-timeline-chip" data-translate="lead_card3_chip2">Sprint Coordination</span>
+                                    <span class="premium-timeline-chip" data-translate="lead_card3_chip3">Git Workflows</span>
                                 </div>
                             </div>
                         </div>
@@ -716,14 +831,14 @@
                                 <i class="fab fa-google"></i>
                             </div>
                             <div class="premium-timeline-card">
-                                <h3>Core Team Member</h3>
-                                <div class="institution">Google Developer Student Clubs (GDSC) UIT</div>
-                                <div class="date">Google Developer Community</div>
-                                <p>Helped scale our campus technology community. Organized programming jams, coordinated speaker panels, and led hands-on development workshops for student developers.</p>
+                                <h3 data-translate="lead_card4_title">Core Team Member</h3>
+                                <div class="institution" data-translate="lead_card4_inst">Google Developer Student Clubs (GDSC) UIT</div>
+                                <div class="date" data-translate="lead_card4_date">Google Developer Community</div>
+                                <p data-translate="lead_card4_desc">Helped scale our campus technology community. Organized programming jams, coordinated speaker panels, and led hands-on development workshops for student developers.</p>
                                 <div class="premium-timeline-chips">
-                                    <span class="premium-timeline-chip"><i class="fas fa-network-wired"></i> 600+ Developers</span>
-                                    <span class="premium-timeline-chip">Workshop Leader</span>
-                                    <span class="premium-timeline-chip">GDSC Core</span>
+                                    <span class="premium-timeline-chip"><i class="fas fa-network-wired"></i> <span data-translate="lead_card4_chip1">600+ Developers</span></span>
+                                    <span class="premium-timeline-chip" data-translate="lead_card4_chip2">Workshop Leader</span>
+                                    <span class="premium-timeline-chip" data-translate="lead_card4_chip3">GDSC Core</span>
                                 </div>
                             </div>
                         </div>
@@ -734,14 +849,14 @@
                                 <i class="fas fa-flag"></i>
                             </div>
                             <div class="premium-timeline-card">
-                                <h3>Campus Ambassador & Volunteer</h3>
-                                <div class="institution">GDG Prayagraj & MyGov India (IIT Delhi)</div>
-                                <div class="date">Open Governance</div>
-                                <p>Advocating for digital literacy, open governance programs, and community technology adoption. Supporting regional developer conferences (GDG) and driving local meetups.</p>
+                                <h3 data-translate="lead_card5_title">Campus Ambassador & Volunteer</h3>
+                                <div class="institution" data-translate="lead_card5_inst">GDG Prayagraj & MyGov India (IIT Delhi)</div>
+                                <div class="date" data-translate="lead_card5_date">Open Governance</div>
+                                <p data-translate="lead_card5_desc">Advocating for digital literacy, open governance programs, and community technology adoption. Supporting regional developer conferences (GDG) and driving local meetups.</p>
                                 <div class="premium-timeline-chips">
-                                    <span class="premium-timeline-chip">GDG Prayagraj</span>
-                                    <span class="premium-timeline-chip">IIT Delhi MyGov</span>
-                                    <span class="premium-timeline-chip">Advocacy</span>
+                                    <span class="premium-timeline-chip" data-translate="lead_card5_chip1">GDG Prayagraj</span>
+                                    <span class="premium-timeline-chip" data-translate="lead_card5_chip2">IIT Delhi MyGov</span>
+                                    <span class="premium-timeline-chip" data-translate="lead_card5_chip3">Advocacy</span>
                                 </div>
                             </div>
                         </div>
@@ -753,8 +868,8 @@
         <div class="section-wrapper">
             <section id="achievements">
                 <div class="container">
-                    <h2 class="section-title" data-aos="fade-up">My Key Milestones</h2>
-                    <p style="text-align: center; max-width: 600px; margin: -2.5rem auto 3rem auto; color: #94a3b8;" data-aos="fade-up" data-aos-delay="50">
+                    <h2 class="section-title" data-aos="fade-up" data-translate="ach_title">My Key Milestones</h2>
+                    <p style="text-align: center; max-width: 600px; margin: -2.5rem auto 3rem auto; color: #94a3b8;" data-aos="fade-up" data-aos-delay="50" data-translate="ach_subtitle">
                         Moments of recognition that validate my commitment to code quality, algorithmic logic, and academic consistency.
                     </p>
                     <div class="premium-timeline">
@@ -765,14 +880,14 @@
                                 <i class="fas fa-trophy"></i>
                             </div>
                             <div class="premium-timeline-card">
-                                <h3>1st Place – WebDie Hackathon</h3>
-                                <div class="institution">ENIGMA XIII Tech Fest</div>
-                                <div class="date">National Tech Fest</div>
-                                <p>Led my team to victory at ENIGMA, securing the top spot by building an end-to-end full-stack dashboard in a high-pressure, 24-hour national code sprint.</p>
+                                <h3 data-translate="ach_card1_title">1st Place – WebDie Hackathon</h3>
+                                <div class="institution" data-translate="ach_card1_inst">ENIGMA XIII Tech Fest</div>
+                                <div class="date" data-translate="ach_card1_date">National Tech Fest</div>
+                                <p data-translate="ach_card1_desc">Led my team to victory at ENIGMA, securing the top spot by building an end-to-end full-stack dashboard in a high-pressure, 24-hour national code sprint.</p>
                                 <div class="premium-timeline-chips">
-                                    <span class="premium-timeline-chip"><i class="fas fa-crown"></i> 1st / 100+ Teams</span>
-                                    <span class="premium-timeline-chip">Full-Stack Dev</span>
-                                    <span class="premium-timeline-chip">24h Hackathon</span>
+                                    <span class="premium-timeline-chip"><i class="fas fa-crown"></i> <span data-translate="ach_card1_chip1">1st / 100+ Teams</span></span>
+                                    <span class="premium-timeline-chip" data-translate="ach_card1_chip2">Full-Stack Dev</span>
+                                    <span class="premium-timeline-chip" data-translate="ach_card1_chip3">24h Hackathon</span>
                                 </div>
                             </div>
                         </div>
@@ -783,14 +898,14 @@
                                 <i class="fas fa-award"></i>
                             </div>
                             <div class="premium-timeline-card">
-                                <h3>1st Place – GDG Tech Trivia</h3>
-                                <div class="institution">Google Developer Group quiz</div>
-                                <div class="date">Regional Coding Challenge</div>
-                                <p>Secured the first prize in a regional tech challenge, testing coding speed, precision, and core optimization logic on web architectures and REST API design.</p>
+                                <h3 data-translate="ach_card2_title">1st Place – GDG Tech Trivia</h3>
+                                <div class="institution" data-translate="ach_card2_inst">Google Developer Group quiz</div>
+                                <div class="date" data-translate="ach_card2_date">Regional Coding Challenge</div>
+                                <p data-translate="ach_card2_desc">Secured the first prize in a regional tech challenge, testing coding speed, precision, and core optimization logic on web architectures and REST API design.</p>
                                 <div class="premium-timeline-chips">
-                                    <span class="premium-timeline-chip">1st Place Winner</span>
-                                    <span class="premium-timeline-chip">API Architectures</span>
-                                    <span class="premium-timeline-chip">Google Dev Group</span>
+                                    <span class="premium-timeline-chip" data-translate="ach_card2_chip1">1st Place Winner</span>
+                                    <span class="premium-timeline-chip" data-translate="ach_card2_chip2">API Architectures</span>
+                                    <span class="premium-timeline-chip" data-translate="ach_card2_chip3">Google Dev Group</span>
                                 </div>
                             </div>
                         </div>
@@ -801,14 +916,14 @@
                                 <i class="fas fa-medal"></i>
                             </div>
                             <div class="premium-timeline-card">
-                                <h3>1st Place – Wikimedia Sprint</h3>
-                                <div class="institution">WikiClub UIT Contribution Challenge</div>
-                                <div class="date">Open Source Sprint</div>
-                                <p>Won first place by successfully merging 7 peer-reviewed patches and initiating 10+ active reviews in Wikimedia core projects within a 7-day challenge.</p>
+                                <h3 data-translate="ach_card3_title">1st Place – Wikimedia Sprint</h3>
+                                <div class="institution" data-translate="ach_card3_inst">WikiClub UIT Contribution Challenge</div>
+                                <div class="date" data-translate="ach_card3_date">Open Source Sprint</div>
+                                <p data-translate="ach_card3_desc">Won first place by successfully merging 7 peer-reviewed patches and initiating 10+ active reviews in Wikimedia core projects within a 7-day challenge.</p>
                                 <div class="premium-timeline-chips">
-                                    <span class="premium-timeline-chip">1st Place Winner</span>
-                                    <span class="premium-timeline-chip">7 Patches Merged</span>
-                                    <span class="premium-timeline-chip">Wikimedia Core</span>
+                                    <span class="premium-timeline-chip" data-translate="ach_card3_chip1">1st Place Winner</span>
+                                    <span class="premium-timeline-chip" data-translate="ach_card3_chip2">7 Patches Merged</span>
+                                    <span class="premium-timeline-chip" data-translate="ach_card3_chip3">Wikimedia Core</span>
                                 </div>
                             </div>
                         </div>
@@ -819,14 +934,14 @@
                                 <i class="fas fa-star"></i>
                             </div>
                             <div class="premium-timeline-card">
-                                <h3>Academic Distinction & Topper Honors</h3>
-                                <div class="institution">Dainik Jagran & Salvete Advena</div>
-                                <div class="date">Academic Honors</div>
-                                <p>Honored by UP Board authorities and Dainik Jagran for outstanding academic topper rankings, and recognized with college honors at Salvete Advena 2025.</p>
+                                <h3 data-translate="ach_card4_title">Academic Distinction & Topper Honors</h3>
+                                <div class="institution" data-translate="ach_card4_inst">Dainik Jagran & Salvete Advena</div>
+                                <div class="date" data-translate="ach_card4_date">Academic Honors</div>
+                                <p data-translate="ach_card4_desc">Honored by UP Board authorities and Dainik Jagran for outstanding academic topper rankings, and recognized with college honors at Salvete Advena 2025.</p>
                                 <div class="premium-timeline-chips">
-                                    <span class="premium-timeline-chip">Dainik Jagran honored</span>
-                                    <span class="premium-timeline-chip">UP Board Topper</span>
-                                    <span class="premium-timeline-chip">Salvete Advena 2025</span>
+                                    <span class="premium-timeline-chip" data-translate="ach_card4_chip1">Dainik Jagran honored</span>
+                                    <span class="premium-timeline-chip" data-translate="ach_card4_chip2">UP Board Topper</span>
+                                    <span class="premium-timeline-chip" data-translate="ach_card4_chip3">Salvete Advena 2025</span>
                                 </div>
                             </div>
                         </div>
@@ -834,39 +949,82 @@
                 </div>
             </section>
         </div>
-        
-        <!-- Get In Touch Section -->
+                <!-- Get In Touch Section -->
         <div class="section-wrapper">
             <section id="contact">
                 <div class="container">
-                    <h2 class="section-title" data-aos="fade-up">Get In Touch</h2>
-                    <p style="text-align: center; max-width: 600px; margin: -2rem auto 3rem auto; color: #94a3b8;" data-aos="fade-up" data-aos-delay="50">
+                    <h2 class="section-title" data-aos="fade-up" data-translate="contact_title">Get In Touch</h2>
+                    <p style="text-align: center; max-width: 600px; margin: -2.5rem auto 3rem auto; color: #94a3b8;" data-aos="fade-up" data-aos-delay="50" data-translate="contact_subtitle">
                         Whether you want to discuss a project, query collaboration, hire me for full-stack freelance development, or just chat about AI and open source – feel free to drop me a message!
                     </p>
                     
-                    <form id="fs-frm" action="https://formspree.io/f/mnnlnaje" method="POST" class="contact-form" data-aos="fade-up" data-aos-delay="100">
-                        <div class="form-group">
-                            <input type="text" name="name" placeholder="Your Name" required>
+                    <div class="contact-layout">
+                        <!-- Left Side: Interactive Contact Cards -->
+                        <div class="contact-info-cards" data-aos="fade-right" data-aos-delay="100">
+                            <!-- Gmail Card -->
+                            <div class="contact-info-card theme-blue">
+                                <div class="contact-info-icon"><i class="fas fa-envelope"></i></div>
+                                <div class="contact-info-details">
+                                    <span data-translate="contact_email_title">Direct Email</span>
+                                    <h4><a href="mailto:maurgk212104@gmail.com">maurgk212104@gmail.com</a></h4>
+                                </div>
+                            </div>
+                            
+                            <!-- WhatsApp Card -->
+                            <div class="contact-info-card theme-green">
+                                <div class="contact-info-icon"><i class="fab fa-whatsapp"></i></div>
+                                <div class="contact-info-details">
+                                    <span data-translate="contact_whatsapp_title">Direct Chat</span>
+                                    <h4><a href="https://api.whatsapp.com/send?phone=91XXXXXXXXXX&text=Hi%20Gautam,%20I%20visited%20your%20portfolio!" target="_blank" rel="noopener noreferrer" id="whatsapp-card-link" data-translate="contact_whatsapp_link">Chat on WhatsApp</a></h4>
+                                </div>
+                            </div>
+                            
+                            <!-- Location Card -->
+                            <div class="contact-info-card theme-orange">
+                                <div class="contact-info-icon"><i class="fas fa-map-location-dot"></i></div>
+                                <div class="contact-info-details">
+                                    <span data-translate="contact_location_title">Based In</span>
+                                    <h4 data-translate="prayagraj_india">Prayagraj, UP, India</h4>
+                                </div>
+                            </div>
                         </div>
-                        <div class="form-group">
-                            <input type="email" name="email" placeholder="Your Email" required>
+
+                        <!-- Right Side: Contact Form Card -->
+                        <div class="contact-form-wrapper" data-aos="fade-left" data-aos-delay="150">
+                            <form id="fs-frm" action="https://formspree.io/f/mnnlnaje" method="POST" class="premium-contact-form">
+                                <div class="premium-form-group">
+                                    <input type="text" name="name" id="contact-name" class="premium-form-input" placeholder="Your Name" data-translate="contact_input_name" required>
+                                </div>
+                                <div class="premium-form-group">
+                                    <input type="email" name="email" id="contact-email" class="premium-form-input" placeholder="Your Email" data-translate="contact_input_email" required>
+                                </div>
+                                <div class="premium-form-group">
+                                    <textarea name="message" id="contact-message" class="premium-form-textarea" placeholder="Your Message" data-translate="contact_input_message" required></textarea>
+                                </div>
+                                <input type="hidden" name="_subject" value="New Message from Gautam Maurya Portfolio!">
+                                
+                                <div class="form-submit-actions">
+                                    <!-- Send Email Action -->
+                                    <button type="submit" class="submit-action-btn btn-email" id="submit-btn">
+                                        <span data-translate="contact_btn_email">Send Email</span> <i class="fas fa-paper-plane"></i>
+                                    </button>
+                                    
+                                    <!-- Send WhatsApp Action -->
+                                    <button type="button" class="submit-action-btn btn-whatsapp" id="whatsapp-btn" onclick="sendWhatsAppMessage()">
+                                        <span data-translate="contact_btn_whatsapp">Send WhatsApp</span> <i class="fab fa-whatsapp"></i>
+                                    </button>
+                                </div>
+                                <div id="form-status"></div>
+                            </form>
                         </div>
-                        <div class="form-group">
-                            <textarea name="message" placeholder="Your Message" required></textarea>
-                        </div>
-                        <input type="hidden" name="_subject" value="New Message from Portfolio Website!">
-                        <div style="text-align: center;">
-                            <button type="submit" class="cta-button" id="submit-btn">Send Message <i class="fas fa-paper-plane"></i></button>
-                        </div>
-                        <div id="form-status"></div>
-                    </form>
+                    </div>
 
                     <!-- Portfolio Share Widget -->
                     <div class="share-portfolio-container" data-aos="fade-up">
-                        <h3 class="share-title"><i class="fas fa-share-nodes"></i> Share Gautam's Journey</h3>
+                        <h3 class="share-title"><i class="fas fa-share-nodes"></i> <span data-translate="share_title">Share Gautam's Journey</span></h3>
                         <div class="share-buttons-wrapper">
                             <button class="share-btn copy-btn" id="share-copy-link" title="Copy Portfolio Link to Clipboard">
-                                <i class="fas fa-link"></i> Copy Link
+                                <i class="fas fa-link"></i> <span data-translate="share_btn_copy">Copy Link</span>
                             </button>
                             <a class="share-btn" href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fgkm563.github.io%2F" target="_blank" rel="noopener noreferrer" title="Share on LinkedIn">
                                 <i class="fab fa-linkedin"></i> LinkedIn
@@ -891,7 +1049,7 @@
             <!-- Col 1: Brand & Bio -->
             <div class="footer-col footer-brand" data-aos="fade-up" data-aos-delay="100">
                 <a href="#" class="logo footer-logo">G K M</a>
-                <p class="footer-bio">
+                <p class="footer-bio" data-translate="footer_bio">
                     I am a B.Tech CSE (Data Science) student at UIT Prayagraj, co-founder of PrayagrajRooms, and open-source enthusiast. I design and build secure, premium, and performant web products that create real community impact.
                 </p>
                 <div class="footer-social-links">
@@ -906,20 +1064,20 @@
             
             <!-- Col 2: Navigation Links -->
             <div class="footer-col footer-links" data-aos="fade-up" data-aos-delay="200">
-                <h4>Navigation</h4>
+                <h4 data-translate="footer_col_nav">Navigation</h4>
                 <ul>
-                    <li><a href="#hero"><i class="fas fa-chevron-right"></i> Home</a></li>
-                    <li><a href="#about"><i class="fas fa-chevron-right"></i> About Me</a></li>
-                    <li><a href="#skills"><i class="fas fa-chevron-right"></i> Technical Skills</a></li>
-                    <li><a href="#projects"><i class="fas fa-chevron-right"></i> Projects</a></li>
-                    <li><a href="#linkedin-section"><i class="fas fa-chevron-right"></i> LinkedIn Feed</a></li>
-                    <li><a href="#contact"><i class="fas fa-chevron-right"></i> Contact</a></li>
+                    <li><a href="#hero"><i class="fas fa-chevron-right"></i> <span data-translate="nav_home">Home</span></a></li>
+                    <li><a href="#about"><i class="fas fa-chevron-right"></i> <span data-translate="nav_about">About Me</span></a></li>
+                    <li><a href="#skills"><i class="fas fa-chevron-right"></i> <span data-translate="nav_skills">Technical Skills</span></a></li>
+                    <li><a href="#projects"><i class="fas fa-chevron-right"></i> <span data-translate="nav_projects">Projects</span></a></li>
+                    <li><a href="#linkedin-section"><i class="fas fa-chevron-right"></i> <span data-translate="nav_linkedin">LinkedIn Feed</span></a></li>
+                    <li><a href="#contact"><i class="fas fa-chevron-right"></i> <span data-translate="nav_contact">Contact</span></a></li>
                 </ul>
             </div>
             
             <!-- Col 3: Focus Areas / Services -->
             <div class="footer-col footer-links" data-aos="fade-up" data-aos-delay="300">
-                <h4>Technical Focus</h4>
+                <h4 data-translate="footer_col_focus">Technical Focus</h4>
                 <ul>
                     <li><a href="#services"><i class="fas fa-code"></i> Full-Stack Apps</a></li>
                     <li><a href="#services"><i class="fas fa-brain"></i> AI Agent Systems</a></li>
@@ -931,12 +1089,12 @@
             
             <!-- Col 4: Contact & Location details -->
             <div class="footer-col footer-contact" data-aos="fade-up" data-aos-delay="400">
-                <h4>Connect</h4>
+                <h4 data-translate="footer_col_connect">Connect</h4>
                 <p><i class="fas fa-envelope"></i> <a href="mailto:maurgk212104@gmail.com">maurgk212104@gmail.com</a></p>
-                <p><i class="fas fa-map-marker-alt"></i> Prayagraj, Uttar Pradesh, India</p>
-                <p><i class="fas fa-calendar-check"></i> <span style="color: var(--primary-color); font-weight: 500;">Available for Freelance</span></p>
+                <p><i class="fas fa-map-marker-alt"></i> <span data-translate="prayagraj_india">Prayagraj, Uttar Pradesh, India</span></p>
+                <p><i class="fas fa-calendar-check"></i> <span style="color: var(--primary-color); font-weight: 500;" data-translate="footer_freelance">Available for Freelance</span></p>
                 <div class="footer-cta">
-                    <a href="#contact" class="cta-button footer-cta-btn">Hire Gautam <i class="fas fa-paper-plane"></i></a>
+                    <a href="#contact" class="cta-button footer-cta-btn"><span data-translate="footer_col_hire">Hire Gautam</span> <i class="fas fa-paper-plane"></i></a>
                 </div>
             </div>
         </div>
@@ -944,8 +1102,8 @@
         <!-- Bottom copyright bar -->
         <div class="footer-bottom">
             <div class="container footer-bottom-container">
-                <p>&copy; 2026 Gautam Kumar Maurya (GKM). All Rights Reserved.</p>
-                <p>Made with <i class="fa-solid fa-heart"></i> & <i class="fa-solid fa-code"></i> in Prayagraj, India</p>
+                <p>&copy; 2026 Gautam Kumar Maurya (GKM). <span data-translate="footer_copyright">All Rights Reserved.</span></p>
+                <p data-translate="footer_made">Made with ❤️ & 💻 in Prayagraj, India</p>
             </div>
         </div>
     </footer>
@@ -970,36 +1128,39 @@
                     <canvas id="avatar-chat-canvas"></canvas>
                 </div>
                 <div class="chat-header-info">
-                    <h4>Gautam's AI Twin</h4>
-                    <span>Active Digital Self</span>
+                    <h4 data-translate="chat_title">Gautam's AI Twin</h4>
+                    <span data-translate="chat_status">Active Digital Self</span>
                 </div>
             </div>
             <button class="chat-close-btn" id="chat-close" title="Close Chat"><i class="fas fa-times"></i></button>
         </div>
         
         <div class="chat-messages" id="chat-messages">
-            <div class="chat-bubble bot">
+            <div class="chat-bubble bot" data-translate="chat_greeting">
                 Hey there! I am Gautam's Digital Twin. 🤖 I'm here to answer your questions about Gautam. What would you like to know?
             </div>
         </div>
 
         <div class="chat-quick-options" id="chat-quick-options">
-            <button class="quick-opt-btn" onclick="sendQuickMessage('Tell me your story')">Tell me your story</button>
-            <button class="quick-opt-btn" onclick="sendQuickMessage('What is PDFBAZI?')">What is PDFBAZI?</button>
-            <button class="quick-opt-btn" onclick="sendQuickMessage('Show hackathon wins')">Show hackathon wins</button>
-            <button class="quick-opt-btn" onclick="sendQuickMessage('How can we collaborate?')">How can we collaborate?</button>
+            <button class="quick-opt-btn" onclick="sendQuickMessage('Tell me your story')" data-translate="chat_opt_story">Tell me your story</button>
+            <button class="quick-opt-btn" onclick="sendQuickMessage('What is PDFBAZI?')" data-translate="chat_opt_pdfbazi">What is PDFBAZI?</button>
+            <button class="quick-opt-btn" onclick="sendQuickMessage('Show hackathon wins')" data-translate="chat_opt_wins">Show hackathon wins</button>
+            <button class="quick-opt-btn" onclick="sendQuickMessage('How can we collaborate?')" data-translate="chat_opt_collab">How can we collaborate?</button>
         </div>
 
-        <form class="chat-input-bar" id="chat-input-form" onsubmit="handleChatSubmit(event)">
-            <input type="text" id="chat-user-input" placeholder="Type a message or click an option..." autocomplete="off">
-            <button type="submit" class="chat-send-btn" title="Send Message"><i class="fas fa-paper-plane"></i></button>
-        </form>
+        <div class="chat-input-bar">
+            <form id="chat-input-form" onsubmit="handleChatSubmit(event)" style="display: flex; width: 100%; align-items: center;">
+                <input type="text" id="chat-user-input" placeholder="Type a message or click an option..." data-translate="chat_placeholder" autocomplete="off">
+                <button type="submit" class="chat-send-btn" title="Send Message"><i class="fas fa-paper-plane"></i></button>
+            </form>
+        </div>
     </div>
 
 
 
     <!-- External Script Integrations -->
     <script src="assets/js/data.js"></script>
+    <script src="assets/js/translations.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
@@ -1009,7 +1170,7 @@
 
     <!-- Share Link Toast Notification -->
     <div class="share-toast" id="share-toast">
-        <i class="fas fa-check-circle"></i> Portfolio link copied to clipboard!
+        <i class="fas fa-check-circle"></i> <span data-translate="share_toast_copied">Portfolio link copied to clipboard!</span>
     </div>
 </body>
 
