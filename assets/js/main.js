@@ -88,7 +88,8 @@ function refreshTypedSubtitles(lang) {
             typeSpeed: 50,
             backSpeed: 25,
             backDelay: 1500,
-            loop: true
+            loop: true,
+            contentType: null
         });
     }
 }
