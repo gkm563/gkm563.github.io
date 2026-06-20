@@ -3214,6 +3214,35 @@ section {
     grid-column: span 2;
 }
 
+.bento-split-layout {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    width: 100%;
+}
+
+.bento-info-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    text-align: left;
+}
+
+@media (min-width: 992px) {
+    .bento-card.col-span-2 .bento-split-layout {
+        display: grid;
+        grid-template-columns: 1.15fr 0.85fr;
+        gap: 2.5rem;
+        align-items: start;
+    }
+    
+    .bento-card.col-span-2 .bento-split-layout .bento-subgrid {
+        grid-template-columns: 1fr;
+        margin: 0;
+    }
+}
+
+
 @media (max-width: 1024px) {
     .bento-card.col-span-2 {
         grid-column: span 2;

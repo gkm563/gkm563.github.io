@@ -133,7 +133,7 @@ window.PORTFOLIO_TRANSLATIONS = {
 
         service_fs_title: "Full-Stack & Production",
         service_fs_metric: "10+ Sites Deployed",
-        service_fs_desc: "I architect end-to-end web applications, scaling them from idea to live production. Combining React/Next.js frontend logic with Django, Node.js, and PHP backends, I configure secure APIs, databases, and deploy containerized environments using Docker and Kubernetes. My complete workflow: Idea  Design  Development  GitHub  CI/CD  Cloud  Kubernetes  Production. I deliver SaaS platforms, dashboards, startup MVPs, portfolio sites, and business web applications.",
+        service_fs_desc: "I architect and scale end-to-end web applications from concept to live production. I combine React/Next.js frontends with Django/Node.js backends, configuring secure databases and containerized deployments using Docker and Kubernetes.",
 
         service_ai_title: "AI Agents & Automation",
         service_ai_metric: "5+ AI Agents | 3+ Systems",
@@ -157,7 +157,7 @@ window.PORTFOLIO_TRANSLATIONS = {
 
         service_lead_title: "Community Leadership & Events",
         service_lead_metric: "650+ GSA | 580+ GFG Members",
-        service_lead_desc: "I actively build developer communities and technology ecosystems. Communities I serve: GFG UIT, GSA, GDG, and various student developer communities. Events coordinated include BuildX, Tech Era, Brahmastra, Hackathons, Workshops, Meetups, and Technical Sessions. I handle Event Planning, Community Growth, Team Leadership, Speaker Coordination, Operations Management, Technical Execution, and Strategic Decision Making — impacting 650+ members via GSA and 580+ members via GFG activities, with 15+ technical events organized.",
+        service_lead_desc: "I actively build developer communities and coordinate regional technology ecosystems. I handle event planning, operations management, and team leadership, organizing 15+ major hackathons, meetups, and workshops.",
 
         // Bento sub-boxes English
         service_fs_box1_title: "SaaS Architectures",
@@ -427,7 +427,7 @@ window.PORTFOLIO_TRANSLATIONS = {
 
         service_fs_title: "फुल-स्टैक और प्रोडक्शन",
         service_fs_metric: "10+ वेबसाइट्स लाइव",
-        service_fs_desc: "मैं शुरू से अंत तक वेब एप्लिकेशन बनाता हूँ और उन्हें लाइव प्रोडक्शन तक स्केल करता हूँ। रिएक्ट/नेक्स्ट.जेएस फ्रंटएंड को जेंगो, नोड.जेएस और पीएचपी बैकएंड के साथ जोड़कर, मैं सुरक्षित डेटाबेस प्रबंधित करता हूँ और कुबेरनेट्स (Kubernetes) का उपयोग करके कंटेनराइज्ड डिप्लॉयमेंट सेटअप करता हूँ। मैं गिटहब से प्रोडक्शन तक सीआई/सीडी (CI/CD) पाइपलाइन लागू करता हूँ।",
+        service_fs_desc: "मैं सुरक्षित वेब एप्लिकेशन्स को डिज़ाइन और लाइव प्रोडक्शन तक स्केल करता हूँ। मैं रिएक्ट/नेक्स्ट.जेएस फ्रंटएंड को नोड.जेएस/जेंगो बैकएंड के साथ जोड़कर सुरक्षित डेटाबेस और डॉकर/कुबेरनेट्स का उपयोग करके कंटेनर डिप्लॉयमेंट सेटअप करता हूँ।",
 
         service_ai_title: "एआई एजेंट और ऑटोमेशन",
         service_ai_metric: "5+ एआई एजेंट्स लाइव",
@@ -451,7 +451,7 @@ window.PORTFOLIO_TRANSLATIONS = {
 
         service_lead_title: "नेतृत्व और इवेंट आयोजन",
         service_lead_metric: "1500+ साथियों के लिए इवेंट्स",
-        service_lead_desc: "मैं बड़े तकनीकी कार्यक्रमों का आयोजन करता हूँ। मैंने मुख्य आयोजक और डेवलपर के रूप में बिल्डएक्स इंडिया (BuildX India), ब्रह्मास्त्र (Brahmastra), और टेक एरा (Tech Era) जैसे हैकथॉन्स को समन्वित किया। मैं जीएफजी यूआईटी (GFGUIT) का टेक हेड, यूडीटेक इंडिया का टेक हेड और जीडीएससी का कोर मेंबर रहा हूँ तथा जीडीजी इवेंट्स में सक्रिय रहता हूँ।",
+        service_lead_desc: "मैं छात्र डेवलपर समुदायों को विकसित करने और तकनीकी कार्यक्रमों का नेतृत्व करने में सक्रिय हूँ। मुख्य आयोजक के रूप में मैंने 15+ से अधिक हैकथॉन्स, तकनीकी कार्यशालाओं और डेवलपर मीटअप का सफल आयोजन और समन्वय किया है।",
 
         // Bento sub-boxes Hindi
         service_fs_box1_title: "SaaS आर्किटेक्चर",
