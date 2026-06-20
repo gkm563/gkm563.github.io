@@ -1563,7 +1563,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 10. Initialize 3D Card Parallax Tilt (vanilla-tilt)
     if (window.VanillaTilt && !('ontouchstart' in window)) {
-        VanillaTilt.init(document.querySelectorAll('.bento-card, .skill-card, .project-card, .linkedin-card, .premium-timeline-card, .os-stat-card, .os-feature-card, .os-feed-card'), {
+        VanillaTilt.init(document.querySelectorAll('.bento-card, .skill-card, .project-card, .linkedin-card, .premium-timeline-card, .os-stat-card, .os-feature-card, .os-feed-card, .about-highlight-card, .terminal-card'), {
             max: 10,             // Max tilt rotation (degrees)
             speed: 400,          // Speed of the enter/exit transition
             glare: true,         // Enable glare sweep

@@ -132,7 +132,6 @@
             </nav>
             <div class="header-actions">
                 <div class="lang-switch-wrapper">
-                    <i class="fas fa-globe lang-globe-icon"></i>
                     <div class="lang-switch-capsule">
                         <span class="lang-switch-slider"></span>
                         <button class="lang-switch-btn active" id="lang-btn-en" onclick="changeLanguage('en')" aria-label="Switch to English">EN</button>
@@ -181,34 +180,33 @@
                 <div class="container">
                     <h2 class="section-title" data-aos="fade-up" data-translate="about_title">About Me</h2>
                     <div class="about-content">
-                        <div data-aos="fade-right" data-aos-delay="200" style="display: flex; flex-direction: column; align-items: center;">
-                            <img src="assets/images/Gautam_Kumar_Maurya.jpg" alt="Gautam Kumar Maurya - Data Science & Full-Stack Engineer Portfolio UIT Prayagraj" class="about-image">
-                            
-                            <!-- Voice Narrator Module -->
-                            <div class="voice-narrator-card">
-                                <div class="voice-player-info">
-                                    <span class="pulse-dot" id="voice-pulse"></span>
-                                    <strong data-translate="narrator_title">Gautam's Voice Narrator</strong>
+                        <div data-aos="fade-right" data-aos-delay="200" style="display: flex; flex-direction: column; align-items: center; width: 100%;">
+                            <!-- Holographic Photo Scanner Frame -->
+                            <div class="profile-scanner-viewport">
+                                <div class="scanner-frame-overlay"></div>
+                                <div class="scanner-coordinates">
+                                    <span class="coord-item top-left">SYS_RECON: ACTIVE</span>
+                                    <span class="coord-item top-right">GKM_SEC // N_563</span>
+                                    <span class="coord-item bottom-left">LAT: 25.4358° N</span>
+                                    <span class="coord-item bottom-right">LON: 81.8463° E</span>
                                 </div>
-                                <div class="voice-controls">
-                                    <button id="narrator-play-btn" class="narrator-btn" title="Play Story Narration"><i class="fas fa-play"></i></button>
-                                    <button id="narrator-stop-btn" class="narrator-btn" title="Stop Story Narration" disabled><i class="fas fa-stop"></i></button>
-                                    <div class="voice-selector-wrapper">
-                                        <select id="voice-gender" title="Select Voice Gender">
-                                            <option value="male" data-translate="narrator_voice_male">Male Voice</option>
-                                            <option value="female" selected data-translate="narrator_voice_female">Female Voice</option>
-                                        </select>
-                                    </div>
+                                <div class="scanner-badge">SYS_STATUS: ONLINE</div>
+                                <div class="scanner-laser-line"></div>
+                                <img src="assets/images/Gautam_Kumar_Maurya.jpg" alt="Gautam Kumar Maurya - Data Science & Full-Stack Engineer Portfolio UIT Prayagraj" class="about-image">
+                            </div>
+                            <!-- Micro-Stats Badges -->
+                            <div class="about-micro-stats">
+                                <div class="about-stat-pill theme-blue">
+                                    <i class="fas fa-medal"></i>
+                                    <span>AKTU Rank 5</span>
                                 </div>
-                                <div class="visualizer-wrapper" id="voice-visualizer">
-                                    <div class="bar"></div>
-                                    <div class="bar"></div>
-                                    <div class="bar"></div>
-                                    <div class="bar"></div>
-                                    <div class="bar"></div>
-                                    <div class="bar"></div>
-                                    <div class="bar"></div>
-                                    <div class="bar"></div>
+                                <div class="about-stat-pill theme-pink">
+                                    <i class="fab fa-linkedin"></i>
+                                    <span>19k+ Followers</span>
+                                </div>
+                                <div class="about-stat-pill theme-yellow">
+                                    <i class="fab fa-wikipedia-w"></i>
+                                    <span>30+ Wiki Articles</span>
                                 </div>
                             </div>
                         </div>
@@ -217,14 +215,67 @@
                             <p data-aos="fade-up" data-aos-delay="400" data-translate="about_para_1">
                                 Hello! I'm <strong>Gautam Kumar Maurya (GKM)</strong>. My journey in technology is driven by a simple mission: to build intelligent, scalable solutions that solve real community challenges. As a B.Tech Computer Science student specializing in Data Science at United Institute of Technology, Prayagraj, I treat code not just as instructions, but as a medium for positive change.
                             </p>
-                            <ul data-aos="fade-up" data-aos-delay="500">
-                                <li class="highlight-item"><span class="highlight" data-translate="about_point_1_title">Co-founding PrayagrajRooms:</span> <span data-translate="about_point_1_text">Driven by the struggles outstation students face, I co-founded <strong>PrayagrajRooms</strong> to simplify PG and room discovery, eliminating brokerage and bringing transparency to local student housing.</span></li>
-                                <li class="highlight-item"><span class="highlight" data-translate="about_point_2_title">Global Open Source Contributions:</span> <span data-translate="about_point_2_text">As an active contributor to the <strong>Wikimedia Foundation</strong> and Wikipedia core codebase, I regularly navigate peer-reviewed pipelines via Gerrit and Phabricator, merging patches that improve global digital knowledge.</span></li>
-                                <li class="highlight-item"><span class="highlight" data-translate="about_point_3_title">Academic & Algorithms Focus:</span> <span data-translate="about_point_3_text">Balancing build pipelines with rigorous computer science theory, I achieved <strong>AKTU University Rank 5</strong> in my first semester and hold Rank 1 in the Data Structures stream at UIT.</span></li>
-                            </ul>
-                            <p data-aos="fade-up" data-aos-delay="600" data-translate="about_para_2">
+
+                            <!-- Interactive Developer Profile Terminal -->
+                            <div class="terminal-card" data-aos="fade-up" data-aos-delay="450">
+                                <div class="terminal-header">
+                                    <span class="terminal-dot red"></span>
+                                    <span class="terminal-dot yellow"></span>
+                                    <span class="terminal-dot green"></span>
+                                    <span class="terminal-title">gautam_profile.json — bash</span>
+                                </div>
+                                <div class="terminal-body">
+                                    <pre><code><span class="keyword">{</span>
+  <span class="property">"name"</span>: <span class="string">"Gautam Kumar Maurya"</span>,
+  <span class="property">"role"</span>: <span class="string">"Data Science & Full-Stack"</span>,
+  <span class="property">"hometown"</span>: <span class="string">"Prayagraj, India"</span>,
+  <span class="property">"speciality"</span>: <span class="keyword">[</span><span class="string">"AI Agents"</span>, <span class="string">"Wikimedia Core"</span>, <span class="string">"Cybersec"</span><span class="keyword">]</span>,
+  <span class="property">"strengths"</span>: <span class="keyword">[</span><span class="string">"Algorithms"</span>, <span class="string">"Startup Scaling"</span><span class="keyword">]</span>,
+  <span class="property">"universityRank"</span>: <span class="number">5</span>,
+  <span class="property">"motto"</span>: <span class="string">"Code for Community Impact"</span>
+<span class="keyword">}</span><span class="cursor">|</span></code></pre>
+                                </div>
+                            </div>
+
+                            <p data-aos="fade-up" data-aos-delay="500" data-translate="about_para_2">
                                 Whether engineering clean React interfaces, optimizing database structures in Django, or designing intelligent AI assistants, I am always focused on crafting premium, performant digital solutions.
                             </p>
+
+                            <!-- High-Tech Highlights Grid -->
+                            <div class="about-highlights-grid" data-aos="fade-up" data-aos-delay="550">
+                                <div class="about-highlight-card" data-tilt>
+                                    <div class="about-card-icon-wrapper cyan">
+                                        <svg class="about-card-icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                                            <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                                        </svg>
+                                    </div>
+                                    <h4 data-translate="about_point_1_title">Co-founding PrayagrajRooms:</h4>
+                                    <p data-translate="about_point_1_text">Driven by the struggles outstation students face, I co-founded PrayagrajRooms to simplify PG and room discovery, eliminating brokerage.</p>
+                                </div>
+                                <div class="about-highlight-card" data-tilt>
+                                    <div class="about-card-icon-wrapper pink">
+                                        <svg class="about-card-icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <line x1="6" y1="3" x2="6" y2="15"></line>
+                                            <circle cx="18" cy="6" r="3"></circle>
+                                            <circle cx="6" cy="18" r="3"></circle>
+                                            <path d="M18 9a9 9 0 0 1-9 9"></path>
+                                        </svg>
+                                    </div>
+                                    <h4 data-translate="about_point_2_title">Global Open Source Contributions:</h4>
+                                    <p data-translate="about_point_2_text">Active contributor to Wikimedia and Wikipedia core codebase, merging patches to improve global digital knowledge via Gerrit & Phabricator.</p>
+                                </div>
+                                <div class="about-highlight-card" data-tilt>
+                                    <div class="about-card-icon-wrapper yellow">
+                                        <svg class="about-card-icon" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
+                                            <path d="M6 12v5c0 2 2 3 6 3s6-1 6-3v-5"></path>
+                                        </svg>
+                                    </div>
+                                    <h4 data-translate="about_point_3_title">Academic & Algorithms Focus:</h4>
+                                    <p data-translate="about_point_3_text">Secured AKTU University Rank 5 in my first semester and hold Rank 1 in the Data Structures stream at UIT.</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -589,7 +640,7 @@
                 <div class="container">
                     <h2 class="section-title" data-aos="fade-up" data-translate="services_title">How I Can Collaborate</h2>
                     <p class="section-subtitle" style="text-align: center; max-width: 700px; margin: -2.5rem auto 3rem auto; color: #94a3b8;" data-aos="fade-up" data-aos-delay="50" data-translate="services_subtitle">
-                        Empowering startups, open-source communities, and enterprise teams with robust full-stack engineering, custom AI architectures, and comprehensive cybersecurity auditing.
+                        Empowering startups, open-source communities, and enterprise teams with robust full-stack engineering, custom AI architectures, and comprehensive cybersecurity audit
                     </p>
                     <div class="bento-grid">
                         <!-- Card 1: Full-Stack Architectures (Blue Theme, col-span-2) -->
@@ -601,13 +652,37 @@
                             <div class="bento-content">
                                 <div class="bento-metric" data-translate="service_fs_metric">10+ Sites Deployed</div>
                                 <h3 data-translate="service_fs_title">Full-Stack & Production</h3>
-                                <p data-translate="service_fs_desc">I architect end-to-end web applications, scaling them from idea to live production. Combining React/Next.js frontend logic with Django, Node.js, and PHP backends, I configure secure APIs, databases, and deploy containerized environments using Docker and Kubernetes. My complete workflow: Idea → Design → Development → GitHub → CI/CD → Cloud → Kubernetes → Production. I deliver SaaS platforms, dashboards, startup MVPs, portfolio sites, and business web applications.</p>
+                                <p class="bento-intro" data-translate="service_fs_desc">I architect end-to-end web applications, scaling them from idea to live production. Combining React/Next.js frontend logic with Django, Node.js, and PHP backends, I configure secure APIs, databases, and deploy containerized environments using Docker and Kubernetes.</p>
+                                
+                                <div class="bento-subgrid">
+                                    <div class="bento-subbox">
+                                        <div class="subbox-icon"><i class="fas fa-cubes"></i></div>
+                                        <div class="subbox-text">
+                                            <h4 data-translate="service_fs_box1_title">SaaS Architectures</h4>
+                                            <p data-translate="service_fs_box1_desc">Scaling web apps from concept to production-ready SaaS platforms.</p>
+                                        </div>
+                                    </div>
+                                    <div class="bento-subbox">
+                                        <div class="subbox-icon"><i class="fas fa-server"></i></div>
+                                        <div class="subbox-text">
+                                            <h4 data-translate="service_fs_box2_title">API & Backends</h4>
+                                            <p data-translate="service_fs_box2_desc">Secure services built with Django, Node.js, and SQL/NoSQL databases.</p>
+                                        </div>
+                                    </div>
+                                    <div class="bento-subbox">
+                                        <div class="subbox-icon"><i class="fas fa-cloud-arrow-up"></i></div>
+                                        <div class="subbox-text">
+                                            <h4 data-translate="service_fs_box3_title">DevOps & Cloud</h4>
+                                            <p data-translate="service_fs_box3_desc">Containerized deployment with Docker, Kubernetes, and automated CI/CD.</p>
+                                        </div>
+                                    </div>
+                                </div>
+
                                 <div class="bento-tags">
                                     <span class="bento-tag">React.js / Next.js</span>
                                     <span class="bento-tag">Django / Node.js</span>
                                     <span class="bento-tag">Docker & Kubernetes</span>
                                     <span class="bento-tag">CI/CD Pipelines</span>
-                                    <span class="bento-tag">SaaS & MVPs</span>
                                 </div>
                             </div>
                         </div>
@@ -621,7 +696,32 @@
                             <div class="bento-content">
                                 <div class="bento-metric" data-translate="service_ai_metric">5+ AI Agents | 3+ Systems</div>
                                 <h3 data-translate="service_ai_title">AI Agents & Automation</h3>
-                                <p data-translate="service_ai_desc">I design custom AI agents, cognitive workflows, and autonomous business automation pipelines. Services include: AI Agents Development, Generative AI Solutions, Business Automation, Workflow Optimization, AI-Powered Applications, Prompt Engineering, and AI Integration for Startups. Integrating LLMs, speech processing, and RAG architectures, I convert manual operations into self-optimizing systems.</p>
+                                <p class="bento-intro" data-translate="service_ai_desc">I design custom AI agents, cognitive workflows, and autonomous business automation pipelines. Integrating LLMs, speech processing, and RAG architectures, I convert manual operations into self-optimizing systems.</p>
+                                
+                                <div class="bento-subgrid">
+                                    <div class="bento-subbox">
+                                        <div class="subbox-icon"><i class="fas fa-network-wired"></i></div>
+                                        <div class="subbox-text">
+                                            <h4 data-translate="service_ai_box1_title">Cognitive Workflows</h4>
+                                            <p data-translate="service_ai_box1_desc">Designing autonomous, multi-agent AI systems for business automation.</p>
+                                        </div>
+                                    </div>
+                                    <div class="bento-subbox">
+                                        <div class="subbox-icon"><i class="fas fa-database"></i></div>
+                                        <div class="subbox-text">
+                                            <h4 data-translate="service_ai_box2_title">RAG & LLMs</h4>
+                                            <p data-translate="service_ai_box2_desc">Custom search, semantic indexing, and knowledge-base integrations.</p>
+                                        </div>
+                                    </div>
+                                    <div class="bento-subbox">
+                                        <div class="subbox-icon"><i class="fas fa-microphone-lines"></i></div>
+                                        <div class="subbox-text">
+                                            <h4 data-translate="service_ai_box3_title">Speech & Audio</h4>
+                                            <p data-translate="service_ai_box3_desc">Acoustic modeling, speech recognition, and custom voice interfaces.</p>
+                                        </div>
+                                    </div>
+                                </div>
+
                                 <div class="bento-tags">
                                     <span class="bento-tag">AI Agents</span>
                                     <span class="bento-tag">Generative AI</span>
@@ -640,7 +740,32 @@
                             <div class="bento-content">
                                 <div class="bento-metric" data-translate="service_sec_metric">9 Tools | 4 OSINT Projects</div>
                                 <h3 data-translate="service_sec_title">Cybersec & OSINT Audits</h3>
-                                <p data-translate="service_sec_desc">I build security tooling and conduct code reconnaissance auditing. Having developed 9 cybersecurity tools (including 4 active OSINT trackers), I perform Security Research, OSINT Investigations, Threat Intelligence analysis, and Security Automation to protect digital codebases from leak vectors.</p>
+                                <p class="bento-intro" data-translate="service_sec_desc">I build security tooling and conduct code reconnaissance auditing. Having developed 9 cybersecurity tools (including 4 active OSINT trackers), I perform Security Research, OSINT Investigations, Threat Intelligence analysis, and Security Automation.</p>
+                                
+                                <div class="bento-subgrid">
+                                    <div class="bento-subbox">
+                                        <div class="subbox-icon"><i class="fas fa-terminal"></i></div>
+                                        <div class="subbox-text">
+                                            <h4 data-translate="service_sec_box1_title">Security Tooling</h4>
+                                            <p data-translate="service_sec_box1_desc">Building custom vulnerability scanners and security auditing tools.</p>
+                                        </div>
+                                    </div>
+                                    <div class="bento-subbox">
+                                        <div class="subbox-icon"><i class="fas fa-fingerprint"></i></div>
+                                        <div class="subbox-text">
+                                            <h4 data-translate="service_sec_box2_title">OSINT & Footprinting</h4>
+                                            <p data-translate="service_sec_box2_desc">Tracing leaked credentials and mapping network attack surfaces.</p>
+                                        </div>
+                                    </div>
+                                    <div class="bento-subbox">
+                                        <div class="subbox-icon"><i class="fas fa-file-code"></i></div>
+                                        <div class="subbox-text">
+                                            <h4 data-translate="service_sec_box3_title">Code Audits</h4>
+                                            <p data-translate="service_sec_box3_desc">Static code analysis and server hardening before release.</p>
+                                        </div>
+                                    </div>
+                                </div>
+
                                 <div class="bento-tags">
                                     <span class="bento-tag">9 Cybersec Tools</span>
                                     <span class="bento-tag">4 OSINT Tools</span>
@@ -659,7 +784,32 @@
                             <div class="bento-content">
                                 <div class="bento-metric" data-translate="service_os_metric">Active Contributor</div>
                                 <h3 data-translate="service_os_title">Open Source Collaboration</h3>
-                                <p data-translate="service_os_desc">As an active Wikimedia Foundation core contributor, I submit robust patches to global codebases, managing reviews via Gerrit, Phabricator, and git-review pipelines with high standards for linting and unit tests.</p>
+                                <p class="bento-intro" data-translate="service_os_desc">As an active Wikimedia Foundation core contributor, I submit robust patches to global codebases, managing reviews via Gerrit, Phabricator, and git-review pipelines with high standards.</p>
+                                
+                                <div class="bento-subgrid">
+                                    <div class="bento-subbox">
+                                        <div class="subbox-icon"><i class="fab fa-wikipedia-w"></i></div>
+                                        <div class="subbox-text">
+                                            <h4 data-translate="service_os_box1_title">Wikimedia Patches</h4>
+                                            <p data-translate="service_os_box1_desc">Contributing core patches to Wikimedia and Wikipedia software.</p>
+                                        </div>
+                                    </div>
+                                    <div class="bento-subbox">
+                                        <div class="subbox-icon"><i class="fas fa-code-pull-request"></i></div>
+                                        <div class="subbox-text">
+                                            <h4 data-translate="service_os_box2_title">Gerrit Workflows</h4>
+                                            <p data-translate="service_os_box2_desc">Reviewing code, managing tickets on Phabricator, and git-review tracks.</p>
+                                        </div>
+                                    </div>
+                                    <div class="bento-subbox">
+                                        <div class="subbox-icon"><i class="fas fa-shield-halved"></i></div>
+                                        <div class="subbox-text">
+                                            <h4 data-translate="service_os_box3_title">Quality Standards</h4>
+                                            <p data-translate="service_os_box3_desc">Maintaining strict code coverages, testing, and documentation standards.</p>
+                                        </div>
+                                    </div>
+                                </div>
+
                                 <div class="bento-tags">
                                     <span class="bento-tag">Wikimedia</span>
                                     <span class="bento-tag">Gerrit Review</span>
@@ -677,7 +827,32 @@
                             <div class="bento-content">
                                 <div class="bento-metric" data-translate="service_startup_metric">CTO @ 2 Startups</div>
                                 <h3 data-translate="service_startup_title">CTO & Startup Strategy</h3>
-                                <p data-translate="service_startup_desc">Currently serving as CTO at Vidnya and PrayagrajRooms, and approached by 7+ startups for technical leadership and collaboration roles. I work with founders on Product Strategy, Technical Architecture, MVP Development, AI Integration, Team Coordination, and Technology Roadmaps — guiding startups from concept to live, scalable products.</p>
+                                <p class="bento-intro" data-translate="service_startup_desc">Currently serving as CTO at Vidnya and PrayagrajRooms, and approached by 7+ startups for technical leadership and collaboration roles. I work with founders on Product Strategy and Technical Architecture.</p>
+                                
+                                <div class="bento-subgrid">
+                                    <div class="bento-subbox">
+                                        <div class="subbox-icon"><i class="fas fa-rocket"></i></div>
+                                        <div class="subbox-text">
+                                            <h4 data-translate="service_startup_box1_title">MVP Strategy</h4>
+                                            <p data-translate="service_startup_box1_desc">Guiding early founders from wireframes to live product deployments.</p>
+                                        </div>
+                                    </div>
+                                    <div class="bento-subbox">
+                                        <div class="subbox-icon"><i class="fas fa-diagram-project"></i></div>
+                                        <div class="subbox-text">
+                                            <h4 data-translate="service_startup_box2_title">System Design</h4>
+                                            <p data-translate="service_startup_box2_desc">Structuring database designs and scalable API routing paths.</p>
+                                        </div>
+                                    </div>
+                                    <div class="bento-subbox">
+                                        <div class="subbox-icon"><i class="fas fa-user-tie"></i></div>
+                                        <div class="subbox-text">
+                                            <h4 data-translate="service_startup_box3_title">CTO Operations</h4>
+                                            <p data-translate="service_startup_box3_desc">Active tech leadership at PrayagrajRooms and Vidnya.</p>
+                                        </div>
+                                    </div>
+                                </div>
+
                                 <div class="bento-tags">
                                     <span class="bento-tag">CTO @ Vidnya</span>
                                     <span class="bento-tag">CTO @ PrayagrajRooms</span>
@@ -696,7 +871,32 @@
                             <div class="bento-content">
                                 <div class="bento-metric" data-translate="service_ds_metric">ML Pipelines Deployed</div>
                                 <h3 data-translate="service_ds_title">Data Science & Analytics</h3>
-                                <p data-translate="service_ds_desc">Applying statistical models and custom algorithms to complex data. Specialize in designing clean pipelines, predictive modeling, data scraping, and computer vision utilities (OpenCV).</p>
+                                <p class="bento-intro" data-translate="service_ds_desc">Applying statistical models and custom algorithms to complex data. Specialize in designing clean pipelines, predictive modeling, data scraping, and computer vision utilities (OpenCV).</p>
+                                
+                                <div class="bento-subgrid">
+                                    <div class="bento-subbox">
+                                        <div class="subbox-icon"><i class="fas fa-filter"></i></div>
+                                        <div class="subbox-text">
+                                            <h4 data-translate="service_ds_box1_title">ETL Pipelines</h4>
+                                            <p data-translate="service_ds_box1_desc">Scraping, processing, and cleaning datasets for model training.</p>
+                                        </div>
+                                    </div>
+                                    <div class="bento-subbox">
+                                        <div class="subbox-icon"><i class="fas fa-eye"></i></div>
+                                        <div class="subbox-text">
+                                            <h4 data-translate="service_ds_box2_title">Computer Vision</h4>
+                                            <p data-translate="service_ds_box2_desc">Real-time face detection and pixel tracking using OpenCV.</p>
+                                        </div>
+                                    </div>
+                                    <div class="bento-subbox">
+                                        <div class="subbox-icon"><i class="fas fa-chart-line"></i></div>
+                                        <div class="subbox-text">
+                                            <h4 data-translate="service_ds_box3_title">Analytics Panels</h4>
+                                            <p data-translate="service_ds_box3_desc">Developing high-fidelity dashboards to track business KPIs.</p>
+                                        </div>
+                                    </div>
+                                </div>
+
                                 <div class="bento-tags">
                                     <span class="bento-tag">Pandas</span>
                                     <span class="bento-tag">OpenCV</span>
@@ -714,7 +914,32 @@
                             <div class="bento-content">
                                 <div class="bento-metric" data-translate="service_lead_metric">650+ GSA | 580+ GFG Members</div>
                                 <h3 data-translate="service_lead_title">Community Leadership & Events</h3>
-                                <p data-translate="service_lead_desc">I actively build developer communities and technology ecosystems. Communities I serve: GFG UIT, GSA, GDG, and various student developer communities. Events: BuildX, Tech Era, Brahmastra, Hackathons, Workshops, Meetups, Technical Sessions. I handle Event Planning, Community Growth, Team Leadership, Speaker Coordination, Operations Management, and Strategic Decision Making — impacting 650+ members via GSA and 580+ members via GFG activities, with 15+ technical events organized.</p>
+                                <p class="bento-intro" data-translate="service_lead_desc">I actively build developer communities and technology ecosystems. Communities I serve: GFG UIT, GSA, GDG, and various student developer communities. Events: BuildX, Tech Era, Brahmastra, Hackathons, Workshops, Meetups, Technical Sessions.</p>
+                                
+                                <div class="bento-subgrid">
+                                    <div class="bento-subbox">
+                                        <div class="subbox-icon"><i class="fas fa-graduation-cap"></i></div>
+                                        <div class="subbox-text">
+                                            <h4 data-translate="service_lead_box1_title">GFG & GDSC UIT</h4>
+                                            <p data-translate="service_lead_box1_desc">Leading 1100+ members through weekly DSA runs and contests.</p>
+                                        </div>
+                                    </div>
+                                    <div class="bento-subbox">
+                                        <div class="subbox-icon"><i class="fas fa-laptop-code"></i></div>
+                                        <div class="subbox-text">
+                                            <h4 data-translate="service_lead_box2_title">Hackathon Lead</h4>
+                                            <p data-translate="service_lead_box2_desc">Coordinating registrations and evaluations for national hackathons.</p>
+                                        </div>
+                                    </div>
+                                    <div class="bento-subbox">
+                                        <div class="subbox-icon"><i class="fas fa-handshake"></i></div>
+                                        <div class="subbox-text">
+                                            <h4 data-translate="service_lead_box3_title">Regional GDG</h4>
+                                            <p data-translate="service_lead_box3_desc">Advocating digital literacy and supporting Google meetups.</p>
+                                        </div>
+                                    </div>
+                                </div>
+
                                 <div class="bento-tags">
                                     <span class="bento-tag">GFG UIT — 580+ Members</span>
                                     <span class="bento-tag">GSA — 650+ Members</span>
