@@ -11,6 +11,9 @@
     <meta name="description" content="Official portfolio of Gautam Kumar Maurya (GKM), B.Tech CSE (Data Science) student at United Institute of Technology, Prayagraj. Discover projects, start-ups (PrayagrajRooms co-founder), open source contributions (Wikimedia), and professional developer updates.">
     <meta name="keywords" content="Gautam Kumar Maurya, GKM, GKM563, Data Science Engineer, Full-Stack Developer, React Developer, Python Developer, Open Source, Wikimedia, PrayagrajRooms, UIT Prayagraj, United Institute of Technology, B.Tech CSE, AKTU Topper, Portfolio, Freelance Web Developer Prayagraj, Software Engineer, Cybersecurity, OSINT">
     <link rel="canonical" href="https://gkm563.github.io/">
+    <meta name="theme-color" content="#0ea5e9">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="robots" content="index, follow">
     
     <!-- Open Graph / Facebook -->
@@ -128,9 +131,13 @@
                 </ul>
             </nav>
             <div class="header-actions">
-                <div class="lang-switch-capsule">
-                    <button class="lang-switch-btn active" id="lang-btn-en" onclick="changeLanguage('en')" aria-label="Switch to English">EN</button>
-                    <button class="lang-switch-btn" id="lang-btn-hi" onclick="changeLanguage('hi')" aria-label="Switch to Hindi">हिं</button>
+                <div class="lang-switch-wrapper">
+                    <i class="fas fa-globe lang-globe-icon"></i>
+                    <div class="lang-switch-capsule">
+                        <span class="lang-switch-slider"></span>
+                        <button class="lang-switch-btn active" id="lang-btn-en" onclick="changeLanguage('en')" aria-label="Switch to English">EN</button>
+                        <button class="lang-switch-btn" id="lang-btn-hi" onclick="changeLanguage('hi')" aria-label="Switch to Hindi">हिं</button>
+                    </div>
                 </div>
                 <div class="hamburger" id="hamburger">
                     <span class="bar"></span><span class="bar"></span><span class="bar"></span>
@@ -374,8 +381,32 @@
                 <!-- More GitHub Repositories Sub-section -->
                 <div class="github-repos-section" data-aos="fade-up" style="margin-top: 5rem; border-top: 1px dashed var(--border-color-glass); padding-top: 4rem;">
                     <h3 style="text-align: center; font-size: 1.8rem; margin-bottom: 2.5rem; color: #fff; font-weight: 600;"><i class="fab fa-github" style="color: var(--primary-color); margin-right: 8px;"></i> <span data-translate="project_github_live">Live GitHub Repositories</span></h3>
+                    
+                    <!-- Search and Language Filters -->
+                    <div class="github-controls-wrapper">
+                        <div class="github-search-box">
+                            <input type="text" id="github-search" class="github-search-input" data-translate="github_search_placeholder" placeholder="Search repositories..." oninput="handleGithubSearch(this.value)" />
+                            <i class="fas fa-search"></i>
+                        </div>
+                        <div class="github-filter-tabs" id="github-language-tabs">
+                            <button class="github-filter-tab active" onclick="filterGithubLanguage('All')" data-translate="github_lang_all">All</button>
+                            <button class="github-filter-tab" onclick="filterGithubLanguage('Python')" data-translate="github_lang_python">Python</button>
+                            <button class="github-filter-tab" onclick="filterGithubLanguage('JavaScript')" data-translate="github_lang_javascript">JavaScript</button>
+                            <button class="github-filter-tab" onclick="filterGithubLanguage('TypeScript')" data-translate="github_lang_typescript">TypeScript</button>
+                            <button class="github-filter-tab" onclick="filterGithubLanguage('HTMLCSS')" data-translate="github_lang_htmlcss">HTML/CSS</button>
+                            <button class="github-filter-tab" onclick="filterGithubLanguage('Other')" data-translate="github_lang_other">Other</button>
+                        </div>
+                    </div>
+
                     <div class="projects-grid" id="github-repos-container" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem;">
                         <!-- Repos fetched live from GitHub API will render here -->
+                    </div>
+
+                    <!-- Show More / Less Pagination Buttons -->
+                    <div class="github-pagination-wrapper" style="text-align: center; margin-top: 3rem; display: none;" id="github-pagination-container">
+                        <button class="cta-button secondary" id="github-toggle-btn" onclick="toggleGithubReposVisibility()">
+                            <span id="github-toggle-btn-text" data-translate="github_show_more">Show More Repositories</span> <i class="fas fa-chevron-down" id="github-toggle-btn-icon" style="margin-left: 8px; transition: transform 0.3s ease;"></i>
+                        </button>
                     </div>
                 </div>
             </div>

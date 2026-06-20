@@ -96,6 +96,17 @@ window.PORTFOLIO_TRANSLATIONS = {
         os_pipeline_merge: "Merged",
         os_pipeline_phab: "Ticket Closed",
 
+        // GitHub Section
+        github_search_placeholder: "Search repositories...",
+        github_lang_all: "All",
+        github_lang_python: "Python",
+        github_lang_javascript: "JavaScript",
+        github_lang_typescript: "TypeScript",
+        github_lang_htmlcss: "HTML/CSS",
+        github_lang_other: "Other",
+        github_show_more: "Show More Repositories",
+        github_show_less: "Show Less",
+
         // LinkedIn Updates
         li_title: "LinkedIn Updates",
         li_subtitle: "With over 19k+ followers, I share my daily project commits, earnings, hackathon wins, and tech leadership stories. Connect with me!",
@@ -415,6 +426,17 @@ window.PORTFOLIO_TRANSLATIONS = {
         os_pipeline_jenkins: "सीआई/सीडी टेस्ट",
         os_pipeline_merge: "मर्ज हुआ",
         os_pipeline_phab: "टिकट क्लोज",
+
+        // GitHub Section
+        github_search_placeholder: "रिपॉजिटरी खोजें...",
+        github_lang_all: "सभी",
+        github_lang_python: "पायथन",
+        github_lang_javascript: "जावास्क्रिप्ट",
+        github_lang_typescript: "टाइपस्क्रिप्ट",
+        github_lang_htmlcss: "HTML/CSS",
+        github_lang_other: "अन्य",
+        github_show_more: "और रिपॉजिटरी दिखाएं",
+        github_show_less: "कम दिखाएं",
         // LinkedIn Updates
         li_title: "लिंक्डइन अपडेट्स",
         li_subtitle: "19,000+ से अधिक फॉलोअर्स के साथ, मैं गिटहब कमिट्स, अपनी कमाई, हैकथॉन की जीत और लीडरशिप की कहानियां साझा करता हूँ। मुझसे जुड़ें!",

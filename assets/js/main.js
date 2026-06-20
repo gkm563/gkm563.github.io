@@ -14,15 +14,24 @@ function setLanguage(lang) {
     // Toggle active class on language toggle buttons
     const btnEn = document.getElementById('lang-btn-en');
     const btnHi = document.getElementById('lang-btn-hi');
+    const slider = document.querySelector('.lang-switch-slider');
     if (btnEn && btnHi) {
         if (lang === 'hi') {
             btnEn.classList.remove('active');
             btnHi.classList.add('active');
             document.documentElement.lang = 'hi';
+            if (slider) {
+                slider.style.transform = 'translateX(100%)';
+                slider.style.background = 'linear-gradient(135deg, var(--secondary-color), var(--primary-color))';
+            }
         } else {
             btnEn.classList.add('active');
             btnHi.classList.remove('active');
             document.documentElement.lang = 'en';
+            if (slider) {
+                slider.style.transform = 'translateX(0)';
+                slider.style.background = 'linear-gradient(135deg, var(--primary-color), var(--secondary-color))';
+            }
         }
     }
 
@@ -48,6 +57,11 @@ function setLanguage(lang) {
     
     // Refresh Wikipedia articles
     renderWikiArticles();
+    
+    // Refresh GitHub repositories
+    if (typeof renderGithubRepos === 'function') {
+        renderGithubRepos();
+    }
     
     // Reset contact form status message to clear previous state messages
     const formStatus = document.getElementById('form-status');
@@ -271,11 +285,200 @@ function filterLiCategory(category) {
 }
 
 // Fetch live public repositories from GitHub API
+// === GITHUB REPOSITORIES STATE AND ACTIONS ===
+let githubReposData = [];
+let githubLangFilter = 'All';
+let githubSearchVal = '';
+let githubVisibleLimit = 6;
+
+function formatGithubDate(dateStr) {
+    if (!dateStr) return '';
+    try {
+        const date = new Date(dateStr);
+        return date.toLocaleDateString(currentLang === 'hi' ? 'hi-IN' : 'en-US', {
+            month: 'short',
+            year: 'numeric'
+        });
+    } catch (e) {
+        return '';
+    }
+}
+
+function getLanguageClass(lang) {
+    if (!lang) return 'other';
+    const lower = lang.toLowerCase();
+    if (lower.includes('python')) return 'python';
+    if (lower.includes('javascript')) return 'javascript';
+    if (lower.includes('typescript')) return 'typescript';
+    if (lower.includes('html') || lower.includes('css')) return 'htmlcss';
+    if (lower.includes('php')) return 'php';
+    return 'other';
+}
+
+function getLanguageIcon(lang) {
+    if (!lang) return '<i class="fas fa-code"></i>';
+    const lower = lang.toLowerCase();
+    if (lower === 'typescript') return '<i class="fab fa-js" style="color: #3178c6;"></i>';
+    if (lower === 'javascript') return '<i class="fab fa-js" style="color: #f7df1e;"></i>';
+    if (lower === 'html') return '<i class="fab fa-html5" style="color: #e34f26;"></i>';
+    if (lower === 'css') return '<i class="fab fa-css3-alt" style="color: #1572b6;"></i>';
+    if (lower === 'php') return '<i class="fab fa-php" style="color: #777bb4;"></i>';
+    if (lower === 'python') return '<i class="fab fa-python" style="color: #3776ab;"></i>';
+    return '<i class="fas fa-code"></i>';
+}
+
+function filterReposData() {
+    return githubReposData.filter(repo => {
+        let langMatch = true;
+        if (githubLangFilter !== 'All') {
+            const repoLang = (repo.language || '').toLowerCase();
+            if (githubLangFilter === 'Python') {
+                langMatch = repoLang.includes('python');
+            } else if (githubLangFilter === 'JavaScript') {
+                langMatch = repoLang.includes('javascript');
+            } else if (githubLangFilter === 'TypeScript') {
+                langMatch = repoLang.includes('typescript');
+            } else if (githubLangFilter === 'HTMLCSS') {
+                langMatch = repoLang.includes('html') || repoLang.includes('css');
+            } else if (githubLangFilter === 'Other') {
+                langMatch = !repoLang.includes('python') && 
+                            !repoLang.includes('javascript') && 
+                            !repoLang.includes('typescript') && 
+                            !repoLang.includes('html') && 
+                            !repoLang.includes('css');
+            }
+        }
+
+        let searchMatch = true;
+        if (githubSearchVal.trim() !== '') {
+            const query = githubSearchVal.toLowerCase();
+            const name = (repo.name || '').toLowerCase();
+            const desc = (repo.description || '').toLowerCase();
+            searchMatch = name.includes(query) || desc.includes(query);
+        }
+
+        return langMatch && searchMatch;
+    });
+}
+
+function renderGithubRepos() {
+    const container = document.getElementById('github-repos-container');
+    if (!container) return;
+
+    container.innerHTML = '';
+    const filtered = filterReposData();
+
+    if (filtered.length === 0) {
+        container.innerHTML = `<p style="grid-column: 1/-1; text-align: center; color: #94a3b8; padding: 3rem; width: 100%;">${currentLang === 'hi' ? 'कोई रिपॉजिटरी नहीं मिली।' : 'No matching repositories found.'}</p>`;
+        
+        const paginationContainer = document.getElementById('github-pagination-container');
+        if (paginationContainer) paginationContainer.style.display = 'none';
+        return;
+    }
+
+    const sliced = filtered.slice(0, githubVisibleLimit);
+
+    sliced.forEach(repo => {
+        const card = document.createElement('div');
+        card.className = 'project-card github-repo-card';
+        card.setAttribute('data-aos', 'fade-up');
+        
+        const langIcon = getLanguageIcon(repo.language);
+        const langClass = getLanguageClass(repo.language);
+        const desc = repo.description || (currentLang === 'hi' ? 'कोई विवरण उपलब्ध नहीं है।' : 'No description provided. Click below to view the codebase on GitHub.');
+        const formattedDate = formatGithubDate(repo.updated_at);
+
+        card.innerHTML = `
+            <div class="project-content" style="display: flex; flex-direction: column; height: 100%;">
+                <div class="project-icon">${langIcon}</div>
+                <h3 style="font-size: 1.25rem; font-weight: 600; margin-bottom: 0.5rem; color: #fff; text-align: left;">${repo.name}</h3>
+                <p style="font-size: 0.9rem; color: #94a3b8; flex-grow: 1; margin-bottom: 1.5rem; line-height: 1.6; text-align: left;">${desc}</p>
+                
+                <div class="github-repo-stats" style="margin-bottom: 1rem;">
+                    <span class="github-repo-stat stars" title="${currentLang === 'hi' ? 'तारे' : 'Stars'}"><i class="fas fa-star"></i> ${repo.stargazers_count || 0}</span>
+                    <span class="github-repo-stat forks" title="${currentLang === 'hi' ? 'फोर्क्स' : 'Forks'}"><i class="fas fa-code-branch"></i> ${repo.forks_count || 0}</span>
+                    ${formattedDate ? `<span class="github-repo-stat updated" title="${currentLang === 'hi' ? 'अंतिम अपडेट' : 'Last Updated'}"><i class="fas fa-clock"></i> ${formattedDate}</span>` : ''}
+                </div>
+
+                <div class="project-footer" style="margin-top: auto; display: flex; justify-content: space-between; align-items: center;">
+                    <div class="tech-tags">
+                        <span class="tech-tag lang-badge ${langClass}">${repo.language || 'Code'}</span>
+                    </div>
+                    <a href="${repo.html_url}" class="project-link" target="_blank" style="font-size: 0.9rem; font-weight: 600; text-decoration: none; color: var(--secondary-color);">${currentLang === 'hi' ? 'रिपो लिंक' : 'Repo Link'} <i class="fas fa-arrow-up-right-from-square"></i></a>
+                </div>
+            </div>
+        `;
+        container.appendChild(card);
+    });
+
+    const paginationContainer = document.getElementById('github-pagination-container');
+    const toggleBtn = document.getElementById('github-toggle-btn');
+    const toggleBtnText = document.getElementById('github-toggle-btn-text');
+    const toggleBtnIcon = document.getElementById('github-toggle-btn-icon');
+
+    if (paginationContainer && toggleBtn && toggleBtnText && toggleBtnIcon) {
+        if (filtered.length > 6) {
+            paginationContainer.style.display = 'block';
+            if (githubVisibleLimit >= filtered.length) {
+                toggleBtnText.setAttribute('data-translate', 'github_show_less');
+                toggleBtnText.innerText = currentLang === 'hi' ? 'कम दिखाएं' : 'Show Less';
+                toggleBtnIcon.className = 'fas fa-chevron-up';
+            } else {
+                toggleBtnText.setAttribute('data-translate', 'github_show_more');
+                toggleBtnText.innerText = currentLang === 'hi' ? 'और रिपॉजिटरी दिखाएं' : 'Show More Repositories';
+                toggleBtnIcon.className = 'fas fa-chevron-down';
+            }
+        } else {
+            paginationContainer.style.display = 'none';
+        }
+    }
+
+    if (window.cacheSectionOffsets) {
+        setTimeout(window.cacheSectionOffsets, 100);
+    }
+}
+
+function handleGithubSearch(value) {
+    githubSearchVal = value;
+    githubVisibleLimit = 6;
+    renderGithubRepos();
+}
+
+function filterGithubLanguage(lang) {
+    githubLangFilter = lang;
+    githubVisibleLimit = 6;
+    
+    const tabs = document.querySelectorAll('#github-language-tabs .github-filter-tab');
+    tabs.forEach(tab => {
+        const onclickAttr = tab.getAttribute('onclick') || '';
+        if (onclickAttr.includes(`'${lang}'`) || onclickAttr.includes(`"${lang}"`)) {
+            tab.classList.add('active');
+        } else {
+            tab.classList.remove('active');
+        }
+    });
+
+    renderGithubRepos();
+}
+
+function toggleGithubReposVisibility() {
+    const filtered = filterReposData();
+    if (githubVisibleLimit >= filtered.length) {
+        githubVisibleLimit = 6;
+    } else {
+        githubVisibleLimit = filtered.length;
+    }
+    renderGithubRepos();
+}
+
+window.handleGithubSearch = handleGithubSearch;
+window.filterGithubLanguage = filterGithubLanguage;
+window.toggleGithubReposVisibility = toggleGithubReposVisibility;
+
 async function fetchGitHubRepos() {
     const container = document.getElementById('github-repos-container');
     if (!container) return;
 
-    // Loading indicator skeletons
     container.innerHTML = Array(3).fill().map(() => `
         <div class="skeleton-card">
             <div class="skeleton-avatar" style="border-radius: 8px;"></div>
@@ -294,102 +497,12 @@ async function fetchGitHubRepos() {
         if (!res.ok) throw new Error('GitHub API request failed');
         const repos = await res.json();
 
-        const filteredRepos = repos
-            .filter(repo => !repo.fork && repo.name !== 'gkm563')
-            .slice(0, 6);
-
-        container.innerHTML = '';
-        if (filteredRepos.length === 0) {
-            renderFallbackGitHubRepos(container);
-            return;
-        }
-
-        filteredRepos.forEach(repo => {
-            const card = document.createElement('div');
-            card.className = 'project-card';
-            card.setAttribute('data-aos', 'fade-up');
-            
-            let langIcon = '<i class="fas fa-code"></i>';
-            if (repo.language) {
-                const lang = repo.language.toLowerCase();
-                if (lang === 'typescript') langIcon = '<i class="fab fa-js" style="color: #3178c6;"></i>';
-                else if (lang === 'javascript') langIcon = '<i class="fab fa-js" style="color: #f7df1e;"></i>';
-                else if (lang === 'html') langIcon = '<i class="fab fa-html5" style="color: #e34f26;"></i>';
-                else if (lang === 'css') langIcon = '<i class="fab fa-css3-alt" style="color: #1572b6;"></i>';
-                else if (lang === 'php') langIcon = '<i class="fab fa-php" style="color: #777bb4;"></i>';
-                else if (lang === 'python') langIcon = '<i class="fab fa-python" style="color: #3776ab;"></i>';
-            }
-
-            const desc = repo.description || 'No description provided. Click below to view the codebase on GitHub.';
-
-            card.innerHTML = `
-                <div class="project-content" style="display: flex; flex-direction: column; height: 100%;">
-                    <div class="project-icon">${langIcon}</div>
-                    <h3 style="font-size: 1.25rem; font-weight: 600; margin-bottom: 0.5rem; color: #fff;">${repo.name}</h3>
-                    <p style="font-size: 0.9rem; color: #94a3b8; flex-grow: 1; margin-bottom: 1.5rem; line-height: 1.6;">${desc}</p>
-                    <div class="project-footer" style="margin-top: auto; display: flex; justify-content: space-between; align-items: center;">
-                        <div class="tech-tags">
-                            <span class="tech-tag" style="background: rgba(14, 165, 233, 0.1); color: var(--primary-color);">${repo.language || 'Code'}</span>
-                            <span class="tech-tag" style="background: rgba(236, 72, 153, 0.1); color: var(--secondary-color);"><i class="fas fa-star" style="margin-right: 4px;"></i>${repo.stargazers_count}</span>
-                        </div>
-                        <a href="${repo.html_url}" class="project-link" target="_blank" style="font-size: 0.9rem; font-weight: 600; text-decoration: none; color: var(--secondary-color);">Repo Link <i class="fas fa-arrow-up-right-from-square"></i></a>
-                    </div>
-                </div>
-            `;
-            container.appendChild(card);
-        });
-        if (window.cacheSectionOffsets) {
-            setTimeout(window.cacheSectionOffsets, 100);
-        }
+        githubReposData = repos.filter(repo => !repo.fork && repo.name !== 'gkm563');
+        renderGithubRepos();
     } catch (err) {
         console.warn('GitHub repos load error, using static fallback:', err);
-        renderFallbackGitHubRepos(container);
-    }
-}
-
-function renderFallbackGitHubRepos(container) {
-    const repos = (window.PORTFOLIO_DATA && window.PORTFOLIO_DATA.githubRepos) ? window.PORTFOLIO_DATA.githubRepos : [];
-    container.innerHTML = '';
-    
-    if (repos.length === 0) {
-        container.innerHTML = '<p style="grid-column: 1/-1; text-align: center; color: #94a3b8; padding: 2rem;">No repositories available.</p>';
-        return;
-    }
-
-    repos.forEach(repo => {
-        const card = document.createElement('div');
-        card.className = 'project-card';
-        card.setAttribute('data-aos', 'fade-up');
-        
-        let langIcon = '<i class="fas fa-code"></i>';
-        if (repo.language) {
-            const lang = repo.language.toLowerCase();
-            if (lang === 'typescript') langIcon = '<i class="fab fa-js" style="color: #3178c6;"></i>';
-            else if (lang === 'javascript') langIcon = '<i class="fab fa-js" style="color: #f7df1e;"></i>';
-            else if (lang === 'html') langIcon = '<i class="fab fa-html5" style="color: #e34f26;"></i>';
-            else if (lang === 'css') langIcon = '<i class="fab fa-css3-alt" style="color: #1572b6;"></i>';
-            else if (lang === 'php') langIcon = '<i class="fab fa-php" style="color: #777bb4;"></i>';
-            else if (lang === 'python') langIcon = '<i class="fab fa-python" style="color: #3776ab;"></i>';
-        }
-
-        card.innerHTML = `
-            <div class="project-content" style="display: flex; flex-direction: column; height: 100%;">
-                <div class="project-icon">${langIcon}</div>
-                <h3 style="font-size: 1.25rem; font-weight: 600; margin-bottom: 0.5rem; color: #fff;">${repo.name}</h3>
-                <p style="font-size: 0.9rem; color: #94a3b8; flex-grow: 1; margin-bottom: 1.5rem; line-height: 1.6;">${repo.description}</p>
-                <div class="project-footer" style="margin-top: auto; display: flex; justify-content: space-between; align-items: center;">
-                    <div class="tech-tags">
-                        <span class="tech-tag" style="background: rgba(14, 165, 233, 0.1); color: var(--primary-color);">${repo.language || 'Code'}</span>
-                        <span class="tech-tag" style="background: rgba(236, 72, 153, 0.1); color: var(--secondary-color);"><i class="fas fa-star" style="margin-right: 4px;"></i>${repo.stargazers_count}</span>
-                    </div>
-                    <a href="${repo.html_url}" class="project-link" target="_blank" style="font-size: 0.9rem; font-weight: 600; text-decoration: none; color: var(--secondary-color);">Repo Link <i class="fas fa-arrow-up-right-from-square"></i></a>
-                </div>
-            </div>
-        `;
-        container.appendChild(card);
-    });
-    if (window.cacheSectionOffsets) {
-        setTimeout(window.cacheSectionOffsets, 100);
+        githubReposData = (window.PORTFOLIO_DATA && window.PORTFOLIO_DATA.githubRepos) ? window.PORTFOLIO_DATA.githubRepos : [];
+        renderGithubRepos();
     }
 }
 
@@ -1320,63 +1433,73 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // 8. Custom cursor tracker logic (Desktop only, lag-free via requestAnimationFrame and hardware acceleration)
-    if (!('ontouchstart' in window)) {
-        const cursorDot = document.querySelector('.cursor-dot');
-        const cursorFollower = document.querySelector('.cursor-follower');
+    const isTouchDevice = window.matchMedia('(pointer: coarse)').matches;
+    const cursorDot = document.querySelector('.cursor-dot');
+    const cursorFollower = document.querySelector('.cursor-follower');
 
-        if (cursorDot && cursorFollower) {
-            // Enable custom cursor styles to hide default cursor
-            document.body.classList.add('custom-cursor-enabled');
+    if (!isTouchDevice && cursorDot && cursorFollower) {
+        // Enable custom cursor styles to hide default cursor
+        document.body.classList.add('custom-cursor-enabled');
 
-            let mouseX = window.innerWidth / 2;
-            let mouseY = window.innerHeight / 2;
-            let followerX = mouseX;
-            let followerY = mouseY;
-            let followerScale = 1;
+        let mouseX = window.innerWidth / 2;
+        let mouseY = window.innerHeight / 2;
+        let dotX = mouseX;
+        let dotY = mouseY;
+        let followerX = mouseX;
+        let followerY = mouseY;
+        let currentScale = 1;
+        let targetScale = 1;
 
-            // Set initial position
-            cursorDot.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 0) translate(-50%, -50%)`;
+        // Set initial positions
+        cursorDot.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 0)`;
+        cursorFollower.style.transform = `translate3d(${followerX}px, ${followerY}px, 0) scale(1)`;
 
-            // Track mouse positions and update the dot position immediately on mousemove to avoid input lag
-            window.addEventListener('mousemove', e => {
-                mouseX = e.clientX;
-                mouseY = e.clientY;
-                cursorDot.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 0) translate(-50%, -50%)`;
-            });
+        // Track mouse positions (coordinates only, to avoid layout thrashing in high-frequency mousemove events)
+        window.addEventListener('mousemove', e => {
+            mouseX = e.clientX;
+            mouseY = e.clientY;
+        }, { passive: true });
 
-            // Smooth cursor follower update loop using linear interpolation (lerp)
-            function updateCursorPositions() {
-                followerX += (mouseX - followerX) * 0.25;
-                followerY += (mouseY - followerY) * 0.25;
+        // Update positions on animation frame (runs at screen refresh rate)
+        function updateCursorPositions() {
+            // Lerp dot slightly for organic feel
+            dotX += (mouseX - dotX) * 0.85;
+            dotY += (mouseY - dotY) * 0.85;
 
-                cursorFollower.style.transform = `translate3d(${followerX}px, ${followerY}px, 0) translate(-50%, -50%) scale(${followerScale})`;
+            // Lerp follower smoothly
+            followerX += (mouseX - followerX) * 0.15;
+            followerY += (mouseY - followerY) * 0.15;
 
-                requestAnimationFrame(updateCursorPositions);
-            }
+            // Lerp scale transitions
+            currentScale += (targetScale - currentScale) * 0.15;
+
+            cursorDot.style.transform = `translate3d(${dotX}px, ${dotY}px, 0)`;
+            cursorFollower.style.transform = `translate3d(${followerX}px, ${followerY}px, 0) scale(${currentScale})`;
+
             requestAnimationFrame(updateCursorPositions);
-
-            // Toggle hover state class on body for all interactive elements
-            const hoverTargets = 'a, button, input, textarea, select, .filter-tab, .quick-opt-btn, #chat-toggle, .narrator-btn, .logo';
-            
-            document.body.addEventListener('mouseover', e => {
-                if (e.target.closest(hoverTargets)) {
-                    followerScale = 1.5;
-                    cursorFollower.classList.add('hovering');
-                }
-            });
-
-            document.body.addEventListener('mouseout', e => {
-                if (e.target.closest(hoverTargets) && !e.relatedTarget?.closest(hoverTargets)) {
-                    followerScale = 1;
-                    cursorFollower.classList.remove('hovering');
-                }
-            });
         }
+        requestAnimationFrame(updateCursorPositions);
+
+        // Toggle hover state class on body for all interactive elements
+        const hoverTargets = 'a, button, input, textarea, select, .filter-tab, .quick-opt-btn, #chat-toggle, .narrator-btn, .logo, .github-filter-tab';
+        
+        document.body.addEventListener('mouseover', e => {
+            if (e.target.closest(hoverTargets)) {
+                targetScale = 1.5;
+                cursorFollower.classList.add('hovering');
+            }
+        });
+
+        document.body.addEventListener('mouseout', e => {
+            if (e.target.closest(hoverTargets) && !e.relatedTarget?.closest(hoverTargets)) {
+                targetScale = 1;
+                cursorFollower.classList.remove('hovering');
+            }
+        });
     } else {
-        const cursorDot = document.querySelector('.cursor-dot');
-        const cursorFollower = document.querySelector('.cursor-follower');
         if (cursorDot) cursorDot.style.display = 'none';
         if (cursorFollower) cursorFollower.style.display = 'none';
+        document.body.classList.remove('custom-cursor-enabled');
         document.body.style.cursor = 'auto';
     }
 
