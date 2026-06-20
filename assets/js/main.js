@@ -1564,22 +1564,34 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 10. Initialize 3D Card Parallax Tilt (vanilla-tilt)
     if (window.VanillaTilt && !('ontouchstart' in window)) {
-        VanillaTilt.init(document.querySelectorAll('.bento-card, .skill-card, .project-card, .linkedin-card, .premium-timeline-card, .os-stat-card, .os-feature-card, .os-feed-card, .about-highlight-card, .terminal-card'), {
-            max: 10,             // Max tilt rotation (degrees)
-            speed: 400,          // Speed of the enter/exit transition
-            glare: true,         // Enable glare sweep
-            'max-glare': 0.15,   // Max opacity of glare
-            scale: 1.012,        // Slightly scale on hover
-            perspective: 1000,   // Transform perspective
-            gyroscope: false     // Disable gyroscope to avoid mobile sensor conflicts
+        // Very gentle tilt for large bento cards to prevent layout overlap
+        VanillaTilt.init(document.querySelectorAll('.bento-card'), {
+            max: 3,              // Tamed rotation for large bento elements
+            speed: 400,
+            glare: true,
+            'max-glare': 0.12,
+            scale: 1.006,        // Minimal scale to prevent layout overlap
+            perspective: 1200,   // High perspective for a subtle depth
+            gyroscope: false
+        });
+
+        // Balanced tilt for standard cards
+        VanillaTilt.init(document.querySelectorAll('.skill-card, .project-card, .linkedin-card, .premium-timeline-card, .os-stat-card, .os-feature-card, .os-feed-card, .about-highlight-card, .terminal-card'), {
+            max: 6,              // Reduced from 10 to keep it professional
+            speed: 400,
+            glare: true,
+            'max-glare': 0.15,
+            scale: 1.01,
+            perspective: 1000,
+            gyroscope: false
         });
 
         VanillaTilt.init(document.querySelectorAll('.footer-social-links a'), {
-            max: 15,
+            max: 10,             // Tamed social buttons
             speed: 300,
             glare: true,
             'max-glare': 0.3,
-            scale: 1.15,
+            scale: 1.1,
             perspective: 800,
             gyroscope: false
         });
