@@ -401,6 +401,7 @@ let activeAvatarScenes = [];
 let targetMouseX = 0;
 let targetMouseY = 0;
 let faceTextureShared = null; // cache texture
+let wasSpeaking = false;
 
 function initThreeDAvatar() {
     const toggleCanvas = document.getElementById('avatar-toggle-canvas');
@@ -644,10 +645,9 @@ function animateThreeDAvatars() {
 
         const chatWindow = document.getElementById('chat-window');
         const isChatActive = chatWindow ? chatWindow.classList.contains('active') : false;
-        const time = Date.now() * 0.001;
-
-        // Perform mouth vertex displacement lip-sync calculations
+        const time = Date.now() * 0.001;        // Perform mouth vertex displacement lip-sync calculations
         if (isAvatarSpeaking) {
+            wasSpeaking = true;
             const volSim = Math.abs(Math.sin(time * 25)) * 0.75 + Math.random() * 0.25;
             const mouthCenterY = -0.22;
             const mouthRadius = 0.20;
@@ -691,8 +691,9 @@ function animateThreeDAvatars() {
                     inst.wireGeom.computeVertexNormals();
                 }
             });
-        } else {
-            // Reset coordinates
+        } else if (wasSpeaking) {
+            wasSpeaking = false;
+            // Reset coordinates exactly once when speaking stops to prevent idle CPU load
             activeAvatarScenes.forEach(inst => {
                 if (!inst.faceGeom) return;
                 const pos = inst.faceGeom.attributes.position;
@@ -1329,27 +1330,25 @@ document.addEventListener('DOMContentLoaded', () => {
 
             let mouseX = window.innerWidth / 2;
             let mouseY = window.innerHeight / 2;
-            let dotX = mouseX;
-            let dotY = mouseY;
             let followerX = mouseX;
             let followerY = mouseY;
             let followerScale = 1;
 
-            // Track mouse positions
+            // Set initial position
+            cursorDot.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 0) translate(-50%, -50%)`;
+
+            // Track mouse positions and update the dot position immediately on mousemove to avoid input lag
             window.addEventListener('mousemove', e => {
                 mouseX = e.clientX;
                 mouseY = e.clientY;
+                cursorDot.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 0) translate(-50%, -50%)`;
             });
 
-            // Smooth cursor update loop using linear interpolation (lerp)
+            // Smooth cursor follower update loop using linear interpolation (lerp)
             function updateCursorPositions() {
-                // Eliminate lag by setting dot position directly to match hardware mouse coordinates instantly
-                dotX = mouseX;
-                dotY = mouseY;
-                followerX += (mouseX - followerX) * 0.15;
-                followerY += (mouseY - followerY) * 0.15;
+                followerX += (mouseX - followerX) * 0.25;
+                followerY += (mouseY - followerY) * 0.25;
 
-                cursorDot.style.transform = `translate3d(${dotX}px, ${dotY}px, 0) translate(-50%, -50%)`;
                 cursorFollower.style.transform = `translate3d(${followerX}px, ${followerY}px, 0) translate(-50%, -50%) scale(${followerScale})`;
 
                 requestAnimationFrame(updateCursorPositions);
@@ -1437,6 +1436,29 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
         form.addEventListener("submit", handleSubmit);
+    }
+
+    // 10. Initialize 3D Card Parallax Tilt (vanilla-tilt)
+    if (window.VanillaTilt && !('ontouchstart' in window)) {
+        VanillaTilt.init(document.querySelectorAll('.bento-card, .skill-card, .project-card, .linkedin-card, .premium-timeline-card, .os-stat-card, .os-feature-card, .os-feed-card'), {
+            max: 10,             // Max tilt rotation (degrees)
+            speed: 400,          // Speed of the enter/exit transition
+            glare: true,         // Enable glare sweep
+            'max-glare': 0.15,   // Max opacity of glare
+            scale: 1.012,        // Slightly scale on hover
+            perspective: 1000,   // Transform perspective
+            gyroscope: false     // Disable gyroscope to avoid mobile sensor conflicts
+        });
+
+        VanillaTilt.init(document.querySelectorAll('.footer-social-links a'), {
+            max: 15,
+            speed: 300,
+            glare: true,
+            'max-glare': 0.3,
+            scale: 1.15,
+            perspective: 800,
+            gyroscope: false
+        });
     }
 });
 
@@ -1611,8 +1633,8 @@ function initMatrixRain() {
             // Set drawing state based on depth & mouse flare
             ctx.font = `bold ${drop.fontSize}px 'Courier New', Courier, monospace`;
             
-            if (drop.glow || isLit || drop.highlightTimer > 0) {
-                ctx.shadowBlur = isLit ? 15 : 8;
+            if (isLit || drop.highlightTimer > 0) {
+                ctx.shadowBlur = 6; // Reduced shadow blur size for performance
                 ctx.shadowColor = drop.colorType === 'pink' ? '#ec4899' : (drop.colorType === 'cyan' ? '#06b6d4' : '#0ea5e9');
             } else {
                 ctx.shadowBlur = 0;
@@ -1629,12 +1651,14 @@ function initMatrixRain() {
             if (isHead) {
                 ctx.fillStyle = `rgba(255, 255, 255, ${opacity * 1.2})`;
             } else {
+                // Use slightly brighter colors for glows without shadowBlur overhead to maintain visual impact
+                const neonOpacity = drop.glow ? opacity * 1.3 : opacity;
                 if (drop.colorType === 'pink') {
-                    ctx.fillStyle = `rgba(236, 72, 153, ${opacity})`; // Neon pink
+                    ctx.fillStyle = `rgba(244, 114, 182, ${neonOpacity})`; // Brighter pink
                 } else if (drop.colorType === 'cyan') {
-                    ctx.fillStyle = `rgba(6, 182, 212, ${opacity})`; // Cyber cyan
+                    ctx.fillStyle = `rgba(34, 211, 238, ${neonOpacity})`; // Brighter cyan
                 } else {
-                    ctx.fillStyle = `rgba(14, 165, 233, ${opacity})`; // Neon blue
+                    ctx.fillStyle = `rgba(56, 189, 248, ${neonOpacity})`; // Brighter sky blue
                 }
             }
 
