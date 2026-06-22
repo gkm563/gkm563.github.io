@@ -444,7 +444,14 @@ window.PORTFOLIO_TRANSLATIONS = {
         subnav_day9: "Day 09: Dark Web",
         subnav_day10: "Day 10: Forensics Tooling",
         subnav_day11: "Day 11: Cyber Hygiene",
-        subnav_day12: "Day 12: Valedictory"
+        subnav_day12: "Day 12: Valedictory",
+        subnav_roster: "Mentors & Team",
+        
+        // Program Roster Headings
+        mentors_heading: "Program Leadership & Expert Mentors",
+        mentors_sub: "Eminent law enforcement leaders and cybersecurity professionals who guided the training program.",
+        coordinators_heading: "Student Organizing & Coordinating Team",
+        coordinators_sub: "Dedicated student leaders managing registrations, operations, and logistics."
     },
     hi: {
         // Nav Links
@@ -899,7 +906,14 @@ window.PORTFOLIO_TRANSLATIONS = {
         subnav_day9: "दिन 09: डार्क वेब",
         subnav_day10: "दिन 10: फोरेंसिक उपकरण",
         subnav_day11: "दिन 11: साइबर हाइजीन",
-        subnav_day12: "दिन 12: समापन सत्र"
+        subnav_day12: "दिन 12: समापन सत्र",
+        subnav_roster: "मेंबर्स और टीम",
+        
+        // Program Roster Headings (Hindi)
+        mentors_heading: "कार्यक्रम नेतृत्व और विशेषज्ञ सलाहकार",
+        mentors_sub: "प्रतिष्ठित कानून प्रवर्तन अधिकारी और साइबर सुरक्षा विशेषज्ञ जिन्होंने प्रशिक्षण कार्यक्रम का मार्गदर्शन किया।",
+        coordinators_heading: "छात्र आयोजन और समन्वय टीम",
+        coordinators_sub: "पंजीकरण, संचालन और रसद का प्रबंधन करने वाले समर्पित छात्र नेता।"
     }
 };
 
