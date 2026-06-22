@@ -91,7 +91,7 @@ function updateLanguageSwitcherUI(lang) {
    Scroll-spy Timeline Day Highlighting
    ========================================== */
 function initScrollSpy() {
-    const timelineCards = document.querySelectorAll('.timeline-card-wrapper');
+    const timelineCards = document.querySelectorAll('.timeline-card-wrapper, #selection-journey, #program-roster');
     const navItems = document.querySelectorAll('.day-nav-item');
 
     if (timelineCards.length === 0 || navItems.length === 0) return;
