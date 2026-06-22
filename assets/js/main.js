@@ -1433,76 +1433,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // 8. Custom cursor tracker logic (Desktop only, lag-free via requestAnimationFrame and hardware acceleration)
-    const isTouchDevice = window.matchMedia('(pointer: coarse)').matches;
-    const cursorDot = document.querySelector('.cursor-dot');
-    const cursorFollower = document.querySelector('.cursor-follower');
-
-    if (!isTouchDevice && cursorDot && cursorFollower) {
-        // Enable custom cursor styles to hide default cursor
-        document.body.classList.add('custom-cursor-enabled');
-
-        let mouseX = window.innerWidth / 2;
-        let mouseY = window.innerHeight / 2;
-        let dotX = mouseX;
-        let dotY = mouseY;
-        let followerX = mouseX;
-        let followerY = mouseY;
-        let currentScale = 1;
-        let targetScale = 1;
-
-        // Set initial positions
-        cursorDot.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 0)`;
-        cursorFollower.style.transform = `translate3d(${followerX}px, ${followerY}px, 0) scale(1)`;
-
-        // Track mouse positions (coordinates only, to avoid layout thrashing in high-frequency mousemove events)
-        window.addEventListener('mousemove', e => {
-            mouseX = e.clientX;
-            mouseY = e.clientY;
-        }, { passive: true });
-
-        // Update positions on animation frame (runs at screen refresh rate)
-        function updateCursorPositions() {
-            // Lerp dot slightly for organic feel
-            dotX += (mouseX - dotX) * 0.85;
-            dotY += (mouseY - dotY) * 0.85;
-
-            // Lerp follower smoothly
-            followerX += (mouseX - followerX) * 0.15;
-            followerY += (mouseY - followerY) * 0.15;
-
-            // Lerp scale transitions
-            currentScale += (targetScale - currentScale) * 0.15;
-
-            cursorDot.style.transform = `translate3d(${dotX}px, ${dotY}px, 0)`;
-            cursorFollower.style.transform = `translate3d(${followerX}px, ${followerY}px, 0) scale(${currentScale})`;
-
-            requestAnimationFrame(updateCursorPositions);
-        }
-        requestAnimationFrame(updateCursorPositions);
-
-        // Toggle hover state class on body for all interactive elements
-        const hoverTargets = 'a, button, input, textarea, select, .filter-tab, .quick-opt-btn, #chat-toggle, .narrator-btn, .logo, .github-filter-tab';
-        
-        document.body.addEventListener('mouseover', e => {
-            if (e.target.closest(hoverTargets)) {
-                targetScale = 1.5;
-                cursorFollower.classList.add('hovering');
-            }
-        });
-
-        document.body.addEventListener('mouseout', e => {
-            if (e.target.closest(hoverTargets) && !e.relatedTarget?.closest(hoverTargets)) {
-                targetScale = 1;
-                cursorFollower.classList.remove('hovering');
-            }
-        });
-    } else {
-        if (cursorDot) cursorDot.style.display = 'none';
-        if (cursorFollower) cursorFollower.style.display = 'none';
-        document.body.classList.remove('custom-cursor-enabled');
-        document.body.style.cursor = 'auto';
-    }
+    // 8. Custom cursor tracker logic (Removed to restore default browser cursor pointer)
 
     // 9. Contact Formspree handler
     const form = document.getElementById("fs-frm");
