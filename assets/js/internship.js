@@ -342,12 +342,13 @@ function updateLightboxContent() {
 function initMobileNav() {
     const hamburger = document.getElementById('hamburger');
     const mainNav = document.getElementById('main-nav');
+    const navUL = mainNav ? mainNav.querySelector('ul') : null;
     const header = document.getElementById('main-header');
 
-    if (hamburger && mainNav) {
+    if (hamburger && mainNav && navUL) {
         hamburger.addEventListener('click', () => {
             hamburger.classList.toggle('active');
-            mainNav.classList.toggle('active');
+            navUL.classList.toggle('active');  // toggle on ul, matching CSS selector .main-nav ul.active
         });
 
         // Close when clicking nav link
@@ -355,12 +356,12 @@ function initMobileNav() {
         navLinks.forEach(link => {
             link.addEventListener('click', () => {
                 hamburger.classList.remove('active');
-                mainNav.classList.remove('active');
+                navUL.classList.remove('active');
             });
         });
     }
 
-    // Shrink header on scroll
+    // Shrink header on scroll — also close mobile menu on scroll
     window.addEventListener('scroll', () => {
         if (header) {
             if (window.scrollY > 50) {
@@ -368,6 +369,11 @@ function initMobileNav() {
             } else {
                 header.classList.remove('scrolled');
             }
+        }
+        // Close mobile menu if user scrolls while it's open
+        if (hamburger && navUL && navUL.classList.contains('active')) {
+            hamburger.classList.remove('active');
+            navUL.classList.remove('active');
         }
     });
 }

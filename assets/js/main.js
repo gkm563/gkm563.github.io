@@ -1421,6 +1421,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 scrollToTopBtn.classList.remove('show');
             }
         }
+
+        // Close mobile menu if user scrolls while it's open
+        if (hamburger && navUL && navUL.classList.contains('active')) {
+            hamburger.classList.remove('active');
+            navUL.classList.remove('active');
+        }
     }, { passive: true });
 
     // Scroll-to-Top click handler
