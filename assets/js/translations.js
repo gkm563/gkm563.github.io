@@ -9,7 +9,7 @@ window.PORTFOLIO_TRANSLATIONS = {
         nav_about: "About",
         nav_skills: "Skills",
         nav_projects: "Projects",
-        nav_linkedin: "LinkedIn Feed",
+        nav_linkedin: "LinkedIn",
         nav_services: "Services",
         nav_education: "Education",
         nav_achievements: "Achievements",
@@ -451,7 +451,38 @@ window.PORTFOLIO_TRANSLATIONS = {
         mentors_heading: "Program Leadership & Expert Mentors",
         mentors_sub: "Eminent law enforcement leaders and cybersecurity professionals who guided the training program.",
         coordinators_heading: "Student Organizing & Coordinating Team",
-        coordinators_sub: "Dedicated student leaders managing registrations, operations, and logistics."
+        coordinators_sub: "Dedicated student leaders managing registrations, operations, and logistics.",
+
+        // Photo Gallery Translations (English)
+        subnav_gallery: "Official Gallery",
+        gallery_heading: "Official Program Gallery",
+        gallery_sub: "Explore moments, expert interactions, and highlights from the APCSIP-2026 Cybersecurity training.",
+        gallery_filter_all: "All Media",
+        gallery_filter_leadership: "Leadership",
+        gallery_filter_mentors: "Mentors & Experts",
+        gallery_filter_team: "Coordinators",
+        gallery_filter_branding: "Official Branding",
+        gallery_filter_sessions: "Sessions & Group Photos",
+        gallery_caption_banner: "APCSIP-2026 Official Banner",
+        gallery_caption_dsp: "DSP Anjali Kataria - Chief Organizer",
+        gallery_caption_bhanu: "Bhanu Sharma - Program Coordinator",
+        gallery_caption_rakshit: "Rakshit Tandon - Cyber Advisor",
+        gallery_caption_amit: "Amit Dubey - Cyber Crime Investigator",
+        gallery_caption_saumay: "Saumay Srivastava - Dark Web Analyst",
+        gallery_caption_uppolice: "UP Police Official Seal",
+        gallery_caption_upgov: "Government of Uttar Pradesh",
+        gallery_caption_group1: "Inauguration & Orientation Group Photo",
+        gallery_caption_group2: "Valedictory & Certificate Distribution",
+        gallery_add_group1: "Group Photograph 1",
+        gallery_add_group2: "Group Photograph 2",
+
+        // Reflection Translations (English)
+        subnav_reflection: "Personal Reflection",
+        reflection_heading: "A Journey of Growth: 13 Days in Amroha",
+        reflection_p1: "This internship was far more than a simple technical training program—it was a transformative 13-day journey that pushed me out of my comfort zone. Arriving in Amroha, a city completely unfamiliar to me, I was initially an outsider in an unknown environment. However, this challenge turned into an extraordinary opportunity for personal and professional growth.",
+        reflection_p2: "Over the course of the training, I had the privilege of meeting and interacting with more than 45+ incredible people—including eminent law enforcement leaders, senior state cyber security cell officers, industry-leading advisors, coordinating student leaders, and brilliant co-interns. Engaging in deep technical and case-oriented discussions with them helped me broaden my horizons significantly.",
+        reflection_p3: "From late-night forensic debugging simulations to analyzing complex UPI transaction trails, every single day taught me something new. I leave this program not just with technical knowledge of mobile forensics, OSINT, and SOC tools, but with invaluable life lessons, new perspectives, and a strong network of professional mentors and lifelong friends.",
+        reflection_sig_title: "Cyber Security Intern & Developer"
     },
     hi: {
         // Nav Links
@@ -459,7 +490,7 @@ window.PORTFOLIO_TRANSLATIONS = {
         nav_about: "मेरे बारे में",
         nav_skills: "कौशल",
         nav_projects: "प्रोजेक्ट्स",
-        nav_linkedin: "लिंक्डइन अपडेट्स",
+        nav_linkedin: "लिंक्डइन",
         nav_services: "सेवाएं",
         nav_education: "शिक्षा",
         nav_achievements: "सफलताएं",
@@ -913,7 +944,38 @@ window.PORTFOLIO_TRANSLATIONS = {
         mentors_heading: "कार्यक्रम नेतृत्व और विशेषज्ञ सलाहकार",
         mentors_sub: "प्रतिष्ठित कानून प्रवर्तन अधिकारी और साइबर सुरक्षा विशेषज्ञ जिन्होंने प्रशिक्षण कार्यक्रम का मार्गदर्शन किया।",
         coordinators_heading: "छात्र आयोजन और समन्वय टीम",
-        coordinators_sub: "पंजीकरण, संचालन और रसद का प्रबंधन करने वाले समर्पित छात्र नेता।"
+        coordinators_sub: "पंजीकरण, संचालन और रसद का प्रबंधन करने वाले समर्पित छात्र नेता।",
+
+        // Photo Gallery Translations (Hindi)
+        subnav_gallery: "आधिकारिक गैलरी",
+        gallery_heading: "आधिकारिक कार्यक्रम गैलरी",
+        gallery_sub: "APCSIP-2026 साइबर सुरक्षा प्रशिक्षण के पलों, विशेषज्ञों के साथ बातचीत और मुख्य अंशों को देखें।",
+        gallery_filter_all: "सभी मीडिया",
+        gallery_filter_leadership: "नेतृत्व",
+        gallery_filter_mentors: "मेंबर्स और विशेषज्ञ",
+        gallery_filter_team: "समन्वयक",
+        gallery_filter_branding: "आधिकारिक ब्रांडिंग",
+        gallery_filter_sessions: "सत्र और समूह चित्र",
+        gallery_caption_banner: "APCSIP-2026 आधिकारिक बैनर",
+        gallery_caption_dsp: "डीएसपी अंजली कटारिया - मुख्य आयोजक",
+        gallery_caption_bhanu: "भानु शर्मा - कार्यक्रम समन्वयक",
+        gallery_caption_rakshit: "रक्षित टंडन - साइबर सलाहकार",
+        gallery_caption_amit: "अमित दुबे - साइबर अपराध अन्वेषक",
+        gallery_caption_saumay: "सौमय श्रीवास्तव - डार्क वेब विश्लेषक",
+        gallery_caption_uppolice: "यूपी पुलिस आधिकारिक मुहर",
+        gallery_caption_upgov: "उत्तर प्रदेश सरकार",
+        gallery_caption_group1: "उद्घाटन और ओरिएंटेशन समूह चित्र",
+        gallery_caption_group2: "समापन सत्र और प्रमाण पत्र वितरण",
+        gallery_add_group1: "समूह चित्र 1",
+        gallery_add_group2: "समूह चित्र 2",
+
+        // Reflection Translations (Hindi)
+        subnav_reflection: "व्यक्तिगत अनुभव",
+        reflection_heading: "विकास की एक यात्रा: अमरोहा में 13 दिन",
+        reflection_p1: "यह इंटर्नशिप केवल एक तकनीकी प्रशिक्षण कार्यक्रम से कहीं अधिक थी—यह 13 दिनों की एक परिवर्तनकारी यात्रा थी जिसने मुझे मेरे कम्फर्ट जोन से बाहर निकाला। अमरोहा में कदम रखते ही, जो मेरे लिए पूरी तरह से एक नया और अपरिचित शहर था, मैं शुरुआत में एक अजनबी था। हालांकि, इस चुनौती ने व्यक्तिगत और व्यावसायिक विकास के एक असाधारण अवसर का रूप ले लिया।",
+        reflection_p2: "प्रशिक्षण के दौरान, मुझे 45+ से अधिक अद्भुत लोगों से मिलने और बातचीत करने का सौभाग्य मिला—जिसमें कानून प्रवर्तन के प्रतिष्ठित नेता, वरिष्ठ राज्य साइबर सुरक्षा सेल के अधिकारी, उद्योग के अग्रणी सलाहकार, समन्वय करने वाले छात्र नेता और मेरे प्रतिभाशाली सह-इंटर्न शामिल थे। उनके साथ गहन तकनीकी और केस-आधारित चर्चाओं ने मेरे सोचने के नजरिए को काफी विस्तृत किया।",
+        reflection_p3: "देर रात तक चलने वाले फोरेंसिक डिबगिंग सिमुलेशन से लेकर जटिल यूपीआई ट्रांजैक्शन ट्रेल्स के विश्लेषण तक, हर एक दिन ने मुझे कुछ नया सिखाया। मैं इस कार्यक्रम से केवल मोबाइल फोरेंसिक, ओसिंट और एसओसी टूल्स के तकनीकी ज्ञान के साथ नहीं जा रहा हूँ, बल्कि अमूल्य जीवन के सबक, नए दृष्टिकोण और पेशेवर गुरुओं व आजीवन दोस्तों के एक मजबूत नेटवर्क के साथ लौट रहा हूँ।",
+        reflection_sig_title: "साइबर सुरक्षा इंटर्न और डेवलपर"
     }
 };
 

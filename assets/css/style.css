@@ -191,6 +191,7 @@ body {
 
 .main-nav ul li {
     margin-left: 1.3rem; /* Reduced margin to fit 10 items without wrapping */
+    transition: margin-left 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .main-nav ul li a {
@@ -202,6 +203,32 @@ body {
     padding-bottom: 5px;
     font-size: 0.9rem; /* Slightly reduced font size */
     display: inline-block;
+}
+
+/* Custom navigation spacing adjustments to support 10 menu links on smaller laptop viewports */
+@media (min-width: 1025px) and (max-width: 1280px) {
+    .main-nav ul li {
+        margin-left: 0.65rem;
+    }
+    .main-nav ul li a {
+        font-size: 0.8rem;
+    }
+    .header-actions {
+        gap: 0.8rem;
+    }
+}
+
+/* Floating scrolled state optimizations to prevent item wrapping on all desktop screens */
+@media (min-width: 1025px) {
+    .main-header.scrolled .main-nav ul li {
+        margin-left: 0.65rem;
+    }
+    .main-header.scrolled .main-nav ul li a {
+        font-size: 0.8rem;
+    }
+    .main-header.scrolled .container {
+        padding: 0 1.25rem; /* Reclaim container horizontal padding space */
+    }
 }
 
 .main-nav ul li a:hover {

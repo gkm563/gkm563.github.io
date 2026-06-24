@@ -15,6 +15,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 4. Mobile Menu Navigation (Header Toggle)
     initMobileNav();
+
+    // 5. Setup Interactive Photo Gallery Filters
+    initGalleryFilters();
 });
 
 /* ==========================================
@@ -91,7 +94,7 @@ function updateLanguageSwitcherUI(lang) {
    Scroll-spy Timeline Day Highlighting
    ========================================== */
 function initScrollSpy() {
-    const timelineCards = document.querySelectorAll('.timeline-card-wrapper, #selection-journey, #program-roster');
+    const timelineCards = document.querySelectorAll('.timeline-card-wrapper, #selection-journey, #gallery-section, #program-roster, #reflection-section');
     const navItems = document.querySelectorAll('.day-nav-item');
 
     if (timelineCards.length === 0 || navItems.length === 0) return;
@@ -110,15 +113,27 @@ function initScrollSpy() {
                 
                 // Clear active states
                 timelineCards.forEach(c => c.classList.remove('active-focus'));
-                navItems.forEach(n => n.classList.remove('active'));
+                navItems.forEach(n => {
+                    n.classList.remove('active', 'active-blue', 'active-red', 'active-yellow', 'active-green');
+                });
 
                 // Set active focus on target card
                 entry.target.classList.add('active-focus');
 
+                // Determine active theme color class
+                let themeColorClass = 'active-blue'; // default blue
+                if (entry.target.classList.contains('day-theme-red')) {
+                    themeColorClass = 'active-red';
+                } else if (entry.target.classList.contains('day-theme-yellow')) {
+                    themeColorClass = 'active-yellow';
+                } else if (entry.target.classList.contains('day-theme-green') || entry.target.id === 'program-roster' || entry.target.id === 'reflection-section') {
+                    themeColorClass = 'active-green';
+                }
+
                 // Set active state on sidebar item
                 const matchingNavItem = document.querySelector(`.day-nav-item[data-day="${targetId}"]`);
                 if (matchingNavItem) {
-                    matchingNavItem.classList.add('active');
+                    matchingNavItem.classList.add('active', themeColorClass);
 
                     // Center active element in mobile horizontal subnav
                     const listContainer = document.querySelector('.day-nav-list');
@@ -254,5 +269,48 @@ function initMobileNav() {
                 header.classList.remove('scrolled');
             }
         }
+    });
+}
+
+/* ==========================================
+   Gallery Section Filtering Logic
+   ========================================== */
+function initGalleryFilters() {
+    const filterButtons = document.querySelectorAll('.gallery-filter-btn');
+    const galleryItems = document.querySelectorAll('.gallery-section .gallery-image-wrapper');
+
+    if (filterButtons.length === 0 || galleryItems.length === 0) return;
+
+    filterButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+            // Remove active class from all buttons
+            filterButtons.forEach(b => b.classList.remove('active'));
+            // Add active to clicked button
+            btn.classList.add('active');
+
+            const filterValue = btn.getAttribute('data-filter');
+
+            galleryItems.forEach(item => {
+                const category = item.getAttribute('data-category');
+                
+                if (filterValue === 'all' || category === filterValue) {
+                    item.style.display = 'block';
+                    // Trigger fade in animation
+                    setTimeout(() => {
+                        item.style.opacity = '1';
+                        item.style.transform = 'scale(1)';
+                    }, 50);
+                } else {
+                    item.style.opacity = '0';
+                    item.style.transform = 'scale(0.95)';
+                    // Hide element after fade out transition ends
+                    setTimeout(() => {
+                        if (item.style.opacity === '0') {
+                            item.style.display = 'none';
+                        }
+                    }, 300);
+                }
+            });
+        });
     });
 }
