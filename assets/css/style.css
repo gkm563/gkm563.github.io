@@ -166,6 +166,8 @@ body {
     font-weight: 700;
     text-decoration: none;
     letter-spacing: -1px;
+    white-space: nowrap;
+    flex-shrink: 0;
     transition: filter 0.3s ease;
     background: linear-gradient(90deg, var(--primary-color), var(--secondary-color), var(--primary-color));
     background-size: 200% auto;
