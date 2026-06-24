@@ -493,15 +493,46 @@ async function fetchGitHubRepos() {
         </div>
     `).join('');
 
+    // --- SessionStorage cache: avoid re-fetching on every page load ---
+    const CACHE_KEY = 'gkm_github_repos';
+    const CACHE_TTL = 30 * 60 * 1000; // 30 minutes
     try {
-        const res = await fetch('https://api.github.com/users/gkm563/repos?sort=updated&per_page=30');
-        if (!res.ok) throw new Error('GitHub API request failed');
+        const cached = sessionStorage.getItem(CACHE_KEY);
+        if (cached) {
+            const { data, timestamp } = JSON.parse(cached);
+            if (Date.now() - timestamp < CACHE_TTL && Array.isArray(data) && data.length > 0) {
+                githubReposData = data;
+                renderGithubRepos();
+                return;
+            }
+        }
+    } catch (_) { /* ignore cache read errors */ }
+
+    // --- Fetch with timeout ---
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => controller.abort(), 5000); // 5s timeout
+
+    try {
+        const res = await fetch('https://api.github.com/users/gkm563/repos?sort=updated&per_page=30', {
+            signal: controller.signal,
+            headers: { 'Accept': 'application/vnd.github.v3+json' }
+        });
+        clearTimeout(timeoutId);
+
+        if (!res.ok) throw new Error(`GitHub API: ${res.status}`);
         const repos = await res.json();
 
         githubReposData = repos.filter(repo => !repo.fork && repo.name !== 'gkm563');
+
+        // Cache the result
+        try {
+            sessionStorage.setItem(CACHE_KEY, JSON.stringify({ data: githubReposData, timestamp: Date.now() }));
+        } catch (_) { /* ignore cache write errors */ }
+
         renderGithubRepos();
     } catch (err) {
-        console.warn('GitHub repos load error, using static fallback:', err);
+        clearTimeout(timeoutId);
+        // Silently fall back to static data — no error noise for the user
         githubReposData = (window.PORTFOLIO_DATA && window.PORTFOLIO_DATA.githubRepos) ? window.PORTFOLIO_DATA.githubRepos : [];
         renderGithubRepos();
     }
