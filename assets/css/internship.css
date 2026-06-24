@@ -725,7 +725,45 @@ body.internship-page {
     border-color: rgba(var(--day-accent-rgb), 0.35);
     background: linear-gradient(135deg, rgba(var(--day-accent-rgb), 0.06) 0%, rgba(15, 23, 42, 0.6) 100%);
     box-shadow: 0 8px 25px rgba(var(--day-accent-rgb), 0.08), inset 0 0 20px rgba(var(--day-accent-rgb), 0.03);
-    transform: scale(1.01);
+}
+
+.timeline-card-action-footer {
+    margin-top: 1.5rem;
+    text-align: right;
+    position: relative;
+    z-index: 3;
+}
+
+.timeline-action-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--day-accent);
+    text-decoration: none;
+    border: 1px solid rgba(var(--day-accent-rgb), 0.2);
+    padding: 0.55rem 1.15rem;
+    border-radius: 30px;
+    background: rgba(var(--day-accent-rgb), 0.04);
+    transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.timeline-action-btn i.fa-linkedin {
+    color: #0a66c2;
+    transition: color 0.3s ease;
+}
+
+.timeline-action-btn:hover {
+    background: var(--day-accent);
+    color: #020617;
+    border-color: var(--day-accent);
+    box-shadow: 0 0 15px rgba(var(--day-accent-rgb), 0.4);
+    transform: translateY(-2px);
+}
+
+.timeline-action-btn:hover i.fa-linkedin {
+    color: #020617;
 }
 
 /* ==========================================================================
@@ -2775,4 +2813,138 @@ body.internship-page {
     border-color: #0a66c2;
     box-shadow: 0 0 15px rgba(10, 102, 194, 0.4);
     transform: translateY(-1px);
+}
+
+/* ==========================================================================
+   LinkedIn Slider / Carousel Styling
+   ========================================================================== */
+.linkedin-carousel-container {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 3.5rem;
+}
+
+.linkedin-carousel-track {
+    display: flex;
+    gap: 2rem;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    scrollbar-width: none; /* Hide scrollbar in Firefox */
+    padding: 1.5rem 0.5rem;
+}
+
+.linkedin-carousel-track::-webkit-scrollbar {
+    display: none; /* Hide scrollbar in Chrome/Safari/Webkit */
+}
+
+.linkedin-carousel-track .linkedin-post-card {
+    flex: 0 0 calc(33.333% - 1.333rem); /* 3 cards on desktop */
+    scroll-snap-align: start;
+    box-sizing: border-box;
+}
+
+@media (max-width: 1024px) {
+    .linkedin-carousel-track .linkedin-post-card {
+        flex: 0 0 calc(50% - 1rem); /* 2 cards on tablet */
+    }
+    .linkedin-carousel-container {
+        padding: 0 2.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .linkedin-carousel-track .linkedin-post-card {
+        flex: 0 0 100%; /* 1 card on mobile */
+    }
+    .linkedin-carousel-container {
+        padding: 0;
+    }
+}
+
+.carousel-nav-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: rgba(15, 23, 42, 0.7);
+    border: 1px solid rgba(14, 165, 233, 0.25);
+    color: #fff;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 10;
+    transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+    backdrop-filter: blur(8px);
+}
+
+.carousel-nav-btn:hover {
+    background: var(--google-blue);
+    border-color: var(--google-blue);
+    box-shadow: 0 0 15px rgba(66, 133, 244, 0.4);
+    color: #fff;
+}
+
+.carousel-nav-btn.prev {
+    left: 0.5rem;
+}
+
+.carousel-nav-btn.next {
+    right: 0.5rem;
+}
+
+@media (max-width: 768px) {
+    .carousel-nav-btn {
+        display: none; /* Hide navigation buttons on mobile, use swipe instead */
+    }
+}
+
+.carousel-dots {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 1.5rem;
+}
+
+.carousel-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.2);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.carousel-dot.active {
+    background: var(--google-blue);
+    width: 24px;
+    border-radius: 10px;
+}
+
+.li-card-day {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    background: rgba(66, 133, 244, 0.12);
+    color: var(--google-blue);
+    border: 1px solid rgba(66, 133, 244, 0.25);
+    border-radius: 20px;
+    margin-bottom: 0.75rem;
+    font-family: var(--font-heading);
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+}
+
+.linkedin-post-card:hover .li-card-day {
+    background: var(--google-blue);
+    color: #fff;
+    border-color: var(--google-blue);
+    box-shadow: 0 0 10px rgba(66, 133, 244, 0.3);
 }

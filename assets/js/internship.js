@@ -22,6 +22,9 @@ document.addEventListener('DOMContentLoaded', () => {
     // 5. Setup Interactive Photo Gallery Filters
     initGalleryFilters();
 
+    // 5.5. Setup LinkedIn Post Carousel
+    initLinkedinCarousel();
+
     // 6. Setup Premium Cursor Spotlight Hover Effect
     document.querySelectorAll('.timeline-card').forEach(card => {
         card.addEventListener('mousemove', (e) => {
@@ -196,6 +199,15 @@ function initScrollSpy() {
             }
         });
     });
+
+    // Forward scroll events from day-nav-list directly to window so the entire page scrolls
+    const listContainer = document.querySelector('.day-nav-list');
+    if (listContainer) {
+        listContainer.addEventListener('wheel', (e) => {
+            e.preventDefault();
+            window.scrollBy(0, e.deltaY);
+        }, { passive: false });
+    }
 }
 
 /* ==========================================
@@ -569,10 +581,10 @@ function initMainHeaderScrollSpy() {
     const sections = [
         document.getElementById('selection-journey'),
         document.getElementById('journey-section'),
-        document.getElementById('gallery-section'),
-        document.getElementById('program-roster'),
         document.getElementById('awards-section'),
         document.getElementById('linkedin-section'),
+        document.getElementById('gallery-section'),
+        document.getElementById('program-roster'),
         document.getElementById('reflection-section')
     ].filter(el => el !== null);
 
@@ -614,4 +626,118 @@ function initMainHeaderScrollSpy() {
             });
         }
     });
+}
+
+/* ==========================================
+   LinkedIn Post Grid Slider / Carousel Logic
+   ========================================== */
+function initLinkedinCarousel() {
+    const track = document.querySelector('.linkedin-carousel-track');
+    const prevBtn = document.querySelector('.carousel-nav-btn.prev');
+    const nextBtn = document.querySelector('.carousel-nav-btn.next');
+    const dotsContainer = document.querySelector('.carousel-dots');
+
+    if (!track) return;
+
+    const cards = track.querySelectorAll('.linkedin-post-card');
+    if (cards.length === 0) return;
+
+    let cardsPerPage = getCardsPerPage();
+    let numPages = Math.ceil(cards.length / cardsPerPage);
+
+    function getCardsPerPage() {
+        if (window.innerWidth <= 768) return 1;
+        if (window.innerWidth <= 1024) return 2;
+        return 3;
+    }
+
+    function createDots() {
+        if (!dotsContainer) return;
+        dotsContainer.innerHTML = '';
+        cardsPerPage = getCardsPerPage();
+        numPages = Math.ceil(cards.length / cardsPerPage);
+        
+        for (let i = 0; i < numPages; i++) {
+            const dot = document.createElement('div');
+            dot.classList.add('carousel-dot');
+            if (i === 0) dot.classList.add('active');
+            dot.addEventListener('click', () => {
+                const scrollAmount = i * cardsPerPage * getCardWidth();
+                track.scrollTo({
+                    left: scrollAmount,
+                    behavior: 'smooth'
+                });
+            });
+            dotsContainer.appendChild(dot);
+        }
+    }
+
+    function getCardWidth() {
+        const firstCard = cards[0];
+        const cardWidth = firstCard.getBoundingClientRect().width;
+        const gap = parseFloat(window.getComputedStyle(track).gap) || 0;
+        return cardWidth + gap;
+    }
+
+    
+    // Scroll handlers for buttons
+    if (prevBtn && nextBtn) {
+        prevBtn.addEventListener('click', () => {
+            const currentScroll = track.scrollLeft;
+            const cardWidth = getCardWidth();
+            const maxScroll = track.scrollWidth - track.clientWidth;
+            const targetScroll = currentScroll - cardWidth * cardsPerPage;
+            
+            if (currentScroll <= 10) {
+                // Loop to the end
+                track.scrollTo({
+                    left: maxScroll,
+                    behavior: 'smooth'
+                });
+            } else {
+                track.scrollTo({
+                    left: Math.max(0, targetScroll),
+                    behavior: 'smooth'
+                });
+            }
+        });
+
+        nextBtn.addEventListener('click', () => {
+            const currentScroll = track.scrollLeft;
+            const cardWidth = getCardWidth();
+            const maxScroll = track.scrollWidth - track.clientWidth;
+            const targetScroll = currentScroll + cardWidth * cardsPerPage;
+            
+            if (currentScroll >= maxScroll - 10) {
+                // Loop back to start
+                track.scrollTo({
+                    left: 0,
+                    behavior: 'smooth'
+                });
+            } else {
+                track.scrollTo({
+                    left: Math.min(maxScroll, targetScroll),
+                    behavior: 'smooth'
+                });
+            }
+        });
+    }
+
+    // Update active dot on scroll
+    track.addEventListener('scroll', () => {
+        if (!dotsContainer) return;
+        const cardWidth = getCardWidth();
+        const activeIndex = Math.round(track.scrollLeft / (cardWidth * cardsPerPage));
+        const dots = dotsContainer.querySelectorAll('.carousel-dot');
+        dots.forEach((dot, index) => {
+            if (index === activeIndex) {
+                dot.classList.add('active');
+            } else {
+                dot.classList.remove('active');
+            }
+        });
+    });
+
+    createDots();
+    window.addEventListener('resize', createDots);
 }
