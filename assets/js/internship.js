@@ -18,6 +18,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 5. Setup Interactive Photo Gallery Filters
     initGalleryFilters();
+
+    // 6. Setup Premium Cursor Spotlight Hover Effect
+    document.querySelectorAll('.timeline-card').forEach(card => {
+        card.addEventListener('mousemove', (e) => {
+            const rect = card.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            card.style.setProperty('--mouse-x', `${x}px`);
+            card.style.setProperty('--mouse-y', `${y}px`);
+        });
+    });
 });
 
 /* ==========================================
