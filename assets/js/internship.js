@@ -571,6 +571,8 @@ function initMainHeaderScrollSpy() {
         document.getElementById('journey-section'),
         document.getElementById('gallery-section'),
         document.getElementById('program-roster'),
+        document.getElementById('awards-section'),
+        document.getElementById('linkedin-section'),
         document.getElementById('reflection-section')
     ].filter(el => el !== null);
 
@@ -590,7 +592,7 @@ function initMainHeaderScrollSpy() {
                 const id = entry.target.getAttribute('id');
                 navLinks.forEach(link => {
                     const href = link.getAttribute('href');
-                    if (href === `#${id}`) {
+                    if (href === `#${id}` || ((id === 'awards-section' || id === 'linkedin-section') && href === '#awards-section')) {
                         link.classList.add('active');
                     } else {
                         link.classList.remove('active');

@@ -21,6 +21,7 @@ window.PORTFOLIO_TRANSLATIONS = {
         intern_nav_timeline: "Daily Logs",
         intern_nav_gallery: "Captured Moments",
         intern_nav_mentors: "Mentors & Leaders",
+        intern_nav_awards: "Honors & Buzz",
         intern_nav_reflection: "Growth Reflection",
 
         // Hero Subtitle Strings for Typed.js
@@ -493,6 +494,23 @@ window.PORTFOLIO_TRANSLATIONS = {
         reflection_p1: "This internship was far more than a simple technical training program—it was a transformative 13-day journey that pushed me out of my comfort zone. Arriving in Amroha, a city completely unfamiliar to me, I was initially an outsider in an unknown environment. However, this challenge turned into an extraordinary opportunity for personal and professional growth.",
         reflection_p2: "Over the course of the training, I had the privilege of meeting and interacting with more than 45+ incredible people—including eminent law enforcement leaders, senior state cyber security cell officers, industry-leading advisors, coordinating student leaders, and brilliant co-interns. Engaging in deep technical and case-oriented discussions with them helped me broaden my horizons significantly.",
         reflection_p3: "From late-night forensic debugging simulations to analyzing complex UPI transaction trails, every single day taught me something new. I leave this program not just with technical knowledge of mobile forensics, OSINT, and SOC tools, but with invaluable life lessons, new perspectives, and a strong network of professional mentors and lifelong friends.",
+        reflection_sig_title: "Cyber Security Intern & Developer",
+
+        // Awards & Achievements Translations (English)
+        awards_heading: "Honors & Recognition",
+        awards_sub: "Awarded and appreciated by the Cyber Crime Cell, Amroha Police for cybersecurity contributions.",
+        awards_badge: "Best Content Creator #APCSIP2026",
+        awards_mug_title: "Custom Cyber Mug",
+        awards_mug_desc: "Presented by DSP Anjali Kataria Ma'am as a token of recognition for cybersecurity content creation.",
+        awards_cert_title: "Certificate of Appreciation",
+        awards_cert_desc: "Official appreciation certificate representing outstanding contribution to the APCSIP-2026 program.",
+        awards_shirt_title: "Official Program T-Shirt",
+        awards_shirt_desc: "APCSIP-2026 commemorative gear received during the training program.",
+
+        // LinkedIn Coverage Translations (English)
+        linkedin_heading: "Social Logs & Publications",
+        linkedin_sub: "Detailed case summaries, technical insights, and daily logs published throughout the 12-day journey.",
+        linkedin_view_btn: "View Post on LinkedIn",,
         reflection_sig_title: "Cyber Security Intern & Developer"
     },
     hi: {
@@ -513,6 +531,7 @@ window.PORTFOLIO_TRANSLATIONS = {
         intern_nav_timeline: "दैनिक डायरी",
         intern_nav_gallery: "चित्र दीर्घा",
         intern_nav_mentors: "मार्गदर्शक व टीम",
+        intern_nav_awards: "सम्मान व सोशल मीडिया",
         intern_nav_reflection: "अनुभव व सीख",
 
         // Hero Subtitle Strings for Typed.js
@@ -997,7 +1016,23 @@ window.PORTFOLIO_TRANSLATIONS = {
         reflection_p1: "यह इंटर्नशिप केवल एक तकनीकी प्रशिक्षण कार्यक्रम से कहीं अधिक थी—यह 13 दिनों की एक परिवर्तनकारी यात्रा थी जिसने मुझे मेरे कम्फर्ट जोन से बाहर निकाला। अमरोहा में कदम रखते ही, जो मेरे लिए पूरी तरह से एक नया और अपरिचित शहर था, मैं शुरुआत में एक अजनबी था। हालांकि, इस चुनौती ने व्यक्तिगत और व्यावसायिक विकास के एक असाधारण अवसर का रूप ले लिया।",
         reflection_p2: "प्रशिक्षण के दौरान, मुझे 45+ से अधिक अद्भुत लोगों से मिलने और बातचीत करने का सौभाग्य मिला—जिसमें कानून प्रवर्तन के प्रतिष्ठित नेता, वरिष्ठ राज्य साइबर सुरक्षा सेल के अधिकारी, उद्योग के अग्रणी सलाहकार, समन्वय करने वाले छात्र नेता और मेरे प्रतिभाशाली सह-इंटर्न शामिल थे। उनके साथ गहन तकनीकी और केस-आधारित चर्चाओं ने मेरे सोचने के नजरिए को काफी विस्तृत किया।",
         reflection_p3: "देर रात तक चलने वाले फोरेंसिक डिबगिंग सिमुलेशन से लेकर जटिल यूपीआई ट्रांजैक्शन ट्रेल्स के विश्लेषण तक, हर एक दिन ने मुझे कुछ नया सिखाया। मैं इस कार्यक्रम से केवल मोबाइल फोरेंसिक, ओसिंट और एसओसी टूल्स के तकनीकी ज्ञान के साथ नहीं जा रहा हूँ, बल्कि अमूल्य जीवन के सबक, नए दृष्टिकोण और पेशेवर गुरुओं व आजीवन दोस्तों के एक मजबूत नेटवर्क के साथ लौट रहा हूँ।",
-        reflection_sig_title: "साइबर सुरक्षा इंटर्न और डेवलपर"
+        reflection_sig_title: "साइबर सुरक्षा इंटर्न और डेवलपर",
+
+        // Awards & Achievements Translations (Hindi)
+        awards_heading: "विशेष सम्मान और पहचान",
+        awards_sub: "साइबर सुरक्षा कंटेंट निर्माण के लिए साइबर क्राइम सेल, अमरोहा पुलिस द्वारा सम्मानित व प्रशंसित।",
+        awards_badge: "बेस्ट कंटेंट क्रिएटर #APCSIP2026",
+        awards_mug_title: "यादगार साइबर मग",
+        awards_mug_desc: "डीएसपी अंजलि कटारिया मैम द्वारा स्मृति चिन्ह के रूप में भेंट किया गया।",
+        awards_cert_title: "प्रशस्ति पत्र",
+        awards_cert_desc: "APCSIP-2026 कार्यक्रम में उत्कृष्ट योगदान के लिए दिया गया आधिकारिक प्रशस्ति पत्र।",
+        awards_shirt_title: "आधिकारिक कार्यक्रम टी-शर्ट",
+        awards_shirt_desc: "प्रशिक्षण कार्यक्रम के दौरान प्राप्त हुई APCSIP-2026 की विशेष टी-शर्ट।",
+
+        // LinkedIn Coverage Translations (Hindi)
+        linkedin_heading: "लिंक्डइन लॉग्स और प्रकाशन",
+        linkedin_sub: "12-दिवसीय यात्रा के दौरान साझा किए गए विस्तृत केस सारांश, तकनीकी अंतर्दृष्टि और दैनिक ब्लॉग।",
+        linkedin_view_btn: "लिंक्डइन पर पोस्ट देखें",
     }
 };
 

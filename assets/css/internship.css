@@ -2463,3 +2463,316 @@ body.internship-page {
 .main-nav ul li a.active::after {
     width: 100%;
 }
+
+/* ==========================================================================
+   Achievements & Recognition (Awards Section) Styling
+   ========================================================================== */
+.awards-section {
+    padding: 6rem 0;
+    position: relative;
+    overflow: hidden;
+    background: radial-gradient(circle at 10% 20%, rgba(251, 188, 5, 0.05), transparent 40%);
+}
+
+.awards-highlight-banner {
+    background: linear-gradient(135deg, rgba(251, 188, 5, 0.15) 0%, rgba(234, 67, 53, 0.05) 100%);
+    border: 1px solid rgba(251, 188, 5, 0.3);
+    border-radius: 20px;
+    padding: 2rem;
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 3.5rem auto;
+    box-shadow: 0 0 40px rgba(251, 188, 5, 0.1);
+    position: relative;
+    overflow: hidden;
+    backdrop-filter: blur(12px);
+}
+
+.awards-highlight-banner::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg, transparent 45%, rgba(251, 188, 5, 0.1) 50%, transparent 55%);
+    animation: shineSweep 6s infinite linear;
+    pointer-events: none;
+}
+
+@keyframes shineSweep {
+    0% { transform: translate(-30%, -30%) rotate(0deg); }
+    100% { transform: translate(30%, 30%) rotate(0deg); }
+}
+
+.award-badge-premium {
+    font-family: var(--font-heading);
+    font-size: clamp(1.5rem, 3vw, 2.2rem);
+    font-weight: 800;
+    background: linear-gradient(135deg, #fff 10%, var(--google-yellow) 50%, #f97316 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 30px rgba(251, 188, 5, 0.2);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 0.5rem;
+}
+
+.award-badge-premium i {
+    color: var(--google-yellow);
+    filter: drop-shadow(0 0 10px rgba(251, 188, 5, 0.6));
+}
+
+.awards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.award-item-card {
+    background: var(--card-bg-glass);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 20px;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+}
+
+.award-item-card:hover {
+    transform: translateY(-8px);
+    border-color: rgba(251, 188, 5, 0.4);
+    box-shadow: 0 20px 40px rgba(251, 188, 5, 0.15);
+}
+
+.award-media-wrapper {
+    width: 100%;
+    aspect-ratio: 4/3;
+    position: relative;
+    background: rgba(2, 6, 23, 0.6);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.award-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.award-item-card:hover .award-photo {
+    transform: scale(1.05);
+}
+
+.award-placeholder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 50% 50%, rgba(251, 188, 5, 0.1), rgba(2, 6, 23, 0.9));
+    color: var(--google-yellow);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.award-placeholder i {
+    font-size: 3rem;
+    filter: drop-shadow(0 0 15px rgba(251, 188, 5, 0.4));
+    animation: floatIcon 3s infinite ease-in-out;
+}
+
+@keyframes floatIcon {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+}
+
+.award-placeholder span {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.award-card-info {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.award-card-info h3 {
+    font-family: var(--font-heading);
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 0.5rem;
+}
+
+.award-card-info p {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: #94a3b8;
+    margin: 0;
+}
+
+/* ==========================================================================
+   LinkedIn Coverage Section Styling
+   ========================================================================== */
+.linkedin-section {
+    padding: 6rem 0;
+    position: relative;
+    overflow: hidden;
+    background: radial-gradient(circle at 90% 10%, rgba(14, 165, 233, 0.05), transparent 40%);
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.linkedin-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.linkedin-post-card {
+    background: linear-gradient(180deg, rgba(15, 23, 42, 0.6) 0%, rgba(30, 41, 59, 0.4) 100%);
+    border: 1px solid rgba(14, 165, 233, 0.15);
+    border-radius: 20px;
+    padding: 1.75rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+    position: relative;
+}
+
+.linkedin-post-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(14, 165, 233, 0.4);
+    box-shadow: 0 20px 40px rgba(14, 165, 233, 0.15);
+}
+
+.li-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 1.25rem;
+}
+
+.li-profile-area {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.li-profile-img {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    border: 1px solid rgba(14, 165, 233, 0.3);
+}
+
+.li-author-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.li-author-name {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: #fff;
+    line-height: 1.2;
+}
+
+.li-post-date {
+    font-size: 0.75rem;
+    color: #64748b;
+}
+
+.li-brand-icon {
+    font-size: 1.5rem;
+    color: #0a66c2;
+    filter: drop-shadow(0 0 5px rgba(10, 102, 194, 0.3));
+}
+
+.li-card-body {
+    margin-bottom: 1.5rem;
+}
+
+.li-card-body h3 {
+    font-family: var(--font-heading);
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 0.75rem;
+    line-height: 1.4;
+}
+
+.li-card-body p {
+    font-size: 0.88rem;
+    line-height: 1.6;
+    color: #cbd5e1;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-bottom: 1rem;
+}
+
+.li-post-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.li-tag {
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: var(--google-blue);
+    background: rgba(66, 133, 244, 0.08);
+    border: 1px solid rgba(66, 133, 244, 0.25);
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+}
+
+.li-card-footer {
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    padding-top: 1rem;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.li-action-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(14, 165, 233, 0.08);
+    border: 1px solid rgba(14, 165, 233, 0.3);
+    color: #fff;
+    padding: 0.6rem 1.25rem;
+    border-radius: 8px;
+    font-family: var(--font-heading);
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.li-action-btn:hover {
+    background: #0a66c2;
+    border-color: #0a66c2;
+    box-shadow: 0 0 15px rgba(10, 102, 194, 0.4);
+    transform: translateY(-1px);
+}
