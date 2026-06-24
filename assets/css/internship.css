@@ -808,7 +808,7 @@ body.internship-page {
     left: 0;
     width: 100vw;
     height: 100vh;
-    background: rgba(2, 6, 23, 0.95);
+    background: rgba(2, 6, 23, 0.96);
     z-index: 9999;
     opacity: 0;
     pointer-events: none;
@@ -826,7 +826,7 @@ body.internship-page {
 .lightbox-content-wrapper {
     position: relative;
     max-width: 90%;
-    max-height: 80%;
+    max-height: 85%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -834,16 +834,51 @@ body.internship-page {
 
 .lightbox-image {
     max-width: 100%;
-    max-height: 75vh;
+    max-height: 70vh;
     border-radius: 12px;
     border: 1px solid rgba(255, 255, 255, 0.15);
-    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6), 0 0 40px rgba(66, 133, 244, 0.25);
-    transform: scale(0.9);
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.7), 0 0 40px rgba(66, 133, 244, 0.25);
+    transform: scale(0.95);
     transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .lightbox-modal.active .lightbox-image {
     transform: scale(1);
+}
+
+.lightbox-nav-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(15, 23, 42, 0.7);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #94a3b8;
+    width: 54px;
+    height: 54px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    z-index: 10002;
+    backdrop-filter: blur(8px);
+}
+
+.lightbox-nav-btn:hover {
+    background: var(--google-blue);
+    color: #fff;
+    border-color: var(--google-blue);
+    box-shadow: 0 0 20px rgba(66, 133, 244, 0.6);
+}
+
+.prev-btn {
+    left: -80px;
+}
+
+.next-btn {
+    right: -80px;
 }
 
 .lightbox-caption {
@@ -854,28 +889,120 @@ body.internship-page {
     margin-top: 1.5rem;
     text-align: center;
     max-width: 600px;
-    background: rgba(15, 23, 42, 0.8);
+    background: rgba(15, 23, 42, 0.85);
     border: 1px solid rgba(255, 255, 255, 0.05);
     padding: 0.75rem 1.5rem;
     border-radius: 30px;
     backdrop-filter: blur(8px);
 }
 
+.lightbox-index-indicator {
+    font-family: var(--font-heading);
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: #64748b;
+    margin-top: 0.75rem;
+    background: rgba(15, 23, 42, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 0.35rem 1rem;
+    border-radius: 20px;
+    letter-spacing: 1px;
+}
+
 .lightbox-close-btn {
     position: absolute;
-    top: -40px;
+    top: -45px;
     right: 0;
-    background: transparent;
-    border: none;
+    background: rgba(15, 23, 42, 0.7);
+    border: 1px solid rgba(255, 255, 255, 0.1);
     color: #94a3b8;
-    font-size: 1.8rem;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
     cursor: pointer;
-    transition: color 0.3s, transform 0.3s;
+    transition: color 0.3s, transform 0.3s, background-color 0.3s;
+    backdrop-filter: blur(8px);
 }
 
 .lightbox-close-btn:hover {
     color: #fff;
+    background-color: var(--google-red);
+    border-color: var(--google-red);
     transform: rotate(90deg);
+}
+
+/* Gallery Load More Button */
+.gallery-load-more-btn {
+    background: linear-gradient(135deg, rgba(66, 133, 244, 0.08), rgba(14, 165, 233, 0.04));
+    border: 1px solid var(--border-color-glass);
+    color: #cbd5e1;
+    padding: 0.9rem 2.5rem;
+    border-radius: 50px;
+    font-family: var(--font-heading);
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.gallery-load-more-btn:hover {
+    border-color: var(--primary-color);
+    background: linear-gradient(135deg, rgba(66, 133, 244, 0.2), rgba(14, 165, 233, 0.1));
+    color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(14, 165, 233, 0.35);
+}
+
+.gallery-load-more-btn:active {
+    transform: translateY(0);
+}
+
+.gallery-load-more-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+@media (max-width: 1024px) {
+    .prev-btn {
+        left: -15px;
+    }
+    .next-btn {
+        right: -15px;
+    }
+}
+
+@media (max-width: 768px) {
+    .lightbox-nav-btn {
+        width: 46px;
+        height: 46px;
+        font-size: 1.1rem;
+        background: rgba(15, 23, 42, 0.85);
+    }
+    .prev-btn {
+        left: 10px;
+    }
+    .next-btn {
+        right: 10px;
+    }
+    .lightbox-image {
+        max-height: 60vh;
+    }
+    .lightbox-caption {
+        font-size: 0.85rem;
+        padding: 0.6rem 1.2rem;
+    }
 }
 
 /* Floating Navigation Back Button */

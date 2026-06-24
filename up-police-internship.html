@@ -767,145 +767,23 @@
 
             <!-- Gallery Filter Buttons -->
             <div class="gallery-filters">
-                <button class="gallery-filter-btn active" data-filter="all" data-translate="gallery_filter_all">All Media</button>
-                <button class="gallery-filter-btn" data-filter="leadership" data-translate="gallery_filter_leadership">Leadership</button>
-                <button class="gallery-filter-btn" data-filter="mentors" data-translate="gallery_filter_mentors">Mentors & Experts</button>
-                <button class="gallery-filter-btn" data-filter="team" data-translate="gallery_filter_team">Coordinators</button>
-                <button class="gallery-filter-btn" data-filter="branding" data-translate="gallery_filter_branding">Official Branding</button>
-                <button class="gallery-filter-btn" data-filter="sessions" data-translate="gallery_filter_sessions">Sessions & Group Photos</button>
+                <button class="gallery-filter-btn active" data-filter="all" data-translate="gallery_filter_all">All Moments</button>
+                <button class="gallery-filter-btn" data-filter="journey" data-translate="gallery_filter_journey">My Journey</button>
+                <button class="gallery-filter-btn" data-filter="slides" data-translate="gallery_filter_slides">Lecture Slides</button>
+                <button class="gallery-filter-btn" data-filter="mentors" data-translate="gallery_filter_mentors">Leadership & Mentors</button>
             </div>
 
-            <!-- Gallery Grid -->
-            <div class="gallery-grid">
-                <!-- Gallery Item: Official APCSIP Banner -->
-                <div class="gallery-image-wrapper" data-category="branding" data-aos="zoom-in" data-aos-delay="50">
-                    <img src="assets/images/APCSIP -2026.jpg" alt="APCSIP-2026 Official Banner" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                    <div class="image-placeholder-hud" style="display:none;">
-                        <i class="fas fa-image"></i>
-                        <span>APCSIP-2026 Logo</span>
-                    </div>
-                    <div class="hud-image-overlay">
-                        <i class="fas fa-expand"></i>
-                        <span data-translate="gallery_caption_banner">APCSIP-2026 Official Banner</span>
-                    </div>
-                </div>
+            <!-- Dynamic Gallery Grid -->
+            <div class="gallery-grid" id="dynamic-gallery-grid">
+                <!-- Javascript will dynamically inject image items here -->
+            </div>
 
-                <!-- Gallery Item: DSP Anjali Kataria -->
-                <div class="gallery-image-wrapper" data-category="leadership" data-aos="zoom-in" data-aos-delay="100">
-                    <img src="assets/images/Anjali Kataria, DSP.jpg" alt="DSP Anjali Kataria" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                    <div class="image-placeholder-hud" style="display:none;">
-                        <i class="fas fa-user-shield"></i>
-                        <span>DSP Anjali Kataria</span>
-                    </div>
-                    <div class="hud-image-overlay">
-                        <i class="fas fa-expand"></i>
-                        <span data-translate="gallery_caption_dsp">DSP Anjali Kataria - Chief Organizer</span>
-                    </div>
-                </div>
-
-                <!-- Gallery Item: Bhanu Sharma Coordinator -->
-                <div class="gallery-image-wrapper" data-category="leadership" data-aos="zoom-in" data-aos-delay="150">
-                    <img src="assets/images/Bhanu Sharma - Co-ordinator APSCSIP.jpg" alt="Bhanu Sharma" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                    <div class="image-placeholder-hud" style="display:none;">
-                        <i class="fas fa-user-tie"></i>
-                        <span>Bhanu Sharma</span>
-                    </div>
-                    <div class="hud-image-overlay">
-                        <i class="fas fa-expand"></i>
-                        <span data-translate="gallery_caption_bhanu">Bhanu Sharma - Program Coordinator</span>
-                    </div>
-                </div>
-
-                <!-- Gallery Item: Rakshit Tandon -->
-                <div class="gallery-image-wrapper" data-category="mentors" data-aos="zoom-in" data-aos-delay="200">
-                    <img src="assets/images/Rakshit Tandon - cyber security expert india, cyber security consultant.jpg" alt="Rakshit Tandon" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                    <div class="image-placeholder-hud" style="display:none;">
-                        <i class="fas fa-graduation-cap"></i>
-                        <span>Rakshit Tandon</span>
-                    </div>
-                    <div class="hud-image-overlay">
-                        <i class="fas fa-expand"></i>
-                        <span data-translate="gallery_caption_rakshit">Rakshit Tandon - Cyber Advisor</span>
-                    </div>
-                </div>
-
-                <!-- Gallery Item: Amit Dubey -->
-                <div class="gallery-image-wrapper" data-category="mentors" data-aos="zoom-in" data-aos-delay="250">
-                    <img src="assets/images/amit dubey cyber expert.webp" alt="Amit Dubey" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                    <div class="image-placeholder-hud" style="display:none;">
-                        <i class="fas fa-graduation-cap"></i>
-                        <span>Amit Dubey</span>
-                    </div>
-                    <div class="hud-image-overlay">
-                        <i class="fas fa-expand"></i>
-                        <span data-translate="gallery_caption_amit">Amit Dubey - Cyber Crime Investigator</span>
-                    </div>
-                </div>
-
-                <!-- Gallery Item: Saumay Srivastava -->
-                <div class="gallery-image-wrapper" data-category="mentors" data-aos="zoom-in" data-aos-delay="300">
-                    <img src="assets/images/Saumay Srivastava Cybersecurity  Threat Intelligence Researcher  Darkweb.jpg" alt="Saumay Srivastava" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                    <div class="image-placeholder-hud" style="display:none;">
-                        <i class="fas fa-graduation-cap"></i>
-                        <span>Saumay Srivastava</span>
-                    </div>
-                    <div class="hud-image-overlay">
-                        <i class="fas fa-expand"></i>
-                        <span data-translate="gallery_caption_saumay">Saumay Srivastava - Dark Web Analyst</span>
-                    </div>
-                </div>
-
-                <!-- Gallery Item: Group Photo 1 Placeholder -->
-                <div class="gallery-image-wrapper" data-category="sessions" data-aos="zoom-in" data-aos-delay="350">
-                    <img src="assets/images/group_photo_1.jpg" alt="Organizers and Interns Group Photo" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                    <div class="image-placeholder-hud">
-                        <i class="fas fa-users"></i>
-                        <span data-translate="gallery_add_group1">Group Photograph 1</span>
-                    </div>
-                    <div class="hud-image-overlay">
-                        <i class="fas fa-expand"></i>
-                        <span data-translate="gallery_caption_group1">Inauguration & Orientation Group Photo</span>
-                    </div>
-                </div>
-
-                <!-- Gallery Item: Group Photo 2 Placeholder -->
-                <div class="gallery-image-wrapper" data-category="sessions" data-aos="zoom-in" data-aos-delay="400">
-                    <img src="assets/images/group_photo_2.jpg" alt="Valedictory Session and Certificate Distribution" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                    <div class="image-placeholder-hud">
-                        <i class="fas fa-users"></i>
-                        <span data-translate="gallery_add_group2">Group Photograph 2</span>
-                    </div>
-                    <div class="hud-image-overlay">
-                        <i class="fas fa-expand"></i>
-                        <span data-translate="gallery_caption_group2">Valedictory & Certificate Distribution</span>
-                    </div>
-                </div>
-
-                <!-- Gallery Item: UP Police Logo -->
-                <div class="gallery-image-wrapper" data-category="branding" data-aos="zoom-in" data-aos-delay="450">
-                    <img src="assets/images/up-police-logo-uttar-pradesh-police-up-police-logo-11563421838xjer0uaxol.png" alt="UP Police Official Logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                    <div class="image-placeholder-hud" style="display:none;">
-                        <i class="fas fa-shield-halved"></i>
-                        <span>UP Police Logo</span>
-                    </div>
-                    <div class="hud-image-overlay">
-                        <i class="fas fa-expand"></i>
-                        <span data-translate="gallery_caption_uppolice">UP Police Official Seal</span>
-                    </div>
-                </div>
-
-                <!-- Gallery Item: UP Gov Logo -->
-                <div class="gallery-image-wrapper" data-category="branding" data-aos="zoom-in" data-aos-delay="500">
-                    <img src="assets/images/UP GOV.webp" alt="UP Government Logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                    <div class="image-placeholder-hud" style="display:none;">
-                        <i class="fas fa-building-flag"></i>
-                        <span>UP Gov Logo</span>
-                    </div>
-                    <div class="hud-image-overlay">
-                        <i class="fas fa-expand"></i>
-                        <span data-translate="gallery_caption_upgov">Government of Uttar Pradesh</span>
-                    </div>
-                </div>
+            <!-- Dynamic Load More Container -->
+            <div class="gallery-load-more-container" style="text-align: center; margin-top: 3rem;">
+                <button class="gallery-load-more-btn" id="load-more-btn">
+                    <span data-translate="gallery_load_more">Load More Moments</span>
+                    <i class="fas fa-spinner fa-spin" id="gallery-loader" style="display: none; margin-left: 0.5rem;"></i>
+                </button>
             </div>
         </div>
     </section>
