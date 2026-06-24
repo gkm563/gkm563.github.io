@@ -5586,6 +5586,199 @@ a.os-feed-username:hover {
     box-shadow: 0 6px 20px rgba(var(--theme-rgb), 0.25);
 }
 
+
 .bento-action-btn i {
     color: rgb(var(--theme-rgb));
 }
+
+/* ==========================================================================
+   COMPREHENSIVE MOBILE RESPONSIVE — PHASE 2
+   Fixes: Timeline collapse, header overflow, touch targets, overflow clipping
+   ========================================================================== */
+
+/* Prevent ANY horizontal overflow on mobile */
+html, body {
+    overflow-x: hidden;
+    max-width: 100vw;
+}
+
+/* Header container should never overflow */
+.main-header .container {
+    overflow: hidden;
+    gap: 0.5rem;
+}
+
+/* ---- PREMIUM TIMELINE — MOBILE SINGLE COLUMN ---- */
+@media (max-width: 768px) {
+    /* Switch to left-side single-column layout */
+    .premium-timeline::after {
+        left: 20px;
+        margin-left: 0;
+        width: 4px;
+    }
+
+    .premium-timeline-item {
+        width: 100% !important;
+        left: 0 !important;
+        padding: 1rem 1rem 1rem 65px;
+        text-align: left !important;
+    }
+
+    /* Both odd and even nodes move to left side */
+    .premium-timeline-item:nth-child(odd) .premium-timeline-node,
+    .premium-timeline-item:nth-child(even) .premium-timeline-node {
+        left: -3px;
+        right: auto;
+        width: 38px;
+        height: 38px;
+        font-size: 0.9rem;
+    }
+
+    /* Chips alignment fix */
+    .premium-timeline-item:nth-child(odd) .premium-timeline-chips {
+        justify-content: flex-start;
+    }
+
+    /* Card connector arrow — point left always */
+    .premium-timeline-item:nth-child(odd) .premium-timeline-card::before {
+        left: -8px;
+        right: auto;
+        border-width: 8px 8px 8px 0;
+        border-color: transparent rgba(15, 23, 42, 0.45) transparent transparent;
+    }
+
+    /* Section padding tightening */
+    .section-title { margin-bottom: 2rem; }
+
+    /* Announcement pill on mobile */
+    .announcement-pill {
+        padding: 0.4rem 0.85rem;
+        gap: 0.5rem;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .announcement-text {
+        font-size: 0.72rem;
+        letter-spacing: 0.5px;
+    }
+
+    /* Header actions compact */
+    .header-actions {
+        gap: 0.6rem;
+    }
+
+    /* Lang switch smaller */
+    .lang-switch-capsule {
+        width: 70px;
+        height: 28px;
+    }
+    .lang-switch-slider {
+        width: 30px;
+    }
+    .lang-switch-btn {
+        width: 30px;
+        font-size: 0.68rem;
+    }
+
+    /* Pipeline nodes wrap on small screens */
+    .pipeline-nodes {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.5rem;
+    }
+    .pipeline-arrow {
+        display: none;
+    }
+    .pipeline-node {
+        min-width: 60px;
+        padding: 0.35rem 0.5rem;
+    }
+    .pipeline-node span {
+        font-size: 0.58rem;
+    }
+
+    /* Scroll-to-top not overlapping chatbot too much */
+    .scroll-to-top {
+        right: 5rem;
+        bottom: 1.25rem;
+    }
+
+    /* Contact form fix */
+    .contact-form-wrapper { border-radius: 16px; }
+
+    /* OS Section */
+    .os-feed-card { max-height: 400px; }
+}
+
+/* ---- 480px: Small Phones ---- */
+@media (max-width: 480px) {
+    /* Header — tighter layout */
+    .main-header .container {
+        padding: 0 0.85rem;
+    }
+
+    /* Premium timeline even tighter */
+    .premium-timeline-item {
+        padding: 0.85rem 0.75rem 0.85rem 55px;
+    }
+    .premium-timeline-item:nth-child(odd) .premium-timeline-node,
+    .premium-timeline-item:nth-child(even) .premium-timeline-node {
+        width: 34px;
+        height: 34px;
+        font-size: 0.8rem;
+        left: -1px;
+    }
+    .premium-timeline::after {
+        left: 16px;
+        width: 3px;
+    }
+    .premium-timeline-card {
+        padding: 1rem 0.85rem;
+    }
+    .premium-timeline-card h3 {
+        font-size: 0.95rem;
+    }
+    .premium-timeline-chips {
+        gap: 0.3rem;
+    }
+    .premium-timeline-chip {
+        font-size: 0.65rem;
+        padding: 2px 7px;
+    }
+
+    /* Skill items 3-column */
+    .skill-items-grid { grid-template-columns: repeat(3, 1fr); gap: 0.75rem; }
+    .skill-item i { font-size: 1.85rem; }
+    .skill-item span { font-size: 0.72rem; }
+
+    /* Project card images */
+    .project-img-wrapper { height: 160px; }
+
+    /* Bento metric number */
+    .bento-metric { font-size: 1.2rem; }
+}
+
+/* ---- 380px: Very Small Phones ---- */
+@media (max-width: 380px) {
+    .skill-items-grid { grid-template-columns: repeat(2, 1fr); }
+
+    /* Hero CTA full-width */
+    .hero-buttons { flex-direction: column; align-items: center; }
+    .hero-buttons .cta-button { width: 100%; max-width: 260px; text-align: center; }
+
+    /* Section titles */
+    .section-title { font-size: 1.35rem; }
+
+    /* Bento tags shrink */
+    .bento-tag { font-size: 0.62rem; padding: 2px 6px; }
+
+    /* Chips even smaller */
+    .premium-timeline-chip { font-size: 0.6rem; padding: 1px 6px; }
+
+    /* Contact form */
+    .contact-form-wrapper { padding: 1.25rem 0.85rem; }
+
+    /* Footer */
+    .footer { padding: 2.5rem 0 0; }
+}
+
