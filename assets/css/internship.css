@@ -2438,4 +2438,28 @@ body.internship-page {
     }
 }
 
+/* Navigation Scroll Spy & Link Highlights */
+.main-nav ul li a {
+    position: relative;
+    transition: color 0.3s ease;
+}
 
+.main-nav ul li a::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--google-blue), var(--google-red));
+    transition: width 0.3s ease;
+}
+
+.main-nav ul li a.active {
+    color: var(--google-blue) !important;
+    font-weight: 600;
+}
+
+.main-nav ul li a.active::after {
+    width: 100%;
+}

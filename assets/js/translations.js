@@ -16,12 +16,12 @@ window.PORTFOLIO_TRANSLATIONS = {
         nav_contact: "Contact",
 
         // Internship Subpage Nav Links
-        intern_nav_home: "Back to Portfolio",
-        intern_nav_selection: "Selection",
-        intern_nav_timeline: "12-Day Logs",
-        intern_nav_gallery: "Moments Gallery",
-        intern_nav_mentors: "Mentors & Team",
-        intern_nav_reflection: "Reflection",
+        intern_nav_home: "← Portfolio Home",
+        intern_nav_selection: "Admission Route",
+        intern_nav_timeline: "Daily Logs",
+        intern_nav_gallery: "Captured Moments",
+        intern_nav_mentors: "Mentors & Leaders",
+        intern_nav_reflection: "Growth Reflection",
 
         // Hero Subtitle Strings for Typed.js
         hero_typed_strings: [
@@ -508,12 +508,12 @@ window.PORTFOLIO_TRANSLATIONS = {
         nav_contact: "संपर्क",
 
         // Internship Subpage Nav Links
-        intern_nav_home: "पोर्टफोलियो",
+        intern_nav_home: "← मुख्य पोर्टफोलियो",
         intern_nav_selection: "चयन यात्रा",
-        intern_nav_timeline: "12-दिवसीय लॉग्स",
-        intern_nav_gallery: "गैलरी",
+        intern_nav_timeline: "दैनिक डायरी",
+        intern_nav_gallery: "चित्र दीर्घा",
         intern_nav_mentors: "मार्गदर्शक व टीम",
-        intern_nav_reflection: "अनुभव",
+        intern_nav_reflection: "अनुभव व सीख",
 
         // Hero Subtitle Strings for Typed.js
         hero_typed_strings: [

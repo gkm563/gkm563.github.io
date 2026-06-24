@@ -10,6 +10,9 @@ document.addEventListener('DOMContentLoaded', () => {
     // 2. Setup Sticky Day Highlighting (Scroll-spy)
     initScrollSpy();
 
+    // 2.5. Setup Main Header Scroll-spy Highlight
+    initMainHeaderScrollSpy();
+
     // 3. Setup Interactive Lightbox Modal
     initLightbox();
 
@@ -174,7 +177,7 @@ function initScrollSpy() {
     timelineCards.forEach(card => observer.observe(card));
 
     // Smooth scrolling link events
-    const scrollLinks = document.querySelectorAll('.day-nav-item a, .hero-scroll-prompt');
+    const scrollLinks = document.querySelectorAll('.day-nav-item a, .hero-scroll-prompt, .main-nav ul li a[href^="#"]');
     scrollLinks.forEach(link => {
         link.addEventListener('click', (e) => {
             e.preventDefault();
@@ -557,4 +560,56 @@ function renderArchiveBatch() {
             }
         }
     }, 200);
+}
+
+/* ==========================================
+   Main Header Scroll-Spy Link Highlighting
+   ========================================== */
+function initMainHeaderScrollSpy() {
+    const sections = [
+        document.getElementById('selection-journey'),
+        document.getElementById('journey-section'),
+        document.getElementById('gallery-section'),
+        document.getElementById('program-roster'),
+        document.getElementById('reflection-section')
+    ].filter(el => el !== null);
+
+    const navLinks = document.querySelectorAll('.main-nav ul li a');
+
+    if (sections.length === 0 || navLinks.length === 0) return;
+
+    const observerOptions = {
+        root: null,
+        rootMargin: '-20% 0px -60% 0px',
+        threshold: 0.1
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const id = entry.target.getAttribute('id');
+                navLinks.forEach(link => {
+                    const href = link.getAttribute('href');
+                    if (href === `#${id}`) {
+                        link.classList.add('active');
+                    } else {
+                        link.classList.remove('active');
+                    }
+                });
+            }
+        });
+    }, observerOptions);
+
+    sections.forEach(section => observer.observe(section));
+
+    // Clear active state when at the top of the page
+    window.addEventListener('scroll', () => {
+        if (window.scrollY < 200) {
+            navLinks.forEach(link => {
+                if (link.getAttribute('href') !== 'index.html') {
+                    link.classList.remove('active');
+                }
+            });
+        }
+    });
 }
