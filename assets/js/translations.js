@@ -507,6 +507,9 @@ window.PORTFOLIO_TRANSLATIONS = {
         awards_shirt_title: "Official Program T-Shirt",
         awards_shirt_desc: "APCSIP-2026 commemorative gear received during the training program.",
         intern_read_log: "Read Log on LinkedIn",
+        cta_title: "Still wanted to know more? Let me tell you",
+        cta_desc: "Explore my full engineering arsenal, client-side tools, open-source commits, and active startup ventures on my primary portfolio.",
+        cta_btn: "View Main Portfolio",
 
         li_day_1: "Day 1",
         li_day_2: "Day 2",
@@ -1070,6 +1073,9 @@ window.PORTFOLIO_TRANSLATIONS = {
         awards_shirt_title: "आधिकारिक कार्यक्रम टी-शर्ट",
         awards_shirt_desc: "प्रशिक्षण कार्यक्रम के दौरान प्राप्त हुई APCSIP-2026 की विशेष टी-शर्ट।",
         intern_read_log: "लिंक्डइन पर लॉग पढ़ें",
+        cta_title: "क्या आप और अधिक जानना चाहते हैं? मैं आपको बताता हूँ",
+        cta_desc: "मेरे मुख्य पोर्टफोलियो पर मेरे संपूर्ण प्रोजेक्ट्स, ओपन-सोर्स योगदान, स्टार्टअप उद्यम और तकनीकी कौशल को देखें।",
+        cta_btn: "मुख्य पोर्टफोलियो देखें",
 
         li_day_1: "दिन 1",
         li_day_2: "दिन 2",
