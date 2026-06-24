@@ -148,15 +148,23 @@ function initScrollSpy() {
 
                     // Center active element in mobile horizontal subnav
                     const listContainer = document.querySelector('.day-nav-list');
-                    if (listContainer && window.innerWidth <= 1024) {
+                    if (listContainer) {
                         const listRect = listContainer.getBoundingClientRect();
                         const navRect = matchingNavItem.getBoundingClientRect();
                         
-                        // Scroll horizontally to match focus index
-                        listContainer.scrollTo({
-                            left: listContainer.scrollLeft + (navRect.left - listRect.left) - (listRect.width / 2) + (navRect.width / 2),
-                            behavior: 'smooth'
-                        });
+                        if (window.innerWidth <= 1024) {
+                            // Scroll horizontally to match focus index on mobile
+                            listContainer.scrollTo({
+                                left: listContainer.scrollLeft + (navRect.left - listRect.left) - (listRect.width / 2) + (navRect.width / 2),
+                                behavior: 'smooth'
+                            });
+                        } else {
+                            // Scroll vertically to match focus index on desktop sidebar
+                            listContainer.scrollTo({
+                                top: listContainer.scrollTop + (navRect.top - listRect.top) - (listRect.height / 2) + (navRect.height / 2),
+                                behavior: 'smooth'
+                            });
+                        }
                     }
                 }
             }
