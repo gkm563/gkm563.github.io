@@ -358,12 +358,13 @@ function initMobileNav() {
 }
 
 /* ==========================================
-   Gallery Section Filtering & Rendering Logic
+   Gallery Section Filtering, Slider & Rendering Logic
    ========================================== */
 let allCatalogImages = [];
 let currentImagesList = [];
 let renderedCount = 0;
-const itemsPerPage = 16;
+const itemsPerPage = 18;
+let currentCategory = 'journey';
 
 function shuffleArray(array) {
     const arr = [...array];
@@ -375,9 +376,11 @@ function shuffleArray(array) {
 }
 
 function generateCatalog() {
-    // 1. Personal Journey Photos (92 items: 1 PNG, 91 JPGs)
+    // 1. Personal Journey Photos (92 items originally, skipping the 6 moved to slides)
     const personal = [];
+    const skippedJourneyIndexes = [1, 2, 3, 16, 87];
     for (let i = 1; i <= 91; i++) {
+        if (skippedJourneyIndexes.includes(i)) continue;
         personal.push({
             src: `assets/images/GKM563 - Personal/Gautam_Kumar_Maurya (${i}).jpg`,
             alt: `APCSIP Journey Moment #${i}`,
@@ -385,14 +388,9 @@ function generateCatalog() {
             caption: `Journey Moment #${i} - Gautam's Experience`
         });
     }
-    personal.push({
-        src: `assets/images/GKM563 - Personal/Gautam_Kumar_Maurya (1).png`,
-        alt: `APCSIP Journey Highlight`,
-        category: 'journey',
-        caption: `Journey Highlight - Gautam's Onboarding`
-    });
+    // Gautam_Kumar_Maurya (1).png was also moved to slides, so we do not push it to personal journey photos.
 
-    // 2. Slide Photos (146 items)
+    // 2. Slide Photos (146 items from loop + 6 items moved from GKM563 - Personal)
     const slides = [];
     for (let i = 1; i <= 146; i++) {
         slides.push({
@@ -403,112 +401,56 @@ function generateCatalog() {
         });
     }
 
-    // 3. Mentors & Leadership
-    const mentors = [
-        { src: 'assets/images/APCSIP -2026.jpg', alt: 'APCSIP-2026 Official Logo', category: 'mentors', caption: 'APCSIP-2026 Official Logo' },
-        { src: 'assets/images/Anjali Kataria, DSP.jpg', alt: 'DSP Anjali Kataria', category: 'mentors', caption: 'DSP Anjali Kataria - Chief Organizer & Head of Cyber Crime Cell' },
-        { src: 'assets/images/Bhanu Sharma - Co-ordinator APSCSIP.jpg', alt: 'Bhanu Sharma', category: 'mentors', caption: 'Bhanu Sharma - Program Coordinator' },
-        { src: 'assets/images/Rakshit Tandon - cyber security expert india, cyber security consultant.jpg', alt: 'Rakshit Tandon', category: 'mentors', caption: 'Rakshit Tandon - Senior Cybersecurity Expert & Advisor' },
-        { src: 'assets/images/amit dubey cyber expert.webp', alt: 'Amit Dubey', category: 'mentors', caption: 'Amit Dubey - Cyber Crime Investigator & Speaker' },
-        { src: 'assets/images/Saumay Srivastava Cybersecurity  Threat Intelligence Researcher  Darkweb.jpg', alt: 'Saumay Srivastava', category: 'mentors', caption: 'Saumay Srivastava - Darkweb Analyst & OSINT Mentor' },
-        { src: 'assets/images/Yugal Pathal Digital Forensics & Incident Response (DFIR) specialist.jpg', alt: 'Yugal Pathal', category: 'mentors', caption: 'Yugal Pathal - DFIR Specialist Mentor' },
-        { src: 'assets/images/nitinpandey.jpg', alt: 'Nitin Pandey', category: 'mentors', caption: 'Nitin Pandey - Cybersecurity Speaker & Network Auditor' },
-        { src: 'assets/images/Kailash D Agrawal Payment Security Consultant.jpg', alt: 'Kailash D Agrawal', category: 'mentors', caption: 'Kailash D Agrawal - Financial Fraud Advisor' },
-        { src: 'assets/images/pakhi garg lawyer.webp', alt: 'Pakhi Garg', category: 'mentors', caption: 'Pakhi Garg - Cyber Law & DPDP Compliance Advisor' },
-        { src: 'assets/images/yash chavhan - web3.jpg', alt: 'Yash Chavhan', category: 'mentors', caption: 'Yash Chavhan - Web3 Security Lead' },
-        { src: 'assets/images/Ansh Sharma.jpg', alt: 'Ansh Sharma', category: 'mentors', caption: 'Ansh Sharma - Student Organizing Committee Coordinator' },
-        { src: 'assets/images/Manoj Kushwaha.jpg', alt: 'Manoj Kushwaha', category: 'mentors', caption: 'Manoj Kushwaha - Student Technical Coordinator' },
-        { src: 'assets/images/Vikash Kumar.jpg', alt: 'Vikash Kumar', category: 'mentors', caption: 'Vikash Kumar - Student Logistical Flow Coordinator' },
-        { src: 'assets/images/up-police-logo-uttar-pradesh-police-up-police-logo-11563421838xjer0uaxol.png', alt: 'UP Police Logo', category: 'mentors', caption: 'UP Police Official Seal' },
-        { src: 'assets/images/UP GOV.webp', alt: 'UP Gov Logo', category: 'mentors', caption: 'Government of Uttar Pradesh Official Logo' }
+    // Add the specific slides moved from GKM563 - Personal
+    const movedToSlides = [
+        { src: 'assets/images/Slides-photo/Gautam_Kumar_Maurya (1).jpg', caption: 'Cybersecurity training presentation slide' },
+        { src: 'assets/images/Slides-photo/Gautam_Kumar_Maurya (1).png', caption: 'Cybersecurity lecture overview' },
+        { src: 'assets/images/Slides-photo/Gautam_Kumar_Maurya (2).jpg', caption: 'Cybersecurity expert training concepts' },
+        { src: 'assets/images/Slides-photo/Gautam_Kumar_Maurya (3).jpg', caption: 'Cyber forensics and threat intelligence slide' },
+        { src: 'assets/images/Slides-photo/Gautam_Kumar_Maurya (16).jpg', caption: 'Vulnerability assessment and pentesting concepts' },
+        { src: 'assets/images/Slides-photo/Gautam_Kumar_Maurya (87).jpg', caption: 'Mobile data extraction steps presentation' }
     ];
+
+    movedToSlides.forEach((item, idx) => {
+        slides.push({
+            src: item.src,
+            alt: `Training Lecture Presentation Slide - Additional ${idx + 1}`,
+            category: 'slides',
+            caption: item.caption
+        });
+    });
 
     allCatalogImages = {
         journey: personal,
-        slides: slides,
-        mentors: mentors
+        slides: slides
     };
 }
 
 function initGalleryFilters() {
     generateCatalog();
 
+    // Initialize direct simple gallery panel
+    initArchivePanel();
+}
+
+function initArchivePanel() {
     const grid = document.getElementById('dynamic-gallery-grid');
+    const filterButtons = document.querySelectorAll('.gallery-tab-btn');
     const loadMoreBtn = document.getElementById('load-more-btn');
-    const loader = document.getElementById('gallery-loader');
-    const filterButtons = document.querySelectorAll('.gallery-filter-btn');
+    const shuffleBtn = document.getElementById('gallery-shuffle-btn');
 
     if (!grid) return;
 
-    // Load a category's images list
-    const setCategory = (category) => {
+    // Direct initialization of active tab on load
+    setArchiveCategory('journey');
+
+    function setArchiveCategory(category) {
         currentCategory = category;
         grid.innerHTML = '';
         renderedCount = 0;
 
-        let list = [];
-        if (category === 'all') {
-            const combined = [
-                ...allCatalogImages.journey,
-                ...allCatalogImages.slides,
-                ...allCatalogImages.mentors
-            ];
-            list = shuffleArray(combined);
-        } else {
-            list = shuffleArray(allCatalogImages[category]);
-        }
-
-        currentImagesList = list;
-        activeGalleryImages = currentImagesList;
-
-        renderNextBatch();
-    };
-
-    const renderNextBatch = () => {
-        if (loader) loader.style.display = 'inline-block';
-        if (loadMoreBtn) loadMoreBtn.disabled = true;
-
-        setTimeout(() => {
-            const nextBatchLimit = Math.min(renderedCount + itemsPerPage, currentImagesList.length);
-            let htmlContent = '';
-
-            for (let i = renderedCount; i < nextBatchLimit; i++) {
-                const imgObj = currentImagesList[i];
-                htmlContent += `
-                    <div class="gallery-image-wrapper" data-category="${imgObj.category}" data-index="${i}" data-aos="zoom-in" data-aos-delay="${(i - renderedCount) * 50}">
-                        <img src="${imgObj.src}" alt="${imgObj.alt}" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                        <div class="image-placeholder-hud" style="display:none;">
-                            <i class="fas fa-image"></i>
-                            <span>APCSIP Moment</span>
-                        </div>
-                        <div class="hud-image-overlay">
-                            <i class="fas fa-expand"></i>
-                            <span>${imgObj.caption}</span>
-                        </div>
-                    </div>
-                `;
-            }
-
-            grid.insertAdjacentHTML('beforeend', htmlContent);
-            renderedCount = nextBatchLimit;
-
-            if (window.AOS) {
-                window.AOS.refresh();
-            }
-
-            activeGalleryImages = currentImagesList.slice(0, renderedCount);
-
-            if (loader) loader.style.display = 'none';
-            if (loadMoreBtn) {
-                loadMoreBtn.disabled = false;
-                if (renderedCount >= currentImagesList.length) {
-                    loadMoreBtn.style.display = 'none';
-                } else {
-                    loadMoreBtn.style.display = 'inline-flex';
-                }
-            }
-        }, 300);
-    };
+        triggerArchiveFilter();
+    }
 
     filterButtons.forEach(btn => {
         btn.addEventListener('click', () => {
@@ -516,12 +458,29 @@ function initGalleryFilters() {
             btn.classList.add('active');
             
             const category = btn.getAttribute('data-filter');
-            setCategory(category);
+            setArchiveCategory(category);
         });
     });
 
     if (loadMoreBtn) {
-        loadMoreBtn.addEventListener('click', renderNextBatch);
+        loadMoreBtn.addEventListener('click', renderArchiveBatch);
+    }
+
+    if (shuffleBtn) {
+        shuffleBtn.addEventListener('click', () => {
+            // Animate spin on the shuffle icon
+            const icon = shuffleBtn.querySelector('i');
+            if (icon) {
+                icon.style.transform = 'rotate(360deg)';
+                setTimeout(() => { icon.style.transform = ''; }, 400);
+            }
+
+            // Shuffle and re-render
+            currentImagesList = shuffleArray(currentImagesList);
+            grid.innerHTML = '';
+            renderedCount = 0;
+            renderArchiveBatch();
+        });
     }
 
     grid.addEventListener('click', (e) => {
@@ -529,10 +488,73 @@ function initGalleryFilters() {
         if (item) {
             const index = parseInt(item.getAttribute('data-index'), 10);
             if (!isNaN(index)) {
+                activeGalleryImages = currentImagesList;
                 openLightbox(index);
             }
         }
     });
+}
 
-    setCategory('all');
+function triggerArchiveFilter() {
+    const grid = document.getElementById('dynamic-gallery-grid');
+    if (!grid) return;
+
+    // Load and automatically shuffle the category images list on load/reload/switch
+    let list = shuffleArray(allCatalogImages[currentCategory] || []);
+
+    currentImagesList = list;
+    grid.innerHTML = '';
+    renderedCount = 0;
+
+    renderArchiveBatch();
+}
+
+function renderArchiveBatch() {
+    const grid = document.getElementById('dynamic-gallery-grid');
+    const loadMoreBtn = document.getElementById('load-more-btn');
+    const loader = document.getElementById('gallery-loader');
+    
+    if (!grid) return;
+
+    if (loader) loader.style.display = 'inline-block';
+    if (loadMoreBtn) loadMoreBtn.style.display = 'none';
+
+    setTimeout(() => {
+        const nextBatchLimit = Math.min(renderedCount + itemsPerPage, currentImagesList.length);
+        let htmlContent = '';
+
+        for (let i = renderedCount; i < nextBatchLimit; i++) {
+            const imgObj = currentImagesList[i];
+            htmlContent += `
+                <div class="gallery-image-wrapper" data-category="${imgObj.category}" data-index="${i}" data-aos="zoom-in" data-aos-delay="${(i - renderedCount) * 50}">
+                    <img src="${imgObj.src}" alt="${imgObj.alt}" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <div class="image-placeholder-hud" style="display:none;">
+                        <i class="fas fa-image"></i>
+                        <span>APCSIP Moment</span>
+                    </div>
+                    <div class="hud-image-overlay">
+                        <i class="fas fa-expand"></i>
+                        <span>${imgObj.caption}</span>
+                    </div>
+                </div>
+            `;
+        }
+
+        grid.insertAdjacentHTML('beforeend', htmlContent);
+        renderedCount = nextBatchLimit;
+
+        if (window.AOS) {
+            window.AOS.refresh();
+        }
+
+        if (loader) loader.style.display = 'none';
+        if (loadMoreBtn) {
+            if (renderedCount >= currentImagesList.length) {
+                loadMoreBtn.style.display = 'none';
+            } else {
+                loadMoreBtn.style.display = 'inline-flex';
+                loadMoreBtn.disabled = false;
+            }
+        }
+    }, 200);
 }

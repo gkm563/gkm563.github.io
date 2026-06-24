@@ -15,6 +15,14 @@ window.PORTFOLIO_TRANSLATIONS = {
         nav_achievements: "Achievements",
         nav_contact: "Contact",
 
+        // Internship Subpage Nav Links
+        intern_nav_home: "Back to Portfolio",
+        intern_nav_selection: "Selection",
+        intern_nav_timeline: "12-Day Logs",
+        intern_nav_gallery: "Moments Gallery",
+        intern_nav_mentors: "Mentors & Team",
+        intern_nav_reflection: "Reflection",
+
         // Hero Subtitle Strings for Typed.js
         hero_typed_strings: [
             "AI & Data Science Engineer | Building Scalable AI Solutions",
@@ -462,6 +470,9 @@ window.PORTFOLIO_TRANSLATIONS = {
         gallery_filter_journey: "My Journey",
         gallery_filter_slides: "Lecture Slides",
         gallery_filter_mentors: "Leadership & Mentors",
+        gallery_explore_archive: "Explore Full Archive (238 Photos)",
+        gallery_search_placeholder: "Search captions...",
+        gallery_btn_shuffle: "Shuffle Moments",
         gallery_caption_banner: "APCSIP-2026 Official Banner",
         gallery_caption_dsp: "DSP Anjali Kataria - Chief Organizer",
         gallery_caption_bhanu: "Bhanu Sharma - Program Coordinator",
@@ -495,6 +506,14 @@ window.PORTFOLIO_TRANSLATIONS = {
         nav_education: "शिक्षा",
         nav_achievements: "सफलताएं",
         nav_contact: "संपर्क",
+
+        // Internship Subpage Nav Links
+        intern_nav_home: "पोर्टफोलियो",
+        intern_nav_selection: "चयन यात्रा",
+        intern_nav_timeline: "12-दिवसीय लॉग्स",
+        intern_nav_gallery: "गैलरी",
+        intern_nav_mentors: "मार्गदर्शक व टीम",
+        intern_nav_reflection: "अनुभव",
 
         // Hero Subtitle Strings for Typed.js
         hero_typed_strings: [
@@ -955,6 +974,9 @@ window.PORTFOLIO_TRANSLATIONS = {
         gallery_filter_journey: "मेरी यात्रा",
         gallery_filter_slides: "व्याख्यान स्लाइड्स",
         gallery_filter_mentors: "नेतृत्व और मेंटर्स",
+        gallery_explore_archive: "आधिकारिक गैलरी संग्रह (238 चित्र देखें)",
+        gallery_search_placeholder: "शीर्षक खोजें...",
+        gallery_btn_shuffle: "चित्र शफल करें",
         gallery_caption_banner: "APCSIP-2026 आधिकारिक बैनर",
         gallery_caption_dsp: "डीएसपी अंजली कटारिया - मुख्य आयोजक",
         gallery_caption_bhanu: "भानु शर्मा - कार्यक्रम समन्वयक",
