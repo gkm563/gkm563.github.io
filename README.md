@@ -86,7 +86,6 @@ gkmportfolio/
 ├── assets/                 # CSS, JS, and Image resources
 ├── gkmportfolio/           # Additional project files
 ├── index.html              # Main Portfolio Entry Point
-├── Details.md              # Extensive APCSIP-2026 Internship Journey
 ├── up-police-internship.html # Dedicated Internship Page
 ├── sitemap.xml             # SEO Sitemap
 └── robots.txt              # Search Engine Crawler Directives
