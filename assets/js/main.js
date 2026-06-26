@@ -2,8 +2,6 @@
 // Consolidated interactive elements, voice narrator player, and AI twin chatbot
 
 // === PORTFOLIO GLOBAL STATE ===
-let currentLiCategory = 'All';
-let linkedinCurrentSlide = 0;
 let currentLang = 'en';
 
 // === BILINGUAL TRANSLATION SWITCHER ===
@@ -52,9 +50,6 @@ function setLanguage(lang) {
     // Refresh Typed.js subtitle strings
     refreshTypedSubtitles(lang);
 
-    // Refresh LinkedIn posts
-    renderLinkedInPosts();
-    
     // Refresh Wikipedia articles
     renderWikiArticles();
     
@@ -113,177 +108,6 @@ function categorizePost(text) {
     return 'Behind the Scenes';
 }
 
-// Fetch posts dynamically from Juicer.io API feed with loading skeletons and custom error fallback
-async function fetchLinkedInPosts() {
-    const container = document.getElementById('linkedin-container');
-    if (!container) return;
-
-    // Render loading skeletons
-    container.innerHTML = `
-        <div class="linkedin-skeleton-loader" style="grid-column: 1/-1; display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 2rem; width: 100%;">
-            ${Array(3).fill().map(() => `
-                <div class="skeleton-card">
-                    <div style="display: flex; align-items: center; gap: 1rem;">
-                        <div class="skeleton-avatar"></div>
-                        <div style="flex-grow: 1; display: flex; flex-direction: column; gap: 0.5rem;">
-                            <div class="skeleton-line short"></div>
-                            <div class="skeleton-line medium"></div>
-                        </div>
-                    </div>
-                    <div style="display: flex; flex-direction: column; gap: 0.5rem; margin-top: 1rem;">
-                        <div class="skeleton-line"></div>
-                        <div class="skeleton-line medium"></div>
-                        <div class="skeleton-line short"></div>
-                    </div>
-                    <div class="skeleton-image"></div>
-                </div>
-            `).join('')}
-        </div>
-    `;
-
-    try {
-        const res = await fetch('https://www.juicer.io/api/feeds/gkm563');
-        if (!res.ok) throw new Error('Network error or rate limit');
-        
-        const data = await res.json();
-        const items = data.posts && data.posts.items ? data.posts.items : [];
-
-        // Catch empty feed or Juicer invalid feed troubleshooting post
-        if (items.length === 0 || (items.length === 1 && items[0].feed === 'invalid-feed')) {
-            console.warn('Juicer feed is not active or invalid. Falling back to static cache.');
-            renderLinkedInPosts();
-            return;
-        }
-
-        const mappedPosts = items.map((item, index) => {
-            const textContent = item.unformatted_message || (item.message ? item.message.replace(/<[^>]*>/g, '') : '');
-            
-            // Extract media image
-            let imageUrl = item.image;
-            if (!imageUrl && item.media && item.media.length > 0) {
-                imageUrl = item.media[0].src || item.media[0].thumbnail;
-            }
-
-            // Extract date
-            const dateStr = item.formatted_external_created_at || (item.external_created_at ? new Date(item.external_created_at).toLocaleDateString('en-US', {
-                month: 'short',
-                day: 'numeric',
-                year: 'numeric'
-            }) : 'Recent');
-
-            return {
-                id: item.id ? `li-${item.id}` : `li-live-${index}`,
-                title: textContent.split('\n')[0].substring(0, 80) + '...',
-                text: textContent,
-                date: dateStr,
-                category: categorizePost(textContent),
-                image: imageUrl || null,
-                link: item.full_url || 'https://www.linkedin.com/in/gkm563',
-                stats: {
-                    likes: item.likes || item.like_count || 0,
-                    comments: item.comments || item.comment_count || 0
-                }
-            };
-        });
-
-        if (window.PORTFOLIO_DATA) {
-            window.PORTFOLIO_DATA.linkedinPosts = mappedPosts;
-        }
-        renderLinkedInPosts();
-    } catch (err) {
-        console.error('LinkedIn feed sync error, using fallback:', err);
-        renderLinkedInPosts();
-    }
-}
-
-function renderLinkedInPosts() {
-    const container = document.getElementById('linkedin-container');
-    if (!container) return;
-    container.innerHTML = '';
-
-    // Reset slide position when rendering/refreshing categories
-    linkedinCurrentSlide = 0;
-    container.style.transform = 'translateX(0px)';
-
-    let posts = (window.PORTFOLIO_DATA && window.PORTFOLIO_DATA.linkedinPosts && window.PORTFOLIO_DATA.linkedinPosts.length > 0) 
-        ? window.PORTFOLIO_DATA.linkedinPosts 
-        : window.PORTFOLIO_LINKEDIN_TRANSLATED.en;
-
-    const filtered = posts.filter(post => {
-        return currentLiCategory === 'All' || post.category === currentLiCategory;
-    });
-
-    if (filtered.length === 0) {
-        container.innerHTML = `<p style="grid-column: 1/-1; text-align: center; color: #94a3b8; padding: 3rem; width: 100%;">No LinkedIn highlights found for this category.</p>`;
-        
-        // Hide arrows and dots
-        const prevBtn = document.getElementById('linkedin-prev-btn');
-        const nextBtn = document.getElementById('linkedin-next-btn');
-        const dotsContainer = document.getElementById('linkedin-dots-container');
-        if (prevBtn) prevBtn.style.display = 'none';
-        if (nextBtn) nextBtn.style.display = 'none';
-        if (dotsContainer) dotsContainer.innerHTML = '';
-        return;
-    }
-
-    // Render all filtered posts horizontally inside track
-    filtered.forEach(post => {
-        const card = document.createElement('div');
-        card.className = 'linkedin-card';
-        card.setAttribute('data-aos', 'fade-up');
-        card.innerHTML = `
-            <div class="linkedin-header">
-                <div class="linkedin-user">
-                    <img src="assets/images/Gautam_Kumar_Maurya.jpg" alt="Gautam Kumar Maurya - Data Science & Full-Stack Developer" class="linkedin-avatar">
-                    <div class="linkedin-user-info">
-                        <h4>Gautam Kumar Maurya</h4>
-                        <span>B.Tech CSE (Data Science) student | UIT Prayagraj • ${post.date || 'Recent'}</span>
-                    </div>
-                </div>
-                <span class="linkedin-logo-icon"><i class="fab fa-linkedin"></i></span>
-            </div>
-            <div class="linkedin-body">
-                <p>${post.text.replace(/\n/g, '<br>')}</p>
-                ${post.image ? `
-                    <div class="linkedin-image-wrapper">
-                        <img src="${post.image}" alt="${post.title ? post.title.replace(/"/g, '&quot;') : 'Gautam Kumar Maurya LinkedIn highlight update'}" class="linkedin-image" loading="lazy">
-                    </div>
-                ` : ''}
-            </div>
-            <div class="linkedin-footer">
-                <div class="linkedin-stats">
-                    <span><i class="fas fa-thumbs-up"></i> ${post.stats.likes}</span>
-                    <span><i class="fas fa-comment"></i> ${post.stats.comments}</span>
-                </div>
-                <a href="${post.link}" target="_blank" class="linkedin-btn">View on LinkedIn <i class="fas fa-external-link-alt"></i></a>
-            </div>
-        `;
-        container.appendChild(card);
-    });
-
-    // Initialize/Update the slider layout metrics after content injection
-    setTimeout(() => {
-        updateLinkedInSlider();
-        if (window.cacheSectionOffsets) {
-            window.cacheSectionOffsets();
-        }
-    }, 100);
-}
-
-function filterLiCategory(category) {
-    currentLiCategory = category;
-    linkedinCurrentSlide = 0; // Reset slide index when category changes
-    const tabs = document.querySelectorAll('#li-category-tabs .filter-tab');
-    tabs.forEach(tab => {
-        const onclickAttr = tab.getAttribute('onclick') || '';
-        if (onclickAttr.includes(`'${category}'`) || onclickAttr.includes(`"${category}"`)) {
-            tab.classList.add('active');
-        } else {
-            tab.classList.remove('active');
-        }
-    });
-    renderLinkedInPosts();
-}
 
 // Fetch live public repositories from GitHub API
 // === GITHUB REPOSITORIES STATE AND ACTIONS ===
@@ -1120,12 +944,26 @@ function sendQuickMessage(text) {
     addChatMessage(userDisplayMessage, 'user');
     showTypingIndicator();
     
-    setTimeout(() => {
-        removeTypingIndicator();
-        const response = getChatResponse(text);
-        addChatMessage(response, 'bot');
-        speakAvatarText(response);
-    }, 1000);
+    // Use Gemini-powered AI Twin if available, else fall back to keyword matcher
+    if (typeof getAIResponse === 'function') {
+        getAIResponse(text).then(response => {
+            removeTypingIndicator();
+            addChatMessage(response, 'bot');
+            speakAvatarText(response.replace(/<[^>]*>/g, ''));
+        }).catch(() => {
+            removeTypingIndicator();
+            const response = getChatResponse(text);
+            addChatMessage(response, 'bot');
+            speakAvatarText(response);
+        });
+    } else {
+        setTimeout(() => {
+            removeTypingIndicator();
+            const response = getChatResponse(text);
+            addChatMessage(response, 'bot');
+            speakAvatarText(response);
+        }, 1000);
+    }
 }
 
 function handleChatSubmit(e) {
@@ -1142,13 +980,27 @@ function handleChatSubmit(e) {
     
     addChatMessage(text, 'user');
     showTypingIndicator();
-    
-    setTimeout(() => {
-        removeTypingIndicator();
-        const response = getChatResponse(text);
-        addChatMessage(response, 'bot');
-        speakAvatarText(response);
-    }, 1000);
+
+    // Use Gemini-powered AI Twin if available, else fall back to keyword matcher
+    if (typeof getAIResponse === 'function') {
+        getAIResponse(text).then(response => {
+            removeTypingIndicator();
+            addChatMessage(response, 'bot');
+            speakAvatarText(response.replace(/<[^>]*>/g, ''));
+        }).catch(() => {
+            removeTypingIndicator();
+            const response = getChatResponse(text);
+            addChatMessage(response, 'bot');
+            speakAvatarText(response);
+        });
+    } else {
+        setTimeout(() => {
+            removeTypingIndicator();
+            const response = getChatResponse(text);
+            addChatMessage(response, 'bot');
+            speakAvatarText(response);
+        }, 1000);
+    }
 }
 
 function getChatResponse(query) {
@@ -1196,7 +1048,6 @@ document.addEventListener('DOMContentLoaded', () => {
     setLanguage(savedLang);
 
     // 1. Initial renders
-    fetchLinkedInPosts();
     fetchGitHubRepos();
     renderWikiArticles();
     initMatrixRain();
@@ -1211,68 +1062,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // LinkedIn Carousel Navigation handler
-    const prevBtn = document.getElementById('linkedin-prev-btn');
-    const nextBtn = document.getElementById('linkedin-next-btn');
-    if (prevBtn) {
-        prevBtn.addEventListener('click', () => {
-            if (linkedinCurrentSlide > 0) {
-                linkedinCurrentSlide--;
-                updateLinkedInSlider();
-            }
-        });
-    }
-    if (nextBtn) {
-        nextBtn.addEventListener('click', () => {
-            const container = document.getElementById('linkedin-container');
-            if (container) {
-                const cards = container.querySelectorAll('.linkedin-card');
-                const cardsPerView = getCardsPerView();
-                const maxSlide = Math.max(0, cards.length - cardsPerView);
-                if (linkedinCurrentSlide < maxSlide) {
-                    linkedinCurrentSlide++;
-                    updateLinkedInSlider();
-                }
-            }
-        });
-    }
 
-    // Touch swipe support for LinkedIn Carousel
-    const track = document.getElementById('linkedin-container');
-    if (track) {
-        let touchStartX = 0;
-        let touchEndX = 0;
-        
-        track.addEventListener('touchstart', e => {
-            touchStartX = e.changedTouches[0].screenX;
-        }, { passive: true });
-        
-        track.addEventListener('touchend', e => {
-            touchEndX = e.changedTouches[0].screenX;
-            handleSwipe();
-        }, { passive: true });
-        
-        function handleSwipe() {
-            const swipeThreshold = 50;
-            const diff = touchStartX - touchEndX;
-            const cards = track.querySelectorAll('.linkedin-card');
-            const cardsPerView = getCardsPerView();
-            const maxSlide = Math.max(0, cards.length - cardsPerView);
-            
-            if (diff > swipeThreshold) {
-                if (linkedinCurrentSlide < maxSlide) {
-                    linkedinCurrentSlide++;
-                    updateLinkedInSlider();
-                }
-            } else if (diff < -swipeThreshold) {
-                if (linkedinCurrentSlide > 0) {
-                    linkedinCurrentSlide--;
-                    updateLinkedInSlider();
-                }
-            }
-        }
-    }
-    
     // 2. Setup voice narrator and chatbot
     setupVoiceNarrator();
     setupChatbot();
@@ -1391,14 +1181,13 @@ document.addEventListener('DOMContentLoaded', () => {
     // Rebuild cache and update slider position on window load and debounced resize
     window.addEventListener('load', () => {
         cacheSectionOffsets();
-        updateLinkedInSlider();
     });
+
     let resizeTimer;
     window.addEventListener('resize', () => {
         clearTimeout(resizeTimer);
         resizeTimer = setTimeout(() => {
             cacheSectionOffsets();
-            updateLinkedInSlider();
         }, 150);
     });
 
@@ -1564,6 +1353,31 @@ document.addEventListener('DOMContentLoaded', () => {
             gyroscope: false
         });
     }
+
+    // 9.5 Project Tabs event delegation
+    document.addEventListener('click', e => {
+        const tabBtn = e.target.closest('.project-tab-btn');
+        if (tabBtn) {
+            e.preventDefault();
+            const card = tabBtn.closest('.project-card');
+            if (card) {
+                // Deactivate all tab buttons in this card
+                card.querySelectorAll('.project-tab-btn').forEach(btn => btn.classList.remove('active'));
+                // Activate clicked button
+                tabBtn.classList.add('active');
+                
+                // Hide all tab contents in this card
+                card.querySelectorAll('.project-tab-content').forEach(content => content.classList.remove('active'));
+                
+                // Show clicked tab content
+                const tabId = tabBtn.getAttribute('data-tab');
+                const targetContent = card.querySelector(`#tripsync-${tabId}`) || card.querySelector(`[id$="${tabId}"]`);
+                if (targetContent) {
+                    targetContent.classList.add('active');
+                }
+            }
+        }
+    });
 });
 
 // Global WhatsApp Message redirection helper
@@ -1786,79 +1600,6 @@ function initMatrixRain() {
     }
 
     requestAnimationFrame(render);
-}
-
-// === LINKEDIN SLIDER HELPER FUNCTIONS ===
-function getCardsPerView() {
-    if (window.innerWidth >= 1024) return 3;
-    if (window.innerWidth >= 768) return 2;
-    return 1;
-}
-
-function updateLinkedInSlider() {
-    const container = document.getElementById('linkedin-container');
-    if (!container) return;
-    const cards = container.querySelectorAll('.linkedin-card');
-    if (cards.length === 0) return;
-
-    const computedStyle = window.getComputedStyle(container);
-    const gap = parseFloat(computedStyle.gap) || 0;
-    const cardWidth = cards[0].getBoundingClientRect().width;
-
-    const cardsPerView = getCardsPerView();
-    const maxSlide = Math.max(0, cards.length - cardsPerView);
-    
-    if (linkedinCurrentSlide > maxSlide) {
-        linkedinCurrentSlide = maxSlide;
-    }
-    if (linkedinCurrentSlide < 0) {
-        linkedinCurrentSlide = 0;
-    }
-
-    // Slide track using computed coordinates
-    const offset = linkedinCurrentSlide * (cardWidth + gap);
-    container.style.transform = `translateX(-${offset}px)`;
-
-    // Enable/disable navigation arrows
-    const prevBtn = document.getElementById('linkedin-prev-btn');
-    const nextBtn = document.getElementById('linkedin-next-btn');
-    if (prevBtn) prevBtn.disabled = (linkedinCurrentSlide === 0);
-    if (nextBtn) nextBtn.disabled = (linkedinCurrentSlide >= maxSlide);
-
-    // Update dots indicator
-    updateLinkedInDots(cards.length, cardsPerView);
-}
-
-function updateLinkedInDots(totalCards, cardsPerView) {
-    const dotsContainer = document.getElementById('linkedin-dots-container');
-    if (!dotsContainer) return;
-    dotsContainer.innerHTML = '';
-
-    const maxSlide = Math.max(0, totalCards - cardsPerView);
-    const prevBtn = document.getElementById('linkedin-prev-btn');
-    const nextBtn = document.getElementById('linkedin-next-btn');
-
-    if (maxSlide === 0) {
-        if (prevBtn) prevBtn.style.display = 'none';
-        if (nextBtn) nextBtn.style.display = 'none';
-        dotsContainer.style.display = 'none';
-        return;
-    } else {
-        if (prevBtn) prevBtn.style.display = 'flex';
-        if (nextBtn) nextBtn.style.display = 'flex';
-        dotsContainer.style.display = 'flex';
-    }
-
-    for (let i = 0; i <= maxSlide; i++) {
-        const dot = document.createElement('div');
-        dot.className = `linkedin-dot ${i === linkedinCurrentSlide ? 'active' : ''}`;
-        dot.setAttribute('aria-label', `Go to slide ${i + 1}`);
-        dot.addEventListener('click', () => {
-            linkedinCurrentSlide = i;
-            updateLinkedInSlider();
-        });
-        dotsContainer.appendChild(dot);
-    }
 }
 
 // === WIKI EXPLORER STATE & ENGINE ===

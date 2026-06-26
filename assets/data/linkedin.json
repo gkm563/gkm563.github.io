@@ -1,0 +1,106 @@
+{
+  "en": [
+    {
+      "id": "li-1",
+      "title": "Co-founded PrayagrajRooms to solve student housing issues! 🏠✨",
+      "text": "Excited to share that I co-founded PrayagrajRooms alongside my friend Praveen! 🚀 Finding rooms and PG options in Prayagraj has been a major pain point for outstation B.Tech students. I am building a scalable, verified platform where students can search, contact owners, and filter listings without brokers. Grateful for the early support! #startup #prayagraj #studenthousing #proptech #founder #webdevelopment",
+      "date": "June 10, 2026",
+      "category": "Events",
+      "image": null,
+      "link": "https://www.linkedin.com/in/gkm563",
+      "stats": { "likes": 1420, "comments": 112 }
+    },
+    {
+      "id": "li-2",
+      "title": "Designed and Deployed the Official BuildX India 2026 Hackathon Website! 💻🌐",
+      "text": "Thrilled to have worked as the Website Developer and Technical Team Lead for BuildX India 2026! I built a high-performance, responsive registration portal managing hundreds of participants. Managing registration state, event schedules, and user queries in real-time was a massive learning experience in production scaling and UI/UX design. Check it out on my GitHub! #buildx #hackathon #webdev #javascript #leadership",
+      "date": "June 03, 2026",
+      "category": "Hackathons",
+      "image": null,
+      "link": "https://www.linkedin.com/in/gkm563",
+      "stats": { "likes": 1180, "comments": 94 }
+    },
+    {
+      "id": "li-3",
+      "title": "WikiClub UIT contribution sprint: 1st Place Winner! 🏆📖",
+      "text": "Proud to share that I won 1st Place in the 1-week Open Source Contribution Sprint organized by WikiClub UIT! 🌍 I submitted and merged multiple patches to Wikimedia infrastructure, working with Phabricator and Gerrit review systems. Contributing to global open-source projects has improved my understanding of peer review, code quality, and git collaboration. Thank you to everyone for the guidance! #opensource #wikipedia #wikimedia #git #gerrit #hackathon",
+      "date": "May 25, 2026",
+      "category": "Achievements",
+      "image": null,
+      "link": "https://www.linkedin.com/in/gkm563",
+      "stats": { "likes": 1560, "comments": 135 }
+    },
+    {
+      "id": "li-4",
+      "title": "Completing my 1st Semester with Rank 5 in AKTU University Exams! 🎓⚡",
+      "text": "Super happy to share that I secured Rank 5 across the entire college in my B.Tech 1st Year examinations at United Institute of Technology, Prayagraj (AKTU)! 📚 Balanced coding, community events, and academic studies. Hard work pays off, and being honored by Dainik Jagran and UP Board Secretary pushes me to maintain the momentum in my Data Science stream. Let's keep building! #academicexcellence #topper #aktu #university #datastructures #BTech",
+      "date": "May 12, 2026",
+      "category": "Achievements",
+      "image": null,
+      "link": "https://www.linkedin.com/in/gkm563",
+      "stats": { "likes": 1890, "comments": 167 }
+    },
+    {
+      "id": "li-5",
+      "title": "Freelance Project Success: Digital Portal for Vindhya Millets! 🌾📊",
+      "text": "Grateful to collaborate with Vindhya Millets, a local agricultural startup supported by Government of India ecosystem initiatives. I built their digital presence, setting up an optimization and catalog dashboard to improve outreach and catalog downloads. Applying tech to empower local agricultural startups is an incredibly rewarding experience! #freelance #startup #webdev #impactcoding #vindhyamillets",
+      "date": "April 28, 2026",
+      "category": "Earnings",
+      "image": null,
+      "link": "https://www.linkedin.com/in/gkm563",
+      "stats": { "likes": 980, "comments": 54 }
+    }
+  ],
+  "hi": [
+    {
+      "id": "li-1",
+      "title": "छात्रों की रहने की समस्या के समाधान के लिए प्रयागराज रूम्स की शुरुआत! 🏠✨",
+      "text": "यह साझा करते हुए बेहद उत्साह हो रहा है कि मैंने अपने मित्र प्रवीन के साथ मिलकर प्रयागराज रूम्स (PrayagrajRooms) की सह-स्थापना की है! 🚀  प्रयागराज में बाहर से आने वाले बी.टेक छात्रों के लिए पीजी और कमरे ढूंढना एक बहुत बड़ा सिरदर्द रहा है। मैं एक ऐसा स्केलेबल और सत्यापित प्लेटफॉर्म बना रहा हूँ जहाँ छात्र बिना किसी दलाली के सीधे मकान मालिकों से संपर्क कर सकते हैं। शुरुआती सहयोग के लिए सभी का धन्यवाद! #startup #prayagraj #studenthousing #proptech #founder #webdevelopment",
+      "date": "10 जून, 2026",
+      "category": "Events",
+      "image": null,
+      "link": "https://www.linkedin.com/in/gkm563",
+      "stats": { "likes": 1420, "comments": 112 }
+    },
+    {
+      "id": "li-2",
+      "title": "बिल्डएक्स इंडिया 2026 हैकथॉन की आधिकारिक वेबसाइट को लाइव किया! 💻🌐",
+      "text": "बिल्डएक्स इंडिया 2026 के लिए लीड वेब डेवलपर व टेक्निकल टीम लीडर के रूप में काम करने का शानदार अनुभव! मैंने सैकड़ों डेवलपर्स के पंजीकरण को सुचारू रूप से संभालने के लिए एक हाई-परफॉर्मेंस, सुरक्षित पोर्टल बनाया। वास्तविक समय में रजिस्ट्रेशन मैनेजमेंट, इवेंट शेड्यूलिंग व तकनीकी समस्याओं को सुलझाना मेरे लिए कोडिंग और लीडरशिप का एक बड़ा सबक रहा। कोड गिटहब पर उपलब्ध है! #buildx #hackathon #webdev #javascript #leadership",
+      "date": "03 जून, 2026",
+      "category": "Hackathons",
+      "image": null,
+      "link": "https://www.linkedin.com/in/gkm563",
+      "stats": { "likes": 1180, "comments": 94 }
+    },
+    {
+      "id": "li-3",
+      "title": "विकीक्लब यूआईटी ओपन सोर्स स्प्रिंट: प्रथम स्थान विजेता! 🏆📖",
+      "text": "विकीक्लब यूआईटी द्वारा आयोजित 1 सप्ताह के ओपन सोर्स कंट्रीब्यूशन स्प्रिंट में प्रथम स्थान (1st Place) प्राप्त करने की खुशी साझा कर रहा हूँ! 🌍 मैंने गेरिट (Gerrit) और फैब्रिकेटर (Phabricator) के माध्यम से विकिमीडिया फाउंडेशन के कोडबेस में कई सुधार पैच सबमिट और मर्ज किए। वैश्विक ओपन सोर्स प्रोजेक्ट्स में काम करने से मेरे गिट सहयोग और कोड की गुणवत्ता में काफी सुधार हुआ है। सभी मेंटर्स का धन्यवाद! #opensource #wikipedia #wikimedia #git #gerrit #hackathon",
+      "date": "25 मई, 2026",
+      "category": "Achievements",
+      "image": null,
+      "link": "https://www.linkedin.com/in/gkm563",
+      "stats": { "likes": 1560, "comments": 135 }
+    },
+    {
+      "id": "li-4",
+      "title": "एकेटीयू सेमेस्टर परीक्षा में कॉलेज में पांचवा स्थान प्राप्त किया! 🎓⚡",
+      "text": "यूनाइटेड इंस्टीट्यूट ऑफ टेक्नोलॉजी (UIT), प्रयागराज में बी.टेक प्रथम वर्ष की सेमेस्टर परीक्षाओं में पूरे कॉलेज में 5वां स्थान (Rank 5) हासिल करने की बेहद खुशी है! 📚 कोडिंग, तकनीकी आयोजनों और पढ़ाई में संतुलन बनाना चुनौतीपूर्ण था, लेकिन कड़ी मेहनत का फल मिला। दैनिक जागरण और यूपी बोर्ड सचिव द्वारा मिला सम्मान मुझे आगे भी सर्वश्रेष्ठ प्रदर्शन करने की प्रेरणा देता है। #academicexcellence #topper #aktu #university #datastructures #BTech",
+      "date": "12 मई, 2026",
+      "category": "Achievements",
+      "image": null,
+      "link": "https://www.linkedin.com/in/gkm563",
+      "stats": { "likes": 1890, "comments": 167 }
+    },
+    {
+      "id": "li-5",
+      "title": "फ्रीलांस प्रोजेक्ट की सफलता: विंध्य मिलेट्स के लिए डिजिटल पोर्टल बनाया! 🌾📊",
+      "text": "भारत सरकार द्वारा समर्थित कृषि स्टार्टअप विंध्य मिलेट्स (Vindhya Millets) के साथ फ्रीलांस प्रोजेक्ट को सफलतापूर्वक पूरा किया! मैंने उनका डिजिटल कैटलॉग पोर्टल और डाउनलोड डैशबोर्ड तैयार किया जिससे स्थानीय किसानों और उत्पादों की पहुंच बढ़ सके। अपनी कोडिंग स्किल्स का उपयोग स्थानीय स्टार्टअप्स को सशक्त बनाने में करना सच में संतोषजनक है। #freelance #startup #webdev #impactcoding #vindhyamillets",
+      "date": "28 अप्रैल, 2026",
+      "category": "Earnings",
+      "image": null,
+      "link": "https://www.linkedin.com/in/gkm563",
+      "stats": { "likes": 980, "comments": 54 }
+    }
+  ]
+}

@@ -122,7 +122,7 @@
                     <li><a href="#skills" data-translate="nav_skills">Skills</a></li>
                     <li><a href="#projects" data-translate="nav_projects">Projects</a></li>
                     <li><a href="./up-police-internship.html" data-translate="nav_internship">APCSIP-2026</a></li>
-                    <li><a href="#linkedin-section" data-translate="nav_linkedin">LinkedIn Feed</a></li>
+
                     <li><a href="#services" data-translate="nav_services">Services</a></li>
                     <li><a href="#education" data-translate="nav_education">Education</a></li>
                     <li><a href="#achievements" data-translate="nav_achievements">Achievements</a></li>
@@ -619,14 +619,59 @@
                     </div>
 
                     <!-- Project 5: TripSync -->
-                    <div class="project-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="project-card tripsync-featured-card" data-aos="fade-up" data-aos-delay="200">
                         <div class="project-content">
                             <div class="project-icon"><i class="fas fa-route"></i></div>
-                            <h3>TripSync</h3>
-                            <p data-translate="project_desc_tripsync">I created this dynamic, real-time travel logistics platform to solve group coordination struggles. It synchronizes itineraries, maps, and expenses instantly, ensuring every traveler stays on the same page.</p>
-                            <div class="project-footer">
-                                <div class="tech-tags"><span class="tech-tag">TypeScript</span><span class="tech-tag">React</span><span class="tech-tag">Maps API</span></div>
-                                <a href="https://github.com/gkm563/TripSync" class="project-link" target="_blank"><span data-translate="project_view_btn">View Project</span> <i class="fas fa-arrow-up-right-from-square"></i></a>
+                            <h3 data-translate="project_title_tripsync">TripSync</h3>
+                            
+                            <!-- Project Tabs -->
+                            <div class="project-tabs">
+                                <button class="project-tab-btn active" data-tab="overview" data-translate="project_tab_overview">Overview</button>
+                                <button class="project-tab-btn" data-tab="backstory" data-translate="project_tab_backstory">Backstory</button>
+                                <button class="project-tab-btn" data-tab="algorithms" data-translate="project_tab_algorithms">Algorithms</button>
+                            </div>
+                            
+                            <!-- Tab Content: Overview -->
+                            <div class="project-tab-content active" id="tripsync-overview">
+                                <p class="tagline" style="font-weight: 700; color: var(--secondary-color); font-size: 0.95rem; margin-bottom: 0.5rem;" data-translate="project_tagline_tripsync">Premium Group Contribution & Settlement Tracker</p>
+                                <p style="margin-bottom: 0;" data-translate="project_desc_tripsync_subtitle">A secure, decentralized consensus-based shared ledger designed for group logistics, refined according to UP Police digital forensics guidelines.</p>
+                                <div class="tech-tags" style="margin-top: auto; padding-top: 1rem;">
+                                    <span class="tech-tag">React Native</span>
+                                    <span class="tech-tag">Vite & React 19</span>
+                                    <span class="tech-tag">TypeScript</span>
+                                    <span class="tech-tag">Firebase</span>
+                                    <span class="tech-tag">Zustand</span>
+                                </div>
+                            </div>
+                            
+                            <!-- Tab Content: Backstory -->
+                            <div class="project-tab-content" id="tripsync-backstory">
+                                <p style="margin-bottom: 0;" data-translate="project_desc_tripsync_backstory">Originally sparked during a 5-day event at IIT Delhi to solve math stress in travel billing, it was re-engineered into a production-ready system during the Amroha Police Cyber Security Internship Program 2026 (APCSIP-2026) with the Uttar Pradesh Police Cyber Crime Cell.</p>
+                            </div>
+                            
+                            <!-- Tab Content: Algorithms -->
+                            <div class="project-tab-content" id="tripsync-algorithms">
+                                <ul style="list-style-type: none; padding-left: 0; margin-bottom: 0;">
+                                    <li style="margin-bottom: 0.75rem; border-left: 2px solid var(--primary-color); padding-left: 8px;" data-translate="project_desc_tripsync_algo1">
+                                        <strong>Greedy Flow-Minimizer Engine:</strong> A custom settlement algorithm (O(N log N)) that minimizes group balances into the absolute fewest transactions.
+                                    </li>
+                                    <li style="border-left: 2px solid var(--secondary-color); padding-left: 8px;" data-translate="project_desc_tripsync_algo2">
+                                        <strong>Democratic P2P Consensus System:</strong> Replaces centralized admin hierarchies by requiring team majority approvals to register or edit expenses.
+                                    </li>
+                                </ul>
+                            </div>
+                            
+                            <!-- Footer Links -->
+                            <div class="project-footer" style="margin-top: 1.5rem; flex-wrap: wrap; gap: 0.8rem; justify-content: flex-start; border-top: 1px solid rgba(255, 255, 255, 0.05); padding-top: 0.75rem;">
+                                <a href="https://gkm563.github.io/TripSync/" class="project-link" target="_blank" style="font-size: 0.85rem; display: flex; align-items: center; gap: 4px;">
+                                    <i class="fas fa-external-link-alt" style="font-size: 0.8rem;"></i> <span data-translate="project_view_web">Live Web App</span>
+                                </a>
+                                <a href="https://github.com/gkm563/TripSync" class="project-link" target="_blank" style="font-size: 0.85rem; display: flex; align-items: center; gap: 4px;">
+                                    <i class="fab fa-github" style="font-size: 0.85rem;"></i> <span data-translate="project_view_github">GitHub Repository</span>
+                                </a>
+                                <a href="https://gkm563.github.io/up-police-internship.html" class="project-link" target="_blank" style="font-size: 0.85rem; display: flex; align-items: center; gap: 4px; color: var(--primary-color);">
+                                    <i class="fas fa-shield-alt" style="font-size: 0.85rem;"></i> <span data-translate="project_view_forensic">Forensic Log</span>
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -810,45 +855,6 @@
         </div>
 
 
-
-        <!-- Dynamic LinkedIn Updates Feed Section -->
-        <div class="section-wrapper" id="linkedin-section">
-            <section style="padding: 0;">
-                <div class="container">
-                    <h2 class="section-title" data-aos="fade-up" data-translate="li_title">LinkedIn Updates</h2>
-                    <p style="text-align: center; max-width: 600px; margin: -2.5rem auto 3rem auto; color: #94a3b8;" data-aos="fade-up" data-aos-delay="50" data-translate="li_subtitle">
-                        With over 19k+ followers, I share my daily project commits, earnings, hackathon wins, and tech leadership stories. Connect with me!
-                    </p>
-
-                    <!-- LinkedIn category filters -->
-                    <div class="filter-tabs" data-aos="fade-up" data-aos-delay="100" id="li-category-tabs">
-                        <button class="filter-tab active" onclick="filterLiCategory('All')" data-translate="li_tab_all">All Activity</button>
-                        <button class="filter-tab" onclick="filterLiCategory('Hackathons')" data-translate="li_tab_hacks">Hackathons</button>
-                        <button class="filter-tab" onclick="filterLiCategory('Earnings')" data-translate="li_tab_earnings">Earnings</button>
-                        <button class="filter-tab" onclick="filterLiCategory('Events')" data-translate="li_tab_events">Events</button>
-                        <button class="filter-tab" onclick="filterLiCategory('Achievements')" data-translate="li_tab_achievements">Achievements</button>
-                        <button class="filter-tab" onclick="filterLiCategory('Behind the Scenes')" data-translate="li_tab_bts">Behind the Scenes</button>
-                    </div>
-
-                    <!-- LinkedIn Carousel Wrapper -->
-                    <div class="linkedin-carousel-container" data-aos="fade-up" data-aos-delay="150">
-                        <!-- Navigation Arrows -->
-                        <button class="linkedin-arrow prev" id="linkedin-prev-btn" aria-label="Previous Slide"><i class="fas fa-chevron-left"></i></button>
-                        <button class="linkedin-arrow next" id="linkedin-next-btn" aria-label="Next Slide"><i class="fas fa-chevron-right"></i></button>
-
-                        <!-- Slider Track -->
-                        <div class="linkedin-track" id="linkedin-container">
-                            <!-- Dynamic posts render here -->
-                        </div>
-                    </div>
-
-                    <!-- Carousel Dots / Pagination -->
-                    <div class="linkedin-dots" id="linkedin-dots-container" data-aos="fade-up" data-aos-delay="200">
-                        <!-- Dots rendered dynamically -->
-                    </div>
-                </div>
-            </section>
-        </div>
 
         <!-- Services Section -->
         <div class="section-wrapper">
@@ -1629,7 +1635,7 @@
                     <li><a href="#skills"><i class="fas fa-chevron-right"></i> <span data-translate="nav_skills">Technical Skills</span></a></li>
                     <li><a href="#projects"><i class="fas fa-chevron-right"></i> <span data-translate="nav_projects">Projects</span></a></li>
                     <li><a href="./up-police-internship.html"><i class="fas fa-chevron-right"></i> <span data-translate="nav_internship">APCSIP-2026</span></a></li>
-                    <li><a href="#linkedin-section"><i class="fas fa-chevron-right"></i> <span data-translate="nav_linkedin">LinkedIn Feed</span></a></li>
+
                     <li><a href="#contact"><i class="fas fa-chevron-right"></i> <span data-translate="nav_contact">Contact</span></a></li>
                 </ul>
             </div>
@@ -1688,7 +1694,7 @@
                 </div>
                 <div class="chat-header-info">
                     <h4 data-translate="chat_title">Gautam's AI Twin</h4>
-                    <span data-translate="chat_status">Active Digital Self</span>
+                    <span data-translate="chat_status">Powered by Gemini AI · Active</span>
                 </div>
             </div>
             <button class="chat-close-btn" id="chat-close" title="Close Chat"><i class="fas fa-times"></i></button>
@@ -1696,15 +1702,17 @@
         
         <div class="chat-messages" id="chat-messages">
             <div class="chat-bubble bot" data-translate="chat_greeting">
-                Hey there! I am Gautam's Digital Twin. 🤖 I'm here to answer your questions about Gautam. What would you like to know?
+                Hey! I'm <strong>Gautam's AI Twin</strong>, powered by Gemini AI 🤖✨<br>I know everything about his projects, GitHub, Wikipedia contributions, GDG role, UP Police internship, and more. Ask me anything!
             </div>
         </div>
 
         <div class="chat-quick-options" id="chat-quick-options">
             <button class="quick-opt-btn" onclick="sendQuickMessage('Tell me your story')" data-translate="chat_opt_story">Tell me your story</button>
-            <button class="quick-opt-btn" onclick="sendQuickMessage('What is PDFBAZI?')" data-translate="chat_opt_pdfbazi">What is PDFBAZI?</button>
-            <button class="quick-opt-btn" onclick="sendQuickMessage('Show hackathon wins')" data-translate="chat_opt_wins">Show hackathon wins</button>
-            <button class="quick-opt-btn" onclick="sendQuickMessage('How can I collaborate?')" data-translate="chat_opt_collab">How can I collaborate?</button>
+            <button class="quick-opt-btn" onclick="sendQuickMessage('What projects have you built?')">My Projects</button>
+            <button class="quick-opt-btn" onclick="sendQuickMessage('Show hackathon wins')" data-translate="chat_opt_wins">Hackathon Wins 🏆</button>
+            <button class="quick-opt-btn" onclick="sendQuickMessage('Tell me about TripSync and APCSIP-2026')">TripSync + UP Police</button>
+            <button class="quick-opt-btn" onclick="sendQuickMessage('What are your Wikipedia contributions?')">Wikipedia Contributions</button>
+            <button class="quick-opt-btn" onclick="sendQuickMessage('How can I collaborate?')" data-translate="chat_opt_collab">Collaborate 🤝</button>
         </div>
 
         <div class="chat-input-bar">
@@ -1725,8 +1733,12 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js"></script>
     
+    <!-- AI Twin Knowledge Base & Engine (must load before main.js) -->
+    <script src="assets/data/gautam-knowledge.js"></script>
+    <script src="assets/js/ai-twin.js"></script>
+
     <!-- Consolidated Engine -->
-    <script src="assets/js/main.js?v=1.0.2"></script>
+    <script src="assets/js/main.js?v=1.0.3"></script>
 
     <!-- Share Link Toast Notification -->
     <div class="share-toast" id="share-toast">

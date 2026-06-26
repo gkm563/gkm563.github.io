@@ -5782,3 +5782,66 @@ html, body {
     .footer { padding: 2.5rem 0 0; }
 }
 
+/* ==========================================================================
+   Project Tab Component Styling (TripSync Premium Integration)
+   ========================================================================== */
+.project-tabs {
+    display: flex;
+    gap: 0.25rem;
+    margin: 0.75rem 0 1.25rem 0;
+    border-bottom: 1px solid rgba(14, 165, 233, 0.1);
+    padding-bottom: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.project-tab-btn {
+    background: transparent;
+    border: none;
+    color: #94a3b8;
+    padding: 0.25rem 0.6rem;
+    font-size: 0.7rem;
+    font-family: var(--body-font);
+    cursor: pointer;
+    border-radius: 6px;
+    transition: all 0.2s ease-in-out;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.project-tab-btn:hover {
+    color: var(--text-color);
+    background: rgba(14, 165, 233, 0.08);
+}
+
+.project-tab-btn.active {
+    color: var(--primary-color);
+    background: rgba(14, 165, 233, 0.15);
+    box-shadow: inset 0 0 8px rgba(14, 165, 233, 0.1);
+}
+
+/* Project Tab Content */
+.project-tab-content {
+    display: none;
+    font-size: 0.88rem;
+    line-height: 1.6;
+    animation: projectTabFadeIn 0.35s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    flex-grow: 1;
+}
+
+.project-tab-content.active {
+    display: flex;
+    flex-direction: column;
+}
+
+@keyframes projectTabFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(4px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
