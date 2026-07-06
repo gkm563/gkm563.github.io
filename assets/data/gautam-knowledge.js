@@ -357,8 +357,8 @@ window.GKM_KNOWLEDGE = {
     fullName: "Global Innovation Internship Program 2026",
     organization: "Asian Institute of Technology (AIT), Bangkok, Thailand",
     venue: "AIT Bangkok Main Campus / KMITL Research Labs, Bangkok, Thailand",
-    duration: "15 days (Day 1 to Day 15)",
-    arrivalDate: "July 2026",
+    duration: "15 days (28 June – 12 July 2026)",
+    arrivalDate: "28 June 2026",
     year: "2026",
     detailsPage: "https://gkm563.github.io/ait-global-innovation-internship.html",
     selectionProcess: [
@@ -372,63 +372,112 @@ window.GKM_KNOWLEDGE = {
     dailyLogs: [
       {
         day: "Day 1",
-        title: "A New Beginning: Registration & Orientation",
-        morning: "Arrived in Bangkok, Thailand, checked into accommodation, and registered.",
-        afternoon: "Attended orientation with Dr. Rishi Jain (structure & objectives) and Dr. Nitin K. Tripathi (program vision). Exploring the AIT campus.",
-        learning: "Taking my first international flight gave me the confidence to step outside my comfort zone.",
-        linkedinLog: "https://www.linkedin.com/in/gkm563"
+        title: "Airport Pick-up & Check-in",
+        morning: "Airport pick-up from Suvarnabhumi Airport, Bangkok, Thailand.",
+        afternoon: "Accommodation check-in and settling into student residential facilities.",
+        learning: "Taking my first international flight and adapting to a new timezone builds deep personal confidence."
       },
       {
         day: "Day 2",
-        title: "Learning Beyond Borders: Culture & AI",
-        morning: "Inspiring session on Thai Culture, Traditions, and Community by Dr. Prapas Thammaboribal.",
-        afternoon: "The World of AI session by Dr. Chutiporn Anutariya, exploring how AI transforms industries and solves real-world challenges.",
-        learning: "Living in another country has taught me to adapt quickly, become independent, and appreciate cultural diversity.",
-        linkedinLog: "https://www.linkedin.com/in/gkm563"
+        title: "Registration, Orientation & Thai Culture",
+        morning: "Completed official registration, followed by program orientation and facility visits. Received briefing on Thai Culture & Traditions by Dr. Prapas Thammaboribal.",
+        afternoon: "Attended session on \"The World of AI\" with Dr. Chutiporn Anutariya, looking at automation trends.",
+        learning: "Cultural empathy and technical awareness are foundations for building global platforms."
       },
       {
         day: "Day 3",
-        title: "Technical Skills: Prompt Engineering & Ubiquitous GIS",
+        title: "Prompt Engineering & Ubiquitous GIS",
         morning: "Hands-on Prompt Engineering activity with Dr. Rishi Jain, writing effective prompts across 4 distinct tasks.",
         afternoon: "Session on Ubiquitous GIS (Geographic Information Systems) by Dr. Sarawut Ramjan, utilizing spatial location data for smart cities and disaster planning.",
-        learning: "AI output quality depends on prompt quality. GIS integrates geography and technology for decision-making.",
-        linkedinLog: "https://www.linkedin.com/in/gkm563"
+        learning: "AI output quality depends on prompt quality. GIS integrates geography and technology for decision-making."
       },
       {
         day: "Day 4",
-        title: "Hands-on: EDA & Mobile Data Mapping",
+        title: "EDA & Mobile Data Mapping",
         morning: "Interactive session on Exploratory Data Analysis (EDA) — completed 2 interactive activities, 3 exercises, and 1 homework mini-project.",
         afternoon: "Mobile data collection and mapping with Dr. Rishi Jain using EpiCollect5. Completed two mapping tasks.",
-        learning: "Cleaning/exploring datasets is critical before modeling. EpiCollect5 turns smartphones into field research sensors.",
-        linkedinLog: "https://www.linkedin.com/in/gkm563"
+        learning: "Cleaning/exploring datasets is critical before modeling. EpiCollect5 turns smartphones into field research sensors."
       },
       {
         day: "Day 5",
-        title: "Lab Visits: Robotics & IoT at KMITL",
-        morning: "Visited KMITL (King Mongkut's Institute of Technology Ladkrabang) Robotics and IoT Labs.",
-        afternoon: "Interacted with robotics professors and researchers, exchanging ideas and email addresses.",
-        learning: "Seeing research transformed into real-world innovation inspired me to dream bigger and keep improving.",
-        linkedinLog: "https://www.linkedin.com/in/gkm563"
+        title: "KMITL Lab Visit & City Tour",
+        morning: "Visited KMITL (King Mongkut's Institute of Technology Ladkrabang) under Prof. Uma. Toured IoT and Robotics Labs.",
+        afternoon: "Bangkok Cultural City Tour — visited Platinum Mall and Asiatique the Riverfront.",
+        learning: "Seeing research transformed into real-world innovation inspired me to dream bigger and keep improving."
       },
       {
         day: "Day 6",
-        title: "Campus to Corporate: Growth & Communication",
+        title: "Campus to Corporate & Global Communication",
         morning: "Campus to Corporate session by Dr. Manisha Bose on professional mindset and transition.",
-        afternoon: "Interactive discussion on global communication (connections over accent) and preserving cultural values (Namaste).",
-        learning: "Communication is about connection. Carry your own culture and values with pride as a global professional.",
-        linkedinLog: "https://www.linkedin.com/in/gkm563"
+        afternoon: "Interpersonal and cross-cultural communication training with Mr. Rusell Rein, discussing global accents and networking.",
+        learning: "Communication is about connection. Carry your own culture and values with pride as a global professional."
       },
       {
-        day: "Days 7-15",
-        title: "Ongoing Internship Program Logs",
-        morning: "Engaged in collaborative team research, project prototyping, and applying AI/Data Science skills to assigned challenges.",
-        afternoon: "Building final presentation decks, finishing project deliverables, and preparing for evaluation before the AIT panel.",
-        learning: "Applying data modeling and prompt pipelines to solve complex research goals.",
-        linkedinLog: "https://www.linkedin.com/in/gkm563"
+        day: "Day 7",
+        title: "NSM Science Museum & Siam Hubs",
+        morning: "Visited the National Science Museum (NSM) to explore technical exhibits and physics simulators.",
+        afternoon: "City visit to major commerce hubs: Siam Paragon, Siam Discovery, and MBK Center to study urban layouts.",
+        learning: "Analyzing real-world logistics layouts improves UX design for digital business solutions."
+      },
+      {
+        day: "Day 8",
+        title: "Design Thinking & Power BI Tools",
+        morning: "Design Thinking methodology training, focusing on empathy mapping and mock prototype loops with Prasad Nagaraj.",
+        afternoon: "Power BI Business Intelligence dashboard building and analytics pipelines with Mr. Aakash.",
+        learning: "Clean data representation is essential for business decision validation; Design thinking keeps design user-focused."
+      },
+      {
+        day: "Day 9",
+        title: "Quantum GIS & Digital Marketing",
+        morning: "Quantum Geo-Informatic Systems (QGIS) data mapping and layer rendering with Dr. Prapas.",
+        afternoon: "Digital Marketing, SEO strategy, page indexing, and user funnel building with Dr. Sacha.",
+        learning: "Combining geospatial spatial databases with online indexing analytics forms powerful predictive search systems."
+      },
+      {
+        day: "Day 10",
+        title: "CCM Systems & Agentic AI Architectures",
+        morning: "CCM Systems infrastructure, data sync configurations, and database tracking protocols with Mr. Saksin.",
+        afternoon: "Agentic AI frameworks, Multi-Agent workflow design, and cognitive reasoning chains with Dr. Chaklam Silpasuwanchai.",
+        learning: "Multi-agent ecosystems transform static algorithms into interactive solvers that automate complex operations."
+      },
+      {
+        day: "Day 11",
+        title: "Entrepreneurship Roadmap & Canva AI",
+        morning: "Career planning and scaling technology startups from university campuses with Prof. Nitin Tripathi.",
+        afternoon: "Canva AI UI design, visual prototyping, and custom asset generation with Ms. Vaishnavii.",
+        learning: "Entrepreneurial mindset combined with visual prototyping tools makes software mockups more marketable."
+      },
+      {
+        day: "Day 12",
+        title: "UAV Flight Planning & Project Prep",
+        morning: "UAV Planning Flight and Imaging, real-time data acquisition, and photogrammetry stitching with Dr. Sanit Arunplod.",
+        afternoon: "Group Innovation Project preparation, code debugging, and data processing.",
+        learning: "Unmanned aerial vehicle telemetry offers rich raw data. Project preparation helps apply theory into real apps."
+      },
+      {
+        day: "Day 13",
+        title: "Coastal Retreat: Pattaya Jomtien Beach",
+        morning: "Travel to Pattaya Jomtien Beach for a peaceful coastal retreat and geographic field study.",
+        afternoon: "Outdoor recreation and cohort networking reflections by the ocean.",
+        learning: "Structured breaks rejuvenate mental focus and consolidate lessons from high-pressure labs."
+      },
+      {
+        day: "Day 14",
+        title: "Final Group Presentation & Valedictory",
+        morning: "Presented our final group innovation project to the academic panel of experts.",
+        afternoon: "Attended the Awarding of Certificates and Closing Ceremony with AIT leadership.",
+        learning: "Undergoing peer critique is critical for validation. Receiving the certificate marks a successful journey."
+      },
+      {
+        day: "Day 15",
+        title: "Departure to Suvarnabhumi Airport",
+        morning: "Departed at 6:00 AM for Suvarnabhumi Airport, checking in for the flight to India.",
+        afternoon: "Reflecting on 15 days of intensive studies, robotics, and global cultures during return travel.",
+        learning: "The internship program has concluded, but the connections, tools, and mindset gained will guide my engineering projects."
       }
     ],
-    toolsStudied: ["EpiCollect5", "Prompt Engineering modules", "Exploratory Data Analysis frameworks", "IoT Lab modules", "Robotics systems", "Ubiquitous GIS platforms"],
-    topicsLearned: ["Artificial Intelligence", "Prompt Engineering", "Ubiquitous GIS", "Exploratory Data Analysis", "Mobile Data Mapping", "IoT & Robotics Innovation", "Campus to Corporate Ethics", "Cross-Cultural Communication"]
+    toolsStudied: ["EpiCollect5", "Prompt Engineering modules", "Power BI", "Quantum GIS (QGIS)", "CCM Systems", "Canva AI", "UAV Flight Planner & Image Stitcher", "Agentic AI frameworks", "Robotics systems"],
+    topicsLearned: ["Artificial Intelligence", "Prompt Engineering", "Ubiquitous GIS", "Exploratory Data Analysis", "Mobile Data Mapping", "IoT & Robotics Innovation", "Design Thinking", "Business Intelligence & Power BI", "Quantum GIS Layering", "Digital Marketing", "Cloud CCM Systems", "Agentic AI Reasoning", "Entrepreneurship Strategy", "Canva AI Graphics", "UAV Flight Planning & Telemetry"]
   },
 
   linkedinHighlights: [
