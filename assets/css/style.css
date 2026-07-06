@@ -5494,7 +5494,11 @@ a.os-feed-username:hover {
 /* Hero Announcement Badge */
 .hero-announcement {
     margin-bottom: 2rem;
-    display: inline-block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
 }
 
 .announcement-pill {
@@ -5502,12 +5506,44 @@ a.os-feed-username:hover {
     align-items: center;
     gap: 0.75rem;
     padding: 0.5rem 1.25rem;
-    background: rgba(14, 165, 233, 0.15);
-    border: 1px solid rgba(14, 165, 233, 0.3);
     border-radius: 50px;
     text-decoration: none;
     transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* UP Police Pill */
+.announcement-pill.up-police-pill {
+    background: rgba(249, 115, 22, 0.15);
+    border: 1px solid rgba(249, 115, 22, 0.3);
+}
+.announcement-pill.up-police-pill:hover {
+    border-color: rgba(249, 115, 22, 0.7);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(249, 115, 22, 0.35);
+}
+.announcement-pill.up-police-pill .announcement-ping {
+    background-color: rgb(249, 115, 22);
+}
+.announcement-pill.up-police-pill .ping-wave {
+    border: 3px solid rgba(249, 115, 22, 0.5);
+}
+
+/* AIT Bangkok Pill */
+.announcement-pill.ait-bangkok-pill {
+    background: rgba(14, 165, 233, 0.15);
+    border: 1px solid rgba(14, 165, 233, 0.3);
+}
+.announcement-pill.ait-bangkok-pill:hover {
+    border-color: rgba(14, 165, 233, 0.7);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(14, 165, 233, 0.35);
+}
+.announcement-pill.ait-bangkok-pill .announcement-ping {
+    background-color: rgb(14, 165, 233);
+}
+.announcement-pill.ait-bangkok-pill .ping-wave {
+    border: 3px solid rgba(14, 165, 233, 0.5);
 }
 
 .announcement-pill:hover {
