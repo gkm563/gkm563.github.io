@@ -5881,3 +5881,220 @@ html, body {
     }
 }
 
+
+
+/* ==========================================================================
+   MOBILE OVERHAUL — Responsive Improvements (All Breakpoints)
+   Applied mobile-first fluid typography and layout fixes
+   ========================================================================== */
+
+/* ---- Fluid Typography — Clamp-based Sizing ---- */
+.hero-title,
+#hero h1 {
+    font-size: clamp(2rem, 6vw, 4.5rem) !important;
+    line-height: 1.15;
+}
+
+.typed-text {
+    font-size: clamp(1rem, 3.5vw, 1.6rem) !important;
+}
+
+.section-title {
+    font-size: clamp(1.6rem, 4vw, 2.8rem) !important;
+}
+
+/* Global touch-action for interactive elements */
+button, a, [role="button"], .cta-button, .project-card {
+    touch-action: manipulation;
+}
+
+/* Prevent text size inflation on orientation change */
+html {
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+}
+
+/* Safe area padding for iPhone notch */
+body {
+    padding-left: env(safe-area-inset-left);
+    padding-right: env(safe-area-inset-right);
+}
+
+/* ---- 1024px: Tablet/Laptop ---- */
+@media (max-width: 1024px) {
+    #hero {
+        padding-top: 80px;
+    }
+    .hero-announcement {
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        justify-content: center;
+    }
+}
+
+/* ---- 768px: Tablets ---- */
+@media (max-width: 768px) {
+    /* Hero announcement pills responsive */
+    .hero-announcement {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+        margin-bottom: 1.5rem;
+    }
+    .announcement-pill {
+        width: auto;
+        max-width: 90vw;
+    }
+
+    /* Hero section */
+    #hero {
+        min-height: 100dvh;
+        padding-top: 70px;
+        padding-bottom: 2rem;
+    }
+
+    /* Hero CTA buttons */
+    .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.85rem;
+    }
+    .hero-buttons .cta-button {
+        width: 100%;
+        max-width: 300px;
+        text-align: center;
+        justify-content: center;
+    }
+
+    /* Stats row — wrap */
+    .stats-row,
+    .about-stats,
+    .achievement-stats {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+    }
+
+    /* Bento grid */
+    .bento-grid {
+        grid-template-columns: 1fr 1fr !important;
+        gap: 1rem;
+    }
+    .bento-card.bento-span-3,
+    .bento-card.bento-span-2 {
+        grid-column: span 2 !important;
+    }
+
+    /* Section padding */
+    section, .section-wrapper {
+        padding: clamp(2.5rem, 6vw, 5rem) 0;
+    }
+}
+
+/* ---- 640px: Small-Mid Phones ---- */
+@media (max-width: 640px) {
+    /* Bento grid — single column */
+    .bento-grid {
+        grid-template-columns: 1fr !important;
+    }
+    .bento-card.bento-span-3,
+    .bento-card.bento-span-2 {
+        grid-column: span 1 !important;
+    }
+    .bento-card {
+        min-height: auto !important;
+    }
+
+    /* Hero announcement pills — full width */
+    .announcement-pill {
+        font-size: 0.7rem;
+        padding: 0.35rem 0.75rem;
+    }
+
+    /* Project cards */
+    .projects-grid {
+        grid-template-columns: 1fr !important;
+    }
+
+    /* Contact form */
+    .contact-form input,
+    .contact-form textarea {
+        font-size: 16px; /* Prevents iOS auto-zoom */
+        padding: 0.75rem 1rem;
+    }
+}
+
+/* ---- 480px: Small Phones ---- */
+@media (max-width: 480px) {
+    /* Container tighter */
+    .container {
+        padding: 0 1rem;
+    }
+
+    /* Hero */
+    #hero {
+        padding-top: 65px;
+    }
+
+    /* Remove bento height minimums on small phones */
+    .bento-card {
+        height: auto !important;
+        min-height: 0 !important;
+    }
+
+    /* Skill items — 3 col on 480 */
+    .skill-items-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0.65rem;
+    }
+
+    /* About image smaller */
+    .about-image {
+        width: 180px;
+        height: 180px;
+    }
+
+    /* Footer */
+    .footer-container {
+        grid-template-columns: 1fr;
+    }
+
+    /* Announcement pills smaller */
+    .hero-announcement {
+        padding: 0 0.5rem;
+    }
+}
+
+/* ---- 380px: Very Small Phones ---- */
+@media (max-width: 380px) {
+    .container {
+        padding: 0 0.75rem;
+    }
+
+    .hero-buttons .cta-button {
+        max-width: 240px;
+        font-size: 0.85rem;
+        padding: 0.65rem 1.2rem;
+    }
+
+    /* Bento text */
+    .bento-title {
+        font-size: 0.95rem;
+    }
+    .bento-metric {
+        font-size: 1.1rem;
+    }
+    .bento-tag {
+        font-size: 0.6rem;
+    }
+
+    /* Skill items — 2 col on 380 */
+    .skill-items-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* Section title even smaller */
+    .section-title {
+        font-size: 1.4rem !important;
+    }
+}
