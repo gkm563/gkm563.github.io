@@ -3077,3 +3077,200 @@ body.internship-page::after {
     box-shadow: 0 0 25px rgba(234, 67, 53, 0.4) !important;
     transform: translateY(-2px);
 }
+
+
+/* Flight Journey Map styles */
+.flight-journey-container {
+    background: rgba(18, 9, 38, 0.45);
+    border: 1px solid rgba(168, 85, 247, 0.25);
+    border-radius: 24px;
+    padding: 2.2rem 2.5rem;
+    margin: 3.5rem auto 1.5rem auto;
+    max-width: 650px;
+    backdrop-filter: blur(20px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+.flight-route-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1.75rem;
+    position: relative;
+}
+
+.route-node {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 140px;
+    z-index: 2;
+}
+
+.flag-icon-circle {
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid rgba(255, 255, 255, 0.15);
+    box-shadow: 0 0 20px rgba(168, 85, 247, 0.25);
+    background: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.route-node:hover .flag-icon-circle {
+    transform: scale(1.12);
+    border-color: #06b6d4;
+    box-shadow: 0 0 25px rgba(6, 182, 212, 0.5);
+}
+
+.flag-svg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.node-info {
+    margin-top: 0.75rem;
+}
+
+.country-name {
+    display: block;
+    font-family: var(--font-heading);
+    font-weight: 800;
+    color: #fff;
+    font-size: 1.05rem;
+    letter-spacing: 0.2px;
+}
+
+.airport-code {
+    display: block;
+    font-size: 0.75rem;
+    color: #94a3b8;
+    margin-top: 1px;
+    font-weight: 500;
+}
+
+.route-path-svg-wrapper {
+    flex-grow: 1;
+    height: 90px;
+    position: relative;
+    margin: 0 -10px;
+}
+
+.journey-arc-svg {
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+}
+
+.trail-glow-line {
+    stroke-dasharray: 490;
+    stroke-dashoffset: 490;
+    animation: glowTrail 6s infinite cubic-bezier(0.4, 0.0, 0.2, 1);
+}
+
+@keyframes glowTrail {
+    0% {
+        stroke-dashoffset: 490;
+    }
+    100% {
+        stroke-dashoffset: -490;
+    }
+}
+
+.flying-plane {
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    color: #06b6d4;
+    filter: drop-shadow(0 0 8px #06b6d4);
+    font-size: 1.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    offset-path: path('M 10 90 Q 240 -15 470 90');
+    offset-rotate: auto 90deg;
+    animation: flightTransition 6s infinite cubic-bezier(0.4, 0.0, 0.2, 1);
+    z-index: 5;
+}
+
+.plane-trail {
+    position: absolute;
+    width: 60px;
+    height: 2px;
+    background: linear-gradient(90deg, rgba(6, 182, 212, 0.4), transparent);
+    right: 20px;
+    transform: rotate(180deg);
+    opacity: 0.8;
+}
+
+@keyframes flightTransition {
+    0% {
+        offset-distance: 0%;
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+    }
+    90% {
+        opacity: 1;
+    }
+    100% {
+        offset-distance: 100%;
+        opacity: 0;
+    }
+}
+
+.flight-journey-status {
+    font-family: var(--font-heading);
+    font-size: 0.95rem;
+    color: #cbd5e1;
+    text-align: center;
+    background: rgba(168, 85, 247, 0.07);
+    border: 1px solid rgba(168, 85, 247, 0.15);
+    border-radius: 12px;
+    padding: 0.7rem 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    width: 100%;
+    box-shadow: inset 0 0 10px rgba(168, 85, 247, 0.05);
+}
+
+.flight-journey-status span {
+    font-weight: 600;
+}
+
+@media (max-width: 600px) {
+    .flight-journey-container {
+        padding: 1.5rem 1rem;
+        transform: scale(0.92);
+        margin: 2rem auto 0.5rem auto;
+    }
+    .route-node {
+        width: 100px;
+    }
+    .flag-icon-circle {
+        width: 50px;
+        height: 50px;
+    }
+    .country-name {
+        font-size: 0.9rem;
+    }
+    .airport-code {
+        font-size: 0.7rem;
+    }
+    .route-path-svg-wrapper {
+        height: 70px;
+    }
+    .flying-plane {
+        offset-path: path('M 5 70 Q 150 -10 295 70');
+        font-size: 1rem;
+    }
+}

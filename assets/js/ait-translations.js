@@ -21,6 +21,7 @@ window.PORTFOLIO_TRANSLATIONS = {
         intern_stat_tech: "AI, GIS, Data, IoT",
         intern_stat_status_title: "GIIP-2026",
         intern_stat_status: "Program Code",
+        flight_status_txt: "✈️ My First International Flight Journey: 3,000+ km from India to Bangkok!",
         intern_scroll_explore: "Explore Selection & Daily Logs",
 
         // Phase 1: Selection Journey
@@ -239,6 +240,7 @@ window.PORTFOLIO_TRANSLATIONS = {
         intern_stat_tech: "एआई, जीआईएस, डेटा, आईओटी",
         intern_stat_status_title: "GIIP-2026",
         intern_stat_status: "प्रोग्राम कोड",
+        flight_status_txt: "✈️ मेरी पहली अंतर्राष्ट्रीय हवाई यात्रा: भारत से बैंकॉक तक 3,000+ किमी का सफर!",
         intern_scroll_explore: "चयन और दैनिक डायरी देखें",
 
         // Phase 1: Selection Journey

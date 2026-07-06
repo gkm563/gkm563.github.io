@@ -228,6 +228,73 @@
                 </div>
             </div>
 
+            <!-- Flight Journey Map Animation -->
+            <div class="flight-journey-container" data-aos="zoom-in" data-aos-delay="500">
+                <div class="flight-route-wrapper">
+                    <!-- Left Node: India -->
+                    <div class="route-node node-india">
+                        <div class="flag-icon-circle">
+                            <!-- SVG Indian Flag -->
+                            <svg viewBox="0 0 900 600" class="flag-svg">
+                                <rect width="900" height="200" fill="#FF9933"/>
+                                <rect y="200" width="900" height="200" fill="#FFFFFF"/>
+                                <rect y="400" width="900" height="200" fill="#128807"/>
+                                <circle cx="450" cy="300" r="80" fill="none" stroke="#000080" stroke-width="6"/>
+                                <circle cx="450" cy="300" r="15" fill="#000080"/>
+                                <path d="M 450 220 L 450 380 M 370 300 L 530 300 M 393 243 L 507 357 M 393 357 L 507 243 M 415 224 L 485 376 M 415 376 L 485 224 M 376 265 L 524 335 M 376 335 L 524 265 M 433 221 L 467 379 M 433 379 L 467 221 M 385 250 L 515 350 M 385 350 L 515 250" stroke="#000080" stroke-width="4"/>
+                            </svg>
+                        </div>
+                        <div class="node-info">
+                            <span class="country-name">India</span>
+                            <span class="airport-code">DEL (New Delhi)</span>
+                        </div>
+                    </div>
+
+                    <!-- Journey Path SVG -->
+                    <div class="route-path-svg-wrapper">
+                        <svg viewBox="0 0 500 120" preserveAspectRatio="none" class="journey-arc-svg">
+                            <defs>
+                                <linearGradient id="flightGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                                    <stop offset="0%" stop-color="#a855f7" stop-opacity="0.3"/>
+                                    <stop offset="50%" stop-color="#06b6d4" stop-opacity="0.8"/>
+                                    <stop offset="100%" stop-color="#10b981" stop-opacity="0.3"/>
+                                </linearGradient>
+                            </defs>
+                            <!-- The dotted path -->
+                            <path id="flightArc" d="M 10 90 Q 240 -15 470 90" fill="none" stroke="rgba(255, 255, 255, 0.12)" stroke-width="2" stroke-dasharray="6, 4"/>
+                            <!-- The animated glow path -->
+                            <path d="M 10 90 Q 240 -15 470 90" fill="none" stroke="url(#flightGradient)" stroke-width="3" class="trail-glow-line"/>
+                        </svg>
+                        <!-- Flying Airplane SVG -->
+                        <div class="flying-plane" id="animated-airplane">
+                            <i class="fas fa-plane"></i>
+                            <div class="plane-trail"></div>
+                        </div>
+                    </div>
+
+                    <!-- Right Node: Bangkok -->
+                    <div class="route-node node-thailand">
+                        <div class="flag-icon-circle">
+                            <!-- SVG Thailand Flag -->
+                            <svg viewBox="0 0 900 600" class="flag-svg">
+                                <rect width="900" height="100" fill="#A51931"/>
+                                <rect y="100" width="900" height="100" fill="#F4F5F8"/>
+                                <rect y="200" width="900" height="200" fill="#2D2A4A"/>
+                                <rect y="400" width="900" height="100" fill="#F4F5F8"/>
+                                <rect y="500" width="900" height="100" fill="#A51931"/>
+                            </svg>
+                        </div>
+                        <div class="node-info">
+                            <span class="country-name">Thailand</span>
+                            <span class="airport-code">BKK (Bangkok)</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="flight-journey-status">
+                    <span data-translate="flight_status_txt">✈️ My First International Flight Journey: 3,000+ km from India to Bangkok!</span>
+                </div>
+            </div>
+
             <a href="#selection-journey" class="hero-scroll-prompt">
                 <span data-translate="intern_scroll_explore">Explore Selection & Daily Logs</span>
                 <i class="fas fa-chevron-down"></i>
