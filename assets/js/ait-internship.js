@@ -387,7 +387,7 @@ function generateCatalog() {
         if (missing.includes(i)) {
             if (i === 54) {
                 personal.push({
-                    src: `assets/images/GKM563 - Personal/Thailand/Gautam_Kumar_Maurya_Thailand_Internship (54) - Copy.jpg`,
+                    src: `assets/images/ait-bangkok/Gautam_Kumar_Maurya_Thailand_Internship (54) - Copy.jpg`,
                     alt: `Global Innovation Internship Moment #54`,
                     category: 'journey',
                     caption: getThailandCaption(i)
@@ -396,7 +396,7 @@ function generateCatalog() {
             continue;
         }
         personal.push({
-            src: `assets/images/GKM563 - Personal/Thailand/Gautam_Kumar_Maurya_Thailand_Internship (${i}).jpg`,
+            src: `assets/images/ait-bangkok/Gautam_Kumar_Maurya_Thailand_Internship (${i}).jpg`,
             alt: `Global Innovation Internship Moment #${i}`,
             category: 'journey',
             caption: getThailandCaption(i)

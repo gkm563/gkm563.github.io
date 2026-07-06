@@ -403,7 +403,7 @@ function generateCatalog() {
     for (let i = 1; i <= 91; i++) {
         if (skippedJourneyIndexes.includes(i)) continue;
         personal.push({
-            src: `assets/images/GKM563 - Personal/Gautam_Kumar_Maurya (${i}).jpg`,
+            src: `assets/images/up-police/moments/Gautam_Kumar_Maurya (${i}).jpg`,
             alt: `APCSIP Journey Moment #${i}`,
             category: 'journey',
             caption: `Journey Moment #${i} - Gautam's Experience`
@@ -415,7 +415,7 @@ function generateCatalog() {
     const slides = [];
     for (let i = 1; i <= 146; i++) {
         slides.push({
-            src: `assets/images/Slides-photo/Slides-Gautam_Kumar_Maurya (${i}).jpg`,
+            src: `assets/images/up-police/moments/slides/Slides-Gautam_Kumar_Maurya (${i}).jpg`,
             alt: `Training Lecture Presentation Slide #${i}`,
             category: 'slides',
             caption: `Cybersecurity Training Slide #${i}`
@@ -424,12 +424,12 @@ function generateCatalog() {
 
     // Add the specific slides moved from GKM563 - Personal
     const movedToSlides = [
-        { src: 'assets/images/Slides-photo/Gautam_Kumar_Maurya (1).jpg', caption: 'Cybersecurity training presentation slide' },
-        { src: 'assets/images/Slides-photo/Gautam_Kumar_Maurya (1).png', caption: 'Cybersecurity lecture overview' },
-        { src: 'assets/images/Slides-photo/Gautam_Kumar_Maurya (2).jpg', caption: 'Cybersecurity expert training concepts' },
-        { src: 'assets/images/Slides-photo/Gautam_Kumar_Maurya (3).jpg', caption: 'Cyber forensics and threat intelligence slide' },
-        { src: 'assets/images/Slides-photo/Gautam_Kumar_Maurya (16).jpg', caption: 'Vulnerability assessment and pentesting concepts' },
-        { src: 'assets/images/Slides-photo/Gautam_Kumar_Maurya (87).jpg', caption: 'Mobile data extraction steps presentation' }
+        { src: 'assets/images/up-police/moments/slides/Gautam_Kumar_Maurya (1).jpg', caption: 'Cybersecurity training presentation slide' },
+        { src: 'assets/images/up-police/moments/slides/Gautam_Kumar_Maurya (1).png', caption: 'Cybersecurity lecture overview' },
+        { src: 'assets/images/up-police/moments/slides/Gautam_Kumar_Maurya (2).jpg', caption: 'Cybersecurity expert training concepts' },
+        { src: 'assets/images/up-police/moments/slides/Gautam_Kumar_Maurya (3).jpg', caption: 'Cyber forensics and threat intelligence slide' },
+        { src: 'assets/images/up-police/moments/slides/Gautam_Kumar_Maurya (16).jpg', caption: 'Vulnerability assessment and pentesting concepts' },
+        { src: 'assets/images/up-police/moments/slides/Gautam_Kumar_Maurya (87).jpg', caption: 'Mobile data extraction steps presentation' }
     ];
 
     movedToSlides.forEach((item, idx) => {
