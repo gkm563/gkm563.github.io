@@ -1,4 +1,10 @@
 User-agent: *
 Allow: /
+Disallow: /gkmportfolio/
 
+# Block specific crawlers from heavy asset directories
+User-agent: Googlebot-Image
+Allow: /assets/images/
+
+# Sitemap location
 Sitemap: https://gkm563.github.io/sitemap.xml
