@@ -2968,3 +2968,17 @@ body.internship-page {
     box-shadow: 0 0 25px rgba(234, 67, 53, 0.4) !important;
     transform: translateY(-2px);
 }
+
+.cta-home-btn.secondary-cta {
+    background: transparent !important;
+    border: 1.5px solid rgba(234, 67, 53, 0.4) !important;
+    color: #fff !important;
+    box-shadow: 0 0 15px rgba(234, 67, 53, 0.15) !important;
+}
+
+.cta-home-btn.secondary-cta:hover {
+    background: rgba(234, 67, 53, 0.1) !important;
+    border-color: rgba(234, 67, 53, 0.8) !important;
+    box-shadow: 0 0 25px rgba(234, 67, 53, 0.4) !important;
+    transform: translateY(-2px);
+}
