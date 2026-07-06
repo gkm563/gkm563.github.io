@@ -371,6 +371,8 @@ window.PORTFOLIO_TRANSLATIONS = {
         chat_opt_pdfbazi: "What is PDFBAZI?",
         chat_opt_wins: "Show hackathon wins",
         chat_opt_collab: "How can I collaborate?",
+        chat_opt_ait: "Thailand Internship 🇹🇭",
+        chat_opt_upp: "UP Police Internship 🚔",
 
         // Chat Responses
         chat_resp_story: "I am currently pursuing a B.Tech in Computer Science and Engineering, specializing in Data Science at United Institute of Technology, Prayagraj. I serve as CTO at two startups  <strong>Vidnya</strong> and <strong>PrayagrajRooms</strong>  and have been approached by 7+ startups for technical leadership. I have built 5+ AI agents, 9 cybersecurity tools, 4 OSINT tools, and 10+ websites. I also lead developer communities (GFG UIT, GSA, GDG), impacting 650+ members through GSA and 580+ through GFG, with 15+ technical events organized. For me, software development is about writing code that creates tangible, real-world impact.",
@@ -428,7 +430,7 @@ window.PORTFOLIO_TRANSLATIONS = {
         nav_ait_internship: "GIIP-2026",
         hero_announcement_text: "NEW: Amroha Police Cyber Security Internship Program (APCSIP-2026) →",
         hero_announcement_text_ait: "NEW: AIT Bangkok Global Innovation Internship Program (GIIP-2026) →",
-        bento_cybersec_action: "Explore APCSIP-2026 12-Day Journey →",
+        bento_cybersec_action: "Explore APCSIP-2026 13-Day Journey →",
         bento_cybersec_action_ait: "Explore GIIP-2026 15-Day Journey →",
         
         // UP Police subpage headings
@@ -954,6 +956,8 @@ window.PORTFOLIO_TRANSLATIONS = {
         chat_opt_pdfbazi: "PDFBAZI क्या है?",
         chat_opt_wins: "हैकथॉन जीतें दिखाएं",
         chat_opt_collab: "मैं कैसे सहयोग कर सकता हूँ?",
+        chat_opt_ait: "थाईलैंड इंटर्नशिप 🇹🇭",
+        chat_opt_upp: "यूपी पुलिस इंटर्नशिप 🚔",
 
         // Chat Responses
         chat_resp_story: "मैं वर्तमान में यूनाइटेड इंस्टीट्यूट ऑफ टेक्नोलॉजी, प्रयागराज से डेटा साइंस में स्पेशलाइजेशन के साथ कंप्यूटर साइंस (बी.टेक) की पढ़ाई कर रहा हूँ। मेरा लक्ष्य ऐसी तकनीक विकसित करना है जो लोगों के जीवन को आसान बनाए। मैं एकेडमिक्स में यूनिवर्सिटी रैंक 5 बनाए रखने के साथ-साथ प्रयागराज रूम्स स्टार्टअप और विकिमीडिया ओपन सोर्स में सक्रिय योगदान देता हूँ। मेरे लिए कोडिंग केवल प्रोग्रामिंग नहीं, बल्कि बदलाव लाने का ज़रिया है।",
@@ -1010,7 +1014,7 @@ window.PORTFOLIO_TRANSLATIONS = {
         nav_ait_internship: "GIIP-2026",
         hero_announcement_text: "नया: अमरोहा पुलिस साइबर सुरक्षा इंटर्नशिप कार्यक्रम (APCSIP-2026) →",
         hero_announcement_text_ait: "नया: एआईटी बैंकॉक ग्लोबल इनोवेशन इंटर्नशिप प्रोग्राम (GIIP-2026) →",
-        bento_cybersec_action: "APCSIP-2026 12-दिवसीय यात्रा देखें →",
+        bento_cybersec_action: "APCSIP-2026 13-दिवसीय यात्रा देखें →",
         bento_cybersec_action_ait: "GIIP-2026 15-दिवसीय यात्रा देखें →",
         
         // UP Police subpage headings (Hindi)
