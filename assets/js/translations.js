@@ -425,8 +425,11 @@ window.PORTFOLIO_TRANSLATIONS = {
         day12_badge: "Review Panel",
         day12_title: "Final Review, Presentation & Certification",
         nav_internship: "APCSIP-2026",
+        nav_ait_internship: "GIIP-2026",
         hero_announcement_text: "NEW: Amroha Police Cyber Security Internship Program (APCSIP-2026) →",
+        hero_announcement_text_ait: "NEW: AIT Bangkok Global Innovation Internship Program (GIIP-2026) →",
         bento_cybersec_action: "Explore APCSIP-2026 12-Day Journey →",
+        bento_cybersec_action_ait: "Explore GIIP-2026 15-Day Journey →",
         
         // UP Police subpage headings
         selection_heading: "Phase 1: <span>Selection & Onboarding Journey</span>",
@@ -1003,8 +1006,11 @@ window.PORTFOLIO_TRANSLATIONS = {
         day12_badge: "समीक्षा पैनल",
         day12_title: "अंतिम समीक्षा, प्रस्तुति और प्रमाणन",
         nav_internship: "APCSIP-2026",
+        nav_ait_internship: "GIIP-2026",
         hero_announcement_text: "नया: अमरोहा पुलिस साइबर सुरक्षा इंटर्नशिप कार्यक्रम (APCSIP-2026) →",
+        hero_announcement_text_ait: "नया: एआईटी बैंकॉक ग्लोबल इनोवेशन इंटर्नशिप प्रोग्राम (GIIP-2026) →",
         bento_cybersec_action: "APCSIP-2026 12-दिवसीय यात्रा देखें →",
+        bento_cybersec_action_ait: "GIIP-2026 15-दिवसीय यात्रा देखें →",
         
         // UP Police subpage headings (Hindi)
         selection_heading: "चरण 1: <span>चयन और ऑनबोर्डिंग यात्रा</span>",

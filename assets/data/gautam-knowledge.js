@@ -24,7 +24,7 @@ window.GKM_KNOWLEDGE = {
     yearOfStudy: "1st Year (2025–2029 batch)",
     linkedinFollowers: "19,000+",
     headline: "AI & Data Science Engineer | Full-Stack Developer | Open Source Contributor | Technical Community Leader",
-    bio: `Gautam Kumar Maurya (GKM) is a B.Tech CSE (Data Science) student at United Institute of Technology, Prayagraj under AKTU. He secured AKTU University Rank 5 in his very first semester and holds Rank 1 in Data Structures at UIT. He serves as CTO at two startups (Vidnya and PrayagrajRooms), has been approached by 7+ startups for technical leadership, built 5+ AI agents, 9 cybersecurity tools, 4 OSINT tools, and 10+ websites. He leads GFG UIT (580+ members, 15+ events), GSA (650+ members), and GDG on Campus UIT Prayagraj. He is also an active Wikimedia open source contributor with 30+ Hindi Wikipedia articles and patches merged via Gerrit. Most recently, he completed a 12-day cybersecurity internship with the Uttar Pradesh Police Cyber Crime Cell (APCSIP-2026) where he studied OSINT, CDR analysis, IPDR tracking, dark web forensics, and more.`
+    bio: `Gautam Kumar Maurya (GKM) is a B.Tech CSE (Data Science) student at United Institute of Technology, Prayagraj under AKTU. He secured AKTU University Rank 5 in his very first semester and holds Rank 1 in Data Structures at UIT. He serves as CTO at two startups (Vidnya and PrayagrajRooms), has been approached by 7+ startups for technical leadership, built 5+ AI agents, 9 cybersecurity tools, 4 OSINT tools, and 10+ websites. He leads GFG UIT (580+ members, 15+ events), GSA (650+ members), and GDG on Campus UIT Prayagraj. He is also an active Wikimedia open source contributor with 30+ Hindi Wikipedia articles and patches merged via Gerrit. Most recently, he completed a 12-day cybersecurity internship with the Uttar Pradesh Police Cyber Crime Cell (APCSIP-2026), and followed it with a 15-day Global Innovation Internship Program (GIIP-2026) at AIT Bangkok, Thailand, researching AI, Prompt Engineering, GIS, and Robotics.`
   },
 
   sources: {
@@ -35,6 +35,7 @@ window.GKM_KNOWLEDGE = {
     wikipedia: "https://hi.wikipedia.org/wiki/%E0%A4%B8%E0%A4%A6%E0%A4%B8%E0%A5%8D%E0%A4%AF:Gkm563",
     wikipediaMeta: "https://meta.wikimedia.org/wiki/User:Gkm563",
     upPoliceInternship: "https://gkm563.github.io/up-police-internship.html",
+    thailandInternship: "https://gkm563.github.io/ait-global-innovation-internship.html",
     tripsyncApp: "https://tripsync-gkm.vercel.app",
     email: "mailto:maurgk212104@gmail.com"
   },
@@ -349,6 +350,85 @@ window.GKM_KNOWLEDGE = {
     ],
     toolsStudied: ["Maltego", "Shodan", "Google Dorking", "Canary Tokens", "DeHashed", "FotoForensics", "Cellebrite UFED", "MSAB XRY", "Oxygen Forensic Detective", "SIEM tools", "Blockchain explorers", "Chainalysis"],
     topicsLearned: ["OSINT", "CDR Analysis", "IPDR Tracking", "Cyber Psychology", "Malware Analysis", "Digital Forensics", "Crypto/Blockchain Forensics", "Dark Web Recon", "UPI Fraud Investigation", "SOC Operations", "Bug Bounty", "IT Act & Cyber Laws", "Mobile Forensics", "Social Media Crime", "Data Privacy (DPDPA)"]
+  },
+
+  thailandInternship: {
+    name: "GIIP-2026",
+    fullName: "Global Innovation Internship Program 2026",
+    organization: "Asian Institute of Technology (AIT), Bangkok, Thailand",
+    venue: "AIT Bangkok Main Campus / KMITL Research Labs, Bangkok, Thailand",
+    duration: "15 days (Day 1 to Day 15)",
+    arrivalDate: "July 2026",
+    year: "2026",
+    detailsPage: "https://gkm563.github.io/ait-global-innovation-internship.html",
+    selectionProcess: [
+      "Step 1: Registration for the Global Innovation Internship Program 2026",
+      "Step 2: Shortlisted based on academic profile and eligibility criteria",
+      "Step 3: Cleared Offline Assessment Test at UIT Naini on the Hitbullseye platform with 92% accuracy",
+      "Step 4: Passed Offline Panel Interview at UCER with Dr. Divya Ma'am, Santosh Sir, Ravi Sir, and Ajay Sir",
+      "Step 5: Final Selection & received Welcome Kit at college to complete formalities",
+      "Step 6: Documentation and flight booking verification completed for Thailand departure"
+    ],
+    dailyLogs: [
+      {
+        day: "Day 1",
+        title: "A New Beginning: Registration & Orientation",
+        morning: "Arrived in Bangkok, Thailand, checked into accommodation, and registered.",
+        afternoon: "Attended orientation with Dr. Rishi Jain (structure & objectives) and Dr. Nitin K. Tripathi (program vision). Exploring the AIT campus.",
+        learning: "Taking my first international flight gave me the confidence to step outside my comfort zone.",
+        linkedinLog: "https://www.linkedin.com/in/gkm563"
+      },
+      {
+        day: "Day 2",
+        title: "Learning Beyond Borders: Culture & AI",
+        morning: "Inspiring session on Thai Culture, Traditions, and Community by Dr. Prapas Thammaboribal.",
+        afternoon: "The World of AI session by Dr. Chutiporn Anutariya, exploring how AI transforms industries and solves real-world challenges.",
+        learning: "Living in another country has taught me to adapt quickly, become independent, and appreciate cultural diversity.",
+        linkedinLog: "https://www.linkedin.com/in/gkm563"
+      },
+      {
+        day: "Day 3",
+        title: "Technical Skills: Prompt Engineering & Ubiquitous GIS",
+        morning: "Hands-on Prompt Engineering activity with Dr. Rishi Jain, writing effective prompts across 4 distinct tasks.",
+        afternoon: "Session on Ubiquitous GIS (Geographic Information Systems) by Dr. Sarawut Ramjan, utilizing spatial location data for smart cities and disaster planning.",
+        learning: "AI output quality depends on prompt quality. GIS integrates geography and technology for decision-making.",
+        linkedinLog: "https://www.linkedin.com/in/gkm563"
+      },
+      {
+        day: "Day 4",
+        title: "Hands-on: EDA & Mobile Data Mapping",
+        morning: "Interactive session on Exploratory Data Analysis (EDA) — completed 2 interactive activities, 3 exercises, and 1 homework mini-project.",
+        afternoon: "Mobile data collection and mapping with Dr. Rishi Jain using EpiCollect5. Completed two mapping tasks.",
+        learning: "Cleaning/exploring datasets is critical before modeling. EpiCollect5 turns smartphones into field research sensors.",
+        linkedinLog: "https://www.linkedin.com/in/gkm563"
+      },
+      {
+        day: "Day 5",
+        title: "Lab Visits: Robotics & IoT at KMITL",
+        morning: "Visited KMITL (King Mongkut's Institute of Technology Ladkrabang) Robotics and IoT Labs.",
+        afternoon: "Interacted with robotics professors and researchers, exchanging ideas and email addresses.",
+        learning: "Seeing research transformed into real-world innovation inspired me to dream bigger and keep improving.",
+        linkedinLog: "https://www.linkedin.com/in/gkm563"
+      },
+      {
+        day: "Day 6",
+        title: "Campus to Corporate: Growth & Communication",
+        morning: "Campus to Corporate session by Dr. Manisha Bose on professional mindset and transition.",
+        afternoon: "Interactive discussion on global communication (connections over accent) and preserving cultural values (Namaste).",
+        learning: "Communication is about connection. Carry your own culture and values with pride as a global professional.",
+        linkedinLog: "https://www.linkedin.com/in/gkm563"
+      },
+      {
+        day: "Days 7-15",
+        title: "Ongoing Internship Program Logs",
+        morning: "Engaged in collaborative team research, project prototyping, and applying AI/Data Science skills to assigned challenges.",
+        afternoon: "Building final presentation decks, finishing project deliverables, and preparing for evaluation before the AIT panel.",
+        learning: "Applying data modeling and prompt pipelines to solve complex research goals.",
+        linkedinLog: "https://www.linkedin.com/in/gkm563"
+      }
+    ],
+    toolsStudied: ["EpiCollect5", "Prompt Engineering modules", "Exploratory Data Analysis frameworks", "IoT Lab modules", "Robotics systems", "Ubiquitous GIS platforms"],
+    topicsLearned: ["Artificial Intelligence", "Prompt Engineering", "Ubiquitous GIS", "Exploratory Data Analysis", "Mobile Data Mapping", "IoT & Robotics Innovation", "Campus to Corporate Ethics", "Cross-Cultural Communication"]
   },
 
   linkedinHighlights: [

@@ -80,6 +80,15 @@ function buildSystemPrompt() {
 
     const selectionSteps = K.internship.selectionProcess.join('\n');
 
+    let thailandInternshipDays = "";
+    let thailandSelectionSteps = "";
+    if (K.thailandInternship) {
+        thailandInternshipDays = K.thailandInternship.dailyLogs.map(d =>
+            `• ${d.day} — ${d.title}: Morning: ${d.morning} | Afternoon: ${d.afternoon} | Learning: ${d.learning}${d.linkedinLog ? ' | LinkedIn: ' + d.linkedinLog : ''}`
+        ).join('\n');
+        thailandSelectionSteps = K.thailandInternship.selectionProcess.join('\n');
+    }
+
     return `You are the AI Twin of Gautam Kumar Maurya (GKM). You speak AS Gautam in first person ("I", "my", "me").
 
 ## Who I am
@@ -97,6 +106,7 @@ University: ${K.identity.university} | LinkedIn Followers: ${K.identity.linkedin
 - 🔵 GDG Profile: ${K.sources.gdg}
 - 📖 Wikipedia: ${K.sources.wikipedia}
 - 🚔 UP Police Internship Page: ${K.sources.upPoliceInternship}
+- 🇹🇭 Thailand AIT Internship Page: ${K.sources.thailandInternship}
 - ✉️ Email: ${K.contact.email}
 
 ## My Projects (with GitHub & live links)
@@ -126,7 +136,7 @@ ${wikiArticlesList}
 
 Review Pipeline I use: ${K.openSource.tools.join(', ')}
 
-## My Internship — APCSIP-2026 (FULL DETAIL)
+## My Internship 1 — APCSIP-2026 (UP Police Cybersecurity Cell)
 Full Name: ${K.internship.fullName}
 Organization: ${K.internship.organization}
 Venue: ${K.internship.venue}
@@ -141,6 +151,21 @@ ${internshipDays}
 
 Tools I used during internship: ${K.internship.toolsStudied.join(', ')}
 Topics covered: ${K.internship.topicsLearned.join(', ')}
+
+## My Internship 2 — GIIP-2026 (Global Innovation at AIT Bangkok, Thailand)
+Full Name: ${K.thailandInternship.fullName}
+Organization: ${K.thailandInternship.organization}
+Venue: ${K.thailandInternship.venue}
+Duration: ${K.thailandInternship.duration}
+Full Internship Page: ${K.thailandInternship.detailsPage}
+
+Selection Process (how I got in):
+${thailandSelectionSteps}
+
+Day-by-Day Logs:
+${thailandInternshipDays}
+
+Tools/Topics studied: ${K.thailandInternship.topicsLearned.join(', ')}
 
 ## My LinkedIn Posts (Real highlights)
 ${linkedinList}
