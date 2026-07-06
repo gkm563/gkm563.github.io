@@ -210,7 +210,13 @@ window.PORTFOLIO_TRANSLATIONS = {
         reflection_p1: "Securing selection for the Global Innovation Internship Program was a significant milestone. Traveling to Bangkok, Thailand, for my first international internship meant stepping completely outside my comfort zone. Exploring the gorgeous AIT campus, boarding my first flight, and adapting to a new country was an incredibly enriching experience.",
         reflection_p2: "Interacting with distinguished experts like Dr. Rishi Jain, Dr. Nitin K. Tripathi, and KMITL researchers helped me align academic concepts with real-world problems. The combination of prompt engineering, data analytics, GIS, and robotics labs opened fresh avenues for research.",
         reflection_p3: "Beyond technology, this journey taught me about cultural diversity, community connection, and professional communication. Sharing these experiences with close friends and building a global network has motivated me to work harder and dream bigger.",
-        reflection_sig_title: "AI & Data Science Intern"
+        reflection_sig_title: "AI & Data Science Intern",
+
+        // Final CTA
+        cta_heading: "Want to explore my other journeys?",
+        cta_desc: "Check out my UP Police Cyber Security Internship logs (if you enjoy reading blogs). Or if you want to dive deeper into my software builds, core tech stack, and startups, let's head to my homepage!",
+        cta_btn: "Go to Homepage",
+        cta_blog_btn: "Read UP Police Logs"
     },
     hi: {
         // Nav Links
@@ -422,6 +428,12 @@ window.PORTFOLIO_TRANSLATIONS = {
         reflection_p1: "ग्लोबल इनोवेशन इंटर्नशिप प्रोग्राम के लिए चयन होना एक महत्वपूर्ण मील का पत्थर था। बैंकॉक, थाईलैंड की मेरी पहली अंतरराष्ट्रीय यात्रा का मतलब मेरे कम्फर्ट जोन से पूरी तरह बाहर निकलना था। एआईटी कैंपस को देखना, पहली उड़ान भरना और नए देश में ढलना एक बेहद समृद्ध अनुभव था।",
         reflection_p2: "डॉ. ऋषि जैन, डॉ. नितिन के. त्रिपाठी और केएमआईटीएल के शोधकर्ताओं जैसे प्रतिष्ठित विशेषज्ञों के साथ बातचीत ने मुझे वास्तविक दुनिया की समस्याओं के साथ शैक्षणिक अवधारणाओं को जोड़ने में मदद की। प्रॉम्ट इंजीनियरिंग, डेटा एनालिटिक्स, जीआईएस और रोबोटिक्स लैब्स के मेल ने अनुसंधान के नए रास्ते खोले।",
         reflection_p3: "तकनीक से परे, इस सफर ने मुझे सांस्कृतिक विविधता, सामुदायिक जुड़ाव और पेशेवर संचार के बारे में सिखाया। करीबी दोस्तों के साथ इन अनुभवों को साझा करने और एक वैश्विक नेटवर्क बनाने ने मुझे कड़ी मेहनत करने और बड़े सपने देखने के लिए प्रेरित किया है।",
-        reflection_sig_title: "एआई और डेटा साइंस इंटर्न"
+        reflection_sig_title: "एआई और डेटा साइंस इंटर्न",
+
+        // Final CTA
+        cta_heading: "मेरे बारे में और जानना चाहते हो? चलो बताता हूँ!",
+        cta_desc: "पहले मेरी UP Police Cyber Security Internship के बारे में जानो और पढ़ो (अगर ब्लॉग्स पढ़ना अच्छा लगता है)। बाकी अगर ज़्यादा डेप्थ में जाना है, प्रोजेक्ट्स, टेक स्टैक और काम देखना है, तो चलो मुख्य होम पेज पर चलते हैं!",
+        cta_btn: "होम पेज पर चलें",
+        cta_blog_btn: "यूपी पुलिस इंटर्नशिप देखें"
     }
 };
