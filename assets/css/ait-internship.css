@@ -3396,3 +3396,237 @@ body.internship-page::after {
         height: 50px;
     }
 }
+
+
+/* ==========================================================================
+   AIT-INTERNSHIP.CSS — MOBILE RESPONSIVE OVERHAUL
+   AIT Bangkok Global Innovation Internship Subpage
+   ========================================================================== */
+
+/* ---- Fluid Typography ---- */
+.internship-hero h1 {
+    font-size: clamp(1.75rem, 5.5vw, 3.5rem) !important;
+    line-height: 1.2;
+}
+
+/* Touch action on interactive elements */
+.day-selector-btn, .gallery-load-more-btn, .cta-btn, .cta-home-btn {
+    touch-action: manipulation;
+}
+
+/* iOS form zoom prevention */
+input, textarea, select {
+    font-size: 16px;
+}
+
+/* ---- 1024px: Tablet ---- */
+@media (max-width: 1024px) {
+    /* Journey layout stacked */
+    .journey-layout {
+        flex-direction: column !important;
+        gap: 1.5rem;
+    }
+
+    .journey-sidebar {
+        width: 100% !important;
+        max-width: 100% !important;
+        position: static !important;
+        top: auto !important;
+    }
+
+    /* Day selector scrollable row */
+    .day-selector {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+        padding-bottom: 0.5rem;
+    }
+
+    .day-selector-btn {
+        flex-shrink: 0;
+        scroll-snap-align: start;
+    }
+
+    /* Stats grid 2col */
+    .internship-stats-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 1rem;
+    }
+
+    /* Mentor grid 2col */
+    .mentors-grid,
+    .program-roster-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+
+    /* Gallery grid 2col */
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+}
+
+/* ---- 768px: Large Phones ---- */
+@media (max-width: 768px) {
+    .internship-hero {
+        padding: 7rem 0 3rem;
+        min-height: auto;
+    }
+
+    .internship-stats-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+
+    /* Flight journey — tighter layout */
+    .flight-journey-container {
+        padding: 1.5rem 1.25rem;
+        margin: 2rem auto 1rem;
+        max-width: 100%;
+    }
+
+    .flight-route-wrapper {
+        gap: 0.25rem;
+    }
+
+    .flag-icon-circle {
+        width: 55px;
+        height: 55px;
+    }
+
+    .country-name {
+        font-size: 0.9rem;
+    }
+
+    .airport-code {
+        font-size: 0.68rem;
+    }
+
+    .route-path-svg-wrapper {
+        height: 80px;
+    }
+
+    .flying-plane {
+        font-size: 1.1rem;
+    }
+
+    /* CTA stack */
+    .cta-buttons-group,
+    .cta-action-row {
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 0.85rem;
+    }
+    .cta-btn, .cta-home-btn {
+        width: 100%;
+        max-width: 300px;
+        text-align: center;
+        justify-content: center;
+    }
+}
+
+/* ---- 480px: Small Phones ---- */
+@media (max-width: 480px) {
+    /* Stats single col */
+    .internship-stats-grid {
+        grid-template-columns: 1fr !important;
+    }
+
+    /* Gallery single col */
+    .gallery-grid {
+        grid-template-columns: 1fr !important;
+    }
+
+    /* Flight container — xs */
+    .flight-journey-container {
+        padding: 1.25rem 0.85rem;
+        border-radius: 16px;
+    }
+
+    .flag-icon-circle {
+        width: 48px;
+        height: 48px;
+    }
+
+    .coordinates {
+        font-size: 0.55rem;
+        letter-spacing: 0;
+    }
+
+    .route-path-svg-wrapper {
+        height: 65px;
+    }
+
+    .flying-plane {
+        font-size: 1rem;
+        offset-path: path('M 5 65 Q 150 -8 290 65');
+    }
+
+    .radar-grid-svg {
+        display: none; /* Simplify on very small screens */
+    }
+
+    .flight-journey-status {
+        font-size: 0.8rem;
+        padding: 0.6rem 0.85rem;
+    }
+
+    /* Radar overlay too heavy on small screens */
+    .radar-scanline {
+        opacity: 0.3;
+    }
+
+    /* Day selector xs */
+    .day-selector-btn {
+        flex: 0 0 calc(33.33% - 0.35rem);
+        font-size: 0.72rem;
+        padding: 0.4rem 0.5rem;
+    }
+}
+
+/* ---- 375px: iPhone SE / Very Small ---- */
+@media (max-width: 375px) {
+    .flag-icon-circle {
+        width: 40px;
+        height: 40px;
+    }
+
+    .country-name {
+        font-size: 0.78rem;
+    }
+
+    .airport-code {
+        font-size: 0.6rem;
+    }
+
+    .coordinates {
+        display: none; /* Too cramped at 375px */
+    }
+
+    .sonar-wave {
+        display: none; /* Simplify pulse animations */
+    }
+
+    .route-path-svg-wrapper {
+        height: 55px;
+    }
+
+    .flying-plane {
+        offset-path: path('M 5 50 Q 100 -5 195 50');
+        font-size: 0.9rem;
+    }
+
+    .flight-journey-status span {
+        font-size: 0.75rem;
+    }
+
+    .day-selector-btn {
+        flex: 0 0 calc(50% - 0.25rem);
+    }
+
+    .internship-hero h1 {
+        font-size: 1.5rem !important;
+    }
+}
