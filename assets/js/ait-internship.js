@@ -452,18 +452,23 @@ function renderArchiveBatch() {
     for (let i = start; i < end; i++) {
         const item = currentImagesList[i];
         const card = document.createElement('div');
-        card.className = 'gallery-card';
-        card.setAttribute('data-aos', 'fade-up');
+        card.className = 'gallery-image-wrapper';
+        card.setAttribute('data-category', item.category);
+        card.setAttribute('data-index', i);
+        card.setAttribute('data-aos', 'zoom-in');
+        card.setAttribute('data-aos-delay', (i - start) * 50);
         card.style.cursor = 'pointer';
 
         card.innerHTML = `
-            <div class="gallery-media-frame">
-                <img class="gallery-img" src="${item.src}" alt="${item.alt}" loading="lazy">
-                <div class="gallery-card-overlay">
-                    <span class="view-zoom-tag"><i class="fas fa-search-plus"></i> Zoom</span>
-                </div>
+            <img src="${item.src}" alt="${item.alt}" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+            <div class="image-placeholder-hud" style="display:none;">
+                <i class="fas fa-image"></i>
+                <span>GIIP Moment</span>
             </div>
-            <div class="gallery-caption-bar">${item.caption}</div>
+            <div class="hud-image-overlay">
+                <i class="fas fa-expand"></i>
+                <span>${item.caption}</span>
+            </div>
         `;
 
         const currentIndex = i;
