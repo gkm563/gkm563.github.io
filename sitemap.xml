@@ -1,15 +1,49 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-    <url>
-        <loc>https://gkm563.github.io/</loc>
-        <lastmod>2026-06-24</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>1.0</priority>
-    </url>
-    <url>
-        <loc>https://gkm563.github.io/up-police-internship.html</loc>
-        <lastmod>2026-06-24</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+
+  <!-- ===== Portfolio Home ===== -->
+  <url>
+    <loc>https://gkm563.github.io/</loc>
+    <lastmod>2026-07-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://gkm563.github.io/assets/images/profile/Gautam_Kumar_Maurya.jpg</image:loc>
+      <image:title>Gautam Kumar Maurya — Portfolio</image:title>
+      <image:caption>Official profile photo of Gautam Kumar Maurya (GKM563), B.Tech CSE Data Science student at United Institute of Technology, Prayagraj.</image:caption>
+    </image:image>
+  </url>
+
+  <!-- ===== UP Police Cyber Security Internship ===== -->
+  <url>
+    <loc>https://gkm563.github.io/up-police-internship.html</loc>
+    <lastmod>2026-07-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://gkm563.github.io/assets/images/profile/Gautam_Kumar_Maurya.jpg</image:loc>
+      <image:title>Gautam Kumar Maurya at APCSIP-2026</image:title>
+      <image:caption>Gautam Kumar Maurya during the Amroha Police Cyber Security Internship Program 2026 (APCSIP-2026), Uttar Pradesh.</image:caption>
+    </image:image>
+  </url>
+
+  <!-- ===== AIT Bangkok Global Innovation Internship ===== -->
+  <url>
+    <loc>https://gkm563.github.io/ait-global-innovation-internship.html</loc>
+    <lastmod>2026-07-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://gkm563.github.io/assets/images/ait-bangkok/Asian_Institute_of_Technology-Logo.png</image:loc>
+      <image:title>Asian Institute of Technology (AIT), Bangkok — GIIP-2026</image:title>
+      <image:caption>AIT Bangkok official logo — host of the Global Innovation Internship Program 2026 attended by Gautam Kumar Maurya.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://gkm563.github.io/assets/images/profile/Gautam_Kumar_Maurya.jpg</image:loc>
+      <image:title>Gautam Kumar Maurya at AIT Bangkok</image:title>
+      <image:caption>Gautam Kumar Maurya (gkm563) during his 15-day Global Innovation Internship Program at AIT Bangkok, Thailand.</image:caption>
+    </image:image>
+  </url>
+
 </urlset>
