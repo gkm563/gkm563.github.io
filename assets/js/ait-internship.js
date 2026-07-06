@@ -382,7 +382,19 @@ function getThailandCaption(i) {
 
 function generateCatalog() {
     const personal = [];
+    const missing = [17, 25, 26, 27, 28, 30, 54];
     for (let i = 1; i <= 55; i++) {
+        if (missing.includes(i)) {
+            if (i === 54) {
+                personal.push({
+                    src: `assets/images/GKM563 - Personal/Thailand/Gautam_Kumar_Maurya_Thailand_Internship (54) - Copy.jpg`,
+                    alt: `Global Innovation Internship Moment #54`,
+                    category: 'journey',
+                    caption: getThailandCaption(i)
+                });
+            }
+            continue;
+        }
         personal.push({
             src: `assets/images/GKM563 - Personal/Thailand/Gautam_Kumar_Maurya_Thailand_Internship (${i}).jpg`,
             alt: `Global Innovation Internship Moment #${i}`,
