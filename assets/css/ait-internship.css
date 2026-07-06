@@ -32,6 +32,43 @@ body.internship-page {
     background-image: radial-gradient(rgba(168, 85, 247, 0.04) 1px, transparent 1px);
     background-size: 20px 20px;
     overflow-x: hidden;
+    position: relative;
+}
+
+body.internship-page::before, body.internship-page::after {
+    content: '';
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(168, 85, 247, 0.07) 0%, transparent 70%);
+    z-index: -1;
+    pointer-events: none;
+    filter: blur(80px);
+}
+
+body.internship-page::before {
+    top: 15%;
+    left: -15%;
+    animation: float1 25s ease-in-out infinite;
+}
+
+body.internship-page::after {
+    top: 55%;
+    right: -15%;
+    animation: float2 30s ease-in-out infinite;
+}
+
+@keyframes float1 {
+    0% { transform: translate(0, 0) scale(1); }
+    50% { transform: translate(60px, 100px) scale(1.15); }
+    100% { transform: translate(0, 0) scale(1); }
+}
+
+@keyframes float2 {
+    0% { transform: translate(0, 0) scale(1); }
+    50% { transform: translate(-80px, -70px) scale(1.1); }
+    100% { transform: translate(0, 0) scale(1); }
 }
 
 /* Page Intro/Hero Header */
@@ -325,10 +362,14 @@ body.internship-page {
     transition: all 0.25s ease;
 }
 
+@keyframes pulseDot {
+    0% { transform: scale(1.2); box-shadow: 0 0 5px var(--day-accent); }
+    50% { transform: scale(1.7); box-shadow: 0 0 15px var(--day-accent); }
+    100% { transform: scale(1.2); box-shadow: 0 0 5px var(--day-accent); }
+}
+
 .day-nav-item.active .nav-dot {
-    background-color: var(--google-blue);
-    box-shadow: 0 0 8px var(--google-blue);
-    transform: scale(1.4);
+    animation: pulseDot 2s infinite ease-in-out;
 }
 
 /* Dynamic Scroll-spy Sidebar Theme Colors */
@@ -425,6 +466,37 @@ body.internship-page {
         var(--google-blue) 100%);
     border-radius: 10px;
     opacity: 0.8;
+}
+
+@keyframes timelineFlow {
+    0% {
+        top: 0%;
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+    }
+    90% {
+        opacity: 1;
+    }
+    100% {
+        top: 100%;
+        opacity: 0;
+    }
+}
+
+.timeline-journey::after {
+    content: '';
+    position: absolute;
+    top: 15px;
+    left: 6.5px;
+    width: 5px;
+    height: 150px;
+    background: linear-gradient(180deg, transparent, var(--google-blue), var(--google-red), var(--google-yellow), var(--google-green), transparent);
+    filter: blur(1px);
+    border-radius: 10px;
+    animation: timelineFlow 7s linear infinite;
+    z-index: 1;
 }
 
 /* Timeline Cards */
@@ -651,7 +723,41 @@ body.internship-page {
 
 /* Card Body Blocks */
 .card-body-section {
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
+    background: rgba(15, 23, 42, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.03);
+    border-radius: 16px;
+    padding: 1.5rem;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.card-body-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 3px;
+    height: 100%;
+    background: var(--day-accent);
+    transition: width 0.3s ease;
+    opacity: 0.8;
+}
+
+.card-body-section:hover {
+    background: rgba(var(--day-accent-rgb), 0.04);
+    border-color: rgba(var(--day-accent-rgb), 0.2);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
+}
+
+.card-body-section:hover::before {
+    width: 6px;
+}
+
+.card-body-section.learnings-box::before {
+    display: none;
 }
 
 .card-body-section h4 {
