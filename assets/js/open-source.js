@@ -187,94 +187,112 @@ function initMobileNav() {
    ========================================== */
 const contributions = [
     {
-        title: "Add Ukrainian translation for MediaStatistics (mediawiki/core)",
-        desc: "Integrated localization configurations and interface keys to enable proper MediaStatistics translations on Ukrainian Wikipedia instances.",
-        repo: "mediawiki/core",
-        type: "translate",
-        status: "Merged",
-        id: "Gerrit Patch",
-        link: "https://gerrit.wikimedia.org/r/q/owner:gkmwin563@gmail.com"
-    },
-    {
-        title: "Mark Experiment::setSchema as deprecated (mediawiki/extensions/TestKitchen)",
-        desc: "Cleaned up deprecated APIs inside the TestKitchen extension, warning developers of upcoming removals and improving code hygiene.",
-        repo: "mediawiki/extensions/TestKitchen",
-        type: "wikimedia",
-        status: "Merged",
-        id: "Gerrit Patch",
-        link: "https://gerrit.wikimedia.org/r/q/owner:gkmwin563@gmail.com"
-    },
-    {
-        title: "Add regression test for comments in noreferences section (pywikibot/core)",
-        desc: "Implemented regression test coverage ensuring pywikibot correctly processes code and parser comments inside sections marked with no references.",
-        repo: "pywikibot/core",
-        type: "wikimedia",
-        status: "Merged",
-        id: "Gerrit Patch",
-        link: "https://gerrit.wikimedia.org/r/q/owner:gkmwin563@gmail.com"
-    },
-    {
-        title: "Add gender support to no mentored exception message (GrowthExperiments)",
-        desc: "Updated exception messaging in the GrowthExperiments onboarding tools to add proper gender conjugation and translation formats.",
-        repo: "mediawiki/extensions/GrowthExperiments",
-        type: "wikimedia",
-        status: "Merged",
-        id: "Gerrit Patch",
-        link: "https://gerrit.wikimedia.org/r/q/owner:gkmwin563@gmail.com"
-    },
-    {
-        title: "Handle malformed URI fragments in TitleUtil (skins/MinervaNeue)",
-        desc: "Resolved client-side errors and page loading failures caused by malformed hash links or URI fragments inside Wikipedia's MinervaNeue mobile skin.",
-        repo: "mediawiki/skins/MinervaNeue",
-        type: "wikimedia",
-        status: "Merged",
-        id: "Gerrit Patch",
-        link: "https://gerrit.wikimedia.org/r/q/owner:gkmwin563@gmail.com"
-    },
-    {
-        title: "Add Special:MediaStats alias for Special:MediaStatistics (mediawiki/core)",
-        desc: "Created developer and administrative alias shortcodes pointing directly to the Wikipedia MediaStatistics special page utility.",
-        repo: "mediawiki/core",
-        type: "wikimedia",
-        status: "Merged",
-        id: "Gerrit Patch",
-        link: "https://gerrit.wikimedia.org/r/q/owner:gkmwin563@gmail.com"
-    },
-    {
-        title: "Add Special:MuteUser alias for Special:Mute (mediawiki/core)",
-        desc: "Implemented routing configuration aliases mapped to Wikipedia user muting control utilities to make site management commands cleaner.",
-        repo: "mediawiki/core",
-        type: "wikimedia",
-        status: "Merged",
-        id: "Gerrit Patch",
-        link: "https://gerrit.wikimedia.org/r/q/owner:gkmwin563@gmail.com"
-    },
-    {
-        title: "HelpPanel: fix grey header icons in quick tips dialog (GrowthExperiments)",
-        desc: "Debugged and fixed icon styling attributes to restore contrast configurations on quick tips dialog headers in the HelpPanel UI layout.",
-        repo: "mediawiki/extensions/GrowthExperiments",
+        title: "T431649: Fix image option parsing inside tables (Parsoid Parser)",
+        desc: "Investigated and proposed table layout image syntax corrections inside the Parsoid parsing service to resolve image positioning anomalies inside cells.",
+        repo: "mediawiki/services/parsoid",
         type: "wikimedia",
         status: "Active / Reviewing",
-        id: "Gerrit Patch",
-        link: "https://gerrit.wikimedia.org/r/q/owner:gkmwin563@gmail.com"
+        id: "T431649",
+        link: "https://phabricator.wikimedia.org/T431649"
     },
     {
-        title: "editcheck: Highlight partial regex matches (mediawiki/extensions/VisualEditor)",
+        title: "T431361: Show partial title matches in TextMatchEditCheck (VisualEditor)",
         desc: "Working on styling updates within VisualEditor to dynamically highlight partial regex matching strings inside the edit checking modules.",
         repo: "mediawiki/extensions/VisualEditor",
         type: "wikimedia",
         status: "Active / Reviewing",
-        id: "Gerrit Patch",
-        link: "https://gerrit.wikimedia.org/r/q/owner:gkmwin563@gmail.com"
+        id: "T431361",
+        link: "https://phabricator.wikimedia.org/T431361"
     },
     {
-        title: "Fix image option parsing inside tables (mediawiki/services/parsoid)",
-        desc: "Investigated and proposed table layout image syntax corrections inside the Parsoid parsing service to resolve image positioning anomalies inside cells.",
-        repo: "mediawiki/services/parsoid",
+        title: "T431180: Translate special page to Ukrainian (MediaWiki Special pages)",
+        desc: "Integrated localization configurations and interface keys to enable proper MediaStatistics translations on Ukrainian Wikipedia instances.",
+        repo: "mediawiki/core",
+        type: "translate",
+        status: "Merged",
+        id: "T431180",
+        link: "https://phabricator.wikimedia.org/T431180"
+    },
+    {
+        title: "T407336: Header buttons inside the quick tips dialog look inactive/disabled",
+        desc: "Debugged and fixed icon styling attributes to restore contrast configurations on quick tips dialog headers in the HelpPanel UI layout.",
+        repo: "mediawiki/extensions/GrowthExperiments",
         type: "wikimedia",
-        status: "Abandoned",
-        id: "Gerrit Patch",
-        link: "https://gerrit.wikimedia.org/r/q/owner:gkmwin563@gmail.com"
+        status: "Active / Reviewing",
+        id: "T407336",
+        link: "https://phabricator.wikimedia.org/T407336"
+    },
+    {
+        title: "T429172: Mark Experiment::setSchema as deprecated (TestKitchen)",
+        desc: "Cleaned up deprecated APIs inside the TestKitchen extension, warning developers of upcoming removals and improving code hygiene.",
+        repo: "mediawiki/extensions/TestKitchen",
+        type: "wikimedia",
+        status: "Merged",
+        id: "T429172",
+        link: "https://phabricator.wikimedia.org/T429172"
+    },
+    {
+        title: "T426895: noreferences.py incorrectly inserts references template below footer templates",
+        desc: "Implemented regression test coverage ensuring pywikibot correctly processes code and parser comments inside sections marked with no references.",
+        repo: "pywikibot/core",
+        type: "wikimedia",
+        status: "Merged",
+        id: "T426895",
+        link: "https://phabricator.wikimedia.org/T426895"
+    },
+    {
+        title: "T416226: Add gender support to growthexperiments-exception-no-mentored-text",
+        desc: "Updated exception messaging in the GrowthExperiments mentorship onboarding tools to add proper gender conjugation and translation formats.",
+        repo: "mediawiki/extensions/GrowthExperiments",
+        type: "wikimedia",
+        status: "Merged",
+        id: "T416226",
+        link: "https://phabricator.wikimedia.org/T416226"
+    },
+    {
+        title: "T424875: Malformed URI on certain red links on page load (MinervaNeue)",
+        desc: "Resolved client-side errors and page loading failures caused by malformed hash links or URI fragments inside Wikipedia's MinervaNeue mobile skin.",
+        repo: "mediawiki/skins/MinervaNeue",
+        type: "wikimedia",
+        status: "Merged",
+        id: "T424875",
+        link: "https://phabricator.wikimedia.org/T424875"
+    },
+    {
+        title: "T424124: Alias Special:MediaStats to Special:MediaStatistics (mediawiki/core)",
+        desc: "Created developer and administrative alias shortcodes pointing directly to the Wikipedia MediaStatistics special page utility.",
+        repo: "mediawiki/core",
+        type: "wikimedia",
+        status: "Merged",
+        id: "T424124",
+        link: "https://phabricator.wikimedia.org/T424124"
+    },
+    {
+        title: "T424125: Alias Special:MuteUser to Special:Mute (mediawiki/core)",
+        desc: "Implemented routing configuration aliases mapped to Wikipedia user muting control utilities to make site management commands cleaner.",
+        repo: "mediawiki/core",
+        type: "wikimedia",
+        status: "Merged",
+        id: "T424125",
+        link: "https://phabricator.wikimedia.org/T424125"
+    },
+    {
+        title: "T428848: Add Tsishingini (tsw) to translatewiki.net",
+        desc: "Integrated Tsishingini language code and support configuration maps to translatewiki.net global translation portals.",
+        repo: "translatewiki.net",
+        type: "translate",
+        status: "Merged",
+        id: "T428848",
+        link: "https://phabricator.wikimedia.org/T428848"
+    },
+    {
+        title: "T423735: Adding Southern Uzbek (uzs) to Translatewiki",
+        desc: "Added database mapping files and localization tables to fully register Southern Uzbek inside the global Translatewiki system.",
+        repo: "translatewiki.net",
+        type: "translate",
+        status: "Merged",
+        id: "T423735",
+        link: "https://phabricator.wikimedia.org/T423735"
     },
     {
         title: "WikiFunctions Automation & CI/CD runner pipelines",
