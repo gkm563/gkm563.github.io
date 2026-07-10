@@ -250,6 +250,15 @@ const contributions = [
         link: "https://phabricator.wikimedia.org/T416226"
     },
     {
+        title: "style: Remove unnecessary opacity override for process dialog icons (GrowthExperiments)",
+        desc: "Proposed style cleanup removing redundant CSS opacity overrides on dialog icons to preserve default OOUI visibility.",
+        repo: "mediawiki/extensions/GrowthExperiments",
+        type: "wikimedia",
+        status: "Active / Reviewing",
+        id: "Gerrit Patch",
+        link: "https://gerrit.wikimedia.org/r/q/owner:gkmwin563@gmail.com"
+    },
+    {
         title: "T424875: Malformed URI on certain red links on page load (MinervaNeue)",
         desc: "Resolved client-side errors and page loading failures caused by malformed hash links or URI fragments inside Wikipedia's MinervaNeue mobile skin.",
         repo: "mediawiki/skins/MinervaNeue",
@@ -347,6 +356,51 @@ const contributions = [
         status: "Merged",
         id: "GitHub PR #5",
         link: "https://github.com/gkm563/SourceWiki"
+    },
+    {
+        title: "fix(flight-animation): correct airplane offset-rotate from 90deg to -90deg",
+        desc: "Corrected SVG offset rotation rules inside the interactive map flights tracker component to align the aircraft vector trajectory properly.",
+        repo: "gkm563/gkm563.github.io",
+        type: "git",
+        status: "Merged",
+        id: "GitHub PR #2",
+        link: "https://github.com/gkm563/gkm563.github.io/pull/2"
+    },
+    {
+        title: "Initialize Portfolio Structure & Translation Engine",
+        desc: "Structured the index bento grid UI layout and loaded localized translation routing mechanisms dynamically on the browser client.",
+        repo: "gkm563/gkm563.github.io",
+        type: "git",
+        status: "Merged",
+        id: "GitHub PR #1",
+        link: "https://github.com/gkm563/gkm563.github.io/pull/1"
+    },
+    {
+        title: "Add Tsishingini (tsw) language metadata (wikimedia/language-data)",
+        desc: "Integrated language profile parameters and locale mappings for Tsishingini (tsw) into Wikimedia's core global dataset.",
+        repo: "wikimedia/language-data",
+        type: "git",
+        status: "Merged",
+        id: "GitHub PR #503",
+        link: "https://github.com/wikimedia/language-data/pull/503"
+    },
+    {
+        title: "docs: add comprehensive README with features, db setup, and deployment (gkm563/uginotes)",
+        desc: "Wrote exhaustive developer documentation outlining MongoDB database schemas, server configuration variables, and PM2 process manager deployment.",
+        repo: "gkm563/uginotes",
+        type: "git",
+        status: "Merged",
+        id: "GitHub PR #1",
+        link: "https://github.com/gkm563/uginotes/pull/1"
+    },
+    {
+        title: "Added complete frontend website (UDTech-India/buildx-india-website)",
+        desc: "Developed and integrated responsive sections, modern sliders, and styled contact forms using HTML/CSS/JS for the BuildX India ecosystem.",
+        repo: "UDTech-India/buildx-india-website",
+        type: "git",
+        status: "Merged",
+        id: "GitHub PR #6",
+        link: "https://github.com/UDTech-India/buildx-india-website/pull/6"
     },
     {
         title: "WikiFunctions Automation & CI/CD runner pipelines",
