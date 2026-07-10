@@ -295,6 +295,24 @@ const contributions = [
         link: "https://phabricator.wikimedia.org/T423735"
     },
     {
+        title: "Add Southern Uzbek (uzs) to language-data (wikimedia/language-data)",
+        desc: "Integrated configuration maps and language registry tables for Southern Uzbek (uzs) into Wikimedia's core global language dataset.",
+        repo: "wikimedia/language-data",
+        type: "git",
+        status: "Merged",
+        id: "GitHub PR #506",
+        link: "https://github.com/wikimedia/language-data/pull/506"
+    },
+    {
+        title: "Updating territory-language information from upstream automatically (wikimedia/language-data)",
+        desc: "Synchronized territory-to-language metadata maps automatically from CLDR upstream data sources into the Wikimedia translation core repository.",
+        repo: "wikimedia/language-data",
+        type: "git",
+        status: "Merged",
+        id: "GitHub PR #505",
+        link: "https://github.com/wikimedia/language-data/pull/505"
+    },
+    {
         title: "T431217: README: reconcile Node version guidance (Tiisu/SourceWiki)",
         desc: "Resolved inconsistent node environment configurations by updating the prerequites to state v18+ across the README.md documentation.",
         repo: "Tiisu/SourceWiki",
