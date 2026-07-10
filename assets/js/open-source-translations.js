@@ -56,6 +56,7 @@ window.OPEN_SOURCE_TRANSLATIONS = {
         spotlight_bullet3: "Special thanks to WikiClub Tech India (OKI-IIITH), WikiClub Tech-UIT, Ankit Sir, and my technical mentors (Sanskar, Mohd, Shivaansh, Reeti, Adarsh, Sarthak, T Ebenezer, Jagadeeshwar) for the constant reviews, feedback, and support.",
         spotlight_btn_text: "View Meta-Wiki Ledger",
         spotlight_report_btn_text: "Download PDF Report",
+        spotlight_featured_title: "Featured Contributions Ledger Details",
         
         contrib_title: "Key Contributions Archive",
         contrib_subtitle: "A curated list of merged patches and solved Phabricator tasks in production.",
@@ -134,6 +135,7 @@ window.OPEN_SOURCE_TRANSLATIONS = {
         spotlight_bullet3: "विकीक्लब टेक इंडिया (OKI-IIITH), विकीक्लब टेक-UIT, अंकित सर, और मेरे तकनीकी मेंटर्स (संस्कार, मोहम्मद, शिवांश, रीति, आदर्श, सार्थक, टी एबेनेज़र, जगदीश्वर) को उनके सहयोग और समीक्षा मार्गदर्शन के लिए विशेष धन्यवाद।",
         spotlight_btn_text: "मेटा-विकी लेजर देखें",
         spotlight_report_btn_text: "पीडीएफ रिपोर्ट डाउनलोड करें",
+        spotlight_featured_title: "विशेष योगदान लेजर विवरण",
         
         contrib_title: "प्रमुख योगदान संग्रह",
         contrib_subtitle: "मर्ज किए गए पैच और सुलझाए गए Phabricator कार्यों की एक सूची जो उत्पादन में सक्रिय हैं।",

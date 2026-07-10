@@ -277,6 +277,90 @@
                                     <span data-translate="spotlight_bullet3">Special thanks to WikiClub Tech India (OKI-IIITH), WikiClub Tech-UIT, Ankit Sir, and my technical mentors (Sanskar, Mohd, Shivaansh, Reeti, Adarsh, Sarthak, T Ebenezer, Jagadeeshwar) for the constant reviews, feedback, and support.</span>
                                 </div>
                             </div>
+                            
+                            <!-- Featured Contributions Grid -->
+                            <div class="spotlight-featured-grid" style="margin-top: 2rem; display: grid; grid-template-columns: 1fr; gap: 1.5rem;">
+                                <h3 style="color: white; font-size: 1.25rem; font-weight: 700; margin-bottom: 0.5rem;" data-translate="spotlight_featured_title">Featured Contributions Showcase</h3>
+                                
+                                <!-- Card 1: Abstract Wikipedia -->
+                                <div class="featured-card" style="background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.05); padding: 1.5rem; border-radius: 16px; transition: all 0.3s ease;">
+                                    <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.75rem; flex-wrap: wrap; gap: 0.5rem;">
+                                        <h4 style="color: white; font-size: 1.05rem; font-weight: 700; margin: 0;">Function Orchestrator (Abstract Wikipedia)</h4>
+                                        <span style="background: rgba(168, 85, 247, 0.12); color: #c084fc; border: 1px solid rgba(168, 85, 247, 0.25); font-size: 0.7rem; font-weight: 700; padding: 0.15rem 0.5rem; border-radius: 4px; text-transform: uppercase;">Backend</span>
+                                    </div>
+                                    <p style="color: #cbd5e1; font-size: 0.9rem; font-weight: 600; margin-bottom: 0.5rem;">Task: Add accessor methods for WFFunctionCall internals (T426338)</p>
+                                    <p style="color: #94a3b8; font-size: 0.85rem; line-height: 1.6; margin-bottom: 1rem;">
+                                        "Implemented proper accessor methods — getFunction(), getArgument(), and getArguments() — to improve encapsulation and maintainability of the WFFunctionCall class in the Function Orchestrator production codebase. <strong>This is among the most architecturally significant contributions in this cohort.</strong>"
+                                    </p>
+                                    <div style="display: flex; gap: 1rem; font-size: 0.8rem;">
+                                        <a href="https://phabricator.wikimedia.org/T426338" target="_blank" rel="noopener noreferrer" style="color: #a855f7; text-decoration: none; font-weight: 600; display: inline-flex; align-items: center; gap: 0.25rem;">Phabricator <i class="fas fa-arrow-up-right-from-square" style="font-size: 0.7rem;"></i></a>
+                                        <a href="https://gitlab.wikimedia.org/repos/abstract-wiki/wikifunctions/function-orchestrator/-/merge_requests/684" target="_blank" rel="noopener noreferrer" style="color: #a855f7; text-decoration: none; font-weight: 600; display: inline-flex; align-items: center; gap: 0.25rem;">GitLab MR <i class="fas fa-arrow-up-right-from-square" style="font-size: 0.7rem;"></i></a>
+                                    </div>
+                                </div>
+
+                                <!-- Card 2: MinervaNeue Skin -->
+                                <div class="featured-card" style="background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.05); padding: 1.5rem; border-radius: 16px; transition: all 0.3s ease;">
+                                    <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.75rem; flex-wrap: wrap; gap: 0.5rem;">
+                                        <h4 style="color: white; font-size: 1.05rem; font-weight: 700; margin: 0;">MinervaNeue Skin</h4>
+                                        <span style="background: rgba(14, 165, 233, 0.12); color: #38bdf8; border: 1px solid rgba(14, 165, 233, 0.25); font-size: 0.7rem; font-weight: 700; padding: 0.15rem 0.5rem; border-radius: 4px; text-transform: uppercase;">Frontend</span>
+                                    </div>
+                                    <p style="color: #cbd5e1; font-size: 0.9rem; font-weight: 600; margin-bottom: 0.5rem;">Task: Handle malformed URI fragments in TitleUtil (T424875)</p>
+                                    <p style="color: #94a3b8; font-size: 0.85rem; line-height: 1.6; margin-bottom: 1rem;">
+                                        "Added defensive error handling around URI fragment decoding in MinervaNeue's TitleUtil to prevent URIError exceptions caused by malformed red links containing invalid percent-encoded sequences."
+                                    </p>
+                                    <div style="display: flex; gap: 1rem; font-size: 0.8rem;">
+                                        <a href="https://phabricator.wikimedia.org/T424875" target="_blank" rel="noopener noreferrer" style="color: #a855f7; text-decoration: none; font-weight: 600; display: inline-flex; align-items: center; gap: 0.25rem;">Phabricator <i class="fas fa-arrow-up-right-from-square" style="font-size: 0.7rem;"></i></a>
+                                        <a href="https://gerrit.wikimedia.org/r/c/mediawiki/skins/MinervaNeue/+/1287961" target="_blank" rel="noopener noreferrer" style="color: #a855f7; text-decoration: none; font-weight: 600; display: inline-flex; align-items: center; gap: 0.25rem;">Gerrit Patch <i class="fas fa-arrow-up-right-from-square" style="font-size: 0.7rem;"></i></a>
+                                    </div>
+                                </div>
+
+                                <!-- Card 3: GrowthExperiments -->
+                                <div class="featured-card" style="background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.05); padding: 1.5rem; border-radius: 16px; transition: all 0.3s ease;">
+                                    <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.75rem; flex-wrap: wrap; gap: 0.5rem;">
+                                        <h4 style="color: white; font-size: 1.05rem; font-weight: 700; margin: 0;">GrowthExperiments Extension</h4>
+                                        <span style="background: rgba(234, 179, 8, 0.12); color: #fef08a; border: 1px solid rgba(234, 179, 8, 0.25); font-size: 0.7rem; font-weight: 700; padding: 0.15rem 0.5rem; border-radius: 4px; text-transform: uppercase;">i18n / L10n</span>
+                                    </div>
+                                    <p style="color: #cbd5e1; font-size: 0.9rem; font-weight: 600; margin-bottom: 0.5rem;">Task: Add gender support to mentored exception message (T416226)</p>
+                                    <p style="color: #94a3b8; font-size: 0.85rem; line-height: 1.6; margin-bottom: 1rem;">
+                                        "Resolved accessibility gap inside growthexperiments-exception-no-mentored-text, implementing proper grammatical gender support to match i18n standards."
+                                    </p>
+                                    <div style="display: flex; gap: 1rem; font-size: 0.8rem;">
+                                        <a href="https://phabricator.wikimedia.org/T416226" target="_blank" rel="noopener noreferrer" style="color: #a855f7; text-decoration: none; font-weight: 600; display: inline-flex; align-items: center; gap: 0.25rem;">Phabricator <i class="fas fa-arrow-up-right-from-square" style="font-size: 0.7rem;"></i></a>
+                                        <a href="https://gerrit.wikimedia.org/r/c/mediawiki/extensions/GrowthExperiments/+/1289010" target="_blank" rel="noopener noreferrer" style="color: #a855f7; text-decoration: none; font-weight: 600; display: inline-flex; align-items: center; gap: 0.25rem;">Gerrit Patch <i class="fas fa-arrow-up-right-from-square" style="font-size: 0.7rem;"></i></a>
+                                    </div>
+                                </div>
+
+                                <!-- Card 4: MediaWiki Core -->
+                                <div class="featured-card" style="background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.05); padding: 1.5rem; border-radius: 16px; transition: all 0.3s ease;">
+                                    <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.75rem; flex-wrap: wrap; gap: 0.5rem;">
+                                        <h4 style="color: white; font-size: 1.05rem; font-weight: 700; margin: 0;">MediaWiki Core</h4>
+                                        <span style="background: rgba(168, 85, 247, 0.12); color: #c084fc; border: 1px solid rgba(168, 85, 247, 0.25); font-size: 0.7rem; font-weight: 700; padding: 0.15rem 0.5rem; border-radius: 4px; text-transform: uppercase;">Backend</span>
+                                    </div>
+                                    <p style="color: #cbd5e1; font-size: 0.9rem; font-weight: 600; margin-bottom: 0.5rem;">Task: Add Special:MediaStats and Special:MuteUser page aliases</p>
+                                    <p style="color: #94a3b8; font-size: 0.85rem; line-height: 1.6; margin-bottom: 1rem;">
+                                        "Contributed page aliases to improve discoverability of Special Pages for editors without requiring canonical path changes."
+                                    </p>
+                                    <div style="display: flex; gap: 1rem; font-size: 0.8rem;">
+                                        <a href="https://gerrit.wikimedia.org/r/c/mediawiki/core/+/1276283" target="_blank" rel="noopener noreferrer" style="color: #a855f7; text-decoration: none; font-weight: 600; display: inline-flex; align-items: center; gap: 0.25rem;">Gerrit Patch <i class="fas fa-arrow-up-right-from-square" style="font-size: 0.7rem;"></i></a>
+                                    </div>
+                                </div>
+
+                                <!-- Card 5: Pywikibot -->
+                                <div class="featured-card" style="background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.05); padding: 1.5rem; border-radius: 16px; transition: all 0.3s ease;">
+                                    <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.75rem; flex-wrap: wrap; gap: 0.5rem;">
+                                        <h4 style="color: white; font-size: 1.05rem; font-weight: 700; margin: 0;">Pywikibot Core</h4>
+                                        <span style="background: rgba(244, 63, 94, 0.12); color: #fda4af; border: 1px solid rgba(244, 63, 94, 0.25); font-size: 0.7rem; font-weight: 700; padding: 0.15rem 0.5rem; border-radius: 4px; text-transform: uppercase;">Quality Assurance</span>
+                                    </div>
+                                    <p style="color: #cbd5e1; font-size: 0.9rem; font-weight: 600; margin-bottom: 0.5rem;">Task: Add regression test for noreferences references section handling</p>
+                                    <p style="color: #94a3b8; font-size: 0.85rem; line-height: 1.6; margin-bottom: 1rem;">
+                                        "Implemented regression tests verifying that HTML comments inside references sections remain positioned correctly above the closing tags."
+                                    </p>
+                                    <div style="display: flex; gap: 1rem; font-size: 0.8rem;">
+                                        <a href="https://gerrit.wikimedia.org/r/c/pywikibot/core/+/1290141" target="_blank" rel="noopener noreferrer" style="color: #a855f7; text-decoration: none; font-weight: 600; display: inline-flex; align-items: center; gap: 0.25rem;">Gerrit Patch <i class="fas fa-arrow-up-right-from-square" style="font-size: 0.7rem;"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+
                             <div class="spotlight-action" style="margin-top: 2rem; display: flex; gap: 1rem; flex-wrap: wrap;">
                                 <a href="https://meta.wikimedia.org/wiki/IIITH-OKI/Wikiclub_Tech/Road_To_Wiki/Contribution_Ledger" target="_blank" rel="noopener noreferrer" class="spotlight-btn" style="display: inline-flex; align-items: center; gap: 0.65rem; background: linear-gradient(135deg, #a855f7 0%, #7c3aed 100%); color: white; padding: 0.8rem 1.6rem; border-radius: 50px; font-weight: 600; font-size: 0.9rem; text-decoration: none; box-shadow: 0 4px 15px rgba(124, 58, 237, 0.35);">
                                     <span data-translate="spotlight_btn_text">View Meta-Wiki Ledger</span>
