@@ -55,7 +55,20 @@ window.OPEN_SOURCE_TRANSLATIONS = {
         contrib_filter_git: "GitHub & GitLab",
         
         profiles_title: "Developer Footprint",
-        profiles_subtitle: "Connect with my profiles across collaborative software development channels."
+        profiles_subtitle: "Connect with my profiles across collaborative software development channels.",
+        
+        badge_wiki_title: "Wikipedia Profile",
+        badge_wiki_desc: "User:Gkm563 on English & Hindi Wikis",
+        badge_wikimedia_title: "Wikimedia Developer",
+        badge_wikimedia_desc: "Phabricator Profiles & Gerrit Patch Review",
+        badge_github_title: "GitHub Profile",
+        badge_github_desc: "gkm563 Repositories & Contributions",
+        badge_gitlab_title: "GitLab Profile",
+        badge_gitlab_desc: "gkm563 Projects & Runner Workspaces",
+        badge_gerrit_title: "Gerrit Code Review",
+        badge_gerrit_desc: "Gkm563 Reviews & Merged Code Patches",
+        badge_translate_title: "Translatewiki Profile",
+        badge_translate_desc: "Localization Keys & Language Onboarding"
     },
     hi: {
         nav_home: '<i class="fas fa-home nav-icon"></i> ← मुख्य पोर्टफोलियो',
@@ -109,6 +122,19 @@ window.OPEN_SOURCE_TRANSLATIONS = {
         contrib_filter_git: "गिटहब और गिटलैब",
         
         profiles_title: "डेवलपर प्रोफाइल",
-        profiles_subtitle: "सहयोगी सॉफ्टवेयर विकास चैनलों पर मेरे प्रोफाइल से जुड़ें।"
+        profiles_subtitle: "सहयोगी सॉफ्टवेयर विकास चैनलों पर मेरे प्रोफाइल से जुड़ें।",
+        
+        badge_wiki_title: "विकिपीडिया प्रोफाइल",
+        badge_wiki_desc: "अंग्रेजी और हिंदी विकी पर User:Gkm563",
+        badge_wikimedia_title: "विकिमीडिया डेवलपर",
+        badge_wikimedia_desc: "Phabricator प्रोफाइल और गेरिट पैच समीक्षा",
+        badge_github_title: "गिटहब प्रोफाइल",
+        badge_github_desc: "gkm563 रिपॉजिटरी और योगदान",
+        badge_gitlab_title: "गिटलैब प्रोफाइल",
+        badge_gitlab_desc: "gkm563 प्रोजेक्ट्स और रनर वर्कस्पेस",
+        badge_gerrit_title: "गेरिट कोड समीक्षा",
+        badge_gerrit_desc: "Gkm563 समीक्षाएं और मर्ज किए गए पैच",
+        badge_translate_title: "ट्रांसलेटविकि प्रोफाइल",
+        badge_translate_desc: "स्थानीयकरण कुंजियाँ और भाषा ऑनबोर्डिंग"
     }
 };
