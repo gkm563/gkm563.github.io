@@ -184,48 +184,93 @@ function initMobileNav() {
    ========================================== */
 const contributions = [
     {
-        title: "T431649: Error parsing image syntax in table (Parsoid Parser)",
-        desc: "Fixed a critical parsing bug in MediaWiki's Parsoid parsing engine where certain image syntax configurations inside complex wikitext tables caused parser crashes.",
-        repo: "mediawiki/services/parsoid",
-        type: "wikimedia",
-        status: "Merged & Deployed",
-        id: "T431649",
-        link: "https://phabricator.wikimedia.org/T431649"
-    },
-    {
-        title: "T426338: Accessors for WFFunctionCall internals (WikiFunctions)",
-        desc: "Implemented clean accessor methods for internal states and properties of WFFunctionCall within the WikiFunctions codebase, supporting modular extension access.",
-        repo: "mediawiki/extensions/WikiFunctions",
-        type: "wikimedia",
-        status: "Merged & Deployed",
-        id: "T426338",
-        link: "https://phabricator.wikimedia.org/T426338"
-    },
-    {
-        title: "T431180: Special page localization to Ukrainian",
-        desc: "Added translation assets and configured interface support for MediaWiki special page translation into Ukrainian, boosting internationalization reach.",
-        repo: "translatewiki.net",
+        title: "Add Ukrainian translation for MediaStatistics (mediawiki/core)",
+        desc: "Integrated localization configurations and interface keys to enable proper MediaStatistics translations on Ukrainian Wikipedia instances.",
+        repo: "mediawiki/core",
         type: "translate",
-        status: "Merged & Deployed",
-        id: "T431180",
-        link: "https://phabricator.wikimedia.org/T431180"
+        status: "Merged",
+        id: "Gerrit Patch",
+        link: "https://gerrit.wikimedia.org/r/q/owner:gkmwin563@gmail.com"
     },
     {
-        title: "T423735: Adding Southern Uzbek (uzs) to Translatewiki",
-        desc: "Integrated the Southern Uzbek language code and configuration mappings to the global Translatewiki system, enabling translation pipelines for the language.",
-        repo: "translatewiki.net",
-        type: "translate",
-        status: "Merged & Deployed",
-        id: "T423735",
-        link: "https://phabricator.wikimedia.org/T423735"
+        title: "Mark Experiment::setSchema as deprecated (mediawiki/extensions/TestKitchen)",
+        desc: "Cleaned up deprecated APIs inside the TestKitchen extension, warning developers of upcoming removals and improving code hygiene.",
+        repo: "mediawiki/extensions/TestKitchen",
+        type: "wikimedia",
+        status: "Merged",
+        id: "Gerrit Patch",
+        link: "https://gerrit.wikimedia.org/r/q/owner:gkmwin563@gmail.com"
     },
     {
-        title: "MediaWiki Core Parser improvements & localization scripts",
-        desc: "Contributed various configuration patches and localization script setups to streamline the parsing of multi-language wikitext variables.",
+        title: "Add regression test for comments in noreferences section (pywikibot/core)",
+        desc: "Implemented regression test coverage ensuring pywikibot correctly processes code and parser comments inside sections marked with no references.",
+        repo: "pywikibot/core",
+        type: "wikimedia",
+        status: "Merged",
+        id: "Gerrit Patch",
+        link: "https://gerrit.wikimedia.org/r/q/owner:gkmwin563@gmail.com"
+    },
+    {
+        title: "Add gender support to no mentored exception message (GrowthExperiments)",
+        desc: "Updated exception messaging in the GrowthExperiments onboarding tools to add proper gender conjugation and translation formats.",
+        repo: "mediawiki/extensions/GrowthExperiments",
+        type: "wikimedia",
+        status: "Merged",
+        id: "Gerrit Patch",
+        link: "https://gerrit.wikimedia.org/r/q/owner:gkmwin563@gmail.com"
+    },
+    {
+        title: "Handle malformed URI fragments in TitleUtil (skins/MinervaNeue)",
+        desc: "Resolved client-side errors and page loading failures caused by malformed hash links or URI fragments inside Wikipedia's MinervaNeue mobile skin.",
+        repo: "mediawiki/skins/MinervaNeue",
+        type: "wikimedia",
+        status: "Merged",
+        id: "Gerrit Patch",
+        link: "https://gerrit.wikimedia.org/r/q/owner:gkmwin563@gmail.com"
+    },
+    {
+        title: "Add Special:MediaStats alias for Special:MediaStatistics (mediawiki/core)",
+        desc: "Created developer and administrative alias shortcodes pointing directly to the Wikipedia MediaStatistics special page utility.",
         repo: "mediawiki/core",
         type: "wikimedia",
         status: "Merged",
-        id: "Gerrit Patchset",
+        id: "Gerrit Patch",
+        link: "https://gerrit.wikimedia.org/r/q/owner:gkmwin563@gmail.com"
+    },
+    {
+        title: "Add Special:MuteUser alias for Special:Mute (mediawiki/core)",
+        desc: "Implemented routing configuration aliases mapped to Wikipedia user muting control utilities to make site management commands cleaner.",
+        repo: "mediawiki/core",
+        type: "wikimedia",
+        status: "Merged",
+        id: "Gerrit Patch",
+        link: "https://gerrit.wikimedia.org/r/q/owner:gkmwin563@gmail.com"
+    },
+    {
+        title: "HelpPanel: fix grey header icons in quick tips dialog (GrowthExperiments)",
+        desc: "Debugged and fixed icon styling attributes to restore contrast configurations on quick tips dialog headers in the HelpPanel UI layout.",
+        repo: "mediawiki/extensions/GrowthExperiments",
+        type: "wikimedia",
+        status: "Active / Reviewing",
+        id: "Gerrit Patch",
+        link: "https://gerrit.wikimedia.org/r/q/owner:gkmwin563@gmail.com"
+    },
+    {
+        title: "editcheck: Highlight partial regex matches (mediawiki/extensions/VisualEditor)",
+        desc: "Working on styling updates within VisualEditor to dynamically highlight partial regex matching strings inside the edit checking modules.",
+        repo: "mediawiki/extensions/VisualEditor",
+        type: "wikimedia",
+        status: "Active / Reviewing",
+        id: "Gerrit Patch",
+        link: "https://gerrit.wikimedia.org/r/q/owner:gkmwin563@gmail.com"
+    },
+    {
+        title: "Fix image option parsing inside tables (mediawiki/services/parsoid)",
+        desc: "Investigated and proposed table layout image syntax corrections inside the Parsoid parsing service to resolve image positioning anomalies inside cells.",
+        repo: "mediawiki/services/parsoid",
+        type: "wikimedia",
+        status: "Abandoned",
+        id: "Gerrit Patch",
         link: "https://gerrit.wikimedia.org/r/q/owner:gkmwin563@gmail.com"
     },
     {
@@ -491,18 +536,18 @@ function initTerminalSimulator() {
 
     const simulationLines = [
         { type: 'input', text: 'git status' },
-        { type: 'output', text: 'On branch main\nYour branch is up to date with \'origin/main\'.\n\nChanges not staged for commit:\n  (use "git add <file>..." to update what will be committed)\n\tmodified:   src/wt2html/parser.js\n\nno changes added to commit (use "git add" and/or "git commit -a")' },
+        { type: 'output', text: 'On branch master\nYour branch is up to date with \'origin/master\'.\n\nChanges not staged for commit:\n  (use "git add <file>..." to update what will be committed)\n\tmodified:   includes/Mentorship/MentorshipExceptions.php\n\nno changes added to commit (use "git add" and/or "git commit -a")' },
         { type: 'input', text: 'git diff' },
-        { type: 'output', text: 'diff --git a/src/wt2html/parser.js b/src/wt2html/parser.js\nindex a73df21..8b23c91 100644\n--- a/src/wt2html/parser.js\n+++ b/src/wt2html/parser.js\n<span class="diff-removed">- if (node.type === "image" &amp;&amp; node.parent.type === "table") {</span>\n<span class="diff-added">+ if (node.type === "image" &amp;&amp; node.parent &amp;&amp; node.parent.type === "table") {</span>\n<span class="diff-added">+     // Safe fallback for image syntax parsed within table attribute fields</span>\n<span class="diff-added">+     return parseImageSafely(node);</span>\n<span class="diff-added">+ }</span>' },
-        { type: 'input', text: 'git add . && git commit -m "fix(table-parser): prevent crash on image syntax in table cells (T431649)"' },
-        { type: 'output', text: '[main c829dfa] fix(table-parser): prevent crash on image syntax in table cells (T431649)\n 1 file changed, 4 insertions(+), 1 deletion(-)' },
+        { type: 'output', text: 'diff --git a/includes/Mentorship/MentorshipExceptions.php b/includes/Mentorship/MentorshipExceptions.php\nindex d8f498c..5e921a2 100644\n--- a/includes/Mentorship/MentorshipExceptions.php\n+++ b/includes/Mentorship/MentorshipExceptions.php\n<span class="diff-removed">- throw new MentorshipException( "No mentor found for user." );</span>\n<span class="diff-added">+ throw new MentorshipException( "No mentor found for user.", $genderSupport );</span>\n<span class="diff-added">+ // Added gender support exception message mapping to match localized translation profiles</span>' },
+        { type: 'input', text: 'git add . && git commit -m "Add gender support to no mentored exception message"' },
+        { type: 'output', text: '[master b291a24] Add gender support to no mentored exception message\n 1 file changed, 2 insertions(+), 1 deletion(-)' },
         { type: 'input', text: 'git review' },
-        { type: 'output', text: 'Pushing to gerrit.wikimedia.org:refs/for/main...\nremote: Processing changes: ~\nremote: \nremote: New Change created: <span class="output-line success">https://gerrit.wikimedia.org/r/c/mediawiki/services/parsoid/+/987254</span> [NEW]\nremote: Task T431649 parsed from commit message and linked successfully.' },
-        { type: 'output', text: '<span class="output-line info">[Wikimedia CI] Launching validation builders...</span>\n[CI Runner] running eslint... <span class="output-line success">PASSED</span>\n[CI Runner] running npm test (unit tests)... <span class="output-line success">PASSED</span>\n[CI Runner] running parsoid parser regression tests... <span class="output-line success">PASSED</span>\n[CI Runner] Verified +1 (build successful)' },
-        { type: 'output', text: '<span class="output-line warning">Gerrit Reviewer (S. Penfold): "Good catch. Please extract inline checks to a helper function."</span>' },
+        { type: 'output', text: 'Pushing to gerrit.wikimedia.org:refs/for/master...\nremote: Processing changes: ~\nremote: \nremote: New Change created: <span class="output-line success">https://gerrit.wikimedia.org/r/c/mediawiki/extensions/GrowthExperiments/+/912543</span> [NEW]\nremote: Gerrit review page opened successfully.' },
+        { type: 'output', text: '<span class="output-line info">[Wikimedia CI] Running Jenkins automation builders...</span>\n[CI Runner] running phpunit unit tests... <span class="output-line success">PASSED</span>\n[CI Runner] running MediaWiki integration test suites... <span class="output-line success">PASSED</span>\n[CI Runner] Status: Verified +1 (Build Successful)' },
+        { type: 'output', text: '<span class="output-line warning">Gerrit Reviewer (Cyndywikime): "Code looks clean. Need to add test cases inside MentorshipExceptionsTest.php."</span>' },
         { type: 'input', text: 'git commit --amend --no-edit && git review' },
-        { type: 'output', text: 'Pushing to gerrit.wikimedia.org:refs/for/main...\nremote: Patch Set 2 uploaded.\n[CI Runner] rerunning tests... <span class="output-line success">PASSED</span>\n[CI Runner] Verified +1' },
-        { type: 'output', text: '<span class="output-line success">Gerrit Reviewer (S. Penfold): Code-Review +2</span>\n<span class="output-line success">Gerrit: Change merged into master branch! 🎉</span>\nStatus: CLOSED (Merged & Deployed to Wikipedia Production)' }
+        { type: 'output', text: 'Pushing to gerrit.wikimedia.org:refs/for/master...\nremote: Patch Set 2 uploaded.\n[CI Runner] running tests... <span class="output-line success">PASSED</span>\n[CI Runner] Verified +1' },
+        { type: 'output', text: '<span class="output-line success">Gerrit Reviewer (Cyndywikime): Code-Review +2</span>\n<span class="output-line success">Gerrit: Change merged into master branch! 🎉</span>\nStatus: CLOSED (Merged & Deployed to Wikipedia Production)' }
     ];
 
     function typeCommand(text, containerEl, onDone) {
