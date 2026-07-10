@@ -4,13 +4,13 @@
 
 window.OPEN_SOURCE_TRANSLATIONS = {
     en: {
-        nav_home: "← Portfolio Home",
-        nav_overview: "Overview",
-        nav_workflow: "Pipeline",
-        nav_stats: "Metrics",
-        nav_terminal: "Simulator",
-        nav_contributions: "Key Patches",
-        nav_profiles: "Profiles",
+        nav_home: '<i class="fas fa-home nav-icon"></i> ← Portfolio Home',
+        nav_overview: '<i class="fas fa-eye nav-icon"></i> Overview',
+        nav_workflow: '<i class="fas fa-road nav-icon"></i> Pipeline',
+        nav_stats: '<i class="fas fa-chart-simple nav-icon"></i> Metrics',
+        nav_terminal: '<i class="fas fa-terminal nav-icon"></i> Simulator',
+        nav_contributions: '<i class="fas fa-file-code nav-icon"></i> Key Patches',
+        nav_profiles: '<i class="fas fa-user-circle nav-icon"></i> Profiles',
         
         terminal_title: "Gerrit Review Pipeline Simulator",
         terminal_subtitle: "Interact with this terminal shell to witness my patch verification and merge process.",
@@ -55,13 +55,13 @@ window.OPEN_SOURCE_TRANSLATIONS = {
         profiles_subtitle: "Connect with my profiles across collaborative software development channels."
     },
     hi: {
-        nav_home: "← मुख्य पोर्टफोलियो",
-        nav_overview: "अवलोकन",
-        nav_workflow: "पाइपलाइन",
-        nav_stats: "आँकड़े",
-        nav_terminal: "सिम्युलेटर",
-        nav_contributions: "प्रमुख पैच",
-        nav_profiles: "प्रोफाइल",
+        nav_home: '<i class="fas fa-home nav-icon"></i> ← मुख्य पोर्टफोलियो',
+        nav_overview: '<i class="fas fa-eye nav-icon"></i> अवलोकन',
+        nav_workflow: '<i class="fas fa-road nav-icon"></i> पाइपलाइन',
+        nav_stats: '<i class="fas fa-chart-simple nav-icon"></i> आँकड़े',
+        nav_terminal: '<i class="fas fa-terminal nav-icon"></i> सिम्युलेटर',
+        nav_contributions: '<i class="fas fa-file-code nav-icon"></i> प्रमुख पैच',
+        nav_profiles: '<i class="fas fa-user-circle nav-icon"></i> प्रोफाइल',
         
         terminal_title: "गेरिट समीक्षा पाइपलाइन सिम्युलेटर",
         terminal_subtitle: "मेरे पैच सत्यापन और विलय प्रक्रिया को लाइव देखने के लिए इस टर्मिनल शेल के साथ इंटरैक्ट करें।",
