@@ -1,6 +1,8 @@
 :root {
     --primary-color: #0ea5e9;
     --secondary-color: #ec4899;
+    --primary-glow: rgba(14, 165, 233, 0.08);
+    --primary-border-glow: rgba(14, 165, 233, 0.2);
     --background-color: #020617;
     --text-color: #e2e8f0;
     --card-color: #0f172a;
@@ -207,11 +209,13 @@ body {
     color: var(--text-color);
     text-decoration: none;
     font-weight: 500;
-    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
     position: relative;
-    padding-bottom: 5px;
+    padding: 0.35rem 0.8rem;
+    border-radius: 50px;
     font-size: 0.9rem; /* Slightly reduced font size */
     display: inline-block;
+    border: 1px solid transparent;
 }
 
 /* Custom navigation spacing adjustments to support 10 menu links on smaller laptop viewports */
@@ -241,30 +245,19 @@ body {
 }
 
 .main-nav ul li a:hover {
-    transform: scale(1.06) translateY(-1px);
+    transform: translateY(-1px);
 }
 
 .main-nav ul li a::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 0;
-    height: 2.5px;
-    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
-    box-shadow: 0 0 8px var(--primary-color);
-    transition: width 0.3s ease;
+    display: none;
 }
 
 .main-nav ul li a:hover,
 .main-nav ul li a.active {
     color: var(--primary-color);
-    filter: drop-shadow(0 0 5px var(--primary-color));
-}
-
-.main-nav ul li a:hover::after,
-.main-nav ul li a.active::after {
-    width: 100%;
+    background: var(--primary-glow);
+    border-color: var(--primary-border-glow);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15), 0 0 8px var(--primary-glow);
 }
 
 .header-actions {

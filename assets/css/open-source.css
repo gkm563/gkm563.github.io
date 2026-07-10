@@ -10,6 +10,11 @@
     --text-primary: #f8fafc;
     --text-secondary: #94a3b8;
     
+    /* Overrides for global header variables to adapt to the purple ecosystem theme */
+    --primary-color: #a855f7;
+    --primary-glow: rgba(168, 85, 247, 0.09);
+    --primary-border-glow: rgba(168, 85, 247, 0.22);
+    
     /* Neon accents */
     --accent-wiki: #a855f7; /* Purple */
     --accent-gerrit: #0284c7; /* Sky Blue */
