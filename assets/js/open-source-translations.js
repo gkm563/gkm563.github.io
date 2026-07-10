@@ -8,8 +8,12 @@ window.OPEN_SOURCE_TRANSLATIONS = {
         nav_overview: "Overview",
         nav_workflow: "Pipeline",
         nav_stats: "Metrics",
+        nav_terminal: "Simulator",
         nav_contributions: "Key Patches",
         nav_profiles: "Profiles",
+        
+        terminal_title: "Gerrit Review Pipeline Simulator",
+        terminal_subtitle: "Interact with this terminal shell to witness my patch verification and merge process.",
         
         hero_title: "Open Source Contributions",
         hero_subtitle: "Building the global web ecosystem at scale",
@@ -55,8 +59,12 @@ window.OPEN_SOURCE_TRANSLATIONS = {
         nav_overview: "अवलोकन",
         nav_workflow: "पाइपलाइन",
         nav_stats: "आँकड़े",
+        nav_terminal: "सिम्युलेटर",
         nav_contributions: "प्रमुख पैच",
         nav_profiles: "प्रोफाइल",
+        
+        terminal_title: "गेरिट समीक्षा पाइपलाइन सिम्युलेटर",
+        terminal_subtitle: "मेरे पैच सत्यापन और विलय प्रक्रिया को लाइव देखने के लिए इस टर्मिनल शेल के साथ इंटरैक्ट करें।",
         
         hero_title: "ओपन सोर्स योगदान",
         hero_subtitle: "वैश्विक स्तर पर ओपन-सोर्स वेब इकोसिस्टम का निर्माण",

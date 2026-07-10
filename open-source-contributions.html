@@ -63,6 +63,7 @@
                     <li><a href="#overview" data-translate="nav_overview">Overview</a></li>
                     <li><a href="#workflow" data-translate="nav_workflow">Pipeline</a></li>
                     <li><a href="#stats" data-translate="nav_stats">Metrics</a></li>
+                    <li><a href="#terminal-simulator" data-translate="nav_terminal">Simulator</a></li>
                     <li><a href="#contributions" data-translate="nav_contributions">Key Patches</a></li>
                     <li><a href="#profiles" data-translate="nav_profiles">Profiles</a></li>
                 </ul>
@@ -86,8 +87,11 @@
     <main>
         
         <!-- Hero Section -->
-        <section class="hero-section" id="hero">
-            <div class="container">
+        <section class="hero-section" id="hero" style="position: relative; overflow: hidden;">
+            <!-- Interactive Network Particle Canvas -->
+            <canvas id="network-canvas" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 1; opacity: 0.35;"></canvas>
+            
+            <div class="container" style="position: relative; z-index: 2;">
                 <div class="hero-logo-container" data-aos="fade-down">
                     <img src="assets/images/open-source/wikipedia.svg" alt="Wikipedia logo" class="hero-logo">
                     <img src="assets/images/open-source/phabricator.svg" alt="Phabricator logo" class="hero-logo">
@@ -101,8 +105,8 @@
                     <a href="#contributions" class="hero-btn primary">
                         Explore My Patches <i class="fas fa-arrow-down"></i>
                     </a>
-                    <a href="#workflow" class="hero-btn secondary" data-translate="nav_workflow">
-                        Pipeline
+                    <a href="#terminal-simulator" class="hero-btn secondary" data-translate="nav_terminal">
+                        Simulator
                     </a>
                 </div>
             </div>
@@ -215,6 +219,40 @@
                         <div class="stat-card-glow"></div>
                         <div class="stat-number" data-target="100+" id="stat-edits">0</div>
                         <div class="stat-label" data-translate="stat_wiki_edits">Wikipedia Edits</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Git/Gerrit Review Simulator Section -->
+        <section id="terminal-simulator" style="background: rgba(2, 6, 23, 0.5); border-top: 1px solid rgba(255, 255, 255, 0.03); border-bottom: 1px solid rgba(255, 255, 255, 0.03); overflow: hidden;">
+            <div class="container">
+                <div class="section-header" data-aos="fade-up">
+                    <h2 data-translate="terminal_title">Gerrit Review Pipeline Simulator</h2>
+                    <p data-translate="terminal_subtitle">Interact with this terminal shell to witness my patch verification and merge process.</p>
+                </div>
+                
+                <div class="terminal-wrapper" data-aos="zoom-in" id="git-terminal-hud">
+                    <div class="terminal-header">
+                        <div class="terminal-buttons">
+                            <span class="term-btn red"></span>
+                            <span class="term-btn yellow"></span>
+                            <span class="term-btn green"></span>
+                        </div>
+                        <div class="terminal-title">gkm563@wikimedia-dev:~/services/parsoid</div>
+                        <div class="terminal-action-icon"><i class="fas fa-terminal"></i></div>
+                    </div>
+                    <div class="terminal-body" id="terminal-screen">
+                        <div class="term-line output-line">Wikimedia Gerrit Pipeline Simulator initialized.</div>
+                        <div class="term-line output-line">Click 'Run Simulation' to start the patch deployment workflow...</div>
+                    </div>
+                    <div class="terminal-controls">
+                        <button class="terminal-btn-action" id="terminal-run-btn">
+                            <i class="fas fa-play"></i> Run Simulation
+                        </button>
+                        <button class="terminal-btn-action secondary" id="terminal-clear-btn">
+                            <i class="fas fa-trash-can"></i> Clear Terminal
+                        </button>
                     </div>
                 </div>
             </div>
