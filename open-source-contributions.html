@@ -1,56 +1,274 @@
-﻿<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="en-IN">
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <!-- SEO Optimization -->
-    <title>Open Source Contributions | Gautam Kumar Maurya</title>
-    <meta name="description" content="Explore Gautam Kumar Maurya's open source contributions to global web systems, including the Wikimedia Foundation (Wikipedia, MediaWiki core, Parsoid parser), Translatewiki, GitLab, and GitHub.">
-    <meta name="keywords" content="Gautam Kumar Maurya, GKM, Open Source, Wikimedia, Wikipedia, Gerrit, Phabricator, MediaWiki, Parsoid, GitLab, GitHub, Developer, India, GDG Prayagraj, Pywikibot, GrowthExperiments, MinervaNeue, VisualEditor, Web Development, Full-Stack Developer">
-    <meta name="author" content="Gautam Kumar Maurya">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="format-detection" content="telephone=no, date=no, address=no, email=no">
+
+    <!-- Performance: Preconnect to external origins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="dns-prefetch" href="https://unpkg.com">
+
+    <!-- Geo / Local SEO -->
+    <meta name="geo.region" content="IN-UP">
+    <meta name="geo.placename" content="Prayagraj, Uttar Pradesh, India">
+    <meta name="geo.position" content="25.4358;81.8464">
+    <meta name="ICBM" content="25.4358, 81.8464">
+
+    <!-- Referrer Policy -->
+    <meta name="referrer" content="origin-when-cross-origin">
+
+    <!-- Language Alternates -->
+    <link rel="alternate" hreflang="en-IN" href="https://gkm563.github.io/open-source-contributions.html">
+    <link rel="alternate" hreflang="hi" href="https://gkm563.github.io/open-source-contributions.html">
+    <link rel="alternate" hreflang="x-default" href="https://gkm563.github.io/open-source-contributions.html">
+
+    <!-- Favicon & App Icons -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon.ico">
+
+    <!-- === PRIMARY SEO METADATA === -->
+    <title>Open Source Contributions — Gautam Kumar Maurya | Wikimedia, MediaWiki, Pywikibot & GitHub</title>
+    <meta name="author" content="Gautam Kumar Maurya (GKM563)">
+    <meta name="description" content="Gautam Kumar Maurya's open source contributions to Wikimedia Foundation — MediaWiki Core, MinervaNeue, GrowthExperiments, Pywikibot, Function Orchestrator (Abstract Wikipedia). Featured in WikiClub Tech India Technical Impact Report (Jan–Jun 2026), RoadToWiki Cohort 2, OKI IIIT Hyderabad.">
+    <meta name="keywords" content="Gautam Kumar Maurya, GKM, GKM563, Open Source Contributions, Wikimedia Foundation, MediaWiki Core, Pywikibot, GrowthExperiments, MinervaNeue, Function Orchestrator, Abstract Wikipedia, Gerrit, Phabricator, WikiClub Tech India, RoadToWiki, OKI IIIT Hyderabad, Road to Wiki, Cohort 2, Technical Impact Report, Wikipedia Contributor, Wikifunctions, T426338, T424875, T416226, Translatewiki, GitLab, GitHub, Open Source Developer, India, Prayagraj, B.Tech CSE, Data Science, Full-Stack Developer, UIT Prayagraj, Special Aliases MediaWiki, URI Fragment Fix, Accessor Methods WFFunctionCall, Regression Testing Pywikibot, i18n L10n MediaWiki, Gender Support GrowthExperiments">
     <link rel="canonical" href="https://gkm563.github.io/open-source-contributions.html">
-    
-    <!-- Schema.org Markup -->
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#a855f7">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <!-- === OPEN GRAPH (Facebook / LinkedIn) === -->
+    <meta property="og:type" content="profile">
+    <meta property="og:url" content="https://gkm563.github.io/open-source-contributions.html">
+    <meta property="og:title" content="Open Source Contributions — Gautam Kumar Maurya | Wikimedia & GitHub">
+    <meta property="og:description" content="Merged patches across MediaWiki Core, MinervaNeue, Pywikibot, GrowthExperiments & Abstract Wikipedia. Officially recognized in WikiClub Tech India's Technical Impact Report (Jan–Jun 2026) by OKI, IIIT Hyderabad.">
+    <meta property="og:image" content="https://gkm563.github.io/assets/images/profile/Gautam_Kumar_Maurya.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Gautam Kumar Maurya — Open Source Contributions to Wikimedia Foundation">
+    <meta property="og:site_name" content="Gautam Kumar Maurya Portfolio">
+    <meta property="og:locale" content="en_IN">
+    <meta property="profile:first_name" content="Gautam Kumar">
+    <meta property="profile:last_name" content="Maurya">
+    <meta property="profile:username" content="gkm563">
+
+    <!-- === TWITTER CARD === -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@gkm563">
+    <meta name="twitter:creator" content="@gkm563">
+    <meta name="twitter:url" content="https://gkm563.github.io/open-source-contributions.html">
+    <meta name="twitter:title" content="Open Source Contributions — Gautam Kumar Maurya | Wikimedia & GitHub">
+    <meta name="twitter:description" content="Merged patches in MediaWiki Core, MinervaNeue, Pywikibot, GrowthExperiments & Abstract Wikipedia. Recognized in WikiClub Tech India Technical Impact Report 2026.">
+    <meta name="twitter:image" content="https://gkm563.github.io/assets/images/profile/Gautam_Kumar_Maurya.jpg">
+    <meta name="twitter:image:alt" content="Gautam Kumar Maurya Open Source Portfolio">
+
+    <!-- === SCHEMA.ORG STRUCTURED DATA === -->
+
+    <!-- WebPage Schema -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "ProfilePage",
-      "name": "Gautam Kumar Maurya",
-      "description": "Explore Gautam Kumar Maurya's open source contributions to global web systems, including the Wikimedia Foundation (Wikipedia, MediaWiki core, Parsoid parser), Translatewiki, GitLab, and GitHub.",
-      "mainEntity": {
+      "@type": "WebPage",
+      "@id": "https://gkm563.github.io/open-source-contributions.html",
+      "url": "https://gkm563.github.io/open-source-contributions.html",
+      "name": "Open Source Contributions — Gautam Kumar Maurya",
+      "description": "Showcase of Gautam Kumar Maurya's merged patches and open source contributions across Wikimedia Foundation repositories including MediaWiki Core, MinervaNeue, GrowthExperiments, Pywikibot, and Abstract Wikipedia (Wikifunctions). Officially featured in the WikiClub Tech India Technical Impact Report (Jan–Jun 2026).",
+      "inLanguage": ["en-IN", "hi"],
+      "isPartOf": {
+        "@type": "WebSite",
+        "name": "Gautam Kumar Maurya Portfolio",
+        "url": "https://gkm563.github.io/"
+      },
+      "about": {
         "@type": "Person",
         "name": "Gautam Kumar Maurya",
-        "jobTitle": "Full-Stack Developer & Open Source Contributor",
-        "url": "https://gkm563.github.io/",
-        "sameAs": [
-          "https://github.com/gkm563",
-          "https://gitlab.com/gkm563",
-          "https://phabricator.wikimedia.org/p/Gkm563/",
-          "https://en.wikipedia.org/wiki/User:Gkm563",
-          "https://gerrit.wikimedia.org/r/q/owner:gkmwin563@gmail.com",
-          "https://www.linkedin.com/in/gautam-kumar-maurya/"
+        "url": "https://gkm563.github.io/"
+      },
+      "breadcrumb": {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Portfolio Home",
+            "item": "https://gkm563.github.io/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Open Source Contributions",
+            "item": "https://gkm563.github.io/open-source-contributions.html"
+          }
         ]
+      },
+      "dateModified": "2026-07-10",
+      "author": {
+        "@type": "Person",
+        "name": "Gautam Kumar Maurya"
       }
     }
     </script>
 
-    <!-- Open Graph Metadata -->
-    <meta property="og:title" content="Open Source Contributions - Gautam Kumar Maurya">
-    <meta property="og:description" content="A premium showcase of merged patch sets and resolved tasks inside Wikipedia, Gerrit, Phabricator, GitLab, and GitHub.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://gkm563.github.io/open-source-contributions.html">
+    <!-- Person + Contributions Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Gautam Kumar Maurya",
+      "alternateName": ["GKM", "GKM563", "gkm563"],
+      "url": "https://gkm563.github.io/",
+      "image": "https://gkm563.github.io/assets/images/profile/Gautam_Kumar_Maurya.jpg",
+      "email": "gkmwin563@gmail.com",
+      "description": "B.Tech CSE (Data Science) student at United Institute of Technology, Prayagraj. Full-Stack Developer and active open source contributor to the Wikimedia Foundation ecosystem. Participant of RoadToWiki Cohort 2, recognized in WikiClub Tech India Technical Impact Report (Jan–Jun 2026) by OKI IIIT Hyderabad.",
+      "jobTitle": "Full-Stack Developer & Open Source Contributor",
+      "alumniOf": {
+        "@type": "EducationalOrganization",
+        "name": "United Institute of Technology, Prayagraj",
+        "sameAs": "https://www.united.ac.in/"
+      },
+      "memberOf": [
+        {
+          "@type": "Organization",
+          "name": "WikiClub Tech India",
+          "description": "Collaborative student platform empowering contributions to the Wikimedia ecosystem through technology, part of Open Knowledge Initiatives (OKI) at IIIT Hyderabad.",
+          "sameAs": "https://meta.wikimedia.org/wiki/IIITH-OKI/Wikiclub_Tech"
+        },
+        {
+          "@type": "Organization",
+          "name": "GDG Prayagraj",
+          "description": "Google Developer Group, Prayagraj chapter."
+        }
+      ],
+      "knowsAbout": [
+        "MediaWiki Core Development",
+        "Wikimedia Gerrit Patch Submission",
+        "Pywikibot Testing & QA",
+        "GrowthExperiments i18n Localization",
+        "MinervaNeue Mobile Skin",
+        "Abstract Wikipedia / Wikifunctions",
+        "Function Orchestrator",
+        "Open Source Software Development",
+        "Full-Stack Web Development",
+        "React.js",
+        "JavaScript",
+        "PHP",
+        "Python",
+        "Data Science"
+      ],
+      "sameAs": [
+        "https://github.com/gkm563",
+        "https://gitlab.com/gkm563",
+        "https://gerrit.wikimedia.org/r/q/owner:gkmwin563@gmail.com",
+        "https://phabricator.wikimedia.org/p/Gkm563/",
+        "https://en.wikipedia.org/wiki/User:Gkm563",
+        "https://www.linkedin.com/in/gautam-kumar-maurya/",
+        "https://www.linkedin.com/in/gkm563/"
+      ],
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Prayagraj",
+        "addressRegion": "Uttar Pradesh",
+        "addressCountry": "India"
+      },
+      "workExample": [
+        {
+          "@type": "CreativeWork",
+          "name": "Add accessor methods for WFFunctionCall internals (T426338)",
+          "description": "Implemented getFunction(), getArgument(), and getArguments() accessor methods to improve encapsulation and maintainability of WFFunctionCall class in the Abstract Wikipedia Function Orchestrator production codebase. Recognized as among the most architecturally significant contributions in RoadToWiki Cohort 2.",
+          "url": "https://gitlab.wikimedia.org/repos/abstract-wiki/wikifunctions/function-orchestrator/-/merge_requests/684",
+          "about": {
+            "@type": "SoftwareSourceCode",
+            "codeRepository": "https://gitlab.wikimedia.org/repos/abstract-wiki/wikifunctions/function-orchestrator",
+            "programmingLanguage": "JavaScript"
+          }
+        },
+        {
+          "@type": "CreativeWork",
+          "name": "Handle malformed URI fragments in TitleUtil — MinervaNeue (T424875)",
+          "description": "Added defensive try-catch error handling around URI fragment decoding in MinervaNeue skin's TitleUtil to prevent URIError exceptions caused by malformed percent-encoded red-link sequences on mobile Wikipedia.",
+          "url": "https://gerrit.wikimedia.org/r/c/mediawiki/skins/MinervaNeue/+/1287961",
+          "about": {
+            "@type": "SoftwareSourceCode",
+            "codeRepository": "https://gerrit.wikimedia.org/r/mediawiki/skins/MinervaNeue",
+            "programmingLanguage": "JavaScript"
+          }
+        },
+        {
+          "@type": "CreativeWork",
+          "name": "Add gender support to mentored exception message — GrowthExperiments (T416226)",
+          "description": "Resolved i18n accessibility gap inside growthexperiments-exception-no-mentored-text by implementing proper grammatical gender support, matching international localization standards.",
+          "url": "https://gerrit.wikimedia.org/r/c/mediawiki/extensions/GrowthExperiments/+/1289010",
+          "about": {
+            "@type": "SoftwareSourceCode",
+            "codeRepository": "https://gerrit.wikimedia.org/r/mediawiki/extensions/GrowthExperiments",
+            "programmingLanguage": "PHP"
+          }
+        },
+        {
+          "@type": "CreativeWork",
+          "name": "Add Special:MediaStats and Special:MuteUser page aliases — MediaWiki Core",
+          "description": "Contributed page aliases to MediaWiki Core to improve Special Page discoverability for editors without changing canonical routing paths.",
+          "url": "https://gerrit.wikimedia.org/r/c/mediawiki/core/+/1276283",
+          "about": {
+            "@type": "SoftwareSourceCode",
+            "codeRepository": "https://gerrit.wikimedia.org/r/mediawiki/core",
+            "programmingLanguage": "PHP"
+          }
+        },
+        {
+          "@type": "CreativeWork",
+          "name": "Add regression test for noreferences section handling — Pywikibot Core",
+          "description": "Implemented regression tests in Pywikibot Core verifying that HTML comments inside references sections remain correctly positioned above the closing tag, ensuring no regressions on future parser changes.",
+          "url": "https://gerrit.wikimedia.org/r/c/pywikibot/core/+/1290141",
+          "about": {
+            "@type": "SoftwareSourceCode",
+            "codeRepository": "https://gerrit.wikimedia.org/r/pywikibot/core",
+            "programmingLanguage": "Python"
+          }
+        }
+      ]
+    }
+    </script>
+
+    <!-- Article / Report Reference Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Report",
+      "name": "WikiClub Tech India — Technical Impact Report (January–June 2026)",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/d/d9/%281%29WikiClubTech_Technical_Impact_Report_Jan_Jun_2026_%281%29.pdf",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Open Knowledge Initiatives (OKI) at IIIT Hyderabad",
+        "sameAs": "https://meta.wikimedia.org/wiki/IIITH-OKI/Wikiclub_Tech"
+      },
+      "about": {
+        "@type": "Person",
+        "name": "Gautam Kumar Maurya",
+        "url": "https://gkm563.github.io/"
+      },
+      "description": "Official technical impact report published by WikiClub Tech India (OKI, IIIT Hyderabad) recognizing Gautam Kumar Maurya's 5 open source contributions to the Wikimedia Foundation as a RoadToWiki Cohort 2 participant.",
+      "temporalCoverage": "2026-01/2026-06",
+      "inLanguage": "en"
+    }
+    </script>
+
+
+
 
     <!-- Stylesheets & Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;600;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/open-source.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
+
 
 <body class="open-source-page">
 
