@@ -295,6 +295,42 @@ const contributions = [
         link: "https://phabricator.wikimedia.org/T423735"
     },
     {
+        title: "T431217: README: reconcile Node version guidance (Tiisu/SourceWiki)",
+        desc: "Resolved inconsistent node environment configurations by updating the prerequites to state v18+ across the README.md documentation.",
+        repo: "Tiisu/SourceWiki",
+        type: "git",
+        status: "Merged",
+        id: "GitHub PR #2",
+        link: "https://github.com/gkm563/SourceWiki"
+    },
+    {
+        title: "T431215: Update the misleading footer text (Tiisu/SourceWiki)",
+        desc: "Refined user-facing template text inside the project's footer component to display correct licensing information and links.",
+        repo: "Tiisu/SourceWiki",
+        type: "git",
+        status: "Merged",
+        id: "GitHub PR #3",
+        link: "https://github.com/gkm563/SourceWiki"
+    },
+    {
+        title: "T431216: Clean up commented-out / duplicate middleware in server.js (Tiisu/SourceWiki)",
+        desc: "Improved backend performance and readability by cleaning up redundant and commented out server middleware blocks in the core Node codebase.",
+        repo: "Tiisu/SourceWiki",
+        type: "git",
+        status: "Merged",
+        id: "GitHub PR #4",
+        link: "https://github.com/gkm563/SourceWiki"
+    },
+    {
+        title: "T431210: Fix broken emoji (mojibake) in the Submission Form (Tiisu/SourceWiki)",
+        desc: "Fixed rendering bug corrupting special emoji characters on form submissions by enforcing UTF-8 payload encoding headers on POST routes.",
+        repo: "Tiisu/SourceWiki",
+        type: "git",
+        status: "Merged",
+        id: "GitHub PR #5",
+        link: "https://github.com/gkm563/SourceWiki"
+    },
+    {
         title: "WikiFunctions Automation & CI/CD runner pipelines",
         desc: "Configured automated test runners and validation scripts inside the WikiFunctions extension for robust Continuous Integration checks.",
         repo: "gitlab.com/gkm563",
