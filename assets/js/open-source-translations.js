@@ -15,6 +15,9 @@ window.OPEN_SOURCE_TRANSLATIONS = {
         terminal_title: "Gerrit Review Pipeline Simulator",
         terminal_subtitle: "Interact with this terminal shell to witness my patch verification and merge process.",
         
+        video_title: "Visual Walkthrough Reel",
+        video_subtitle: "Watch the localized engineering setup and code-review submission process in action.",
+        
         hero_title: "Open Source Contributions",
         hero_subtitle: "Building the global web ecosystem at scale",
         hero_desc: "Showcasing code contributions, bug fixes, and parser configurations integrated into global production environments like the Wikimedia Foundation (Wikipedia, MediaWiki core, Parsoid parser), Translatewiki, GitLab, and GitHub.",
@@ -65,6 +68,9 @@ window.OPEN_SOURCE_TRANSLATIONS = {
         
         terminal_title: "गेरिट समीक्षा पाइपलाइन सिम्युलेटर",
         terminal_subtitle: "मेरे पैच सत्यापन और विलय प्रक्रिया को लाइव देखने के लिए इस टर्मिनल शेल के साथ इंटरैक्ट करें।",
+        
+        video_title: "वीडियो प्रदर्शन रीइल",
+        video_subtitle: "स्थानीय वातावरण कॉन्फ़िगरेशन और कोड-समीक्षा सबमिशन प्रक्रिया को लाइव देखें।",
         
         hero_title: "ओपन सोर्स योगदान",
         hero_subtitle: "वैश्विक स्तर पर ओपन-सोर्स वेब इकोसिस्टम का निर्माण",
