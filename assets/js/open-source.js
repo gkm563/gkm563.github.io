@@ -322,9 +322,14 @@ function initContributionsArchive() {
     function renderContributions(filter = 'all') {
         grid.innerHTML = '';
         
-        const filtered = filter === 'all' 
-            ? contributions 
-            : contributions.filter(c => c.type === filter);
+        let filtered;
+        if (filter === 'all') {
+            filtered = contributions;
+        } else if (filter === 'merged') {
+            filtered = contributions.filter(c => c.status === 'Merged' || c.status === 'Completed');
+        } else {
+            filtered = contributions.filter(c => c.type === filter);
+        }
 
         filtered.forEach((item, index) => {
             const card = document.createElement('div');
@@ -664,6 +669,8 @@ function updateFilterTabCounts() {
         let count = 0;
         if (filter === 'all') {
             count = contributions.length;
+        } else if (filter === 'merged') {
+            count = contributions.filter(c => c.status === 'Merged' || c.status === 'Completed').length;
         } else {
             count = contributions.filter(c => c.type === filter).length;
         }
