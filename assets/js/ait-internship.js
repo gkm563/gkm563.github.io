@@ -352,6 +352,7 @@ let allCatalogImages = [];
 let currentImagesList = [];
 let renderedCount = 0;
 const itemsPerPage = 12;
+let currentCategory = 'all';
 
 function getThailandCaption(i) {
     const captions = {
@@ -380,8 +381,58 @@ function getThailandCaption(i) {
     return "GIIP-2026 Thailand Internship - Learning and Explorer Moments";
 }
 
+function getGKMCaption(i) {
+    const specialGKMCaptions = {
+        1: "Gautam Kumar Maurya at the AIT Landmark 🏛️",
+        2: "Exploring the AIT campus facilities",
+        3: "Technical briefing and research session",
+        10: "Collaborating with research partners on spatial mapping",
+        20: "Hands-on data collection session using EpiCollect5",
+        30: "Campus tour and international networking session",
+        40: "AI mapping and semantic search experimentation",
+        50: "Exploring Bangkok's technology ecosystem",
+        100: "Interactive discussion during the Robotics lab visit",
+        150: "Cross-cultural seminar and corporate prep lectures",
+        200: "Sharing reflections and internship presentations",
+        248: "Celebrating the completion of GIIP-2026 Bangkok Internship 🎉"
+    };
+
+    if (specialGKMCaptions[i]) return specialGKMCaptions[i];
+
+    if (i <= 40) return `GIIP-2026: Exploring AIT Bangkok Campus & Onboarding (#${i})`;
+    if (i <= 80) return `GIIP-2026: Technical Seminars and Hands-on Workshops (#${i})`;
+    if (i <= 130) return `GIIP-2026: Research Labs & Technology Integration Sessions (#${i})`;
+    if (i <= 180) return `GIIP-2026: Collaborative Teamwork & Academic Dialogues (#${i})`;
+    if (i <= 220) return `GIIP-2026: Cultural Integration & Bangkok Exploration (#${i})`;
+    return `GIIP-2026: Global Journey, Learning, & Professional Growth (#${i})`;
+}
+
 function generateCatalog() {
     const personal = [];
+
+    // 1. Add Mentors & Special images
+    const specialImages = [
+        { file: 'chutiporn Mentor AIT THAILAND (1).jpg', caption: 'Dr. Chutiporn Anutariya mentoring on Semantic Web and AI Mapping', category: 'mentors' },
+        { file: 'Mentor 1 sir AIT THAILAND (2).jpg', caption: 'Interacting with AIT Faculty during Technical Onboarding', category: 'mentors' },
+        { file: 'prapas Mentor AIT THAILAND (3).jpg', caption: 'Dr. Prapas explaining advanced research methodologies', category: 'mentors' },
+        { file: 'Mentor 2 mam AIT THAILAND (4).jpg', caption: 'Collaborative project review with senior AIT researchers', category: 'mentors' },
+        { file: 'nitin tripathi Mentor AIT THAILAND (5).jpg', caption: 'Discussion with Dr. Nitin K. Tripathi on GIS and Remote Sensing', category: 'mentors' },
+        { file: 'rishi Mentor AIT THAILAND (6).jpg', caption: 'Dr. Rishi Jain leading a hands-on workshop on Prompt Engineering', category: 'mentors' },
+        { file: 'manisha bose.jpg', caption: 'Interactive lecture session with Dr. Manisha Bose', category: 'mentors' },
+        { file: 'culture mentor thailand.jpg', caption: 'Cross-cultural learning and community alignment session', category: 'mentors' },
+        { file: 'Asian_Institute_of_Technology-Logo.png', caption: 'Asian Institute of Technology (AIT) Bangkok, Thailand', category: 'mentors' }
+    ];
+
+    specialImages.forEach(img => {
+        personal.push({
+            src: `assets/images/ait-bangkok/${img.file}`,
+            alt: img.caption,
+            category: img.category,
+            caption: img.caption
+        });
+    });
+
+    // 2. Add Internship Journey images (Gautam_Kumar_Maurya_Thailand_Internship)
     const missing = [17, 25, 26, 27, 28, 30, 54];
     for (let i = 1; i <= 55; i++) {
         if (missing.includes(i)) {
@@ -403,6 +454,17 @@ function generateCatalog() {
         });
     }
 
+    // 3. Add Moments with Gautam (Gautam kumar maurya GKM)
+    for (let i = 1; i <= 248; i++) {
+        if (i >= 82 && i <= 87) continue;
+        personal.push({
+            src: `assets/images/ait-bangkok/Gautam kumar maurya GKM (${i}).JPG`,
+            alt: `Gautam Kumar Maurya - Thailand Internship Moment #${i}`,
+            category: 'gkm',
+            caption: getGKMCaption(i)
+        });
+    }
+
     allCatalogImages = personal;
 }
 
@@ -413,16 +475,38 @@ function initGalleryFilters() {
 
 function initArchivePanel() {
     const grid = document.getElementById('dynamic-gallery-grid');
+    const filterButtons = document.querySelectorAll('.gallery-tab-btn');
     const loadMoreBtn = document.getElementById('load-more-btn');
     const shuffleBtn = document.getElementById('gallery-shuffle-btn');
 
     if (!grid) return;
 
-    currentImagesList = [...allCatalogImages];
-    renderedCount = 0;
-    grid.innerHTML = '';
+    function setArchiveCategory(category) {
+        currentCategory = category;
+        grid.innerHTML = '';
+        renderedCount = 0;
 
-    renderArchiveBatch();
+        if (category === 'all') {
+            currentImagesList = [...allCatalogImages];
+        } else {
+            currentImagesList = allCatalogImages.filter(img => img.category === category);
+        }
+
+        renderArchiveBatch();
+    }
+
+    // Direct initialization of active tab on load
+    setArchiveCategory('all');
+
+    filterButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+            filterButtons.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            
+            const category = btn.getAttribute('data-filter');
+            setArchiveCategory(category);
+        });
+    });
 
     if (loadMoreBtn) {
         loadMoreBtn.addEventListener('click', renderArchiveBatch);

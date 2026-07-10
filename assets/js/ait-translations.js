@@ -202,7 +202,10 @@ window.PORTFOLIO_TRANSLATIONS = {
         gallery_heading: "Captured Moments Gallery",
         gallery_sub: "A curated collection of photos documenting Gautam\'s international internship journey in Bangkok, Thailand.",
         gallery_filter_all: "All Photos",
-        gallery_explore_archive: "Explore All 55 Photos",
+        gallery_filter_journey: "Internship Journey",
+        gallery_filter_mentors: "Mentors & Experts",
+        gallery_filter_gkm: "Moments with Gautam",
+        gallery_explore_archive: "Load More Photos",
         gallery_search_placeholder: "Search captions...",
         gallery_btn_shuffle: "Shuffle Moments",
 
@@ -421,7 +424,10 @@ window.PORTFOLIO_TRANSLATIONS = {
         gallery_heading: "चित्र दीर्घा",
         gallery_sub: "बैंकॉक, थाईलैंड में गौतम की अंतरराष्ट्रीय इंटर्नशिप यात्रा के पलों को दर्शाती तस्वीरों का एक संग्रह।",
         gallery_filter_all: "सभी तस्वीरें",
-        gallery_explore_archive: "सभी 55 तस्वीरें देखें",
+        gallery_filter_journey: "इंटर्नशिप यात्रा",
+        gallery_filter_mentors: "मार्गदर्शक और विशेषज्ञ",
+        gallery_filter_gkm: "गौतम के पल",
+        gallery_explore_archive: "और अधिक तस्वीरें लोड करें",
         gallery_search_placeholder: "कैप्शन खोजें...",
         gallery_btn_shuffle: "शफल करें",
 
