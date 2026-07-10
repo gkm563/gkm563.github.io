@@ -59,6 +59,9 @@ function applySubpageLanguage(lang) {
             }
         }
     });
+
+    // Recalculate and render contribution tab count badges
+    updateFilterTabCounts();
 }
 
 function changeSubpageLanguage(lang) {
@@ -629,4 +632,31 @@ function initTerminalSimulator() {
     if (clearBtn) {
         clearBtn.addEventListener('click', clearTerminal);
     }
+}
+
+/* ==========================================
+   Dynamic Tab Badging and Counting
+   ========================================== */
+function updateFilterTabCounts() {
+    const tabs = document.querySelectorAll('.contrib-tab-btn');
+    if (tabs.length === 0) return;
+
+    tabs.forEach(tab => {
+        const filter = tab.getAttribute('data-filter');
+        let count = 0;
+        if (filter === 'all') {
+            count = contributions.length;
+        } else {
+            count = contributions.filter(c => c.type === filter).length;
+        }
+        
+        // Remove existing badge
+        const oldBadge = tab.querySelector('.tab-count');
+        if (oldBadge) {
+            oldBadge.remove();
+        }
+        
+        const baseText = tab.innerHTML.trim();
+        tab.innerHTML = `${baseText} <span class="tab-count">${count}</span>`;
+    });
 }

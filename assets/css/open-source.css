@@ -830,3 +830,25 @@ section {
     background: rgba(255, 255, 255, 0.1);
 }
 
+/* Tab count badges */
+.tab-count {
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    color: var(--text-secondary);
+    font-size: 0.75rem;
+    padding: 0.15rem 0.55rem;
+    border-radius: 50px;
+    margin-left: 0.65rem;
+    font-weight: 700;
+    transition: all 0.3s ease;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.contrib-tab-btn.active .tab-count, .contrib-tab-btn:hover .tab-count {
+    background: rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.25);
+    color: white;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
+}
+
