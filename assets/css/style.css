@@ -206,6 +206,9 @@ body {
 }
 
 .main-nav ul li a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
     color: var(--text-color);
     text-decoration: none;
     font-weight: 500;
@@ -6094,17 +6097,15 @@ body {
 
 /* Custom Navbar Navigation Menu Icon Styling */
 .nav-icon {
-    margin-right: 0.4rem;
     font-size: 0.85rem;
     opacity: 0.8;
-    vertical-align: middle;
     transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     display: inline-block;
 }
 
 .main-nav ul li a:hover .nav-icon,
 .main-nav ul li a.active .nav-icon {
-    transform: scale(1.18) rotate(5deg);
+    transform: scale(1.22) rotate(6deg);
     opacity: 1;
 }
 

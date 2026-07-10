@@ -905,17 +905,15 @@ section {
 
 /* Navigation icon styling refinements */
 .nav-icon {
-    margin-right: 0.45rem;
     font-size: 0.85rem;
     opacity: 0.85;
-    vertical-align: middle;
     transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     display: inline-block;
 }
 
 .main-nav ul li a:hover .nav-icon,
 .main-nav ul li a.active .nav-icon {
-    transform: scale(1.2) rotate(6deg);
+    transform: scale(1.22) rotate(6deg);
     opacity: 1;
 }
 
