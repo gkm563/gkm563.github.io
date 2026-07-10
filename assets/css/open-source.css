@@ -1013,3 +1013,39 @@ section {
     border-radius: 4px;
 }
 
+/* ==========================================
+   WikiClub Tech Spotlight Layout Styles
+   ========================================== */
+.spotlight-card {
+    background: rgba(30, 41, 59, 0.35);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 28px;
+    padding: 4rem 3.5rem;
+    position: relative;
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+}
+
+.spotlight-glow {
+    position: absolute;
+    top: -20%;
+    left: -10%;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(168, 85, 247, 0.15) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+@media (max-width: 991px) {
+    .spotlight-grid {
+        grid-template-columns: 1fr !important;
+        gap: 2.5rem !important;
+    }
+    .spotlight-logo-panel {
+        order: -1;
+    }
+    .spotlight-card {
+        padding: 3rem 2rem;
+    }
+}
+
