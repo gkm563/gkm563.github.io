@@ -431,7 +431,7 @@ window.PORTFOLIO_TRANSLATIONS = {
         nav_open_source: '<i class="fas fa-code-branch nav-icon"></i> Open Source',
         hero_announcement_text: "NEW: Amroha Police Cyber Security Internship Program (APCSIP-2026) →",
         hero_announcement_text_ait: "NEW: AIT Bangkok Global Innovation Internship Program (GIIP-2026) →",
-        bento_cybersec_action: "Explore APCSIP-2026 13-Day Journey →",
+        bento_cybersec_action: "Explore APCSIP-2026 15-Day Journey →",
         bento_cybersec_action_ait: "Explore GIIP-2026 15-Day Journey →",
         
         // UP Police subpage headings
@@ -1016,7 +1016,7 @@ window.PORTFOLIO_TRANSLATIONS = {
         nav_open_source: '<i class="fas fa-code-branch nav-icon"></i> ओपन सोर्स',
         hero_announcement_text: "नया: अमरोहा पुलिस साइबर सुरक्षा इंटर्नशिप कार्यक्रम (APCSIP-2026) →",
         hero_announcement_text_ait: "नया: एआईटी बैंकॉक ग्लोबल इनोवेशन इंटर्नशिप प्रोग्राम (GIIP-2026) →",
-        bento_cybersec_action: "APCSIP-2026 13-दिवसीय यात्रा देखें →",
+        bento_cybersec_action: "APCSIP-2026 15-दिवसीय यात्रा देखें →",
         bento_cybersec_action_ait: "GIIP-2026 15-दिवसीय यात्रा देखें →",
         
         // UP Police subpage headings (Hindi)
