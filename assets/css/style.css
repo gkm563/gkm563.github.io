@@ -989,6 +989,42 @@ section {
 .project-card {
     display: flex;
     flex-direction: column;
+    position: relative;
+    overflow: hidden;
+    transition: border-color 0.35s ease, box-shadow 0.35s ease, transform 0.35s cubic-bezier(0.165, 0.84, 0.44, 1) !important;
+}
+
+/* Glass-shine reflection overlay sweep */
+.project-card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -150%;
+    width: 60%;
+    height: 100%;
+    background: linear-gradient(
+        to right,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(56, 189, 248, 0.08) 50%,
+        rgba(255, 255, 255, 0) 100%
+    );
+    transform: skewX(-25deg);
+    transition: left 0.85s cubic-bezier(0.165, 0.84, 0.44, 1);
+    pointer-events: none;
+    z-index: 5;
+}
+
+.project-card:hover {
+    transform: translateY(-8px) translateZ(12px) scale(1.018) !important;
+    box-shadow: 
+        0 20px 40px rgba(0, 0, 0, 0.45), 
+        0 0 25px rgba(14, 165, 233, 0.22),
+        0 0 10px rgba(168, 85, 247, 0.12) !important;
+    border-color: rgba(14, 165, 233, 0.6) !important;
+}
+
+.project-card:hover::after {
+    left: 150%;
 }
 
 .project-content {
