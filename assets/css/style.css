@@ -273,6 +273,20 @@ body {
     box-shadow: 0 0 15px rgba(249, 115, 22, 0.25);
 }
 
+.main-nav ul li a.nav-badge-opensource {
+    background: rgba(168, 85, 247, 0.12);
+    border-color: rgba(168, 85, 247, 0.25);
+    color: #c084fc;
+}
+
+.main-nav ul li a.nav-badge-opensource:hover,
+.main-nav ul li a.nav-badge-opensource.active {
+    background: rgba(168, 85, 247, 0.22);
+    border-color: rgba(168, 85, 247, 0.6);
+    color: #f3e8ff;
+    box-shadow: 0 0 15px rgba(168, 85, 247, 0.25);
+}
+
 /* Floating scrolled state adjustments */
 @media (min-width: 1025px) {
     .main-header.scrolled .main-nav ul li a {
@@ -6165,6 +6179,7 @@ body {
 .nav-icon {
     font-size: 0.85rem;
     opacity: 0.8;
+    margin-right: 0.45rem;
     transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     display: inline-block;
 }
@@ -6375,6 +6390,12 @@ body {
         background: rgba(249, 115, 22, 0.1) !important;
         border-color: rgba(249, 115, 22, 0.3) !important;
         color: #fb923c !important;
+    }
+    
+    .main-nav ul li a.nav-badge-opensource {
+        background: rgba(168, 85, 247, 0.1) !important;
+        border-color: rgba(168, 85, 247, 0.3) !important;
+        color: #c084fc !important;
     }
 }
 @media (max-width: 480px) {
