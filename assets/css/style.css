@@ -6121,7 +6121,133 @@ body {
     display: inline-block;
 }
 
-.footer-col ul li a:hover::before {
-    opacity: 1;
-    margin-right: 0.8rem;
+
+/* ═══════════════════════════════════════════════════════
+   PREMIUM INTERNSHIP CARDS (Hero Section)
+═══════════════════════════════════════════════════════ */
+.hero-internship-cards {
+    display: flex;
+    gap: 0.85rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+}
+.internship-card {
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+    padding: 0.75rem 1.1rem;
+    border-radius: 16px;
+    text-decoration: none;
+    position: relative;
+    overflow: hidden;
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    max-width: 390px;
+    border: 1px solid transparent;
+}
+.internship-card.ait-card {
+    background: rgba(14, 165, 233, 0.08);
+    border-color: rgba(14, 165, 233, 0.28);
+    box-shadow: 0 4px 24px rgba(14, 165, 233, 0.12);
+}
+.internship-card.ait-card:hover {
+    background: rgba(14, 165, 233, 0.14);
+    border-color: rgba(14, 165, 233, 0.6);
+    box-shadow: 0 8px 32px rgba(14, 165, 233, 0.3);
+    transform: translateY(-3px) scale(1.01);
+}
+.internship-card.ait-card .ic-icon-wrap { background: rgba(14,165,233,0.15); color: #38bdf8; }
+.internship-card.ait-card .ic-tag { color: #7dd3fc; }
+.internship-card.ait-card .ic-dot-core { background: #38bdf8; }
+.internship-card.ait-card .ic-dot-ring { border-color: #38bdf8; }
+.internship-card.ait-card .ic-arrow { color: #38bdf8; }
+.internship-card.police-card {
+    background: rgba(249, 115, 22, 0.08);
+    border-color: rgba(249, 115, 22, 0.28);
+    box-shadow: 0 4px 24px rgba(249, 115, 22, 0.12);
+}
+.internship-card.police-card:hover {
+    background: rgba(249, 115, 22, 0.14);
+    border-color: rgba(249, 115, 22, 0.6);
+    box-shadow: 0 8px 32px rgba(249, 115, 22, 0.3);
+    transform: translateY(-3px) scale(1.01);
+}
+.internship-card.police-card .ic-icon-wrap { background: rgba(249,115,22,0.15); color: #fb923c; }
+.internship-card.police-card .ic-tag { color: #fdba74; }
+.internship-card.police-card .ic-dot-core { background: #fb923c; }
+.internship-card.police-card .ic-dot-ring { border-color: #fb923c; }
+.internship-card.police-card .ic-arrow { color: #fb923c; }
+.ic-live-dot { position: relative; width: 8px; height: 8px; flex-shrink: 0; }
+.ic-dot-core { width: 8px; height: 8px; border-radius: 50%; display: block; }
+.ic-dot-ring {
+    position: absolute; top: 50%; left: 50%;
+    transform: translate(-50%,-50%);
+    width: 18px; height: 18px;
+    border-radius: 50%; border: 2px solid;
+    animation: ic-ping 1.8s ease infinite; opacity: 0;
+}
+@keyframes ic-ping {
+    0%   { transform: translate(-50%,-50%) scale(0.5); opacity: 0.8; }
+    100% { transform: translate(-50%,-50%) scale(2.2); opacity: 0; }
+}
+.ic-icon-wrap {
+    width: 40px; height: 40px; border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.05rem; flex-shrink: 0;
+    transition: transform 0.3s ease;
+}
+.internship-card:hover .ic-icon-wrap { transform: scale(1.12) rotate(-5deg); }
+.ic-body { text-align: left; flex: 1; min-width: 0; }
+.ic-tag {
+    font-size: 0.67rem; font-weight: 700; letter-spacing: 0.05em;
+    text-transform: uppercase; margin-bottom: 0.2rem; opacity: 0.85;
+}
+.ic-title {
+    font-family: var(--header-font, 'Outfit', sans-serif);
+    font-weight: 700; font-size: 0.82rem; color: #f1f5f9; line-height: 1.3;
+}
+.ic-sub { font-size: 0.68rem; color: #94a3b8; margin-top: 0.15rem; }
+.ic-arrow {
+    font-size: 0.85rem; flex-shrink: 0;
+    transition: transform 0.3s ease; opacity: 0.7;
+}
+.internship-card:hover .ic-arrow { transform: translateX(5px); opacity: 1; }
+
+/* Navbar internship highlights */
+.nav-highlight-ait {
+    background: rgba(14, 165, 233, 0.1) !important;
+    border-color: rgba(14, 165, 233, 0.3) !important;
+    color: #38bdf8 !important;
+}
+.nav-highlight-ait:hover {
+    background: rgba(14, 165, 233, 0.2) !important;
+    border-color: rgba(14, 165, 233, 0.65) !important;
+    box-shadow: 0 0 16px rgba(14,165,233,0.35) !important;
+}
+.nav-highlight-police {
+    background: rgba(249, 115, 22, 0.1) !important;
+    border-color: rgba(249, 115, 22, 0.3) !important;
+    color: #fb923c !important;
+}
+.nav-highlight-police:hover {
+    background: rgba(249, 115, 22, 0.2) !important;
+    border-color: rgba(249, 115, 22, 0.65) !important;
+    box-shadow: 0 0 16px rgba(249,115,22,0.35) !important;
+}
+.main-nav ul li a i { font-size: 0.73rem; opacity: 0.75; }
+
+/* Mobile nav improvements */
+@media (max-width: 1024px) {
+    .hero-internship-cards { flex-direction: column; align-items: center; gap: 0.65rem; }
+    .internship-card { max-width: 100%; width: min(420px, 90vw); }
+    .main-nav ul { background: rgba(4, 9, 28, 0.97); border-right: 1px solid rgba(14,165,233,0.12); }
+    .main-nav ul li a { width: 80%; text-align: center; justify-content: center; border-radius: 12px; padding: 0.7rem 1.5rem; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.06); }
+    .main-nav ul li a i { font-size: 0.9rem; opacity: 1; }
+    .hamburger .bar { background: var(--primary-color, #0ea5e9); border-radius: 3px; }
+}
+@media (max-width: 480px) {
+    .ic-sub { display: none; }
+    .internship-card { padding: 0.65rem 0.9rem; }
 }
