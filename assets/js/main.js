@@ -754,30 +754,56 @@ function initHero3DUniverse() {
     const group = new THREE.Group();
     scene.add(group);
 
-    // 1. LAPTOP
-    const laptopGroup = new THREE.Group();
+    // Shared materials
     const bodyMat = new THREE.MeshStandardMaterial({ color: 0x334155, metalness: 0.8, roughness: 0.2 });
     const screenMat = new THREE.MeshBasicMaterial({ color: 0x0ea5e9, transparent: true, opacity: 0.8 });
-    
+
+    // 1. MACBOOK (Laptop)
+    const laptopGroup = new THREE.Group();
     const baseMesh = new THREE.Mesh(new THREE.BoxGeometry(1.2, 0.05, 0.8), bodyMat);
     baseMesh.position.y = -0.2;
     laptopGroup.add(baseMesh);
-    
     const lidMesh = new THREE.Mesh(new THREE.BoxGeometry(1.2, 0.7, 0.04), bodyMat);
     lidMesh.position.set(0, 0.15, -0.38);
     lidMesh.rotation.x = -0.15;
     laptopGroup.add(lidMesh);
-
     const innerScreen = new THREE.Mesh(new THREE.BoxGeometry(1.1, 0.6, 0.01), screenMat);
     innerScreen.position.set(0, 0.15, -0.35);
     innerScreen.rotation.x = -0.15;
     laptopGroup.add(innerScreen);
-    
     laptopGroup.position.set(-2.8, 1.2, -1);
-    laptopGroup.rotation.set(0.2, 0.4, 0);
     group.add(laptopGroup);
 
-    // 2. DATABASE
+    // 2. MECHANICAL KEYBOARD
+    const keyboardGroup = new THREE.Group();
+    const keybBase = new THREE.Mesh(new THREE.BoxGeometry(0.8, 0.05, 0.3), bodyMat);
+    keyboardGroup.add(keybBase);
+    const keybPlate = new THREE.Mesh(
+        new THREE.BoxGeometry(0.74, 0.02, 0.25),
+        new THREE.MeshStandardMaterial({ color: 0x10b981, roughness: 0.4 })
+    );
+    keybPlate.position.y = 0.03;
+    keyboardGroup.add(keybPlate);
+    keyboardGroup.position.set(-1.8, 0.5, -1.2);
+    group.add(keyboardGroup);
+
+    // 3. MONITOR
+    const monitorGroup = new THREE.Group();
+    const standMesh = new THREE.Mesh(new THREE.CylinderGeometry(0.04, 0.04, 0.45, 8), bodyMat);
+    standMesh.position.y = -0.3;
+    monitorGroup.add(standMesh);
+    const monitorBase = new THREE.Mesh(new THREE.CylinderGeometry(0.2, 0.22, 0.03, 12), bodyMat);
+    monitorBase.position.y = -0.52;
+    monitorGroup.add(monitorBase);
+    const monitorScreen = new THREE.Mesh(new THREE.BoxGeometry(1.2, 0.72, 0.05), bodyMat);
+    monitorGroup.add(monitorScreen);
+    const monitorFace = new THREE.Mesh(new THREE.BoxGeometry(1.12, 0.64, 0.01), screenMat);
+    monitorFace.position.z = 0.03;
+    monitorGroup.add(monitorFace);
+    monitorGroup.position.set(-1.8, 2.0, -1.5);
+    group.add(monitorGroup);
+
+    // 4. DATABASE CYLINDER
     const dbGroup = new THREE.Group();
     const dbMat = new THREE.MeshStandardMaterial({ color: 0xa855f7, metalness: 0.9, roughness: 0.15 });
     for (let i = 0; i < 3; i++) {
@@ -786,16 +812,13 @@ function initHero3DUniverse() {
         dbGroup.add(seg);
     }
     dbGroup.position.set(2.8, 1.2, -1);
-    dbGroup.rotation.set(0.2, -0.4, 0);
     group.add(dbGroup);
 
-    // 3. SERVER
+    // 5. SERVER RACK
     const serverGroup = new THREE.Group();
     const serverMat = new THREE.MeshStandardMaterial({ color: 0x1e293b, metalness: 0.7, roughness: 0.3 });
     const serverChassis = new THREE.Mesh(new THREE.BoxGeometry(0.5, 0.8, 0.5), serverMat);
     serverGroup.add(serverChassis);
-
-    // Flashing LEDs
     const ledMatOn = new THREE.MeshBasicMaterial({ color: 0x10b981 });
     const ledMatOff = new THREE.MeshBasicMaterial({ color: 0x064e3b });
     const leds = [];
@@ -806,25 +829,9 @@ function initHero3DUniverse() {
         leds.push(led);
     }
     serverGroup.position.set(-2.8, -1.2, -1);
-    serverGroup.rotation.set(0.1, 0.5, 0);
     group.add(serverGroup);
 
-    // 4. AI CHIP
-    const chipGroup = new THREE.Group();
-    const boardMat = new THREE.MeshStandardMaterial({ color: 0x065f46, roughness: 0.5 });
-    const goldMat = new THREE.MeshStandardMaterial({ color: 0xf59e0b, metalness: 0.9, roughness: 0.1 });
-    
-    const board = new THREE.Mesh(new THREE.BoxGeometry(0.7, 0.7, 0.05), boardMat);
-    chipGroup.add(board);
-    
-    const core = new THREE.Mesh(new THREE.BoxGeometry(0.3, 0.3, 0.08), goldMat);
-    chipGroup.add(core);
-    
-    chipGroup.position.set(2.8, -1.2, -1);
-    chipGroup.rotation.set(0.3, -0.3, 0.2);
-    group.add(chipGroup);
-
-    // 5. GIT BRANCH
+    // 6. GIT BRANCH
     const gitGroup = new THREE.Group();
     const gitMat = new THREE.MeshStandardMaterial({ color: 0x10b981, metalness: 0.5, roughness: 0.2 });
     const node1 = new THREE.Mesh(new THREE.SphereGeometry(0.1, 16, 16), gitMat);
@@ -834,11 +841,10 @@ function initHero3DUniverse() {
     const node3 = new THREE.Mesh(new THREE.SphereGeometry(0.1, 16, 16), gitMat);
     node3.position.set(0, -0.2, 0);
     gitGroup.add(node1, node2, node3);
-    
     gitGroup.position.set(1.9, 0, -1);
     group.add(gitGroup);
 
-    // 6. CLOUD
+    // 7. CLOUD
     const cloudGroup = new THREE.Group();
     const cloudMat = new THREE.MeshStandardMaterial({ color: 0xe2e8f0, roughness: 0.9, transparent: true, opacity: 0.8 });
     const s1 = new THREE.Mesh(new THREE.SphereGeometry(0.32, 16, 16), cloudMat);
@@ -850,7 +856,18 @@ function initHero3DUniverse() {
     cloudGroup.position.set(-1.9, 0, -1);
     group.add(cloudGroup);
 
-    // 7. FLOATING CUBES
+    // 8. AI CHIP
+    const chipGroup = new THREE.Group();
+    const boardMat = new THREE.MeshStandardMaterial({ color: 0x065f46, roughness: 0.5 });
+    const goldMat = new THREE.MeshStandardMaterial({ color: 0xf59e0b, metalness: 0.9, roughness: 0.1 });
+    const board = new THREE.Mesh(new THREE.BoxGeometry(0.7, 0.7, 0.05), boardMat);
+    chipGroup.add(board);
+    const core = new THREE.Mesh(new THREE.BoxGeometry(0.3, 0.3, 0.08), goldMat);
+    chipGroup.add(core);
+    chipGroup.position.set(2.8, -1.2, -1);
+    group.add(chipGroup);
+
+    // 9. CUBE
     const cubeMat = new THREE.MeshPhysicalMaterial({ color: 0x38bdf8, transparent: true, opacity: 0.45, roughness: 0.1, transmission: 0.6 });
     const cube1 = new THREE.Mesh(new THREE.BoxGeometry(0.25, 0.25, 0.25), cubeMat);
     cube1.position.set(-1.2, 1.8, -1.5);
@@ -858,7 +875,7 @@ function initHero3DUniverse() {
     cube2.position.set(1.2, -1.8, -1.5);
     group.add(cube1, cube2);
 
-    // 8. WIREFRAME SPHERE
+    // 10. WIREFRAME SPHERE
     const wireframeSphere = new THREE.Mesh(
         new THREE.IcosahedronGeometry(2.2, 1),
         new THREE.MeshBasicMaterial({ color: 0x334155, wireframe: true, transparent: true, opacity: 0.15 })
@@ -896,31 +913,39 @@ function initHero3DUniverse() {
         group.visible = true;
 
         // Slow rotations
-        laptopGroup.rotation.y = 0.4 + Math.sin(time * 0.4) * 0.1;
-        laptopGroup.rotation.x = 0.2 + Math.cos(time * 0.3) * 0.05;
+        laptopGroup.rotation.y = time * 0.04;
+        laptopGroup.rotation.x = Math.sin(time * 0.2) * 0.08;
         
-        dbGroup.rotation.y = -0.4 + Math.cos(time * 0.4) * 0.1;
-        dbGroup.rotation.z = Math.sin(time * 0.2) * 0.05;
+        keyboardGroup.rotation.y = time * 0.03;
+        keyboardGroup.rotation.z = Math.cos(time * 0.25) * 0.04;
 
-        serverGroup.rotation.y = 0.5 + Math.sin(time * 0.3) * 0.08;
+        monitorGroup.rotation.y = time * 0.035;
+        monitorGroup.rotation.x = Math.sin(time * 0.15) * 0.05;
+
+        dbGroup.rotation.y = -time * 0.045;
+        dbGroup.rotation.z = Math.cos(time * 0.2) * 0.05;
+
+        serverGroup.rotation.y = time * 0.03;
         
-        chipGroup.rotation.x = 0.3 + Math.sin(time * 0.5) * 0.1;
-        chipGroup.rotation.y = -0.3 + Math.cos(time * 0.4) * 0.1;
+        chipGroup.rotation.x = Math.sin(time * 0.25) * 0.08;
+        chipGroup.rotation.y = -time * 0.04;
 
-        gitGroup.rotation.z = time * 0.2;
-        cloudGroup.rotation.y = Math.sin(time * 0.2) * 0.15;
+        gitGroup.rotation.y = time * 0.05;
+        cloudGroup.rotation.y = Math.sin(time * 0.15) * 0.08;
 
-        cube1.rotation.set(time * 0.5, time * 0.3, 0);
-        cube2.rotation.set(time * 0.3, time * 0.5, 0);
-        wireframeSphere.rotation.y = time * 0.04;
+        cube1.rotation.set(time * 0.15, time * 0.1, 0);
+        cube2.rotation.set(time * 0.1, time * 0.15, 0);
+        wireframeSphere.rotation.y = time * 0.015;
 
         // Slow floating bobs
-        laptopGroup.position.y = 1.2 + Math.sin(time + 1) * 0.15;
-        dbGroup.position.y = 1.2 + Math.sin(time + 2) * 0.15;
-        serverGroup.position.y = -1.2 + Math.sin(time + 3) * 0.15;
-        chipGroup.position.y = -1.2 + Math.sin(time + 4) * 0.15;
-        gitGroup.position.y = Math.sin(time * 1.5) * 0.1;
-        cloudGroup.position.y = Math.sin(time * 1.2) * 0.1;
+        laptopGroup.position.y = 1.2 + Math.sin(time + 1) * 0.12;
+        keyboardGroup.position.y = 0.5 + Math.sin(time + 1.8) * 0.1;
+        monitorGroup.position.y = 2.0 + Math.sin(time + 2.5) * 0.15;
+        dbGroup.position.y = 1.2 + Math.sin(time + 2) * 0.12;
+        serverGroup.position.y = -1.2 + Math.sin(time + 3) * 0.12;
+        chipGroup.position.y = -1.2 + Math.sin(time + 4) * 0.12;
+        gitGroup.position.y = Math.sin(time * 0.8) * 0.08;
+        cloudGroup.position.y = Math.sin(time * 0.6) * 0.08;
 
         // Flash server LEDs
         leds.forEach((led, idx) => {
