@@ -129,55 +129,53 @@ body {
     transform: translateX(-50%);
     width: 100%;
     z-index: 1000;
-    background: rgba(2, 6, 23, 0.7);
-    backdrop-filter: blur(12px);
-    padding: 1rem 0;
-    transition: top 0.4s cubic-bezier(0.16, 1, 0.3, 1),
-                width 0.4s cubic-bezier(0.16, 1, 0.3, 1),
-                max-width 0.4s cubic-bezier(0.16, 1, 0.3, 1),
-                border-radius 0.4s cubic-bezier(0.16, 1, 0.3, 1),
-                background 0.4s ease,
-                box-shadow 0.4s ease,
-                padding 0.4s ease,
-                border 0.4s ease;
-    border-bottom: 1px solid rgba(14, 165, 233, 0.15);
+    background: rgba(2, 6, 23, 0.4);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    padding: 1.1rem 0;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    border-bottom: 1px solid rgba(14, 165, 233, 0.08);
 }
 
 .main-header.scrolled {
     top: 15px;
-    width: calc(100% - 40px);
-    max-width: 1100px;
-    border-radius: 100px;
-    background: rgba(15, 23, 42, 0.75);
-    border: 1px solid rgba(14, 165, 233, 0.25);
+    width: calc(100% - 30px);
+    max-width: 1000px;
+    border-radius: 50px;
+    background: rgba(8, 12, 30, 0.7);
+    border: 1px solid rgba(14, 165, 233, 0.2);
     box-shadow: 
-        0 20px 40px rgba(0, 0, 0, 0.4), 
-        0 0 25px rgba(14, 165, 233, 0.2),
-        inset 0 0 15px rgba(14, 165, 233, 0.1);
-    padding: 0.6rem 0.5rem;
+        0 20px 40px rgba(0, 0, 0, 0.3), 
+        0 0 30px rgba(14, 165, 233, 0.15),
+        inset 0 0 12px rgba(14, 165, 233, 0.08);
+    padding: 0.55rem 0.5rem;
 }
 
 .main-header .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
 }
 
 .logo {
-    font-size: 1.8rem;
-    font-weight: 700;
+    font-size: 1.6rem;
+    font-weight: 800;
     text-decoration: none;
-    letter-spacing: -1px;
+    letter-spacing: -0.5px;
     white-space: nowrap;
     flex-shrink: 0;
-    transition: filter 0.3s ease;
-    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color), var(--primary-color));
+    transition: all 0.3s ease;
+    background: linear-gradient(90deg, #0ea5e9, #f43f5e, #0ea5e9);
     background-size: 200% auto;
     color: #fff;
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    animation: textGradient 5s linear infinite;
+    animation: textGradient 6s linear infinite;
 }
 
 @keyframes textGradient {
@@ -187,7 +185,8 @@ body {
 }
 
 .logo:hover {
-    filter: drop-shadow(0 0 8px var(--primary-color));
+    filter: drop-shadow(0 0 8px rgba(14, 165, 233, 0.6));
+    transform: scale(1.03);
 }
 
 .main-nav {
@@ -198,75 +197,94 @@ body {
 .main-nav ul {
     display: flex;
     list-style: none;
+    align-items: center;
+    gap: 0.4rem;
 }
 
 .main-nav ul li {
-    margin-left: 1.3rem; /* Reduced margin to fit 10 items without wrapping */
-    transition: margin-left 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    position: relative;
 }
 
 .main-nav ul li a {
     display: inline-flex;
     align-items: center;
-    gap: 0.45rem;
-    color: var(--text-color);
+    color: #94a3b8;
     text-decoration: none;
-    font-weight: 500;
+    font-weight: 600;
     transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-    position: relative;
-    padding: 0.35rem 0.8rem;
-    border-radius: 50px;
-    font-size: 0.9rem; /* Slightly reduced font size */
-    display: inline-block;
+    padding: 0.45rem 0.85rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
     border: 1px solid transparent;
-}
-
-/* Custom navigation spacing adjustments to support 10 menu links on smaller laptop viewports */
-@media (min-width: 1025px) and (max-width: 1280px) {
-    .main-nav ul li {
-        margin-left: 0.65rem;
-    }
-    .main-nav ul li a {
-        font-size: 0.8rem;
-    }
-    .header-actions {
-        gap: 0.8rem;
-    }
-}
-
-/* Floating scrolled state optimizations to prevent item wrapping on all desktop screens */
-@media (min-width: 1025px) {
-    .main-header.scrolled .main-nav ul li {
-        margin-left: 0.65rem;
-    }
-    .main-header.scrolled .main-nav ul li a {
-        font-size: 0.8rem;
-    }
-    .main-header.scrolled .container {
-        padding: 0 1.25rem; /* Reclaim container horizontal padding space */
-    }
-}
-
-.main-nav ul li a:hover {
-    transform: translateY(-1px);
-}
-
-.main-nav ul li a::after {
-    display: none;
 }
 
 .main-nav ul li a:hover,
 .main-nav ul li a.active {
-    color: var(--primary-color);
-    background: var(--primary-glow);
-    border-color: var(--primary-border-glow);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15), 0 0 8px var(--primary-glow);
+    color: #f8fafc;
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(255, 255, 255, 0.08);
+}
+
+/* Nav Badges (GIIP-2026 and APCSIP-2026) */
+.main-nav ul li a.nav-badge {
+    gap: 0.35rem;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    padding: 0.4rem 0.8rem;
+    border-radius: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.main-nav ul li a.nav-badge i {
+    font-size: 0.75rem;
+    transition: transform 0.3s ease;
+}
+
+.main-nav ul li a.nav-badge:hover i {
+    transform: scale(1.18) rotate(-6deg);
+}
+
+.main-nav ul li a.nav-badge-ait {
+    background: rgba(14, 165, 233, 0.12);
+    border-color: rgba(14, 165, 233, 0.25);
+    color: #38bdf8;
+}
+
+.main-nav ul li a.nav-badge-ait:hover,
+.main-nav ul li a.nav-badge-ait.active {
+    background: rgba(14, 165, 233, 0.22);
+    border-color: rgba(14, 165, 233, 0.6);
+    color: #e0f2fe;
+    box-shadow: 0 0 15px rgba(14, 165, 233, 0.25);
+}
+
+.main-nav ul li a.nav-badge-police {
+    background: rgba(249, 115, 22, 0.12);
+    border-color: rgba(249, 115, 22, 0.25);
+    color: #fb923c;
+}
+
+.main-nav ul li a.nav-badge-police:hover,
+.main-nav ul li a.nav-badge-police.active {
+    background: rgba(249, 115, 22, 0.22);
+    border-color: rgba(249, 115, 22, 0.6);
+    color: #ffedd5;
+    box-shadow: 0 0 15px rgba(249, 115, 22, 0.25);
+}
+
+/* Floating scrolled state adjustments */
+@media (min-width: 1025px) {
+    .main-header.scrolled .main-nav ul li a {
+        font-size: 0.8rem;
+        padding: 0.38rem 0.75rem;
+    }
 }
 
 .header-actions {
     display: flex;
     align-items: center;
-    gap: 1.2rem;
+    gap: 1rem;
 }
 
 .lang-switch-wrapper {
@@ -353,18 +371,36 @@ body {
 .hamburger {
     display: none;
     cursor: pointer;
-    z-index: 1001;
+    z-index: 1050;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    padding: 0;
     margin-left: 0.5rem;
+}
+
+.hamburger:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(14, 165, 233, 0.4);
+    box-shadow: 0 0 12px rgba(14, 165, 233, 0.2);
 }
 
 .hamburger .bar {
     display: block;
-    width: 25px;
-    height: 3px;
-    margin: 5px auto;
-    background-color: var(--text-color);
-    transition: all 0.3s ease-in-out;
+    width: 18px;
+    height: 2px;
+    margin: 3px auto;
+    background-color: #f8fafc;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    border-radius: 2px;
 }
+
 
 #hero {
     height: 100vh;
@@ -6238,16 +6274,62 @@ body {
 }
 .main-nav ul li a i { font-size: 0.73rem; opacity: 0.75; }
 
+
 /* Mobile nav improvements */
 @media (max-width: 1024px) {
     .hero-internship-cards { flex-direction: column; align-items: center; gap: 0.65rem; }
     .internship-card { max-width: 100%; width: min(420px, 90vw); }
-    .main-nav ul { background: rgba(4, 9, 28, 0.97); border-right: 1px solid rgba(14,165,233,0.12); }
-    .main-nav ul li a { width: 80%; text-align: center; justify-content: center; border-radius: 12px; padding: 0.7rem 1.5rem; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.06); }
-    .main-nav ul li a i { font-size: 0.9rem; opacity: 1; }
-    .hamburger .bar { background: var(--primary-color, #0ea5e9); border-radius: 3px; }
+    
+    .hamburger {
+        display: flex !important;
+    }
+    
+    .main-nav ul {
+        background: rgba(8, 12, 30, 0.98);
+        border-left: 1px solid rgba(14, 165, 233, 0.15);
+        box-shadow: -10px 0 30px rgba(0, 0, 0, 0.5);
+        padding-top: 100px;
+        width: 280px;
+        left: auto;
+        right: -280px;
+        transition: right 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    
+    .main-nav ul.active {
+        left: auto;
+        right: 0;
+    }
+    
+    .main-nav ul li a {
+        width: 85%;
+        text-align: center;
+        justify-content: center;
+        border-radius: 12px;
+        padding: 0.65rem 1.2rem;
+        background: rgba(255, 255, 255, 0.02);
+        border: 1px solid rgba(255, 255, 255, 0.05);
+        margin: 0 auto;
+    }
+
+    .main-nav ul li a.nav-badge {
+        width: 85%;
+        display: inline-flex;
+    }
+    
+    .main-nav ul li a.nav-badge-ait {
+        background: rgba(14, 165, 233, 0.1) !important;
+        border-color: rgba(14, 165, 233, 0.3) !important;
+        color: #38bdf8 !important;
+    }
+    
+    .main-nav ul li a.nav-badge-police {
+        background: rgba(249, 115, 22, 0.1) !important;
+        border-color: rgba(249, 115, 22, 0.3) !important;
+        color: #fb923c !important;
+    }
 }
 @media (max-width: 480px) {
     .ic-sub { display: none; }
     .internship-card { padding: 0.65rem 0.9rem; }
 }
+
