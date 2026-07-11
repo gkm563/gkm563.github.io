@@ -6245,6 +6245,25 @@ body {
 .internship-card.police-card .ic-dot-core { background: #fb923c; }
 .internship-card.police-card .ic-dot-ring { border-color: #fb923c; }
 .internship-card.police-card .ic-arrow { color: #fb923c; }
+
+/* Open Source Card — purple */
+.internship-card.opensource-card {
+    background: rgba(168, 85, 247, 0.08);
+    border-color: rgba(168, 85, 247, 0.28);
+    box-shadow: 0 4px 24px rgba(168, 85, 247, 0.12);
+}
+.internship-card.opensource-card:hover {
+    background: rgba(168, 85, 247, 0.14);
+    border-color: rgba(168, 85, 247, 0.6);
+    box-shadow: 0 8px 32px rgba(168, 85, 247, 0.3);
+    transform: translateY(-3px) scale(1.01);
+}
+.internship-card.opensource-card .ic-icon-wrap { background: rgba(168,85,247,0.15); color: #c084fc; }
+.internship-card.opensource-card .ic-tag { color: #d8b4fe; }
+.internship-card.opensource-card .ic-dot-core { background: #c084fc; }
+.internship-card.opensource-card .ic-dot-ring { border-color: #c084fc; }
+.internship-card.opensource-card .ic-arrow { color: #c084fc; }
+
 .ic-live-dot { position: relative; width: 8px; height: 8px; flex-shrink: 0; }
 .ic-dot-core { width: 8px; height: 8px; border-radius: 50%; display: block; }
 .ic-dot-ring {
