@@ -6212,6 +6212,7 @@ body {
     justify-content: center;
     flex-wrap: wrap;
     margin-bottom: 2rem;
+    margin-top: 1.6rem;
 }
 .internship-card {
     display: flex;
@@ -6341,7 +6342,7 @@ body {
 
 /* Mobile nav improvements */
 @media (max-width: 1024px) {
-    .hero-internship-cards { flex-direction: column; align-items: center; gap: 0.65rem; }
+    .hero-internship-cards { flex-direction: column; align-items: center; gap: 0.65rem; margin-top: 1.2rem; }
     .internship-card { max-width: 100%; width: min(420px, 90vw); }
     
     .hamburger {
