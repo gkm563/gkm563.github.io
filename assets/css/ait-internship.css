@@ -3185,43 +3185,46 @@ body.internship-page::after {
 
 .flying-plane {
     position: absolute;
-    width: 24px;
-    height: 24px;
-    color: #06b6d4;
-    filter: drop-shadow(0 0 8px #06b6d4);
-    font-size: 1.25rem;
+    width: 40px;
+    height: 40px;
     display: flex;
     align-items: center;
     justify-content: center;
+    /* offset-path synced with the SVG arc path */
     offset-path: path('M 10 90 Q 240 -15 470 90');
-    offset-rotate: auto -45deg;
-    animation: flightTransition 6s infinite cubic-bezier(0.4, 0.0, 0.2, 1);
-    z-index: 5;
+    /* auto = browser computes tangent angle exactly; plane SVG nose points right */
+    offset-rotate: auto;
+    animation: flightTransition 5s infinite ease-in-out;
+    z-index: 10;
+    filter: drop-shadow(0 0 6px rgba(6,182,212,0.9)) drop-shadow(0 0 14px rgba(168,85,247,0.5));
 }
 
-.plane-trail {
-    position: absolute;
-    width: 60px;
-    height: 2px;
-    background: linear-gradient(90deg, rgba(6, 182, 212, 0.4), transparent);
-    right: 20px;
-    transform: rotate(180deg);
-    opacity: 0.8;
+.plane-svg-icon {
+    width: 40px;
+    height: 40px;
+    display: block;
+}
+
+/* Contrail: animated dotted line that draws behind the plane */
+.trail-glow-line {
+    stroke-dasharray: 490;
+    stroke-dashoffset: 490;
+    animation: glowTrail 5s infinite ease-in-out;
 }
 
 @keyframes flightTransition {
     0% {
-        offset-distance: 0%;
+        offset-distance: 2%;
         opacity: 0;
     }
-    10% {
+    8% {
         opacity: 1;
     }
-    90% {
+    92% {
         opacity: 1;
     }
     100% {
-        offset-distance: 100%;
+        offset-distance: 98%;
         opacity: 0;
     }
 }
@@ -3369,21 +3372,9 @@ body.internship-page::after {
     opacity: 0.8;
 }
 
-/* Flight Path trail glow sync */
+/* Flight Path trail glow sync — override with correct 5s duration */
 .trail-glow-line {
-    animation: glowTrail 4s infinite linear;
-}
-
-.flying-plane {
-    animation: flightTransition 4s infinite linear;
-    color: #fff;
-    font-size: 1.35rem;
-    filter: drop-shadow(0 0 12px #06b6d4) drop-shadow(0 0 5px #a855f7);
-}
-
-.plane-trail {
-    width: 80px;
-    background: linear-gradient(90deg, rgba(6, 182, 212, 0.6), rgba(168, 85, 247, 0.3), transparent);
+    animation: glowTrail 5s infinite ease-in-out;
 }
 
 @media (max-width: 600px) {
@@ -3509,7 +3500,12 @@ input, textarea, select {
     }
 
     .flying-plane {
-        font-size: 1.1rem;
+        width: 30px;
+        height: 30px;
+    }
+    .plane-svg-icon {
+        width: 30px;
+        height: 30px;
     }
 
     /* CTA stack */
@@ -3560,8 +3556,13 @@ input, textarea, select {
     }
 
     .flying-plane {
-        font-size: 1rem;
+        width: 26px;
+        height: 26px;
         offset-path: path('M 5 65 Q 150 -8 290 65');
+    }
+    .plane-svg-icon {
+        width: 26px;
+        height: 26px;
     }
 
     .radar-grid-svg {
@@ -3614,8 +3615,13 @@ input, textarea, select {
     }
 
     .flying-plane {
+        width: 22px;
+        height: 22px;
         offset-path: path('M 5 50 Q 100 -5 195 50');
-        font-size: 0.9rem;
+    }
+    .plane-svg-icon {
+        width: 22px;
+        height: 22px;
     }
 
     .flight-journey-status span {

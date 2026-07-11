@@ -273,8 +273,10 @@
     <!-- Subpage Hero Header Section -->
     <section class="internship-hero">
         <div class="container">
-            <div class="hero-emblem-row" data-aos="zoom-in" style="justify-content: center; margin-bottom: 2rem;">
-                <img src="assets/images/ait-bangkok/Asian_Institute_of_Technology-Logo.png" alt="AIT Bangkok Official Logo" class="hero-brand-logo" style="max-height: 80px; width: auto; background: rgba(255, 255, 255, 0.95); padding: 8px 16px; border-radius: 12px; box-shadow: 0 0 20px rgba(255,255,255,0.15);" loading="eager" fetchpriority="high" decoding="async">
+            <div class="hero-emblem-row" data-aos="zoom-in" style="justify-content: center; align-items: center; gap: 1.25rem; margin-bottom: 2rem; flex-wrap: wrap;">
+                <img src="assets/images/ait-bangkok/Asian_Institute_of_Technology-Logo.png" alt="AIT Bangkok Official Logo" class="hero-brand-logo" style="max-height: 72px; width: auto; background: rgba(255, 255, 255, 0.95); padding: 8px 16px; border-radius: 12px; box-shadow: 0 0 20px rgba(255,255,255,0.15);" loading="eager" fetchpriority="high" decoding="async">
+                <div style="width: 1px; height: 52px; background: rgba(255,255,255,0.2); border-radius: 2px; flex-shrink: 0;"></div>
+                <img src="assets/images/ait-bangkok/united-group-of-institutions-logo.png" alt="United Group of Institutions — Greater Noida & Allahabad" class="hero-brand-logo" style="max-height: 72px; width: auto; background: rgba(255, 255, 255, 0.95); padding: 8px 16px; border-radius: 12px; box-shadow: 0 0 20px rgba(255,255,255,0.15);" loading="eager" decoding="async">
             </div>
 
             <div class="hero-meta-badge" data-aos="fade-down">
@@ -364,10 +366,27 @@
                             <!-- The animated glow path -->
                             <path d="M 10 90 Q 240 -15 470 90" fill="none" stroke="url(#flightGradient)" stroke-width="3" class="trail-glow-line"/>
                         </svg>
-                        <!-- Flying Airplane SVG -->
+                        <!-- Flying Airplane SVG (motion-path aligned) -->
                         <div class="flying-plane" id="animated-airplane">
-                            <i class="fas fa-plane"></i>
-                            <div class="plane-trail"></div>
+                            <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" class="plane-svg-icon">
+                                <!-- Airplane body pointing RIGHT (→) so offset-rotate:auto aligns with arc tangent -->
+                                <g transform="translate(32,32)">
+                                    <!-- Fuselage -->
+                                    <ellipse rx="20" ry="5" fill="#ffffff" />
+                                    <!-- Nose cone -->
+                                    <polygon points="20,0 14,-3.5 14,3.5" fill="#06b6d4" />
+                                    <!-- Tail -->
+                                    <polygon points="-20,0 -14,-7 -14,7" fill="#a855f7" />
+                                    <!-- Left wing -->
+                                    <polygon points="-2,-5 12,-5 6,-18" fill="#e2e8f0" />
+                                    <!-- Right wing -->
+                                    <polygon points="-2,5 12,5 6,18" fill="#e2e8f0" />
+                                    <!-- Left stabilizer -->
+                                    <polygon points="-14,-5 -8,-5 -12,-11" fill="#cbd5e1" />
+                                    <!-- Right stabilizer -->
+                                    <polygon points="-14,5 -8,5 -12,11" fill="#cbd5e1" />
+                                </g>
+                            </svg>
                         </div>
                     </div>
 
