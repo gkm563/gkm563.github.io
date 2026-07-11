@@ -231,7 +231,43 @@ window.GKM_KNOWLEDGE = {
       { title: "Sedimentary rock", hindi: "अवसादी शैल", link: "https://hi.wikipedia.org", date: "3 Jun", category: "science" },
       { title: "Seismology", hindi: "भूकंप विज्ञान", link: "https://hi.wikipedia.org", date: "3 Jun", category: "science" }
     ],
-    tools: ["Gerrit (code review)", "Phabricator (task tracking)", "git-review", "MediaWiki API", "GitHub", "GitLab"]
+    tools: ["Gerrit (code review)", "Phabricator (task tracking)", "git-review", "MediaWiki API", "GitHub", "GitLab"],
+    keyContributions: [
+      {
+        name: "Abstract Wikipedia — Function Orchestrator (WFFunctionCall)",
+        task: "T426338",
+        mr: "MR 684",
+        description: "Implemented getFunction(), getArgument(), and getArguments() accessor methods to improve encapsulation and maintainability of the WFFunctionCall class inside the production codebase of the Function Orchestrator.",
+        impact: "Architecturally significant contribution to the Abstract Wikipedia engineering codebase, validated via GitLab MR and Phabricator workflow.",
+        link: "https://gitlab.wikimedia.org/repos/abstract-wiki/wikifunctions/function-orchestrator/-/merge_requests/684"
+      },
+      {
+        name: "MinervaNeue Skin — Malformed URI Fragment Handler (TitleUtil)",
+        task: "T424875",
+        description: "Added defensive try-catch decoding for URI fragments inside TitleUtil to prevent URIError crashes caused by malformed percent-encoded red-links on mobile Wikipedia.",
+        impact: "Improves client-side reliability and stability for millions of mobile users browsing Wikipedia.",
+        link: "https://gerrit.wikimedia.org/r/c/mediawiki/skins/MinervaNeue/+/1287961"
+      },
+      {
+        name: "GrowthExperiments — Grammatical Gender Support in exception message",
+        task: "T416226",
+        description: "Resolved an i18n accessibility gap in growthexperiments-exception-no-mentored-text by implementing correct grammatical gender support conforming to internationalization standards.",
+        impact: "Ensures localized mentor messages respect grammatical gender preferences for wiki editors globally.",
+        link: "https://gerrit.wikimedia.org/r/c/mediawiki/extensions/GrowthExperiments/+/1289010"
+      },
+      {
+        name: "MediaWiki Core — Special Page Discoverability & Aliases",
+        description: "Contributed Special Page aliases for Special:MediaStats and Special:MuteUser to improve editor search discoverability without changing canonical routing paths.",
+        impact: "Improves discoverability of tools for editors managing user bans and wiki statistics.",
+        link: "https://gerrit.wikimedia.org/r/c/mediawiki/core/+/1276283"
+      },
+      {
+        name: "Pywikibot Core — HTML Comments Regression Tests",
+        description: "Implemented regression tests in Pywikibot Core verifying that HTML comments in references sections remain properly placed above the closing tag, ensuring layout integrity on future parser updates.",
+        impact: "Guarantees automated bot edits do not corrupt article formatting during structural cleanups.",
+        link: "https://gerrit.wikimedia.org/r/c/pywikibot/core/+/1290141"
+      }
+    ]
   },
 
   internship: {
