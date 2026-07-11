@@ -414,7 +414,7 @@ function onAvatarMouseMove(e) {
 function createCroppedFaceTexture(callback) {
     const img = new Image();
     img.crossOrigin = "anonymous";
-    img.src = "assets/images/Gautam_Kumar_Maurya.jpg";
+    img.src = "assets/images/profile/Gautam_Kumar_Maurya.jpg";
     img.onload = () => {
         const canvas = document.createElement('canvas');
         const ctx = canvas.getContext('2d');
@@ -729,47 +729,53 @@ function speakAvatarText(text, onStartCallback, onEndCallback) {
 
     window.speechSynthesis.cancel();
 
-    // Strip HTML formatting
-    const cleanText = text.replace(/<[^>]*>/g, '');
+    // Clean text: strip HTML and clean up special characters
+    const cleanText = text.replace(/<[^>]*>/g, '').replace(/📌[\s\S]*$/gi, '').trim();
+    if (!cleanText) return;
+
     avatarSpeechUtterance = new SpeechSynthesisUtterance(cleanText);
-
     const activeLang = localStorage.getItem('portfolio-lang') || 'en';
-
-    // Apply voice preferences
-    const voiceGenderSelect = document.getElementById('voice-gender');
-    const selectedGender = voiceGenderSelect ? voiceGenderSelect.value : 'female';
     const voices = window.speechSynthesis.getVoices();
 
     let selectedVoice = null;
+
     if (activeLang === 'hi') {
-        selectedVoice = voices.find(v => v.lang.startsWith('hi') || v.name.toLowerCase().includes('hindi') || v.name.toLowerCase().includes('india'));
+        // Target high-quality Hindi voices first
+        selectedVoice = voices.find(v => 
+            v.lang.startsWith('hi') || 
+            v.name.toLowerCase().includes('hindi') || 
+            v.name.toLowerCase().includes('madhur') ||
+            v.name.toLowerCase().includes('hemant')
+        );
     }
-    
+
+    // Default to male voices since it is Gautam's AI Twin
     if (!selectedVoice) {
-        if (selectedGender === 'male') {
-            selectedVoice = voices.find(v => v.name.toLowerCase().includes('google uk english male') || 
-                                             v.name.toLowerCase().includes('david') ||
-                                             v.name.toLowerCase().includes('male') ||
-                                             v.lang.startsWith('en'));
-        } else {
-            selectedVoice = voices.find(v => v.name.toLowerCase().includes('google uk english female') || 
-                                             v.name.toLowerCase().includes('zira') ||
-                                             v.name.toLowerCase().includes('female') ||
-                                             v.lang.startsWith('en'));
-        }
+        selectedVoice = voices.find(v => 
+            v.name.toLowerCase().includes('google uk english male') || 
+            v.name.toLowerCase().includes('google us english male') || 
+            v.name.toLowerCase().includes('david') ||
+            v.name.toLowerCase().includes('ravi') ||
+            v.name.toLowerCase().includes('harsh') ||
+            (v.name.toLowerCase().includes('male') && v.lang.startsWith('en'))
+        );
+    }
+
+    // Fallbacks
+    if (!selectedVoice) {
+        selectedVoice = voices.find(v => v.lang.startsWith('en-GB') || v.lang.startsWith('en-US') || v.lang.startsWith('en'));
     }
 
     if (selectedVoice) {
         avatarSpeechUtterance.voice = selectedVoice;
         avatarSpeechUtterance.lang = selectedVoice.lang;
-    } else if (activeLang === 'hi') {
-        avatarSpeechUtterance.lang = 'hi-IN';
     } else {
-        avatarSpeechUtterance.lang = 'en-US';
+        avatarSpeechUtterance.lang = activeLang === 'hi' ? 'hi-IN' : 'en-US';
     }
 
-    avatarSpeechUtterance.rate = 1.0;
-    avatarSpeechUtterance.pitch = selectedGender === 'male' ? 0.95 : 1.05;
+    // Fine-tune tone parameters
+    avatarSpeechUtterance.rate = 1.05; // slightly faster for dynamic feel
+    avatarSpeechUtterance.pitch = 0.95; // slightly lower pitch for a masculine tone
 
     avatarSpeechUtterance.onstart = () => {
         isAvatarSpeaking = true;

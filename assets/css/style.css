@@ -1756,16 +1756,35 @@ section {
     width: 60px;
     height: 60px;
     border-radius: 50%;
-    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+    background: rgba(15, 23, 42, 0.6);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
     color: #fff;
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 8px 30px rgba(14, 165, 233, 0.4);
+    box-shadow: 0 8px 30px rgba(14, 165, 233, 0.35);
     cursor: pointer;
     z-index: 999;
     transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    border: 2px solid rgba(255, 255, 255, 0.1);
+    border: 2px solid rgba(14, 165, 233, 0.25);
+    overflow: visible;
+}
+
+.avatar-toggle-container {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#avatar-toggle-canvas {
+    width: 60px;
+    height: 60px;
+    display: block;
 }
 
 .chatbot-toggle:hover {
@@ -1833,12 +1852,23 @@ section {
     gap: 0.75rem;
 }
 
-.chat-header-avatar {
+.chat-hologram-viewport {
     width: 36px;
     height: 36px;
     border-radius: 50%;
     border: 2px solid var(--primary-color);
-    object-fit: cover;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(14, 165, 233, 0.1);
+    box-shadow: 0 0 10px rgba(14, 165, 233, 0.2);
+}
+
+#avatar-chat-canvas {
+    width: 36px;
+    height: 36px;
+    display: block;
 }
 
 .chat-header-info h4 {

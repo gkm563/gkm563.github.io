@@ -77,18 +77,20 @@ Here are some glimpses of my web portfolio interface, designed with a focus on U
 
 *(Additional UI views available in the repository assets)*
 
----
-
 ## 📂 Project Structure
 
 ```text
-gkmportfolio/
-├── assets/                 # CSS, JS, and Image resources
-├── gkmportfolio/           # Additional project files
-├── index.html              # Main Portfolio Entry Point
-├── up-police-internship.html # Dedicated Internship Page
-├── sitemap.xml             # SEO Sitemap
-└── robots.txt              # Search Engine Crawler Directives
+gkm563.github.io/ (Repository Root)
+├── index.html                           # Main Portfolio Landing Page
+├── up-police-internship.html            # Dedicated UP Police Internship Page
+├── ait-global-innovation-internship.html # Dedicated AIT Bangkok Internship Page
+├── open-source-contributions.html       # Dedicated Wikimedia & Open Source Page
+├── assets/
+│   ├── css/                             # Stylesheets (style.css, open-source.css, etc.)
+│   ├── js/                              # Engines (main.js, ai-twin.js, etc.)
+│   └── data/                            # Knowledge base (gautam-knowledge.js)
+├── sitemap.xml                          # SEO Sitemap
+└── robots.txt                           # Search Engine Crawler Directives
 ```
 
 ---
