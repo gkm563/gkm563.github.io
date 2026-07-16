@@ -34,14 +34,14 @@ document.addEventListener('DOMContentLoaded', () => {
    Language Synchronization Logic
    ========================================== */
 function initLanguageSync() {
-    let currentLang = localStorage.getItem('portfolio-lang') || 'en';
+    let currentLang = 'en';
     applySubpageLanguage(currentLang);
-    updateLanguageSwitcherUI(currentLang);
 }
 
 function applySubpageLanguage(lang) {
-    document.documentElement.lang = lang;
-    localStorage.setItem('portfolio-lang', lang);
+    lang = 'en';
+    document.documentElement.lang = 'en';
+    localStorage.setItem('portfolio-lang', 'en');
 
     const dictionary = window.OPEN_SOURCE_TRANSLATIONS && window.OPEN_SOURCE_TRANSLATIONS[lang];
     if (!dictionary) return;

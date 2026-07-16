@@ -6,8 +6,9 @@ let currentLang = 'en';
 
 // === BILINGUAL TRANSLATION SWITCHER ===
 function setLanguage(lang) {
-    currentLang = lang;
-    localStorage.setItem('portfolio-lang', lang);
+    lang = 'en';
+    currentLang = 'en';
+    localStorage.setItem('portfolio-lang', 'en');
     
     // Toggle active class on language toggle buttons
     const btnEn = document.getElementById('lang-btn-en');
@@ -1292,7 +1293,7 @@ function getChatResponse(query) {
 // === MAIN ENGINE INITIALIZER ===
 document.addEventListener('DOMContentLoaded', () => {
     // Initialize active language
-    const savedLang = localStorage.getItem('portfolio-lang') || 'en';
+    const savedLang = 'en';
     setLanguage(savedLang);
 
     // 1. Initial renders

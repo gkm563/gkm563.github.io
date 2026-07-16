@@ -38,14 +38,14 @@ document.addEventListener('DOMContentLoaded', () => {
    Language Synchronization Logic
    ========================================== */
 function initLanguageSync() {
-    let currentLang = localStorage.getItem('portfolio-lang') || 'en';
+    let currentLang = 'en';
     applySubpageLanguage(currentLang);
-    updateLanguageSwitcherUI(currentLang);
 }
 
 function applySubpageLanguage(lang) {
-    document.documentElement.lang = lang;
-    localStorage.setItem('portfolio-lang', lang);
+    lang = 'en';
+    document.documentElement.lang = 'en';
+    localStorage.setItem('portfolio-lang', 'en');
 
     const dictionary = window.PORTFOLIO_TRANSLATIONS && window.PORTFOLIO_TRANSLATIONS[lang];
     if (!dictionary) return;
@@ -198,6 +198,54 @@ function initMainHeaderScrollSpy() {
             mainHeader.classList.add('scrolled');
         } else {
             mainHeader.classList.remove('scrolled');
+        }
+    });
+
+    // Highlight main header navigation links based on scroll intersection
+    const sections = [
+        document.getElementById('selection-journey'),
+        document.getElementById('journey-section'),
+        document.getElementById('innovation-project'),
+        document.getElementById('program-roster'),
+        document.getElementById('gallery-section'),
+        document.getElementById('reflection-section')
+    ].filter(el => el !== null);
+
+    const navLinks = document.querySelectorAll('.main-nav ul li a');
+    if (sections.length === 0 || navLinks.length === 0) return;
+
+    const observerOptions = {
+        root: null,
+        rootMargin: '-20% 0px -60% 0px',
+        threshold: 0.1
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const id = entry.target.getAttribute('id');
+                navLinks.forEach(link => {
+                    const href = link.getAttribute('href');
+                    if (href === `#${id}`) {
+                        link.classList.add('active');
+                    } else {
+                        link.classList.remove('active');
+                    }
+                });
+            }
+        });
+    }, observerOptions);
+
+    sections.forEach(section => observer.observe(section));
+
+    // Clear active state when at the top of the page (Hero section)
+    window.addEventListener('scroll', () => {
+        if (window.scrollY < 200) {
+            navLinks.forEach(link => {
+                if (link.getAttribute('href') !== 'index.html') {
+                    link.classList.remove('active');
+                }
+            });
         }
     });
 }
@@ -354,12 +402,12 @@ let renderedCount = 0;
 const itemsPerPage = 12;
 let currentCategory = 'all';
 
-function getThailandCaption(i) {
+function getAITCaption(i) {
     const captions = {
         1: "Arriving at Bangkok Airport - Embarking on the International Journey ✈️🇹🇭",
         2: "AIT Bangkok Main Campus Landmark and Welcome Banner 🏛️",
         3: "Orientation & Program Onboarding Briefing Session",
-        4: "Exploring the lush green fields and academic facilities of AIT Bangkok",
+        4: "Exploring the academic facilities and green campus of AIT Bangkok",
         5: "Day 1 - Program structure briefing and introductory session",
         6: "Day 2 - Cultural learning seminar on Thai traditions and community values",
         7: "Day 2 - AI and technology mapping session with Dr. Chutiporn Anutariya",
@@ -376,35 +424,11 @@ function getThailandCaption(i) {
 
     if (captions[i]) return captions[i];
 
-    if (i % 5 === 0) return "AIT Bangkok - Technical Session & Practical Research Moment";
-    if (i % 4 === 0) return "Global Innovation Internship - Team Collaboration & Group Activities";
-    return "GIIP-2026 Thailand Internship - Learning and Explorer Moments";
-}
-
-function getGKMCaption(i) {
-    const specialGKMCaptions = {
-        1: "Gautam Kumar Maurya at the AIT Landmark 🏛️",
-        2: "Exploring the AIT campus facilities",
-        3: "Technical briefing and research session",
-        10: "Collaborating with research partners on spatial mapping",
-        20: "Hands-on data collection session using EpiCollect5",
-        30: "Campus tour and international networking session",
-        40: "AI mapping and semantic search experimentation",
-        50: "Exploring Bangkok's technology ecosystem",
-        100: "Interactive discussion during the Robotics lab visit",
-        150: "Cross-cultural seminar and corporate prep lectures",
-        200: "Sharing reflections and internship presentations",
-        248: "Celebrating the completion of GIIP-2026 Bangkok Internship 🎉"
-    };
-
-    if (specialGKMCaptions[i]) return specialGKMCaptions[i];
-
-    if (i <= 40) return `GIIP-2026: Exploring AIT Bangkok Campus & Onboarding (#${i})`;
-    if (i <= 80) return `GIIP-2026: Technical Seminars and Hands-on Workshops (#${i})`;
-    if (i <= 130) return `GIIP-2026: Research Labs & Technology Integration Sessions (#${i})`;
-    if (i <= 180) return `GIIP-2026: Collaborative Teamwork & Academic Dialogues (#${i})`;
-    if (i <= 220) return `GIIP-2026: Cultural Integration & Bangkok Exploration (#${i})`;
-    return `GIIP-2026: Global Journey, Learning, & Professional Growth (#${i})`;
+    if (i % 7 === 0) return `Gautam Kumar Maurya (GKM) during hands-on lab experimentation and discussion (#${i})`;
+    if (i % 5 === 0) return `AIT Bangkok - Technical Session & Practical Research Moment (#${i})`;
+    if (i % 4 === 0) return `Global Innovation Internship - Team Collaboration & Group Activities (#${i})`;
+    if (i % 3 === 0) return `Exploring Bangkok and cultural landmarks during the internship trip (#${i})`;
+    return `Gautam Kumar Maurya (GKM) - Global Innovation Internship (GIIP-2026) Learning Moment (#${i})`;
 }
 
 function generateCatalog() {
@@ -432,36 +456,19 @@ function generateCatalog() {
         });
     });
 
-    // 2. Add Internship Journey images (Gautam_Kumar_Maurya_Thailand_Internship)
-    const missing = [17, 25, 26, 27, 28, 30, 54];
-    for (let i = 1; i <= 55; i++) {
-        if (missing.includes(i)) {
-            if (i === 54) {
-                personal.push({
-                    src: `assets/images/ait-bangkok/Gautam_Kumar_Maurya_Thailand_Internship (54) - Copy.jpg`,
-                    alt: `Global Innovation Internship Moment #54`,
-                    category: 'journey',
-                    caption: getThailandCaption(i)
-                });
-            }
-            continue;
-        }
-        personal.push({
-            src: `assets/images/ait-bangkok/Gautam_Kumar_Maurya_Thailand_Internship (${i}).jpg`,
-            alt: `Global Innovation Internship Moment #${i}`,
-            category: 'journey',
-            caption: getThailandCaption(i)
-        });
-    }
+    // 2. Add Renamed SEO-Optimized Journey & Moments Images (146 items)
+    for (let i = 1; i <= 146; i++) {
+        // Distribute images between 'journey' and 'gkm' categories
+        const category = (i % 2 === 1) ? 'journey' : 'gkm';
+        const altText = (category === 'journey') 
+            ? `Gautam Kumar Maurya (GKM) - AIT Bangkok Thailand Cyber Security and AI Global Innovation Internship Moment #${i}`
+            : `Gautam Kumar Maurya (GKM) - Personal moments during AIT Bangkok Thailand Internship #${i}`;
 
-    // 3. Add Moments with Gautam (Gautam kumar maurya GKM)
-    for (let i = 1; i <= 248; i++) {
-        if (i >= 82 && i <= 87) continue;
         personal.push({
-            src: `assets/images/ait-bangkok/Gautam kumar maurya GKM (${i}).JPG`,
-            alt: `Gautam Kumar Maurya - Thailand Internship Moment #${i}`,
-            category: 'gkm',
-            caption: getGKMCaption(i)
+            src: `assets/images/ait-bangkok/gautam-kumar-maurya-gkm-ait-bangkok-thailand-internship-${i}.jpg`,
+            alt: altText,
+            category: category,
+            caption: getAITCaption(i)
         });
     }
 

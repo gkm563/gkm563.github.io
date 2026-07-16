@@ -41,19 +41,14 @@ document.addEventListener('DOMContentLoaded', () => {
    Language Synchronization Logic
    ========================================== */
 function initLanguageSync() {
-    // Retrieve stored language preference from portfolio home settings
-    let currentLang = localStorage.getItem('portfolio-lang') || 'en';
-    
-    // Apply initial language
+    let currentLang = 'en';
     applySubpageLanguage(currentLang);
-
-    // Sync button slider styling matching active language
-    updateLanguageSwitcherUI(currentLang);
 }
 
 function applySubpageLanguage(lang) {
-    document.documentElement.lang = lang;
-    localStorage.setItem('portfolio-lang', lang);
+    lang = 'en';
+    document.documentElement.lang = 'en';
+    localStorage.setItem('portfolio-lang', 'en');
 
     // Look up static translation dictionary
     const dictionary = window.PORTFOLIO_TRANSLATIONS && window.PORTFOLIO_TRANSLATIONS[lang];

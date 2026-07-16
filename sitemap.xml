@@ -31,7 +31,7 @@
   <!-- ===== AIT Bangkok Global Innovation Internship ===== -->
   <url>
     <loc>https://gkm563.github.io/ait-global-innovation-internship.html</loc>
-    <lastmod>2026-07-07</lastmod>
+    <lastmod>2026-07-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
     <image:image>
@@ -44,6 +44,14 @@
       <image:title>Gautam Kumar Maurya at AIT Bangkok</image:title>
       <image:caption>Gautam Kumar Maurya (gkm563) during his 15-day Global Innovation Internship Program at AIT Bangkok, Thailand.</image:caption>
     </image:image>
+  </url>
+
+  <!-- ===== Open Source Contributions ===== -->
+  <url>
+    <loc>https://gkm563.github.io/open-source-contributions.html</loc>
+    <lastmod>2026-07-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
   </url>
 
 </urlset>
