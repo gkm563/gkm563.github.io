@@ -25,6 +25,9 @@ document.addEventListener('DOMContentLoaded', () => {
     // 5.5. Setup LinkedIn Post Carousel
     initLinkedinCarousel();
 
+    // 5.6. Setup Light/Dark Theme Toggling
+    initThemeToggle();
+
     // 6. Setup Premium Cursor Spotlight Hover Effect
     document.querySelectorAll('.timeline-card').forEach(card => {
         card.addEventListener('mousemove', (e) => {
@@ -741,4 +744,38 @@ function initLinkedinCarousel() {
 
     createDots();
     window.addEventListener('resize', createDots);
+}
+
+// === THEME MANAGER (LIGHT/DARK) ===
+function initThemeToggle() {
+    const toggleBtn = document.getElementById('theme-toggle');
+    if (!toggleBtn) return;
+
+    const applyTheme = (theme) => {
+        const icon = toggleBtn.querySelector('i');
+        if (theme === 'dark') {
+            document.documentElement.classList.add('dark-theme');
+            document.body.classList.add('dark-theme');
+            if (icon) {
+                icon.className = 'fas fa-sun';
+            }
+        } else {
+            document.documentElement.classList.remove('dark-theme');
+            document.body.classList.remove('dark-theme');
+            if (icon) {
+                icon.className = 'fas fa-moon';
+            }
+        }
+    };
+
+    // Load saved preference or default to light
+    const savedTheme = localStorage.getItem('portfolio-theme') || 'light';
+    applyTheme(savedTheme);
+
+    toggleBtn.addEventListener('click', () => {
+        const isCurrentlyDark = document.documentElement.classList.contains('dark-theme') || document.body.classList.contains('dark-theme');
+        const nextTheme = isCurrentlyDark ? 'light' : 'dark';
+        localStorage.setItem('portfolio-theme', nextTheme);
+        applyTheme(nextTheme);
+    });
 }

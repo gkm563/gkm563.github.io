@@ -298,6 +298,15 @@ async function getAIResponse(userMessage) {
 
     // ── Get API key (hardcoded or from localStorage override) ──
     const apiKey = getStoredApiKey();
+    const hasCustomKey = !!localStorage.getItem(AI_TWIN_CONFIG.STORAGE_KEY_APIKEY);
+
+    // If there is no custom key configured, bypass the leaked default key and use the smart local engine directly
+    if (!hasCustomKey) {
+        if (typeof getChatResponse === 'function') {
+            return getChatResponse(userMessage);
+        }
+    }
+
     if (!apiKey) {
         return formatAIResponse(`❌ API key missing. Please contact Gautam at [maurgk212104@gmail.com](mailto:maurgk212104@gmail.com).`);
     }

@@ -1117,6 +1117,44 @@ function setupVoiceNarrator() {
     }
 }
 
+// === THEME MANAGER (LIGHT/DARK) ===
+function initThemeToggle() {
+    const toggleBtn = document.getElementById('theme-toggle');
+    if (!toggleBtn) return;
+
+    const applyTheme = (theme) => {
+        const icon = toggleBtn.querySelector('i');
+        if (theme === 'dark') {
+            document.documentElement.classList.add('dark-theme');
+            document.body.classList.add('dark-theme');
+            if (icon) {
+                icon.className = 'fas fa-sun';
+            }
+        } else {
+            document.documentElement.classList.remove('dark-theme');
+            document.body.classList.remove('dark-theme');
+            if (icon) {
+                icon.className = 'fas fa-moon';
+            }
+        }
+        // Force refresh 3D scenes if they exist
+        if (window.dispatchEvent) {
+            window.dispatchEvent(new CustomEvent('theme-changed', { detail: { theme } }));
+        }
+    };
+
+    // Load saved preference or default to light
+    const savedTheme = localStorage.getItem('portfolio-theme') || 'light';
+    applyTheme(savedTheme);
+
+    toggleBtn.addEventListener('click', () => {
+        const isCurrentlyDark = document.documentElement.classList.contains('dark-theme') || document.body.classList.contains('dark-theme');
+        const nextTheme = isCurrentlyDark ? 'light' : 'dark';
+        localStorage.setItem('portfolio-theme', nextTheme);
+        applyTheme(nextTheme);
+    });
+}
+
 // === AI TWIN CHATBOT LOGIC ===
 function setupChatbot() {
     const chatToggle = document.getElementById('chat-toggle');
@@ -1150,6 +1188,48 @@ function setupChatbot() {
             window.speechSynthesis.cancel();
         }
     });
+
+    // Settings drawer toggle
+    const settingsBtn = document.getElementById('chat-settings-btn');
+    const settingsDrawer = document.getElementById('chat-settings-drawer');
+    const keyInput = document.getElementById('chat-api-key-input');
+    const saveKeyBtn = document.getElementById('chat-api-key-save');
+    const clearKeyBtn = document.getElementById('chat-api-key-clear');
+
+    if (settingsBtn && settingsDrawer) {
+        settingsBtn.addEventListener('click', () => {
+            const isHidden = settingsDrawer.style.display === 'none' || settingsDrawer.style.display === '';
+            settingsDrawer.style.display = isHidden ? 'block' : 'none';
+            if (isHidden && keyInput) {
+                // Load existing key
+                keyInput.value = localStorage.getItem('gkm-ai-twin-key') || '';
+            }
+        });
+    }
+
+    if (saveKeyBtn && keyInput) {
+        saveKeyBtn.addEventListener('click', () => {
+            const key = keyInput.value.trim();
+            if (key) {
+                localStorage.setItem('gkm-ai-twin-key', key);
+                alert('API Key saved successfully! Gautam\'s twin will now use your key.');
+                if (settingsDrawer) settingsDrawer.style.display = 'none';
+                if (window.AI_TWIN_RESET) window.AI_TWIN_RESET(); // reset conversation state
+            } else {
+                alert('Please enter a valid key.');
+            }
+        });
+    }
+
+    if (clearKeyBtn) {
+        clearKeyBtn.addEventListener('click', () => {
+            localStorage.removeItem('gkm-ai-twin-key');
+            if (keyInput) keyInput.value = '';
+            alert('API Key cleared. The twin will now use fallback responses.');
+            if (settingsDrawer) settingsDrawer.style.display = 'none';
+            if (window.AI_TWIN_RESET) window.AI_TWIN_RESET(); // reset conversation state
+        });
+    }
 }
 
 function addChatMessage(text, sender) {
@@ -1185,10 +1265,17 @@ function sendQuickMessage(text) {
     
     let userDisplayMessage = text;
     const activeLang = localStorage.getItem('portfolio-lang') || 'en';
-    if (text === 'Tell me your story') userDisplayMessage = window.PORTFOLIO_TRANSLATIONS[activeLang].chat_opt_story;
-    else if (text === 'What is PDFBAZI?') userDisplayMessage = window.PORTFOLIO_TRANSLATIONS[activeLang].chat_opt_pdfbazi;
-    else if (text === 'Show hackathon wins') userDisplayMessage = window.PORTFOLIO_TRANSLATIONS[activeLang].chat_opt_wins;
-    else if (text === 'How can I collaborate?') userDisplayMessage = window.PORTFOLIO_TRANSLATIONS[activeLang].chat_opt_collab;
+    if (text === 'Tell me your story') {
+        userDisplayMessage = window.PORTFOLIO_TRANSLATIONS[activeLang].chat_opt_story;
+    } else if (text === 'Tell me about your AIT Thailand Internship') {
+        userDisplayMessage = window.PORTFOLIO_TRANSLATIONS[activeLang].chat_opt_ait || "Thailand Internship 🇹🇭";
+    } else if (text === 'Tell me about your UP Police Cybersecurity Internship') {
+        userDisplayMessage = window.PORTFOLIO_TRANSLATIONS[activeLang].chat_opt_upp || "UP Police Internship 🚔";
+    } else if (text === 'Show hackathon wins') {
+        userDisplayMessage = window.PORTFOLIO_TRANSLATIONS[activeLang].chat_opt_wins;
+    } else if (text === 'How can I collaborate?') {
+        userDisplayMessage = window.PORTFOLIO_TRANSLATIONS[activeLang].chat_opt_collab;
+    }
     
     addChatMessage(userDisplayMessage, 'user');
     showTypingIndicator();
@@ -1203,14 +1290,14 @@ function sendQuickMessage(text) {
             removeTypingIndicator();
             const response = getChatResponse(text);
             addChatMessage(response, 'bot');
-            speakAvatarText(response);
+            speakAvatarText(response.replace(/<[^>]*>/g, ''));
         });
     } else {
         setTimeout(() => {
             removeTypingIndicator();
             const response = getChatResponse(text);
             addChatMessage(response, 'bot');
-            speakAvatarText(response);
+            speakAvatarText(response.replace(/<[^>]*>/g, ''));
         }, 1000);
     }
 }
@@ -1240,54 +1327,135 @@ function handleChatSubmit(e) {
             removeTypingIndicator();
             const response = getChatResponse(text);
             addChatMessage(response, 'bot');
-            speakAvatarText(response);
+            speakAvatarText(response.replace(/<[^>]*>/g, ''));
         });
     } else {
         setTimeout(() => {
             removeTypingIndicator();
             const response = getChatResponse(text);
             addChatMessage(response, 'bot');
-            speakAvatarText(response);
+            speakAvatarText(response.replace(/<[^>]*>/g, ''));
         }, 1000);
     }
 }
 
 function getChatResponse(query) {
-    const activeLang = localStorage.getItem('portfolio-lang') || 'en';
+    const K = window.GKM_KNOWLEDGE;
     const q = query.toLowerCase();
     
-    if (q.includes('story') || q.includes('journey') || q.includes('about') || q.includes('कहानी') || q.includes('सफर') || q.includes('परिचय')) {
-        return window.PORTFOLIO_TRANSLATIONS[activeLang].chat_resp_story;
+    // 1. Thailand Internship
+    if (q.includes('thailand') || q.includes('bangkok') || q.includes('ait') || q.includes('giip') || q.includes('thailand internship')) {
+        let resp = `I completed the **Global Innovation Internship Program (GIIP-2026)** at the **Asian Institute of Technology (AIT) in Bangkok, Thailand** (28 June – 12 July 2026).<br><br>`;
+        resp += `To get selected, I cleared a rigorous screening process, scoring **92% accuracy** in the Hitbullseye offline assessment at UIT, followed by a panel interview at UCER.<br><br>`;
+        resp += `During the 15 days, I worked on advanced technology modules:<br>`;
+        resp += `• **Prompt Engineering** and **Ubiquitous GIS** (spatial location mapping)<br>`;
+        resp += `• **Exploratory Data Analysis (EDA)** and field data collection using **EpiCollect5**<br>`;
+        resp += `• **QGIS** data layer mapping, **Power BI** dashboards, and cloud **CCM Systems**<br>`;
+        resp += `• **Agentic AI Frameworks** under Dr. Chaklam Silpasuwanchai<br>`;
+        resp += `• **UAV (Drone) Flight Planning** and photogrammetry stitching.<br><br>`;
+        resp += `My final project was **BusSetu** (a transit optimization dashboard), which I presented to the AIT academic panel. It was a life-changing global research experience!`;
+        resp += `<br><br>📌 **Sources:** [Thailand Internship Page](${K?.sources?.thailandInternship || './ait-global-innovation-internship.html'}) · [LinkedIn Profile](${K?.sources?.linkedin || 'https://linkedin.com/in/gkm563'})`;
+        return resp;
     }
-    if (q.includes('rooms') || q.includes('prayagrajrooms') || q.includes('room') || q.includes('कमरा') || q.includes('पीजी')) {
-        return window.PORTFOLIO_TRANSLATIONS[activeLang].chat_resp_rooms;
+    
+    // 2. UP Police Internship
+    if (q.includes('police') || q.includes('cyber') || q.includes('amroha') || q.includes('apcsip') || q.includes('police internship') || q.includes('up police')) {
+        let resp = `I completed a 12-day **Cyber Security & Digital Forensics Internship (APCSIP-2026)** with the **Uttar Pradesh Police Cyber Crime Cell** (Amroha Cell) in June 2026.<br><br>`;
+        resp += `I got in by clearing a competitive 3-stage selection: application shortlisting, and a **50-MCQ screening test** on cybersecurity, IT, and general awareness.<br><br>`;
+        resp += `Here is what I worked on day-by-day:<br>`;
+        resp += `• **OSINT & Recon:** Footprinting using Maltego, Shodan, and Canary Tokens.<br>`;
+        resp += `• **Telecom Forensics:** Analysing Call Detail Records (CDR) and IPDR data to trace suspects.<br>`;
+        resp += `• **Forensic Tools:** Studied Cellebrite UFED, MSAB XRY, and data recovery methods.<br>`;
+        resp += `• **Financial Cybercrimes:** UPI fraud, SIM swapping, and banking nodal protocols.<br><br>`;
+        resp += `During this program, I refined my group contribution and settlement tracker **TripSync** to comply with professional digital forensics audit trail standards.`;
+        resp += `<br><br>📌 **Sources:** [UP Police Internship Page](${K?.sources?.upPoliceInternship || './up-police-internship.html'}) · [TripSync Live](${K?.sources?.tripsyncApp || 'https://tripsync-gkm.vercel.app'})`;
+        return resp;
     }
-    if (q.includes('campusclick') || q.includes('campus click') || q.includes('कॉलेज') || q.includes('कैंपस')) {
-        return window.PORTFOLIO_TRANSLATIONS[activeLang].chat_resp_campusclick;
+    
+    // 3. Hackathons & Achievements
+    if (q.includes('hackathon') || q.includes('win') || q.includes('achieve') || q.includes('rank') || q.includes('award') || q.includes('first place') || q.includes('top')) {
+        let resp = `I love competing in high-pressure technical environments! Here are my key wins and academic ranks:<br><br>`;
+        resp += `• **AKTU University Rank 5:** Ranked 5th college-wide in my B.Tech 1st Year examinations (UIT).<br>`;
+        resp += `• **Rank 1 in Data Structures:** Top-ranked student in DSA at UIT.<br>`;
+        resp += `• **1st Place — WebDie (ENIGMA XIII):** Won the web development hackathon.<br>`;
+        resp += `• **1st Place — WikiClub UIT Contribution Sprint:** Merged **7 core patches** to Wikipedia core systems in 1 week.<br>`;
+        resp += `• **1st Place — GDG Campus Technical Quiz:** Won the Google Developer Group quiz.<br>`;
+        resp += `• **Technical Team Lead — BuildX India 2026:** Designed and scaled the official portal for the hackathon.<br><br>`;
+        resp += `These experiences taught me how to scale features and collaborate under tight deadlines.`;
+        resp += `<br><br>📌 **Sources:** [LinkedIn Highlights](${K?.sources?.linkedin || 'https://linkedin.com/in/gkm563'}) · [BuildX Code](${K?.projects?.[6]?.github || 'https://github.com/gkm563/buildx-india-website-personal'})`;
+        return resp;
     }
-    if (q.includes('pdfbazi') || q.includes('pdf bazi') || q.includes('पीडीएफ')) {
-        return window.PORTFOLIO_TRANSLATIONS[activeLang].chat_resp_pdfbazi;
-    }
-    if (q.includes('buildx') || q.includes('build x') || q.includes('बिल्ड')) {
-        return window.PORTFOLIO_TRANSLATIONS[activeLang].chat_resp_buildx || window.PORTFOLIO_TRANSLATIONS[activeLang].chat_resp_hackathon;
-    }
-    if (q.includes('hackathon') || q.includes('win') || q.includes('achieve') || q.includes('rank') || q.includes('जीत') || q.includes('सफलता') || q.includes('प्रथम') || q.includes('टॉपर')) {
-        return window.PORTFOLIO_TRANSLATIONS[activeLang].chat_resp_hackathon;
-    }
-    if (q.includes('open source') || q.includes('wikipedia') || q.includes('wikimedia') || q.includes('gerrit') || q.includes('विकिपीडिया') || q.includes('ओपन सोर्स')) {
-        return window.PORTFOLIO_TRANSLATIONS[activeLang].chat_resp_opensource;
-    }
-    if (q.includes('collaborate') || q.includes('connect') || q.includes('work') || q.includes('contact') || q.includes('संपर्क') || q.includes('सहयोग') || q.includes('काम')) {
-        return window.PORTFOLIO_TRANSLATIONS[activeLang].chat_resp_collaborate;
-    }
-    if (q.includes('freelance') || q.includes('earning') || q.includes('milestone') || q.includes('millets') || q.includes('कमाई') || q.includes('फ्रीलांस')) {
-        return window.PORTFOLIO_TRANSLATIONS[activeLang].chat_resp_freelance;
-    }
-    if (q.includes('skills') || q.includes('tech') || q.includes('languages') || q.includes('कौशल') || q.includes('तकनीक')) {
-        return window.PORTFOLIO_TRANSLATIONS[activeLang].chat_resp_skills;
+    
+    // 4. Collaboration & Contact
+    if (q.includes('collaborate') || q.includes('connect') || q.includes('work') || q.includes('contact') || q.includes('hire') || q.includes('email') || q.includes('reach out')) {
+        let resp = `I would love to collaborate, work together on projects, or discuss freelance opportunities!<br><br>`;
+        resp += `Here are the best ways to reach me directly:<br>`;
+        resp += `• ✉️ **Email:** [maurgk212104@gmail.com](mailto:maurgk212104@gmail.com)<br>`;
+        resp += `• 💼 **LinkedIn:** [Gautam Kumar Maurya on LinkedIn](${K?.sources?.linkedin || 'https://linkedin.com/in/gkm563'}) (19K+ followers)<br>`;
+        resp += `• 💻 **GitHub:** [gkm563 on GitHub](${K?.sources?.github || 'https://github.com/gkm563'})<br><br>`;
+        resp += `Feel free to fill out the contact form at the bottom of the page, and I will get back to you within 24 hours!`;
+        resp += `<br><br>📌 **Sources:** [Portfolio Contact](#contact) · [LinkedIn Profile](${K?.sources?.linkedin || 'https://linkedin.com/in/gkm563'})`;
+        return resp;
     }
 
-    return window.PORTFOLIO_TRANSLATIONS[activeLang].chat_resp_default;
+    // 5. PDFBAZI
+    if (q.includes('pdfbazi') || q.includes('pdf bazi') || q.includes('pdf')) {
+        let resp = `**PDFBAZI** is a privacy-first, client-side web application I built to edit, split, merge, compress, and watermark PDF documents.<br><br>`;
+        resp += `Unlike other online tools that require uploading documents to remote servers, **PDFBAZI runs 100% locally** in your browser. No files are ever sent over the network, ensuring complete confidentiality for sensitive data.<br><br>`;
+        resp += `• **Tech Stack:** Python, JavaScript, HTML5/CSS3.`;
+        resp += `<br><br>📌 **Sources:** [PDFBAZI Repository](${K?.projects?.[3]?.github || 'https://github.com/gkm563/PDFBAZI'})`;
+        return resp;
+    }
+
+    // 6. PrayagrajRooms
+    if (q.includes('rooms') || q.includes('prayagrajrooms') || q.includes('housing') || q.includes('pg') || q.includes('hostel')) {
+        let resp = `I co-founded **PrayagrajRooms** to solve the student housing crisis in Prayagraj.<br><br>`;
+        resp += `Outstation B.Tech students faced high brokerage charges and false property descriptions. I built a verified direct-contact web portal where students connect with local landlords broker-free, saving them thousands of rupees.<br><br>`;
+        resp += `• **Tech Stack:** HTML/CSS, JavaScript, Firebase authentication and real-time database.`;
+        resp += `<br><br>📌 **Sources:** [PrayagrajRooms Site](https://prayagrajrooms.com) · [GitHub Profile](${K?.sources?.github || 'https://github.com/gkm563'})`;
+        return resp;
+    }
+
+    // 7. Open Source / Wikipedia
+    if (q.includes('open source') || q.includes('wikipedia') || q.includes('wikimedia') || q.includes('gerrit') || q.includes('patches') || q.includes('abstract wikipedia')) {
+        let resp = `I am an active contributor to the **Wikimedia Foundation** (Wikipedia core systems) and won 1st Place in the WikiClub UIT Open Source sprint.<br><br>`;
+        resp += `Here are some of my merged code patches:<br>`;
+        resp += `• **Abstract Wikipedia:** Implemented getters/encapsulation in the Function Orchestrator (WFFunctionCall) — MR 684.<br>`;
+        resp += `• **MinervaNeue Skin:** Added malformed URI fragment handling in TitleUtil to prevent mobile crashes.<br>`;
+        resp += `• **GrowthExperiments:** Added i18n grammatical gender support for mentor messages.<br>`;
+        resp += `• **MediaWiki Core:** Contributed discoverability aliases for MediaStats and MuteUser.<br><br>`;
+        resp += `Contributing to production systems running globally has helped me master git-review, Gerrit, Phabricator, and rigorous code styling.`;
+        resp += `<br><br>📌 **Sources:** [Open Source Journey Page](./open-source-contributions.html) · [Wikimedia Gerrit Profile](https://gerrit.wikimedia.org/r/q/owner:gkmwin563@gmail.com)`;
+        return resp;
+    }
+
+    // 8. Skills
+    if (q.includes('skills') || q.includes('tech') || q.includes('languages') || q.includes('frameworks') || q.includes('databases')) {
+        let resp = `Here is my current technical skillset:<br><br>`;
+        resp += `• **Languages:** C++, Python, JavaScript, TypeScript, PHP, SQL.<br>`;
+        resp += `• **Frontend:** React.js, Next.js, HTML5/CSS3, Tailwind CSS, Three.js, AOS Animations.<br>`;
+        resp += `• **Backend & DB:** Node.js, Django, PHP, MySQL, MongoDB, Firebase, PostgreSQL.<br>`;
+        resp += `• **AI/ML & Cybersecurity:** LangChain, Agentic AI architectures, OpenCV, OSINT tools (Maltego, Shodan).<br>`;
+        resp += `• **DevOps & Tools:** Git/GitHub, Docker, Vercel, Netlify, Gerrit, Phabricator.`;
+        resp += `<br><br>📌 **Sources:** [LinkedIn Profile](${K?.sources?.linkedin || 'https://linkedin.com/in/gkm563'})`;
+        return resp;
+    }
+
+    // 9. Main Story / Biography
+    if (q.includes('story') || q.includes('journey') || q.includes('about') || q.includes('bio') || q.includes('who are you')) {
+        let resp = `I am **Gautam Kumar Maurya (GKM)**, a B.Tech CSE (Data Science) student at United Institute of Technology, Prayagraj.<br><br>`;
+        resp += `I serve as **CTO at two startups (Vidnya and PrayagrajRooms)** and lead major student communities like GeeksforGeeks UIT (580+ members), Google Student Ambassadors (650+ members), and Google Developer Groups (GDG) on Campus.<br><br>`;
+        resp += `Academically, I ranked **Rank 5 university-wide under AKTU** and hold Rank 1 in Data Structures at UIT. I am also an active Wikimedia open-source contributor, and recently completed two prestigious programs: a cybersecurity internship with the **Uttar Pradesh Police Cyber Cell** and a global research internship at the **Asian Institute of Technology (AIT) in Bangkok, Thailand**.<br><br>`;
+        resp += `I focus on building secure, scalable, and community-driven products that solve real-world problems.`;
+        resp += `<br><br>📌 **Sources:** [Portfolio Home](#hero) · [LinkedIn Profile](${K?.sources?.linkedin || 'https://linkedin.com/in/gkm563'})`;
+        return resp;
+    }
+
+    // Default Fallback
+    let resp = `That's an interesting question! As Gautam's AI Twin, I have a copy of his main journey, but for specific technical inquiries or personal chats, it is best to email him directly at [maurgk212104@gmail.com](mailto:maurgk212104@gmail.com) or connect on [LinkedIn](${K?.sources?.linkedin || 'https://linkedin.com/in/gkm563'}).<br><br>`;
+    resp += `Feel free to ask me about my **Thailand Internship**, **UP Police Internship**, **Wiki Contributions**, **Hackathons**, or co-founding **PrayagrajRooms**!`;
+    resp += `<br><br>📌 **Sources:** [Portfolio Home](#hero) · [GitHub Profile](${K?.sources?.github || 'https://github.com/gkm563'})`;
+    return resp;
 }
 
 // === MAIN ENGINE INITIALIZER ===
@@ -1316,6 +1484,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // 2. Setup voice narrator and chatbot
     setupVoiceNarrator();
     setupChatbot();
+    initThemeToggle();
     
     // Setup Profile Share Widget copy functionality
     const copyLinkBtn = document.getElementById('share-copy-link');

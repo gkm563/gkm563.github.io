@@ -2,6 +2,15 @@
 <html lang="en-IN" prefix="og: https://ogp.me/ns#">
 
 <head>
+    <script>
+        // Immediately-invoked function to prevent theme flash
+        (function() {
+            const theme = localStorage.getItem('portfolio-theme') || 'light';
+            if (theme === 'dark') {
+                document.documentElement.classList.add('dark-theme');
+            }
+        })();
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <meta name="format-detection" content="telephone=no, date=no, address=no, email=no">
@@ -386,6 +395,9 @@
                 </ul>
             </nav>
             <div class="header-actions">
+                <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle theme" title="Toggle Theme">
+                    <i class="fas fa-moon"></i>
+                </button>
                 <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
                     <span class="bar"></span>
                     <span class="bar"></span>
@@ -2062,7 +2074,23 @@
                     <span data-translate="chat_status">Powered by Gemini AI · Active</span>
                 </div>
             </div>
-            <button class="chat-close-btn" id="chat-close" title="Close Chat"><i class="fas fa-times"></i></button>
+            <div class="chat-header-actions" style="display: flex; align-items: center; gap: 0.75rem;">
+                <button class="chat-settings-btn" id="chat-settings-btn" title="API Key Settings" style="background: transparent; border: none; color: #94a3b8; cursor: pointer; font-size: 1rem; transition: color 0.2s;"><i class="fas fa-cog"></i></button>
+                <button class="chat-close-btn" id="chat-close" title="Close Chat" style="background: transparent; border: none; color: #94a3b8; cursor: pointer; font-size: 1rem; transition: color 0.2s;"><i class="fas fa-times"></i></button>
+            </div>
+        </div>
+        
+        <!-- API Key settings drawer (collapsible) -->
+        <div class="chat-settings-drawer" id="chat-settings-drawer" style="display: none; padding: 0.85rem 1rem; background: rgba(14, 165, 233, 0.08); border-bottom: 1px solid rgba(14, 165, 233, 0.15); font-size: 0.82rem; transition: all 0.3s ease;">
+            <div style="font-weight: 600; margin-bottom: 0.35rem; color: var(--primary-color);">Gemini API Key Configuration</div>
+            <div style="font-size: 0.72rem; color: var(--text-secondary); margin-bottom: 0.5rem; line-height: 1.4;">
+                Enter your custom Gemini API key to activate live Gemini AI features. Keys are saved locally in your browser.
+            </div>
+            <div style="display: flex; gap: 0.5rem;">
+                <input type="password" id="chat-api-key-input" placeholder="AIzaSy..." style="flex-grow: 1; padding: 0.3rem 0.65rem; border-radius: 6px; border: 1px solid rgba(14, 165, 233, 0.3); background: var(--chat-input-bg); color: var(--text-color); font-size: 0.78rem; outline: none;">
+                <button id="chat-api-key-save" style="padding: 0.3rem 0.75rem; border-radius: 6px; border: none; background: var(--primary-color); color: #fff; font-weight: 600; font-size: 0.78rem; cursor: pointer; transition: background 0.2s;">Save</button>
+                <button id="chat-api-key-clear" style="padding: 0.3rem 0.5rem; border-radius: 6px; border: 1px solid rgba(239, 68, 68, 0.3); background: transparent; color: #ef4444; font-size: 0.78rem; cursor: pointer;">Clear</button>
+            </div>
         </div>
         
         <div class="chat-messages" id="chat-messages">

@@ -3,12 +3,13 @@
    ========================================== */
 
 :root {
-    --bg-dark: #020617;
-    --bg-darker: #090d16;
-    --card-bg: rgba(15, 23, 42, 0.45);
-    --card-border: rgba(255, 255, 255, 0.08);
-    --text-primary: #f8fafc;
-    --text-secondary: #94a3b8;
+    /* Default Light Mode */
+    --bg-dark: #f8fafc;
+    --bg-darker: #f1f5f9;
+    --card-bg: rgba(255, 255, 255, 0.75);
+    --card-border: rgba(15, 23, 42, 0.08);
+    --text-primary: #0f172a;
+    --text-secondary: #475569;
     
     /* Overrides for global header variables to adapt to the purple ecosystem theme */
     --primary-color: #a855f7;
@@ -21,6 +22,15 @@
     --accent-github: #24292f;
     --accent-gitlab: #f43f5e; /* Rose */
     --accent-translate: #eab308; /* Yellow */
+}
+
+body.dark-theme {
+    --bg-dark: #020617;
+    --bg-darker: #090d16;
+    --card-bg: rgba(15, 23, 42, 0.45);
+    --card-border: rgba(255, 255, 255, 0.08);
+    --text-primary: #f8fafc;
+    --text-secondary: #94a3b8;
 }
 
 /* Basic Layout & Setup */
@@ -1086,4 +1096,45 @@ section {
     #recog-grid + div {
         grid-template-columns: repeat(2, 1fr) !important;
     }
+}
+
+/* Visibility overrides in light mode */
+.timeline-item p,
+.intro-subtext,
+.hero-subtitle,
+.stat-label,
+.patch-desc,
+.patch-impact,
+.article-meta,
+.sim-help,
+.recog-card p,
+.profile-card p,
+.concept-item p,
+.pipeline-step p {
+    color: var(--text-secondary) !important;
+}
+
+.timeline-item-title,
+.patch-title,
+.sim-title,
+.recog-card h4,
+.profile-card h4,
+.concept-item h4,
+.pipeline-step h4,
+.article-title {
+    color: var(--text-primary) !important;
+}
+
+/* Make terminal simulator output text readable in light mode */
+body:not(.dark-theme) .terminal-body {
+    background: #090d16 !important; /* keep terminal dark for authentic feel */
+}
+body:not(.dark-theme) .terminal-body * {
+    color: #38bdf8 !important; /* light blue inside dark terminal body */
+}
+body:not(.dark-theme) .terminal-input-line input {
+    color: #fff !important;
+}
+body:not(.dark-theme) .terminal-cursor {
+    background: #38bdf8 !important;
 }

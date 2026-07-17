@@ -1,17 +1,74 @@
 :root {
     --primary-color: #0ea5e9;
     --secondary-color: #ec4899;
-    --primary-glow: rgba(14, 165, 233, 0.08);
-    --primary-border-glow: rgba(14, 165, 233, 0.2);
-    --background-color: #020617;
-    --text-color: #e2e8f0;
-    --card-color: #0f172a;
-    --card-color-glass: rgba(15, 23, 42, 0.7);
-    --border-color-glass: rgba(14, 165, 233, 0.2);
+    --primary-glow: rgba(14, 165, 233, 0.06);
+    --primary-border-glow: rgba(14, 165, 233, 0.15);
+    
+    /* Default Light Mode Colors */
+    --background-color: #f8fafc;
+    --text-color: #0f172a;
+    --text-secondary: #475569;
+    --card-color: #ffffff;
+    --card-color-glass: rgba(255, 255, 255, 0.75);
+    --border-color-glass: rgba(15, 23, 42, 0.08);
+    
+    /* Header theme colors */
+    --header-bg: rgba(255, 255, 255, 0.4);
+    --header-bg-scrolled: rgba(255, 255, 255, 0.85);
+    --header-border: rgba(15, 23, 42, 0.05);
+    --header-border-scrolled: rgba(15, 23, 42, 0.08);
+    --header-shadow-scrolled: 0 15px 35px rgba(0, 0, 0, 0.04), 0 0 20px rgba(14, 165, 233, 0.05);
+    
+    /* Chatbot theme colors */
+    --chat-window-bg: rgba(255, 255, 255, 0.95);
+    --chat-bubble-bot-bg: rgba(241, 245, 249, 0.9);
+    --chat-bubble-bot-color: #1e293b;
+    --chat-input-bg: rgba(241, 245, 249, 0.8);
+    
+    /* Navigation Link variables */
+    --nav-link-color: #475569;
+    --nav-link-hover-color: #0f172a;
+    --nav-link-hover-bg: rgba(15, 23, 42, 0.05);
+    --nav-link-hover-border: rgba(15, 23, 42, 0.08);
+    --nav-menu-bg: rgba(248, 250, 252, 0.95);
+    
     --success-color: #22c55e;
     --error-color: #ef4444;
     --header-font: 'Outfit', sans-serif;
     --body-font: 'Plus Jakarta Sans', sans-serif;
+}
+
+body.dark-theme {
+    --primary-glow: rgba(14, 165, 233, 0.08);
+    --primary-border-glow: rgba(14, 165, 233, 0.2);
+    
+    /* Dark Mode Overrides */
+    --background-color: #020617;
+    --text-color: #e2e8f0;
+    --text-secondary: #94a3b8;
+    --card-color: #0f172a;
+    --card-color-glass: rgba(15, 23, 42, 0.7);
+    --border-color-glass: rgba(14, 165, 233, 0.2);
+    
+    /* Header theme colors */
+    --header-bg: rgba(2, 6, 23, 0.4);
+    --header-bg-scrolled: rgba(8, 12, 30, 0.7);
+    --header-border: rgba(14, 165, 233, 0.08);
+    --header-border-scrolled: rgba(14, 165, 233, 0.2);
+    --header-shadow-scrolled: 0 20px 40px rgba(0, 0, 0, 0.3), 0 0 30px rgba(14, 165, 233, 0.15), inset 0 0 12px rgba(14, 165, 233, 0.08);
+    
+    /* Chatbot theme colors */
+    --chat-window-bg: rgba(15, 23, 42, 0.95);
+    --chat-bubble-bot-bg: rgba(30, 41, 59, 0.7);
+    --chat-bubble-bot-color: #e2e8f0;
+    --chat-input-bg: rgba(2, 6, 23, 0.6);
+    
+    /* Navigation Link variables */
+    --nav-link-color: #94a3b8;
+    --nav-link-hover-color: #f8fafc;
+    --nav-link-hover-bg: rgba(255, 255, 255, 0.05);
+    --nav-link-hover-border: rgba(255, 255, 255, 0.08);
+    --nav-menu-bg: rgba(2, 6, 23, 0.95);
 }
 
 * {
@@ -129,12 +186,12 @@ body {
     transform: translateX(-50%);
     width: 100%;
     z-index: 1000;
-    background: rgba(2, 6, 23, 0.4);
+    background: var(--header-bg);
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
     padding: 1.1rem 0;
     transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-    border-bottom: 1px solid rgba(14, 165, 233, 0.08);
+    border-bottom: 1px solid var(--header-border);
 }
 
 .main-header.scrolled {
@@ -142,12 +199,9 @@ body {
     width: calc(100% - 30px);
     max-width: 1000px;
     border-radius: 50px;
-    background: rgba(8, 12, 30, 0.7);
-    border: 1px solid rgba(14, 165, 233, 0.2);
-    box-shadow: 
-        0 20px 40px rgba(0, 0, 0, 0.3), 
-        0 0 30px rgba(14, 165, 233, 0.15),
-        inset 0 0 12px rgba(14, 165, 233, 0.08);
+    background: var(--header-bg-scrolled);
+    border: 1px solid var(--header-border-scrolled);
+    box-shadow: var(--header-shadow-scrolled);
     padding: 0.55rem 0.5rem;
 }
 
@@ -208,7 +262,7 @@ body {
 .main-nav ul li a {
     display: inline-flex;
     align-items: center;
-    color: #94a3b8;
+    color: var(--nav-link-color);
     text-decoration: none;
     font-weight: 600;
     transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
@@ -220,9 +274,9 @@ body {
 
 .main-nav ul li a:hover,
 .main-nav ul li a.active {
-    color: #f8fafc;
-    background: rgba(255, 255, 255, 0.05);
-    border-color: rgba(255, 255, 255, 0.08);
+    color: var(--nav-link-hover-color);
+    background: var(--nav-link-hover-bg);
+    border-color: var(--nav-link-hover-border);
 }
 
 /* Nav Badges (GIIP-2026 and APCSIP-2026) */
@@ -1866,11 +1920,11 @@ section {
     right: 2rem;
     width: 360px;
     height: 520px;
-    background: rgba(15, 23, 42, 0.95);
+    background: var(--chat-window-bg);
     border: 1px solid rgba(14, 165, 233, 0.3);
     border-radius: 16px;
     backdrop-filter: blur(20px);
-    box-shadow: 0 15px 45px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 15px 45px rgba(0, 0, 0, 0.15);
     z-index: 999;
     display: flex;
     flex-direction: column;
@@ -1879,6 +1933,10 @@ section {
     opacity: 0;
     pointer-events: none;
     transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+body.dark-theme .chatbot-window {
+    box-shadow: 0 15px 45px rgba(0, 0, 0, 0.5);
 }
 
 .chatbot-window.active {
@@ -1958,6 +2016,19 @@ section {
     color: var(--secondary-color);
 }
 
+.chat-settings-btn {
+    background: transparent;
+    border: none;
+    color: #94a3b8;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.chat-settings-btn:hover {
+    color: var(--primary-color);
+}
+
 .chat-messages {
     flex-grow: 1;
     padding: 1.25rem;
@@ -1988,9 +2059,9 @@ section {
 }
 
 .chat-bubble.bot {
-    background: rgba(30, 41, 59, 0.7);
+    background: var(--chat-bubble-bot-bg);
     border: 1px solid rgba(14, 165, 233, 0.1);
-    color: #e2e8f0;
+    color: var(--chat-bubble-bot-color);
     align-self: flex-start;
     border-top-left-radius: 4px;
 }
@@ -2060,16 +2131,16 @@ section {
     border-top: 1px solid rgba(14, 165, 233, 0.1);
     display: flex;
     gap: 0.5rem;
-    background: rgba(15, 23, 42, 0.8);
+    background: var(--chat-window-bg);
 }
 
 .chat-input-bar input {
     flex-grow: 1;
-    background: rgba(2, 6, 23, 0.6);
+    background: var(--chat-input-bg);
     border: 1px solid rgba(14, 165, 233, 0.2);
     border-radius: 20px;
     padding: 0.5rem 1rem;
-    color: #fff;
+    color: var(--text-color);
     font-family: var(--body-font);
     font-size: 0.88rem;
     outline: none;
@@ -2687,7 +2758,7 @@ section {
         top: 0;
         width: 100%;
         height: 100vh;
-        background: rgba(2, 6, 23, 0.95);
+        background: var(--nav-menu-bg);
         backdrop-filter: blur(20px);
         -webkit-backdrop-filter: blur(20px);
         flex-direction: column;
@@ -6648,6 +6719,110 @@ body {
 /* Ensure language switcher button text displays Hindi characters correctly by falling back to native fonts */
 .lang-switch-btn {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !important;
+}
+
+/* ==========================================================================
+   Theme Toggling and Visibility Overrides for Light/Dark Mode
+   ========================================================================== */
+
+/* Global Transition Smoothness */
+body, header, section, .project-card, .experience-card, .blog-card, .linkedin-card, .contact-container, .footer, .chatbot-window, .chat-bubble.bot, .chat-input-bar, .chat-input-bar input, .main-header.scrolled {
+    transition: background-color 0.4s ease, color 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease;
+}
+
+/* Secondary Text visibility override in light mode */
+.section-subtitle, 
+.subtitle,
+p.section-desc, 
+p.desc, 
+p.subtitle,
+.project-card p,
+.experience-card p,
+.blog-card p,
+.linkedin-card p,
+.timeline-item p,
+.contact-info p,
+.footer-text,
+.card-subtitle,
+.hero-subtitle,
+.about-desc,
+.skills-category p,
+.experience-details,
+.blog-card-excerpt,
+.linkedin-excerpt,
+.footer-desc,
+.share-toast,
+.chat-bubble.bot {
+    color: var(--text-secondary) !important;
+}
+
+/* Highlight elements */
+.project-card h3, .experience-card h3, .blog-card h3, .linkedin-card h4, .about-text h3 {
+    color: var(--text-color) !important;
+}
+
+/* Theme Toggle Button styling */
+.theme-toggle-btn {
+    background: rgba(15, 23, 42, 0.05);
+    border: 1px solid rgba(15, 23, 42, 0.08);
+    color: #4b5563; /* Slate grey for moon icon */
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+    outline: none;
+    margin-right: 0.5rem;
+}
+
+.theme-toggle-btn:hover {
+    transform: scale(1.1) rotate(15deg);
+    background: rgba(14, 165, 233, 0.1);
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+    box-shadow: 0 0 15px rgba(14, 165, 233, 0.3);
+}
+
+/* Scrolled state adjustment */
+.main-header.scrolled .theme-toggle-btn {
+    border-color: var(--header-border-scrolled);
+}
+
+/* Dark theme overrides for Toggle button */
+body.dark-theme .theme-toggle-btn {
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #fbbc05; /* Golden Yellow for sun icon */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+}
+
+body.dark-theme .theme-toggle-btn:hover {
+    background: rgba(255, 255, 255, 0.15);
+    border-color: #fbbc05;
+    box-shadow: 0 0 15px rgba(255, 188, 5, 0.35);
+}
+
+/* Add support for canvas / background adjustments in light mode */
+body:not(.dark-theme) #matrix-canvas {
+    opacity: 0.08; /* make matrix rain very subtle in light mode */
+}
+
+body:not(.dark-theme) .aurora-wrapper {
+    opacity: 0.2; /* make background aurora blobs softer in light mode */
+}
+
+body:not(.dark-theme) #stars, body:not(.dark-theme) #stars2, body:not(.dark-theme) #stars3 {
+    opacity: 0.15; /* make hero stars very subtle in light mode */
+}
+
+/* Fix visualizer and wave colors in light mode */
+body:not(.dark-theme) .chat-audio-wave span {
+    background-color: var(--primary-color);
 }
 
 

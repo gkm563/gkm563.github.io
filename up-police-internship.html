@@ -2,6 +2,15 @@
 <html lang="en-IN">
 
 <head>
+    <script>
+        // Immediately-invoked function to prevent theme flash
+        (function() {
+            const theme = localStorage.getItem('portfolio-theme') || 'light';
+            if (theme === 'dark') {
+                document.documentElement.classList.add('dark-theme');
+            }
+        })();
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <meta name="format-detection" content="telephone=no, date=no, address=no, email=no">
@@ -224,6 +233,9 @@
                 </ul>
             </nav>
             <div class="header-actions">
+                <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle theme" title="Toggle Theme">
+                    <i class="fas fa-moon"></i>
+                </button>
                 <div class="hamburger" id="hamburger">
                     <span class="bar"></span><span class="bar"></span><span class="bar"></span>
                 </div>
