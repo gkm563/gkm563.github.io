@@ -499,6 +499,14 @@ function initArchivePanel() {
             currentImagesList = allCatalogImages.filter(img => img.category === category);
         }
 
+        // Ensure Gautam's specific image is always 1st in the list if present
+        const targetSrc = 'assets/images/ait-bangkok/gautam-kumar-maurya-gkm-ait-bangkok-thailand-internship-145.jpg';
+        const targetIndex = currentImagesList.findIndex(img => img.src === targetSrc);
+        if (targetIndex > -1) {
+            const [targetImage] = currentImagesList.splice(targetIndex, 1);
+            currentImagesList.unshift(targetImage);
+        }
+
         renderArchiveBatch();
     }
 
@@ -537,11 +545,32 @@ function initArchivePanel() {
 
 function shuffleArray(array) {
     const arr = [...array];
-    for (let i = arr.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [arr[i], arr[j]] = [arr[j], arr[i]];
+    const targetSrc = 'assets/images/ait-bangkok/gautam-kumar-maurya-gkm-ait-bangkok-thailand-internship-145.jpg';
+    
+    // Find the target image if present
+    const targetIndex = arr.findIndex(img => img.src === targetSrc);
+    
+    if (targetIndex > -1) {
+        // Extract the target image
+        const [targetImage] = arr.splice(targetIndex, 1);
+        
+        // Shuffle the rest of the array
+        for (let i = arr.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [arr[i], arr[j]] = [arr[j], arr[i]];
+        }
+        
+        // Put the target image back at the front (1st position)
+        arr.unshift(targetImage);
+        return arr;
+    } else {
+        // Normal shuffle
+        for (let i = arr.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [arr[i], arr[j]] = [arr[j], arr[i]];
+        }
+        return arr;
     }
-    return arr;
 }
 
 function renderArchiveBatch() {
