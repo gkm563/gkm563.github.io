@@ -942,8 +942,8 @@ section {
     align-items: center;
     text-align: center;
     gap: 0.6rem;
-    background: rgba(255, 255, 255, 0.02);
-    border: 1px solid rgba(255, 255, 255, 0.05);
+    background: var(--card-color-glass);
+    border: 1px solid var(--border-color-glass);
     padding: 1.2rem 0.8rem;
     border-radius: 12px;
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
@@ -952,6 +952,7 @@ section {
     overflow: hidden;
     height: 100%;
     box-sizing: border-box;
+    box-shadow: var(--card-shadow);
 }
 
 .skill-item::before {
@@ -973,7 +974,7 @@ section {
 
 .skill-item:hover {
     transform: translateY(-6px) scale(1.03);
-    background: rgba(255, 255, 255, 0.05);
+    background: var(--nav-link-hover-bg);
 }
 
 .frontend-theme .skill-item:hover {
@@ -1013,20 +1014,20 @@ section {
 .skill-item span {
     font-weight: 600;
     font-size: 0.85rem;
-    color: #cbd5e1;
+    color: var(--text-color);
     letter-spacing: 0.02em;
     transition: color 0.3s ease;
 }
 
 .skill-item:hover span {
-    color: #fff;
+    color: var(--primary-color);
 }
 
 /* Micro-Progress Bar styles */
 .skill-progress-wrap {
     width: 70%;
     height: 4px;
-    background: rgba(255, 255, 255, 0.08);
+    background: var(--border-color-glass);
     border-radius: 10px;
     margin-top: 0.3rem;
     overflow: hidden;
@@ -1122,7 +1123,7 @@ section {
 }
 
 .project-content p {
-    color: #94a3b8;
+    color: var(--text-secondary);
     flex-grow: 1;
     margin-bottom: 1.5rem;
 }
@@ -1189,7 +1190,7 @@ section {
 }
 
 .service-card p {
-    color: #94a3b8;
+    color: var(--text-secondary);
     flex-grow: 1;
 }
 
@@ -1362,7 +1363,7 @@ section {
 .contact-info-details h4 {
     font-size: 1.05rem;
     font-weight: 600;
-    color: #fff;
+    color: var(--text-color);
     margin: 0;
 }
 
@@ -7079,6 +7080,40 @@ body:not(.dark-theme) #stars, body:not(.dark-theme) #stars2, body:not(.dark-them
 /* Fix visualizer and wave colors in light mode */
 body:not(.dark-theme) .chat-audio-wave span {
     background-color: var(--primary-color);
+}
+
+/* Dark mode visibility overrides */
+body.dark-theme .skill-item {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+body.dark-theme .skill-item:hover {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+body.dark-theme .skill-item span {
+    color: #cbd5e1;
+}
+
+body.dark-theme .skill-item:hover span {
+    color: #fff;
+}
+
+body.dark-theme .skill-progress-wrap {
+    background: rgba(255, 255, 255, 0.08);
+}
+
+body.dark-theme .project-content p {
+    color: #94a3b8;
+}
+
+body.dark-theme .service-card p {
+    color: #94a3b8;
+}
+
+body.dark-theme .contact-info-details h4 {
+    color: #fff;
 }
 
 

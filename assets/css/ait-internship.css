@@ -4001,9 +4001,40 @@ body.internship-page {
         0 0 25px rgba(14, 165, 233, 0.08);
 }
 
+.project-title {
+    color: var(--text-color) !important;
+    background: linear-gradient(90deg, var(--text-color), #0ea5e9) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+}
+
+.project-desc {
+    color: var(--text-secondary) !important;
+}
+
+.project-meta-list .project-meta-item {
+    color: var(--text-secondary) !important;
+}
+
 .team-details-card {
     background: var(--card-bg-glass);
     border: 1px solid var(--border-color-glass);
+}
+
+.team-structure-title {
+    color: var(--text-color) !important;
+}
+
+.team-structure-item {
+    border-bottom: 1px solid var(--border-color-glass) !important;
+}
+
+.team-role {
+    color: var(--text-secondary) !important;
+}
+
+.team-count {
+    color: var(--text-color) !important;
 }
 
 .project-btn-secondary {
@@ -4107,9 +4138,35 @@ body.dark-theme .project-showcase-card {
         inset 0 0 15px rgba(14, 165, 233, 0.05);
 }
 
+body.dark-theme .project-title {
+    color: #fff !important;
+    background: linear-gradient(90deg, #fff, #38bdf8) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+}
+body.dark-theme .project-desc {
+    color: #94a3b8 !important;
+}
+body.dark-theme .project-meta-list .project-meta-item {
+    color: #cbd5e1 !important;
+}
+
 body.dark-theme .team-details-card {
     background: rgba(15, 23, 42, 0.5);
     border-color: rgba(14, 165, 233, 0.15);
+}
+
+body.dark-theme .team-structure-title {
+    color: #fff !important;
+}
+body.dark-theme .team-structure-item {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05) !important;
+}
+body.dark-theme .team-role {
+    color: #94a3b8 !important;
+}
+body.dark-theme .team-count {
+    color: #fff !important;
 }
 
 body.dark-theme .project-btn-secondary {

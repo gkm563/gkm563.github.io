@@ -1173,7 +1173,37 @@ body:not(.dark-theme) .terminal-cursor {
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.03);
 }
 
+.step-card h3 {
+    color: var(--text-primary) !important;
+}
+
+.step-card p {
+    color: var(--text-secondary) !important;
+}
+
+.stat-number {
+    background: linear-gradient(135deg, var(--text-primary) 0%, #a855f7 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.stat-label {
+    color: var(--text-secondary);
+}
+
 /* --- DARK THEME OVERRIDES --- */
+body.dark-theme .step-card h3 {
+    color: white !important;
+}
+
+body.dark-theme .step-card p {
+    color: #94a3b8 !important;
+}
+
+body.dark-theme .stat-label {
+    color: #94a3b8 !important;
+}
+
 body.dark-theme .stat-card {
     background: rgba(15, 23, 42, 0.3);
     border-color: var(--card-border);
