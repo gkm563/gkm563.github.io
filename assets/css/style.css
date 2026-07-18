@@ -629,11 +629,13 @@ body.dark-theme .hero-content .subtitle {
 .cta-button.secondary {
     background: transparent;
     border: 2px solid var(--primary-color);
+    color: var(--primary-color) !important;
     box-shadow: none;
 }
 
 .cta-button.secondary:hover {
     background: var(--primary-color);
+    color: #fff !important;
     box-shadow: 0 4px 20px rgba(14, 165, 233, 0.4);
 }
 
@@ -1008,7 +1010,6 @@ section {
 .skill-item:hover i,
 .skill-item:hover svg {
     transform: scale(1.15) translateY(-2px);
-    filter: drop-shadow(0 0 8px currentColor);
 }
 
 .skill-item span {
@@ -3996,7 +3997,7 @@ body.dark-theme .bento-card:hover .bento-tag {
 
 .os-stat-card {
     background: var(--card-color-glass);
-    border: 1px solid rgba(var(--theme-rgb, 14, 165, 233), 0.12);
+    border: 2px solid rgba(var(--theme-rgb, 14, 165, 233), 0.25);
     border-radius: 14px;
     padding: 1.5rem;
     display: flex;
@@ -4007,15 +4008,13 @@ body.dark-theme .bento-card:hover .bento-tag {
     transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
     transform-style: preserve-3d;
     will-change: transform;
+    box-shadow: var(--card-shadow);
 }
 
 .os-stat-card:hover {
-    background: rgba(15, 23, 42, 0.65);
-    border-color: hsla(var(--theme-hsl, 200, 95%, 49%), 0.55);
-    box-shadow: 
-        0 20px 40px rgba(0, 0, 0, 0.45), 
-        0 0 30px hsla(var(--theme-hsl, 200, 95%, 49%), 0.3),
-        inset 0 0 15px hsla(var(--theme-hsl, 200, 95%, 49%), 0.1);
+    background: rgba(var(--theme-rgb, 14, 165, 233), 0.1);
+    border-color: hsla(var(--theme-hsl, 200, 95%, 49%), 0.8);
+    box-shadow: 0 12px 30px rgba(var(--theme-rgb, 14, 165, 233), 0.25);
     transform: translateY(-4px) scale(1.02);
 }
 
@@ -4052,14 +4051,16 @@ body.dark-theme .bento-card:hover .bento-tag {
 .os-stat-num {
     font-size: 1.65rem;
     font-weight: 700;
-    color: #fff;
+    color: var(--text-color);
     line-height: 1.2;
+    transition: color 0.3s ease;
 }
 
 .os-stat-label {
     font-size: 0.85rem;
-    color: #94a3b8;
+    color: var(--text-secondary);
     font-weight: 500;
+    transition: color 0.3s ease;
 }
 
 /* --- STATS CARD GLOW THEMES --- */
@@ -4844,9 +4845,9 @@ body.dark-theme .github-search-input:focus {
 }
 
 .github-filter-tab {
-    background: rgba(15, 23, 42, 0.5);
+    background: var(--card-color-glass);
     border: 1px solid var(--border-color-glass);
-    color: #94a3b8;
+    color: var(--text-secondary);
     padding: 0.6rem 1.2rem;
     border-radius: 30px;
     cursor: pointer;
@@ -4857,7 +4858,7 @@ body.dark-theme .github-search-input:focus {
 }
 
 .github-filter-tab:hover {
-    color: #fff;
+    color: var(--secondary-color);
     border-color: var(--secondary-color);
     box-shadow: 0 0 10px rgba(236, 72, 153, 0.15);
 }
@@ -5238,7 +5239,7 @@ body.dark-theme .about-stat-pill.theme-yellow:hover {
 
 /* Developer Profile Terminal */
 .terminal-card {
-    background: rgba(9, 13, 22, 0.7);
+    background: #05070c !important;
     border: 1px solid rgba(14, 165, 233, 0.35);
     border-radius: 12px;
     box-shadow: 
@@ -5262,7 +5263,7 @@ body.dark-theme .about-stat-pill.theme-yellow:hover {
 }
 
 .terminal-header {
-    background: rgba(15, 23, 42, 0.95);
+    background: #0b0e14 !important;
     padding: 0.65rem 1.25rem;
     display: flex;
     align-items: center;
@@ -7114,6 +7115,44 @@ body.dark-theme .service-card p {
 
 body.dark-theme .contact-info-details h4 {
     color: #fff;
+}
+
+body.dark-theme .os-stat-card:hover {
+    background: rgba(15, 23, 42, 0.65);
+    box-shadow: 
+        0 20px 40px rgba(0, 0, 0, 0.45), 
+        0 0 30px hsla(var(--theme-hsl, 200, 95%, 49%), 0.3),
+        inset 0 0 15px hsla(var(--theme-hsl, 200, 95%, 49%), 0.1);
+}
+
+body.dark-theme .os-stat-num {
+    color: #fff;
+}
+
+body.dark-theme .os-stat-label {
+    color: #94a3b8;
+}
+
+body.dark-theme .cta-button.secondary {
+    color: #fff !important;
+}
+
+body.dark-theme .cta-button.secondary:hover {
+    color: #fff !important;
+}
+
+body.dark-theme .github-filter-tab {
+    background: rgba(15, 23, 42, 0.5);
+    color: #94a3b8;
+}
+
+body.dark-theme .github-filter-tab:hover {
+    color: #fff;
+    border-color: var(--secondary-color);
+}
+
+body.dark-theme .os-stat-card {
+    border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 
