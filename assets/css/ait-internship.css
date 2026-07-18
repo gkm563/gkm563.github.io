@@ -212,13 +212,13 @@ body.internship-page::after {
     font-family: var(--font-heading);
     font-size: 1.5rem;
     font-weight: 700;
-    color: #fff;
+    color: var(--text-color);
     margin-bottom: 0.25rem;
 }
 
 .stat-pill-card p {
     font-size: 0.85rem;
-    color: #94a3b8;
+    color: var(--text-secondary);
     text-transform: uppercase;
     letter-spacing: 1px;
 }
@@ -287,12 +287,12 @@ body.internship-page::after {
     display: flex;
     flex-direction: column;
     gap: 0.6rem;
-    background: rgba(15, 23, 42, 0.45);
-    border: 1px solid rgba(255, 255, 255, 0.05);
+    background: var(--card-bg-glass);
+    border: 1px solid var(--border-color-glass);
     border-radius: 20px;
     padding: 0.85rem;
     backdrop-filter: blur(8px);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
     overflow-y: auto;
     max-height: calc(100vh - 230px);
     scrollbar-width: thin;
@@ -330,19 +330,19 @@ body.internship-page::after {
 }
 
 .day-nav-item a:hover {
-    color: #e2e8f0;
-    background: rgba(255, 255, 255, 0.03);
-    border-color: rgba(255, 255, 255, 0.05);
+    color: var(--text-color);
+    background: var(--nav-link-hover-bg, rgba(0, 0, 0, 0.03));
+    border-color: var(--border-color-glass);
 }
 
 .day-nav-item.active a {
-    color: #fff;
-    background: linear-gradient(90deg, rgba(168, 85, 247, 0.15) 0%, rgba(168, 85, 247, 0.02) 100%);
+    color: var(--primary-color);
+    background: var(--nav-link-hover-bg, rgba(168, 85, 247, 0.08));
     border-left: 3px solid var(--google-blue);
     border-color: rgba(168, 85, 247, 0.2) rgba(168, 85, 247, 0.05) rgba(168, 85, 247, 0.05) rgba(168, 85, 247, 0.2);
     font-weight: 600;
     box-shadow: 
-        0 4px 15px rgba(0, 0, 0, 0.15),
+        0 4px 15px rgba(0, 0, 0, 0.03),
         inset 1px 0 0 rgba(168, 85, 247, 0.3);
 }
 
@@ -576,16 +576,16 @@ body.internship-page::after {
 }
 
 .timeline-card {
-    background: linear-gradient(135deg, rgba(15, 23, 42, 0.45) 0%, rgba(2, 6, 23, 0.8) 100%);
+    background: var(--card-bg-glass);
     backdrop-filter: blur(24px);
     -webkit-backdrop-filter: blur(24px);
-    border: 1px solid rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--border-color-glass);
     border-radius: 24px;
     padding: 3rem 2.5rem;
     transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
     box-shadow: 
-        0 10px 40px rgba(0, 0, 0, 0.3),
-        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+        0 10px 40px rgba(0, 0, 0, 0.03),
+        inset 0 1px 0 rgba(255, 255, 255, 0.02);
     position: relative;
     overflow: hidden;
     z-index: 1;
@@ -612,11 +612,11 @@ body.internship-page::after {
 
 .timeline-card:hover {
     transform: translateY(-8px);
-    border-color: rgba(var(--day-accent-rgb), 0.4);
+    border-color: rgba(var(--day-accent-rgb), 0.5);
     box-shadow: 
-        0 30px 60px -15px rgba(0, 0, 0, 0.65),
-        0 0 35px rgba(var(--day-accent-rgb), 0.12),
-        inset 0 1px 0 rgba(255, 255, 255, 0.2);
+        0 20px 45px rgba(0, 0, 0, 0.05),
+        0 0 25px rgba(var(--day-accent-rgb), 0.15),
+        inset 0 1px 0 rgba(255, 255, 255, 0.15);
 }
 
 /* Left Accent Light Line inside timeline card */
@@ -727,7 +727,7 @@ body.internship-page::after {
     font-family: var(--font-heading);
     font-size: 1.85rem;
     font-weight: 800;
-    color: #fff;
+    color: var(--text-color);
     margin-bottom: 1.75rem;
     line-height: 1.3;
     letter-spacing: -0.2px;
@@ -738,8 +738,8 @@ body.internship-page::after {
 /* Card Body Blocks */
 .card-body-section {
     margin-bottom: 1.5rem;
-    background: rgba(15, 23, 42, 0.4);
-    border: 1px solid rgba(255, 255, 255, 0.03);
+    background: var(--card-bg-glass);
+    border: 1px solid var(--border-color-glass);
     border-radius: 16px;
     padding: 1.5rem;
     transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
@@ -780,7 +780,7 @@ body.internship-page::after {
     font-weight: 800;
     text-transform: uppercase;
     letter-spacing: 1.5px;
-    color: #94a3b8;
+    color: var(--text-secondary);
     margin-bottom: 1rem;
     display: flex;
     align-items: center;
@@ -800,14 +800,14 @@ body.internship-page::after {
     position: relative;
     padding-left: 1.75rem;
     margin-bottom: 0.75rem;
-    color: #cbd5e1;
+    color: var(--text-secondary);
     font-size: 0.95rem;
     transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .card-body-section ul li:hover {
     transform: translateX(6px);
-    color: #ffffff;
+    color: var(--text-color);
 }
 
 .card-body-section ul li::before {
@@ -827,14 +827,14 @@ body.internship-page::after {
 }
 
 .card-body-section p {
-    color: #cbd5e1;
+    color: var(--text-secondary);
     font-size: 0.95rem;
     margin-bottom: 0.5rem;
 }
 
 .card-body-section.learnings-box {
-    background: linear-gradient(135deg, rgba(var(--day-accent-rgb), 0.03) 0%, rgba(15, 23, 42, 0.45) 100%);
-    border: 1px solid rgba(var(--day-accent-rgb), 0.15);
+    background: rgba(var(--day-accent-rgb), 0.05);
+    border: 1px solid rgba(var(--day-accent-rgb), 0.35);
     border-left: 5px solid var(--day-accent);
     border-radius: 16px;
     padding: 1.5rem 1.75rem;
@@ -879,7 +879,7 @@ body.internship-page::after {
 
 .timeline-action-btn:hover {
     background: var(--day-accent);
-    color: #020617;
+    color: #fff !important;
     border-color: var(--day-accent);
     box-shadow: 0 0 15px rgba(var(--day-accent-rgb), 0.4);
     transform: translateY(-2px);
@@ -1751,8 +1751,8 @@ body.internship-page::after {
 }
 
 .mentor-card {
-    background: rgba(15, 23, 42, 0.5);
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: var(--card-bg-glass);
+    border: 1px solid var(--border-color-glass);
     border-radius: 18px;
     padding: 2rem 1.5rem;
     text-align: center;
@@ -1778,9 +1778,9 @@ body.internship-page::after {
 
 .mentor-card:hover {
     transform: translateY(-8px);
-    border-color: rgba(168, 85, 247, 0.35);
-    background: rgba(15, 23, 42, 0.7);
-    box-shadow: 0 15px 40px -15px rgba(168, 85, 247, 0.25), 0 0 20px rgba(168, 85, 247, 0.05);
+    border-color: rgba(168, 85, 247, 0.5);
+    background: var(--card-bg-glass);
+    box-shadow: 0 15px 35px rgba(168, 85, 247, 0.15);
 }
 
 .mentor-card:hover::before {
@@ -1829,7 +1829,7 @@ body.internship-page::after {
     font-family: var(--font-heading);
     font-size: 1.25rem;
     font-weight: 700;
-    color: #ffffff;
+    color: var(--text-color);
     margin-bottom: 0.5rem;
     z-index: 1;
     position: relative;
@@ -1849,7 +1849,7 @@ body.internship-page::after {
 
 .mentor-organization {
     font-size: 0.85rem;
-    color: #94a3b8;
+    color: var(--text-secondary);
     line-height: 1.4;
     margin-bottom: 1rem;
     z-index: 1;
@@ -1870,17 +1870,17 @@ body.internship-page::after {
     font-size: 0.75rem;
     font-weight: 600;
     padding: 0.2rem 0.6rem;
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: var(--card-bg-glass);
+    border: 1px solid var(--border-color-glass);
     border-radius: 6px;
-    color: #cbd5e1;
+    color: var(--text-secondary);
     transition: all 0.3s ease;
 }
 
 .mentor-card:hover .mentor-tag {
     background: rgba(168, 85, 247, 0.08);
     border-color: rgba(168, 85, 247, 0.2);
-    color: #fff;
+    color: var(--primary-color);
 }
 
 /* Coordinating Team Section Styling */
@@ -2433,12 +2433,12 @@ body.internship-page::after {
 
 .reflection-card {
     position: relative;
-    background: linear-gradient(135deg, rgba(15, 23, 42, 0.7) 0%, rgba(30, 41, 59, 0.5) 100%);
+    background: var(--card-bg-glass);
     backdrop-filter: blur(16px);
-    border: 1px solid rgba(168, 85, 247, 0.2);
+    border: 1px solid var(--border-color-glass);
     border-radius: 24px;
     padding: 3.5rem;
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+    box-shadow: var(--card-shadow);
     max-width: 950px;
     margin: 0 auto;
     overflow: hidden;
@@ -2457,8 +2457,8 @@ body.internship-page::after {
 
 .reflection-card:hover {
     transform: translateY(-5px);
-    border-color: rgba(168, 85, 247, 0.4);
-    box-shadow: 0 25px 60px rgba(168, 85, 247, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    border-color: rgba(168, 85, 247, 0.45);
+    box-shadow: 0 15px 35px rgba(168, 85, 247, 0.1);
 }
 
 .reflection-glow-field {
@@ -2493,12 +2493,9 @@ body.internship-page::after {
     font-family: var(--font-heading);
     font-size: clamp(1.8rem, 3.5vw, 2.4rem);
     font-weight: 700;
-    color: #ffffff;
+    color: var(--text-color);
     letter-spacing: -0.5px;
     margin: 0;
-    background: linear-gradient(135deg, #ffffff 40%, #93c5fd 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
 }
 
 .reflection-body {
@@ -2510,7 +2507,7 @@ body.internship-page::after {
 .reflection-body p {
     font-size: 1.05rem;
     line-height: 1.85;
-    color: #cbd5e1;
+    color: var(--text-secondary);
     margin-bottom: 1.5rem;
     text-align: justify;
 }
@@ -2541,11 +2538,8 @@ body.internship-page::after {
     font-family: var(--font-heading);
     font-size: 1.35rem;
     font-weight: 700;
-    color: #ffffff;
+    color: var(--text-color);
     letter-spacing: 0.5px;
-    background: linear-gradient(90deg, #ffffff, var(--google-blue));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
 }
 
 .sig-title {
@@ -4177,5 +4171,131 @@ body.dark-theme .project-btn-secondary:hover {
     background: rgba(255, 255, 255, 0.1);
     border-color: rgba(255, 255, 255, 0.2);
     color: #fff;
+}
+
+body.dark-theme .stat-pill-card h3 {
+    color: #fff;
+}
+
+body.dark-theme .stat-pill-card p {
+    color: #94a3b8;
+}
+
+body.dark-theme .day-nav-list {
+    background: rgba(15, 23, 42, 0.45);
+    border-color: rgba(255, 255, 255, 0.05);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+body.dark-theme .day-nav-item a:hover {
+    color: #e2e8f0;
+    background: rgba(255, 255, 255, 0.03);
+    border-color: rgba(255, 255, 255, 0.05);
+}
+
+body.dark-theme .day-nav-item.active a {
+    color: #fff;
+    background: linear-gradient(90deg, rgba(168, 85, 247, 0.15) 0%, rgba(168, 85, 247, 0.02) 100%);
+}
+
+body.dark-theme .timeline-card {
+    background: linear-gradient(135deg, rgba(15, 23, 42, 0.45) 0%, rgba(2, 6, 23, 0.8) 100%);
+    border-color: rgba(255, 255, 255, 0.05);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+body.dark-theme .timeline-card:hover {
+    box-shadow: 
+        0 30px 60px -15px rgba(0, 0, 0, 0.65),
+        0 0 35px rgba(var(--day-accent-rgb), 0.12),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+body.dark-theme .timeline-card h2 {
+    background: linear-gradient(90deg, #ffffff, var(--day-accent));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+}
+
+body.dark-theme .card-body-section {
+    background: rgba(15, 23, 42, 0.4);
+    border-color: rgba(255, 255, 255, 0.03);
+}
+
+body.dark-theme .card-body-section h4 {
+    color: #94a3b8;
+}
+
+body.dark-theme .card-body-section ul li {
+    color: #cbd5e1;
+}
+
+body.dark-theme .card-body-section ul li:hover {
+    color: #ffffff;
+}
+
+body.dark-theme .card-body-section p {
+    color: #cbd5e1;
+}
+
+body.dark-theme .card-body-section.learnings-box {
+    background: linear-gradient(135deg, rgba(var(--day-accent-rgb), 0.03) 0%, rgba(15, 23, 42, 0.45) 100%);
+}
+
+body.dark-theme .mentor-card {
+    background: rgba(15, 23, 42, 0.5);
+    border-color: rgba(255, 255, 255, 0.08);
+}
+
+body.dark-theme .mentor-card:hover {
+    background: rgba(15, 23, 42, 0.7);
+    box-shadow: 0 15px 40px -15px rgba(168, 85, 247, 0.25), 0 0 20px rgba(168, 85, 247, 0.05);
+}
+
+body.dark-theme .mentor-name {
+    color: #ffffff;
+}
+
+body.dark-theme .mentor-organization {
+    color: #94a3b8;
+}
+
+body.dark-theme .mentor-tag {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(255, 255, 255, 0.08);
+    color: #cbd5e1;
+}
+
+body.dark-theme .mentor-card:hover .mentor-tag {
+    color: #fff;
+}
+
+body.dark-theme .reflection-card {
+    background: linear-gradient(135deg, rgba(15, 23, 42, 0.7) 0%, rgba(30, 41, 59, 0.5) 100%);
+    border-color: rgba(168, 85, 247, 0.2);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+body.dark-theme .reflection-card:hover {
+    box-shadow: 0 25px 60px rgba(168, 85, 247, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+body.dark-theme .reflection-header h2 {
+    background: linear-gradient(135deg, #ffffff 40%, #93c5fd 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+}
+
+body.dark-theme .reflection-body p {
+    color: #cbd5e1;
+}
+
+body.dark-theme .sig-name {
+    background: linear-gradient(90deg, #ffffff, var(--google-blue));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
 }
 
