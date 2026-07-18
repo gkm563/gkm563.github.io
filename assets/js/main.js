@@ -195,7 +195,7 @@ function renderGithubRepos() {
     const filtered = filterReposData();
 
     if (filtered.length === 0) {
-        container.innerHTML = `<p style="grid-column: 1/-1; text-align: center; color: #94a3b8; padding: 3rem; width: 100%;">${currentLang === 'hi' ? 'कोई रिपॉजिटरी नहीं मिली।' : 'No matching repositories found.'}</p>`;
+        container.innerHTML = `<p style="grid-column: 1/-1; text-align: center; color: var(--text-secondary); padding: 3rem; width: 100%;">${currentLang === 'hi' ? 'कोई रिपॉजिटरी नहीं मिली।' : 'No matching repositories found.'}</p>`;
         
         const paginationContainer = document.getElementById('github-pagination-container');
         if (paginationContainer) paginationContainer.style.display = 'none';
@@ -217,8 +217,8 @@ function renderGithubRepos() {
         card.innerHTML = `
             <div class="project-content" style="display: flex; flex-direction: column; height: 100%;">
                 <div class="project-icon">${langIcon}</div>
-                <h3 style="font-size: 1.25rem; font-weight: 600; margin-bottom: 0.5rem; color: #fff; text-align: left;">${repo.name}</h3>
-                <p style="font-size: 0.9rem; color: #94a3b8; flex-grow: 1; margin-bottom: 1.5rem; line-height: 1.6; text-align: left;">${desc}</p>
+                <h3 style="font-size: 1.25rem; font-weight: 600; margin-bottom: 0.5rem; color: var(--text-color); text-align: left;">${repo.name}</h3>
+                <p style="font-size: 0.9rem; color: var(--text-secondary); flex-grow: 1; margin-bottom: 1.5rem; line-height: 1.6; text-align: left;">${desc}</p>
                 
                 <div class="github-repo-stats" style="margin-bottom: 1rem;">
                     <span class="github-repo-stat stars" title="${currentLang === 'hi' ? 'तारे' : 'Stars'}"><i class="fas fa-star"></i> ${repo.stargazers_count || 0}</span>
@@ -2046,7 +2046,7 @@ function renderWikiArticles() {
 
     if (filteredArticles.length === 0) {
         const emptyMsg = activeLang === 'hi' ? 'कोई लेख नहीं मिला।' : 'No matching articles found.';
-        container.innerHTML = `<p style="text-align: center; color: #94a3b8; padding: 2rem;">${emptyMsg}</p>`;
+        container.innerHTML = `<p style="text-align: center; color: var(--text-secondary); padding: 2rem;">${emptyMsg}</p>`;
         return;
     }
 

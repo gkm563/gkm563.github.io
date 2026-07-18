@@ -1387,10 +1387,10 @@ section {
 .premium-form-textarea {
     width: 100%;
     padding: 1.1rem 1.25rem;
-    background: rgba(2, 6, 23, 0.6);
-    border: 1px solid rgba(14, 165, 233, 0.2);
+    background: var(--card-color-glass);
+    border: 1px solid var(--border-color-glass);
     border-radius: 14px;
-    color: #fff;
+    color: var(--text-color);
     font-family: var(--body-font);
     font-size: 0.95rem;
     outline: none;
@@ -1407,7 +1407,19 @@ section {
 .premium-form-input:focus,
 .premium-form-textarea:focus {
     border-color: var(--primary-color);
-    box-shadow: 0 0 15px rgba(14, 165, 233, 0.25);
+    box-shadow: 0 0 15px rgba(14, 165, 233, 0.15);
+    background: var(--card-color);
+}
+
+body.dark-theme .premium-form-input,
+body.dark-theme .premium-form-textarea {
+    background: rgba(2, 6, 23, 0.6);
+    color: #fff;
+    border-color: rgba(14, 165, 233, 0.2);
+}
+
+body.dark-theme .premium-form-input:focus,
+body.dark-theme .premium-form-textarea:focus {
     background: rgba(2, 6, 23, 0.8);
 }
 
@@ -3289,7 +3301,7 @@ body.dark-theme .chatbot-window {
 }
 
 .bento-card {
-    background: radial-gradient(circle at top right, rgba(var(--theme-rgb), 0.08), transparent 60%), rgba(15, 23, 42, 0.45);
+    background: radial-gradient(circle at top right, rgba(var(--theme-rgb), 0.05), transparent 60%), var(--card-color-glass);
     border-radius: 24px;
     padding: 1.75rem 1.5rem;
     display: flex;
@@ -3300,8 +3312,8 @@ body.dark-theme .chatbot-window {
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
     transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.25);
-    border: 1px solid rgba(255, 255, 255, 0.06);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.03);
+    border: 1px solid var(--border-color-glass);
     --theme-rgb: 66, 133, 244; /* Default: Google Blue */
 }
 
@@ -3312,9 +3324,10 @@ body.dark-theme .chatbot-window {
     inset: 0;
     border-radius: 24px;
     padding: 1.5px;
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.02) 60%, transparent);
+    background: linear-gradient(135deg, rgba(var(--theme-rgb), 0.25), rgba(var(--theme-rgb), 0.05) 60%, transparent);
     -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
     -webkit-mask-composite: xor;
+    -webkit-mask-composite: exclude;
     mask-composite: exclude;
     pointer-events: none;
     transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
@@ -3338,6 +3351,23 @@ body.dark-theme .chatbot-window {
 }
 
 .bento-card:hover {
+    background: var(--card-color-glass);
+    box-shadow: 
+        0 15px 35px rgba(0, 0, 0, 0.06), 
+        0 0 25px rgba(var(--theme-rgb), 0.15);
+    border-color: rgba(var(--theme-rgb), 0.45);
+}
+
+/* Dark Mode Overrides for Bento Grid Cards */
+body.dark-theme .bento-card {
+    background: radial-gradient(circle at top right, rgba(var(--theme-rgb), 0.08), transparent 60%), rgba(15, 23, 42, 0.45);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.25);
+    border-color: rgba(255, 255, 255, 0.06);
+}
+body.dark-theme .bento-card::before {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.02) 60%, transparent);
+}
+body.dark-theme .bento-card:hover {
     background: rgba(15, 23, 42, 0.65);
     box-shadow: 
         0 25px 50px rgba(0, 0, 0, 0.55), 
@@ -3520,10 +3550,10 @@ body.dark-theme .chatbot-window {
     font-weight: 800;
     letter-spacing: -0.01em;
     margin-top: 0.25rem;
-    color: #fff;
+    color: var(--text-color);
     display: inline-flex;
     align-items: center;
-    background: linear-gradient(135deg, #ffffff 40%, hsla(var(--theme-hsl), 0.8) 100%);
+    background: linear-gradient(135deg, var(--text-color) 40%, hsla(var(--theme-hsl), 0.8) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     transition: all 0.3s ease;
@@ -3531,7 +3561,7 @@ body.dark-theme .chatbot-window {
 
 .bento-card:hover .bento-metric {
     transform: scale(1.05) translate3d(0, 0, 8px);
-    background: linear-gradient(135deg, #ffffff 10%, hsla(var(--theme-hsl), 1) 100%);
+    background: linear-gradient(135deg, var(--text-color) 10%, hsla(var(--theme-hsl), 1) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
@@ -3539,29 +3569,28 @@ body.dark-theme .chatbot-window {
 .bento-content h3 {
     font-size: 1.25rem;
     font-weight: 700;
-    color: #fff;
+    color: var(--text-color);
     margin: 0;
     transition: all 0.3s ease;
 }
 
 .bento-card:hover .bento-content h3 {
-    background: linear-gradient(90deg, #ffffff 0%, hsla(var(--theme-hsl), 1) 100%);
+    background: linear-gradient(90deg, var(--text-color) 0%, hsla(var(--theme-hsl), 1) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    filter: drop-shadow(0 0 8px hsla(var(--theme-hsl), 0.35));
 }
 
 .bento-content p {
     font-size: 0.9rem;
     line-height: 1.65;
-    color: #94a3b8;
+    color: var(--text-secondary);
     margin: 0;
     font-family: 'Plus Jakarta Sans', sans-serif;
     transition: color 0.3s ease;
 }
 
 .bento-card:hover .bento-content p {
-    color: #cbd5e1;
+    color: var(--text-color);
 }
 
 .bento-tags {
@@ -3575,9 +3604,9 @@ body.dark-theme .chatbot-window {
 .bento-tag {
     font-size: 0.75rem;
     font-weight: 600;
-    color: #94a3b8;
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(255, 255, 255, 0.06);
+    color: var(--text-secondary);
+    background: var(--nav-link-hover-bg);
+    border: 1px solid var(--border-color-glass);
     padding: 4px 12px;
     border-radius: 8px;
     transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
@@ -3586,6 +3615,37 @@ body.dark-theme .chatbot-window {
 .bento-card:hover .bento-tag {
     background: hsla(var(--theme-hsl), 0.05);
     border-color: hsla(var(--theme-hsl), 0.18);
+    color: var(--text-secondary);
+}
+
+/* Dark mode overrides for Bento grid elements */
+body.dark-theme .bento-metric {
+    background: linear-gradient(135deg, #ffffff 40%, hsla(var(--theme-hsl), 0.8) 100%);
+}
+body.dark-theme .bento-card:hover .bento-metric {
+    background: linear-gradient(135deg, #ffffff 10%, hsla(var(--theme-hsl), 1) 100%);
+}
+body.dark-theme .bento-content h3 {
+    color: #fff;
+}
+body.dark-theme .bento-card:hover .bento-content h3 {
+    background: linear-gradient(90deg, #ffffff 0%, hsla(var(--theme-hsl), 1) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 0 8px hsla(var(--theme-hsl), 0.35));
+}
+body.dark-theme .bento-content p {
+    color: #94a3b8;
+}
+body.dark-theme .bento-card:hover .bento-content p {
+    color: #cbd5e1;
+}
+body.dark-theme .bento-tag {
+    color: #94a3b8;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+}
+body.dark-theme .bento-card:hover .bento-tag {
     color: #94a3b8;
 }
 
@@ -4228,8 +4288,8 @@ body.dark-theme .chatbot-window {
 
 /* === WIKIPEDIA FEED/EXPLORER CARD === */
 .os-feed-card {
-    background: rgba(15, 23, 42, 0.45);
-    border: 1px solid rgba(var(--theme-rgb, 14, 165, 233), 0.12);
+    background: var(--card-color-glass);
+    border: 1px solid var(--border-color-glass);
     border-radius: 14px;
     padding: 1.75rem;
     backdrop-filter: blur(12px);
@@ -4245,12 +4305,11 @@ body.dark-theme .chatbot-window {
 }
 
 .os-feed-card:hover {
-    background: rgba(15, 23, 42, 0.65);
-    border-color: hsla(var(--theme-hsl), 0.55);
+    background: var(--card-color-glass);
+    border-color: var(--primary-color);
     box-shadow: 
-        0 25px 50px rgba(0, 0, 0, 0.55), 
-        0 0 35px hsla(var(--theme-hsl), 0.35),
-        inset 0 0 15px hsla(var(--theme-hsl), 0.1);
+        0 15px 35px rgba(0, 0, 0, 0.08), 
+        0 0 25px rgba(14, 165, 233, 0.15);
     transform: translateY(-4px) scale(1.015);
 }
 
@@ -4259,17 +4318,37 @@ body.dark-theme .chatbot-window {
     justify-content: space-between;
     align-items: center;
     padding-bottom: 1.1rem;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    border-bottom: 1px solid var(--border-color-glass);
     margin-bottom: 1.25rem;
 }
 
 .os-feed-title {
     font-size: 1.1rem;
     font-weight: 600;
-    color: #fff;
+    color: var(--text-color);
     display: flex;
     align-items: center;
     gap: 0.6rem;
+}
+
+/* Dark theme overrides for Wikipedia Explorer */
+body.dark-theme .os-feed-card {
+    background: rgba(15, 23, 42, 0.45);
+    border-color: rgba(var(--theme-rgb, 14, 165, 233), 0.12);
+}
+body.dark-theme .os-feed-card:hover {
+    background: rgba(15, 23, 42, 0.65);
+    border-color: hsla(var(--theme-hsl), 0.55);
+    box-shadow: 
+        0 25px 50px rgba(0, 0, 0, 0.55), 
+        0 0 35px hsla(var(--theme-hsl), 0.35),
+        inset 0 0 15px hsla(var(--theme-hsl), 0.1);
+}
+body.dark-theme .os-feed-header {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+body.dark-theme .os-feed-title {
+    color: #fff;
 }
 
 .os-feed-username {
@@ -4320,11 +4399,11 @@ a.os-feed-username:hover {
 
 .wiki-search-input {
     width: 100%;
-    background: rgba(15, 23, 42, 0.5);
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: var(--card-color-glass);
+    border: 1px solid var(--border-color-glass);
     border-radius: 8px;
     padding: 0.65rem 1rem 0.65rem 2.6rem;
-    color: #fff;
+    color: var(--text-color);
     font-family: inherit;
     font-size: 0.88rem;
     outline: none;
@@ -4332,9 +4411,9 @@ a.os-feed-username:hover {
 }
 
 .wiki-search-input:focus {
-    border-color: rgba(14, 165, 233, 0.45);
+    border-color: var(--primary-color);
     box-shadow: 0 0 15px rgba(14, 165, 233, 0.15);
-    background: rgba(15, 23, 42, 0.75);
+    background: var(--card-color);
 }
 
 .wiki-search-input:focus + i {
@@ -4349,26 +4428,50 @@ a.os-feed-username:hover {
 }
 
 .wiki-filter-tab {
-    background: rgba(255, 255, 255, 0.04);
-    border: 1px solid rgba(255, 255, 255, 0.06);
+    background: var(--card-color-glass);
+    border: 1px solid var(--border-color-glass);
     border-radius: 6px;
     padding: 4px 11px;
     font-size: 0.74rem;
     font-weight: 600;
-    color: #94a3b8;
+    color: var(--text-secondary);
     cursor: pointer;
     transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
     border-radius: 30px;
 }
 
 .wiki-filter-tab:hover {
-    background: hsla(var(--theme-hsl), 0.08);
-    color: #fff;
-    border-color: hsla(var(--theme-hsl), 0.35);
-    box-shadow: 0 0 10px hsla(var(--theme-hsl), 0.15);
+    background: var(--nav-link-hover-bg);
+    color: var(--text-color);
 }
 
 .wiki-filter-tab.active {
+    background: var(--primary-glow);
+    color: var(--primary-color);
+    border-color: var(--primary-color);
+    box-shadow: 0 0 10px var(--primary-glow);
+}
+
+body.dark-theme .wiki-search-input {
+    background: rgba(15, 23, 42, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    color: #fff;
+}
+body.dark-theme .wiki-search-input:focus {
+    background: rgba(15, 23, 42, 0.75);
+    border-color: rgba(14, 165, 233, 0.45);
+}
+body.dark-theme .wiki-filter-tab {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    color: #94a3b8;
+}
+body.dark-theme .wiki-filter-tab:hover {
+    background: hsla(var(--theme-hsl), 0.08);
+    color: #fff;
+    border-color: hsla(var(--theme-hsl), 0.35);
+}
+body.dark-theme .wiki-filter-tab.active {
     background: hsla(var(--theme-hsl), 0.16);
     color: #fff;
     border-color: hsla(var(--theme-hsl), 0.55);
@@ -4403,8 +4506,8 @@ a.os-feed-username:hover {
 }
 
 .os-feed-item {
-    background: rgba(30, 41, 59, 0.25);
-    border: 1px solid rgba(255, 255, 255, 0.03);
+    background: var(--card-color-glass);
+    border: 1px solid var(--border-color-glass);
     border-radius: 10px;
     padding: 0.85rem 1rem;
     display: flex;
@@ -4417,9 +4520,18 @@ a.os-feed-username:hover {
 }
 
 .os-feed-item:hover {
+    background: var(--nav-link-hover-bg);
+    border-color: var(--primary-color);
+    transform: translateX(4px);
+}
+
+body.dark-theme .os-feed-item {
+    background: rgba(30, 41, 59, 0.25);
+    border-color: rgba(255, 255, 255, 0.03);
+}
+body.dark-theme .os-feed-item:hover {
     background: rgba(30, 41, 59, 0.6);
     border-color: rgba(14, 165, 233, 0.25);
-    transform: translateX(4px);
 }
 
 .wiki-item-info {
@@ -4473,7 +4585,7 @@ a.os-feed-username:hover {
 
 .wiki-title-wrapper {
     font-size: 0.92rem;
-    color: #fff;
+    color: var(--text-color);
     text-overflow: ellipsis;
     overflow: hidden;
     white-space: nowrap;
@@ -4484,9 +4596,16 @@ a.os-feed-username:hover {
 }
 
 .wiki-title-secondary {
-    color: #94a3b8;
+    color: var(--text-secondary);
     font-size: 0.8rem;
     font-weight: 400;
+}
+
+body.dark-theme .wiki-title-wrapper {
+    color: #fff;
+}
+body.dark-theme .wiki-title-secondary {
+    color: #94a3b8;
 }
 
 .wiki-meta {
@@ -4659,10 +4778,10 @@ a.os-feed-username:hover {
 .github-search-input {
     width: 100%;
     padding: 0.75rem 1rem 0.75rem 2.5rem;
-    background: rgba(15, 23, 42, 0.6);
+    background: var(--card-color-glass);
     border: 1px solid var(--border-color-glass);
     border-radius: 50px;
-    color: #fff;
+    color: var(--text-color);
     outline: none;
     transition: all 0.3s ease;
     font-family: var(--body-font);
@@ -4679,12 +4798,20 @@ a.os-feed-username:hover {
 
 .github-search-input:focus {
     border-color: var(--primary-color);
-    box-shadow: 0 0 15px rgba(14, 165, 233, 0.3);
-    background: rgba(15, 23, 42, 0.85);
+    box-shadow: 0 0 15px rgba(14, 165, 233, 0.15);
+    background: var(--card-color);
 }
 
 .github-search-input:focus + i {
     color: var(--primary-color);
+}
+
+body.dark-theme .github-search-input {
+    background: rgba(15, 23, 42, 0.6);
+    color: #fff;
+}
+body.dark-theme .github-search-input:focus {
+    background: rgba(15, 23, 42, 0.85);
 }
 
 .github-filter-tabs {
@@ -4721,13 +4848,22 @@ a.os-feed-username:hover {
 
 /* GitHub Cards Styling */
 .github-repo-card {
-    background: rgba(15, 23, 42, 0.5);
+    background: var(--card-color-glass);
+    border: 1px solid var(--border-color-glass);
     transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
 .github-repo-card:hover {
     transform: translateY(-8px) scale(1.02);
     border-color: var(--primary-color);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08), 0 0 20px rgba(14, 165, 233, 0.15);
+}
+
+body.dark-theme .github-repo-card {
+    background: rgba(15, 23, 42, 0.5);
+    border-color: var(--border-color-glass);
+}
+body.dark-theme .github-repo-card:hover {
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4), 0 0 20px rgba(14, 165, 233, 0.2);
 }
 
@@ -5012,48 +5148,68 @@ a.os-feed-username:hover {
     padding: 0.55rem 1.1rem;
     border-radius: 50px;
     font-size: 0.8rem;
-    color: #cbd5e1;
+    color: var(--text-secondary);
     backdrop-filter: blur(8px);
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     cursor: default;
-    font-weight: 500;
+    font-weight: 600;
 }
 
 .about-stat-pill.theme-blue {
-    border-color: rgba(14, 165, 233, 0.3);
-    background: rgba(14, 165, 233, 0.04);
+    border-color: rgba(14, 165, 233, 0.25);
+    background: rgba(14, 165, 233, 0.05);
 }
 .about-stat-pill.theme-pink {
-    border-color: rgba(236, 72, 153, 0.3);
-    background: rgba(236, 72, 153, 0.04);
+    border-color: rgba(236, 72, 153, 0.25);
+    background: rgba(236, 72, 153, 0.05);
 }
 .about-stat-pill.theme-yellow {
-    border-color: rgba(234, 179, 8, 0.3);
-    background: rgba(234, 179, 8, 0.04);
+    border-color: rgba(234, 179, 8, 0.25);
+    background: rgba(234, 179, 8, 0.05);
 }
 
 .about-stat-pill i {
     font-size: 0.95rem;
 }
 
-.about-stat-pill.theme-blue i { color: #0ea5e9; }
-.about-stat-pill.theme-pink i { color: #ec4899; }
-.about-stat-pill.theme-yellow i { color: #eab308; }
+.about-stat-pill.theme-blue i { color: #0284c7; }
+.about-stat-pill.theme-pink i { color: #db2777; }
+.about-stat-pill.theme-yellow i { color: #d97706; }
 
 .about-stat-pill:hover {
     transform: translateY(-4px) scale(1.05);
-    color: #fff;
+    color: var(--text-color);
 }
 .about-stat-pill.theme-blue:hover {
     border-color: #0ea5e9;
-    box-shadow: 0 8px 24px rgba(14, 165, 233, 0.35);
+    box-shadow: 0 8px 24px rgba(14, 165, 233, 0.15);
 }
 .about-stat-pill.theme-pink:hover {
     border-color: #ec4899;
-    box-shadow: 0 8px 24px rgba(236, 72, 153, 0.35);
+    box-shadow: 0 8px 24px rgba(236, 72, 153, 0.15);
 }
 .about-stat-pill.theme-yellow:hover {
     border-color: #eab308;
+    box-shadow: 0 8px 24px rgba(234, 179, 8, 0.15);
+}
+
+/* Dark mode overrides for stat pills */
+body.dark-theme .about-stat-pill {
+    color: #cbd5e1;
+}
+body.dark-theme .about-stat-pill.theme-blue i { color: #0ea5e9; }
+body.dark-theme .about-stat-pill.theme-pink i { color: #ec4899; }
+body.dark-theme .about-stat-pill.theme-yellow i { color: #eab308; }
+body.dark-theme .about-stat-pill:hover {
+    color: #fff;
+}
+body.dark-theme .about-stat-pill.theme-blue:hover {
+    box-shadow: 0 8px 24px rgba(14, 165, 233, 0.35);
+}
+body.dark-theme .about-stat-pill.theme-pink:hover {
+    box-shadow: 0 8px 24px rgba(236, 72, 153, 0.35);
+}
+body.dark-theme .about-stat-pill.theme-yellow:hover {
     box-shadow: 0 8px 24px rgba(234, 179, 8, 0.35);
 }
 
@@ -5160,8 +5316,8 @@ a.os-feed-username:hover {
 }
 
 .about-highlight-card {
-    background: rgba(15, 23, 42, 0.4);
-    border: 1px solid rgba(255, 255, 255, 0.06);
+    background: var(--card-color-glass);
+    border: 1px solid var(--border-color-glass);
     border-radius: 12px;
     padding: 1.5rem;
     backdrop-filter: blur(12px);
@@ -5178,13 +5334,13 @@ a.os-feed-username:hover {
 }
 
 .about-highlight-card:has(.cyan) {
-    background: radial-gradient(circle at top right, rgba(14, 165, 233, 0.08), transparent 65%), rgba(15, 23, 42, 0.4);
+    background: radial-gradient(circle at top right, rgba(14, 165, 233, 0.05), transparent 65%), var(--card-color-glass);
 }
 .about-highlight-card:has(.pink) {
-    background: radial-gradient(circle at top right, rgba(236, 72, 153, 0.08), transparent 65%), rgba(15, 23, 42, 0.4);
+    background: radial-gradient(circle at top right, rgba(236, 72, 153, 0.05), transparent 65%), var(--card-color-glass);
 }
 .about-highlight-card:has(.yellow) {
-    background: radial-gradient(circle at top right, rgba(234, 179, 8, 0.08), transparent 65%), rgba(15, 23, 42, 0.4);
+    background: radial-gradient(circle at top right, rgba(234, 179, 8, 0.05), transparent 65%), var(--card-color-glass);
 }
 
 .about-highlight-card:hover {
@@ -5192,22 +5348,49 @@ a.os-feed-username:hover {
 }
 
 .about-highlight-card:has(.cyan):hover {
-    border-color: rgba(14, 165, 233, 0.65);
+    border-color: rgba(14, 165, 233, 0.45);
     box-shadow: 
-        0 20px 40px rgba(0, 0, 0, 0.5),
-        0 0 25px rgba(14, 165, 233, 0.25);
+        0 15px 35px rgba(0, 0, 0, 0.06),
+        0 0 20px rgba(14, 165, 233, 0.15);
 }
 .about-highlight-card:has(.pink):hover {
-    border-color: rgba(236, 72, 153, 0.65);
+    border-color: rgba(236, 72, 153, 0.45);
     box-shadow: 
-        0 20px 40px rgba(0, 0, 0, 0.5),
-        0 0 25px rgba(236, 72, 153, 0.25);
+        0 15px 35px rgba(0, 0, 0, 0.06),
+        0 0 20px rgba(236, 72, 153, 0.15);
 }
 .about-highlight-card:has(.yellow):hover {
-    border-color: rgba(234, 179, 8, 0.65);
+    border-color: rgba(234, 179, 8, 0.45);
     box-shadow: 
-        0 20px 40px rgba(0, 0, 0, 0.5),
-        0 0 25px rgba(234, 179, 8, 0.25);
+        0 15px 35px rgba(0, 0, 0, 0.06),
+        0 0 20px rgba(234, 179, 8, 0.15);
+}
+
+/* Dark overrides for highlight cards */
+body.dark-theme .about-highlight-card {
+    background: rgba(15, 23, 42, 0.4);
+    border-color: rgba(255, 255, 255, 0.06);
+}
+body.dark-theme .about-highlight-card:has(.cyan) {
+    background: radial-gradient(circle at top right, rgba(14, 165, 233, 0.08), transparent 65%), rgba(15, 23, 42, 0.4);
+}
+body.dark-theme .about-highlight-card:has(.pink) {
+    background: radial-gradient(circle at top right, rgba(236, 72, 153, 0.08), transparent 65%), rgba(15, 23, 42, 0.4);
+}
+body.dark-theme .about-highlight-card:has(.yellow) {
+    background: radial-gradient(circle at top right, rgba(234, 179, 8, 0.08), transparent 65%), rgba(15, 23, 42, 0.4);
+}
+body.dark-theme .about-highlight-card:has(.cyan):hover {
+    border-color: rgba(14, 165, 233, 0.65);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5), 0 0 25px rgba(14, 165, 233, 0.25);
+}
+body.dark-theme .about-highlight-card:has(.pink):hover {
+    border-color: rgba(236, 72, 153, 0.65);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5), 0 0 25px rgba(236, 72, 153, 0.25);
+}
+body.dark-theme .about-highlight-card:has(.yellow):hover {
+    border-color: rgba(234, 179, 8, 0.65);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5), 0 0 25px rgba(234, 179, 8, 0.25);
 }
 
 .about-card-icon-wrapper {
@@ -5265,16 +5448,23 @@ a.os-feed-username:hover {
     font-size: 1.05rem;
     font-weight: 700;
     margin-bottom: 0.5rem;
-    color: #fff;
+    color: var(--text-color);
     transition: transform 0.4s ease;
 }
 
 .about-highlight-card p {
     font-size: 0.85rem;
-    color: #94a3b8;
+    color: var(--text-secondary);
     line-height: 1.6;
     margin: 0;
     transition: transform 0.4s ease;
+}
+
+body.dark-theme .about-highlight-card h4 {
+    color: #fff;
+}
+body.dark-theme .about-highlight-card p {
+    color: #94a3b8;
 }
 
 .about-highlight-card:hover h4,
@@ -6337,55 +6527,56 @@ body {
     border: 1px solid transparent;
 }
 .internship-card.ait-card {
-    background: rgba(14, 165, 233, 0.08);
-    border-color: rgba(14, 165, 233, 0.28);
-    box-shadow: 0 4px 24px rgba(14, 165, 233, 0.12);
+    background: rgba(14, 165, 233, 0.06);
+    border-color: rgba(14, 165, 233, 0.22);
+    box-shadow: 0 4px 24px rgba(14, 165, 233, 0.04);
 }
 .internship-card.ait-card:hover {
-    background: rgba(14, 165, 233, 0.14);
-    border-color: rgba(14, 165, 233, 0.6);
-    box-shadow: 0 8px 32px rgba(14, 165, 233, 0.3);
+    background: rgba(14, 165, 233, 0.12);
+    border-color: rgba(14, 165, 233, 0.5);
+    box-shadow: 0 8px 32px rgba(14, 165, 233, 0.15);
     transform: translateY(-3px) scale(1.01);
 }
-.internship-card.ait-card .ic-icon-wrap { background: rgba(14,165,233,0.15); color: #38bdf8; }
-.internship-card.ait-card .ic-tag { color: #7dd3fc; }
-.internship-card.ait-card .ic-dot-core { background: #38bdf8; }
-.internship-card.ait-card .ic-dot-ring { border-color: #38bdf8; }
-.internship-card.ait-card .ic-arrow { color: #38bdf8; }
+.internship-card.ait-card .ic-icon-wrap { background: rgba(14,165,233,0.1); color: #0284c7; }
+.internship-card.ait-card .ic-tag { color: #0369a1; }
+.internship-card.ait-card .ic-dot-core { background: #0ea5e9; }
+.internship-card.ait-card .ic-dot-ring { border-color: #0ea5e9; }
+.internship-card.ait-card .ic-arrow { color: #0ea5e9; }
+
 .internship-card.police-card {
-    background: rgba(249, 115, 22, 0.08);
-    border-color: rgba(249, 115, 22, 0.28);
-    box-shadow: 0 4px 24px rgba(249, 115, 22, 0.12);
+    background: rgba(249, 115, 22, 0.06);
+    border-color: rgba(249, 115, 22, 0.22);
+    box-shadow: 0 4px 24px rgba(249, 115, 22, 0.04);
 }
 .internship-card.police-card:hover {
-    background: rgba(249, 115, 22, 0.14);
-    border-color: rgba(249, 115, 22, 0.6);
-    box-shadow: 0 8px 32px rgba(249, 115, 22, 0.3);
+    background: rgba(249, 115, 22, 0.12);
+    border-color: rgba(249, 115, 22, 0.5);
+    box-shadow: 0 8px 32px rgba(249, 115, 22, 0.15);
     transform: translateY(-3px) scale(1.01);
 }
-.internship-card.police-card .ic-icon-wrap { background: rgba(249,115,22,0.15); color: #fb923c; }
-.internship-card.police-card .ic-tag { color: #fdba74; }
-.internship-card.police-card .ic-dot-core { background: #fb923c; }
-.internship-card.police-card .ic-dot-ring { border-color: #fb923c; }
-.internship-card.police-card .ic-arrow { color: #fb923c; }
+.internship-card.police-card .ic-icon-wrap { background: rgba(249,115,22,0.1); color: #ea580c; }
+.internship-card.police-card .ic-tag { color: #c2410c; }
+.internship-card.police-card .ic-dot-core { background: #ea580c; }
+.internship-card.police-card .ic-dot-ring { border-color: #ea580c; }
+.internship-card.police-card .ic-arrow { color: #ea580c; }
 
 /* Open Source Card — purple */
 .internship-card.opensource-card {
-    background: rgba(168, 85, 247, 0.08);
-    border-color: rgba(168, 85, 247, 0.28);
-    box-shadow: 0 4px 24px rgba(168, 85, 247, 0.12);
+    background: rgba(168, 85, 247, 0.06);
+    border-color: rgba(168, 85, 247, 0.22);
+    box-shadow: 0 4px 24px rgba(168, 85, 247, 0.04);
 }
 .internship-card.opensource-card:hover {
-    background: rgba(168, 85, 247, 0.14);
-    border-color: rgba(168, 85, 247, 0.6);
-    box-shadow: 0 8px 32px rgba(168, 85, 247, 0.3);
+    background: rgba(168, 85, 247, 0.12);
+    border-color: rgba(168, 85, 247, 0.5);
+    box-shadow: 0 8px 32px rgba(168, 85, 247, 0.15);
     transform: translateY(-3px) scale(1.01);
 }
-.internship-card.opensource-card .ic-icon-wrap { background: rgba(168,85,247,0.15); color: #c084fc; }
-.internship-card.opensource-card .ic-tag { color: #d8b4fe; }
-.internship-card.opensource-card .ic-dot-core { background: #c084fc; }
-.internship-card.opensource-card .ic-dot-ring { border-color: #c084fc; }
-.internship-card.opensource-card .ic-arrow { color: #c084fc; }
+.internship-card.opensource-card .ic-icon-wrap { background: rgba(168,85,247,0.1); color: #7e22ce; }
+.internship-card.opensource-card .ic-tag { color: #6b21a8; }
+.internship-card.opensource-card .ic-dot-core { background: #a855f7; }
+.internship-card.opensource-card .ic-dot-ring { border-color: #a855f7; }
+.internship-card.opensource-card .ic-arrow { color: #a855f7; }
 
 .ic-live-dot { position: relative; width: 8px; height: 8px; flex-shrink: 0; }
 .ic-dot-core { width: 8px; height: 8px; border-radius: 50%; display: block; }
@@ -6410,18 +6601,61 @@ body {
 .ic-body { text-align: left; flex: 1; min-width: 0; }
 .ic-tag {
     font-size: 0.67rem; font-weight: 700; letter-spacing: 0.05em;
-    text-transform: uppercase; margin-bottom: 0.2rem; opacity: 0.85;
+    text-transform: uppercase; margin-bottom: 0.2rem; opacity: 0.95;
 }
 .ic-title {
     font-family: var(--header-font, 'Outfit', sans-serif);
-    font-weight: 700; font-size: 0.82rem; color: #f1f5f9; line-height: 1.3;
+    font-weight: 700; font-size: 0.82rem; color: var(--text-color); line-height: 1.3;
 }
-.ic-sub { font-size: 0.68rem; color: #94a3b8; margin-top: 0.15rem; }
+.ic-sub { font-size: 0.68rem; color: var(--text-secondary); margin-top: 0.15rem; }
 .ic-arrow {
     font-size: 0.85rem; flex-shrink: 0;
     transition: transform 0.3s ease; opacity: 0.7;
 }
 .internship-card:hover .ic-arrow { transform: translateX(5px); opacity: 1; }
+
+/* Dark mode overrides for hero cards */
+body.dark-theme .internship-card.ait-card {
+    background: rgba(14, 165, 233, 0.08);
+    border-color: rgba(14, 165, 233, 0.28);
+    box-shadow: 0 4px 24px rgba(14, 165, 233, 0.12);
+}
+body.dark-theme .internship-card.ait-card:hover {
+    background: rgba(14, 165, 233, 0.14);
+    border-color: rgba(14, 165, 233, 0.6);
+    box-shadow: 0 8px 32px rgba(14, 165, 233, 0.3);
+}
+body.dark-theme .internship-card.ait-card .ic-icon-wrap { background: rgba(14,165,233,0.15); color: #38bdf8; }
+body.dark-theme .internship-card.ait-card .ic-tag { color: #7dd3fc; }
+
+body.dark-theme .internship-card.police-card {
+    background: rgba(249, 115, 22, 0.08);
+    border-color: rgba(249, 115, 22, 0.28);
+    box-shadow: 0 4px 24px rgba(249, 115, 22, 0.12);
+}
+body.dark-theme .internship-card.police-card:hover {
+    background: rgba(249, 115, 22, 0.14);
+    border-color: rgba(249, 115, 22, 0.6);
+    box-shadow: 0 8px 32px rgba(249, 115, 22, 0.3);
+}
+body.dark-theme .internship-card.police-card .ic-icon-wrap { background: rgba(249,115,22,0.15); color: #fb923c; }
+body.dark-theme .internship-card.police-card .ic-tag { color: #fdba74; }
+
+body.dark-theme .internship-card.opensource-card {
+    background: rgba(168, 85, 247, 0.08);
+    border-color: rgba(168, 85, 247, 0.28);
+    box-shadow: 0 4px 24px rgba(168, 85, 247, 0.12);
+}
+body.dark-theme .internship-card.opensource-card:hover {
+    background: rgba(168, 85, 247, 0.14);
+    border-color: rgba(168, 85, 247, 0.6);
+    box-shadow: 0 8px 32px rgba(168, 85, 247, 0.3);
+}
+body.dark-theme .internship-card.opensource-card .ic-icon-wrap { background: rgba(168,85,247,0.15); color: #c084fc; }
+body.dark-theme .internship-card.opensource-card .ic-tag { color: #d8b4fe; }
+
+body.dark-theme .ic-title { color: #f1f5f9; }
+body.dark-theme .ic-sub { color: #94a3b8; }
 
 /* Navbar internship highlights */
 .nav-highlight-ait {
