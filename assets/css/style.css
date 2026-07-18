@@ -4110,7 +4110,7 @@ body.dark-theme .bento-card:hover .bento-tag {
 
 .os-feature-card {
     background: var(--card-color-glass);
-    border: 1px solid rgba(var(--theme-rgb, 14, 165, 233), 0.12);
+    border: 2px solid rgba(var(--theme-rgb, 14, 165, 233), 0.25);
     border-radius: 14px;
     padding: 2rem;
     backdrop-filter: blur(12px);
@@ -4120,15 +4120,13 @@ body.dark-theme .bento-card:hover .bento-tag {
     overflow: hidden;
     transform-style: preserve-3d;
     will-change: transform;
+    box-shadow: var(--card-shadow);
 }
 
 .os-feature-card:hover {
-    background: rgba(15, 23, 42, 0.65);
-    border-color: hsla(var(--theme-hsl), 0.55);
-    box-shadow: 
-        0 25px 50px rgba(0, 0, 0, 0.55), 
-        0 0 35px hsla(var(--theme-hsl), 0.35),
-        inset 0 0 15px hsla(var(--theme-hsl), 0.1);
+    background: rgba(var(--theme-rgb, 14, 165, 233), 0.08);
+    border-color: hsla(var(--theme-hsl), 0.8);
+    box-shadow: 0 15px 35px rgba(var(--theme-rgb, 14, 165, 233), 0.25);
     transform: translateY(-4px) scale(1.015);
 }
 
@@ -4138,7 +4136,7 @@ body.dark-theme .bento-card:hover .bento-tag {
 
 .os-feature-card h3 {
     font-size: 1.35rem;
-    color: #fff;
+    color: var(--text-color);
     margin-bottom: 1rem;
     display: flex;
     align-items: center;
@@ -4147,7 +4145,7 @@ body.dark-theme .bento-card:hover .bento-tag {
 }
 
 .os-feature-card p {
-    color: #cbd5e1;
+    color: var(--text-secondary);
     font-size: 0.95rem;
     line-height: 1.6;
     margin-bottom: 1.5rem;
@@ -4160,9 +4158,9 @@ body.dark-theme .bento-card:hover .bento-tag {
 }
 
 .os-badge {
-    background: rgba(15, 23, 42, 0.6);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    color: #94a3b8;
+    background: var(--card-color-glass);
+    border: 1px solid var(--border-color-glass);
+    color: var(--text-secondary);
     padding: 0.45rem 1rem;
     border-radius: 20px;
     font-size: 0.8rem;
@@ -4175,12 +4173,11 @@ body.dark-theme .bento-card:hover .bento-tag {
 }
 
 .os-badge:hover {
-    background: linear-gradient(135deg, hsla(var(--theme-hsl), 0.3) 0%, hsla(var(--theme-hsl), 0.1) 100%) !important;
+    background: linear-gradient(135deg, hsla(var(--theme-hsl), 0.15) 0%, hsla(var(--theme-hsl), 0.05) 100%) !important;
     border-color: hsla(var(--theme-hsl), 0.75) !important;
     transform: translateY(-4px) scale(1.08) translate3d(0, 0, 15px);
-    color: #fff !important;
-    box-shadow: 0 8px 20px hsla(var(--theme-hsl), 0.45);
-    text-shadow: 0 0 6px rgba(255, 255, 255, 0.4);
+    color: rgb(var(--theme-rgb)) !important;
+    box-shadow: 0 8px 20px rgba(var(--theme-rgb), 0.15);
 }
 
 /* === PIPELINE FLOW GRAPHIC === */
@@ -4191,8 +4188,8 @@ body.dark-theme .bento-card:hover .bento-tag {
     gap: 0.25rem;
     margin-top: 1.5rem;
     padding: 1.1rem;
-    background: rgba(15, 23, 42, 0.55);
-    border: 1px solid rgba(255, 255, 255, 0.05);
+    background: var(--card-color-glass);
+    border: 1px solid var(--border-color-glass);
     border-radius: 12px;
     overflow-x: auto;
     position: relative;
@@ -4296,7 +4293,7 @@ body.dark-theme .bento-card:hover .bento-tag {
 }
 
 .pipeline-step:hover .pipeline-step-label {
-    color: #cbd5e1;
+    color: var(--text-color);
 }
 
 .pipeline-arrow {
@@ -7153,6 +7150,49 @@ body.dark-theme .github-filter-tab:hover {
 
 body.dark-theme .os-stat-card {
     border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+body.dark-theme .os-feature-card {
+    border: 1px solid rgba(var(--theme-rgb, 14, 165, 233), 0.12);
+}
+
+body.dark-theme .os-feature-card:hover {
+    background: rgba(15, 23, 42, 0.65);
+    border-color: hsla(var(--theme-hsl), 0.55);
+    box-shadow: 
+        0 25px 50px rgba(0, 0, 0, 0.55), 
+        0 0 35px hsla(var(--theme-hsl), 0.35),
+        inset 0 0 15px hsla(var(--theme-hsl), 0.1);
+}
+
+body.dark-theme .os-feature-card h3 {
+    color: #fff;
+}
+
+body.dark-theme .os-feature-card p {
+    color: #cbd5e1;
+}
+
+body.dark-theme .os-badge {
+    background: rgba(15, 23, 42, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    color: #94a3b8;
+}
+
+body.dark-theme .os-badge:hover {
+    background: linear-gradient(135deg, hsla(var(--theme-hsl), 0.3) 0%, hsla(var(--theme-hsl), 0.1) 100%) !important;
+    border-color: hsla(var(--theme-hsl), 0.75) !important;
+    color: #fff !important;
+    box-shadow: 0 8px 20px hsla(var(--theme-hsl), 0.45);
+}
+
+body.dark-theme .os-pipeline-flow {
+    background: rgba(15, 23, 42, 0.55);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+body.dark-theme .pipeline-step:hover .pipeline-step-label {
+    color: #cbd5e1;
 }
 
 
