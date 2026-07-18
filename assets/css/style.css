@@ -1285,8 +1285,8 @@ section {
 }
 
 .contact-info-card {
-    background: rgba(15, 23, 42, 0.45);
-    border: 1px solid rgba(255, 255, 255, 0.06);
+    background: var(--card-color-glass);
+    border: 1px solid var(--border-color-glass);
     border-radius: 20px;
     padding: 1.75rem;
     display: flex;
@@ -1294,7 +1294,7 @@ section {
     gap: 1.5rem;
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
-    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.25);
+    box-shadow: var(--card-shadow);
     transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
     position: relative;
     overflow: hidden;
@@ -1369,7 +1369,7 @@ section {
 }
 
 .contact-info-details a {
-    color: #fff;
+    color: var(--text-color);
     text-decoration: none;
     transition: color 0.2s;
 }
@@ -1380,20 +1380,19 @@ section {
 
 /* Contact Form Card Wrapper */
 .contact-form-wrapper {
-    background: rgba(15, 23, 42, 0.45);
-    border: 1px solid rgba(255, 255, 255, 0.06);
+    background: var(--card-color-glass);
+    border: 1px solid var(--border-color-glass);
     border-radius: 24px;
     padding: 2.5rem;
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
-    border-color: rgba(14, 165, 233, 0.15);
+    box-shadow: var(--card-shadow);
     transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
 .contact-form-wrapper:hover {
     border-color: rgba(14, 165, 233, 0.4);
-    box-shadow: 0 12px 45px rgba(0, 0, 0, 0.35), 0 0 25px rgba(14, 165, 233, 0.1);
+    box-shadow: var(--card-shadow-hover);
 }
 
 .premium-contact-form {
@@ -1541,17 +1540,15 @@ body.dark-theme .premium-form-textarea:focus {
 
 /* === PREMIUM FOOTER === */
 .footer {
-    background: rgba(15, 23, 42, 0.7);
-    border-top: 1px solid rgba(14, 165, 233, 0.25);
+    background: var(--card-color-glass);
+    border-top: 1px solid var(--border-color-glass);
     padding: 6rem 0 0;
     margin-top: 8rem;
     position: relative;
     z-index: 2;
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
-    box-shadow: 
-        0 -20px 40px rgba(0, 0, 0, 0.4), 
-        inset 0 20px 40px rgba(14, 165, 233, 0.05);
+    box-shadow: var(--card-shadow);
 }
 
 .footer::before {
@@ -1574,7 +1571,7 @@ body.dark-theme .premium-form-textarea:focus {
 }
 
 .footer-col h4 {
-    color: #fff;
+    color: var(--text-color);
     font-size: 1.1rem;
     font-weight: 600;
     margin-bottom: 1.5rem;
@@ -1593,8 +1590,8 @@ body.dark-theme .premium-form-textarea:focus {
     border-radius: 2px;
 }
 
-.footer-bio {
-    color: #94a3b8;
+.footer-col .footer-bio {
+    color: var(--text-secondary);
     font-size: 0.95rem;
     margin-top: 1rem;
     margin-bottom: 1.5rem;
@@ -1610,7 +1607,7 @@ body.dark-theme .premium-form-textarea:focus {
 }
 
 .footer-links ul li a {
-    color: #94a3b8;
+    color: var(--text-secondary);
     text-decoration: none;
     font-size: 0.95rem;
     transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
@@ -1636,7 +1633,7 @@ body.dark-theme .premium-form-textarea:focus {
 }
 
 .footer-contact p {
-    color: #94a3b8;
+    color: var(--text-secondary);
     font-size: 0.95rem;
     margin-bottom: 1rem;
     display: flex;
@@ -1645,7 +1642,7 @@ body.dark-theme .premium-form-textarea:focus {
 }
 
 .footer-contact p a {
-    color: #cbd5e1;
+    color: var(--text-color);
     text-decoration: none;
     transition: all 0.3s ease;
 }
@@ -1680,9 +1677,9 @@ body.dark-theme .premium-form-textarea:focus {
 }
 
 .footer-bottom {
-    background: #01040f;
+    background: var(--nav-link-hover-bg);
     padding: 1.5rem 0;
-    border-top: 1px solid rgba(14, 165, 233, 0.05);
+    border-top: 1px solid var(--border-color-glass);
 }
 
 .footer-bottom-container {
@@ -3116,8 +3113,8 @@ body.dark-theme .chatbot-window {
 
 .share-title {
     font-size: 1.2rem;
-    font-weight: 500;
-    color: #e2e8f0;
+    font-weight: 600;
+    color: var(--text-color);
     margin-bottom: 1rem;
     display: flex;
     align-items: center;
@@ -3142,9 +3139,9 @@ body.dark-theme .chatbot-window {
     gap: 8px;
     padding: 0.75rem 1.5rem;
     border-radius: 50px;
-    background: rgba(15, 23, 42, 0.6);
+    background: var(--card-color-glass);
     border: 1px solid var(--border-color-glass);
-    color: #e2e8f0;
+    color: var(--text-secondary);
     font-size: 0.9rem;
     font-weight: 600;
     cursor: pointer;
@@ -3809,13 +3806,13 @@ body.dark-theme .bento-card:hover .bento-tag {
 
 /* Premium Timeline Card */
 .premium-timeline-card {
-    background: rgba(15, 23, 42, 0.45);
-    border: 1px solid rgba(255, 255, 255, 0.06);
+    background: var(--card-color-glass);
+    border: 1px solid var(--border-color-glass);
     border-radius: 20px;
     padding: 1.75rem 2rem;
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
-    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.35);
+    box-shadow: var(--card-shadow);
     transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
     position: relative;
     overflow: hidden;
@@ -3871,7 +3868,7 @@ body.dark-theme .bento-card:hover .bento-tag {
 .premium-timeline-card h3 {
     font-size: 1.25rem;
     font-weight: 650;
-    color: #fff;
+    color: var(--text-color);
     margin-bottom: 0.4rem;
 }
 
@@ -3894,8 +3891,8 @@ body.dark-theme .bento-card:hover .bento-tag {
     display: inline-block;
     font-size: 0.75rem;
     font-weight: 700;
-    color: #fff;
-    background: rgba(255, 255, 255, 0.08);
+    color: var(--text-color);
+    background: var(--border-color-glass);
     padding: 3px 12px;
     border-radius: 30px;
     margin-bottom: 1rem;
@@ -3905,7 +3902,7 @@ body.dark-theme .bento-card:hover .bento-tag {
 .premium-timeline-card p {
     font-size: 0.9rem;
     line-height: 1.6;
-    color: #cbd5e1;
+    color: var(--text-secondary);
     margin-bottom: 0;
 }
 
@@ -3925,9 +3922,9 @@ body.dark-theme .bento-card:hover .bento-tag {
     font-weight: 700;
     padding: 3px 10px;
     border-radius: 6px;
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    color: #cbd5e1;
+    background: var(--card-color-glass);
+    border: 1px solid var(--border-color-glass);
+    color: var(--text-secondary);
 }
 
 /* Custom left/right accent bar */
@@ -5521,8 +5518,8 @@ body.dark-theme .about-highlight-card p {
 }
 
 .bento-subbox {
-    background: rgba(15, 23, 42, 0.45);
-    border: 1px solid rgba(255, 255, 255, 0.05);
+    background: var(--card-color-glass);
+    border: 1px solid var(--border-color-glass);
     border-radius: 8px;
     padding: 1.1rem;
     display: flex;
@@ -5530,12 +5527,14 @@ body.dark-theme .about-highlight-card p {
     gap: 0.75rem;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     transform-style: preserve-3d;
+    box-shadow: var(--card-shadow);
 }
 
 .bento-subbox:hover {
-    background: rgba(15, 23, 42, 0.75);
+    background: rgba(var(--theme-rgb), 0.08);
+    border-color: rgba(var(--theme-rgb), 0.45);
     transform: translateY(-3px);
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+    box-shadow: var(--card-shadow-hover);
 }
 
 /* Compact list overrides for sub-boxes in 1-column bento cards to eliminate empty vertical space */
@@ -5623,21 +5622,21 @@ body.dark-theme .about-highlight-card p {
 .subbox-text h4 {
     font-size: 0.88rem;
     font-weight: 700;
-    color: #fff;
+    color: var(--text-color);
     margin: 0;
 }
 
 .subbox-text p {
     font-size: 0.78rem;
-    color: #94a3b8;
+    color: var(--text-secondary);
     line-height: 1.45;
     margin: 0;
 }
 
 /* === BENTO PIPELINE VISUALIZER === */
 .pipeline-monitor {
-    background: rgba(9, 13, 22, 0.45);
-    border: 1px solid rgba(14, 165, 233, 0.15);
+    background: var(--card-color-glass);
+    border: 1px solid var(--border-color-glass);
     border-radius: 12px;
     padding: 0.85rem 1.25rem;
     margin: 0.5rem 0 1rem 0;
@@ -5678,7 +5677,7 @@ body.dark-theme .about-highlight-card p {
     font-family: monospace;
     font-size: 0.7rem;
     font-weight: 700;
-    color: #94a3b8;
+    color: var(--text-secondary);
     letter-spacing: 1px;
 }
 
@@ -5697,8 +5696,8 @@ body.dark-theme .about-highlight-card p {
     align-items: center;
     gap: 0.35rem;
     padding: 0.4rem 0.6rem;
-    background: rgba(15, 23, 42, 0.6);
-    border: 1px solid rgba(255, 255, 255, 0.05);
+    background: var(--card-color-glass);
+    border: 1px solid var(--border-color-glass);
     border-radius: 8px;
     min-width: 75px;
     transition: all 0.3s ease;
@@ -5713,7 +5712,7 @@ body.dark-theme .about-highlight-card p {
     font-family: monospace;
     font-size: 0.62rem;
     font-weight: 600;
-    color: #94a3b8;
+    color: var(--text-secondary);
 }
 
 /* Glow themes for nodes */
@@ -7193,6 +7192,124 @@ body.dark-theme .os-pipeline-flow {
 
 body.dark-theme .pipeline-step:hover .pipeline-step-label {
     color: #cbd5e1;
+}
+
+body.dark-theme .bento-subbox {
+    background: rgba(15, 23, 42, 0.45);
+    border-color: rgba(255, 255, 255, 0.05);
+}
+
+body.dark-theme .bento-subbox:hover {
+    background: rgba(15, 23, 42, 0.75);
+}
+
+body.dark-theme .subbox-text h4 {
+    color: #fff;
+}
+
+body.dark-theme .subbox-text p {
+    color: #94a3b8;
+}
+
+body.dark-theme .pipeline-monitor {
+    background: rgba(9, 13, 22, 0.45);
+    border-color: rgba(14, 165, 233, 0.15);
+}
+
+body.dark-theme .pipeline-title {
+    color: #94a3b8;
+}
+
+body.dark-theme .pipeline-node {
+    background: rgba(15, 23, 42, 0.6);
+    border-color: rgba(255, 255, 255, 0.05);
+}
+
+body.dark-theme .pipeline-node span {
+    color: #94a3b8;
+}
+
+body.dark-theme .premium-timeline-card {
+    background: rgba(15, 23, 42, 0.45);
+    border-color: rgba(255, 255, 255, 0.06);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.35);
+}
+
+body.dark-theme .premium-timeline-card h3 {
+    color: #fff;
+}
+
+body.dark-theme .premium-timeline-card .date {
+    color: #fff;
+    background: rgba(255, 255, 255, 0.08);
+}
+
+body.dark-theme .premium-timeline-card p {
+    color: #cbd5e1;
+}
+
+body.dark-theme .premium-timeline-chip {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(255, 255, 255, 0.08);
+    color: #cbd5e1;
+}
+
+body.dark-theme .contact-info-card {
+    background: rgba(15, 23, 42, 0.45);
+    border-color: rgba(255, 255, 255, 0.06);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.25);
+}
+
+body.dark-theme .contact-info-details a {
+    color: #fff;
+}
+
+body.dark-theme .contact-form-wrapper {
+    background: rgba(15, 23, 42, 0.45);
+    border-color: rgba(255, 255, 255, 0.06);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+}
+
+body.dark-theme .footer {
+    background: rgba(15, 23, 42, 0.7);
+    border-color: rgba(14, 165, 233, 0.25);
+    box-shadow: 
+        0 -20px 40px rgba(0, 0, 0, 0.4), 
+        inset 0 20px 40px rgba(14, 165, 233, 0.05);
+}
+
+body.dark-theme .footer-col h4 {
+    color: #fff;
+}
+
+body.dark-theme .footer-col .footer-bio {
+    color: #94a3b8;
+}
+
+body.dark-theme .footer-links ul li a {
+    color: #94a3b8;
+}
+
+body.dark-theme .footer-contact p {
+    color: #94a3b8;
+}
+
+body.dark-theme .footer-contact p a {
+    color: #cbd5e1;
+}
+
+body.dark-theme .footer-bottom {
+    background: #01040f;
+    border-color: rgba(14, 165, 233, 0.05);
+}
+
+body.dark-theme .share-title {
+    color: #e2e8f0;
+}
+
+body.dark-theme .share-btn {
+    background: rgba(15, 23, 42, 0.6);
+    color: #e2e8f0;
 }
 
 
