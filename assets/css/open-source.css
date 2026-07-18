@@ -77,12 +77,12 @@ section {
 .hero-logo {
     height: 70px;
     width: auto;
-    filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.1));
+    filter: drop-shadow(0 0 15px rgba(168, 85, 247, 0.08));
     transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    background: rgba(255, 255, 255, 0.03);
+    background: var(--card-bg);
     padding: 10px;
     border-radius: 16px;
-    border: 1px solid rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--card-border);
 }
 
 .hero-logo:hover {
@@ -96,7 +96,7 @@ section {
     font-weight: 800;
     margin-bottom: 1rem;
     letter-spacing: -0.05em;
-    background: linear-gradient(135deg, #fff 30%, #c084fc 100%);
+    background: linear-gradient(135deg, var(--text-primary) 30%, var(--primary-color) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
@@ -110,7 +110,7 @@ section {
 
 .hero-section .hero-desc {
     font-size: 1.1rem;
-    color: #64748b;
+    color: var(--text-secondary);
     max-width: 700px;
     margin: 0 auto 3rem auto;
     line-height: 1.6;
@@ -308,7 +308,7 @@ section {
     font-size: 1.2rem;
     font-weight: 700;
     margin-bottom: 0.75rem;
-    color: white;
+    color: var(--text-primary);
 }
 
 .step-card p {
@@ -326,7 +326,7 @@ section {
 }
 
 .stat-card {
-    background: rgba(15, 23, 42, 0.3);
+    background: var(--card-bg);
     border: 1px solid var(--card-border);
     border-radius: 20px;
     padding: 2.5rem 2rem;
@@ -348,11 +348,11 @@ section {
 .stat-number {
     font-size: 3.5rem;
     font-weight: 800;
-    color: white;
+    color: var(--text-primary);
     margin-bottom: 0.5rem;
     font-family: var(--font-heading);
     letter-spacing: -0.03em;
-    background: linear-gradient(135deg, #fff 0%, #c084fc 100%);
+    background: linear-gradient(135deg, var(--text-primary) 0%, var(--primary-color) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
@@ -374,7 +374,7 @@ section {
 
 .contrib-tabs-capsule {
     display: flex;
-    background: rgba(15, 23, 42, 0.6);
+    background: var(--card-bg);
     border: 1px solid var(--card-border);
     padding: 0.35rem;
     border-radius: 50px;
@@ -483,7 +483,7 @@ section {
 .contrib-card h3 {
     font-size: 1.35rem;
     font-weight: 700;
-    color: white;
+    color: var(--text-primary);
     margin-bottom: 0.75rem;
     line-height: 1.4;
 }
@@ -499,13 +499,13 @@ section {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    border-top: 1px solid var(--card-border);
     padding-top: 1.25rem;
 }
 
 .contrib-id {
     font-size: 0.85rem;
-    color: #64748b;
+    color: var(--text-secondary);
     font-weight: 600;
 }
 
@@ -1027,8 +1027,8 @@ section {
    WikiClub Tech Spotlight Layout Styles
    ========================================== */
 .spotlight-card {
-    background: rgba(30, 41, 59, 0.35);
-    border: 1px solid rgba(255, 255, 255, 0.05);
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
     border-radius: 28px;
     padding: 4rem 3.5rem;
     position: relative;

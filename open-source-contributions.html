@@ -346,7 +346,7 @@
         </section>
 
         <!-- Overview Section -->
-        <section id="overview" style="background: rgba(2, 6, 23, 0.3);">
+        <section id="overview" style="background: var(--bg-darker); border-bottom: 1px solid var(--card-border);">
             <div class="container">
                 <div class="overview-grid">
                     <div class="overview-text" data-aos="fade-right">
@@ -422,7 +422,7 @@
         </section>
 
         <!-- Stats Section -->
-        <section id="stats" style="background: rgba(15, 23, 42, 0.25);">
+        <section id="stats" style="background: var(--bg-dark); border-top: 1px solid var(--card-border); border-bottom: 1px solid var(--card-border);">
             <div class="container">
                 <div class="section-header" data-aos="fade-up">
                     <h2 data-translate="stats_title">Impact Dashboard</h2>
@@ -458,18 +458,18 @@
         </section>
 
         <!-- WikiClub Tech Recognition Section -->
-        <section id="wikiclubtech-spotlight" style="padding: 5.5rem 0; background: rgba(10, 15, 30, 0.4); border-top: 1px solid rgba(255,255,255,0.04); border-bottom: 1px solid rgba(255,255,255,0.04); overflow: hidden;">
+        <section id="wikiclubtech-spotlight" style="padding: 5.5rem 0; background: var(--bg-darker); border-top: 1px solid var(--card-border); border-bottom: 1px solid var(--card-border); overflow: hidden;">
             <div class="container">
 
                 <!-- Section Header -->
                 <div class="section-header" data-aos="fade-up" style="margin-bottom: 3rem;">
                     <!-- Logos Row -->
                     <div style="display: flex; align-items: center; justify-content: center; gap: 1.25rem; margin-bottom: 1.5rem; flex-wrap: wrap;">
-                        <div style="background: #fff; padding: 0.6rem 1.2rem; border-radius: 12px; display: flex; align-items: center;">
+                        <div style="background: #fff; padding: 0.6rem 1.2rem; border-radius: 12px; display: flex; align-items: center; border: 1px solid rgba(0, 0, 0, 0.06); box-shadow: 0 4px 12px rgba(0,0,0,0.03);">
                             <img src="assets/images/wikiclubtech-logo.png" alt="WikiClub Tech India" style="height: 36px; width: auto;">
                         </div>
                         <svg width="20" height="20" viewBox="0 0 20 20" fill="none" style="opacity:0.4;flex-shrink:0;"><circle cx="10" cy="10" r="3" fill="#a855f7"/></svg>
-                        <div style="background: #fff; padding: 0.6rem 1.2rem; border-radius: 12px; display: flex; align-items: center;">
+                        <div style="background: #fff; padding: 0.6rem 1.2rem; border-radius: 12px; display: flex; align-items: center; border: 1px solid rgba(0, 0, 0, 0.06); box-shadow: 0 4px 12px rgba(0,0,0,0.03);">
                             <img src="assets/images/oki-iiith-logo.png" alt="OKI IIIT Hyderabad" style="height: 36px; width: auto;">
                         </div>
                     </div>
@@ -480,8 +480,8 @@
                             RoadToWiki Cohort 2 · WikiClub Tech India
                         </span>
                     </div>
-                    <h2 style="font-size: 2rem; font-weight: 800; color: white; margin-bottom: 0.75rem;">5 Contributions Officially Recognized</h2>
-                    <p style="color: #94a3b8; font-size: 1rem; max-width: 600px; margin: 0 auto; line-height: 1.7;">
+                    <h2 style="font-size: 2rem; font-weight: 800; color: var(--text-primary); margin-bottom: 0.75rem;">5 Contributions Officially Recognized</h2>
+                    <p style="color: var(--text-secondary); font-size: 1rem; max-width: 600px; margin: 0 auto; line-height: 1.7;">
                         Featured in the <strong style="color: #c084fc;">WikiClub Tech India — Technical Impact Report (Jan–Jun 2026)</strong>, published by The Open Knowledge Initiatives (OKI) at IIIT Hyderabad.
                     </p>
                 </div>
@@ -490,7 +490,7 @@
                 <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.25rem; max-width: 960px; margin: 0 auto;" data-aos="fade-up" data-aos-delay="100" id="recog-grid">
 
                     <!-- Card 1 -->
-                    <div class="recog-card" style="background: rgba(168,85,247,0.05); border: 1px solid rgba(168,85,247,0.18); border-radius: 18px; padding: 1.5rem; transition: all 0.3s ease; position: relative; overflow: hidden;">
+                    <div class="recog-card" style="background: rgba(168,85,247,0.05); border: 2px solid rgba(168,85,247,0.25); border-radius: 18px; padding: 1.5rem; transition: all 0.3s ease; position: relative; overflow: hidden; box-shadow: var(--card-shadow);">
                         <div style="position: absolute; top: 0; right: 0; width: 80px; height: 80px; background: radial-gradient(circle, rgba(168,85,247,0.15) 0%, transparent 70%); pointer-events:none;"></div>
                         <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem;">
                             <div style="width: 40px; height: 40px; border-radius: 10px; background: rgba(168,85,247,0.15); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
@@ -501,8 +501,8 @@
                                 <span style="background: rgba(168,85,247,0.12); color: #c084fc; border: 1px solid rgba(168,85,247,0.25); font-size: 0.65rem; font-weight: 700; padding: 0.1rem 0.45rem; border-radius: 4px; text-transform: uppercase;">Backend</span>
                             </div>
                         </div>
-                        <p style="color: #e2e8f0; font-size: 0.9rem; font-weight: 600; margin-bottom: 0.5rem; line-height: 1.4;">Add accessor methods for WFFunctionCall internals</p>
-                        <p style="color: #64748b; font-size: 0.8rem; margin-bottom: 1rem; line-height: 1.5;">getFunction(), getArgument(), getArguments() — encapsulation fix in Abstract Wikipedia production codebase.</p>
+                        <p style="color: var(--text-primary); font-size: 0.9rem; font-weight: 600; margin-bottom: 0.5rem; line-height: 1.4;">Add accessor methods for WFFunctionCall internals</p>
+                        <p style="color: var(--text-secondary); font-size: 0.8rem; margin-bottom: 1rem; line-height: 1.5;">getFunction(), getArgument(), getArguments() — encapsulation fix in Abstract Wikipedia production codebase.</p>
                         <div style="display: flex; gap: 0.75rem; flex-wrap: wrap;">
                             <a href="https://phabricator.wikimedia.org/T426338" target="_blank" rel="noopener noreferrer" style="font-size: 0.75rem; color: #a855f7; text-decoration: none; font-weight: 600; display: inline-flex; align-items: center; gap: 0.3rem; opacity: 0.85; transition: opacity 0.2s;" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=0.85"><i class="fas fa-bug" style="font-size: 0.65rem;"></i> T426338</a>
                             <a href="https://gitlab.wikimedia.org/repos/abstract-wiki/wikifunctions/function-orchestrator/-/merge_requests/684" target="_blank" rel="noopener noreferrer" style="font-size: 0.75rem; color: #a855f7; text-decoration: none; font-weight: 600; display: inline-flex; align-items: center; gap: 0.3rem; opacity: 0.85; transition: opacity 0.2s;" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=0.85"><i class="fab fa-gitlab" style="font-size: 0.65rem;"></i> MR #684</a>
@@ -510,7 +510,7 @@
                     </div>
 
                     <!-- Card 2 -->
-                    <div class="recog-card" style="background: rgba(14,165,233,0.05); border: 1px solid rgba(14,165,233,0.18); border-radius: 18px; padding: 1.5rem; transition: all 0.3s ease; position: relative; overflow: hidden;">
+                    <div class="recog-card" style="background: rgba(14,165,233,0.05); border: 2px solid rgba(14,165,233,0.25); border-radius: 18px; padding: 1.5rem; transition: all 0.3s ease; position: relative; overflow: hidden; box-shadow: var(--card-shadow);">
                         <div style="position: absolute; top: 0; right: 0; width: 80px; height: 80px; background: radial-gradient(circle, rgba(14,165,233,0.15) 0%, transparent 70%); pointer-events:none;"></div>
                         <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem;">
                             <div style="width: 40px; height: 40px; border-radius: 10px; background: rgba(14,165,233,0.15); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
@@ -521,8 +521,8 @@
                                 <span style="background: rgba(14,165,233,0.12); color: #38bdf8; border: 1px solid rgba(14,165,233,0.25); font-size: 0.65rem; font-weight: 700; padding: 0.1rem 0.45rem; border-radius: 4px; text-transform: uppercase;">Frontend</span>
                             </div>
                         </div>
-                        <p style="color: #e2e8f0; font-size: 0.9rem; font-weight: 600; margin-bottom: 0.5rem; line-height: 1.4;">Handle malformed URI fragments in TitleUtil</p>
-                        <p style="color: #64748b; font-size: 0.8rem; margin-bottom: 1rem; line-height: 1.5;">Defensive try-catch blocks around URI fragment decoding to prevent silent JS failures for mobile Wikipedia users.</p>
+                        <p style="color: var(--text-primary); font-size: 0.9rem; font-weight: 600; margin-bottom: 0.5rem; line-height: 1.4;">Handle malformed URI fragments in TitleUtil</p>
+                        <p style="color: var(--text-secondary); font-size: 0.8rem; margin-bottom: 1rem; line-height: 1.5;">Defensive try-catch blocks around URI fragment decoding to prevent silent JS failures for mobile Wikipedia users.</p>
                         <div style="display: flex; gap: 0.75rem; flex-wrap: wrap;">
                             <a href="https://phabricator.wikimedia.org/T424875" target="_blank" rel="noopener noreferrer" style="font-size: 0.75rem; color: #38bdf8; text-decoration: none; font-weight: 600; display: inline-flex; align-items: center; gap: 0.3rem; opacity: 0.85; transition: opacity 0.2s;" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=0.85"><i class="fas fa-bug" style="font-size: 0.65rem;"></i> T424875</a>
                             <a href="https://gerrit.wikimedia.org/r/c/mediawiki/skins/MinervaNeue/+/1287961" target="_blank" rel="noopener noreferrer" style="font-size: 0.75rem; color: #38bdf8; text-decoration: none; font-weight: 600; display: inline-flex; align-items: center; gap: 0.3rem; opacity: 0.85; transition: opacity 0.2s;" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=0.85"><i class="fas fa-code-branch" style="font-size: 0.65rem;"></i> Gerrit</a>
@@ -535,7 +535,7 @@
                 <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; max-width: 960px; margin: 1.25rem auto 0;" data-aos="fade-up" data-aos-delay="200">
 
                     <!-- Card 3 -->
-                    <div class="recog-card" style="background: rgba(234,179,8,0.05); border: 1px solid rgba(234,179,8,0.18); border-radius: 18px; padding: 1.5rem; transition: all 0.3s ease; position: relative; overflow: hidden;">
+                    <div class="recog-card" style="background: rgba(234,179,8,0.05); border: 2px solid rgba(234,179,8,0.25); border-radius: 18px; padding: 1.5rem; transition: all 0.3s ease; position: relative; overflow: hidden; box-shadow: var(--card-shadow);">
                         <div style="position: absolute; top: 0; right: 0; width: 70px; height: 70px; background: radial-gradient(circle, rgba(234,179,8,0.15) 0%, transparent 70%); pointer-events:none;"></div>
                         <div style="display: flex; align-items: center; gap: 0.65rem; margin-bottom: 0.9rem;">
                             <div style="width: 36px; height: 36px; border-radius: 9px; background: rgba(234,179,8,0.12); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
@@ -546,8 +546,8 @@
                                 <span style="background: rgba(234,179,8,0.1); color: #fbbf24; border: 1px solid rgba(234,179,8,0.25); font-size: 0.6rem; font-weight: 700; padding: 0.1rem 0.4rem; border-radius: 4px; text-transform: uppercase;">i18n / L10n</span>
                             </div>
                         </div>
-                        <p style="color: #e2e8f0; font-size: 0.85rem; font-weight: 600; margin-bottom: 0.4rem; line-height: 1.4;">Gender support in mentored exception message</p>
-                        <p style="color: #64748b; font-size: 0.78rem; margin-bottom: 0.9rem; line-height: 1.5;">Fixed missing gender grammar in growthexperiments-exception-no-mentored-text for gendered languages.</p>
+                        <p style="color: var(--text-primary); font-size: 0.85rem; font-weight: 600; margin-bottom: 0.4rem; line-height: 1.4;">Gender support in mentored exception message</p>
+                        <p style="color: var(--text-secondary); font-size: 0.78rem; margin-bottom: 0.9rem; line-height: 1.5;">Fixed missing gender grammar in growthexperiments-exception-no-mentored-text for gendered languages.</p>
                         <div style="display: flex; gap: 0.65rem; flex-wrap: wrap;">
                             <a href="https://phabricator.wikimedia.org/T416226" target="_blank" rel="noopener noreferrer" style="font-size: 0.72rem; color: #fbbf24; text-decoration: none; font-weight: 600; display: inline-flex; align-items: center; gap: 0.25rem; opacity: 0.85;" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=0.85"><i class="fas fa-bug" style="font-size: 0.6rem;"></i> T416226</a>
                             <a href="https://gerrit.wikimedia.org/r/c/mediawiki/extensions/GrowthExperiments/+/1289010" target="_blank" rel="noopener noreferrer" style="font-size: 0.72rem; color: #fbbf24; text-decoration: none; font-weight: 600; display: inline-flex; align-items: center; gap: 0.25rem; opacity: 0.85;" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=0.85"><i class="fas fa-code-branch" style="font-size: 0.6rem;"></i> Gerrit</a>
@@ -555,7 +555,7 @@
                     </div>
 
                     <!-- Card 4 -->
-                    <div class="recog-card" style="background: rgba(16,185,129,0.05); border: 1px solid rgba(16,185,129,0.18); border-radius: 18px; padding: 1.5rem; transition: all 0.3s ease; position: relative; overflow: hidden;">
+                    <div class="recog-card" style="background: rgba(16,185,129,0.05); border: 2px solid rgba(16,185,129,0.25); border-radius: 18px; padding: 1.5rem; transition: all 0.3s ease; position: relative; overflow: hidden; box-shadow: var(--card-shadow);">
                         <div style="position: absolute; top: 0; right: 0; width: 70px; height: 70px; background: radial-gradient(circle, rgba(16,185,129,0.15) 0%, transparent 70%); pointer-events:none;"></div>
                         <div style="display: flex; align-items: center; gap: 0.65rem; margin-bottom: 0.9rem;">
                             <div style="width: 36px; height: 36px; border-radius: 9px; background: rgba(16,185,129,0.12); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
@@ -566,15 +566,15 @@
                                 <span style="background: rgba(16,185,129,0.1); color: #10b981; border: 1px solid rgba(16,185,129,0.25); font-size: 0.6rem; font-weight: 700; padding: 0.1rem 0.4rem; border-radius: 4px; text-transform: uppercase;">Backend</span>
                             </div>
                         </div>
-                        <p style="color: #e2e8f0; font-size: 0.85rem; font-weight: 600; margin-bottom: 0.4rem; line-height: 1.4;">Special:MediaStats &amp; Special:MuteUser aliases</p>
-                        <p style="color: #64748b; font-size: 0.78rem; margin-bottom: 0.9rem; line-height: 1.5;">Improved discoverability of two Special Pages without changing canonical routes.</p>
+                        <p style="color: var(--text-primary); font-size: 0.85rem; font-weight: 600; margin-bottom: 0.4rem; line-height: 1.4;">Special:MediaStats &amp; Special:MuteUser aliases</p>
+                        <p style="color: var(--text-secondary); font-size: 0.78rem; margin-bottom: 0.9rem; line-height: 1.5;">Improved discoverability of two Special Pages without changing canonical routes.</p>
                         <div style="display: flex; gap: 0.65rem; flex-wrap: wrap;">
                             <a href="https://gerrit.wikimedia.org/r/c/mediawiki/core/+/1276283" target="_blank" rel="noopener noreferrer" style="font-size: 0.72rem; color: #10b981; text-decoration: none; font-weight: 600; display: inline-flex; align-items: center; gap: 0.25rem; opacity: 0.85;" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=0.85"><i class="fas fa-code-branch" style="font-size: 0.6rem;"></i> Gerrit</a>
                         </div>
                     </div>
 
                     <!-- Card 5 -->
-                    <div class="recog-card" style="background: rgba(244,63,94,0.05); border: 1px solid rgba(244,63,94,0.18); border-radius: 18px; padding: 1.5rem; transition: all 0.3s ease; position: relative; overflow: hidden;">
+                    <div class="recog-card" style="background: rgba(244,63,94,0.05); border: 2px solid rgba(244,63,94,0.25); border-radius: 18px; padding: 1.5rem; transition: all 0.3s ease; position: relative; overflow: hidden; box-shadow: var(--card-shadow);">
                         <div style="position: absolute; top: 0; right: 0; width: 70px; height: 70px; background: radial-gradient(circle, rgba(244,63,94,0.15) 0%, transparent 70%); pointer-events:none;"></div>
                         <div style="display: flex; align-items: center; gap: 0.65rem; margin-bottom: 0.9rem;">
                             <div style="width: 36px; height: 36px; border-radius: 9px; background: rgba(244,63,94,0.12); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
@@ -585,8 +585,8 @@
                                 <span style="background: rgba(244,63,94,0.1); color: #f43f5e; border: 1px solid rgba(244,63,94,0.25); font-size: 0.6rem; font-weight: 700; padding: 0.1rem 0.4rem; border-radius: 4px; text-transform: uppercase;">QA / Testing</span>
                             </div>
                         </div>
-                        <p style="color: #e2e8f0; font-size: 0.85rem; font-weight: 600; margin-bottom: 0.4rem; line-height: 1.4;">Regression test for noreferences section</p>
-                        <p style="color: #64748b; font-size: 0.78rem; margin-bottom: 0.9rem; line-height: 1.5;">Ensures HTML comments inside references sections remain correctly positioned above the closing tag.</p>
+                        <p style="color: var(--text-primary); font-size: 0.85rem; font-weight: 600; margin-bottom: 0.4rem; line-height: 1.4;">Regression test for noreferences section</p>
+                        <p style="color: var(--text-secondary); font-size: 0.78rem; margin-bottom: 0.9rem; line-height: 1.5;">Ensures HTML comments inside references sections remain correctly positioned above the closing tag.</p>
                         <div style="display: flex; gap: 0.65rem; flex-wrap: wrap;">
                             <a href="https://gerrit.wikimedia.org/r/c/pywikibot/core/+/1290141" target="_blank" rel="noopener noreferrer" style="font-size: 0.72rem; color: #f43f5e; text-decoration: none; font-weight: 600; display: inline-flex; align-items: center; gap: 0.25rem; opacity: 0.85;" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=0.85"><i class="fas fa-code-branch" style="font-size: 0.6rem;"></i> Gerrit</a>
                         </div>
@@ -734,57 +734,57 @@
     </main>
 
     <!-- Footer Section -->
-    <footer class="footer" id="footer" style="background: rgba(2, 6, 23, 0.98); border-top: 1px solid rgba(255, 255, 255, 0.04); padding: 5rem 0 2rem 0; font-family: 'Inter', sans-serif;">
+    <footer class="footer" id="footer" style="background: var(--bg-darker); border-top: 1px solid var(--card-border); padding: 5rem 0 2rem 0; font-family: 'Inter', sans-serif;">
         <div class="container footer-container" style="display: grid; grid-template-columns: 2fr 1.2fr 1fr 1.2fr; gap: 3rem;">
             
             <!-- Column 1: Brand Info -->
             <div class="footer-brand">
                 <a href="index.html" class="logo">G K M</a>
-                <p style="color: #94a3b8; line-height: 1.6; margin-top: 1.2rem; font-size: 0.9rem;">
+                <p style="color: var(--text-secondary); line-height: 1.6; margin-top: 1.2rem; font-size: 0.9rem;">
                     Full-Stack Developer, Wikipedia Contributor, and GDG Prayagraj Volunteer. Pursuing B.Tech CSE (Data Science) '28. Specializing in secure web applications, data analytics, and digital forensics.
                 </p>
                 <div class="footer-socials" style="margin-top: 1.5rem; display: flex; gap: 1rem;">
-                    <a href="https://github.com/gkm563" target="_blank" rel="noopener noreferrer" style="color: #94a3b8; font-size: 1.2rem; transition: color 0.3s;" aria-label="GitHub"><i class="fab fa-github"></i></a>
-                    <a href="https://gitlab.com/gkm563" target="_blank" rel="noopener noreferrer" style="color: #94a3b8; font-size: 1.2rem; transition: color 0.3s;" aria-label="GitLab"><i class="fab fa-gitlab"></i></a>
-                    <a href="https://www.linkedin.com/in/gkm563/" target="_blank" rel="noopener noreferrer" style="color: #94a3b8; font-size: 1.2rem; transition: color 0.3s;" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                    <a href="https://www.instagram.com/gkm3563/" target="_blank" rel="noopener noreferrer" style="color: #94a3b8; font-size: 1.2rem; transition: color 0.3s;" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                    <a href="https://www.facebook.com/gkm563/" target="_blank" rel="noopener noreferrer" style="color: #94a3b8; font-size: 1.2rem; transition: color 0.3s;" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
-                    <a href="https://en.wikipedia.org/wiki/User:Gkm563" target="_blank" rel="noopener noreferrer" style="color: #94a3b8; font-size: 1.2rem; transition: color 0.3s;" aria-label="Wikipedia"><i class="fab fa-wikipedia-w"></i></a>
+                    <a href="https://github.com/gkm563" target="_blank" rel="noopener noreferrer" style="color: var(--text-secondary); font-size: 1.2rem; transition: color 0.3s;" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="https://gitlab.com/gkm563" target="_blank" rel="noopener noreferrer" style="color: var(--text-secondary); font-size: 1.2rem; transition: color 0.3s;" aria-label="GitLab"><i class="fab fa-gitlab"></i></a>
+                    <a href="https://www.linkedin.com/in/gkm563/" target="_blank" rel="noopener noreferrer" style="color: var(--text-secondary); font-size: 1.2rem; transition: color 0.3s;" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://www.instagram.com/gkm3563/" target="_blank" rel="noopener noreferrer" style="color: var(--text-secondary); font-size: 1.2rem; transition: color 0.3s;" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.facebook.com/gkm563/" target="_blank" rel="noopener noreferrer" style="color: var(--text-secondary); font-size: 1.2rem; transition: color 0.3s;" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                    <a href="https://en.wikipedia.org/wiki/User:Gkm563" target="_blank" rel="noopener noreferrer" style="color: var(--text-secondary); font-size: 1.2rem; transition: color 0.3s;" aria-label="Wikipedia"><i class="fab fa-wikipedia-w"></i></a>
                 </div>
             </div>
             
             <!-- Column 2: Internship Logs -->
             <div class="footer-col">
-                <h4 style="color: white; margin-bottom: 1.25rem; font-size: 1.05rem; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase;">Internships</h4>
+                <h4 style="color: var(--text-primary); margin-bottom: 1.25rem; font-size: 1.05rem; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase;">Internships</h4>
                 <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.8rem; font-size: 0.9rem;">
-                    <li><a href="./up-police-internship.html" style="color: #64748b; text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#a855f7'" onmouseout="this.style.color='#64748b'">UP Police Cyber Security (APCSIP)</a></li>
-                    <li><a href="./ait-global-innovation-internship.html" style="color: #64748b; text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#a855f7'" onmouseout="this.style.color='#64748b'">AIT Bangkok Innovation (GIIP)</a></li>
+                    <li><a href="./up-police-internship.html" style="color: var(--text-secondary); text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#a855f7'" onmouseout="this.style.color='var(--text-secondary)'">UP Police Cyber Security (APCSIP)</a></li>
+                    <li><a href="./ait-global-innovation-internship.html" style="color: var(--text-secondary); text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#a855f7'" onmouseout="this.style.color='var(--text-secondary)'">AIT Bangkok Innovation (GIIP)</a></li>
                     <li><a href="./open-source-contributions.html" style="color: #a855f7; text-decoration: none; font-weight: 600;">Open Source Contributions</a></li>
                 </ul>
             </div>
             
             <!-- Column 3: Quick Navigation -->
             <div class="footer-col">
-                <h4 style="color: white; margin-bottom: 1.25rem; font-size: 1.05rem; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase;">Quick Links</h4>
+                <h4 style="color: var(--text-primary); margin-bottom: 1.25rem; font-size: 1.05rem; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase;">Quick Links</h4>
                 <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.8rem; font-size: 0.9rem;">
-                    <li><a href="index.html" style="color: #64748b; text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#a855f7'" onmouseout="this.style.color='#64748b'">Portfolio Home</a></li>
-                    <li><a href="index.html#projects" style="color: #64748b; text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#a855f7'" onmouseout="this.style.color='#64748b'">Projects Grid</a></li>
-                    <li><a href="index.html#skills" style="color: #64748b; text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#a855f7'" onmouseout="this.style.color='#64748b'">Technical Skills</a></li>
+                    <li><a href="index.html" style="color: var(--text-secondary); text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#a855f7'" onmouseout="this.style.color='var(--text-secondary)'">Portfolio Home</a></li>
+                    <li><a href="index.html#projects" style="color: var(--text-secondary); text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#a855f7'" onmouseout="this.style.color='var(--text-secondary)'">Projects Grid</a></li>
+                    <li><a href="index.html#skills" style="color: var(--text-secondary); text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#a855f7'" onmouseout="this.style.color='var(--text-secondary)'">Technical Skills</a></li>
                 </ul>
             </div>
             
             <!-- Column 4: Developer Credentials -->
             <div class="footer-col">
-                <h4 style="color: white; margin-bottom: 1.25rem; font-size: 1.05rem; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase;">Ecosystems</h4>
+                <h4 style="color: var(--text-primary); margin-bottom: 1.25rem; font-size: 1.05rem; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase;">Ecosystems</h4>
                 <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.8rem; font-size: 0.9rem;">
-                    <li><a href="https://gerrit.wikimedia.org/r/q/owner:gkmwin563@gmail.com" target="_blank" rel="noopener noreferrer" style="color: #64748b; text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#a855f7'" onmouseout="this.style.color='#64748b'">Wikimedia Gerrit Logs</a></li>
-                    <li><a href="https://phabricator.wikimedia.org/p/Gkm563/" target="_blank" rel="noopener noreferrer" style="color: #64748b; text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#a855f7'" onmouseout="this.style.color='#64748b'">Wikimedia Phabricator</a></li>
-                    <li><a href="https://en.wikipedia.org/wiki/User:Gkm563" target="_blank" rel="noopener noreferrer" style="color: #64748b; text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#a855f7'" onmouseout="this.style.color='#64748b'">Wikipedia User Profile</a></li>
+                    <li><a href="https://gerrit.wikimedia.org/r/q/owner:gkmwin563@gmail.com" target="_blank" rel="noopener noreferrer" style="color: var(--text-secondary); text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#a855f7'" onmouseout="this.style.color='var(--text-secondary)'">Wikimedia Gerrit Logs</a></li>
+                    <li><a href="https://phabricator.wikimedia.org/p/Gkm563/" target="_blank" rel="noopener noreferrer" style="color: var(--text-secondary); text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#a855f7'" onmouseout="this.style.color='var(--text-secondary)'">Wikimedia Phabricator</a></li>
+                    <li><a href="https://en.wikipedia.org/wiki/User:Gkm563" target="_blank" rel="noopener noreferrer" style="color: var(--text-secondary); text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#a855f7'" onmouseout="this.style.color='var(--text-secondary)'">Wikipedia User Profile</a></li>
                 </ul>
             </div>
             
         </div>
-        <div class="container" style="margin-top: 3.5rem; padding-top: 2rem; border-top: 1px solid rgba(255, 255, 255, 0.04); text-align: center; color: #64748b; font-size: 0.85rem;">
+        <div class="container" style="margin-top: 3.5rem; padding-top: 2rem; border-top: 1px solid var(--card-border); text-align: center; color: var(--text-secondary); font-size: 0.85rem;">
             <p>&copy; 2026 Gautam Kumar Maurya (GKM). All Rights Reserved. Crafted with focus on developer community growth.</p>
         </div>
     </footer>
