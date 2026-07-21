@@ -151,13 +151,19 @@ body.internship-page::after {
 }
 
 .internship-hero h1 span.highlight-gblue {
+    background: linear-gradient(135deg, var(--text-color) 30%, var(--google-blue) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+body.dark-theme .internship-hero h1 span.highlight-gblue {
     background: linear-gradient(135deg, #fff 30%, var(--google-blue) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
 .internship-hero .hero-org {
-    color: #94a3b8;
+    color: var(--text-secondary);
     font-size: clamp(1.1rem, 2.5vw, 1.6rem);
     font-weight: 400;
     max-width: 800px;
@@ -167,7 +173,7 @@ body.internship-page::after {
 }
 
 .internship-hero .hero-org strong {
-    color: #fff;
+    color: var(--text-color);
     font-weight: 600;
 }
 
@@ -3656,16 +3662,13 @@ input, textarea, select {
 }
 
 .project-showcase-card {
-    background: linear-gradient(135deg, rgba(15, 23, 42, 0.6) 0%, rgba(8, 12, 30, 0.8) 100%);
-    border: 1px solid rgba(14, 165, 233, 0.2);
+    background: var(--card-bg-glass);
+    border: 1.5px solid var(--border-color-glass);
     border-radius: 24px;
     padding: 3.5rem 3rem;
     position: relative;
     overflow: hidden;
-    box-shadow: 
-        0 20px 40px rgba(0, 0, 0, 0.35),
-        0 0 30px rgba(14, 165, 233, 0.15),
-        inset 0 0 15px rgba(14, 165, 233, 0.05);
+    box-shadow: var(--card-shadow);
     backdrop-filter: blur(16px);
 }
 
@@ -3769,25 +3772,27 @@ input, textarea, select {
 }
 
 .project-btn-secondary {
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    color: #cbd5e1;
+    background: var(--nav-link-hover-bg);
+    border: 1.5px solid var(--border-color-glass);
+    color: var(--text-color);
+    font-weight: 700;
 }
 
 .project-btn-secondary:hover {
-    background: rgba(255, 255, 255, 0.1);
-    border-color: rgba(255, 255, 255, 0.2);
-    color: #fff;
+    background: rgba(14, 165, 233, 0.15);
+    border-color: rgba(14, 165, 233, 0.5);
+    color: var(--text-color);
     transform: translateY(-2px);
 }
 
 /* Right column team card */
 .team-details-card {
-    background: rgba(15, 23, 42, 0.5);
-    border: 1px solid rgba(14, 165, 233, 0.15);
+    background: var(--card-bg-glass);
+    border: 1.5px solid var(--border-color-glass);
     border-radius: 20px;
     padding: 2.2rem 2rem;
     position: relative;
+    box-shadow: var(--card-shadow);
 }
 
 .team-badge {
