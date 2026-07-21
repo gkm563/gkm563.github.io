@@ -3551,8 +3551,12 @@ body.dark-theme .bento-card:hover {
 
 .bento-card:hover .bento-badge {
     background: rgba(var(--theme-rgb), 0.18);
-    color: #fff;
+    color: rgba(var(--theme-rgb), 1);
     border-color: rgba(var(--theme-rgb), 0.4);
+}
+
+body.dark-theme .bento-card:hover .bento-badge {
+    color: #fff;
 }
 
 .bento-content {
@@ -3671,12 +3675,12 @@ body.dark-theme .bento-card:hover .bento-tag {
 }
 
 .bento-tag:hover {
-    background: linear-gradient(135deg, hsla(var(--theme-hsl), 0.3) 0%, hsla(var(--theme-hsl), 0.1) 100%) !important;
-    border-color: hsla(var(--theme-hsl), 0.75) !important;
+    background: linear-gradient(135deg, hsla(var(--theme-hsl), 0.9) 0%, hsla(var(--theme-hsl), 0.75) 100%) !important;
+    border-color: hsla(var(--theme-hsl), 0.85) !important;
     transform: translateY(-4px) scale(1.08) translate3d(0, 0, 15px);
     color: #fff !important;
     box-shadow: 0 8px 20px hsla(var(--theme-hsl), 0.45);
-    text-shadow: 0 0 6px rgba(255, 255, 255, 0.4);
+    text-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
 }
 
 /* === PREMIUM TIMELINE SYSTEM === */
@@ -5498,8 +5502,12 @@ body.dark-theme .about-highlight-card p {
 .bento-intro {
     font-size: 0.95rem;
     line-height: 1.65;
-    color: #cbd5e1;
+    color: var(--text-secondary);
     margin-bottom: 1.5rem !important;
+}
+
+body.dark-theme .bento-intro {
+    color: #cbd5e1;
 }
 
 /* Grid layout for Bento sub-boxes */
@@ -5750,7 +5758,7 @@ body.dark-theme .about-highlight-card p {
 .pipeline-arrow {
     flex-grow: 1;
     height: 2px;
-    background: rgba(255, 255, 255, 0.08);
+    background: var(--border-color-glass);
     position: relative;
     overflow: hidden;
 }
@@ -5789,7 +5797,7 @@ body.dark-theme .about-highlight-card p {
     font-family: monospace;
     font-size: 0.7rem;
     font-weight: 700;
-    color: #94a3b8;
+    color: var(--text-secondary);
     letter-spacing: 1px;
 }
 
@@ -5810,8 +5818,8 @@ body.dark-theme .about-highlight-card p {
 }
 
 .special-badge {
-    background: rgba(15, 23, 42, 0.45);
-    border: 1px solid rgba(255, 255, 255, 0.05);
+    background: var(--card-color-glass);
+    border: 1px solid var(--border-color-glass);
     border-radius: 8px;
     padding: 0.5rem 0.75rem;
     display: flex;
@@ -5819,12 +5827,13 @@ body.dark-theme .about-highlight-card p {
     gap: 0.6rem;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     cursor: default;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
 }
 
 .special-badge:hover {
-    background: rgba(15, 23, 42, 0.75);
+    background: var(--nav-link-hover-bg);
     transform: translateY(-2px);
-    border-color: rgba(255, 255, 255, 0.12);
+    border-color: rgba(var(--theme-rgb), 0.35);
 }
 
 .badge-icon-wrap {
@@ -5846,8 +5855,23 @@ body.dark-theme .about-highlight-card p {
 .special-badge span {
     font-size: 0.72rem;
     font-weight: 700;
-    color: #cbd5e1;
+    color: var(--text-color);
     line-height: 1.25;
+}
+
+body.dark-theme .special-badge {
+    background: rgba(15, 23, 42, 0.45);
+    border-color: rgba(255, 255, 255, 0.05);
+    box-shadow: none;
+}
+
+body.dark-theme .special-badge:hover {
+    background: rgba(15, 23, 42, 0.75);
+    border-color: rgba(255, 255, 255, 0.12);
+}
+
+body.dark-theme .special-badge span {
+    color: #cbd5e1;
 }
 
 /* Vibrant Gradients for Icons */
@@ -5997,7 +6021,7 @@ body.dark-theme .about-highlight-card p {
     background: rgba(var(--theme-rgb), 0.1);
     border: 1px solid rgba(var(--theme-rgb), 0.3);
     border-radius: 12px;
-    color: #fff;
+    color: var(--text-color);
     text-decoration: none;
     font-family: var(--header-font);
     font-weight: 600;
@@ -6005,14 +6029,24 @@ body.dark-theme .about-highlight-card p {
     transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
     width: 100%;
     box-sizing: border-box;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
 
 .bento-action-btn:hover {
-    background: rgba(var(--theme-rgb), 0.25);
+    background: rgba(var(--theme-rgb), 0.2);
     border-color: rgba(var(--theme-rgb), 0.8);
     transform: translateY(-2px);
+    color: var(--text-color);
     box-shadow: 0 6px 20px rgba(var(--theme-rgb), 0.25);
+}
+
+body.dark-theme .bento-action-btn {
+    color: #fff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+body.dark-theme .bento-action-btn:hover {
+    color: #fff;
 }
 
 
