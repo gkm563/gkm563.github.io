@@ -8,88 +8,110 @@
   <a href="https://gkm563.github.io/"><img src="https://img.shields.io/badge/Website-gkm563.github.io-blue?style=for-the-badge&logo=google-chrome" alt="Gautam Kumar Maurya Portfolio Website"/></a>
   <a href="https://www.linkedin.com/in/gkm563"><img src="https://img.shields.io/badge/LinkedIn-Gautam_Kumar_Maurya-blue?style=for-the-badge&logo=linkedin" alt="Gautam Kumar Maurya LinkedIn"/></a>
   <a href="https://github.com/gkm563"><img src="https://img.shields.io/badge/GitHub-gkm563-black?style=for-the-badge&logo=github" alt="gkm563 GitHub"/></a>
+  <a href="https://prayagrajrooms.in"><img src="https://img.shields.io/badge/Project-PrayagrajRooms.in-orange?style=for-the-badge" alt="Prayagraj Rooms"/></a>
 </p>
 
 ---
 
 ## 🌟 About Me
 
-Hello! I'm **Gautam Kumar Maurya**, known across the tech ecosystem as **gkm563**. I am a B.Tech CSE (Data Science) student and Topper from the **United Institute of Technology**, specializing in **Cyber Security, Data Science, Artificial Intelligence, and Open Source Software Development**.
+Hello! I'm **Gautam Kumar Maurya**, widely known across the tech ecosystem as **gkm563**. I am a B.Tech CSE (Data Science) student and Academic Topper at **United Institute of Technology (UIT), Prayagraj**, specializing in **Cyber Security, Data Science, Artificial Intelligence, Web Engineering, and Open Source Software Development**.
 
-My focus lies in building secure, scalable applications and utilizing data analytics to solve complex real-world engineering issues. 
+Driven by a passion for technical innovation and community leadership, I focus on building secure, scalable real-world solutions, contributing to global open-source platforms, and leading top technical organizations on campus.
 
 > 🌍 **Explore my live portfolio:** [**gkm563.github.io**](https://gkm563.github.io/)
 
 ---
 
+## 👑 Leadership & Positions of Responsibility
+
+* ⚡ **Founder & Organizer** – **CDN UIT** (*Coding & Development Network, UIT*)
+* 🌟 **Vice President** – **GeeksforGeeks (GFG) Student Chapter, UIT**
+* 🎯 **Co-Lead** – **HackerRank Student Chapter, UIT**
+* 🚀 **Technical Head** – **E-Cell (Entrepreneurship Cell), UIT**
+
+---
+
 ## 🏆 Professional Experience & Internships
 
-### ✈️ **AI & Data Science Intern - GIIP-2026 (AIT Bangkok, Thailand)**
-*An intensive 15-day international training and research program at the Asian Institute of Technology (AIT).*
-*   **Key Work & Learning:** Gained research-level exposure in **Prompt Engineering**, **Geographic Information Systems (GIS)**, **Exploratory Data Analysis (EDA)**, **Quantum GIS**, **Agentic AI & LLMs**, and **UAV (Drone) Flight Planning & Imaging telemetry**.
-*   **Featured Project:** Built and developed **BusSetu** (a live bus tracking platform) collaborating with a 9-member cross-disciplinary team. Handled the entire development and coding myself.
-*   **Mentorship:** Guided by esteemed professors Dr. Rishi Jain, Prof. Nitin K. Tripathi, and technical experts.
+### 🔒 **Cyber Security Intern – 15-Day On-Ground Program (UP Police x Amroha Police)**
+*An intensive 15-day in-person Cyber Security Internship conducted in direct collaboration with UP Police and Amroha Police, focused on law enforcement operations, digital forensics, and cybercrime investigation.*
+* **Core Responsibilities & Technical Work:** Conducted **OSINT (Open Source Intelligence)** investigations, analyzed Android malware payloads, processed mobile forensic evidence, and actively operated within SOC monitoring units.
+* 🥇 **Special Recognition:** Honored with the **Best Content Creator Award** presented directly by **DSP Anjali Kataria Ma'am** for producing exceptional technical case studies and cybersecurity educational documentation.
+* 🔗 **Read Full Experience & Case Study:** [**gkm563.github.io/up-police-internship.html**](https://gkm563.github.io/up-police-internship.html)
 
-### 🔒 **Cyber Security Intern - APCSIP-2026 (Amroha Police, India)**
-*An intensive 12-day cyber security internship focusing on law enforcement applications and digital forensics.*
-*   **Core Work:** Handled **OSINT investigations**, analyzed Android malware payloads, processed mobile forensic files, and ran SOC operations.
-*   **Achievement:** Awarded **Best Content Creator** for compiling detailed technical case studies.
-
----
-
-## 🚀 Featured Project: BusSetu (Live Bus Tracking Platform)
-*   **Description:** A live transit utility platform designed to allow users to track any bus, anywhere, at any time, completely free of cost.
-*   **Tech Stack:** React, TailwindCSS, Vercel, Git.
-*   **Role:** Lead Developer (100% of codebase built and maintained by me).
-*   **Links:** 
-    *   [Live Demo on Vercel](https://bussetu-three.vercel.app/)
-    *   [GitHub Repository](https://github.com/gkm563/bussetu)
+### ✈️ **AI & Data Science Intern – GIIP 15-Day International Program (AIT Bangkok, Thailand)**
+*An intensive 15-day international research and training program under the **Global Innovation Internship Program (GIIP)** at the Asian Institute of Technology (AIT), Bangkok.*
+* **Advanced Research & Training:** Gained research-level exposure in **Agentic AI & LLMs**, **Quantum GIS (QGIS)**, **Prompt Engineering**, **Exploratory Data Analysis (EDA)**, and **UAV (Drone) Flight Planning & Telemetry**.
+* **Project Highlight:** Built and developed **BusSetu** (a live transit tracking platform) as Lead Developer collaborating with a 9-member cross-disciplinary international team.
+* **Mentorship:** Guided by Dr. Rishi Jain, Prof. Nitin K. Tripathi, and international academic experts.
+* 🔗 **Read Full International Internship Details:** [**gkm563.github.io/ait-global-innovation-internship.html**](https://gkm563.github.io/ait-global-innovation-internship.html)
 
 ---
 
-## 🌐 Open Source Contributions
-I active contribute to the global open-source community, optimizing media layers and language infrastructures.
-*   **Wikimedia & Gerrit Code Review:** Contributed patches and code reviews on the Gerrit system, ensuring optimal performance for MediaWiki layers.
-*   **Translatewiki.net:** Optimized localization pipelines, translating and onboarding translations for several languages.
-*   *Explore details on my dedicated contributions subpage:* [**gkm563.github.io/open-source-contributions.html**](https://gkm563.github.io/open-source-contributions.html)
+## 🚀 Featured Projects
+
+### 🏠 **Prayagraj Rooms (`prayagrajrooms.in`)**
+* **Overview:** A comprehensive, fully functional web platform engineered to simplify room searching and property listings for students and working professionals in Prayagraj.
+* **Effort & Impact:** Developed over **10+ months** of dedicated engineering, UX design, and platform optimization.
+* 🔗 **Live Platform:** [**prayagrajrooms.in**](https://prayagrajrooms.in)
+
+### 🚌 **BusSetu – Live Transit Tracking Platform**
+* **Overview:** A live transit utility platform enabling users to track buses in real time free of cost.
+* **Tech Stack:** React, TailwindCSS, Vercel, Git.
+* **Role:** Lead Developer (Built 100% of the codebase).
+* 🔗 **Links:** [Live Demo](https://bussetu-three.vercel.app/) | [GitHub Repository](https://github.com/gkm563/bussetu)
+
+---
+
+## 🌐 Open Source Contributions & Community Recognition
+
+I actively contribute to the global open-source ecosystem, optimizing media delivery pipelines, localization frameworks, and core infrastructure layers across platforms.
+
+* 🛠️ **15+ Merged Contributions:** Authored and merged **15+ contributions & patches** across major open-source platforms including **Gerrit (Wikimedia)**, **GitLab**, **GitHub**, and global software repositories.
+* 🔄 **10+ Active & Ongoing Contributions:** Continuously reviewing, testing, and submitting code enhancements for open-source ecosystems.
+* 📰 **Featured by WikiClub India:** Recognized and featured by **WikiClub India** for impactful open-source contributions to Wikimedia projects.
+* 🗣️ **Translatewiki.net:** Contributed to software localization pipelines and onboarding translation infrastructure.
+* 🔗 **Explore Open Source Journey:** [**gkm563.github.io/open-source-contributions.html**](https://gkm563.github.io/open-source-contributions.html)
 
 ---
 
 ## 🛠️ Technical Skills & Expertise
 
-*   **Programming & Frameworks:** Python, JavaScript, HTML5, CSS3, React, Node.js.
-*   **Data Science & Analytics:** Data Structures & Algorithms (DSA), Pandas, NumPy, Power BI, Exploratory Data Analysis (EDA), GIS.
-*   **Security & Digital Forensics:** OSINT, Malware Analysis, Android Forensics, Web Penetration Testing, SOC Operations.
-*   **Cloud & Telemetry:** Vercel, UAV Image Telemetry, Git/GitHub, Cloud Configuration (CCM).
+* **Languages & Core:** Python, JavaScript (ES6+), HTML5, CSS3, C/C++, SQL.
+* **Data Science & AI:** Data Structures & Algorithms (DSA), Pandas, NumPy, Power BI, Exploratory Data Analysis (EDA), GIS & QGIS, Agentic AI & LLMs.
+* **Cyber Security & Forensics:** OSINT, Malware Analysis, Android Forensics, Web Penetration Testing, SOC Operations, Digital Forensics.
+* **Web & DevOps:** React, Node.js, Vercel, Git/GitHub, Cloud Configuration, UAV Flight Telemetry.
 
 ---
 
-## 📂 Project Directory Structure
+## 📂 Repository & Portfolio Architecture
 
 ```text
 gkm563.github.io/ (Repository Root)
 ├── index.html                            # Main Interactive 3D Portfolio
-├── ait-global-innovation-internship.html  # Dedicated AIT Bangkok Subpage
-├── up-police-internship.html             # Dedicated UP Police subpage
-├── open-source-contributions.html        # Dedicated Wikimedia & Gerrit Subpage
+├── up-police-internship.html             # UP Police Cyber Security Internship Page
+├── ait-global-innovation-internship.html  # AIT Bangkok International Internship Page
+├── open-source-contributions.html        # Wikimedia & Gerrit Contributions Page
 ├── assets/
-│   ├── css/                              # Custom CSS Core Sheets
-│   ├── js/                               # Interaction Engines & Translations
-│   └── images/                           # Optimized Telemetry Assets
+│   ├── css/                              # Styling Architecture
+│   ├── js/                               # Interaction Engines & Data Models
+│   └── images/                           # Optimized Media Assets
 ├── sitemap.xml                           # SEO Sitemap
-└── robots.txt                            # Web Crawler Directives
+└── robots.txt                            # Search Engine Directives
 ```
 
 ---
 
-## 🤝 Connect With Me
+## 🤝 Connect & Collaborate
 
-*   **Name:** Gautam Kumar Maurya (gkm563)
-*   **Location:** Prayagraj, India 🇮🇳
-*   **LinkedIn:** [linkedin.com/in/gkm563](https://www.linkedin.com/in/gkm563)
-*   **GitHub:** [github.com/gkm563](https://github.com/gkm563)
+* **Portfolio:** [gkm563.github.io](https://gkm563.github.io/)
+* **LinkedIn:** [linkedin.com/in/gkm563](https://www.linkedin.com/in/gkm563)
+* **GitHub:** [github.com/gkm563](https://github.com/gkm563)
+* **Live Project:** [prayagrajrooms.in](https://prayagrajrooms.in)
 
 ---
+
 <div align="center">
-  <i>Made with ❤️ by Gautam Kumar Maurya. If you find my work inspiring, please give this repository a ⭐!</i>
+  <i>Crafted with dedication by <b>Gautam Kumar Maurya (gkm563)</b>. If you find my work inspiring, please give this repository a ⭐!</i>
 </div>
