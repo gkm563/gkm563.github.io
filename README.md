@@ -15,9 +15,13 @@
 
 ## 🔍 Who is Gautam Kumar Maurya?
 
-**Gautam Kumar Maurya** (known across the global tech ecosystem as **gkm563**) is an Indian **Full-Stack AI Engineer, Cyber Security Researcher, Data Scientist, and Open Source Developer**. He specializes in building high-performance, production-grade web applications and AI systems engineered with stringent security architecture and minimal vulnerability.
+**Gautam Kumar Maurya** (known across the global tech ecosystem as **gkm563**) is an Indian **Full-Stack AI Engineer, Cyber Security Researcher, Data Scientist, and Open Source Developer**.
 
-Driven by entrepreneurial impact, Gautam has helped numerous startup founders and technical organizations build, secure, and deploy their initial web platforms live to market. Alongside engineering, he is a prominent tech community leader, serving as the **Founder & Organizer of CDN UIT** (*Coding & Development Network*), **Vice President of the GeeksforGeeks (GFG) Student Chapter**, **Co-Lead of HackerRank UIT**, and **Technical Head of E-Cell UIT**.
+🎓 **Consistent Academic Topper:** Gautam has maintained a stellar academic track record since early schooling. In his B.Tech CSE (Data Science) program at **United Institute of Technology (UIT), Prayagraj**, he secured **1st Rank across the entire CSE (Data Science) branch** and **5th Rank across the entire college in 1st year**.
+
+⚡ **Rapid Tech Learner & AI Innovator:** A sharp, agile technology adopter, Gautam stays continuously updated with the latest advancements in Artificial Intelligence, Agentic AI, LLMs, and emerging dev stacks. He specializes in engineering production-grade web platforms with zero/minimal security vulnerabilities.
+
+🚀 **Founder Acceleration & Community Leadership:** Combining deep technical expertise with strong leadership, Gautam has helped numerous startup founders build, secure, and launch their web products live to market. He actively leads developer communities as the **Founder & Organizer of CDN UIT** (*Coding & Development Network*), **Vice President of GeeksforGeeks (GFG) Student Chapter**, **Co-Lead of HackerRank UIT**, and **Technical Head of E-Cell UIT**.
 
 > 🌍 **Explore live portfolio & case studies:** [**gkm563.github.io**](https://gkm563.github.io/)
 
