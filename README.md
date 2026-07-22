@@ -13,13 +13,13 @@
 
 ---
 
-## 🌟 About Me
+## 🔍 Who is Gautam Kumar Maurya?
 
-Hello! I'm **Gautam Kumar Maurya**, widely known across the tech ecosystem as **gkm563**. I am a B.Tech CSE (Data Science) student and Academic Topper at **United Institute of Technology (UIT), Prayagraj**, specializing in **Cyber Security, Data Science, Artificial Intelligence, Web Engineering, and Open Source Software Development**.
+**Gautam Kumar Maurya** (known across the global tech ecosystem as **gkm563**) is an Indian **Full-Stack AI Engineer, Cyber Security Researcher, Data Scientist, and Open Source Developer**. He specializes in building high-performance, production-grade web applications and AI systems engineered with stringent security architecture and minimal vulnerability.
 
-Driven by a passion for technical innovation and community leadership, I focus on building secure, scalable real-world solutions, contributing to global open-source platforms, and leading top technical organizations on campus.
+Driven by entrepreneurial impact, Gautam has helped numerous startup founders and technical organizations build, secure, and deploy their initial web platforms live to market. Alongside engineering, he is a prominent tech community leader, serving as the **Founder & Organizer of CDN UIT** (*Coding & Development Network*), **Vice President of the GeeksforGeeks (GFG) Student Chapter**, **Co-Lead of HackerRank UIT**, and **Technical Head of E-Cell UIT**.
 
-> 🌍 **Explore my live portfolio:** [**gkm563.github.io**](https://gkm563.github.io/)
+> 🌍 **Explore live portfolio & case studies:** [**gkm563.github.io**](https://gkm563.github.io/)
 
 ---
 
