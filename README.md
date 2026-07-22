@@ -5,7 +5,8 @@
 </div>
 
 <p align="center">
-  <a href="https://gkm563.github.io/"><img src="https://img.shields.io/badge/Website-gkm563.github.io-blue?style=for-the-badge&logo=google-chrome" alt="Gautam Kumar Maurya Portfolio Website"/></a>
+  <a href="https://gkm563.dev/"><img src="https://img.shields.io/badge/Website-gkm563.dev-00F7FF?style=for-the-badge&logo=google-chrome" alt="Gautam Kumar Maurya Custom Domain Website"/></a>
+  <a href="https://gkm563.github.io/"><img src="https://img.shields.io/badge/Mirror-gkm563.github.io-blue?style=for-the-badge&logo=github" alt="Gautam Kumar Maurya GitHub Pages"/></a>
   <a href="https://www.linkedin.com/in/gkm563"><img src="https://img.shields.io/badge/LinkedIn-Gautam_Kumar_Maurya-blue?style=for-the-badge&logo=linkedin" alt="Gautam Kumar Maurya LinkedIn"/></a>
   <a href="https://github.com/gkm563"><img src="https://img.shields.io/badge/GitHub-gkm563-black?style=for-the-badge&logo=github" alt="gkm563 GitHub"/></a>
   <a href="https://prayagrajrooms.in"><img src="https://img.shields.io/badge/Project-PrayagrajRooms.in-orange?style=for-the-badge" alt="Prayagraj Rooms"/></a>
