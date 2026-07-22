@@ -26,27 +26,28 @@ window.PORTFOLIO_TRANSLATIONS = {
 
         // Hero Subtitle Strings for Typed.js
         hero_typed_strings: [
-            "AI & Data Science Engineer | Building Scalable AI Solutions",
-            "Technical Community Leader & Open Source Contributor",
-            "B.Tech CSE (Data Science) @ UIT Prayagraj",
-            "Co-founder @ PrayagrajRooms PG Startup",
-            "Technical Head @ GFG UIT & UDTech India",
-            "Active Patches Merged in Wikimedia & Wikipedia Core"
+            "Full-Stack AI Engineer | Cyber Security Researcher | Data Scientist",
+            "Consistent Academic Topper (1st Rank CSE DS Branch | Rank 5 College)",
+            "Founder & Organizer @ CDN UIT | VP @ GFG UIT Chapter",
+            "Co-Lead @ HackerRank UIT | Technical Head @ E-Cell UIT",
+            "15+ Merged Patches (Wikimedia Gerrit, GitLab, GitHub) | WikiClub Featured",
+            "Founder @ PrayagrajRooms (prayagrajrooms.in)",
+            "Awarded Best Content Creator by DSP Anjali Kataria (UP Police)"
         ],
         hero_cta_touch: "Get In Touch",
         hero_cta_resume: "Download CV",
 
         // About Section
-        about_title: "About Me",
-        about_heading: "My Code, My Story: Bridging Logic & Real-World Impact",
-        about_para_1: "Hello! I'm <strong>Gautam Kumar Maurya (GKM)</strong>. My journey in technology is driven by a simple mission: to build intelligent, scalable solutions that solve real community challenges. As a B.Tech Computer Science student specializing in Data Science at United Institute of Technology, Prayagraj, I treat code not just as instructions, but as a medium for positive change.",
-        about_point_1_title: "Co-founding PrayagrajRooms:",
-        about_point_1_text: "Driven by the struggles outstation students face, I co-founded <strong>PrayagrajRooms</strong> to simplify PG and room discovery, eliminating brokerage and bringing transparency to local student housing.",
-        about_point_2_title: "Global Open Source Contributions:",
-        about_point_2_text: "As an active contributor to the Wikimedia Foundation and Wikipedia core codebase, I regularly navigate peer-reviewed pipelines via Gerrit and Phabricator, merging patches that improve global digital knowledge.",
-        about_point_3_title: "Academic & Algorithms Focus:",
-        about_point_3_text: "Balancing build pipelines with rigorous computer science theory, I achieved <strong>AKTU University Rank 5</strong> in my first semester and hold Rank 1 in the Data Structures stream at UIT.",
-        about_para_2: "Whether engineering clean React interfaces, optimizing database structures in Django, or designing intelligent AI assistants, I am always focused on crafting premium, performant digital solutions.",
+        about_title: "Who is Gautam Kumar Maurya?",
+        about_heading: "Full-Stack AI Engineer, Cyber Security Researcher & Academic Topper",
+        about_para_1: "<strong>Gautam Kumar Maurya (gkm563)</strong> is an Indian Full-Stack AI Engineer, Cyber Security Researcher, Data Scientist, and Academic Topper. Maintaining an exceptional academic track record since early schooling, he achieved <strong>1st Rank across the entire CSE (Data Science) branch</strong> and <strong>5th Rank across the entire college in his 1st year</strong> at United Institute of Technology (UIT), Prayagraj.",
+        about_point_1_title: "PrayagrajRooms (`prayagrajrooms.in`):",
+        about_point_1_text: "Built over <strong>10+ months</strong> of dedicated engineering, <strong>PrayagrajRooms</strong> is a live, fully functional accommodation platform solving room and PG discovery for students in Prayagraj.",
+        about_point_2_title: "15+ Merged Open Source Patches:",
+        about_point_2_text: "Authored and merged <strong>15+ patches</strong> across major open-source platforms including Wikimedia Gerrit, GitLab, and GitHub (featured by <strong>WikiClub India</strong>).",
+        about_point_3_title: "15-Day UP Police & AIT Bangkok Internships:",
+        about_point_3_text: "Honored with the <strong>Best Content Creator Award</strong> by <strong>DSP Anjali Kataria Ma'am</strong> (UP Police Cyber Internship) and completed 15-day international GIIP research at <strong>AIT Bangkok</strong>.",
+        about_para_2: "Gautam is a rapid tech learner continuously updated with the latest AI systems, Agentic AI, LLMs, and security frameworks. He specializes in building web applications with minimal vulnerability, helping startup founders launch their initial products live to market. He serves as Founder & Organizer of CDN UIT, Vice President of GFG UIT, Co-Lead of HackerRank UIT, and Technical Head of E-Cell UIT.",
 
         // Narrator Module
         narrator_title: "Gautam's Voice Narrator",
@@ -54,7 +55,7 @@ window.PORTFOLIO_TRANSLATIONS = {
         narrator_voice_female: "Female Voice",
         narrator_play_title: "Play Story Narration",
         narrator_stop_title: "Stop Story Narration",
-        narrator_script: "Hello and welcome! I'm Gautam Kumar Maurya, and I'm thrilled to have you here. Currently, I'm pursuing my B.Tech in Computer Science and Engineering at the United Institute of Technology, Prayagraj, specializing in Data Science. My passion lies in engineering intelligent, scalable systems that solve real-world problems. Whether it's co-founding PrayagrajRooms to simplify student housing, contributing core code to the Wikimedia Foundation, or developing local-first offline tools like PDFBAZI, I love bridging technical logic with human-centric impact. Feel free to explore my projects, browse my LinkedIn updates, or strike up a conversation with my AI Twin in the chat box below!",
+        narrator_script: "Hello and welcome! I'm Gautam Kumar Maurya (gkm563), a Full-Stack AI Engineer, Cyber Security Researcher, and Data Scientist. I am an Academic Topper at United Institute of Technology, holding 1st Rank in my CSE Data Science branch and 5th Rank across the college in 1st year. I specialize in building secure web applications with minimal vulnerability, helping startup founders launch products live to market, and contributing to open source ecosystems with 15 plus merged patches. I also serve as Founder of CDN UIT, Vice President of GFG UIT, Co-Lead of HackerRank UIT, and Technical Head of E-Cell UIT. Explore my live work, projects like PrayagrajRooms, or connect with me directly!",
 
         // Technical Arsenal Section
         skills_title: "Technical Arsenal",
