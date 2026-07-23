@@ -5,35 +5,35 @@
   <!-- ===== Portfolio Home ===== -->
   <url>
     <loc>https://gkm563.github.io/</loc>
-    <lastmod>2026-07-07</lastmod>
-    <changefreq>weekly</changefreq>
+    <lastmod>2026-07-23</lastmod>
+    <changefreq>daily</changefreq>
     <priority>1.0</priority>
     <image:image>
       <image:loc>https://gkm563.github.io/assets/images/profile/Gautam_Kumar_Maurya.jpg</image:loc>
-      <image:title>Gautam Kumar Maurya — Portfolio</image:title>
-      <image:caption>Official profile photo of Gautam Kumar Maurya (GKM563), B.Tech CSE Data Science student at United Institute of Technology, Prayagraj.</image:caption>
+      <image:title>Gautam Kumar Maurya — Full-Stack AI Engineer Portfolio</image:title>
+      <image:caption>Official profile photo of Gautam Kumar Maurya (gkm563), Full-Stack AI Engineer, Data Scientist & Academic Topper at United Institute of Technology, Prayagraj.</image:caption>
     </image:image>
   </url>
 
   <!-- ===== UP Police Cyber Security Internship ===== -->
   <url>
     <loc>https://gkm563.github.io/up-police-internship.html</loc>
-    <lastmod>2026-07-07</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
+    <lastmod>2026-07-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
     <image:image>
       <image:loc>https://gkm563.github.io/assets/images/profile/Gautam_Kumar_Maurya.jpg</image:loc>
-      <image:title>Gautam Kumar Maurya at APCSIP-2026</image:title>
-      <image:caption>Gautam Kumar Maurya during the Amroha Police Cyber Security Internship Program 2026 (APCSIP-2026), Uttar Pradesh.</image:caption>
+      <image:title>Gautam Kumar Maurya — Best Content Creator Award by DSP Anjali Kataria (APCSIP-2026)</image:title>
+      <image:caption>Gautam Kumar Maurya during the UP Police x Amroha Police Cyber Security Internship Program 2026 (APCSIP-2026).</image:caption>
     </image:image>
   </url>
 
   <!-- ===== AIT Bangkok Global Innovation Internship ===== -->
   <url>
     <loc>https://gkm563.github.io/ait-global-innovation-internship.html</loc>
-    <lastmod>2026-07-16</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
+    <lastmod>2026-07-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
     <image:image>
       <image:loc>https://gkm563.github.io/assets/images/ait-bangkok/Asian_Institute_of_Technology-Logo.png</image:loc>
       <image:title>Asian Institute of Technology (AIT), Bangkok — GIIP-2026</image:title>
@@ -49,9 +49,14 @@
   <!-- ===== Open Source Contributions ===== -->
   <url>
     <loc>https://gkm563.github.io/open-source-contributions.html</loc>
-    <lastmod>2026-07-16</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
+    <lastmod>2026-07-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+    <image:image>
+      <image:loc>https://gkm563.github.io/assets/images/profile/Gautam_Kumar_Maurya.jpg</image:loc>
+      <image:title>Gautam Kumar Maurya — Open Source Contributions (Wikimedia & WikiClub India)</image:title>
+      <image:caption>Gautam Kumar Maurya open source contributions across Wikimedia Gerrit, GitLab, Translatewiki, and GitHub.</image:caption>
+    </image:image>
   </url>
 
 </urlset>

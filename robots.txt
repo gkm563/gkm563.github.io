@@ -1,9 +1,21 @@
 User-agent: *
 Allow: /
 
-# Block specific crawlers from heavy asset directories
+# Bot Directives
+User-agent: Googlebot
+Allow: /
+
 User-agent: Googlebot-Image
 Allow: /assets/images/
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+# Host specification
+Host: https://gkm563.github.io
 
 # Sitemap location
 Sitemap: https://gkm563.github.io/sitemap.xml
