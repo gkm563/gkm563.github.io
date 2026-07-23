@@ -6,5 +6,4 @@ User-agent: Googlebot-Image
 Allow: /assets/images/
 
 # Sitemap location
-Sitemap: https://gkm563.dev/sitemap.xml
 Sitemap: https://gkm563.github.io/sitemap.xml
