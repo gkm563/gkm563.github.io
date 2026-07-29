@@ -875,65 +875,77 @@ a {
   transition: all 0.2s ease;
 }
 
-.project-pill:hover {
-  background: rgba(56, 189, 248, 0.25);
-  transform: translateY(-2px);
-}
-  background: rgba(255, 255, 255, 0.1);
-  color: #94A3B8;
-  font-size: var(--fs-caption);
-}
-
 /* ═══════════════════════════════════════
    MENTORS SECTION
    ═══════════════════════════════════════ */
 .mentors-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 24px;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 28px;
+}
+
+@media (min-width: 1024px) {
+  .mentors-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
 }
 
 .mentor-card {
   background: var(--color-bg);
   border: 1px solid var(--color-border);
   border-radius: 24px;
-  padding: 24px;
+  padding: 28px 20px;
   text-align: center;
   box-shadow: var(--shadow-sm);
-  transition: all 0.3s ease;
+  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  height: 100%;
 }
 
 .mentor-card:hover {
-  transform: translateY(-6px);
+  transform: translateY(-8px);
   border-color: var(--color-accent);
-  box-shadow: var(--shadow-xl);
+  box-shadow: 0 16px 32px -8px rgba(37, 99, 235, 0.18);
 }
 
 .mentor-photo {
-  width: 90px;
-  height: 90px;
+  width: 96px;
+  height: 96px;
   border-radius: 50%;
   object-fit: cover;
-  margin: 0 auto 16px auto;
+  margin: 0 auto 18px auto;
   border: 3px solid var(--color-accent-light);
+  box-shadow: 0 4px 14px rgba(37, 99, 235, 0.15);
+  transition: all 0.3s ease;
+}
+
+.mentor-card:hover .mentor-photo {
+  transform: scale(1.06);
+  border-color: var(--color-accent);
 }
 
 .mentor-name {
   font-size: var(--fs-title);
   font-weight: 700;
-  margin-bottom: 4px;
+  color: var(--color-primary);
+  margin-bottom: 6px;
 }
 
 .mentor-designation {
   font-size: var(--fs-caption);
-  font-weight: 600;
+  font-weight: 700;
   color: var(--color-accent);
   margin-bottom: 8px;
+  line-height: 1.4;
 }
 
 .mentor-dept {
   font-size: var(--fs-caption);
   color: var(--color-text-muted);
+  line-height: 1.4;
 }
 
 /* ═══════════════════════════════════════
