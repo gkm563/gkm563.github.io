@@ -49,6 +49,23 @@ document.addEventListener('DOMContentLoaded', () => {
   if (mobileToggle && mainNav) {
     mobileToggle.addEventListener('click', () => {
       mainNav.classList.toggle('active');
+      const icon = mobileToggle.querySelector('i');
+      if (icon) {
+        if (mainNav.classList.contains('active')) {
+          icon.className = 'fa-solid fa-xmark';
+        } else {
+          icon.className = 'fa-solid fa-bars';
+        }
+      }
+    });
+
+    const drawerLinks = mainNav.querySelectorAll('.nav-link');
+    drawerLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        mainNav.classList.remove('active');
+        const icon = mobileToggle.querySelector('i');
+        if (icon) icon.className = 'fa-solid fa-bars';
+      });
     });
   }
 
