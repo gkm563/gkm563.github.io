@@ -1,6 +1,7 @@
 /**
  * APCSIP-2026: AMROHA POLICE CYBER SECURITY INTERNSHIP CONTROLLER
- * Handles scrollspy active states, progress bar, gallery filter, lightbox viewer modal
+ * Handles scrollspy active states, progress bar, gallery filter, lightbox viewer modal,
+ * GSAP ScrollTrigger reveals, 3D perspective card tilt, and magnetic button pull.
  */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -97,4 +98,120 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
   });
+
+  // 6. 3D Perspective Card Tilt
+  init3DTiltCards();
+
+  // 7. GSAP Animations & Section Reveals
+  initGSAPAnimations();
+
+  // 8. Magnetic Button Hover Pull
+  initMagneticButtons();
 });
+
+/* 3D Perspective Card Tilt */
+function init3DTiltCards() {
+  const cards = document.querySelectorAll('.ops-card, .domain-card, .pipeline-card, .stat-cyber-card, .floating-badge');
+
+  cards.forEach(card => {
+    card.addEventListener('mousemove', (e) => {
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+
+      const centerX = rect.width / 2;
+      const centerY = rect.height / 2;
+
+      const rotateX = ((y - centerY) / centerY) * -5;
+      const rotateY = ((x - centerX) / centerX) * 5;
+
+      card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-4px)`;
+    });
+
+    card.addEventListener('mouseleave', () => {
+      card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) translateY(0px)';
+    });
+  });
+}
+
+/* GSAP Animations & Section Reveals */
+function initGSAPAnimations() {
+  if (typeof gsap === 'undefined') return;
+
+  if (typeof ScrollTrigger !== 'undefined') {
+    gsap.registerPlugin(ScrollTrigger);
+  }
+
+  // Hero Section Entrance Timeline
+  const heroTL = gsap.timeline({ defaults: { ease: 'power3.out', duration: 0.8 } });
+  heroTL.from('.gov-badge', { y: 20, opacity: 0, delay: 0.1, clearProps: 'all' })
+        .from('.hero-title', { y: 25, opacity: 0, clearProps: 'all' }, '-=0.5')
+        .from('.hero-subtitle', { y: 15, opacity: 0, clearProps: 'all' }, '-=0.5')
+        .from('.hero-actions', { y: 15, opacity: 0, clearProps: 'all' }, '-=0.5')
+        .from('.floating-badge', { scale: 0.85, opacity: 0, stagger: 0.1, clearProps: 'all' }, '-=0.6');
+
+  // Fail-safe Section Reveal using ScrollTrigger
+  const sections = document.querySelectorAll('section[id]');
+
+  sections.forEach(sec => {
+    if (!sec || sec.id === 'hero') return;
+
+    if (typeof ScrollTrigger !== 'undefined') {
+      ScrollTrigger.create({
+        trigger: sec,
+        start: 'top 90%',
+        onEnter: () => {
+          const cards = sec.querySelectorAll('.pipeline-card, .domain-card, .ops-card, .gallery-item, .officer-card');
+          if (cards.length > 0) {
+            gsap.from(cards, {
+              y: 30,
+              opacity: 0,
+              duration: 0.6,
+              stagger: 0.06,
+              ease: 'power2.out',
+              clearProps: 'all'
+            });
+          }
+        },
+        once: true
+      });
+    }
+  });
+
+  if (typeof ScrollTrigger !== 'undefined') {
+    setTimeout(() => {
+      ScrollTrigger.refresh();
+    }, 150);
+  }
+}
+
+/* Magnetic Button Hover Interaction */
+function initMagneticButtons() {
+  if (typeof gsap === 'undefined') return;
+
+  const magneticBtns = document.querySelectorAll('.btn-cyber-primary, .btn-cyber-secondary, .back-home-btn');
+
+  magneticBtns.forEach(btn => {
+    btn.addEventListener('mousemove', (e) => {
+      const rect = btn.getBoundingClientRect();
+      const x = e.clientX - rect.left - rect.width / 2;
+      const y = e.clientY - rect.top - rect.height / 2;
+
+      gsap.to(btn, {
+        x: x * 0.22,
+        y: y * 0.22,
+        duration: 0.3,
+        ease: 'power2.out'
+      });
+    });
+
+    btn.addEventListener('mouseleave', () => {
+      gsap.to(btn, {
+        x: 0,
+        y: 0,
+        duration: 0.5,
+        ease: 'elastic.out(1, 0.4)'
+      });
+    });
+  });
+}
