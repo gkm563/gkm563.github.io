@@ -135,79 +135,49 @@ function initGSAPAnimations() {
   }
 
   // Hero Section Entrance Timeline
-  const heroTL = gsap.timeline({ defaults: { ease: 'power3.out', duration: 0.9 } });
-  heroTL.from('.hero-badge', { y: 20, opacity: 0, delay: 0.1 })
-        .from('.hero-title', { y: 30, opacity: 0 }, '-=0.6')
-        .from('.hero-subtitle', { y: 20, opacity: 0 }, '-=0.6')
-        .from('.hero-actions', { y: 20, opacity: 0 }, '-=0.6')
-        .from('.hero-live-status', { y: 15, opacity: 0 }, '-=0.6')
-        .from('.floating-badge', { scale: 0.8, opacity: 0, stagger: 0.12 }, '-=0.8')
-        .from('.metric-card', { y: 30, opacity: 0, stagger: 0.08 }, '-=0.6');
+  const heroTL = gsap.timeline({ defaults: { ease: 'power3.out', duration: 0.8 } });
+  heroTL.from('.hero-badge', { y: 20, opacity: 0, delay: 0.1, clearProps: 'all' })
+        .from('.hero-title', { y: 25, opacity: 0, clearProps: 'all' }, '-=0.5')
+        .from('.hero-subtitle', { y: 15, opacity: 0, clearProps: 'all' }, '-=0.5')
+        .from('.hero-actions', { y: 15, opacity: 0, clearProps: 'all' }, '-=0.5')
+        .from('.hero-live-status', { y: 15, opacity: 0, clearProps: 'all' }, '-=0.5')
+        .from('.floating-badge', { scale: 0.85, opacity: 0, stagger: 0.1, clearProps: 'all' }, '-=0.6')
+        .from('.metric-card', { y: 25, opacity: 0, stagger: 0.06, clearProps: 'all' }, '-=0.5');
 
-  // Section Headers ScrollTrigger Reveal
-  gsap.utils.toArray('.section-header').forEach(header => {
-    gsap.from(header, {
-      scrollTrigger: {
-        trigger: header,
-        start: 'top 85%',
-        toggleActions: 'play none none reverse'
-      },
-      y: 40,
-      opacity: 0,
-      duration: 0.8,
-      ease: 'power3.out'
-    });
+  // Fail-safe section reveal using ScrollTrigger without locking opacity:0
+  const sectionSelectors = ['#journey', '#recognition', '#contributions', '#ecosystem', '#community', '#gallery', '#future'];
+
+  sectionSelectors.forEach(secId => {
+    const secEl = document.querySelector(secId);
+    if (!secEl) return;
+
+    if (typeof ScrollTrigger !== 'undefined') {
+      ScrollTrigger.create({
+        trigger: secEl,
+        start: 'top 90%',
+        onEnter: () => {
+          const cards = secEl.querySelectorAll('.journey-card, .recog-card, .contrib-card, .gallery-item');
+          if (cards.length > 0) {
+            gsap.from(cards, {
+              y: 30,
+              opacity: 0,
+              duration: 0.6,
+              stagger: 0.06,
+              ease: 'power2.out',
+              clearProps: 'all'
+            });
+          }
+        },
+        once: true
+      });
+    }
   });
 
-  // Storytelling Journey Cards Stagger
-  gsap.from('.journey-card', {
-    scrollTrigger: {
-      trigger: '#journey',
-      start: 'top 75%'
-    },
-    y: 40,
-    opacity: 0,
-    duration: 0.8,
-    stagger: 0.1,
-    ease: 'power3.out'
-  });
-
-  // Recognition Banner & Cards Stagger
-  gsap.from('.recognition-banner', {
-    scrollTrigger: {
-      trigger: '#recognition',
-      start: 'top 80%'
-    },
-    scale: 0.96,
-    opacity: 0,
-    duration: 0.8,
-    ease: 'power3.out'
-  });
-
-  gsap.from('.recog-card', {
-    scrollTrigger: {
-      trigger: '.recognition-grid',
-      start: 'top 80%'
-    },
-    y: 35,
-    opacity: 0,
-    duration: 0.8,
-    stagger: 0.1,
-    ease: 'power3.out'
-  });
-
-  // Key Contributions Archive Cards Stagger
-  gsap.from('.contrib-card', {
-    scrollTrigger: {
-      trigger: '.contrib-grid',
-      start: 'top 85%'
-    },
-    y: 35,
-    opacity: 0,
-    duration: 0.8,
-    stagger: 0.08,
-    ease: 'power3.out'
-  });
+  if (typeof ScrollTrigger !== 'undefined') {
+    setTimeout(() => {
+      ScrollTrigger.refresh();
+    }, 150);
+  }
 }
 
 /* Magnetic Button Hover Interaction */
