@@ -70,25 +70,39 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // 4. Scrollspy Active Section Highlighting
-  const navLinks = document.querySelectorAll('.nav-link');
+  const navLinks = document.querySelectorAll('.main-nav .nav-link');
   const sections = document.querySelectorAll('section[id]');
 
-  window.addEventListener('scroll', () => {
+  const updateScrollspy = () => {
     let currentId = '';
+    const scrollPosition = window.scrollY + 140;
+
     sections.forEach(sec => {
-      const top = sec.offsetTop - 120;
-      if (window.scrollY >= top) {
+      const top = sec.offsetTop;
+      const height = sec.offsetHeight;
+      if (scrollPosition >= top && scrollPosition < top + height) {
         currentId = sec.getAttribute('id');
       }
     });
 
+    // Fallback for top of page if before first section or at hero
+    if (!currentId && window.scrollY < 300 && sections.length > 0) {
+      currentId = 'hero';
+    }
+
     navLinks.forEach(link => {
       link.classList.remove('active');
-      if (link.getAttribute('href') === `#${currentId}`) {
+      const href = link.getAttribute('href');
+      if (href === `#${currentId}`) {
         link.classList.add('active');
       }
     });
-  });
+  };
+
+  window.addEventListener('scroll', updateScrollspy, { passive: true });
+  window.addEventListener('resize', updateScrollspy);
+  window.addEventListener('hashchange', updateScrollspy);
+  updateScrollspy();
 
   // 5. Hero Particle Canvas Animation
   initNetworkCanvas();

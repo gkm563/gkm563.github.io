@@ -219,37 +219,45 @@ a:hover {
   padding: 0;
 }
 
-.main-nav .nav-link {
+.main-header .main-nav .nav-link {
   font-size: 13px;
   font-weight: 600;
   color: var(--color-muted);
   text-transform: uppercase;
-  letter-spacing: 0.03em;
-  padding: 6px 4px;
+  letter-spacing: 0.04em;
+  padding: 8px 10px;
   position: relative;
   white-space: nowrap;
-  transition: color 0.25s ease;
+  transition: all 0.25s ease;
+  display: inline-block;
+  text-decoration: none;
 }
 
-.main-nav .nav-link:hover, 
-.main-nav .nav-link.active {
+.main-header .main-nav .nav-link:hover, 
+.main-header .main-nav .nav-link.active {
   color: var(--color-primary);
+  font-weight: 700;
 }
 
-.main-nav .nav-link::after {
+.main-header .main-nav .nav-link::after {
   content: '';
   position: absolute;
   bottom: 0;
-  left: 0;
+  left: 50%;
+  transform: translateX(-50%);
   width: 0;
-  height: 2px;
+  height: 3px;
   background: var(--color-primary);
-  transition: width 0.25s ease;
+  border-radius: 99px;
+  opacity: 0;
+  transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.25s ease;
+  box-shadow: 0 2px 8px rgba(37, 99, 235, 0.4);
 }
 
-.main-nav .nav-link:hover::after, 
-.main-nav .nav-link.active::after {
-  width: 100%;
+.main-header .main-nav .nav-link:hover::after, 
+.main-header .main-nav .nav-link.active::after {
+  width: 85%;
+  opacity: 1;
 }
 
 .header-actions {
