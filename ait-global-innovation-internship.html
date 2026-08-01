@@ -144,10 +144,53 @@
 
     <main>
         <!-- ═══════════════════════════════════════
-             1. HERO SECTION
+             1. HERO SECTION (WITH 3D FLOATING VISUALS)
         ═══════════════════════════════════════ -->
         <section id="hero" class="hero-section">
-            <div class="hero-content">
+            <div class="hero-mesh-glow"></div>
+
+            <!-- Floating 3D Visual Badges -->
+            <div class="floating-badge float-top-left">
+                <div class="floating-badge-icon" style="background: rgba(37, 99, 235, 0.15); color: #2563EB;">
+                    <i class="fa-solid fa-brain"></i>
+                </div>
+                <div>
+                    <div class="floating-badge-title">Agentic AI & LLMs</div>
+                    <div class="floating-badge-sub">Autonomous Workflows</div>
+                </div>
+            </div>
+
+            <div class="floating-badge float-top-right">
+                <div class="floating-badge-icon" style="background: rgba(16, 185, 129, 0.15); color: #10B981;">
+                    <i class="fa-solid fa-map-location-dot"></i>
+                </div>
+                <div>
+                    <div class="floating-badge-title">Ubiquitous GIS</div>
+                    <div class="floating-badge-sub">QGIS & Geo-Spatial Analysis</div>
+                </div>
+            </div>
+
+            <div class="floating-badge float-bottom-left">
+                <div class="floating-badge-icon" style="background: rgba(139, 92, 246, 0.15); color: #8B5CF6;">
+                    <i class="fa-solid fa-microchip"></i>
+                </div>
+                <div>
+                    <div class="floating-badge-title">IoT & Drone Sensors</div>
+                    <div class="floating-badge-sub">Telemetry & Robotics</div>
+                </div>
+            </div>
+
+            <div class="floating-badge float-bottom-right">
+                <div class="floating-badge-icon" style="background: rgba(245, 158, 11, 0.15); color: #F59E0B;">
+                    <i class="fa-solid fa-bus"></i>
+                </div>
+                <div>
+                    <div class="floating-badge-title">BusSetu Platform</div>
+                    <div class="floating-badge-sub">Transit Case Study</div>
+                </div>
+            </div>
+
+            <div class="hero-content" style="position: relative; z-index: 2;">
                 <div class="hero-institution-badge">
                     <i class="fa-solid fa-earth-asia"></i>
                     <span>Asian Institute of Technology · Bangkok, Thailand</span>
@@ -179,6 +222,11 @@
                         <span>View BusSetu Case Study</span>
                         <i class="fa-solid fa-laptop-code"></i>
                     </a>
+                </div>
+
+                <div class="hero-live-status">
+                    <span class="status-dot-live"></span>
+                    <span><strong>Live Status:</strong> GIIP-2026 International Research Fellow · AIT Bangkok, Thailand · Gautam Kumar Maurya</span>
                 </div>
 
                 <a href="#overview" class="scroll-indicator" aria-label="Scroll to Explore">
