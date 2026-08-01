@@ -232,4 +232,127 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
   }
+
+  // --------------------------------------------------
+  // 8. 3D Perspective Card Tilt
+  // --------------------------------------------------
+  init3DTiltCards();
+
+  // --------------------------------------------------
+  // 9. GSAP ScrollTrigger Reveals
+  // --------------------------------------------------
+  initGSAPAnimations();
+
+  // --------------------------------------------------
+  // 10. Magnetic Button Interactions
+  // --------------------------------------------------
+  initMagneticButtons();
 });
+
+/* 3D Perspective Card Tilt */
+function init3DTiltCards() {
+  const cards = document.querySelectorAll('.glass-card, .hover-elevate, .floating-badge');
+
+  cards.forEach(card => {
+    card.addEventListener('mousemove', (e) => {
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+
+      const centerX = rect.width / 2;
+      const centerY = rect.height / 2;
+
+      const rotateX = ((y - centerY) / centerY) * -4;
+      const rotateY = ((x - centerX) / centerX) * 4;
+
+      card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-4px)`;
+    });
+
+    card.addEventListener('mouseleave', () => {
+      card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) translateY(0px)';
+    });
+  });
+}
+
+/* GSAP ScrollTrigger Animations */
+function initGSAPAnimations() {
+  if (typeof gsap === 'undefined') return;
+
+  if (typeof ScrollTrigger !== 'undefined') {
+    gsap.registerPlugin(ScrollTrigger);
+  }
+
+  // Hero Section Entrance Timeline
+  const heroTL = gsap.timeline({ defaults: { ease: 'power3.out', duration: 0.8 } });
+  heroTL.from('.gradient-badge', { y: 20, opacity: 0, delay: 0.1, clearProps: 'all' })
+        .from('#hero h1', { y: 25, opacity: 0, clearProps: 'all' }, '-=0.5')
+        .from('#hero p', { y: 15, opacity: 0, clearProps: 'all' }, '-=0.5')
+        .from('#hero .flex-wrap', { y: 15, opacity: 0, clearProps: 'all' }, '-=0.5')
+        .from('.floating-badge', { scale: 0.85, opacity: 0, stagger: 0.1, clearProps: 'all' }, '-=0.6');
+
+  // Fail-safe Section Reveal using ScrollTrigger
+  const sectionSelectors = ['#about', '#skills', '#projects', '#experience', '#leadership', '#achievements', '#technical-focus', '#contact'];
+
+  sectionSelectors.forEach(secId => {
+    const secEl = document.querySelector(secId);
+    if (!secEl) return;
+
+    if (typeof ScrollTrigger !== 'undefined') {
+      ScrollTrigger.create({
+        trigger: secEl,
+        start: 'top 90%',
+        onEnter: () => {
+          const cards = secEl.querySelectorAll('.glass-card, .project-item-card, .skill-category-card');
+          if (cards.length > 0) {
+            gsap.from(cards, {
+              y: 30,
+              opacity: 0,
+              duration: 0.6,
+              stagger: 0.06,
+              ease: 'power2.out',
+              clearProps: 'all'
+            });
+          }
+        },
+        once: true
+      });
+    }
+  });
+
+  if (typeof ScrollTrigger !== 'undefined') {
+    setTimeout(() => {
+      ScrollTrigger.refresh();
+    }, 150);
+  }
+}
+
+/* Magnetic Button Hover Interaction */
+function initMagneticButtons() {
+  if (typeof gsap === 'undefined') return;
+
+  const magneticBtns = document.querySelectorAll('a.bg-blue-600, button.bg-blue-600, a.bg-emerald-600, a.bg-sky-600');
+
+  magneticBtns.forEach(btn => {
+    btn.addEventListener('mousemove', (e) => {
+      const rect = btn.getBoundingClientRect();
+      const x = e.clientX - rect.left - rect.width / 2;
+      const y = e.clientY - rect.top - rect.height / 2;
+
+      gsap.to(btn, {
+        x: x * 0.22,
+        y: y * 0.22,
+        duration: 0.3,
+        ease: 'power2.out'
+      });
+    });
+
+    btn.addEventListener('mouseleave', () => {
+      gsap.to(btn, {
+        x: 0,
+        y: 0,
+        duration: 0.5,
+        ease: 'elastic.out(1, 0.4)'
+      });
+    });
+  });
+}
