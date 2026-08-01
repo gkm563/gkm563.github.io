@@ -111,7 +111,6 @@
                     <li><a href="#journey" class="nav-link">Journey</a></li>
                     <li><a href="#recognition" class="nav-link">Recognized</a></li>
                     <li><a href="#contributions" class="nav-link">Contributions</a></li>
-                    <li><a href="#production" class="nav-link">Production</a></li>
                     <li><a href="#ecosystem" class="nav-link">Ecosystem</a></li>
                     <li><a href="#community" class="nav-link">Community</a></li>
                     <li><a href="#gallery" class="nav-link">Gallery</a></li>
@@ -193,29 +192,61 @@
 
                 <!-- Hero Metrics Dashboard -->
                 <div class="hero-stats-grid">
-                    <div class="metric-card">
+                    <!-- Stat 1: Submissions -->
+                    <div class="metric-card numeric-card blue-theme">
                         <div class="metric-num blue" data-target="30+">30+</div>
                         <div class="metric-label">Contributions Submitted</div>
+                        <div class="metric-sublabel">Gerrit · GitLab · GitHub</div>
                     </div>
-                    <div class="metric-card">
+
+                    <!-- Stat 2: Merged -->
+                    <div class="metric-card numeric-card green-theme">
                         <div class="metric-num green" data-target="15+">15+</div>
                         <div class="metric-label">Merged to Production</div>
+                        <div class="metric-sublabel">Deployed Globally</div>
                     </div>
-                    <div class="metric-card">
+
+                    <!-- Stat 3: Recognized -->
+                    <div class="metric-card numeric-card gold-theme">
                         <div class="metric-num gold" data-target="5">5</div>
                         <div class="metric-label">Officially Recognized</div>
+                        <div class="metric-sublabel">IIIT Hyderabad Report</div>
                     </div>
-                    <div class="metric-card">
-                        <div class="metric-num blue">Featured</div>
-                        <div class="metric-label">WikiClub Tech India</div>
+
+                    <!-- Feature Card 1: WikiClub Tech India -->
+                    <div class="metric-card feature-badge-card feature-purple">
+                        <div class="feature-card-header">
+                            <div class="feature-icon-box purple"><i class="fa-solid fa-award"></i></div>
+                            <span class="feature-pill-badge purple">Technical Impact</span>
+                        </div>
+                        <div class="feature-card-body">
+                            <h4 class="feature-card-title">WikiClub Tech India</h4>
+                            <p class="feature-card-desc">Featured in Technical Impact Report by OKI, IIIT Hyderabad</p>
+                        </div>
                     </div>
-                    <div class="metric-card">
-                        <div class="metric-num green">Global</div>
-                        <div class="metric-label">Production Impact</div>
+
+                    <!-- Feature Card 2: Global Scale -->
+                    <div class="metric-card feature-badge-card feature-teal">
+                        <div class="feature-card-header">
+                            <div class="feature-icon-box teal"><i class="fa-solid fa-earth-americas"></i></div>
+                            <span class="feature-pill-badge teal">Production Scale</span>
+                        </div>
+                        <div class="feature-card-body">
+                            <h4 class="feature-card-title">Global Wikipedia Reach</h4>
+                            <p class="feature-card-desc">Live production code across 300+ Wikipedia language projects</p>
+                        </div>
                     </div>
-                    <div class="metric-card">
-                        <div class="metric-num gold">MediaWiki</div>
-                        <div class="metric-label">Core Developer</div>
+
+                    <!-- Feature Card 3: MediaWiki Core -->
+                    <div class="metric-card feature-badge-card feature-blue">
+                        <div class="feature-card-header">
+                            <div class="feature-icon-box blue"><i class="fa-brands fa-wikipedia-w"></i></div>
+                            <span class="feature-pill-badge blue">Core Contributor</span>
+                        </div>
+                        <div class="feature-card-body">
+                            <h4 class="feature-card-title">MediaWiki Engineering</h4>
+                            <p class="feature-card-desc">Core Engine, MinervaNeue, Pywikibot & Wikifunctions</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -619,46 +650,7 @@
         </section>
 
         <!-- ═══════════════════════════════════════
-             5. PRODUCTION IMPACT & TERMINAL SIMULATOR
-        ═══════════════════════════════════════ -->
-        <section id="production" class="section">
-            <div class="container">
-                <div class="section-header">
-                    <span class="section-tag">Enterprise CI/CD Workflow</span>
-                    <h2 class="section-title">Gerrit Review & Production Pipeline</h2>
-                    <p class="section-desc">Experience how patches move from local developer environments through Gerrit review, Jenkins CI, and maintainer Code-Review +2 to production deployment across Wikipedia language editions.</p>
-                </div>
-
-                <div class="terminal-wrapper">
-                    <div class="terminal-header">
-                        <div class="terminal-dots">
-                            <span class="dot dot-red"></span>
-                            <span class="dot dot-yellow"></span>
-                            <span class="dot dot-green"></span>
-                        </div>
-                        <span class="terminal-title">gkm563@wikimedia-dev:~/extensions/GrowthExperiments</span>
-                        <i class="fa-solid fa-terminal" style="color: #94A3B8;"></i>
-                    </div>
-
-                    <div class="terminal-body" id="terminal-screen">
-                        <div class="term-line term-output">Wikimedia Gerrit Pipeline Simulator initialized.</div>
-                        <div class="term-line term-output">Click "Run Gerrit Simulation" to execute the patch verification and deployment process.</div>
-                    </div>
-
-                    <div class="terminal-actions">
-                        <button class="term-action-btn" id="term-run-btn">
-                            <i class="fa-solid fa-play"></i> Run Gerrit Simulation
-                        </button>
-                        <button class="term-action-btn secondary" id="term-clear-btn">
-                            <i class="fa-solid fa-eraser"></i> Clear Terminal
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- ═══════════════════════════════════════
-             6. WIKIMEDIA ECOSYSTEM MATRIX
+             5. WIKIMEDIA ECOSYSTEM MATRIX
         ═══════════════════════════════════════ -->
         <section id="ecosystem" class="section section-alt">
             <div class="container">
@@ -703,7 +695,7 @@
         </section>
 
         <!-- ═══════════════════════════════════════
-             7. COMMUNITY & MENTORSHIP
+             6. COMMUNITY & MENTORSHIP
         ═══════════════════════════════════════ -->
         <section id="community" class="section">
             <div class="container">
@@ -736,7 +728,7 @@
         </section>
 
         <!-- ═══════════════════════════════════════
-             8. EVIDENCE & MOMENTS GALLERY
+             7. EVIDENCE & MOMENTS GALLERY
         ═══════════════════════════════════════ -->
         <section id="gallery" class="section section-alt">
             <div class="container">
@@ -775,7 +767,7 @@
         </section>
 
         <!-- ═══════════════════════════════════════
-             9. FUTURE ROADMAP
+             8. FUTURE ROADMAP
         ═══════════════════════════════════════ -->
         <section id="future" class="section">
             <div class="container">
@@ -833,7 +825,7 @@
                         <li><a href="#journey">Journey</a></li>
                         <li><a href="#recognition">Recognition</a></li>
                         <li><a href="#contributions">Contributions</a></li>
-                        <li><a href="#production">Production</a></li>
+                        <li><a href="#ecosystem">Ecosystem</a></li>
                     </ul>
                 </div>
                 <div>

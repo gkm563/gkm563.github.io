@@ -93,16 +93,13 @@ document.addEventListener('DOMContentLoaded', () => {
   // 5. Hero Particle Canvas Animation
   initNetworkCanvas();
 
-  // 6. Gerrit Review Terminal Simulator
-  initTerminalSimulator();
-
-  // 7. Contributions Category Filtering
+  // 6. Contributions Category Filtering
   initContributionsFilter();
 
-  // 8. Gallery Lightbox Modal
+  // 7. Gallery Lightbox Modal
   initLightboxModal();
 
-  // 9. Stats CountUp Animation
+  // 8. Stats CountUp Animation
   initStatsCountUp();
 });
 
@@ -180,77 +177,6 @@ function initNetworkCanvas() {
     width = canvas.width = canvas.offsetWidth;
     height = canvas.height = canvas.offsetHeight;
   });
-}
-
-/* Terminal Simulator */
-function initTerminalSimulator() {
-  const terminalScreen = document.getElementById('terminal-screen');
-  const runBtn = document.getElementById('term-run-btn');
-  const clearBtn = document.getElementById('term-clear-btn');
-  if (!terminalScreen || !runBtn) return;
-
-  const simulationLines = [
-    { type: 'input', text: 'git status' },
-    { type: 'output', text: 'On branch master\nYour branch is up to date with \'origin/master\'.\nChanges not staged for commit:\n\tmodified:   extensions/GrowthExperiments/MentorshipExceptions.php' },
-    { type: 'input', text: 'git diff' },
-    { type: 'output', text: 'diff --git a/MentorshipExceptions.php b/MentorshipExceptions.php\n- throw new MentorshipException( "No mentor found." );\n+ throw new MentorshipException( "No mentor found for user.", $genderSupport );' },
-    { type: 'input', text: 'git commit -m "T416226: Add gender support to mentored exception message"' },
-    { type: 'output', text: '[master 416226a] T416226: Add gender support to mentored exception message\n 1 file changed, 2 insertions(+), 1 deletion(-)' },
-    { type: 'input', text: 'git review' },
-    { type: 'output', text: 'Pushing patchset to gerrit.wikimedia.org:refs/for/master...\nNew Change created: https://gerrit.wikimedia.org/r/c/mediawiki/extensions/GrowthExperiments/+/1289010' },
-    { type: 'success', text: '[Wikimedia CI Runner] Unit tests & PHPStan validation: PASSED (+1)' },
-    { type: 'warning', text: 'Reviewer (MediaWiki Maintainer): Code-Review +2 (Looks clean and compliant!)' },
-    { type: 'success', text: 'Change MERGED into MediaWiki production branch! Deployed to Wikipedia servers worldwide. 🎉' }
-  ];
-
-  let isRunning = false;
-
-  runBtn.addEventListener('click', () => {
-    if (isRunning) return;
-    isRunning = true;
-    runBtn.disabled = true;
-    terminalScreen.innerHTML = '';
-
-    let index = 0;
-    function printNextLine() {
-      if (index >= simulationLines.length) {
-        isRunning = false;
-        runBtn.disabled = false;
-        return;
-      }
-
-      const item = simulationLines[index];
-      const div = document.createElement('div');
-
-      if (item.type === 'input') {
-        div.className = 'term-line term-input';
-        div.textContent = item.text;
-      } else if (item.type === 'success') {
-        div.className = 'term-line term-success';
-        div.textContent = item.text;
-      } else if (item.type === 'warning') {
-        div.className = 'term-line term-warning';
-        div.textContent = item.text;
-      } else {
-        div.className = 'term-line term-output';
-        div.textContent = item.text;
-      }
-
-      terminalScreen.appendChild(div);
-      terminalScreen.scrollTop = terminalScreen.scrollHeight;
-      index++;
-
-      setTimeout(printNextLine, 800);
-    }
-
-    printNextLine();
-  });
-
-  if (clearBtn) {
-    clearBtn.addEventListener('click', () => {
-      terminalScreen.innerHTML = '<div class="term-line term-output">Terminal initialized. Click "Run Gerrit Simulation" to start.</div>';
-    });
-  }
 }
 
 /* Contributions Filter */
