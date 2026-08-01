@@ -34,12 +34,12 @@
   --color-muted: #64748B;
   --color-text: #111827;
   
-  /* Typography Scale */
-  --fs-hero: 64px;
-  --fs-h1: 48px;
-  --fs-h2: 36px;
-  --fs-h3: 28px;
-  --fs-sub: 22px;
+  /* Fluid Typography Scale */
+  --fs-hero: clamp(34px, 5.2vw, 64px);
+  --fs-h1: clamp(28px, 4vw, 48px);
+  --fs-h2: clamp(24px, 3vw, 36px);
+  --fs-h3: clamp(20px, 2.2vw, 28px);
+  --fs-sub: clamp(18px, 1.8vw, 22px);
   --fs-lead: 18px;
   --fs-body: 16px;
   --fs-caption: 14px;
@@ -1564,11 +1564,28 @@ a:hover {
 }
 
 @media (max-width: 640px) {
-  :root {
-    --fs-hero: 34px;
-    --fs-h1: 28px;
-    --fs-h2: 24px;
-    --fs-h3: 20px;
+  .hero-section {
+    padding: 70px 0 50px 0;
+  }
+
+  .container {
+    padding: 0 16px;
+  }
+
+  .hero-logos-row {
+    gap: 10px;
+  }
+
+  .hero-logo-box {
+    padding: 8px 12px;
+  }
+
+  .hero-logo-img {
+    height: 22px;
+  }
+
+  .hero-logo-label {
+    font-size: 12px;
   }
 
   .hero-actions {
@@ -1577,6 +1594,22 @@ a:hover {
   }
 
   .btn-primary, .btn-secondary {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .recognition-banner {
+    padding: 24px 16px;
+  }
+
+  .contrib-tab-switcher {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .contrib-tab-btn {
+    font-size: 12px;
+    padding: 6px 12px;
     width: 100%;
     justify-content: center;
   }

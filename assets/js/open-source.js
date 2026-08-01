@@ -118,7 +118,128 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // 9. 3D Perspective Tilt Cards
   init3DTiltCards();
+
+  // 10. GSAP ScrollTrigger Entrance Animations
+  initGSAPAnimations();
+
+  // 11. Magnetic Button Hover Pull
+  initMagneticButtons();
 });
+
+/* GSAP ScrollTrigger Animations */
+function initGSAPAnimations() {
+  if (typeof gsap === 'undefined') return;
+
+  if (typeof ScrollTrigger !== 'undefined') {
+    gsap.registerPlugin(ScrollTrigger);
+  }
+
+  // Hero Section Entrance Timeline
+  const heroTL = gsap.timeline({ defaults: { ease: 'power3.out', duration: 0.9 } });
+  heroTL.from('.hero-badge', { y: 20, opacity: 0, delay: 0.1 })
+        .from('.hero-title', { y: 30, opacity: 0 }, '-=0.6')
+        .from('.hero-subtitle', { y: 20, opacity: 0 }, '-=0.6')
+        .from('.hero-actions', { y: 20, opacity: 0 }, '-=0.6')
+        .from('.hero-live-status', { y: 15, opacity: 0 }, '-=0.6')
+        .from('.floating-badge', { scale: 0.8, opacity: 0, stagger: 0.12 }, '-=0.8')
+        .from('.metric-card', { y: 30, opacity: 0, stagger: 0.08 }, '-=0.6');
+
+  // Section Headers ScrollTrigger Reveal
+  gsap.utils.toArray('.section-header').forEach(header => {
+    gsap.from(header, {
+      scrollTrigger: {
+        trigger: header,
+        start: 'top 85%',
+        toggleActions: 'play none none reverse'
+      },
+      y: 40,
+      opacity: 0,
+      duration: 0.8,
+      ease: 'power3.out'
+    });
+  });
+
+  // Storytelling Journey Cards Stagger
+  gsap.from('.journey-card', {
+    scrollTrigger: {
+      trigger: '#journey',
+      start: 'top 75%'
+    },
+    y: 40,
+    opacity: 0,
+    duration: 0.8,
+    stagger: 0.1,
+    ease: 'power3.out'
+  });
+
+  // Recognition Banner & Cards Stagger
+  gsap.from('.recognition-banner', {
+    scrollTrigger: {
+      trigger: '#recognition',
+      start: 'top 80%'
+    },
+    scale: 0.96,
+    opacity: 0,
+    duration: 0.8,
+    ease: 'power3.out'
+  });
+
+  gsap.from('.recog-card', {
+    scrollTrigger: {
+      trigger: '.recognition-grid',
+      start: 'top 80%'
+    },
+    y: 35,
+    opacity: 0,
+    duration: 0.8,
+    stagger: 0.1,
+    ease: 'power3.out'
+  });
+
+  // Key Contributions Archive Cards Stagger
+  gsap.from('.contrib-card', {
+    scrollTrigger: {
+      trigger: '.contrib-grid',
+      start: 'top 85%'
+    },
+    y: 35,
+    opacity: 0,
+    duration: 0.8,
+    stagger: 0.08,
+    ease: 'power3.out'
+  });
+}
+
+/* Magnetic Button Hover Interaction */
+function initMagneticButtons() {
+  if (typeof gsap === 'undefined') return;
+
+  const magneticBtns = document.querySelectorAll('.btn-primary, .btn-secondary, .back-home-btn, .theme-toggle-btn');
+
+  magneticBtns.forEach(btn => {
+    btn.addEventListener('mousemove', (e) => {
+      const rect = btn.getBoundingClientRect();
+      const x = e.clientX - rect.left - rect.width / 2;
+      const y = e.clientY - rect.top - rect.height / 2;
+
+      gsap.to(btn, {
+        x: x * 0.22,
+        y: y * 0.22,
+        duration: 0.3,
+        ease: 'power2.out'
+      });
+    });
+
+    btn.addEventListener('mouseleave', () => {
+      gsap.to(btn, {
+        x: 0,
+        y: 0,
+        duration: 0.5,
+        ease: 'elastic.out(1, 0.4)'
+      });
+    });
+  });
+}
 
 /* 3D Perspective Tilt Card Interaction */
 function init3DTiltCards() {
