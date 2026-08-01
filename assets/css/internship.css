@@ -358,10 +358,11 @@ a:hover {
 .hero-section {
   position: relative;
   padding: 120px 0 80px 0;
-  background: radial-gradient(circle at 50% 30%, rgba(11, 18, 32, 0.9) 0%, rgba(5, 8, 22, 1) 100%);
+  background: var(--color-bg);
   text-align: center;
   overflow: hidden;
   border-bottom: 1px solid var(--color-border);
+  transition: background-color 0.3s ease;
 }
 
 /* Hero Ambient Mesh Glow */
@@ -388,16 +389,16 @@ a:hover {
 .floating-badge {
   position: absolute;
   z-index: 5;
-  background: rgba(11, 18, 32, 0.85);
+  background: var(--glass-bg);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(6, 182, 212, 0.25);
+  border: 1px solid var(--color-border);
   padding: 12px 18px;
   border-radius: 16px;
   display: flex;
   align-items: center;
   gap: 12px;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+  box-shadow: var(--shadow-cyber);
   animation: floatSlow 6s ease-in-out infinite alternate;
   pointer-events: auto;
   transition: transform 0.3s ease, border-color 0.3s ease;
@@ -433,7 +434,7 @@ a:hover {
 .floating-badge-title {
   font-size: 13px;
   font-weight: 700;
-  color: #FFFFFF;
+  color: var(--color-text);
   line-height: 1.2;
 }
 
@@ -453,12 +454,12 @@ a:hover {
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  background: rgba(11, 18, 32, 0.85);
-  border: 1px solid rgba(6, 182, 212, 0.3);
+  background: var(--glass-bg);
+  border: 1px solid var(--color-border);
   padding: 8px 20px;
   border-radius: 99px;
   font-size: 13px;
-  color: #E2E8F0;
+  color: var(--color-text);
   margin-top: 28px;
   backdrop-filter: blur(12px);
 }
@@ -542,15 +543,19 @@ a:hover {
 .hero-title {
   font-size: var(--fs-hero);
   font-weight: 800;
-  color: #FFFFFF;
+  color: var(--color-text);
   max-width: 1050px;
   margin: 0 auto 20px auto;
   line-height: 1.1;
   letter-spacing: -0.02em;
-  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.8);
 }
 
 .hero-title span {
+  background: linear-gradient(135deg, #0284C7 0%, #2563EB 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.dark .hero-title span, .dark-theme .hero-title span {
   background: linear-gradient(135deg, #38BDF8 0%, #60A5FA 50%, #FFFFFF 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -601,9 +606,9 @@ a:hover {
 .btn-cyber-secondary {
   padding: 16px 36px;
   border-radius: 12px;
-  background: rgba(11, 18, 32, 0.8);
+  background: var(--color-secondary);
   border: 1px solid var(--color-border);
-  color: #FFFFFF;
+  color: var(--color-text);
   font-family: var(--font-heading);
   font-size: var(--fs-lead);
   font-weight: 700;
@@ -615,7 +620,7 @@ a:hover {
 }
 
 .btn-cyber-secondary:hover {
-  background: rgba(17, 24, 39, 1);
+  background: var(--color-primary);
   border-color: var(--color-accent-cyan);
   transform: translateY(-3px);
   color: var(--color-accent-cyan);
@@ -662,7 +667,7 @@ a:hover {
 .stat-num {
   font-size: var(--fs-h1);
   font-weight: 800;
-  color: #FFFFFF;
+  color: var(--color-text);
   line-height: 1;
   margin-bottom: 6px;
   font-family: var(--font-mono);
@@ -690,7 +695,7 @@ a:hover {
 }
 
 .section-alt {
-  background: rgba(11, 18, 32, 0.4);
+  background: var(--color-secondary);
 }
 
 .section-header {
@@ -713,7 +718,7 @@ a:hover {
 .section-title {
   font-size: var(--fs-h1);
   font-weight: 800;
-  color: #FFFFFF;
+  color: var(--color-text);
   margin-bottom: 16px;
 }
 
@@ -763,7 +768,7 @@ a:hover {
 .pipeline-title {
   font-size: var(--fs-sub);
   font-weight: 700;
-  color: #FFFFFF;
+  color: var(--color-text);
   margin-bottom: 10px;
 }
 
@@ -838,7 +843,7 @@ a:hover {
 .domain-title {
   font-size: var(--fs-sub);
   font-weight: 700;
-  color: #FFFFFF;
+  color: var(--color-text);
   margin-bottom: 10px;
 }
 
@@ -961,7 +966,7 @@ a:hover {
 .ops-title {
   font-size: var(--fs-h3);
   font-weight: 800;
-  color: #FFFFFF;
+  color: var(--color-text);
 }
 
 .ops-grid {
@@ -977,7 +982,7 @@ a:hover {
 }
 
 .ops-session-box {
-  background: rgba(5, 8, 22, 0.6);
+  background: var(--color-secondary);
   border: 1px solid var(--color-border);
   border-radius: 16px;
   padding: 20px;
@@ -1136,7 +1141,7 @@ a:hover {
 .honor-title {
   font-size: var(--fs-sub);
   font-weight: 700;
-  color: #FFFFFF;
+  color: var(--color-text);
   margin-bottom: 8px;
 }
 
@@ -1200,7 +1205,7 @@ a:hover {
 .officer-name {
   font-size: var(--fs-sub);
   font-weight: 700;
-  color: #FFFFFF;
+  color: var(--color-text);
   margin-bottom: 4px;
 }
 
@@ -1241,7 +1246,7 @@ a:hover {
    CERTIFICATE DISPLAY FRAME
    ═══════════════════════════════════════ */
 .cert-frame-container {
-  background: linear-gradient(135deg, #0B1220 0%, #111827 100%);
+  background: var(--color-primary);
   border: 2px solid var(--color-border);
   border-radius: 28px;
   padding: 48px;
@@ -1279,7 +1284,7 @@ a:hover {
 .cert-title {
   font-size: var(--fs-h2);
   font-weight: 800;
-  color: #FFFFFF;
+  color: var(--color-text);
   margin-bottom: 12px;
 }
 
@@ -1430,7 +1435,7 @@ a:hover {
    PERSONAL REFLECTION CARD
    ═══════════════════════════════════════ */
 .reflection-card {
-  background: linear-gradient(135deg, #0B1220 0%, #111827 100%);
+  background: var(--color-primary);
   border: 1px solid var(--color-border);
   border-radius: 28px;
   padding: 48px;
@@ -1445,7 +1450,7 @@ a:hover {
 
 .reflection-body p {
   font-size: var(--fs-lead);
-  color: #E2E8F0;
+  color: var(--color-text);
   line-height: 1.8;
   margin-bottom: 24px;
 }
@@ -1478,7 +1483,7 @@ a:hover {
 .author-name {
   font-size: var(--fs-sub);
   font-weight: 700;
-  color: #FFFFFF;
+  color: var(--color-text);
 }
 
 .author-role {
@@ -1490,7 +1495,7 @@ a:hover {
    FOOTER SECTION
    ═══════════════════════════════════════ */
 .cyber-footer {
-  background: #02040A;
+  background: var(--color-secondary);
   border-top: 1px solid var(--color-border);
   padding: 80px 0 40px 0;
 }
@@ -1505,7 +1510,7 @@ a:hover {
 .footer-brand-title {
   font-size: var(--fs-h3);
   font-weight: 800;
-  color: #FFFFFF;
+  color: var(--color-text);
   margin-bottom: 14px;
 }
 
@@ -1518,7 +1523,7 @@ a:hover {
 .footer-col-title {
   font-size: var(--fs-caption);
   font-weight: 700;
-  color: #FFFFFF;
+  color: var(--color-text);
   text-transform: uppercase;
   letter-spacing: 0.1em;
   margin-bottom: 20px;
