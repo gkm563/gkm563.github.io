@@ -62,9 +62,49 @@
       }
     }
     </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Portfolio Home",
+          "item": "https://gkm563.github.io/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "AIT Bangkok GIIP Fellowship 2026",
+          "item": "https://gkm563.github.io/ait-global-innovation-internship.html"
+        }
+      ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfilePage",
+      "mainEntity": {
+        "@type": "Person",
+        "name": "Gautam Kumar Maurya",
+        "alternateName": ["gkm563", "GKM"],
+        "jobTitle": "AIT Bangkok GIIP International Research Fellow & Full-Stack Engineer",
+        "alumniOf": "United Institute of Technology (UIT), Prayagraj",
+        "sameAs": [
+          "https://github.com/gkm563",
+          "https://gitlab.com/gkm563",
+          "https://gkm563.github.io/"
+        ]
+      }
+    }
+    </script>
 </head>
 
 <body>
+    <!-- Top Scroll Progress Indicator Bar -->
+    <div class="scroll-progress" id="scroll-progress"></div>
 
     <!-- ═══════════════════════════════════════
          HEADER & NAVIGATION
@@ -1348,6 +1388,9 @@
         </div>
     </div>
 
+    <!-- GSAP & ScrollTrigger CDNs -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
     <!-- Script Engine -->
     <script src="assets/js/ait-internship.js"></script>
 
