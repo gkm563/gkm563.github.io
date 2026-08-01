@@ -3,11 +3,14 @@
 
 <head>
     <script>
-        // Immediately-invoked function to prevent theme flash
+        // Force Light theme by default unless explicitly toggled to dark
         (function() {
-            const theme = localStorage.getItem('portfolio-theme') || 'light';
-            if (theme === 'dark') {
+            const savedTheme = localStorage.getItem('portfolio-theme');
+            if (savedTheme === 'dark') {
                 document.documentElement.classList.add('dark-theme');
+            } else {
+                document.documentElement.classList.remove('dark-theme');
+                localStorage.setItem('portfolio-theme', 'light');
             }
         })();
     </script>

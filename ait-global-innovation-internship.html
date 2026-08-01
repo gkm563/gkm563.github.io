@@ -2,6 +2,18 @@
 <html lang="en-IN" class="scroll-smooth">
 
 <head>
+    <script>
+        // Force Light theme by default unless explicitly toggled to dark
+        (function() {
+            const savedTheme = localStorage.getItem('portfolio-theme');
+            if (savedTheme === 'dark') {
+                document.documentElement.classList.add('dark');
+            } else {
+                document.documentElement.classList.remove('dark');
+                localStorage.setItem('portfolio-theme', 'light');
+            }
+        })();
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <meta name="format-detection" content="telephone=no, date=no, address=no, email=no">
