@@ -5,6 +5,37 @@
  */
 
 document.addEventListener('DOMContentLoaded', () => {
+  // 0. Light / Dark Theme Switcher
+  const themeToggleBtn = document.getElementById('theme-toggle');
+  const applyTheme = (theme) => {
+    const darkIcon = themeToggleBtn ? themeToggleBtn.querySelector('.dark-icon') : null;
+    const lightIcon = themeToggleBtn ? themeToggleBtn.querySelector('.light-icon') : null;
+
+    if (theme === 'dark') {
+      document.documentElement.classList.add('dark', 'dark-theme');
+      document.body.classList.add('dark', 'dark-theme');
+      if (darkIcon) darkIcon.style.display = 'none';
+      if (lightIcon) lightIcon.style.display = 'inline-block';
+    } else {
+      document.documentElement.classList.remove('dark', 'dark-theme');
+      document.body.classList.remove('dark', 'dark-theme');
+      if (darkIcon) darkIcon.style.display = 'inline-block';
+      if (lightIcon) lightIcon.style.display = 'none';
+    }
+  };
+
+  const savedTheme = localStorage.getItem('portfolio-theme') || 'light';
+  applyTheme(savedTheme);
+
+  if (themeToggleBtn) {
+    themeToggleBtn.addEventListener('click', () => {
+      const isDark = document.documentElement.classList.contains('dark') || document.documentElement.classList.contains('dark-theme');
+      const nextTheme = isDark ? 'light' : 'dark';
+      localStorage.setItem('portfolio-theme', nextTheme);
+      applyTheme(nextTheme);
+    });
+  }
+
   // 1. Scroll Progress Bar Update
   const scrollProgress = document.getElementById('scroll-progress');
   window.addEventListener('scroll', () => {
