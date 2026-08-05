@@ -1288,3 +1288,51 @@ a {
   .day-section { padding: 20px; }
   .project-case-study { padding: 32px 20px; }
 }
+
+/* ═══════════════════════════════════════
+   SKELETON SHIMMER LOADER ANIMATION
+   ═══════════════════════════════════════ */
+.skeleton-loader {
+  background: linear-gradient(90deg, rgba(226, 232, 240, 0.4) 25%, rgba(203, 213, 225, 0.7) 50%, rgba(226, 232, 240, 0.4) 75%);
+  background-size: 200% 100%;
+  animation: skeletonShimmer 1.5s infinite linear;
+  border-radius: 12px;
+  position: relative;
+  overflow: hidden;
+}
+
+.dark .skeleton-loader, .dark-theme .skeleton-loader {
+  background: linear-gradient(90deg, rgba(30, 41, 59, 0.5) 25%, rgba(51, 65, 85, 0.8) 50%, rgba(30, 41, 59, 0.5) 75%);
+  background-size: 200% 100%;
+}
+
+@keyframes skeletonShimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+.img-skeleton-wrapper {
+  position: relative;
+  overflow: hidden;
+}
+
+.img-skeleton-wrapper img {
+  opacity: 0;
+  transition: opacity 0.4s ease-in-out;
+}
+
+.img-skeleton-wrapper img.loaded {
+  opacity: 1;
+}
+
+.img-skeleton-wrapper .skeleton-loader {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  transition: opacity 0.4s ease-in-out;
+}
+
+.img-skeleton-wrapper.loaded .skeleton-loader {
+  opacity: 0;
+  pointer-events: none;
+}
