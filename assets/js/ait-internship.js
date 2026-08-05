@@ -4,6 +4,7 @@
  */
 
 document.addEventListener('DOMContentLoaded', () => {
+  initThemeToggle();
   initProgressBar();
   initScrollSpy();
   initGalleryFilters();
@@ -13,6 +14,25 @@ document.addEventListener('DOMContentLoaded', () => {
   initGSAPAnimations();
   initMagneticButtons();
 });
+
+/* Theme Toggle Handler */
+function initThemeToggle() {
+  const toggleBtn = document.getElementById('theme-toggle');
+  if (!toggleBtn) return;
+
+  const savedTheme = localStorage.getItem('portfolio-theme');
+  if (savedTheme === 'dark') {
+    document.documentElement.classList.add('dark');
+  } else if (savedTheme === 'light') {
+    document.documentElement.classList.remove('dark');
+  }
+
+  toggleBtn.addEventListener('click', () => {
+    document.documentElement.classList.toggle('dark');
+    const isDark = document.documentElement.classList.contains('dark');
+    localStorage.setItem('portfolio-theme', isDark ? 'dark' : 'light');
+  });
+}
 
 /* Top Scroll Progress Bar */
 function initProgressBar() {

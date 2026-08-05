@@ -1336,3 +1336,199 @@ a {
   opacity: 0;
   pointer-events: none;
 }
+
+/* ═══════════════════════════════════════
+   PREMIUM THEME SYSTEM & DARK MODE STYLES
+   ═══════════════════════════════════════ */
+
+/* Dark Mode Variables Override */
+html.dark {
+  --color-primary: #F8FAFC;
+  --color-secondary: #E2E8F0;
+  --color-bg: #090D16;
+  --color-bg-alt: #0F172A;
+  --color-accent: #3B82F6;
+  --color-accent-hover: #60A5FA;
+  --color-accent-light: rgba(59, 130, 246, 0.15);
+  --color-gold: #F59E0B;
+  --color-gold-light: rgba(245, 158, 11, 0.15);
+  --color-border: #1E293B;
+  --color-border-subtle: #1E293B;
+  
+  --color-text: #F8FAFC;
+  --color-text-muted: #94A3B8;
+  --color-text-light: #64748B;
+
+  /* Glass & Shadows */
+  --glass-bg: rgba(15, 23, 42, 0.85);
+  --glass-border: rgba(30, 41, 59, 0.8);
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.5);
+  --shadow-xl: 0 20px 40px rgba(0, 0, 0, 0.6);
+  --shadow-glow: 0 0 30px rgba(59, 130, 246, 0.25);
+}
+
+/* Theme Toggle Button */
+.theme-toggle-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  background: var(--color-bg-alt);
+  border: 1px solid var(--color-border);
+  color: var(--color-text);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 16px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: var(--shadow-sm);
+}
+
+.theme-toggle-btn:hover {
+  background: var(--color-accent-light);
+  color: var(--color-accent);
+  border-color: var(--color-accent);
+  transform: rotate(15deg) scale(1.05);
+}
+
+.theme-toggle-btn .light-icon {
+  display: none;
+}
+
+.theme-toggle-btn .dark-icon {
+  display: block;
+}
+
+html.dark .theme-toggle-btn .light-icon {
+  display: block;
+  color: #F59E0B;
+}
+
+html.dark .theme-toggle-btn .dark-icon {
+  display: none;
+}
+
+/* Floating in Air Keyframes & Components */
+@keyframes floatAir {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-10px) rotate(1.2deg);
+  }
+}
+
+.floating-in-air {
+  animation: floatAir 5s ease-in-out infinite;
+}
+
+/* Glass Chips */
+.glass-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  border-radius: 99px;
+  background: rgba(37, 99, 235, 0.08);
+  border: 1px solid rgba(37, 99, 235, 0.2);
+  color: var(--color-accent);
+  font-size: 13px;
+  font-weight: 600;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.08);
+}
+
+html.dark .glass-chip {
+  background: rgba(59, 130, 246, 0.15);
+  border-color: rgba(59, 130, 246, 0.3);
+  color: #60A5FA;
+  box-shadow: 0 4px 16px rgba(59, 130, 246, 0.15);
+}
+
+.glass-chip:hover {
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 8px 20px rgba(37, 99, 235, 0.2);
+  border-color: var(--color-accent);
+}
+
+/* Dark Mode Component Overrides */
+html.dark .domain-card,
+html.dark .day-card,
+html.dark .mentor-card,
+html.dark .hero-stat-card,
+html.dark .overview-card,
+html.dark .timeline-card,
+html.dark .reflection-card {
+  background: #0F172A;
+  border-color: #1E293B;
+  color: #F8FAFC;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+html.dark .domain-card:hover,
+html.dark .day-card:hover,
+html.dark .mentor-card:hover,
+html.dark .hero-stat-card:hover,
+html.dark .overview-card:hover,
+html.dark .timeline-card:hover,
+html.dark .reflection-card:hover {
+  border-color: #3B82F6;
+  box-shadow: 0 15px 35px rgba(59, 130, 246, 0.2);
+}
+
+html.dark .tech-chip {
+  background: #1E293B;
+  color: #E2E8F0;
+  border-color: #334155;
+}
+
+html.dark .tech-chip:hover {
+  background: #2563EB;
+  color: #FFFFFF;
+  border-color: #3B82F6;
+}
+
+html.dark .gallery-tab-btn {
+  background: #1E293B;
+  color: #94A3B8;
+  border-color: #334155;
+}
+
+html.dark .gallery-tab-btn.active,
+html.dark .gallery-tab-btn:hover {
+  background: #2563EB;
+  color: #FFFFFF;
+  border-color: #3B82F6;
+}
+
+html.dark .site-footer {
+  background: #090D16;
+  border-top-color: #1E293B;
+  color: #94A3B8;
+}
+
+html.dark .footer-brand {
+  color: #F8FAFC;
+}
+
+html.dark .nav-menu.active {
+  background: #0F172A;
+  border-color: #1E293B;
+}
+
+html.dark .mobile-toggle {
+  color: #F8FAFC;
+}
+
+html.dark h1, html.dark h2, html.dark h3, html.dark h4, html.dark h5, html.dark h6 {
+  color: #F8FAFC;
+}
+
+html.dark p {
+  color: #94A3B8;
+}
+

@@ -129,12 +129,16 @@
     ═══════════════════════════════════════ -->
     <header class="site-header">
         <div class="header-container">
-            <a href="index.html" class="brand-logo" style="display: flex; align-items: center; gap: 8px;">
-                <img src="assets/images/profile/Gautam_Kumar_Maurya.jpg" alt="Gautam Kumar Maurya Logo" style="height: 36px; width: 36px; border-radius: 50%; object-fit: cover; border: 2px solid #2563eb;">
-                <img src="assets/images/ait-bangkok/Asian_Institute_of_Technology-Logo.png" alt="AIT Logo" style="height: 36px;">
-                <span>AIT GIIP</span>
-                <span class="brand-badge">2026</span>
-            </a>
+            <div class="brand-logo" style="display: flex; align-items: center; gap: 10px;">
+                <a href="index.html" title="Go to Main Portfolio Home" style="display: inline-flex; align-items: center; text-decoration: none;">
+                    <img src="assets/images/profile/Gautam_Kumar_Maurya.jpg" alt="Gautam Kumar Maurya Logo" style="height: 36px; width: 36px; border-radius: 50%; object-fit: cover; border: 2px solid #2563eb; transition: transform 0.2s ease, border-color 0.2s ease;" onmouseover="this.style.transform='scale(1.1)'; this.style.borderColor='#38bdf8';" onmouseout="this.style.transform='scale(1)'; this.style.borderColor='#2563eb';">
+                </a>
+                <a href="ait-global-innovation-internship.html" title="Reload AIT Fellowship Page" style="display: flex; align-items: center; gap: 8px; text-decoration: none; color: inherit;">
+                    <img src="assets/images/ait-bangkok/Asian_Institute_of_Technology-Logo.png" alt="AIT Logo" style="height: 36px;">
+                    <span>AIT GIIP</span>
+                    <span class="brand-badge">2026</span>
+                </a>
+            </div>
 
             <nav>
                 <ul class="nav-menu" id="nav-menu">
@@ -150,6 +154,10 @@
             </nav>
 
             <div style="display: flex; align-items: center; gap: 12px;">
+                <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle Theme" title="Toggle Light/Dark Theme">
+                    <i class="fa-solid fa-moon dark-icon"></i>
+                    <i class="fa-solid fa-sun light-icon"></i>
+                </button>
                 <a href="index.html" class="back-portfolio-btn">
                     <i class="fa-solid fa-arrow-left"></i>
                     <span>Portfolio</span>
