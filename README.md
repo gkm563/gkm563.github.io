@@ -1,18 +1,26 @@
-<!-- 🔥 Premium Animated Banner -->
+<!-- ═══════════════════════════════════════
+     DYNAMIC WAVING HEADER BANNER
+═══════════════════════════════════════ -->
 <p align="center">
-  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=700&size=24&pause=1000&color=00F7FF&center=true&vCenter=true&width=950&lines=Gautam+Kumar+Maurya+(gkm563);Best+Full-Stack+Developer+%26+Topper+at+United+Institute+of+Technology;Top+AI+Engineer+%26+Cyber+Security+Expert+in+Prayagraj;GeeksforGeeks+UIT+Vice+President+%7C+Open+Source+Contributor;AIT+Bangkok+GIIP+Fellow+%7C+UP+Police+APCSIP+Awardee;Building+high-performance%2C+secure+web+products+%F0%9F%9A%80" alt="Gautam Kumar Maurya gkm563 Typing Banner" />
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:00F7FF,50:2563EB,100:0e75b6&height=220&section=header&text=Gautam%20Kumar%20Maurya&fontSize=52&animation=fadeIn&fontAlignY=36&desc=Full-Stack%20AI%20Engineer%20%7C%20Cyber%20Security%20Researcher%20%7C%20AKTU%20CSE%20Rank%201%20Topper&descAlignY=58&descAlign=50" alt="Gautam Kumar Maurya Header Banner" />
 </p>
 
-<!-- 📊 Profile Badges & Real-time Metrics -->
+<!-- ═══════════════════════════════════════
+     DYNAMIC TYPING ANIMATION BANNER
+═══════════════════════════════════════ -->
 <p align="center">
-  <a href="https://gkm563.github.io/"><img src="https://komarev.com/ghpvc/?username=gkm563&label=Profile%20Views&color=00F7FF&style=flat-square" alt="gkm563 Profile Views" /></a>
-  <a href="https://github.com/gkm563"><img src="https://img.shields.io/github/followers/gkm563?label=Followers&style=flat-square&logo=github&color=0e75b6" alt="GitHub Followers" /></a>
-  <a href="https://gkm563.github.io/open-source-contributions.html"><img src="https://img.shields.io/badge/Open%20Source-Active%20Contributor-00C853?style=flat-square&logo=github" alt="Open Source Contributor" /></a>
-  <a href="https://gkm563.github.io/"><img src="https://img.shields.io/badge/Portfolio-gkm563.github.io-blue?style=flat-square&logo=google-chrome" alt="Portfolio Website" /></a>
+  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=700&size=23&pause=1000&color=00F7FF&center=true&vCenter=true&width=950&lines=Gautam+Kumar+Maurya+(gkm563);Best+Full-Stack+Developer+%26+Topper+at+United+Institute+of+Technology;Top+AI+Engineer+%26+Cyber+Security+Expert+in+Prayagraj;GeeksforGeeks+UIT+Vice+President+%7C+Open+Source+Contributor;AIT+Bangkok+GIIP+Fellow+%7C+UP+Police+APCSIP+Awardee;Building+high-performance%2C+secure+web+products+%F0%9F%9A%80" alt="Gautam Kumar Maurya gkm563 Typing Banner" />
 </p>
 
-<h1 align="center">👨‍💻 Gautam Kumar Maurya (gkm563)</h1>
-<h3 align="center">Best Full-Stack Developer & Topper at United Institute of Technology (UIT) | Top Cyber Security Expert & Data Scientist in UGI Prayagraj</h3>
+<!-- ═══════════════════════════════════════
+     VERIFIED BADGES & PROFILE METRICS
+═══════════════════════════════════════ -->
+<p align="center">
+  <a href="https://gkm563.github.io/"><img src="https://img.shields.io/badge/🌐%20Portfolio-gkm563.github.io-00F7FF?style=for-the-badge&logo=google-chrome&logoColor=black" alt="Portfolio Website" /></a>
+  <a href="https://www.linkedin.com/in/gkm563"><img src="https://img.shields.io/badge/LinkedIn-Gautam%20Kumar%20Maurya-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn Profile" /></a>
+  <a href="https://gkm563.github.io/open-source-contributions.html"><img src="https://img.shields.io/badge/Open%20Source-Wikimedia%20Core-00C853?style=for-the-badge&logo=wikipedia&logoColor=white" alt="Wikimedia Core Contributor" /></a>
+  <a href="https://github.com/gkm563"><img src="https://komarev.com/ghpvc/?username=gkm563&label=Profile%20Views&color=00F7FF&style=for-the-badge" alt="gkm563 Profile Views" /></a>
+</p>
 
 ---
 
@@ -31,11 +39,11 @@
 
 ---
 
-## 🔍 Who is Gautam Kumar Maurya (`gkm563`)?
+## 🔍 Executive Profile: Who is Gautam Kumar Maurya (`gkm563`)?
 
-**Gautam Kumar Maurya** (known globally as [**`gkm563`**](https://github.com/gkm563) or **GKM**) is an Indian **Full-Stack AI Engineer, Cyber Security Researcher, Data Scientist, and Open Source Developer** based in Prayagraj, Uttar Pradesh.
+**Gautam Kumar Maurya** (known across the global technology ecosystem as [**`gkm563`**](https://github.com/gkm563) or **GKM**) is an Indian **Full-Stack AI Engineer, Cyber Security Researcher, Data Scientist, and Open Source Developer** based in Prayagraj, Uttar Pradesh.
 
-🎓 **Consistent Academic Topper (UIT / UGI / AKTU):** Gautam holds a stellar academic record. In his B.Tech CSE (Data Science) program at **United Institute of Technology (UIT), Prayagraj (United Group of Institutions)**, he achieved **1st Rank across the CSE (Data Science) branch** and **5th Rank across the entire college** in AKTU examinations, felicitated by *Dainik Jagran* & the UP Board Secretary.
+🎓 **Consistent Academic Topper (UIT / UGI / AKTU):** Gautam holds an exemplary academic record. In his B.Tech CSE (Data Science) program at **United Institute of Technology (UIT), Prayagraj (United Group of Institutions)**, he achieved **1st Rank across the CSE (Data Science) branch** and **5th Rank across the entire college** in AKTU examinations, felicitated by *Dainik Jagran* & the UP Board Secretary.
 
 ⚡ **Full-Stack AI & Secure Web Architect:** A sharp, agile technology innovator, Gautam engineers production-grade web systems, custom AI agent workflows, and scalable REST APIs with zero/minimal security vulnerabilities.
 
@@ -43,20 +51,44 @@
 
 ---
 
-## 🧠 Core Strengths & Engineering Capabilities
+## 🧠 Core Engineering Capabilities & Technical Stack
 
-* **Full-Stack Web Architecture:** React, Next.js, Node.js, Express, Tailwind CSS, GSAP, HTML5/CSS3
-* **AI & Data Science:** Python, DSA, Agentic AI Systems, Prompt Engineering, QGIS, OpenCV, Pandas, NumPy
-* **Cyber Security & Forensics:** OSINT Reconnaissance, CDR/IPDR Log Analysis, Mobile Forensics, Network Hardening
-* **Open Source Infrastructure:** Git, GitHub, GitLab, Gerrit Code Review, Phabricator, MediaWiki Core
-* **Database Systems:** MySQL, PostgreSQL, MongoDB, Firebase, Supabase
+```
+⚡ Full-Stack Web Development  :: React, Next.js, Node.js, Express, Tailwind CSS, GSAP, REST APIs
+🤖 AI & Data Science          :: Python, DSA, Agentic AI Systems, QGIS, OpenCV, Pandas, NumPy, Scikit-Learn
+🔐 Cyber Security & Forensics  :: OSINT Reconnaissance, CDR/IPDR Log Analysis, Mobile Forensics, SOC Operations
+🛠️ Open Source & DevOps       :: Git, GitHub, GitLab, Gerrit Code Review, Phabricator, MediaWiki Core, Docker
+🗄️ Database Architecture      :: MySQL, PostgreSQL, MongoDB, Firebase, Supabase
+```
 
 ---
 
-## 🏆 Government & International Fellowships
+## 🏆 Collapsible Archive: Achievements, Fellowships & Leadership
+
+<details open>
+<summary><b>🥇 Honors, Awards & Academic Ranks (Click to Expand/Collapse)</b></summary>
+<br>
+
+* 🥇 **Best Content Creator Award** – Awarded directly by **DSP Anjali Kataria Ma'am** (15-Day UP Police x Amroha Police Cyber Security Internship APCSIP-2026).
+* ✈️ **GIIP International Scholar & Fellow** – Completed 15-Day International Research & Training Program at **Asian Institute of Technology (AIT), Bangkok, Thailand**.
+* 🏆 **1st Rank CSE (Data Science) Branch Topper** – Secured 1st Position in CSE (DS) at United Institute of Technology (UIT), Prayagraj.
+* 🏆 **Rank 5 College-wide Topper (AKTU)** – Secured Top 5 position across the entire college in 1st Semester AKTU examinations.
+* 🏆 **1st Rank in Data Structure Stream (2nd Year)** – Ranked #1 in Data Structures & Algorithms course stream.
+* 🛠️ **15+ Merged Open Source Patches** – Merged into production across MediaWiki Core, MinervaNeue, GrowthExperiments, Pywikibot, and Wikifunctions (Featured in IIIT Hyderabad Report).
+* 🥇 **1st Place — 1-Week Open Source Sprint** – Organized by **WikiClub UIT**.
+* 🥇 **1st Place — WebDie (ENIGMA XIII Tech Fest)** – 1st Rank winner in national level web architecture hackathon.
+* 🥇 **1st Place — GDG Quiz Event** – Winner in Google Developer Group technical quiz competition.
+* 🏅 **Recognized at Salvete Advena 2025** – Awarded for academic excellence and topper achievement.
+* 🏅 **Felicitation by Dainik Jagran & UP Board Secretary** – Academic excellence recognition award.
+
+</details>
+
+<details open>
+<summary><b>💼 Professional Experience, Internships & Startups (Click to Expand/Collapse)</b></summary>
+<br>
 
 ### 🔒 Cyber Security Intern — UP Police x Amroha Police (APCSIP-2026)
-* **On-Ground Investigation & Forensics:** Intensive 15-day fellowship with UP Police & Amroha Police Cyber Crime Cell focused on digital forensics, OSINT recon, Android malware parsing, and SOC monitoring.
+* **On-Ground Investigation & Forensics:** Intensive 15-day fellowship with UP Police & Amroha Police Cyber Crime Cell focused on digital forensics, OSINT recon, Android malware parsing, CDR sorting, and SOC monitoring.
 * 🥇 **Special Honor:** Awarded the **Best Content Creator Award** directly by **DSP Anjali Kataria Ma'am**.
 * 🔗 **Read Full Case Study:** [**gkm563.github.io/up-police-internship.html**](https://gkm563.github.io/up-police-internship.html)
 
@@ -64,6 +96,27 @@
 * **International Research Fellowship:** 15-day research program at Asian Institute of Technology (AIT), Bangkok, Thailand covering Agentic AI, Quantum GIS (QGIS), UAV Drone Telemetry, and EDA.
 * **Lead Architect:** Engineered [**BusSetu**](https://bussetu-three.vercel.app/) live transit tracking engine.
 * 🔗 **Read Full International Report:** [**gkm563.github.io/ait-global-innovation-internship.html**](https://gkm563.github.io/ait-global-innovation-internship.html)
+
+### 🏠 Co-Founder — PrayagrajRooms (`prayagrajrooms.in`)
+* Zero-broker student housing and room discovery platform engineered over **10+ months** of dedicated development to serve 5000+ college students across Prayagraj.
+* 🔗 **Live Platform:** [**prayagrajrooms.in**](https://prayagrajrooms.in)
+
+### 🌾 Startup Collaboration — Vindhya Millets
+* Technical collaboration with a Government of India supported ecosystem startup providing digital presence and backend architecture.
+
+</details>
+
+<details open>
+<summary><b>👑 Community Leadership & Positions of Responsibility (Click to Expand/Collapse)</b></summary>
+<br>
+
+* 🌟 **Vice President — GeeksforGeeks (GFG) Student Chapter, UIT:** Serving as Vice President and Technical Lead driving events for **500+ participants**.
+* ⚡ **Founder & Organizer — CDN UIT (*Coding & Development Network*):** Founded and managing the premier coding network at United Institute of Technology.
+* 🎯 **Co-Lead — HackerRank Student Chapter, UIT:** Co-leading competitive programming initiatives, coding contests, and DSA problem-solving sessions.
+* 🔹 **Core Team Member — GSA UIT (*Google Student Ambassador Program*):** Coordinated a **600+ attendee** technical summit.
+* 🏆 **Hackathon Lead & Evaluator — BuildX India / UDTech India:** Built official hackathon web portal and served as technical project judge.
+
+</details>
 
 ---
 
@@ -73,51 +126,28 @@
 * 🔄 **10+ Active Contributions** undergoing Gerrit code review.
 * 📰 **Featured by WikiClub Tech India (IIIT Hyderabad):** Recognized in the official Technical Impact Report (Jan–Jun 2026) published by Open Knowledge Initiatives (OKI) at IIIT Hyderabad.
 * 🥇 **1st Rank Winner:** 1-week Open Source Contribution Sprint organized by WikiClub UIT.
+* 🗣️ Active contributor on **Translatewiki.net** for global MediaWiki localization.
 * 🔗 **Dedicated Wikimedia Showcase:** [**gkm563.github.io/open-source-contributions.html**](https://gkm563.github.io/open-source-contributions.html)
 
-<p align="center">
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=gkm563&theme=tokyonight&hide_border=true&border_radius=12" alt="gkm563 GitHub Streak" />
-</p>
-
 ---
 
-## 🚀 Key Startups & Production Software
-
-### 🏠 PrayagrajRooms (`prayagrajrooms.in`)
-* Zero-broker student housing and room discovery platform engineered over 10+ months to serve 5000+ college students across Prayagraj.
-* 🔗 **Live Platform:** [**prayagrajrooms.in**](https://prayagrajrooms.in)
-
-### 🚌 BusSetu — Live Transit Tracking Engine
-* Real-time GIS bus tracking application built during GIIP 2026 fellowship at AIT Bangkok.
-* 🔗 **Live Demo:** [bussetu-three.vercel.app](https://bussetu-three.vercel.app/) \| [GitHub Repo](https://github.com/gkm563/bussetu)
-
-### 📄 PDFBAZI — Privacy-First Web PDF Suite
-* Browser-based utility suite to merge, split, compress, and encrypt PDF documents client-side.
-
----
-
-## 👑 Community Leadership & Responsibilities
-
-* 🌟 **Vice President — GeeksforGeeks (GFG) Student Chapter, UIT:** Technical Lead driving coding events for 500+ participants.
-* ⚡ **Founder & Organizer — CDN UIT (*Coding & Development Network*):** Premier developer community at United Institute of Technology.
-* 🎯 **Co-Lead — HackerRank Student Chapter, UIT:** Competitive programming and DSA contest organizer.
-* 🏆 **BuildX India 2026 Hackathon Lead:** Lead web architect and technical evaluator.
-
----
-
-## 🧰 Tech Arsenal
+## 🧰 Interactive Tech Arsenal Matrix
 
 <div align="center">
 
 | Languages | Frontend | Backend & DB | DevOps & Tools | AI & Vision |
 | :---: | :---: | :---: | :---: | :---: |
-| <img src="https://skillicons.dev/icons?i=python,cpp,c,javascript,typescript&perline=5" /><br>Python \| C++ \| C \| JS \| TS | <img src="https://skillicons.dev/icons?i=react,nextjs,html,css,tailwind,bootstrap&perline=6" /><br>React \| Next \| HTML \| CSS \| Tailwind | <img src="https://skillicons.dev/icons?i=nodejs,express,php,mysql,postgres,mongodb&perline=6" /><br>Node \| Express \| PHP \| MySQL \| Mongo | <img src="https://skillicons.dev/icons?i=git,github,gitlab,docker,linux,postman&perline=6" /><br>Git \| GitHub \| Docker \| Linux | <img src="https://skillicons.dev/icons?i=tensorflow,pytorch,opencv&perline=3" /><br>PyTorch \| OpenCV |
+| <img src="https://skillicons.dev/icons?i=python,cpp,c,java,javascript,typescript&perline=6" /><br>Python \| C++ \| C \| Java \| JS \| TS | <img src="https://skillicons.dev/icons?i=react,nextjs,html,css,tailwind,bootstrap&perline=6" /><br>React \| Next \| HTML \| CSS \| Tailwind \| Bootstrap | <img src="https://skillicons.dev/icons?i=nodejs,express,php,mysql,postgres,mongodb,firebase,supabase&perline=4" /><br>Node \| Express \| PHP \| MySQL \| Mongo \| Firebase | <img src="https://skillicons.dev/icons?i=git,github,gitlab,docker,linux,postman,vscode,bash&perline=4" /><br>Git \| GitHub \| GitLab \| Docker \| Linux \| Postman | <img src="https://skillicons.dev/icons?i=tensorflow,pytorch,opencv&perline=3" /><br>TensorFlow \| PyTorch \| OpenCV |
 
 </div>
 
 ---
 
-## 📊 GitHub Analytics & Repository Metrics
+## 📊 Live GitHub Analytics & Streak Cards
+
+<p align="center">
+  <img src="https://streak-stats.demolab.com?user=gkm563&theme=tokyonight&hide_border=true&border_radius=12" width="85%" alt="gkm563 GitHub Streak" />
+</p>
 
 <p align="center">
   <img src="https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=gkm563&theme=tokyonight" width="49%" alt="Repos Per Language" />
@@ -130,15 +160,16 @@
 
 ---
 
-## 🤝 Connect & Track Gautam's Real Engineering Journey
+## 🌐 Let's Connect & Track Gautam's Real Engineering Journey
 
 <p align="center">
   <a href="https://gkm563.github.io/" target="_blank"><img src="https://img.shields.io/badge/🌐%20OFFICIAL%20PORTFOLIO-gkm563.github.io-0A66C2?style=for-the-badge&logo=google-chrome&logoColor=white" alt="Official Portfolio" /></a>
   <a href="https://www.linkedin.com/in/gkm563" target="_blank"><img src="https://img.shields.io/badge/LinkedIn-Gautam%20Kumar%20Maurya-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn Profile" /></a>
   <a href="mailto:gkmwin563@gmail.com"><img src="https://img.shields.io/badge/Gmail-gkmwin563%40gmail.com-EA4335?style=for-the-badge&logo=gmail&logoColor=white" alt="Gmail Contact" /></a>
+  <a href="https://api.whatsapp.com/send?phone=919125563563&text=Hi%20Gautam,%20I%20visited%20your%20GitHub!" target="_blank"><img src="https://img.shields.io/badge/WhatsApp-Direct%20Chat-25D366?style=for-the-badge&logo=whatsapp&logoColor=white" alt="WhatsApp Direct" /></a>
   <a href="https://x.com/gkm563" target="_blank"><img src="https://img.shields.io/badge/X%20%2F%20Twitter-@gkm563-1DA1F2?style=for-the-badge&logo=x&logoColor=white" alt="Twitter X" /></a>
 </p>
 
 <p align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:00F7FF,100:0e75b6&height=120&section=footer" alt="Footer Wave" />
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:00F7FF,50:2563EB,100:0e75b6&height=120&section=footer" alt="Footer Wave" />
 </p>
