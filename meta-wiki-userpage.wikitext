@@ -1,0 +1,240 @@
+{{DISPLAYTITLE:<span style="display:none;">User:</span><span style="font-family:'Poppins',sans-serif; color:#1A202C; font-weight:600; font-size:125%; letter-spacing:.5px;">Gautam Kumar Maurya</span>}}
+
+{{#babel:hi-N|en-5|India|MediaWiki|Wikidata|Commons|entrepreneur|male}}
+
+<div style="border:1px solid #a2a9b1; border-radius:8px; background-color:#f8f9fa; padding:16px; margin-bottom:20px; text-align:center;">
+<div style="font-size:160%; font-weight:bold; color:#202122;">Welcome to my Meta-Wiki User Page!</div>
+<div style="font-size:110%; margin-top:8px; color:#404244;">
+Thank you for visiting. I am passionate about free knowledge systems, open-source infrastructure architectures, MediaWiki core engineering, and international community alignment.
+</div>
+</div>
+
+<div style="border-radius:10px; border: 2px solid #990000; padding: 12px; margin: 15px 0; background-color: #fff8f8; color: #202122;">
+🏆 '''Event Participation:''' Active participant in the [[hi:विकिपीडिया:सामग्री_संवर्द्धन_संपादनोत्सव/जून_2026|सामग्री संवर्द्धन संपादनोत्सव (June 2026)]] on Hindi Wikipedia, contributing toward structural content enhancement and collaborative encyclopedic growth.
+</div>
+
+{{user info
+| full name = Gautam Kumar Maurya
+| image name = Gautam Kumar Maurya - WIKI.jpg
+| hover text = Gautam Kumar Maurya
+| job title = Computer Science (Data Science) Student • Open Source Contributor • Wikimedian • Tech Entrepreneur • Community Lead
+| short quote = "Learning by contributing to free knowledge."
+| about me = '''Gautam Kumar Maurya''' (known in engineering tracks as '''GKM''' / '''[[User:Gkm563|gkm563]]''') is a B.Tech CSE (Data Science) student at United Institute of Technology, Prayagraj, India. He is an AKTU CSE Branch Topper (1st Rank) and active global open-source developer.
+| about my work = Focuses on MediaWiki core engineering, Gerrit patchset submissions, Phabricator workflow tracking, i18n/l10n localization, and community tech leadership.
+}}
+
+== 👤 Executive Profile & Background ==
+'''Gautam Kumar Maurya''' (commonly known in engineering tracks as <b>GKM</b> / '''[[User:Gkm563|gkm563]]''') is a Bachelor of Technology student specializing in '''Computer Science & Engineering (Data Science)''' at the '''[https://www.united.ac.in/ United Institute of Technology], Prayagraj''', India.<ref name="portfolio">[https://gkm563.github.io/ Gautam Kumar Maurya - Official Engineering Portfolio]</ref> He is an **AKTU CSE (Data Science) Branch Topper (1st Rank)** and Top 5 college-wide rank holder at UIT Prayagraj.<ref name="aktu_rank">[https://gkm563.github.io/#achievements Academic Ranks & Awards - Gautam Kumar Maurya]</ref>
+
+He operates actively within global open-source ecosystems, engineering structural solutions, data pipelines, and core platform enhancements. His active workflows span engineering nodes like Gerrit, Phabricator, GitHub, GitLab, and Translatewiki.net.<ref name="gerrit_profile">[https://gerrit.wikimedia.org/r/q/owner:gkmwin563%2540gmail.com Wikimedia Gerrit Code Review - Gkm563 Profile & Patchsets]</ref>
+
+=== Key Identity & Competencies ===
+* '''Geographic Location:''' Prayagraj, Uttar Pradesh, India 🇮🇳
+* '''Academic Stream:''' B.Tech CSE (Data Science Engineering Paradigm)
+* '''Core Ecosystems:''' Full Stack Engineering, Big Data Analytics, Computer Vision, Infrastructure Security
+* '''Professional Societies:''' Vice President & Technical Lead at '''GeeksforGeeks (GFG) Student Chapter, UIT''', Founder at '''CDN UIT''', Core Member at '''WikiClub Tech UIT'''
+
+---
+
+== 🌐 Categorized Open Source & Wikimedia Contributions ==
+
+=== 1. MediaWiki Core & Skins (Gerrit Code Review) ===
+{| class="wikitable sortable" style="width:100%; text-align:left;"
+|- style="background-color:#eaecf0;"
+! Change / Commit Subject !! Repository !! Status !! Reviewers / Mentors !! Link
+|-
+| Add Special:MediaStats alias for Special:MediaStatistics || <code>mediawiki/core</code> || {{green|Merged}} || Dreamy Jazz, Finchgold || [https://gerrit.wikimedia.org/r/c/mediawiki/core/+/1276283 Patch #1276283]
+|-
+| Add Special:MuteUser alias for Special:Mute || <code>mediawiki/core</code> || {{green|Merged}} || Dreamy Jazz, Finchgold || [https://gerrit.wikimedia.org/r/c/mediawiki/core/+/1276121 Patch #1276121]
+|-
+| Add Ukrainian translation for MediaStatistics || <code>mediawiki/core</code> || {{green|Merged}} || Dreamy Jazz, VadymTS1 || [https://gerrit.wikimedia.org/r/c/mediawiki/core/+/1307606 Patch #1307606]
+|-
+| Update Magahi namespace translations || <code>mediawiki/core</code> || {{green|Merged}} || Srishti Sethi || [https://gerrit.wikimedia.org/r/c/mediawiki/core/+/1311601 Patch #1311601]
+|-
+| Handle malformed URI fragments in TitleUtil || <code>mediawiki/skins/MinervaNeue</code> || {{green|Merged}} || Hakan, Jon Robson || [https://gerrit.wikimedia.org/r/c/mediawiki/skins/MinervaNeue/+/1287961 Patch #1287961]
+|-
+| Fix image option parsing inside tables || <code>mediawiki/services/parsoid</code> || {{gray|Abandoned}} || Arlolra || [https://gerrit.wikimedia.org/r/c/mediawiki/services/parsoid/+/1308807 Patch #1308807]
+|}
+
+=== 2. MediaWiki Extensions & Feature Modules ===
+{| class="wikitable sortable" style="width:100%; text-align:left;"
+|- style="background-color:#eaecf0;"
+! Change / Commit Subject !! Repository !! Status !! Reviewers / Mentors !! Link
+|-
+| Mark Experiment::setSchema as deprecated || <code>extensions/TestKitchen</code> || {{green|Merged}} || Phuedx || [https://gerrit.wikimedia.org/r/c/mediawiki/extensions/TestKitchen/+/1302995 Patch #1302995]
+|-
+| Add gender support to no mentored exception message || <code>extensions/GrowthExperiments</code> || {{green|Merged}} || Cyndywikime, EMcFarland || [https://gerrit.wikimedia.org/r/c/mediawiki/extensions/GrowthExperiments/+/1289010 Patch #1289010]
+|-
+| Fix ampersand rendering in category navigation || <code>extensions/UploadWizard</code> || {{blue|Open / Review}} || Cparle, Sohom || [https://gerrit.wikimedia.org/r/c/mediawiki/extensions/UploadWizard/+/1309763 Patch #1309763]
+|-
+| HelpPanel: fix grey header icons in quick tips dialog || <code>extensions/GrowthExperiments</code> || {{blue|Open / Review}} || Martin Urbanec, Cyndywikime || [https://gerrit.wikimedia.org/r/c/mediawiki/extensions/GrowthExperiments/+/1276113 Patch #1276113]
+|-
+| style: Remove unnecessary opacity override for process dialog icons || <code>extensions/GrowthExperiments</code> || {{blue|Open / Review}} || Cyndywikime, EMcFarland || [https://gerrit.wikimedia.org/r/c/mediawiki/extensions/GrowthExperiments/+/1277222 Patch #1277222]
+|-
+| editcheck: Highlight partial regex matches || <code>extensions/VisualEditor</code> || {{orange|Merge Conflict}} || VisualEditor Team || [https://gerrit.wikimedia.org/r/c/mediawiki/extensions/VisualEditor/+/1307880 Patch #1307880]
+|}
+
+=== 3. Wikimedia Infrastructure Operations & Site Configs ===
+{| class="wikitable sortable" style="width:100%; text-align:left;"
+|- style="background-color:#eaecf0;"
+! Task / Change Description !! Target Scope !! Status !! Reviewers / Mentors !! Link
+|-
+| Remove nonexistent autopatrolled group from Outreach Wiki || <code>operations/mediawiki-config</code> || {{green|Merged}} || Neriah || [https://gerrit.wikimedia.org/r/c/operations/mediawiki-config/+/1309894 Patch #1309894]
+|}
+
+=== 4. Pywikibot Framework & Automation Scripts ===
+{| class="wikitable sortable" style="width:100%; text-align:left;"
+|- style="background-color:#eaecf0;"
+! Task / Change Description !! Framework Module !! Status !! Reviewers / Mentors !! Link
+|-
+| Add regression test for comments in noreferences section || <code>pywikibot/core</code> || {{green|Merged}} || Xqt || [https://gerrit.wikimedia.org/r/c/pywikibot/core/+/1290141 Patch #1290141]
+|}
+
+=== 5. Phabricator Workflows & Task Tracker ===
+''Registered Phabricator Handle:'' '''[https://phabricator.wikimedia.org/p/Gkm563/ Gkm563]''' (User ID: 49347)  
+''Affiliated Project Groups:'' <code>[[phab:project/view/3748/|Indic-TechCom]]</code> • <code>[[phab:project/view/7735/|RoadToWiki]]</code> • <code>[[phab:project/view/3104/|Trusted-Contributors]]</code> • <code>[[phab:tag/lpl_onboarding_and_development/|LPL Onboarding and Development]]</code>
+
+{| class="wikitable sortable" style="width:100%; text-align:left;"
+|- style="background-color:#eaecf0;"
+! Phabricator Task ID & Description !! Project Tag !! Resolution Status
+|-
+| [https://phabricator.wikimedia.org/T381131 T381131]: Edit summaries should not be shown in Special:TranslationStash || RoadToWiki || {{green|Completed / Resolved}}
+|-
+| [https://phabricator.wikimedia.org/T431215 T431215]: Update the misleading footer text || SourceWiki / RoadToWiki || {{green|Completed / Resolved}}
+|-
+| [https://phabricator.wikimedia.org/T432291 T432291]: Add Izere (izr) to translatewiki.net || i18n / LPL Projects || {{blue|Claimed / Patch Submitted}}
+|-
+| [https://phabricator.wikimedia.org/T432382 T432382]: Update Magahi (mag) namespace translations in MediaWiki core || MediaWiki Core / i18n || {{green|Completed / Merged}}
+|-
+| [https://phabricator.wikimedia.org/T431959 T431959]: Modify user group configuration settings for Outreach Wiki || Operations Config || {{green|Completed / Merged}}
+|-
+| [https://phabricator.wikimedia.org/T431918 T431918]: Ampersand in category selection in UploadWizard shows as &amp; || UploadWizard || {{blue|In Review}}
+|-
+| [https://phabricator.wikimedia.org/T431649 T431649]: An error occurred while parsing image syntax within table || Parsoid || {{blue|In Review}}
+|-
+| [https://phabricator.wikimedia.org/T431361 T431361]: Show partial title matches in TextMatchEditCheck || VisualEditor EditCheck || {{blue|In Review}}
+|-
+| [https://phabricator.wikimedia.org/T407336 T407336]: Header buttons inside quick tips dialog look inactive/disabled || GrowthExperiments || {{blue|In Progress / Updated}}
+|-
+| [https://phabricator.wikimedia.org/T428848 T428848]: Add Tsishingini (tsw) to translatewiki.net || i18n / Language-data || {{green|Completed / Resolved}}
+|-
+| [https://phabricator.wikimedia.org/T423735 T423735]: Adding Southern Uzbek (uzs) to Translatewiki || i18n / Language-data || {{green|Completed / Merged}}
+|-
+| [https://phabricator.wikimedia.org/T429172 T429172]: Mark Experiment::setSchema as deprecated || TestKitchen || {{green|Completed / Merged}}
+|-
+| [https://phabricator.wikimedia.org/T426338 T426338]: Add accessors for WFFunctionCall internals || Abstract Wikipedia || {{green|Completed / Merged}}
+|-
+| [https://phabricator.wikimedia.org/T426895 T426895]: noreferences.py incorrectly inserts references template below footer || Pywikibot || {{green|Completed / Merged}}
+|-
+| [https://phabricator.wikimedia.org/T416226 T416226]: Add gender support to growthexperiments-exception-no-mentored-text || GrowthExperiments || {{green|Completed / Merged}}
+|-
+| [https://phabricator.wikimedia.org/T424125 T424125]: Alias Special:MuteUser to Special:Mute || MediaWiki Core || {{green|Completed / Merged}}
+|-
+| [https://phabricator.wikimedia.org/T424124 T424124]: Alias Special:MediaStats to Special:MediaStatistics || MediaWiki Core || {{green|Completed / Merged}}
+|-
+| [https://phabricator.wikimedia.org/T424875 T424875]: Malformed URI on certain red links on page load || MinervaNeue Skin || {{green|Completed / Merged}}
+|}
+
+=== 6. GitHub & External Upstream Repositories ===
+{| class="wikitable sortable" style="width:100%; text-align:left;"
+|- style="background-color:#eaecf0;"
+! Pull Request Title !! Repository !! Type / Focus !! Status !! Link
+|-
+| Add Tsishingini (tsw) language metadata || <code>wikimedia/language-data</code> || i18n / Language Data || {{green|Merged}} || [https://github.com/wikimedia/language-data/pull/503 PR #503]
+|-
+| Updating territory-language information from upstream || <code>wikimedia/language-data</code> || Automated Sync || {{green|Merged / Upstream}} || [https://github.com/wikimedia/language-data/pull/505 PR #505]
+|-
+| frontend: update footer text || <code>Tiisu/SourceWiki</code> || Web Architecture || {{green|Merged}} || [https://github.com/Tiisu/SourceWiki/pull/42 PR #42]
+|-
+| frontend: fix broken category emojis || <code>Tiisu/SourceWiki</code> || Web Formatting || {{blue|Open / Review}} || [https://github.com/Tiisu/SourceWiki/pull/44 PR #44]
+|}
+
+---
+
+== 🏆 International Programs, Deployments & Recognition ==
+
+=== 🎓 Global Fellowships & Programs ===
+* '''[[Wikipedia & Education User Group/EduWiki Hub/Mentorship program/Cohort 2|EduWiki Hub Global Mentorship Program (Cohort 2)]]''': Selected globally as an elite Mentee representing India (one of only 3–4 selected candidates nationwide). This rigorous '''6-month international engagement''' focuses on direct mentorship from veteran global developers, active cross-border infrastructure collaboration, and the development of a production-scale architectural Capstone Project.
+* '''[[w:WikiClub Tech India|Road to Wiki (Cohort 2)]]''': A high-impact engineering track organized under the institutional structure of [https://www.wikiclubtech.org/ WikiClub India], actively backed by the '''Open Knowledge Initiatives (OKI), IIIT Hyderabad'''. Notably, '''15+ core open-source technical contributions''' have been officially featured and credited for engineering excellence on the official [https://meta.wikimedia.org/wiki/IIITH-OKI/Wikiclub_Tech/Road_To_Wiki/Contribution_Ledger IIITH-OKI Contribution Ledger].<ref name="iiith_ledger">[https://meta.wikimedia.org/wiki/IIITH-OKI/Wikiclub_Tech/Road_To_Wiki/Contribution_Ledger Official IIITH-OKI Wikiclub Tech Contribution Ledger]</ref>
+
+=== 🔒 Cybersecurity Governance Internship — UP Police x Amroha Police (APCSIP-2026) ===
+* Engaged in critical vector tracking, offensive security frameworks, OSINT reconnaissance, Android malware parsing, CDR/IPDR log analysis, and system threat analysis under the direct jurisdiction of state law enforcement infrastructure.<ref name="up_police_log">[https://gkm563.github.io/up-police-internship.html GKM UP Police Cybersecurity Deployment Log]</ref>
+* 🥇 **Special Honor:** Awarded the '''Best Content Creator Award''' by DSP Anjali Kataria.
+
+=== ✈️ Global Innovation Internship Program (GIIP 2026) — AIT, Thailand ===
+* Successfully completed an intensive 15-day technical deployment residency on-site at the '''[https://ait.ac.th Asian Institute of Technology (AIT)] in Bangkok, Thailand'''.<ref name="ait_thailand_log">[https://gkm563.github.io/ait-global-innovation-internship.html GKM AIT Thailand Internship Ledger]</ref> Research tracks covered:
+** Artificial Intelligence, Neural Computing & Agentic AI Models
+** Geographic Information Systems (GIS), QGIS & Spatial Processing
+** Quantum Geo-Informatics & Structural Architecture
+** Internet of Things (IoT), UAV Drone Telemetry & Robotics Integration
+** Design Thinking Implementations & Enterprise Data Analytics (Power BI)
+
+---
+
+== 🚀 Engineered Projects & Startups ==
+
+* '''[https://prayagrajrooms.in PrayagrajRooms]''' — Co-founder & lead engineer for a zero-broker student housing discovery platform serving 5,000+ students across Prayagraj.<ref name="prayagrajrooms">[https://prayagrajrooms.in PrayagrajRooms Official Housing Engine Platform]</ref>
+* '''[https://bussetu-three.vercel.app/ BusSetu]''' — High-throughput real-time transit routing and spatial mapping infrastructure application engineered during AIT Bangkok GIIP-2026.<ref name="bussetu">[https://bussetu-three.vercel.app/ BusSetu Transit Routing Live Platform]</ref>
+* '''CampusClick''' — Secure digital asset management solutions for institutional hubs.
+* '''PDFBAZI''' — High-performance document processing utilities.
+* '''BuildX India Portal''' — Official production hackathon web portal deployment.
+
+---
+
+== 👑 Leadership & Community Roles ==
+
+* '''Vice President & Technical Lead''' — GeeksforGeeks (GFG) Student Chapter, UIT Prayagraj
+* '''Founder & Lead Organizer''' — CDN UIT (Coding & Development Network)
+* '''Core Team Member''' — WikiClub Tech UIT (`WikiClub Tech – UIT/Team`)
+* '''Co-Lead''' — HackerRank Student Chapter, UIT Prayagraj
+* '''Technical Associate & Content Strategist''' — TechEra
+* '''Community Volunteer''' — Google Developer Groups (GDG) Prayagraj
+* '''Campus Ambassador''' — Entrepreneurship Development Cell (EDC), IIT Delhi & MyGov India
+
+---
+
+== 💻 Technical Profile & Stack ==
+
+* '''Languages:''' C • C++ • Java • Python • JavaScript • TypeScript • PHP
+* '''Frontend:''' HTML5 • CSS3 • Tailwind CSS • React • Next.js • Vite
+* '''Backend & APIs:''' Node.js • Express.js • PHP Engines • REST APIs
+* '''Databases:''' MySQL • PostgreSQL • MongoDB • Firebase • Supabase
+* '''Version Control:''' Git • GitHub • GitLab • Gerrit Code Review
+* '''Wikimedia Utilities:''' MediaWiki Core • Phabricator • Translatewiki • Wikimedia Commons
+* '''Security & Tools:''' Linux POSIX • OpenCV • Power BI • OSINT & Mobile Forensics
+
+---
+
+== 🔗 External Verification & Links ==
+
+* '''Meta-Wiki Profile:''' [[User:Gkm563]]
+* '''Wikimedia Commons:''' [[commons:User:Gkm563]]
+* '''English Wikipedia:''' [[w:User:Gkm563]]
+* '''Hindi Wikipedia:''' [[hi:सदस्य:Gkm563]]
+* '''Phabricator Profile:''' [https://phabricator.wikimedia.org/p/Gkm563/ phabricator.wikimedia.org/p/Gkm563/]
+* '''Wikimedia Gerrit Code Review:''' [https://gerrit.wikimedia.org/r/q/owner:gkmwin563%2540gmail.com gerrit.wikimedia.org/r/q/owner:gkmwin563@gmail.com]
+* '''GitHub Dev Profile:''' [https://github.com/gkm563 github.com/gkm563]
+* '''LinkedIn Network:''' [https://www.linkedin.com/in/gkm563 linkedin.com/in/gkm563]
+* '''Professional Portfolio:''' [https://gkm563.github.io/ gkm563.github.io]
+* '''Wikimedia Contribution Log:''' [https://gkm563.github.io/open-source-contributions.html gkm563.github.io/open-source-contributions.html]
+
+=== Media Gallery ===
+<gallery mode="packed" heights="160px">
+File:Gautam Kumar Maurya - WIKI.jpg|Gautam Kumar Maurya — Official Wikimedia Record Profile
+</gallery>
+
+== References ==
+<references />
+
+<div style="text-align:center; background-color:#f8f9fa; border:1px solid #a2a9b1; border-radius:8px; padding:20px; margin-top:20px;">
+<div style="font-size:130%; font-weight:bold; color:#202122;">Building • Learning • Contributing • Collaborating</div>
+<div style="margin-top:10px; font-style:italic; color:#54595d;">
+"Imagine a world in which every single human being can freely share in the sum of all knowledge." 
+— Wikimedia Foundation Vision Statement
+</div>
+</div>
+
+[[Category:Wikimedians from India]]
+[[Category:MediaWiki developers]]
+[[Category:Hindi Wikimedians]]
+[[Category:Phabricator users]]

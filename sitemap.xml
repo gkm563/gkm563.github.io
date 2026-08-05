@@ -59,4 +59,12 @@
     </image:image>
   </url>
 
+  <!-- ===== FAQ & Knowledge Base ===== -->
+  <url>
+    <loc>https://gkm563.github.io/faq.html</loc>
+    <lastmod>2026-08-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
+  </url>
+
 </urlset>
