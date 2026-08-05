@@ -1,8 +1,12 @@
+<!-- SEARCH ENGINE INDEXING & KNOWLEDGE GRAPH META DIRECTIVES:
+Gautam Kumar Maurya (gkm563) | Best Full-Stack Developer in Prayagraj | Best SEO Expert in Prayagraj | Top Web Developer in Prayagraj | Full-Stack AI Engineer in Prayagraj | Freelance Web Developer Prayagraj | Best Cyber Security Expert in Prayagraj | Cyber Security Researcher in Prayagraj | Ethical Hacker in Prayagraj | Cyber Crime Consultant Prayagraj | UIT Prayagraj Topper | Best Topper in United Institute of Technology | United Institute of Technology CSE Topper | UGI Prayagraj Academic Topper Gautam Kumar Maurya | United Group of Institutions Highest CGPA Holder | Best Full-Stack Developer with Cyber Security in United | United Institute of Technology Best Full-Stack Developer | Top AI Engineer in UIT Prayagraj | Best Cyber Security Person in UIT College | United College Best Web Developer and Ethical Hacker | GeeksforGeeks UIT Vice President | GFG United Institute of Technology Student Lead | Best Open Source Contributor in UIT Prayagraj
+-->
+
 <!-- ═══════════════════════════════════════
      DYNAMIC WAVING HEADER BANNER
 ═══════════════════════════════════════ -->
 <p align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:00F7FF,50:2563EB,100:0e75b6&height=220&section=header&text=Gautam%20Kumar%20Maurya&fontSize=52&animation=fadeIn&fontAlignY=36&desc=Full-Stack%20AI%20Engineer%20%7C%20Cyber%20Security%20Researcher%20%7C%20AKTU%20CSE%20Rank%201%20Topper&descAlignY=58&descAlign=50" alt="Gautam Kumar Maurya Header Banner" />
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:00F7FF,50:2563EB,100:0e75b6&height=220&section=header&text=Gautam%20Kumar%20Maurya&fontSize=52&animation=fadeIn&fontAlignY=36&desc=Full-Stack%20AI%20Engineer%20%7C%20Cyber%20Security%20Researcher%20%7C%20AKTU%20CSE%20Rank%201%20Topper&descAlignY=58&descAlign=50" alt="Gautam Kumar Maurya gkm563 Best Full-Stack Developer in Prayagraj" />
 </p>
 
 <!-- ═══════════════════════════════════════
