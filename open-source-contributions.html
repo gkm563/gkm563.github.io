@@ -91,8 +91,9 @@
         "@type": "Organization",
         "name": "Open Knowledge Initiatives (OKI) at IIIT Hyderabad",
         "sameAs": "https://meta.wikimedia.org/wiki/IIITH-OKI/Wikiclub_Tech"
-      },
-    <script type="application/ld+json">
+      }
+    }
+    </script>
     {
       "@context": "https://schema.org",
       "@type": "BreadcrumbList",
@@ -148,10 +149,14 @@
     <!-- Sticky Navigation Header -->
     <header class="main-header" id="main-header">
         <div class="container header-container">
-            <a href="open-source-contributions.html" class="brand-logo" style="display: flex; align-items: center; gap: 10px;">
-                <img src="assets/images/profile/Gautam_Kumar_Maurya.jpg" alt="Gautam Kumar Maurya Logo" style="height: 36px; width: 36px; border-radius: 50%; object-fit: cover; border: 2px solid #2563eb;">
-                <span class="brand-title">Open Source Report</span>
-            </a>
+            <div class="brand-logo" style="display: flex; align-items: center; gap: 10px;">
+                <a href="index.html" title="Go to Main Portfolio Home" style="display: inline-flex; align-items: center; text-decoration: none;">
+                    <img src="assets/images/profile/Gautam_Kumar_Maurya.jpg" alt="Gautam Kumar Maurya Logo" style="height: 36px; width: 36px; border-radius: 50%; object-fit: cover; border: 2px solid #2563eb; transition: transform 0.2s ease, border-color 0.2s ease;" onmouseover="this.style.transform='scale(1.1)'; this.style.borderColor='#38bdf8';" onmouseout="this.style.transform='scale(1)'; this.style.borderColor='#2563eb';">
+                </a>
+                <a href="open-source-contributions.html" title="Reload Open Source Page" style="display: flex; align-items: center; gap: 8px; text-decoration: none; color: inherit;">
+                    <span class="brand-title">Open Source Report</span>
+                </a>
+            </div>
 
             <nav class="main-nav" id="main-nav">
                 <ul>
@@ -582,18 +587,18 @@
                 <!-- Contributions Grid -->
                 <div class="contrib-grid">
                     <!-- Patch 1 -->
-                    <div class="contrib-card" data-category="wikimedia" data-status="merged">
+                    <div class="contrib-card" data-category="wikimedia" data-status="review">
                         <div>
                             <div class="contrib-header">
-                                <span class="contrib-repo-badge">abstract-wiki/wikifunctions</span>
-                                <span class="contrib-status-badge status-merged">Merged</span>
+                                <span class="contrib-repo-badge">mediawiki/extensions/UploadWizard</span>
+                                <span class="contrib-status-badge status-review">In Review</span>
                             </div>
-                            <h3 class="contrib-card-title">Add accessor methods for WFFunctionCall internals</h3>
-                            <p class="contrib-card-desc">Implemented getFunction(), getArgument(), and getArguments() accessor methods to fix encapsulation inside WFFunctionCall class in Abstract Wikipedia Function Orchestrator.</p>
+                            <h3 class="contrib-card-title">Fix ampersand rendering in category navigation</h3>
+                            <p class="contrib-card-desc">Resolved HTML entity encoding bug (&amp;amp;) when category navigation contains subdirectories in UploadWizard.</p>
                         </div>
                         <div class="contrib-card-footer">
-                            <span class="contrib-task-id">T426338</span>
-                            <a href="https://gitlab.wikimedia.org/repos/abstract-wiki/wikifunctions/function-orchestrator/-/merge_requests/684" target="_blank" rel="noopener" class="recog-link-btn">View MR <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                            <span class="contrib-task-id">T431918</span>
+                            <a href="https://gerrit.wikimedia.org/r/c/mediawiki/extensions/UploadWizard/+/1309763" target="_blank" rel="noopener" class="recog-link-btn">View Gerrit <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
                         </div>
                     </div>
 
@@ -601,19 +606,131 @@
                     <div class="contrib-card" data-category="wikimedia" data-status="merged">
                         <div>
                             <div class="contrib-header">
-                                <span class="contrib-repo-badge">mediawiki/skins/MinervaNeue</span>
+                                <span class="contrib-repo-badge">mediawiki/core</span>
                                 <span class="contrib-status-badge status-merged">Merged</span>
                             </div>
-                            <h3 class="contrib-card-title">Handle malformed URI fragments in TitleUtil</h3>
-                            <p class="contrib-card-desc">Added try-catch defensive decoding around percent-encoded red-links in mobile Wikipedia skin to prevent URIError runtime failures.</p>
+                            <h3 class="contrib-card-title">Update Magahi namespace translations</h3>
+                            <p class="contrib-card-desc">Updated Magahi (mag) language namespace translations in MediaWiki Core to improve localized wiki navigation.</p>
                         </div>
                         <div class="contrib-card-footer">
-                            <span class="contrib-task-id">T424875</span>
-                            <a href="https://gerrit.wikimedia.org/r/c/mediawiki/skins/MinervaNeue/+/1287961" target="_blank" rel="noopener" class="recog-link-btn">View Gerrit <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                            <span class="contrib-task-id">T432382</span>
+                            <a href="https://gerrit.wikimedia.org/r/c/mediawiki/core/+/1311601" target="_blank" rel="noopener" class="recog-link-btn">View Gerrit <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
                         </div>
                     </div>
 
                     <!-- Patch 3 -->
+                    <div class="contrib-card" data-category="wikimedia" data-status="review">
+                        <div>
+                            <div class="contrib-header">
+                                <span class="contrib-repo-badge">mediawiki/extensions/GrowthExperiments</span>
+                                <span class="contrib-status-badge status-review">In Review</span>
+                            </div>
+                            <h3 class="contrib-card-title">HelpPanel: fix grey header icons in quick tips dialog</h3>
+                            <p class="contrib-card-desc">Adjusted OOUI button opacity and icon styling inside GrowthExperiments Help Panel quick tips dialog.</p>
+                        </div>
+                        <div class="contrib-card-footer">
+                            <span class="contrib-task-id">T407336</span>
+                            <a href="https://gerrit.wikimedia.org/r/c/mediawiki/extensions/GrowthExperiments/+/1276113" target="_blank" rel="noopener" class="recog-link-btn">View Gerrit <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                        </div>
+                    </div>
+
+                    <!-- Patch 4 -->
+                    <div class="contrib-card" data-category="wikimedia" data-status="merged">
+                        <div>
+                            <div class="contrib-header">
+                                <span class="contrib-repo-badge">operations/mediawiki-config</span>
+                                <span class="contrib-status-badge status-merged">Merged</span>
+                            </div>
+                            <h3 class="contrib-card-title">Remove nonexistent autopatrolled group from Outreach Wiki</h3>
+                            <p class="contrib-card-desc">Updated user group configuration settings for Wikimedia Outreach Wiki to remove legacy permission references.</p>
+                        </div>
+                        <div class="contrib-card-footer">
+                            <span class="contrib-task-id">T431959</span>
+                            <a href="https://gerrit.wikimedia.org/r/c/operations/mediawiki-config/+/1309894" target="_blank" rel="noopener" class="recog-link-btn">View Gerrit <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                        </div>
+                    </div>
+
+                    <!-- Patch 5 -->
+                    <div class="contrib-card" data-category="wikimedia" data-status="review">
+                        <div>
+                            <div class="contrib-header">
+                                <span class="contrib-repo-badge">mediawiki/services/parsoid</span>
+                                <span class="contrib-status-badge status-review">In Review</span>
+                            </div>
+                            <h3 class="contrib-card-title">Fix image option parsing inside tables</h3>
+                            <p class="contrib-card-desc">Investigated table layout image syntax corrections inside the Parsoid parsing service to resolve image positioning anomalies.</p>
+                        </div>
+                        <div class="contrib-card-footer">
+                            <span class="contrib-task-id">T431649</span>
+                            <a href="https://gerrit.wikimedia.org/r/c/mediawiki/services/parsoid/+/1308807" target="_blank" rel="noopener" class="recog-link-btn">View Gerrit <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                        </div>
+                    </div>
+
+                    <!-- Patch 6 -->
+                    <div class="contrib-card" data-category="wikimedia" data-status="review">
+                        <div>
+                            <div class="contrib-header">
+                                <span class="contrib-repo-badge">mediawiki/extensions/VisualEditor</span>
+                                <span class="contrib-status-badge status-review">In Review</span>
+                            </div>
+                            <h3 class="contrib-card-title">editcheck: Highlight partial regex matches</h3>
+                            <p class="contrib-card-desc">Implemented partial title and text regex match highlighting inside VisualEditor EditCheck suggestion mode.</p>
+                        </div>
+                        <div class="contrib-card-footer">
+                            <span class="contrib-task-id">T431361</span>
+                            <a href="https://gerrit.wikimedia.org/r/c/mediawiki/extensions/VisualEditor/+/1307880" target="_blank" rel="noopener" class="recog-link-btn">View Gerrit <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                        </div>
+                    </div>
+
+                    <!-- Patch 7 -->
+                    <div class="contrib-card" data-category="wikimedia" data-status="merged">
+                        <div>
+                            <div class="contrib-header">
+                                <span class="contrib-repo-badge">mediawiki/core</span>
+                                <span class="contrib-status-badge status-merged">Merged</span>
+                            </div>
+                            <h3 class="contrib-card-title">Add Ukrainian translation for MediaStatistics</h3>
+                            <p class="contrib-card-desc">Added localized Ukrainian translations for Special:MediaStatistics page in MediaWiki Core.</p>
+                        </div>
+                        <div class="contrib-card-footer">
+                            <span class="contrib-task-id">T431180</span>
+                            <a href="https://gerrit.wikimedia.org/r/c/mediawiki/core/+/1307606" target="_blank" rel="noopener" class="recog-link-btn">View Gerrit <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                        </div>
+                    </div>
+
+                    <!-- Patch 8 -->
+                    <div class="contrib-card" data-category="wikimedia" data-status="merged">
+                        <div>
+                            <div class="contrib-header">
+                                <span class="contrib-repo-badge">mediawiki/extensions/TestKitchen</span>
+                                <span class="contrib-status-badge status-merged">Merged</span>
+                            </div>
+                            <h3 class="contrib-card-title">Mark Experiment::setSchema as deprecated</h3>
+                            <p class="contrib-card-desc">Refactored TestKitchen experiment platform extension to mark legacy setSchema method as deprecated.</p>
+                        </div>
+                        <div class="contrib-card-footer">
+                            <span class="contrib-task-id">T429172</span>
+                            <a href="https://gerrit.wikimedia.org/r/c/mediawiki/extensions/TestKitchen/+/1302995" target="_blank" rel="noopener" class="recog-link-btn">View Gerrit <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                        </div>
+                    </div>
+
+                    <!-- Patch 9 -->
+                    <div class="contrib-card" data-category="wikimedia" data-status="merged">
+                        <div>
+                            <div class="contrib-header">
+                                <span class="contrib-repo-badge">pywikibot/core</span>
+                                <span class="contrib-status-badge status-merged">Merged</span>
+                            </div>
+                            <h3 class="contrib-card-title">Add regression test for comments in noreferences section</h3>
+                            <p class="contrib-card-desc">Implemented regression test coverage ensuring Pywikibot correctly processes code and parser comments inside noreferences sections.</p>
+                        </div>
+                        <div class="contrib-card-footer">
+                            <span class="contrib-task-id">T426895</span>
+                            <a href="https://gerrit.wikimedia.org/r/c/pywikibot/core/+/1290141" target="_blank" rel="noopener" class="recog-link-btn">View Gerrit <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                        </div>
+                    </div>
+
+                    <!-- Patch 10 -->
                     <div class="contrib-card" data-category="wikimedia" data-status="merged">
                         <div>
                             <div class="contrib-header">
@@ -629,7 +746,23 @@
                         </div>
                     </div>
 
-                    <!-- Patch 4 -->
+                    <!-- Patch 11 -->
+                    <div class="contrib-card" data-category="wikimedia" data-status="merged">
+                        <div>
+                            <div class="contrib-header">
+                                <span class="contrib-repo-badge">mediawiki/skins/MinervaNeue</span>
+                                <span class="contrib-status-badge status-merged">Merged</span>
+                            </div>
+                            <h3 class="contrib-card-title">Handle malformed URI fragments in TitleUtil</h3>
+                            <p class="contrib-card-desc">Added try-catch defensive decoding around percent-encoded red-links in mobile Wikipedia skin to prevent URIError runtime failures.</p>
+                        </div>
+                        <div class="contrib-card-footer">
+                            <span class="contrib-task-id">T424875</span>
+                            <a href="https://gerrit.wikimedia.org/r/c/mediawiki/skins/MinervaNeue/+/1287961" target="_blank" rel="noopener" class="recog-link-btn">View Gerrit <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                        </div>
+                    </div>
+
+                    <!-- Patch 12 -->
                     <div class="contrib-card" data-category="wikimedia" data-status="merged">
                         <div>
                             <div class="contrib-header">
@@ -645,71 +778,23 @@
                         </div>
                     </div>
 
-                    <!-- Patch 5 -->
-                    <div class="contrib-card" data-category="wikimedia" data-status="merged">
+                    <!-- Patch 13 -->
+                    <div class="contrib-card" data-category="git" data-status="merged">
                         <div>
                             <div class="contrib-header">
-                                <span class="contrib-repo-badge">pywikibot/core</span>
+                                <span class="contrib-repo-badge">wikimedia/language-data</span>
                                 <span class="contrib-status-badge status-merged">Merged</span>
                             </div>
-                            <h3 class="contrib-card-title">Regression test for noreferences section handling</h3>
-                            <p class="contrib-card-desc">Implemented regression test coverage ensuring pywikibot correctly processes code and parser comments inside sections marked with no references.</p>
+                            <h3 class="contrib-card-title">Add Tsishingini (tsw) language metadata</h3>
+                            <p class="contrib-card-desc">Integrated language profile parameters and locale mappings for Tsishingini into Wikimedia's core global dataset.</p>
                         </div>
                         <div class="contrib-card-footer">
-                            <span class="contrib-task-id">T426895</span>
-                            <a href="https://gerrit.wikimedia.org/r/c/pywikibot/core/+/1290141" target="_blank" rel="noopener" class="recog-link-btn">View Gerrit <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                            <span class="contrib-task-id">PR #503</span>
+                            <a href="https://github.com/wikimedia/language-data/pull/503" target="_blank" rel="noopener" class="recog-link-btn">View GitHub <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
                         </div>
                     </div>
 
-                    <!-- Patch 6 -->
-                    <div class="contrib-card" data-category="wikimedia" data-status="review">
-                        <div>
-                            <div class="contrib-header">
-                                <span class="contrib-repo-badge">mediawiki/services/parsoid</span>
-                                <span class="contrib-status-badge status-review">In Review</span>
-                            </div>
-                            <h3 class="contrib-card-title">Fix image option parsing inside tables</h3>
-                            <p class="contrib-card-desc">Investigated table layout image syntax corrections inside the Parsoid parsing service to resolve image positioning anomalies inside cells.</p>
-                        </div>
-                        <div class="contrib-card-footer">
-                            <span class="contrib-task-id">T431649</span>
-                            <a href="https://phabricator.wikimedia.org/T431649" target="_blank" rel="noopener" class="recog-link-btn">View Phabricator <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-                        </div>
-                    </div>
-
-                    <!-- Patch 7 -->
-                    <div class="contrib-card" data-category="translate" data-status="merged">
-                        <div>
-                            <div class="contrib-header">
-                                <span class="contrib-repo-badge">translatewiki.net</span>
-                                <span class="contrib-status-badge status-merged">Merged</span>
-                            </div>
-                            <h3 class="contrib-card-title">Add Tsishingini (tsw) to translatewiki.net</h3>
-                            <p class="contrib-card-desc">Integrated Tsishingini language code and support configuration maps to translatewiki.net global translation portals.</p>
-                        </div>
-                        <div class="contrib-card-footer">
-                            <span class="contrib-task-id">T428848</span>
-                            <a href="https://phabricator.wikimedia.org/T428848" target="_blank" rel="noopener" class="recog-link-btn">View Phabricator <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-                        </div>
-                    </div>
-
-                    <!-- Patch 8 -->
-                    <div class="contrib-card" data-category="translate" data-status="merged">
-                        <div>
-                            <div class="contrib-header">
-                                <span class="contrib-repo-badge">translatewiki.net</span>
-                                <span class="contrib-status-badge status-merged">Merged</span>
-                            </div>
-                            <h3 class="contrib-card-title">Add Southern Uzbek (uzs) to Translatewiki</h3>
-                            <p class="contrib-card-desc">Added database mapping files and localization tables to register Southern Uzbek inside the global Translatewiki system.</p>
-                        </div>
-                        <div class="contrib-card-footer">
-                            <span class="contrib-task-id">T423735</span>
-                            <a href="https://phabricator.wikimedia.org/T423735" target="_blank" rel="noopener" class="recog-link-btn">View Phabricator <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-                        </div>
-                    </div>
-
-                    <!-- Patch 9 -->
+                    <!-- Patch 14 -->
                     <div class="contrib-card" data-category="git" data-status="merged">
                         <div>
                             <div class="contrib-header">
@@ -725,19 +810,35 @@
                         </div>
                     </div>
 
-                    <!-- Patch 10 -->
-                    <div class="contrib-card" data-category="git" data-status="merged">
+                    <!-- Patch 15 -->
+                    <div class="contrib-card" data-category="translate" data-status="merged">
                         <div>
                             <div class="contrib-header">
-                                <span class="contrib-repo-badge">wikimedia/language-data</span>
+                                <span class="contrib-repo-badge">translatewiki.net</span>
                                 <span class="contrib-status-badge status-merged">Merged</span>
                             </div>
-                            <h3 class="contrib-card-title">Add Tsishingini (tsw) language metadata</h3>
-                            <p class="contrib-card-desc">Integrated language profile parameters and locale mappings for Tsishingini into Wikimedia's core global dataset.</p>
+                            <h3 class="contrib-card-title">Add Tsishingini (tsw) &amp; Southern Uzbek to Translatewiki</h3>
+                            <p class="contrib-card-desc">Integrated language code mappings and localization tables to register Tsishingini and Southern Uzbek inside Translatewiki.</p>
                         </div>
                         <div class="contrib-card-footer">
-                            <span class="contrib-task-id">PR #503</span>
-                            <a href="https://github.com/wikimedia/language-data/pull/503" target="_blank" rel="noopener" class="recog-link-btn">View GitHub <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                            <span class="contrib-task-id">T428848 / T423735</span>
+                            <a href="https://phabricator.wikimedia.org/T428848" target="_blank" rel="noopener" class="recog-link-btn">View Phabricator <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                        </div>
+                    </div>
+
+                    <!-- Patch 16 -->
+                    <div class="contrib-card" data-category="wikimedia" data-status="merged">
+                        <div>
+                            <div class="contrib-header">
+                                <span class="contrib-repo-badge">abstract-wiki/wikifunctions</span>
+                                <span class="contrib-status-badge status-merged">Merged</span>
+                            </div>
+                            <h3 class="contrib-card-title">Add accessors for WFFunctionCall internals</h3>
+                            <p class="contrib-card-desc">Implemented getFunction(), getArgument(), and getArguments() accessor methods to fix encapsulation inside WFFunctionCall class in Wikifunctions.</p>
+                        </div>
+                        <div class="contrib-card-footer">
+                            <span class="contrib-task-id">T426338</span>
+                            <a href="https://gitlab.wikimedia.org/repos/abstract-wiki/wikifunctions/function-orchestrator/-/merge_requests/684" target="_blank" rel="noopener" class="recog-link-btn">View MR <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
                         </div>
                     </div>
                 </div>
