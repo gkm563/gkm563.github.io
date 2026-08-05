@@ -2,12 +2,26 @@
 <html lang="en-IN">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <meta name="robots" content="noindex, follow">
-  <title>404 — Page Not Found | Gautam Kumar Maurya Portfolio</title>
-  <meta name="description" content="The page you are looking for could not be found. Return to Gautam Kumar Maurya's portfolio.">
+  <title>404 — Page Not Found | Gautam Kumar Maurya (gkm563) Portfolio</title>
+  <meta name="description" content="The page you are looking for could not be found. Head back to Gautam Kumar Maurya's Full-Stack AI Engineer & Data Science portfolio.">
   <link rel="canonical" href="https://gkm563.github.io/">
+  <link rel="sitemap" type="application/xml" title="Sitemap" href="https://gkm563.github.io/sitemap.xml">
+  
+  <!-- Favicon & Touch Icons -->
   <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://gkm563.github.io/404.html">
+  <meta property="og:title" content="404 — Page Not Found | Gautam Kumar Maurya">
+  <meta property="og:description" content="Official portfolio of Gautam Kumar Maurya (gkm563), Full-Stack AI Engineer & Data Scientist.">
+  <meta property="og:image" content="https://gkm563.github.io/assets/images/profile/Gautam_Kumar_Maurya.jpg">
+
   <style>
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
     body {
@@ -15,47 +29,75 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      background: #0a0a14;
-      font-family: 'Segoe UI', system-ui, sans-serif;
-      color: #e2e8f0;
+      background: #0f172a;
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      color: #f8fafc;
       text-align: center;
       padding: 2rem;
     }
-    .wrapper { max-width: 520px; }
+    .wrapper { max-width: 560px; }
     .code {
       font-size: clamp(5rem, 18vw, 9rem);
       font-weight: 900;
       line-height: 1;
-      background: linear-gradient(135deg, #a855f7 0%, #06b6d4 100%);
+      background: linear-gradient(135deg, #2563eb 0%, #0284c7 50%, #10b981 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-      background-clip: text;
       letter-spacing: -4px;
     }
-    h1 { font-size: 1.6rem; font-weight: 700; margin: 1rem 0 0.5rem; color: #f1f5f9; }
+    h1 { font-size: 1.8rem; font-weight: 800; margin: 1rem 0 0.5rem; color: #ffffff; }
     p { color: #94a3b8; font-size: 1rem; line-height: 1.6; margin-bottom: 2rem; }
-    a {
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      justify-content: center;
+      margin-top: 1.5rem;
+    }
+    a.btn-primary {
       display: inline-flex;
       align-items: center;
       gap: 0.5rem;
-      padding: 0.8rem 2rem;
-      background: linear-gradient(135deg, #a855f7, #06b6d4);
+      padding: 0.85rem 2rem;
+      background: linear-gradient(135deg, #2563eb, #0284c7);
       color: #fff;
       text-decoration: none;
-      border-radius: 100px;
-      font-weight: 600;
+      border-radius: 12px;
+      font-weight: 700;
       font-size: 0.95rem;
-      transition: opacity 0.2s, transform 0.2s;
+      transition: all 0.25s ease;
+      box-shadow: 0 4px 15px rgba(37, 99, 235, 0.4);
     }
-    a:hover { opacity: 0.88; transform: translateY(-2px); }
+    a.btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(37, 99, 235, 0.6); }
+    a.btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.85rem 1.5rem;
+      background: rgba(30, 41, 59, 0.8);
+      border: 1px solid rgba(226, 232, 240, 0.2);
+      color: #e2e8f0;
+      text-decoration: none;
+      border-radius: 12px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      transition: all 0.25s ease;
+    }
+    a.btn-secondary:hover { background: #1e293b; border-color: #0284c7; color: #38bdf8; }
   </style>
 </head>
 <body>
   <main class="wrapper">
     <div class="code" aria-hidden="true">404</div>
     <h1>Page Not Found</h1>
-    <p>The page you're looking for doesn't exist or has been moved.<br>Head back to the portfolio.</p>
-    <a href="https://gkm563.github.io/">← Back to Portfolio</a>
+    <p>The page you are looking for doesn't exist or has been moved.<br>Explore Gautam Kumar Maurya's featured reports below:</p>
+    <a href="https://gkm563.github.io/" class="btn-primary">← Portfolio Home</a>
+    
+    <div class="nav-links">
+      <a href="ait-global-innovation-internship.html" class="btn-secondary">AIT Bangkok GIIP</a>
+      <a href="up-police-internship.html" class="btn-secondary">UP Police APCSIP</a>
+      <a href="open-source-contributions.html" class="btn-secondary">Wikimedia Open Source</a>
+    </div>
   </main>
 </body>
 </html>
