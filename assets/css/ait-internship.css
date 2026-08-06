@@ -258,7 +258,7 @@ body.dark-theme .back-portfolio-btn:hover {
   align-items: center;
   justify-content: center;
   padding: 120px 24px 60px 24px;
-  background: linear-gradient(180deg, rgba(248, 250, 252, 0.90) 0%, rgba(241, 245, 249, 0.95) 100%),
+  background: linear-gradient(180deg, rgba(248, 250, 252, 0.60) 0%, rgba(241, 245, 249, 0.72) 100%),
               url('../images/ait-bangkok/gautam-kumar-maurya-gkm-ait-bangkok-thailand-internship-1.jpg') center/cover no-repeat;
   color: #0F172A;
   text-align: center;
@@ -1626,7 +1626,7 @@ html.dark .hero-section,
 .dark .hero-section,
 html.dark-theme .hero-section,
 body.dark-theme .hero-section {
-  background: linear-gradient(180deg, rgba(15, 23, 42, 0.88) 0%, rgba(15, 23, 42, 0.96) 100%),
+  background: linear-gradient(180deg, rgba(15, 23, 42, 0.65) 0%, rgba(15, 23, 42, 0.78) 100%),
               url('../images/ait-bangkok/gautam-kumar-maurya-gkm-ait-bangkok-thailand-internship-1.jpg') center/cover no-repeat !important;
   color: #FFFFFF !important;
 }
