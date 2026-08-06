@@ -1601,3 +1601,88 @@ html.dark p {
   color: #94A3B8;
 }
 
+/* Explicit Dark Mode Overrides for Hero Section */
+html.dark .hero-section,
+.dark .hero-section,
+html.dark-theme .hero-section,
+body.dark-theme .hero-section {
+  background: linear-gradient(180deg, rgba(15, 23, 42, 0.88) 0%, rgba(15, 23, 42, 0.96) 100%),
+              url('../images/ait-bangkok/gautam-kumar-maurya-gkm-ait-bangkok-thailand-internship-1.jpg') center/cover no-repeat !important;
+  color: #FFFFFF !important;
+}
+
+html.dark .hero-title,
+.dark .hero-title,
+html.dark-theme .hero-title,
+body.dark-theme .hero-title {
+  color: #FFFFFF !important;
+}
+
+html.dark .hero-subtitle,
+.dark .hero-subtitle,
+html.dark-theme .hero-subtitle,
+body.dark-theme .hero-subtitle {
+  color: #E2E8F0 !important;
+}
+
+html.dark .floating-badge,
+.dark .floating-badge,
+html.dark-theme .floating-badge,
+body.dark-theme .floating-badge {
+  background: rgba(15, 23, 42, 0.82) !important;
+  border-color: rgba(255, 255, 255, 0.15) !important;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5) !important;
+}
+
+html.dark .floating-badge-title,
+.dark .floating-badge-title,
+html.dark-theme .floating-badge-title,
+body.dark-theme .floating-badge-title {
+  color: #FFFFFF !important;
+}
+
+html.dark .floating-badge-sub,
+.dark .floating-badge-sub,
+html.dark-theme .floating-badge-sub,
+body.dark-theme .floating-badge-sub {
+  color: #94A3B8 !important;
+}
+
+html.dark .hero-live-status,
+.dark .hero-live-status,
+html.dark-theme .hero-live-status,
+body.dark-theme .hero-live-status {
+  background: rgba(15, 23, 42, 0.82) !important;
+  border-color: rgba(16, 185, 129, 0.35) !important;
+  color: #E2E8F0 !important;
+  box-shadow: none !important;
+}
+
+html.dark .hero-institution-badge,
+.dark .hero-institution-badge,
+html.dark-theme .hero-institution-badge,
+body.dark-theme .hero-institution-badge {
+  background: rgba(212, 175, 55, 0.15) !important;
+  border-color: rgba(212, 175, 55, 0.4) !important;
+  color: #FDE047 !important;
+}
+
+html.dark .domain-pill,
+.dark .domain-pill,
+html.dark-theme .domain-pill,
+body.dark-theme .domain-pill {
+  background: rgba(255, 255, 255, 0.1) !important;
+  border-color: rgba(255, 255, 255, 0.2) !important;
+  color: #F8FAFC !important;
+}
+
+html.dark .btn-secondary,
+.dark .btn-secondary,
+html.dark-theme .btn-secondary,
+body.dark-theme .btn-secondary {
+  background: rgba(255, 255, 255, 0.12) !important;
+  border-color: rgba(255, 255, 255, 0.3) !important;
+  color: #FFFFFF !important;
+  box-shadow: none !important;
+}
+
