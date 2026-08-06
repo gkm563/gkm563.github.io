@@ -1706,3 +1706,110 @@ body.dark-theme .btn-secondary {
   box-shadow: none !important;
 }
 
+/* ═══════════════════════════════════════
+   PREMIUM BRANDED ANIMATION & DESIGN SYSTEM
+   ═══════════════════════════════════════ */
+
+/* Gold Metallic Shimmer Badge */
+.gold-shimmer-badge {
+  background: linear-gradient(135deg, #d97706 0%, #f59e0b 50%, #fbbf24 100%);
+  background-size: 200% auto;
+  color: #ffffff !important;
+  font-weight: 700;
+  border: 1px solid rgba(251, 191, 36, 0.4);
+  box-shadow: 0 4px 15px rgba(245, 158, 11, 0.35);
+  animation: goldGlowPulse 4s ease-in-out infinite alternate;
+}
+
+@keyframes goldGlowPulse {
+  0% { box-shadow: 0 0 15px rgba(245, 158, 11, 0.25); }
+  100% { box-shadow: 0 0 30px rgba(245, 158, 11, 0.6); }
+}
+
+/* Glass Card Premium */
+.glass-card-premium {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(226, 232, 240, 0.8);
+  border-radius: 24px;
+  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+html.dark .glass-card-premium,
+.dark .glass-card-premium {
+  background: rgba(15, 23, 42, 0.85);
+  border-color: rgba(30, 41, 59, 0.8);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+.glass-card-premium:hover {
+  transform: translateY(-6px) scale(1.015);
+  border-color: var(--color-accent);
+  box-shadow: 0 20px 40px rgba(37, 99, 235, 0.2);
+}
+
+/* Glowing Tech Pills */
+.domain-pill {
+  cursor: pointer;
+}
+
+.domain-pill:hover {
+  background: var(--color-accent) !important;
+  color: #ffffff !important;
+  border-color: var(--color-accent) !important;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(37, 99, 235, 0.4);
+}
+
+/* Animated Stat Counter Box */
+.hero-stat-pill {
+  padding: 20px 28px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(226, 232, 240, 0.8);
+  text-align: center;
+  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.04);
+}
+
+html.dark .hero-stat-pill,
+.dark .hero-stat-pill {
+  background: rgba(15, 23, 42, 0.85);
+  border-color: rgba(30, 41, 59, 0.8);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+.hero-stat-pill:hover {
+  transform: translateY(-5px);
+  border-color: var(--color-accent);
+  box-shadow: 0 16px 35px rgba(37, 99, 235, 0.25);
+}
+
+.hero-stat-num {
+  font-size: 36px;
+  font-weight: 800;
+  background: linear-gradient(135deg, #2563eb 0%, #38bdf8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  line-height: 1;
+  margin-bottom: 8px;
+}
+
+html.dark .hero-stat-num,
+.dark .hero-stat-num {
+  background: linear-gradient(135deg, #60a5fa 0%, #38bdf8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero-stat-lbl {
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-text-muted);
+}
+
