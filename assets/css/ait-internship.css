@@ -233,11 +233,12 @@ a {
   align-items: center;
   justify-content: center;
   padding: 120px 24px 60px 24px;
-  background: linear-gradient(180deg, rgba(15, 23, 42, 0.85) 0%, rgba(15, 23, 42, 0.95) 100%),
+  background: linear-gradient(180deg, rgba(248, 250, 252, 0.90) 0%, rgba(241, 245, 249, 0.95) 100%),
               url('../images/ait-bangkok/gautam-kumar-maurya-gkm-ait-bangkok-thailand-internship-1.jpg') center/cover no-repeat;
-  color: #FFFFFF;
+  color: #0F172A;
   text-align: center;
   overflow: hidden;
+  transition: background 0.4s ease, color 0.4s ease;
 }
 
 /* Hero Ambient Mesh Glow */
@@ -261,22 +262,29 @@ a {
 }
 
 /* Floating 3D Visual Badges */
+/* Floating 3D Visual Badges */
 .floating-badge {
   position: absolute;
   z-index: 5;
-  background: rgba(15, 23, 42, 0.75);
+  background: rgba(255, 255, 255, 0.85);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(15, 23, 42, 0.12);
   padding: 12px 18px;
   border-radius: 16px;
   display: flex;
   align-items: center;
   gap: 12px;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
   animation: floatSlow 6s ease-in-out infinite alternate;
   pointer-events: auto;
-  transition: transform 0.3s ease, border-color 0.3s ease;
+  transition: transform 0.3s ease, border-color 0.3s ease, background 0.3s ease;
+}
+
+html.dark .floating-badge {
+  background: rgba(15, 23, 42, 0.82);
+  border-color: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
 }
 
 .floating-badge:hover {
@@ -309,12 +317,20 @@ a {
 .floating-badge-title {
   font-size: 13px;
   font-weight: 700;
-  color: #FFFFFF;
+  color: #0F172A;
   line-height: 1.2;
+}
+
+html.dark .floating-badge-title {
+  color: #FFFFFF;
 }
 
 .floating-badge-sub {
   font-size: 11px;
+  color: #475569;
+}
+
+html.dark .floating-badge-sub {
   color: #94A3B8;
 }
 
@@ -329,14 +345,23 @@ a {
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  background: rgba(15, 23, 42, 0.8);
-  border: 1px solid rgba(16, 185, 129, 0.3);
+  background: rgba(255, 255, 255, 0.85);
+  border: 1px solid rgba(16, 185, 129, 0.4);
   padding: 8px 20px;
   border-radius: 99px;
   font-size: 13px;
-  color: #E2E8F0;
+  color: #0F172A;
   margin-top: 24px;
   backdrop-filter: blur(12px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+html.dark .hero-live-status {
+  background: rgba(15, 23, 42, 0.8);
+  border-color: rgba(16, 185, 129, 0.3);
+  color: #E2E8F0;
+  box-shadow: none;
 }
 
 .status-dot-live {
@@ -367,32 +392,49 @@ a {
   gap: 10px;
   padding: 8px 20px;
   border-radius: 99px;
-  background: rgba(212, 175, 55, 0.15);
-  border: 1px solid rgba(212, 175, 55, 0.4);
-  color: #FDE047;
+  background: rgba(234, 179, 8, 0.12);
+  border: 1px solid rgba(180, 130, 20, 0.35);
+  color: #854D0E;
   font-size: var(--fs-caption);
   font-weight: 700;
   letter-spacing: 0.05em;
   text-transform: uppercase;
   margin-bottom: 24px;
+  transition: all 0.3s ease;
+}
+
+html.dark .hero-institution-badge {
+  background: rgba(212, 175, 55, 0.15);
+  border-color: rgba(212, 175, 55, 0.4);
+  color: #FDE047;
 }
 
 .hero-title {
   font-size: var(--fs-hero);
   font-weight: 800;
-  color: #FFFFFF;
+  color: #0F172A;
   line-height: 1.1;
   margin-bottom: 20px;
   letter-spacing: -0.02em;
+  transition: color 0.3s ease;
+}
+
+html.dark .hero-title {
+  color: #FFFFFF;
 }
 
 .hero-subtitle {
   font-size: var(--fs-title);
-  color: #E2E8F0;
+  color: #334155;
   font-weight: 400;
   max-width: 760px;
   margin: 0 auto 36px auto;
   line-height: 1.6;
+  transition: color 0.3s ease;
+}
+
+html.dark .hero-subtitle {
+  color: #E2E8F0;
 }
 
 /* Domain Pills Grid in Hero */
@@ -407,11 +449,19 @@ a {
 .domain-pill {
   padding: 6px 14px;
   border-radius: 99px;
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(37, 99, 235, 0.08);
   backdrop-filter: blur(8px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  color: #F8FAFC;
+  border: 1px solid rgba(37, 99, 235, 0.25);
+  color: #1D4ED8;
   font-size: var(--fs-caption);
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+html.dark .domain-pill {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.2);
+  color: #F8FAFC;
   font-weight: 500;
 }
 
@@ -445,16 +495,30 @@ a {
 .btn-secondary {
   padding: 14px 32px;
   border-radius: 14px;
-  background: rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.9);
   backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  color: #FFFFFF;
+  border: 1px solid rgba(15, 23, 42, 0.18);
+  color: #0F172A;
   font-size: var(--fs-body);
   font-weight: 600;
   display: inline-flex;
   align-items: center;
   gap: 10px;
   transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+html.dark .btn-secondary {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.3);
+  color: #FFFFFF;
+  box-shadow: none;
+}
+
+.btn-secondary:hover {
+  background: #FFFFFF;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
 }
 
 .btn-secondary:hover {
