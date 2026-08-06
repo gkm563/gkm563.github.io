@@ -1577,6 +1577,10 @@ a:hover {
     display: block;
   }
 
+  .brand-subtitle {
+    display: none;
+  }
+
   .footer-grid {
     grid-template-columns: 1fr;
     gap: 36px;
@@ -1589,6 +1593,26 @@ a:hover {
     --fs-h1: 28px;
     --fs-h2: 24px;
     --fs-h3: 20px;
+  }
+
+  .header-container {
+    height: 64px;
+  }
+
+  .brand-text {
+    display: none !important;
+  }
+
+  .cyber-brand {
+    gap: 6px !important;
+  }
+
+  .back-home-btn span {
+    display: none;
+  }
+
+  .back-home-btn {
+    padding: 8px 10px;
   }
 
   .hero-actions {
