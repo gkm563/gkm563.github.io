@@ -202,20 +202,40 @@ html.dark .site-header {
 .back-portfolio-btn {
   padding: 8px 18px;
   border-radius: 12px;
-  background: var(--color-primary);
-  color: #FFFFFF;
+  background: var(--color-accent);
+  color: #FFFFFF !important;
   font-size: var(--fs-caption);
   font-weight: 600;
   display: inline-flex;
   align-items: center;
   gap: 8px;
   transition: all 0.25s ease;
+  box-shadow: 0 4px 14px rgba(37, 99, 235, 0.25);
 }
 
 .back-portfolio-btn:hover {
-  background: var(--color-accent);
+  background: var(--color-accent-hover);
+  color: #FFFFFF !important;
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+  box-shadow: 0 6px 18px rgba(37, 99, 235, 0.4);
+}
+
+html.dark .back-portfolio-btn,
+.dark .back-portfolio-btn,
+html.dark-theme .back-portfolio-btn,
+body.dark-theme .back-portfolio-btn {
+  background: #2563EB !important;
+  color: #FFFFFF !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  box-shadow: 0 4px 16px rgba(37, 99, 235, 0.4) !important;
+}
+
+html.dark .back-portfolio-btn:hover,
+.dark .back-portfolio-btn:hover,
+html.dark-theme .back-portfolio-btn:hover,
+body.dark-theme .back-portfolio-btn:hover {
+  background: #3B82F6 !important;
+  color: #FFFFFF !important;
 }
 
 /* Mobile Header Hamburger */
