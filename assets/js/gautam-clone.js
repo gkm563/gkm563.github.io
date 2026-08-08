@@ -94,44 +94,48 @@ class GautamAIClone {
 
   bindEvents() {
     const fab = document.getElementById('gkm-clone-fab');
-    const windowEl = document.getElementById('gkm-clone-window');
     const closeBtn = document.getElementById('gkm-close-btn');
     const voiceBtn = document.getElementById('gkm-voice-btn');
     const sendBtn = document.getElementById('gkm-send-btn');
     const input = document.getElementById('gkm-clone-input');
     const promptsContainer = document.getElementById('gkm-quick-prompts');
 
-    fab.addEventListener('click', () => this.toggleWindow());
-    closeBtn.addEventListener('click', () => this.toggleWindow(false));
+    if (fab) fab.addEventListener('click', () => this.toggleWindow());
+    if (closeBtn) closeBtn.addEventListener('click', () => this.toggleWindow(false));
 
-    voiceBtn.addEventListener('click', () => {
-      this.isVoiceEnabled = !this.isVoiceEnabled;
-      voiceBtn.innerHTML = this.isVoiceEnabled
-        ? `<i class="fa-solid fa-volume-high" style="color: #3B82F6;"></i>`
-        : `<i class="fa-solid fa-volume-xmark"></i>`;
-      if (!this.isVoiceEnabled && this.synth) {
-        this.synth.cancel();
-      }
-    });
+    if (voiceBtn) {
+      voiceBtn.addEventListener('click', () => {
+        this.isVoiceEnabled = !this.isVoiceEnabled;
+        voiceBtn.innerHTML = this.isVoiceEnabled
+          ? `<i class="fa-solid fa-volume-high" style="color: #3B82F6;"></i>`
+          : `<i class="fa-solid fa-volume-xmark"></i>`;
+        if (!this.isVoiceEnabled && this.synth) {
+          this.synth.cancel();
+        }
+      });
+    }
 
-    sendBtn.addEventListener('click', () => this.handleSendMessage());
+    if (sendBtn) sendBtn.addEventListener('click', () => this.handleSendMessage());
 
-    input.addEventListener('keydown', (e) => {
-      if (e.key === 'Enter') {
-        e.preventDefault();
-        this.handleSendMessage();
-      }
-    });
+    if (input) {
+      input.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter') {
+          e.preventDefault();
+          this.handleSendMessage();
+        }
+      });
+    }
 
-    promptsContainer.addEventListener('click', (e) => {
-      const chip = e.target.closest('.gkm-prompt-chip');
-      if (chip) {
-        const promptText = chip.getAttribute('data-prompt');
-        input.value = promptText;
-        this.handleSendMessage();
-      }
-    });
-  }
+    if (promptsContainer) {
+      promptsContainer.addEventListener('click', (e) => {
+        const chip = e.target.closest('.gkm-prompt-chip');
+        if (chip) {
+          const promptText = chip.getAttribute('data-prompt');
+          if (input) input.value = promptText;
+          this.handleSendMessage();
+        }
+      });
+    }
 
     // Also bind any page buttons with class .open-gautam-ai-btn
     document.addEventListener('click', (e) => {
