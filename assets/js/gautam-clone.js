@@ -150,13 +150,24 @@ class GautamAIClone {
   toggleWindow(forceState) {
     const windowEl = document.getElementById('gkm-clone-window');
     if (!windowEl) return;
+    
     this.isOpen = forceState !== undefined ? forceState : !this.isOpen;
+    
     if (this.isOpen) {
       windowEl.classList.add('active');
+      windowEl.style.display = 'flex';
+      windowEl.style.opacity = '1';
+      windowEl.style.transform = 'translateY(0) scale(1)';
+      windowEl.style.pointerEvents = 'auto';
+      windowEl.style.visibility = 'visible';
+      
       const input = document.getElementById('gkm-clone-input');
-      if (input) input.focus();
+      if (input) setTimeout(() => input.focus(), 100);
     } else {
       windowEl.classList.remove('active');
+      windowEl.style.opacity = '0';
+      windowEl.style.transform = 'translateY(20px) scale(0.95)';
+      windowEl.style.pointerEvents = 'none';
       if (this.synth) this.synth.cancel();
     }
   }
