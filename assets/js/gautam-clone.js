@@ -9,6 +9,9 @@ class GautamAIClone {
     this.isVoiceEnabled = false;
     this.isThinking = false;
     this.synth = window.speechSynthesis || null;
+    if (this.synth && typeof this.synth.onvoiceschanged !== 'undefined') {
+      this.synth.onvoiceschanged = () => this.getBestEnglishVoice();
+    }
     this.init();
   }
 
@@ -361,14 +364,81 @@ You can reach Gautam directly via **Phone/WhatsApp at [+91 9125563563](https://a
     return formatted;
   }
 
+  getBestEnglishVoice() {
+    if (!this.synth) return null;
+    const voices = this.synth.getVoices();
+    if (!voices || voices.length === 0) return null;
+
+    // Preferred high-quality natural English voice identifiers
+    const preferredNames = [
+      'Google US English',
+      'Google UK English Male',
+      'Microsoft Guy Online (Natural) - English (United States)',
+      'Microsoft Christopher Online (Natural) - English (United States)',
+      'Microsoft Ryan Online (Natural) - English (United Kingdom)',
+      'Microsoft Natural',
+      'Google English',
+      'Samantha',
+      'Daniel',
+      'Alex'
+    ];
+
+    for (const pref of preferredNames) {
+      const match = voices.find(v => v.name.includes(pref) || v.name === pref);
+      if (match) return match;
+    }
+
+    // Secondary search: Any English voice (en-US or en-GB)
+    const enVoice = voices.find(v => v.lang && (v.lang === 'en-US' || v.lang === 'en-GB' || v.lang.startsWith('en')));
+    return enVoice || voices[0];
+  }
+
   speakText(text) {
-    if (!this.synth) return;
-    this.synth.cancel();
-    const cleanText = text.replace(/[*#_~`[\]()]/g, '');
-    const utterance = new SpeechSynthesisUtterance(cleanText);
-    utterance.rate = 1.0;
-    utterance.pitch = 1.0;
-    this.synth.speak(utterance);
+    if (!text) return;
+    
+    // Clean text for smooth natural speech (strip markdown, URLs, emojis, bullets)
+    const cleanText = text
+      .replace(/https?:\/\/\S+/g, '')
+      .replace(/[*#_~`[\]()]/g, '')
+      .replace(/[\u{1F600}-\u{1F64F}\u{1F300}-\u{1F5FF}\u{1F680}-\u{1F6FF}\u{2600}-\u{26FF}\u{2700}-\u{27BF}]/gu, '')
+      .replace(/•|\*|-/g, '')
+      .replace(/\s+/g, ' ')
+      .trim();
+
+    if (!cleanText) return;
+
+    // Option A: High-Quality Web Speech API
+    if (this.synth) {
+      this.synth.cancel();
+
+      const utterance = new SpeechSynthesisUtterance(cleanText);
+      utterance.rate = 0.98; // Natural conversational tempo
+      utterance.pitch = 1.0;  // Natural pitch
+
+      const selectedVoice = this.getBestEnglishVoice();
+      if (selectedVoice) {
+        utterance.voice = selectedVoice;
+        utterance.lang = selectedVoice.lang || 'en-US';
+      } else {
+        utterance.lang = 'en-US';
+      }
+
+      this.synth.speak(utterance);
+      return;
+    }
+
+    // Option B: Open-Source Audio Stream Fallback
+    try {
+      if (this.currentAudio) {
+        this.currentAudio.pause();
+        this.currentAudio = null;
+      }
+      const audioUrl = `https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&q=${encodeURIComponent(cleanText.substring(0, 200))}&tl=en`;
+      this.currentAudio = new Audio(audioUrl);
+      this.currentAudio.play().catch(e => console.warn("Audio play prevented:", e));
+    } catch (e) {
+      console.warn("TTS Error:", e);
+    }
   }
 }
 
