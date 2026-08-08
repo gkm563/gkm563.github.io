@@ -130,12 +130,24 @@ class GautamAIClone {
     });
   }
 
+    // Also bind any page buttons with class .open-gautam-ai-btn
+    document.addEventListener('click', (e) => {
+      const openBtn = e.target.closest('.open-gautam-ai-btn, [data-open-gautam-ai]');
+      if (openBtn) {
+        e.preventDefault();
+        this.toggleWindow(true);
+      }
+    });
+  }
+
   toggleWindow(forceState) {
     const windowEl = document.getElementById('gkm-clone-window');
+    if (!windowEl) return;
     this.isOpen = forceState !== undefined ? forceState : !this.isOpen;
     if (this.isOpen) {
       windowEl.classList.add('active');
-      document.getElementById('gkm-clone-input').focus();
+      const input = document.getElementById('gkm-clone-input');
+      if (input) input.focus();
     } else {
       windowEl.classList.remove('active');
       if (this.synth) this.synth.cancel();
@@ -144,7 +156,7 @@ class GautamAIClone {
 
   renderInitialMessage() {
     const messagesContainer = document.getElementById('gkm-clone-messages');
-    if (messagesContainer.children.length > 0) return;
+    if (!messagesContainer || messagesContainer.children.length > 0) return;
 
     const greeting = `Hi there! 👋 I am **Gautam's AI Digital Clone**.
 
@@ -288,6 +300,7 @@ What would you like to explore first?`;
 
   appendMessage(sender, text) {
     const messagesContainer = document.getElementById('gkm-clone-messages');
+    if (!messagesContainer) return;
     const msgDiv = document.createElement('div');
     msgDiv.className = `gkm-msg ${sender}`;
 
@@ -312,6 +325,7 @@ What would you like to explore first?`;
 
   showTypingIndicator() {
     const messagesContainer = document.getElementById('gkm-clone-messages');
+    if (!messagesContainer) return;
     const typingDiv = document.createElement('div');
     typingDiv.id = 'gkm-typing-indicator';
     typingDiv.className = 'gkm-msg bot';
@@ -354,7 +368,15 @@ What would you like to explore first?`;
   }
 }
 
-// Auto-initialize when DOM is ready
-document.addEventListener('DOMContentLoaded', () => {
-  window.gautamAI = new GautamAIClone();
-});
+// Failsafe auto-initialization
+function initGautamAI() {
+  if (!window.gautamAI) {
+    window.gautamAI = new GautamAIClone();
+  }
+}
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initGautamAI);
+} else {
+  initGautamAI();
+}
