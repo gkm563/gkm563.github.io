@@ -198,16 +198,28 @@ Feel free to ask me anything or click a topic below!`;
 
   async fetchGenerativeAIReply(query) {
     const controller = new AbortController();
-    const timeoutId = setTimeout(() => controller.abort(), 3500);
+    const timeoutId = setTimeout(() => controller.abort(), 6000);
 
-    const promptText = `${GAUTAM_SYSTEM_PROMPT}\nUser Question: ${query}\nAnswer as Gautam AI:`;
-    const response = await fetch(`https://text.pollinations.ai/${encodeURIComponent(promptText)}`, {
+    // Try POST request to Pollinations AI API
+    const response = await fetch('https://text.pollinations.ai/', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        messages: [
+          { role: 'system', content: GAUTAM_SYSTEM_PROMPT },
+          { role: 'user', content: query }
+        ],
+        model: 'openai',
+        jsonMode: false
+      }),
       signal: controller.signal
     });
 
     clearTimeout(timeoutId);
 
-    if (!response.ok) throw new Error("AI API Error");
+    if (!response.ok) throw new Error(`AI API HTTP Error ${response.status}`);
     const text = await response.text();
     if (!text || text.length < 5) throw new Error("Empty AI Response");
     return text.trim();
@@ -216,55 +228,57 @@ Feel free to ask me anything or click a topic below!`;
   getLocalSemanticReply(query) {
     const q = query.toLowerCase();
 
-    // 1. Who is Gautam / About
-    if (q.includes('who is') || q.includes('about gautam') || q.includes('intro') || q.includes('bio') || q.includes('gkm')) {
+    // 1. Contact / Phone Number / Email / LinkedIn / Socials (Handles typos like linkeidn, conctact, etc.)
+    if (/contact|conctact|phone|number|mobile|call|whatsapp|email|mail|linkedin|linkeidn|linkdin|reach|connect|social/.test(q)) {
+      return `✉️ **Gautam's Direct Contact & Social Links**
+
+• **Phone / WhatsApp**: [+91 9125563563](https://api.whatsapp.com/send?phone=919125563563&text=Hi%20Gautam!)
+• **LinkedIn**: [linkedin.com/in/gkm563](https://www.linkedin.com/in/gkm563/)
+• **Email**: [gkmwin563@gmail.com](mailto:gkmwin563@gmail.com)
+• **GitHub**: [github.com/gkm563](https://github.com/gkm563)
+• **Medium**: [medium.com/@gkm563](https://medium.com/@gkm563)
+
+Feel free to reach out directly via WhatsApp or Email for collaborations, tech roles, or consulting!`;
+    }
+
+    // 2. All Internships / Fellowships / Experience (Handles typos like interhsip, intern, etc.)
+    if (/intern|internship|interhsip|fellowship|experience|work|police|amroha|ait|bangkok|thailand/.test(q)) {
+      return `🎓 **Gautam's Research Fellowships & Internships**
+
+1. 🛡️ **UP Police Cyber Security Fellowship (APCSIP-2026)**:
+   • 15-day government digital investigation fellowship with Amroha Police Cyber Crime Cell (under DSP Anjali Kataria).
+   • Handled Digital Forensics, OSINT Reconnaissance, CDR Sorting, and Threat Analysis.
+   • **Awarded Best Content Creator Award**. Explore the [UP Police Fellowship Page](up-police-internship.html).
+
+2. 🇹🇭 **AIT Bangkok Global Innovation Internship (GIIP-2026)**:
+   • 15-day international research fellowship at Asian Institute of Technology, Pathum Thani, Thailand.
+   • Researched Agentic AI, Ubiquitous GIS, Drone Telemetry, and built the **BusSetu Transit Platform** capstone.
+   • Read the full daily research logs on the [AIT Bangkok Fellowship Page](ait-global-innovation-internship.html).`;
+    }
+
+    // 3. Recent Activity / Latest Updates / Current Work
+    if (/recent|activity|latest|update|updates|current|doing|now|news|happen/.test(q)) {
+      return `🚀 **Gautam's Recent Activities & Latest Highlights**
+
+• 🇹🇭 **Completed GIIP-2026 Fellowship at AIT Bangkok, Thailand**: Researching Agentic AI, Ubiquitous GIS, and Drone Telemetry.
+• 🛡️ **UP Police Cyber Fellowship Award**: Won **Best Content Creator Award** at Amroha Police Cyber Crime Cell.
+• 🌐 **MediaWiki Core Production Patches**: Merged 15+ Gerrit patches into MediaWiki Core, UploadWizard, and MinervaNeue skin.
+• 🏆 **Vice President Leadership**: Heading events at GeeksforGeeks Student Chapter (UIT Prayagraj).`;
+    }
+
+    // 4. Who is Gautam / Bio / Intro
+    if (/who|about|intro|bio|gkm|gautam|profile/.test(q)) {
       return `**Gautam Kumar Maurya (gkm563)** is a Full-Stack AI Engineer, Data Scientist, and Cybersecurity Researcher.
 
-Key Highlights:
-• **Academic Rank 1**: CSE (Data Science) Branch Topper at United Institute of Technology (UIT Prayagraj) & AKTU Rank 5.
-• **Leadership**: Vice President of GeeksforGeeks Student Chapter (UIT Prayagraj) & GDG Volunteer.
-• **Research Fellowships**: AIT Bangkok (Thailand) & UP Police Cyber Crime Cell (APCSIP-2026).
-• **Open Source**: 15+ merged Gerrit patches in MediaWiki Core (Wikipedia tech stack).`;
-    }
-
-    // 2. UP Police Internship
-    if (q.includes('police') || q.includes('apcsip') || q.includes('cyber security') || q.includes('amroha') || q.includes('anjali kataria')) {
-      return `🛡️ **UP Police Cyber Security Fellowship (APCSIP-2026)**
-
-Gautam completed an intensive government cyber investigation fellowship with the **Amroha Police Cyber Crime Cell**, under DSP Anjali Kataria.
-
 Highlights:
-• **Awarded Best Content Creator** for technical cyber awareness & investigation workflows.
-• Hands-on expertise in **Digital Forensics**, **OSINT Reconnaissance**, **CDR Data Sorting**, and **Malware Telemetry**.
-• Read the full case study on the [UP Police Fellowship Page](up-police-internship.html).`;
+• **Rank 1 Academic Scholar**: CSE (Data Science) Branch Topper at UIT Prayagraj & AKTU Rank 5.
+• **Vice President**: GeeksforGeeks Student Chapter UIT Prayagraj.
+• **Research Fellowships**: AIT Bangkok (Thailand) & UP Police Cyber Crime Cell.
+• **Open Source**: 15+ merged production patches in MediaWiki Core (Wikipedia).`;
     }
 
-    // 3. AIT Bangkok Fellowship
-    if (q.includes('ait') || q.includes('bangkok') || q.includes('thailand') || q.includes('bussetu') || q.includes('gis') || q.includes('drone')) {
-      return `🇹🇭 **AIT Bangkok Global Innovation Internship (GIIP-2026)**
-
-Gautam participated in a 15-day international research fellowship at the **Asian Institute of Technology, Pathum Thani, Thailand**.
-
-Research Focus:
-• **Agentic AI & LLM Workflows**
-• **Ubiquitous GIS & QGIS Spatial Mapping**
-• **Drone Telemetry & KMITL Robotics Research**
-• **BusSetu Transit Platform Capstone**: Built an AI-assisted public bus transit navigation system.
-• Explore the detailed daily logs on the [AIT Bangkok Fellowship Page](ait-global-innovation-internship.html).`;
-    }
-
-    // 4. Open Source / Wikimedia / Gerrit
-    if (q.includes('open source') || q.includes('wikimedia') || q.includes('gerrit') || q.includes('mediawiki') || q.includes('wikipedia') || q.includes('patch')) {
-      return `🌐 **Open Source & Wikimedia Contributions**
-
-Gautam is an active open-source contributor to **MediaWiki Core** (the software powering Wikipedia):
-• **15+ Merged Gerrit Patches** across MediaWiki Core, MinervaNeue skin, GrowthExperiments, Pywikibot, and translatewiki.net.
-• **30+ Total Contributions** including UploadWizard category navigation fixes and multi-language namespace translations.
-• View all patches on the [Open Source Report Page](open-source-contributions.html) or on [Gautam's Gerrit Profile](https://gerrit.wikimedia.org/r/q/owner:gkmwin563@gmail.com).`;
-    }
-
-    // 5. Academic Awards & Toppers
-    if (q.includes('award') || q.includes('topper') || q.includes('rank') || q.includes('aktu') || q.includes('mnit') || q.includes('up board')) {
+    // 5. Academic Ranks & Awards
+    if (/award|awards|topper|rank|aktu|mnit|up board|school|college|marks|gpa/.test(q)) {
       return `🏆 **Academic Honors & Excellence Awards**
 
 • **AKTU Branch Topper**: 1st Rank in CSE (Data Science) & Rank 5 overall at UIT Prayagraj.
@@ -273,29 +287,19 @@ Gautam is an active open-source contributor to **MediaWiki Core** (the software 
 • **GSA Mega Event Award**: Honored on stage by Principal Sir, DSW & HODs for co-organizing a 650+ attendee tech conference.`;
     }
 
-    // 6. Contact & Hiring
-    if (q.includes('contact') || q.includes('hire') || q.includes('email') || q.includes('whatsapp') || q.includes('linkedin') || q.includes('reach')) {
-      return `✉️ **Connect with Gautam Kumar Maurya**
+    // 6. Projects & Open Source
+    if (/project|projects|bussetu|prayagrajrooms|gerrit|wikimedia|mediawiki|patch|code/.test(q)) {
+      return `💻 **Top Projects & Open Source Work**
 
-• **Email**: [gkmwin563@gmail.com](mailto:gkmwin563@gmail.com)
-• **WhatsApp**: [+91 9125563563](https://api.whatsapp.com/send?phone=919125563563&text=Hi%20Gautam!)
-• **LinkedIn**: [linkedin.com/in/gkm563](https://www.linkedin.com/in/gkm563/)
-• **GitHub**: [github.com/gkm563](https://github.com/gkm563)
-
-Gautam is open for **AI Engineering Roles**, **Cybersecurity Consulting**, and **Tech Collaborations**!`;
+• **BusSetu AI Transit Platform**: AI-assisted public bus navigation & route analytics capstone built at AIT Bangkok.
+• **PrayagrajRooms**: Hyper-local student housing discovery portal in Prayagraj.
+• **MediaWiki Core Patches**: 15+ merged production commits powering Wikipedia (UploadWizard, MinervaNeue, Pywikibot).`;
     }
 
-    // Default fallback answer
-    return `That's a great question! Gautam Kumar Maurya is a **1st Rank CSE Scholar at UIT Prayagraj**, **UP Police Cyber Security Fellow**, **AIT Bangkok Fellow**, and **MediaWiki Core Developer**.
+    // Smart contextual dynamic fallback (No repetitive static menus!)
+    return `Regarding "${query.trim()}": Gautam Kumar Maurya is a **1st Rank CSE Scholar at UIT Prayagraj**, **UP Police Cyber Security Fellow**, **AIT Bangkok Fellow**, and **Open-Source MediaWiki Developer**.
 
-You can ask me about his:
-1. 🛡️ **UP Police Fellowship**
-2. 🇹🇭 **AIT Bangkok Research**
-3. 🌐 **Open Source Patches**
-4. 🏆 **Academic Topper Awards**
-5. ✉️ **Contact & LinkedIn**
-
-What would you like to explore first?`;
+You can reach Gautam directly via **Phone/WhatsApp at [+91 9125563563](https://api.whatsapp.com/send?phone=919125563563)** or **LinkedIn at [linkedin.com/in/gkm563](https://www.linkedin.com/in/gkm563/)**!`;
   }
 
   appendMessage(sender, text) {
