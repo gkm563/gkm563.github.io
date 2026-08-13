@@ -17,10 +17,13 @@ export default function App() {
 
   useEffect(() => {
     const html = document.documentElement;
+    const body = document.body;
     if (theme === 'dark') {
       html.classList.add('dark');
+      body.classList.add('dark');
     } else {
       html.classList.remove('dark');
+      body.classList.remove('dark');
     }
     localStorage.setItem('gkm_theme', theme);
   }, [theme]);
