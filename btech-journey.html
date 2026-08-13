@@ -184,9 +184,9 @@
               </div>
             </section>
 
-            {/* 3. PRIMARY PHASE SELECTOR CARDS (Top Hero Control) */}
+            {/* 3. PRIMARY PHASE SELECTOR CARDS (Top Hero Control — 4 Active Phases) */}
             <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-10">
-              <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3 sm:gap-4">
+              <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4">
                 {JOURNEY_DATA.phases.map(phase => {
                   const isActive = activePhaseId === phase.id;
                   const totalItems = JOURNEY_DATA.milestones.filter(m => m.phaseId === phase.id).length;

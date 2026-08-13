@@ -1,6 +1,6 @@
 /**
  * GAUTAM KUMAR MAURYA (gkm563) — MASTER JOURNEY DATASET
- * Structured for Phase-Isolated Exploration & Sequential Semester Flow.
+ * Focused strictly on active completed and current journey (Pre-College, 1st Year, 2nd Year, 3rd Year).
  */
 
 const JOURNEY_DATA = {
@@ -17,7 +17,7 @@ const JOURNEY_DATA = {
     currentStatusText: "3rd Year (Semester 6) · Academic Rank 1 Branch Topper · AKTU Rank 5"
   },
 
-  // 1. Primary Phase Cards Selection (Top Control Engine)
+  // 1. Primary Phase Cards Selection (Top Control Engine — Active Years Only)
   phases: [
     {
       id: "pre-college",
@@ -74,21 +74,6 @@ const JOURNEY_DATA = {
         { id: "sem-5", title: "5th Semester (Semester 5)", num: "Sem 5", desc: "GFG VP Leadership, GSA 650+ Event, PrayagrajRooms Launch" },
         { id: "sem-6", title: "6th Semester (CURRENT)", num: "Sem 6", desc: "AIT Bangkok GIIP-2026 International Fellowship & BusSetu" }
       ]
-    },
-    {
-      id: "year-4",
-      title: "4th Year B.Tech (ROADMAP)",
-      shortTitle: "4th Year (Roadmap)",
-      subtitle: "Advanced AI Research, Capstone & Graduation",
-      period: "2026 – 2027",
-      icon: "fa-solid fa-compass",
-      accentColor: "from-slate-500 to-slate-700",
-      badgeColor: "slate",
-      isPlanned: true,
-      semesters: [
-        { id: "sem-7", title: "7th Semester (Roadmap)", num: "Sem 7", desc: "Deep Learning Research & Multi-Agent Architecture" },
-        { id: "sem-8", title: "8th Semester & Graduation", num: "Sem 8", desc: "B.Tech Thesis Defense & Full-Time AI Engineering Launch" }
-      ]
     }
   ],
 
@@ -106,7 +91,56 @@ const JOURNEY_DATA = {
     { id: "Certification", label: "Certifications", icon: "fa-solid fa-certificate" }
   ],
 
-  // 3. Master Milestones List
+  // 3. Skill Evolution Progression (Honest non-numeric labels)
+  skillEvolution: [
+    {
+      phaseId: "pre-college",
+      phaseTitle: "Pre-College Foundation",
+      period: "Before 2023",
+      skills: [
+        { name: "Mathematics & Physics", level: "Built With" },
+        { name: "C Programming", level: "Explored" },
+        { name: "Academic Discipline", level: "Used in Production" }
+      ]
+    },
+    {
+      phaseId: "year-1",
+      phaseTitle: "B.Tech Year 1 (Semesters 1 & 2)",
+      period: "2023 – 2024",
+      skills: [
+        { name: "Python Programming", level: "Built With" },
+        { name: "Data Structures & Algorithms", level: "Learning" },
+        { name: "HTML / CSS / JavaScript", level: "Built With" },
+        { name: "Engineering Physics & Math", level: "Built With" }
+      ]
+    },
+    {
+      phaseId: "year-2",
+      phaseTitle: "B.Tech Year 2 (Semesters 3 & 4)",
+      period: "2024 – 2025",
+      skills: [
+        { name: "Object-Oriented Programming (Java/Python)", level: "Built With" },
+        { name: "Database Management Systems (SQL)", level: "Used in Production" },
+        { name: "Cyber Security & Digital Forensics", level: "Used in Production" },
+        { name: "MediaWiki / PHP Core Development", level: "Contributed To" },
+        { name: "OSINT Reconnaissance", level: "Used in Production" }
+      ]
+    },
+    {
+      phaseId: "year-3",
+      phaseTitle: "B.Tech Year 3 (Semesters 5 & 6 — CURRENT FOCUS)",
+      period: "2025 – 2026",
+      skills: [
+        { name: "Agentic AI & LLMs", level: "Learning & Built With" },
+        { name: "Ubiquitous GIS & QGIS Spatial Analysis", level: "Used in Production" },
+        { name: "Drone Telemetry & Sensor Analytics", level: "Explored" },
+        { name: "Data Science & Power BI Dashboards", level: "Used in Production" },
+        { name: "Full-Stack Web Engineering", level: "Used in Production" }
+      ]
+    }
+  ],
+
+  // 4. Master Milestones List
   milestones: [
     /* ════════════════════════════════════════════════════════════
        PRE-COLLEGE FOUNDATION
@@ -422,54 +456,6 @@ const JOURNEY_DATA = {
         certificate: null,
         linkedin: "https://www.linkedin.com/in/gkm563/"
       }
-    },
-
-    /* ════════════════════════════════════════════════════════════
-       4TH YEAR B.TECH (SEMESTERS 7 & 8 — ROADMAP)
-       ════════════════════════════════════════════════════════════ */
-    {
-      id: "sem-7-advanced-ai-research",
-      title: "B.Tech Semester 7: Advanced Deep Learning & Capstone Architecture",
-      shortDescription: "Planned focus on advanced neural network architectures, AI research paper publication, and major capstone engineering.",
-      fullDescription: "Upcoming roadmap milestone for 4th year Semester 7: Deep learning models, multi-agent AI systems, research paper submission, and enterprise production system architecture.",
-      startDate: "Aug 2026",
-      endDate: "Dec 2026",
-      phaseId: "year-4",
-      semesterId: "sem-7",
-      category: "Learning",
-      status: "planned",
-      importance: "major",
-      skills: ["Deep Learning", "Multi-Agent Systems", "Research Writing", "System Architecture"],
-      organization: "United Institute of Technology (UIT Prayagraj)",
-      role: "4th Year Senior Scholar",
-      location: "Prayagraj, Uttar Pradesh, India",
-      whatHappened: "Roadmap goal: Publish peer-reviewed AI research paper and lead final year capstone engineering project.",
-      whyItMattered: "Bridges undergraduate engineering with high-impact industry or graduate research.",
-      whatILearned: "Planned: Deep learning model deployment, distributed inference, and paper peer review.",
-      impact: "Upcoming milestone towards B.Tech completion.",
-      evidence: { images: [], links: [], github: null, certificate: null, linkedin: null }
-    },
-    {
-      id: "sem-8-graduation-and-industry",
-      title: "B.Tech Semester 8 & Graduation: Degree Completion & Industry Launch",
-      shortDescription: "Completion of 4-Year B.Tech CSE (Data Science) degree, thesis defense, and full-time engineering deployment.",
-      fullDescription: "Upcoming final milestone: Successful defense of B.Tech thesis/capstone project, completion of all 8 semesters under AKTU Lucknow, and launch into full-time AI Engineering / Data Science role.",
-      startDate: "Jan 2027",
-      endDate: "Jun 2027",
-      phaseId: "year-4",
-      semesterId: "sem-8",
-      category: "Academic",
-      status: "planned",
-      importance: "major",
-      skills: ["B.Tech Graduate", "Full-Stack AI Engineering", "Enterprise Systems", "Open Source Leadership"],
-      organization: "United Institute of Technology (UIT Prayagraj) / AKTU Lucknow",
-      role: "B.Tech Engineering Graduate",
-      location: "Prayagraj / Global",
-      whatHappened: "Roadmap goal: Graduation with 4-Year B.Tech CSE (Data Science) degree.",
-      whyItMattered: "Fulfillment of 4-year academic journey from school topper to international AI fellow and engineer.",
-      whatILearned: "Planned: Complete engineering lifecycle execution.",
-      impact: "Launch into professional AI engineering, research, and open source leadership.",
-      evidence: { images: [], links: [], github: null, certificate: null, linkedin: null }
     }
   ]
 };
