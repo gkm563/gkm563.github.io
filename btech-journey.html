@@ -30,16 +30,47 @@
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
 
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            colors: {
+              brand: {
+                50: '#EFF6FF',
+                100: '#DBEAFE',
+                500: '#3B82F6',
+                600: '#2563EB',
+                700: '#1D4ED8',
+                900: '#0F172A',
+                950: '#090D16'
+              }
+            }
+          }
+        }
+      }
+    </script>
+
     <!-- Fonts & Icons -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
-    <!-- Custom Stylesheet -->
+    <!-- Custom App Stylesheet -->
     <link rel="stylesheet" href="assets/css/btech-journey.css">
 
-    <!-- Schema.org Structured Data -->
+    <!-- React 18, ReactDOM 18 & Babel Standalone CDNs -->
+    <script src="https://unpkg.com/react@18/umd/react.production.min.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js" crossorigin></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <!-- Master Journey Data File -->
+    <script src="assets/js/journey-data.js"></script>
+
+    <!-- Schema.org JSON-LD Metadata -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -65,137 +96,495 @@
           "name": "Asian Institute of Technology",
           "location": "Pathum Thani, Thailand"
         }
-      ],
-      "sameAs": [
-        "https://github.com/gkm563",
-        "https://www.linkedin.com/in/gkm563/",
-        "https://medium.com/@gkm563"
-      ]
-    }
-    </script>
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "BreadcrumbList",
-      "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "Portfolio Home",
-          "item": "https://gkm563.github.io/"
-        },
-        {
-          "@type": "ListItem",
-          "position": 2,
-          "name": "B.Tech Engineering Journey",
-          "item": "https://gkm563.github.io/btech-journey.html"
-        }
       ]
     }
     </script>
 </head>
-<body>
+<body class="bg-slate-50 text-slate-900 dark:bg-slate-950 dark:text-slate-100 font-sans min-h-screen transition-colors duration-300">
 
-    <!-- 1. Header & Navigation Bar -->
-    <header class="journey-header">
-        <div class="journey-nav-container">
-            <a href="index.html" class="journey-brand">
-                <img src="assets/images/profile/Gautam_Kumar_Maurya.jpg" alt="Gautam Kumar Maurya" class="journey-avatar">
-                <div>
-                    <div class="journey-brand-title">Gautam Kumar Maurya</div>
-                    <div class="journey-brand-sub">B.Tech Engineering Journey</div>
-                </div>
-            </a>
-            <div class="journey-nav-actions">
-                <a href="index.html" class="back-btn">
-                    <i class="fa-solid fa-arrow-left"></i>
-                    <span>Portfolio Home</span>
+    <!-- React Application Mount Root -->
+    <div id="react-journey-root"></div>
+
+    <!-- React 18 Application Script -->
+    <script type="text/babel">
+      const { useState, useEffect, useMemo } = React;
+
+      function BTechJourneyApp() {
+        const [theme, setTheme] = useState(() => localStorage.getItem('gkm_theme') || 'dark');
+        const [selectedSemester, setSelectedSemester] = useState('all');
+        const [selectedCategory, setSelectedCategory] = useState('all');
+        const [statusFilter, setStatusFilter] = useState('all');
+        const [searchQuery, setSearchQuery] = useState('');
+        const [activeModalItem, setActiveModalItem] = useState(null);
+        const [collapsedSemesters, setCollapsedSemesters] = useState({});
+
+        // Apply dark/light theme class to <html>
+        useEffect(() => {
+          const html = document.documentElement;
+          if (theme === 'dark') {
+            html.classList.add('dark');
+          } else {
+            html.classList.remove('dark');
+          }
+          localStorage.setItem('gkm_theme', theme);
+        }, [theme]);
+
+        const toggleTheme = () => {
+          setTheme(prev => (prev === 'dark' ? 'light' : 'dark'));
+        };
+
+        const toggleSemesterCollapse = (semId) => {
+          setCollapsedSemesters(prev => ({
+            ...prev,
+            [semId]: !prev[semId]
+          }));
+        };
+
+        // Master filtered list
+        const filteredMilestones = useMemo(() => {
+          if (!JOURNEY_DATA || !JOURNEY_DATA.milestones) return [];
+          return JOURNEY_DATA.milestones.filter(m => {
+            if (selectedSemester !== 'all' && m.semesterId !== selectedSemester) return false;
+            if (selectedCategory !== 'all' && m.category !== selectedCategory) return false;
+            if (statusFilter !== 'all' && m.status !== statusFilter) return false;
+            if (searchQuery.trim() !== '') {
+              const q = searchQuery.toLowerCase();
+              const matchTitle = m.title.toLowerCase().includes(q);
+              const matchDesc = m.shortDescription.toLowerCase().includes(q);
+              const matchOrg = m.organization.toLowerCase().includes(q);
+              const matchSkills = m.skills.some(s => s.toLowerCase().includes(q));
+              if (!matchTitle && !matchDesc && !matchOrg && !matchSkills) return false;
+            }
+            return true;
+          });
+        }, [selectedSemester, selectedCategory, statusFilter, searchQuery]);
+
+        // Group milestones by semester for rendering
+        const semesterGroups = useMemo(() => {
+          const sMap = {};
+          JOURNEY_DATA.semesters.forEach(s => {
+            sMap[s.id] = { ...s, items: [] };
+          });
+
+          filteredMilestones.forEach(m => {
+            if (sMap[m.semesterId]) {
+              sMap[m.semesterId].items.push(m);
+            }
+          });
+
+          return Object.values(sMap).filter(g => g.items.length > 0);
+        }, [filteredMilestones]);
+
+        // Metrics counters
+        const metrics = useMemo(() => {
+          const milestones = JOURNEY_DATA.milestones || [];
+          return {
+            total: milestones.length,
+            completed: milestones.filter(m => m.status === 'completed').length,
+            current: milestones.filter(m => m.status === 'current').length,
+            majorAwards: milestones.filter(m => m.category === 'Award' || m.category === 'Internship' || m.category === 'Open Source').length
+          };
+        }, []);
+
+        return (
+          <div class="min-h-screen flex flex-col">
+            
+            {/* 1. Header Navbar */}
+            <header class="sticky top-0 z-50 glass-header border-b border-slate-200 dark:border-slate-800 transition-colors">
+              <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between gap-4">
+                <a href="index.html" class="flex items-center gap-3 group text-decoration-none">
+                  <img src="assets/images/profile/Gautam_Kumar_Maurya.jpg" alt="Gautam Kumar Maurya" class="w-10 h-10 rounded-full object-cover border-2 border-blue-500 group-hover:scale-105 transition-transform" />
+                  <div>
+                    <div class="font-bold text-sm text-slate-900 dark:text-white leading-tight">Gautam Kumar Maurya</div>
+                    <div class="text-xs font-semibold text-blue-600 dark:text-blue-400">B.Tech Engineering Journey</div>
+                  </div>
                 </a>
-                <button id="theme-toggle-btn" class="theme-toggle-btn" title="Toggle Theme">
-                    <i id="theme-icon" class="fa-solid fa-sun"></i>
+
+                <div class="flex items-center gap-3">
+                  <a href="index.html" class="px-4 py-2 rounded-xl bg-blue-50 hover:bg-blue-100 dark:bg-blue-950/40 dark:hover:bg-blue-900/60 text-blue-600 dark:text-blue-400 border border-blue-200 dark:border-blue-800 text-xs font-semibold flex items-center gap-2 transition-all">
+                    <i class="fa-solid fa-arrow-left"></i>
+                    <span class="hidden sm:inline">Portfolio Home</span>
+                  </a>
+                  <button onClick={toggleTheme} class="w-9 h-9 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 text-slate-700 dark:text-slate-200 flex items-center justify-center hover:border-blue-500 hover:text-blue-500 transition-all" title="Toggle Theme">
+                    <i class={theme === 'dark' ? 'fa-solid fa-sun text-amber-400' : 'fa-solid fa-moon text-slate-700'}></i>
+                  </button>
+                </div>
+              </div>
+            </header>
+
+            {/* 2. Hero Section */}
+            <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 pb-8 text-center">
+              <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-50 dark:bg-blue-950/60 border border-blue-200 dark:border-blue-800 text-blue-600 dark:text-blue-400 text-xs font-bold uppercase tracking-wider mb-6">
+                <i class="fa-solid fa-graduation-cap"></i>
+                <span>United Institute of Technology (UIT) · AKTU Lucknow</span>
+              </div>
+              
+              <h1 class="text-3xl sm:text-5xl font-extrabold tracking-tight text-slate-900 dark:text-white mb-4">
+                4-Year B.Tech CSE (Data Science) & Growth Story
+              </h1>
+              
+              <p class="max-w-3xl mx-auto text-base sm:text-lg text-slate-600 dark:text-slate-300 leading-relaxed mb-8">
+                A complete narrative of Gautam's technical evolution — from pre-college foundation, through each B.Tech semester, to international research fellowships and future graduation.
+              </p>
+
+              <div class="inline-flex items-center gap-3 px-5 py-2.5 rounded-full bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-xs sm:text-sm font-semibold text-slate-900 dark:text-white shadow-sm">
+                <span class="w-2.5 h-2.5 rounded-full bg-blue-500 pulse-dot"></span>
+                <span>{JOURNEY_DATA.meta.currentStatusText}</span>
+              </div>
+            </section>
+
+            {/* 3. Verified Metrics Summary */}
+            <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-10">
+              <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
+                <div class="glass-card rounded-2xl p-5 text-center">
+                  <div class="text-2xl sm:text-3xl font-extrabold text-blue-600 dark:text-blue-400 mb-1">4 Years</div>
+                  <div class="text-xs font-bold text-slate-500 uppercase tracking-wider">B.Tech Degree Program</div>
+                </div>
+                <div class="glass-card rounded-2xl p-5 text-center">
+                  <div class="text-2xl sm:text-3xl font-extrabold text-blue-600 dark:text-blue-400 mb-1">{metrics.total}</div>
+                  <div class="text-xs font-bold text-slate-500 uppercase tracking-wider">Documented Milestones</div>
+                </div>
+                <div class="glass-card rounded-2xl p-5 text-center">
+                  <div class="text-2xl sm:text-3xl font-extrabold text-emerald-500 mb-1">{metrics.completed}</div>
+                  <div class="text-xs font-bold text-slate-500 uppercase tracking-wider">✓ Completed Achievements</div>
+                </div>
+                <div class="glass-card rounded-2xl p-5 text-center">
+                  <div class="text-2xl sm:text-3xl font-extrabold text-indigo-500 mb-1">{metrics.majorAwards}</div>
+                  <div class="text-xs font-bold text-slate-500 uppercase tracking-wider">Fellowships & Awards</div>
+                </div>
+              </div>
+            </section>
+
+            {/* 4. Semester Navigation Tabs */}
+            <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-6">
+              <div class="flex items-center gap-2 overflow-x-auto pb-3 no-scrollbar">
+                <button 
+                  onClick={() => setSelectedSemester('all')}
+                  class={`px-4 py-2 rounded-xl text-xs font-bold whitespace-nowrap transition-all ${selectedSemester === 'all' ? 'bg-blue-600 text-white shadow-md' : 'bg-white dark:bg-slate-900 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-800 hover:border-blue-500'}`}>
+                  All Phases ({JOURNEY_DATA.milestones.length})
                 </button>
-            </div>
-        </div>
-    </header>
+                {JOURNEY_DATA.semesters.map(sem => {
+                  const count = JOURNEY_DATA.milestones.filter(m => m.semesterId === sem.id).length;
+                  return (
+                    <button 
+                      key={sem.id}
+                      onClick={() => setSelectedSemester(sem.id)}
+                      class={`px-4 py-2 rounded-xl text-xs font-bold whitespace-nowrap transition-all ${selectedSemester === sem.id ? 'bg-blue-600 text-white shadow-md' : 'bg-white dark:bg-slate-900 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-800 hover:border-blue-500'}`}>
+                      {sem.label} ({count})
+                    </button>
+                  );
+                })}
+              </div>
+            </section>
 
-    <!-- 2. Hero Section -->
-    <section class="hero-journey">
-        <div class="institution-pill">
-            <i class="fa-solid fa-graduation-cap"></i>
-            <span>United Institute of Technology (UIT) · AKTU Lucknow</span>
-        </div>
-        <h1 class="hero-journey-title">4-Year B.Tech CSE (Data Science) & Lifelong Growth Journey</h1>
-        <p class="hero-journey-subtitle">
-            A chronological narrative showing how Gautam evolved as an engineer — from pre-college foundation, through each B.Tech semester, to current research fellowships and future graduation.
-        </p>
-        <div class="live-status-bar">
-            <span class="status-dot-pulse"></span>
-            <span>Current Status: 3rd Year (Semester 6) · Academic Rank 1 Branch Topper · AKTU Rank 5</span>
-        </div>
-    </section>
+            {/* 5. Live Search & Category Multi-Filter Bar */}
+            <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-10">
+              <div class="glass-card rounded-2xl p-5 space-y-4">
+                {/* Search Input */}
+                <div class="relative">
+                  <i class="fa-solid fa-magnifying-glass absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 text-sm"></i>
+                  <input 
+                    type="text" 
+                    value={searchQuery}
+                    onChange={(e) => setSearchQuery(e.target.value)}
+                    placeholder="Search 150+ hackathons, awards, projects, UP Police, AIT Bangkok..."
+                    class="w-full pl-11 pr-4 py-3 rounded-xl bg-slate-50 dark:bg-slate-900/80 border border-slate-200 dark:border-slate-800 text-sm text-slate-900 dark:text-white focus:outline-none focus:border-blue-500 transition-colors"
+                  />
+                  {searchQuery && (
+                    <button onClick={() => setSearchQuery('')} class="absolute right-4 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 text-xs">
+                      <i class="fa-solid fa-xmark"></i>
+                    </button>
+                  )}
+                </div>
 
-    <!-- 3. Verified Impact Metrics Grid -->
-    <section class="journey-stats-section">
-        <div class="stats-grid" id="journey-stats-container">
-            <!-- Dynamically populated by btech-journey.js -->
-        </div>
-    </section>
+                {/* Category Chips */}
+                <div class="flex items-center gap-2 overflow-x-auto pb-1 no-scrollbar">
+                  <span class="text-xs font-bold uppercase tracking-wider text-slate-400 shrink-0 mr-1">Categories:</span>
+                  {JOURNEY_DATA.categories.map(cat => (
+                    <button 
+                      key={cat.id}
+                      onClick={() => setSelectedCategory(cat.id)}
+                      class={`px-3 py-1.5 rounded-lg text-xs font-semibold flex items-center gap-1.5 shrink-0 transition-all ${selectedCategory === cat.id ? 'bg-blue-500/15 text-blue-600 dark:text-blue-400 border border-blue-500/40' : 'bg-slate-100 dark:bg-slate-900/60 text-slate-600 dark:text-slate-400 border border-slate-200 dark:border-slate-800 hover:border-slate-400'}`}>
+                      <i class={cat.icon}></i>
+                      <span>{cat.label}</span>
+                    </button>
+                  ))}
+                </div>
 
-    <!-- 4. Controls & Status Filters -->
-    <section class="journey-controls-container">
-        <div class="control-group">
-            <span class="control-label">Filter Milestones:</span>
-            <button class="tab-btn active" data-status-filter="all">All Items</button>
-            <button class="tab-btn" data-status-filter="completed">✓ Completed</button>
-            <button class="tab-btn" data-status-filter="current">● Current Focus</button>
-            <button class="tab-btn" data-status-filter="planned">○ Planned Roadmap</button>
-        </div>
-    </section>
+                {/* Status Chips */}
+                <div class="flex items-center gap-2 pt-2 border-t border-slate-200 dark:border-slate-800">
+                  <span class="text-xs font-bold uppercase tracking-wider text-slate-400 mr-1">Status:</span>
+                  <button 
+                    onClick={() => setStatusFilter('all')}
+                    class={`px-3 py-1 rounded-md text-xs font-semibold transition-all ${statusFilter === 'all' ? 'bg-slate-900 text-white dark:bg-white dark:text-slate-900' : 'text-slate-500 hover:text-slate-900 dark:hover:text-white'}`}>
+                    All Statuses
+                  </button>
+                  <button 
+                    onClick={() => setStatusFilter('completed')}
+                    class={`px-3 py-1 rounded-md text-xs font-semibold transition-all ${statusFilter === 'completed' ? 'bg-emerald-500/20 text-emerald-600 dark:text-emerald-400 border border-emerald-500/40' : 'text-slate-500 hover:text-emerald-500'}`}>
+                    ✓ Completed
+                  </button>
+                  <button 
+                    onClick={() => setStatusFilter('current')}
+                    class={`px-3 py-1 rounded-md text-xs font-semibold transition-all ${statusFilter === 'current' ? 'bg-blue-500/20 text-blue-600 dark:text-blue-400 border border-blue-500/40' : 'text-slate-500 hover:text-blue-500'}`}>
+                    ● Current Focus
+                  </button>
+                  <button 
+                    onClick={() => setStatusFilter('planned')}
+                    class={`px-3 py-1 rounded-md text-xs font-semibold transition-all ${statusFilter === 'planned' ? 'bg-slate-500/20 text-slate-600 dark:text-slate-400 border border-slate-500/40' : 'text-slate-500 hover:text-slate-400'}`}>
+                    ○ Planned Roadmap
+                  </button>
+                </div>
+              </div>
+            </section>
 
-    <!-- 5. Skill Evolution Track -->
-    <section class="skills-evolution-section">
-        <h2 class="section-heading">
-            <i class="fa-solid fa-chart-line" style="color: var(--j-accent);"></i>
-            <span>Technical & Competency Evolution</span>
-        </h2>
-        <div class="skill-phases-grid" id="skill-phases-container">
-            <!-- Dynamically populated by btech-journey.js -->
-        </div>
-    </section>
+            {/* 6. Skill Evolution Track */}
+            <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12">
+              <h2 class="text-xl font-extrabold text-slate-900 dark:text-white mb-4 flex items-center gap-2">
+                <i class="fa-solid fa-chart-line text-blue-500"></i>
+                <span>Technical & Skill Progression</span>
+              </h2>
+              <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                {JOURNEY_DATA.skillEvolution.map(phase => (
+                  <div key={phase.phaseId} class="glass-card rounded-2xl p-5">
+                    <div class="font-bold text-sm text-slate-900 dark:text-white mb-0.5">{phase.phaseTitle}</div>
+                    <div class="text-xs font-semibold text-slate-400 mb-3">{phase.period}</div>
+                    <div class="flex flex-wrap gap-2">
+                      {phase.skills.map((s, idx) => (
+                        <span key={idx} class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-xs font-semibold text-slate-700 dark:text-slate-300">
+                          <span>{s.name}</span>
+                          <span class="text-[10px] font-bold px-1.5 py-0.5 rounded bg-blue-500/10 text-blue-600 dark:text-blue-400 uppercase">
+                            {s.level}
+                          </span>
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </section>
 
-    <!-- 6. Main Timeline Stream Container -->
-    <section class="journey-stream-container" id="journey-stream-container">
-        <!-- Dynamically populated by btech-journey.js -->
-    </section>
+            {/* 7. Collapsible High-Capacity Semester Feed */}
+            <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-16 flex-1">
+              {semesterGroups.length === 0 ? (
+                <div class="glass-card rounded-2xl p-12 text-center text-slate-500">
+                  <i class="fa-solid fa-folder-open text-4xl mb-3 block text-slate-400"></i>
+                  <p class="font-bold text-base">No milestones found matching your search or filters.</p>
+                  <p class="text-xs text-slate-400 mt-1">Try clearing your search query or selecting "All Phases".</p>
+                </div>
+              ) : (
+                <div class="space-y-8">
+                  {semesterGroups.map(group => {
+                    const isCollapsed = collapsedSemesters[group.id];
+                    return (
+                      <div key={group.id} class="glass-card rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800">
+                        {/* Semester Header Accordion Control */}
+                        <button 
+                          onClick={() => toggleSemesterCollapse(group.id)}
+                          class="w-full px-6 py-4 bg-slate-100/80 dark:bg-slate-900/80 border-b border-slate-200 dark:border-slate-800 flex items-center justify-between text-left hover:bg-slate-200/50 dark:hover:bg-slate-800/50 transition-colors">
+                          <div class="flex items-center gap-3">
+                            <i class={`fa-solid ${isCollapsed ? 'fa-folder' : 'fa-folder-open'} text-blue-500 text-base`}></i>
+                            <div>
+                              <div class="font-extrabold text-base text-slate-900 dark:text-white">{group.name}</div>
+                              <div class="text-xs font-semibold text-slate-400">{group.year}</div>
+                            </div>
+                          </div>
+                          <div class="flex items-center gap-3">
+                            <span class="px-3 py-1 rounded-full bg-blue-500/10 text-blue-600 dark:text-blue-400 text-xs font-bold">
+                              {group.items.length} Milestones
+                            </span>
+                            <i class={`fa-solid ${isCollapsed ? 'fa-chevron-down' : 'fa-chevron-up'} text-xs text-slate-400`}></i>
+                          </div>
+                        </button>
 
-    <!-- 7. Modal Deep Dive Drawer -->
-    <div class="journey-modal" id="journey-modal">
-        <div class="modal-card-content">
-            <button class="modal-close-btn" id="modal-close-btn" title="Close Modal">
-                <i class="fa-solid fa-xmark"></i>
-            </button>
-            <div id="modal-content-inner">
-                <!-- Dynamically populated on card click -->
-            </div>
-        </div>
-    </div>
+                        {/* Semester Items Grid */}
+                        {!isCollapsed && (
+                          <div class="p-6 grid grid-cols-1 md:grid-cols-2 gap-6">
+                            {group.items.map(m => (
+                              <div 
+                                key={m.id}
+                                onClick={() => setActiveModalItem(m)}
+                                class="glass-card glass-card-hover rounded-xl p-5 cursor-pointer flex flex-col justify-between group">
+                                <div>
+                                  {/* Card Top Header Meta */}
+                                  <div class="flex items-center justify-between gap-2 mb-3">
+                                    <span class="px-2.5 py-1 rounded-md bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-[11px] font-bold text-slate-600 dark:text-slate-400 uppercase tracking-wider">
+                                      {m.category}
+                                    </span>
+                                    
+                                    {/* Status Badge */}
+                                    {m.status === 'completed' && (
+                                      <span class="px-2.5 py-0.5 rounded-full bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/30 text-[11px] font-bold flex items-center gap-1">
+                                        <i class="fa-solid fa-check text-[10px]"></i> Completed
+                                      </span>
+                                    )}
+                                    {m.status === 'current' && (
+                                      <span class="px-2.5 py-0.5 rounded-full bg-blue-500/10 text-blue-600 dark:text-blue-400 border border-blue-500/30 text-[11px] font-bold flex items-center gap-1">
+                                        <span class="w-1.5 h-1.5 rounded-full bg-blue-500 pulse-dot"></span> Current
+                                      </span>
+                                    )}
+                                    {m.status === 'planned' && (
+                                      <span class="px-2.5 py-0.5 rounded-full bg-slate-500/10 text-slate-500 dark:text-slate-400 border border-slate-500/30 text-[11px] font-bold flex items-center gap-1">
+                                        <i class="fa-regular fa-clock text-[10px]"></i> Planned
+                                      </span>
+                                    )}
+                                  </div>
 
-    <!-- 8. Footer Section -->
-    <footer style="border-top: 1px solid var(--j-card-border); padding: 40px 24px; text-align: center; color: var(--j-text-muted); font-size: 13px; margin-top: 60px;">
-        <div style="max-width: 1200px; margin: 0 auto; display: flex; flex-direction: column; gap: 16px; align-items: center;">
-            <div style="display: flex; gap: 20px; flex-wrap: wrap; justify-content: center; font-weight: 600;">
-                <a href="index.html" style="color: var(--j-accent); text-decoration: none;">Portfolio Home</a>
-                <a href="ait-global-innovation-internship.html" style="color: var(--j-accent); text-decoration: none;">AIT Bangkok Fellowship</a>
-                <a href="up-police-internship.html" style="color: var(--j-accent); text-decoration: none;">UP Police Fellowship</a>
-                <a href="open-source-contributions.html" style="color: var(--j-accent); text-decoration: none;">Open Source Patches</a>
-                <a href="faq.html" style="color: var(--j-accent); text-decoration: none;">FAQ & Contact</a>
-            </div>
-            <p>© 2026 Gautam Kumar Maurya (gkm563). B.Tech Computer Science & Engineering (Data Science).</p>
-        </div>
-    </footer>
+                                  <h3 class="font-extrabold text-base text-slate-900 dark:text-white mb-2 group-hover:text-blue-500 transition-colors leading-snug">
+                                    {m.title}
+                                  </h3>
+                                  <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed mb-4">
+                                    {m.shortDescription}
+                                  </p>
 
-    <!-- Master Scripts -->
-    <script src="assets/js/journey-data.js"></script>
-    <script src="assets/js/btech-journey.js"></script>
+                                  {/* Story Highlights */}
+                                  <div class="space-y-2 pt-3 border-t border-slate-100 dark:border-slate-800/80 text-xs">
+                                    <div>
+                                      <span class="font-bold text-blue-600 dark:text-blue-400 uppercase text-[10px] block">What Happened</span>
+                                      <span class="text-slate-600 dark:text-slate-400">{m.whatHappened}</span>
+                                    </div>
+                                    <div>
+                                      <span class="font-bold text-blue-600 dark:text-blue-400 uppercase text-[10px] block">Why It Mattered</span>
+                                      <span class="text-slate-600 dark:text-slate-400">{m.whyItMattered}</span>
+                                    </div>
+                                  </div>
+                                </div>
+
+                                {/* Card Footer Evidence & Click Trigger */}
+                                <div class="pt-4 mt-4 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between text-xs">
+                                  <span class="font-bold text-blue-600 dark:text-blue-400 group-hover:underline flex items-center gap-1">
+                                    <span>Read Full Narrative</span>
+                                    <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                                  </span>
+                                  <span class="text-[11px] text-slate-400 font-semibold">{m.startDate}</span>
+                                </div>
+                              </div>
+                            ))}
+                          </div>
+                        )}
+                      </div>
+                    );
+                  })}
+                </div>
+              )}
+            </section>
+
+            {/* 8. Slide-Up Detailed Modal Drawer */}
+            {activeModalItem && (
+              <div class="fixed inset-0 z-50 flex items-center justify-center p-4 modal-overlay bg-slate-950/70 backdrop-blur-md">
+                <div class="glass-card rounded-3xl max-w-2xl w-full max-h-[85vh] overflow-y-auto p-6 sm:p-8 relative modal-content border border-slate-200 dark:border-slate-800 shadow-2xl">
+                  <button 
+                    onClick={() => setActiveModalItem(null)}
+                    class="absolute top-5 right-5 w-9 h-9 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-200 flex items-center justify-center hover:bg-red-500 hover:text-white transition-colors"
+                    title="Close Modal">
+                    <i class="fa-solid fa-xmark text-sm"></i>
+                  </button>
+
+                  <div class="flex items-center gap-2 mb-3">
+                    <span class="px-2.5 py-1 rounded-md bg-blue-500/10 text-blue-600 dark:text-blue-400 text-xs font-bold uppercase tracking-wider">
+                      {activeModalItem.category}
+                    </span>
+                    <span class="text-xs text-slate-400 font-semibold">{activeModalItem.startDate} – {activeModalItem.endDate}</span>
+                  </div>
+
+                  <h2 class="text-2xl font-extrabold text-slate-900 dark:text-white mb-2 leading-tight">
+                    {activeModalItem.title}
+                  </h2>
+
+                  <div class="text-xs font-bold text-blue-600 dark:text-blue-400 mb-6 flex items-center gap-1.5">
+                    <i class="fa-solid fa-building-columns"></i>
+                    <span>{activeModalItem.organization} · {activeModalItem.role} ({activeModalItem.location})</span>
+                  </div>
+
+                  <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed mb-6">
+                    {activeModalItem.fullDescription}
+                  </p>
+
+                  {/* Detailed Growth Breakdown */}
+                  <div class="space-y-4 p-5 rounded-2xl bg-slate-50 dark:bg-slate-900/60 border border-slate-200 dark:border-slate-800 mb-6 text-xs sm:text-sm">
+                    <div>
+                      <span class="font-extrabold text-blue-600 dark:text-blue-400 uppercase text-xs block mb-0.5">Detailed Story</span>
+                      <span class="text-slate-700 dark:text-slate-300 leading-relaxed">{activeModalItem.whatHappened}</span>
+                    </div>
+                    <div>
+                      <span class="font-extrabold text-blue-600 dark:text-blue-400 uppercase text-xs block mb-0.5">Strategic Significance</span>
+                      <span class="text-slate-700 dark:text-slate-300 leading-relaxed">{activeModalItem.whyItMattered}</span>
+                    </div>
+                    <div>
+                      <span class="font-extrabold text-blue-600 dark:text-blue-400 uppercase text-xs block mb-0.5">Technical & Soft Learning</span>
+                      <span class="text-slate-700 dark:text-slate-300 leading-relaxed">{activeModalItem.whatILearned}</span>
+                    </div>
+                    <div>
+                      <span class="font-extrabold text-blue-600 dark:text-blue-400 uppercase text-xs block mb-0.5">Long-Term Impact</span>
+                      <span class="text-slate-700 dark:text-slate-300 leading-relaxed">{activeModalItem.impact}</span>
+                    </div>
+                  </div>
+
+                  {/* Skill Badges */}
+                  <div class="mb-6">
+                    <span class="font-extrabold text-slate-400 text-xs uppercase tracking-wider block mb-2">Competencies & Tools</span>
+                    <div class="flex flex-wrap gap-2">
+                      {activeModalItem.skills.map((s, i) => (
+                        <span key={i} class="px-2.5 py-1 rounded-md bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-xs font-semibold text-slate-700 dark:text-slate-300">
+                          {s}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Verified Evidence Links */}
+                  {activeModalItem.evidence && (
+                    <div>
+                      <span class="font-extrabold text-slate-400 text-xs uppercase tracking-wider block mb-2">Verified Documents & Links</span>
+                      <div class="flex flex-wrap gap-2">
+                        {activeModalItem.evidence.links && activeModalItem.evidence.links.map((l, i) => (
+                          <a key={i} href={l} target="_blank" class="px-3 py-1.5 rounded-lg bg-blue-50 hover:bg-blue-100 dark:bg-blue-950/60 dark:hover:bg-blue-900/60 text-blue-600 dark:text-blue-400 border border-blue-200 dark:border-blue-800 text-xs font-semibold flex items-center gap-1.5 transition-colors">
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i> Full Report Page
+                          </a>
+                        ))}
+                        {activeModalItem.evidence.github && (
+                          <a href={activeModalItem.evidence.github} target="_blank" class="px-3 py-1.5 rounded-lg bg-slate-100 hover:bg-slate-200 dark:bg-slate-900 dark:hover:bg-slate-800 text-slate-800 dark:text-slate-200 border border-slate-200 dark:border-slate-800 text-xs font-semibold flex items-center gap-1.5 transition-colors">
+                            <i class="fa-brands fa-github"></i> GitHub Repository
+                          </a>
+                        )}
+                        {activeModalItem.evidence.certificate && (
+                          <a href={activeModalItem.evidence.certificate} target="_blank" class="px-3 py-1.5 rounded-lg bg-amber-50 hover:bg-amber-100 dark:bg-amber-950/60 dark:hover:bg-amber-900/60 text-amber-600 dark:text-amber-400 border border-amber-200 dark:border-amber-800 text-xs font-semibold flex items-center gap-1.5 transition-colors">
+                            <i class="fa-solid fa-award"></i> Certificate PDF
+                          </a>
+                        )}
+                        {activeModalItem.evidence.linkedin && (
+                          <a href={activeModalItem.evidence.linkedin} target="_blank" class="px-3 py-1.5 rounded-lg bg-sky-50 hover:bg-sky-100 dark:bg-sky-950/60 dark:hover:bg-sky-900/60 text-sky-600 dark:text-sky-400 border border-sky-200 dark:border-sky-800 text-xs font-semibold flex items-center gap-1.5 transition-colors">
+                            <i class="fa-brands fa-linkedin"></i> LinkedIn Post
+                          </a>
+                        )}
+                      </div>
+                    </div>
+                  )}
+                </div>
+              </div>
+            )}
+
+            {/* 9. Footer Section */}
+            <footer class="border-t border-slate-200 dark:border-slate-800 py-10 text-center text-xs text-slate-500">
+              <div class="max-w-7xl mx-auto px-4 space-y-4">
+                <div class="flex flex-wrap justify-center gap-6 font-semibold">
+                  <a href="index.html" class="hover:text-blue-500 transition-colors">Portfolio Home</a>
+                  <a href="ait-global-innovation-internship.html" class="hover:text-blue-500 transition-colors">AIT Bangkok Fellowship</a>
+                  <a href="up-police-internship.html" class="hover:text-blue-500 transition-colors">UP Police Fellowship</a>
+                  <a href="open-source-contributions.html" class="hover:text-blue-500 transition-colors">Open Source Patches</a>
+                  <a href="faq.html" class="hover:text-blue-500 transition-colors">FAQ & Contact</a>
+                </div>
+                <p>© 2026 Gautam Kumar Maurya (gkm563). B.Tech Computer Science & Engineering (Data Science).</p>
+              </div>
+            </footer>
+
+          </div>
+        );
+      }
+
+      // Render React 18 Root Application
+      const root = ReactDOM.createRoot(document.getElementById('react-journey-root'));
+      root.render(<BTechJourneyApp />);
+    </script>
 </body>
 </html>
