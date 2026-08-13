@@ -26,32 +26,12 @@
     <meta property="twitter:image" content="https://gkm563.github.io/assets/images/profile/Gautam_Kumar_Maurya.jpg">
 
     <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <link rel="icon" type="image/x-icon" href="/assets/css/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/css/favicon-32x32.png">
+    <link rel="apple-touch-icon" href="/assets/css/apple-touch-icon.png">
 
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-      tailwind.config = {
-        darkMode: 'class',
-        theme: {
-          extend: {
-            colors: {
-              brand: {
-                50: '#EFF6FF',
-                100: '#DBEAFE',
-                500: '#3B82F6',
-                600: '#2563EB',
-                700: '#1D4ED8',
-                900: '#0F172A',
-                950: '#090D16'
-              }
-            }
-          }
-        }
-      }
-    </script>
 
     <!-- Fonts & Icons -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -60,15 +40,38 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
     <!-- Custom App Stylesheet -->
-    <link rel="stylesheet" href="assets/css/btech-journey.css">
 
-    <!-- React 18, ReactDOM 18 & Babel Standalone CDNs -->
-    <script src="https://unpkg.com/react@18/umd/react.production.min.js" crossorigin></script>
-    <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js" crossorigin></script>
-    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
-
-    <!-- Master Journey Data File -->
-    <script src="assets/js/journey-data.js"></script>
+    <!-- Schema.org JSON-LD Metadata -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Gautam Kumar Maurya",
+      "alternateName": "gkm563",
+      "url": "https://gkm563.github.io/",
+      "image": "https://gkm563.github.io/assets/images/profile/Gautam_Kumar_Maurya.jpg",
+      "jobTitle": "B.Tech CSE (Data Science) Scholar & AI Fellow",
+      "worksFor": {
+        "@type": "EducationalOrganization",
+        "name": "United Institute of Technology",
+        "location": "Prayagraj, Uttar Pradesh, India"
+      },
+      "alumniOf": [
+        {
+          "@type": "EducationalOrganization",
+          "name": "Dr. A.P.J. Abdul Kalam Technical University",
+          "location": "Lucknow, Uttar Pradesh, India"
+        },
+        {
+          "@type": "EducationalOrganization",
+          "name": "Asian Institute of Technology",
+          "location": "Pathum Thani, Thailand"
+        }
+      ]
+    }
+    </script>
+  <script type="module" crossorigin src="/assets/js/journey.bundle.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/css/journey.css">
 </head>
 <body class="bg-slate-50 text-slate-900 dark:bg-slate-950 dark:text-slate-100 font-sans min-h-screen transition-colors duration-300 relative overflow-x-hidden">
 
@@ -76,473 +79,9 @@
     <div class="fixed top-10 left-[10%] w-[350px] h-[350px] bg-blue-500/10 rounded-full blur-[80px] pointer-events-none float-air"></div>
     <div class="fixed top-[40%] right-[10%] w-[400px] h-[400px] bg-purple-500/10 rounded-full blur-[90px] pointer-events-none float-air-delayed"></div>
 
-    <!-- React Application Mount Root -->
+    <!-- React 18 Application Mount Root -->
     <div id="react-journey-root" class="relative z-10"></div>
 
-    <!-- React 18 Application Script -->
-    <script type="text/babel">
-      const { useState, useEffect, useMemo } = React;
-
-      function BTechJourneyApp() {
-        const [theme, setTheme] = useState(() => localStorage.getItem('gkm_theme') || 'dark');
-        const [activePhaseId, setActivePhaseId] = useState('year-1'); // Default focused phase: 1st Year
-        const [selectedCategory, setSelectedCategory] = useState('all');
-        const [searchQuery, setSearchQuery] = useState('');
-        const [activeModalItem, setActiveModalItem] = useState(null);
-        const [isLoading, setIsLoading] = useState(false);
-
-        // Apply dark/light theme class to <html>
-        useEffect(() => {
-          const html = document.documentElement;
-          if (theme === 'dark') {
-            html.classList.add('dark');
-          } else {
-            html.classList.remove('dark');
-          }
-          localStorage.setItem('gkm_theme', theme);
-        }, [theme]);
-
-        const toggleTheme = () => {
-          setTheme(prev => (prev === 'dark' ? 'light' : 'dark'));
-        };
-
-        const handlePhaseChange = (phaseId) => {
-          if (phaseId === activePhaseId) return;
-          setIsLoading(true);
-          setActivePhaseId(phaseId);
-          setTimeout(() => setIsLoading(false), 250);
-        };
-
-        // Current active phase object
-        const activePhase = useMemo(() => {
-          return JOURNEY_DATA.phases.find(p => p.id === activePhaseId) || JOURNEY_DATA.phases[1];
-        }, [activePhaseId]);
-
-        // Filter milestones specifically for the focused active phase
-        const activePhaseMilestones = useMemo(() => {
-          if (!JOURNEY_DATA || !JOURNEY_DATA.milestones) return [];
-          return JOURNEY_DATA.milestones.filter(m => {
-            if (m.phaseId !== activePhaseId) return false;
-            if (selectedCategory !== 'all' && m.category !== selectedCategory) return false;
-            if (searchQuery.trim() !== '') {
-              const q = searchQuery.toLowerCase();
-              const matchTitle = m.title.toLowerCase().includes(q);
-              const matchDesc = m.shortDescription.toLowerCase().includes(q);
-              const matchOrg = m.organization.toLowerCase().includes(q);
-              const matchSkills = m.skills.some(s => s.toLowerCase().includes(q));
-              if (!matchTitle && !matchDesc && !matchOrg && !matchSkills) return false;
-            }
-            return true;
-          });
-        }, [activePhaseId, selectedCategory, searchQuery]);
-
-        // Group milestones into sequential semester boxes inside the active phase
-        const semesterBoxes = useMemo(() => {
-          if (!activePhase || !activePhase.semesters) return [];
-          
-          return activePhase.semesters.map(sem => {
-            const items = activePhaseMilestones.filter(m => m.semesterId === sem.id);
-            return {
-              ...sem,
-              items
-            };
-          });
-        }, [activePhase, activePhaseMilestones]);
-
-        // Glass Chip Color Class Generator
-        const getChipClass = (badgeColor) => {
-          switch (badgeColor) {
-            case 'amber': return 'glass-chip-amber';
-            case 'blue': return 'glass-chip-blue';
-            case 'indigo': return 'glass-chip-indigo';
-            case 'emerald': return 'glass-chip-emerald';
-            case 'purple': return 'glass-chip-purple';
-            default: return 'glass-chip-blue';
-          }
-        };
-
-        return (
-          <div class="min-h-screen flex flex-col">
-            
-            {/* 1. Header Navbar */}
-            <header class="sticky top-0 z-50 glass-header border-b border-slate-200 dark:border-slate-800/80 transition-colors">
-              <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between gap-4">
-                <a href="index.html" class="flex items-center gap-3 group text-decoration-none">
-                  <img src="assets/images/profile/Gautam_Kumar_Maurya.jpg" alt="Gautam Kumar Maurya" class="w-10 h-10 rounded-full object-cover border-2 border-blue-500 float-air" />
-                  <div>
-                    <div class="font-bold text-sm text-slate-900 dark:text-white leading-tight">Gautam Kumar Maurya</div>
-                    <div class="text-xs font-semibold text-blue-600 dark:text-blue-400">B.Tech Engineering Journey</div>
-                  </div>
-                </a>
-
-                <div class="flex items-center gap-3">
-                  <a href="index.html" class="px-4 py-2 rounded-xl bg-blue-500/10 hover:bg-blue-500/20 text-blue-600 dark:text-blue-400 border border-blue-500/30 text-xs font-semibold flex items-center gap-2 transition-all hover:scale-105">
-                    <i class="fa-solid fa-arrow-left"></i>
-                    <span class="hidden sm:inline">Portfolio Home</span>
-                  </a>
-                  <button onClick={toggleTheme} class="w-9 h-9 rounded-xl border border-slate-200 dark:border-slate-800 bg-white/80 dark:bg-slate-900/80 text-slate-700 dark:text-slate-200 flex items-center justify-center hover:border-blue-500 hover:text-blue-500 transition-all hover:scale-105" title="Toggle Theme">
-                    <i class={theme === 'dark' ? 'fa-solid fa-sun text-amber-400' : 'fa-solid fa-moon text-slate-700'}></i>
-                  </button>
-                </div>
-              </div>
-            </header>
-
-            {/* 2. Hero Header Section */}
-            <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-10 pb-6 text-center">
-              <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass-chip-blue text-xs font-bold uppercase tracking-wider mb-4 float-air">
-                <i class="fa-solid fa-graduation-cap"></i>
-                <span>United Institute of Technology (UIT) · AKTU Lucknow</span>
-              </div>
-              
-              <h1 class="text-3xl sm:text-5xl font-extrabold tracking-tight text-slate-900 dark:text-white mb-3">
-                4-Year B.Tech CSE (Data Science) Growth Story
-              </h1>
-              
-              <p class="max-w-2xl mx-auto text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed mb-6">
-                Select a timeline phase card below to explore Gautam's focused journey, sequential semester milestones, and engineering achievements.
-              </p>
-
-              <div class="inline-flex items-center gap-3 px-5 py-2.5 rounded-full glass-card border border-slate-200 dark:border-slate-800 text-xs sm:text-sm font-semibold text-slate-900 dark:text-white shadow-lg">
-                <span class="w-2.5 h-2.5 rounded-full bg-blue-500 pulse-dot"></span>
-                <span>{JOURNEY_DATA.meta.currentStatusText}</span>
-              </div>
-            </section>
-
-            {/* 3. PRIMARY PHASE SELECTOR CARDS (Top Hero Control — Floating & Glowing Cards) */}
-            <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-10">
-              <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
-                {JOURNEY_DATA.phases.map((phase, pIdx) => {
-                  const isActive = activePhaseId === phase.id;
-                  const totalItems = JOURNEY_DATA.milestones.filter(m => m.phaseId === phase.id).length;
-                  const chipClass = getChipClass(phase.badgeColor);
-
-                  return (
-                    <div 
-                      key={phase.id}
-                      onClick={() => handlePhaseChange(phase.id)}
-                      class={`glass-card phase-card rounded-2xl p-5 flex flex-col justify-between ${pIdx % 2 === 0 ? 'float-air' : 'float-air-delayed'} ${isActive ? 'active ring-2 ring-blue-500 dark:ring-blue-400 bg-blue-500/10 dark:bg-slate-900' : 'opacity-85 hover:opacity-100'}`}>
-                      <div>
-                        <div class="flex items-center justify-between gap-2 mb-3">
-                          <div class="w-9 h-9 rounded-xl bg-blue-500/10 text-blue-500 border border-blue-500/30 flex items-center justify-center">
-                            <i class={`${phase.icon} text-base`}></i>
-                          </div>
-                          <span class={`px-2.5 py-0.5 rounded-full text-[11px] font-bold ${chipClass}`}>
-                            {totalItems} Items
-                          </span>
-                        </div>
-                        <div class="font-extrabold text-base text-slate-900 dark:text-white leading-snug mb-1">
-                          {phase.title}
-                        </div>
-                        <div class="text-xs font-semibold text-slate-500 dark:text-slate-400 line-clamp-1">
-                          {phase.subtitle}
-                        </div>
-                      </div>
-
-                      <div class="pt-3 mt-3 border-t border-slate-200 dark:border-slate-800/80 flex items-center justify-between text-[11px] font-bold">
-                        <span class="text-slate-400">{phase.period}</span>
-                        {isActive ? (
-                          <span class="text-blue-500 flex items-center gap-1 font-bold">
-                            <span>Active View</span>
-                            <i class="fa-solid fa-circle-check text-[10px]"></i>
-                          </span>
-                        ) : (
-                          <span class="text-slate-400 hover:text-blue-500">Click to View</span>
-                        )}
-                      </div>
-                    </div>
-                  );
-                })}
-              </div>
-            </section>
-
-            {/* 4. ACTIVE FOCUSED PHASE HEADER & FILTER BAR */}
-            <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-8">
-              <div class="glass-card rounded-2xl p-5 sm:p-6 border border-slate-200 dark:border-slate-800 space-y-4 shadow-xl">
-                
-                {/* Active Phase Banner */}
-                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-slate-200 dark:border-slate-800">
-                  <div>
-                    <div class="inline-flex items-center gap-2 text-xs font-bold text-blue-500 uppercase tracking-wider mb-1">
-                      <i class={activePhase.icon}></i>
-                      <span>Focused Timeline View</span>
-                    </div>
-                    <h2 class="text-2xl font-extrabold text-slate-900 dark:text-white">
-                      {activePhase.title} ({activePhase.period})
-                    </h2>
-                    <p class="text-xs sm:text-sm text-slate-500 dark:text-slate-400 font-medium">
-                      {activePhase.subtitle}
-                    </p>
-                  </div>
-
-                  <div class="flex items-center gap-2">
-                    <span class="text-xs font-bold text-slate-400">Semesters:</span>
-                    {activePhase.semesters.map(s => (
-                      <span key={s.id} class="px-3 py-1 rounded-lg glass-chip-blue text-xs font-bold">
-                        {s.num}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-
-                {/* Live Search & Category Filter */}
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-                  {/* Search Bar */}
-                  <div class="md:col-span-1 relative">
-                    <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400 text-xs"></i>
-                    <input 
-                      type="text" 
-                      value={searchQuery}
-                      onChange={(e) => setSearchQuery(e.target.value)}
-                      placeholder={`Search in ${activePhase.shortTitle}...`}
-                      class="w-full pl-9 pr-3 py-2 rounded-xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-xs text-slate-900 dark:text-white focus:outline-none focus:border-blue-500 transition-colors"
-                    />
-                    {searchQuery && (
-                      <button onClick={() => setSearchQuery('')} class="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-600 text-xs">
-                        <i class="fa-solid fa-xmark"></i>
-                      </button>
-                    )}
-                  </div>
-
-                  {/* Category Chips */}
-                  <div class="md:col-span-2 flex items-center gap-2 overflow-x-auto pb-1 no-scrollbar">
-                    {JOURNEY_DATA.categories.map(cat => (
-                      <button 
-                        key={cat.id}
-                        onClick={() => setSelectedCategory(cat.id)}
-                        class={`px-3 py-1.5 rounded-lg text-xs font-semibold flex items-center gap-1.5 shrink-0 transition-all ${selectedCategory === cat.id ? 'glass-chip-blue' : 'bg-slate-100 dark:bg-slate-900/60 text-slate-600 dark:text-slate-400 border border-slate-200 dark:border-slate-800 hover:border-slate-400'}`}>
-                        <i class={cat.icon}></i>
-                        <span>{cat.label}</span>
-                      </button>
-                    ))}
-                  </div>
-                </div>
-
-              </div>
-            </section>
-
-            {/* 5. SEQUENTIAL SEMESTER BOXES (Master Classification Containers with Skeleton Shimmer) */}
-            <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-16 flex-1 space-y-10">
-              {isLoading ? (
-                /* Skeleton Loading Shimmer Placeholder */
-                <div class="space-y-6">
-                  <div class="glass-card rounded-3xl p-8 border border-slate-200 dark:border-slate-800 skeleton-shimmer h-64"></div>
-                  <div class="glass-card rounded-3xl p-8 border border-slate-200 dark:border-slate-800 skeleton-shimmer h-64"></div>
-                </div>
-              ) : (
-                semesterBoxes.map((semBox, boxIdx) => (
-                  <div key={semBox.id} class="glass-card rounded-3xl p-6 sm:p-8 border border-slate-200 dark:border-slate-800 space-y-6 shadow-xl">
-                    
-                    {/* Semester Box Sequential Header */}
-                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-4 border-b border-slate-200 dark:border-slate-800">
-                      <div class="flex items-center gap-3">
-                        <div class="w-10 h-10 rounded-2xl bg-blue-500/15 text-blue-500 border border-blue-500/30 flex items-center justify-center font-extrabold text-sm">
-                          0{boxIdx + 1}
-                        </div>
-                        <div>
-                          <h3 class="text-xl sm:text-2xl font-extrabold text-slate-900 dark:text-white">
-                            {semBox.title}
-                          </h3>
-                          {semBox.desc && (
-                            <p class="text-xs text-slate-500 dark:text-slate-400 font-medium">
-                              {semBox.desc}
-                            </p>
-                          )}
-                        </div>
-                      </div>
-
-                      <div class="flex items-center gap-2">
-                        <span class="px-3 py-1 rounded-full glass-chip-indigo text-xs font-bold">
-                          {semBox.items.length} Milestones
-                        </span>
-                      </div>
-                    </div>
-
-                    {/* Milestone Cards Grid Inside Semester Box */}
-                    {semBox.items.length === 0 ? (
-                      <div class="py-8 text-center text-slate-400 text-xs font-semibold">
-                        <i class="fa-solid fa-folder-open text-2xl mb-2 block"></i>
-                        <span>No milestones found matching your category/search filters in {semBox.num}.</span>
-                      </div>
-                    ) : (
-                      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        {semBox.items.map(m => (
-                          <div 
-                            key={m.id}
-                            onClick={() => setActiveModalItem(m)}
-                            class="glass-card glass-card-hover rounded-2xl p-5 sm:p-6 cursor-pointer flex flex-col justify-between group border border-slate-200 dark:border-slate-800/80">
-                            <div>
-                              {/* Card Top Meta */}
-                              <div class="flex items-center justify-between gap-2 mb-3">
-                                <span class="px-2.5 py-1 rounded-md glass-chip-blue text-[11px] font-bold uppercase tracking-wider">
-                                  {m.category}
-                                </span>
-                                
-                                {m.status === 'completed' && (
-                                  <span class="px-2.5 py-0.5 rounded-full glass-chip-emerald text-[11px] font-bold flex items-center gap-1">
-                                    <i class="fa-solid fa-check text-[10px]"></i> Completed
-                                  </span>
-                                )}
-                                {m.status === 'current' && (
-                                  <span class="px-2.5 py-0.5 rounded-full glass-chip-blue text-[11px] font-bold flex items-center gap-1">
-                                    <span class="w-1.5 h-1.5 rounded-full bg-blue-500 pulse-dot"></span> Current Focus
-                                  </span>
-                                )}
-                              </div>
-
-                              <h4 class="font-extrabold text-base sm:text-lg text-slate-900 dark:text-white mb-2 group-hover:text-blue-500 transition-colors leading-snug">
-                                {m.title}
-                              </h4>
-                              <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed mb-4">
-                                {m.shortDescription}
-                              </p>
-
-                              {/* Key Story Highlights */}
-                              <div class="space-y-2 pt-3 border-t border-slate-100 dark:border-slate-800/80 text-xs">
-                                <div>
-                                  <span class="font-bold text-blue-600 dark:text-blue-400 uppercase text-[10px] block">What Happened</span>
-                                  <span class="text-slate-600 dark:text-slate-400">{m.whatHappened}</span>
-                                </div>
-                                <div>
-                                  <span class="font-bold text-blue-600 dark:text-blue-400 uppercase text-[10px] block">Why It Mattered</span>
-                                  <span class="text-slate-600 dark:text-slate-400">{m.whyItMattered}</span>
-                                </div>
-                              </div>
-                            </div>
-
-                            {/* Card Bottom CTA */}
-                            <div class="pt-4 mt-4 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between text-xs">
-                              <span class="font-bold text-blue-600 dark:text-blue-400 group-hover:underline flex items-center gap-1">
-                                <span>Read Full Narrative & Evidence</span>
-                                <i class="fa-solid fa-arrow-right text-[10px]"></i>
-                              </span>
-                              <span class="text-[11px] text-slate-400 font-semibold">{m.startDate}</span>
-                            </div>
-                          </div>
-                        ))}
-                      </div>
-                    )}
-
-                  </div>
-                ))
-              )}
-            </section>
-
-            {/* 6. Slide-Up Detailed Modal Drawer */}
-            {activeModalItem && (
-              <div class="fixed inset-0 z-50 flex items-center justify-center p-4 modal-overlay bg-slate-950/70 backdrop-blur-md">
-                <div class="glass-card rounded-3xl max-w-2xl w-full max-h-[85vh] overflow-y-auto p-6 sm:p-8 relative modal-content border border-slate-200 dark:border-slate-800 shadow-2xl">
-                  <button 
-                    onClick={() => setActiveModalItem(null)}
-                    class="absolute top-5 right-5 w-9 h-9 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-200 flex items-center justify-center hover:bg-red-500 hover:text-white transition-colors"
-                    title="Close Modal">
-                    <i class="fa-solid fa-xmark text-sm"></i>
-                  </button>
-
-                  <div class="flex items-center gap-2 mb-3">
-                    <span class="px-2.5 py-1 rounded-md glass-chip-blue text-xs font-bold uppercase tracking-wider">
-                      {activeModalItem.category}
-                    </span>
-                    <span class="text-xs text-slate-400 font-semibold">{activeModalItem.startDate} – {activeModalItem.endDate}</span>
-                  </div>
-
-                  <h2 class="text-2xl font-extrabold text-slate-900 dark:text-white mb-2 leading-tight">
-                    {activeModalItem.title}
-                  </h2>
-
-                  <div class="text-xs font-bold text-blue-600 dark:text-blue-400 mb-6 flex items-center gap-1.5">
-                    <i class="fa-solid fa-building-columns"></i>
-                    <span>{activeModalItem.organization} · {activeModalItem.role} ({activeModalItem.location})</span>
-                  </div>
-
-                  <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed mb-6">
-                    {activeModalItem.fullDescription}
-                  </p>
-
-                  {/* Growth Story Breakdown */}
-                  <div class="space-y-4 p-5 rounded-2xl bg-slate-50 dark:bg-slate-900/60 border border-slate-200 dark:border-slate-800 mb-6 text-xs sm:text-sm">
-                    <div>
-                      <span class="font-extrabold text-blue-600 dark:text-blue-400 uppercase text-xs block mb-0.5">Detailed Story</span>
-                      <span class="text-slate-700 dark:text-slate-300 leading-relaxed">{activeModalItem.whatHappened}</span>
-                    </div>
-                    <div>
-                      <span class="font-extrabold text-blue-600 dark:text-blue-400 uppercase text-xs block mb-0.5">Strategic Significance</span>
-                      <span class="text-slate-700 dark:text-slate-300 leading-relaxed">{activeModalItem.whyItMattered}</span>
-                    </div>
-                    <div>
-                      <span class="font-extrabold text-blue-600 dark:text-blue-400 uppercase text-xs block mb-0.5">Technical & Soft Learning</span>
-                      <span class="text-slate-700 dark:text-slate-300 leading-relaxed">{activeModalItem.whatILearned}</span>
-                    </div>
-                    <div>
-                      <span class="font-extrabold text-blue-600 dark:text-blue-400 uppercase text-xs block mb-0.5">Long-Term Impact</span>
-                      <span class="text-slate-700 dark:text-slate-300 leading-relaxed">{activeModalItem.impact}</span>
-                    </div>
-                  </div>
-
-                  {/* Skill Badges */}
-                  <div class="mb-6">
-                    <span class="font-extrabold text-slate-400 text-xs uppercase tracking-wider block mb-2">Competencies & Tools</span>
-                    <div class="flex flex-wrap gap-2">
-                      {activeModalItem.skills.map((s, i) => (
-                        <span key={i} class="px-2.5 py-1 rounded-md glass-chip-blue text-xs font-semibold">
-                          {s}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-
-                  {/* Evidence Links */}
-                  {activeModalItem.evidence && (
-                    <div>
-                      <span class="font-extrabold text-slate-400 text-xs uppercase tracking-wider block mb-2">Verified Documents & Links</span>
-                      <div class="flex flex-wrap gap-2">
-                        {activeModalItem.evidence.links && activeModalItem.evidence.links.map((l, i) => (
-                          <a key={i} href={l} target="_blank" class="px-3 py-1.5 rounded-lg glass-chip-blue text-xs font-semibold flex items-center gap-1.5 transition-colors">
-                            <i class="fa-solid fa-arrow-up-right-from-square"></i> Full Report Page
-                          </a>
-                        ))}
-                        {activeModalItem.evidence.github && (
-                          <a href={activeModalItem.evidence.github} target="_blank" class="px-3 py-1.5 rounded-lg glass-chip-purple text-xs font-semibold flex items-center gap-1.5 transition-colors">
-                            <i class="fa-brands fa-github"></i> GitHub Repository
-                          </a>
-                        )}
-                        {activeModalItem.evidence.certificate && (
-                          <a href={activeModalItem.evidence.certificate} target="_blank" class="px-3 py-1.5 rounded-lg glass-chip-amber text-xs font-semibold flex items-center gap-1.5 transition-colors">
-                            <i class="fa-solid fa-award"></i> Certificate PDF
-                          </a>
-                        )}
-                        {activeModalItem.evidence.linkedin && (
-                          <a href={activeModalItem.evidence.linkedin} target="_blank" class="px-3 py-1.5 rounded-lg glass-chip-blue text-xs font-semibold flex items-center gap-1.5 transition-colors">
-                            <i class="fa-brands fa-linkedin"></i> LinkedIn Post
-                          </a>
-                        )}
-                      </div>
-                    </div>
-                  )}
-                </div>
-              </div>
-            )}
-
-            {/* 7. Footer Section */}
-            <footer class="border-t border-slate-200 dark:border-slate-800 py-10 text-center text-xs text-slate-500 relative z-10">
-              <div class="max-w-7xl mx-auto px-4 space-y-4">
-                <div class="flex flex-wrap justify-center gap-6 font-semibold">
-                  <a href="index.html" class="hover:text-blue-500 transition-colors">Portfolio Home</a>
-                  <a href="ait-global-innovation-internship.html" class="hover:text-blue-500 transition-colors">AIT Bangkok Fellowship</a>
-                  <a href="up-police-internship.html" class="hover:text-blue-500 transition-colors">UP Police Fellowship</a>
-                  <a href="open-source-contributions.html" class="hover:text-blue-500 transition-colors">Open Source Patches</a>
-                  <a href="faq.html" class="hover:text-blue-500 transition-colors">FAQ & Contact</a>
-                </div>
-                <p>© 2026 Gautam Kumar Maurya (gkm563). B.Tech Computer Science & Engineering (Data Science).</p>
-              </div>
-            </footer>
-
-          </div>
-        );
-      }
-
-      // Render React 18 Root Application
-      const root = ReactDOM.createRoot(document.getElementById('react-journey-root'));
-      root.render(<BTechJourneyApp />);
-    </script>
+    <!-- React 18 Bundle Script -->
 </body>
 </html>
