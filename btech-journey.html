@@ -69,36 +69,6 @@
 
     <!-- Master Journey Data File -->
     <script src="assets/js/journey-data.js"></script>
-
-    <!-- Schema.org JSON-LD Metadata -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "name": "Gautam Kumar Maurya",
-      "alternateName": "gkm563",
-      "url": "https://gkm563.github.io/",
-      "image": "https://gkm563.github.io/assets/images/profile/Gautam_Kumar_Maurya.jpg",
-      "jobTitle": "B.Tech CSE (Data Science) Scholar & AI Fellow",
-      "worksFor": {
-        "@type": "EducationalOrganization",
-        "name": "United Institute of Technology",
-        "location": "Prayagraj, Uttar Pradesh, India"
-      },
-      "alumniOf": [
-        {
-          "@type": "EducationalOrganization",
-          "name": "Dr. A.P.J. Abdul Kalam Technical University",
-          "location": "Lucknow, Uttar Pradesh, India"
-        },
-        {
-          "@type": "EducationalOrganization",
-          "name": "Asian Institute of Technology",
-          "location": "Pathum Thani, Thailand"
-        }
-      ]
-    }
-    </script>
 </head>
 <body class="bg-slate-50 text-slate-900 dark:bg-slate-950 dark:text-slate-100 font-sans min-h-screen transition-colors duration-300">
 
@@ -111,12 +81,10 @@
 
       function BTechJourneyApp() {
         const [theme, setTheme] = useState(() => localStorage.getItem('gkm_theme') || 'dark');
-        const [selectedSemester, setSelectedSemester] = useState('all');
+        const [activePhaseId, setActivePhaseId] = useState('year-1'); // Default focused phase: 1st Year
         const [selectedCategory, setSelectedCategory] = useState('all');
-        const [statusFilter, setStatusFilter] = useState('all');
         const [searchQuery, setSearchQuery] = useState('');
         const [activeModalItem, setActiveModalItem] = useState(null);
-        const [collapsedSemesters, setCollapsedSemesters] = useState({});
 
         // Apply dark/light theme class to <html>
         useEffect(() => {
@@ -133,20 +101,17 @@
           setTheme(prev => (prev === 'dark' ? 'light' : 'dark'));
         };
 
-        const toggleSemesterCollapse = (semId) => {
-          setCollapsedSemesters(prev => ({
-            ...prev,
-            [semId]: !prev[semId]
-          }));
-        };
+        // Current active phase object
+        const activePhase = useMemo(() => {
+          return JOURNEY_DATA.phases.find(p => p.id === activePhaseId) || JOURNEY_DATA.phases[1];
+        }, [activePhaseId]);
 
-        // Master filtered list
-        const filteredMilestones = useMemo(() => {
+        // Filter milestones specifically for the focused active phase
+        const activePhaseMilestones = useMemo(() => {
           if (!JOURNEY_DATA || !JOURNEY_DATA.milestones) return [];
           return JOURNEY_DATA.milestones.filter(m => {
-            if (selectedSemester !== 'all' && m.semesterId !== selectedSemester) return false;
+            if (m.phaseId !== activePhaseId) return false;
             if (selectedCategory !== 'all' && m.category !== selectedCategory) return false;
-            if (statusFilter !== 'all' && m.status !== statusFilter) return false;
             if (searchQuery.trim() !== '') {
               const q = searchQuery.toLowerCase();
               const matchTitle = m.title.toLowerCase().includes(q);
@@ -157,34 +122,20 @@
             }
             return true;
           });
-        }, [selectedSemester, selectedCategory, statusFilter, searchQuery]);
+        }, [activePhaseId, selectedCategory, searchQuery]);
 
-        // Group milestones by semester for rendering
-        const semesterGroups = useMemo(() => {
-          const sMap = {};
-          JOURNEY_DATA.semesters.forEach(s => {
-            sMap[s.id] = { ...s, items: [] };
+        // Group milestones into sequential semester boxes inside the active phase
+        const semesterBoxes = useMemo(() => {
+          if (!activePhase || !activePhase.semesters) return [];
+          
+          return activePhase.semesters.map(sem => {
+            const items = activePhaseMilestones.filter(m => m.semesterId === sem.id);
+            return {
+              ...sem,
+              items
+            };
           });
-
-          filteredMilestones.forEach(m => {
-            if (sMap[m.semesterId]) {
-              sMap[m.semesterId].items.push(m);
-            }
-          });
-
-          return Object.values(sMap).filter(g => g.items.length > 0);
-        }, [filteredMilestones]);
-
-        // Metrics counters
-        const metrics = useMemo(() => {
-          const milestones = JOURNEY_DATA.milestones || [];
-          return {
-            total: milestones.length,
-            completed: milestones.filter(m => m.status === 'completed').length,
-            current: milestones.filter(m => m.status === 'current').length,
-            majorAwards: milestones.filter(m => m.category === 'Award' || m.category === 'Internship' || m.category === 'Open Source').length
-          };
-        }, []);
+        }, [activePhase, activePhaseMilestones]);
 
         return (
           <div class="min-h-screen flex flex-col">
@@ -212,19 +163,19 @@
               </div>
             </header>
 
-            {/* 2. Hero Section */}
-            <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 pb-8 text-center">
-              <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-50 dark:bg-blue-950/60 border border-blue-200 dark:border-blue-800 text-blue-600 dark:text-blue-400 text-xs font-bold uppercase tracking-wider mb-6">
+            {/* 2. Hero Header Section */}
+            <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-10 pb-6 text-center">
+              <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-50 dark:bg-blue-950/60 border border-blue-200 dark:border-blue-800 text-blue-600 dark:text-blue-400 text-xs font-bold uppercase tracking-wider mb-4">
                 <i class="fa-solid fa-graduation-cap"></i>
                 <span>United Institute of Technology (UIT) · AKTU Lucknow</span>
               </div>
               
-              <h1 class="text-3xl sm:text-5xl font-extrabold tracking-tight text-slate-900 dark:text-white mb-4">
-                4-Year B.Tech CSE (Data Science) & Growth Story
+              <h1 class="text-3xl sm:text-5xl font-extrabold tracking-tight text-slate-900 dark:text-white mb-3">
+                4-Year B.Tech CSE (Data Science) Growth Story
               </h1>
               
-              <p class="max-w-3xl mx-auto text-base sm:text-lg text-slate-600 dark:text-slate-300 leading-relaxed mb-8">
-                A complete narrative of Gautam's technical evolution — from pre-college foundation, through each B.Tech semester, to international research fellowships and future graduation.
+              <p class="max-w-2xl mx-auto text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed mb-6">
+                Select a timeline phase below to explore Gautam's focused journey, sequential semester milestones, and engineering achievements.
               </p>
 
               <div class="inline-flex items-center gap-3 px-5 py-2.5 rounded-full bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-xs sm:text-sm font-semibold text-slate-900 dark:text-white shadow-sm">
@@ -233,243 +184,220 @@
               </div>
             </section>
 
-            {/* 3. Verified Metrics Summary */}
+            {/* 3. PRIMARY PHASE SELECTOR CARDS (Top Hero Control) */}
             <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-10">
-              <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
-                <div class="glass-card rounded-2xl p-5 text-center">
-                  <div class="text-2xl sm:text-3xl font-extrabold text-blue-600 dark:text-blue-400 mb-1">4 Years</div>
-                  <div class="text-xs font-bold text-slate-500 uppercase tracking-wider">B.Tech Degree Program</div>
-                </div>
-                <div class="glass-card rounded-2xl p-5 text-center">
-                  <div class="text-2xl sm:text-3xl font-extrabold text-blue-600 dark:text-blue-400 mb-1">{metrics.total}</div>
-                  <div class="text-xs font-bold text-slate-500 uppercase tracking-wider">Documented Milestones</div>
-                </div>
-                <div class="glass-card rounded-2xl p-5 text-center">
-                  <div class="text-2xl sm:text-3xl font-extrabold text-emerald-500 mb-1">{metrics.completed}</div>
-                  <div class="text-xs font-bold text-slate-500 uppercase tracking-wider">✓ Completed Achievements</div>
-                </div>
-                <div class="glass-card rounded-2xl p-5 text-center">
-                  <div class="text-2xl sm:text-3xl font-extrabold text-indigo-500 mb-1">{metrics.majorAwards}</div>
-                  <div class="text-xs font-bold text-slate-500 uppercase tracking-wider">Fellowships & Awards</div>
-                </div>
-              </div>
-            </section>
+              <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3 sm:gap-4">
+                {JOURNEY_DATA.phases.map(phase => {
+                  const isActive = activePhaseId === phase.id;
+                  const totalItems = JOURNEY_DATA.milestones.filter(m => m.phaseId === phase.id).length;
 
-            {/* 4. Semester Navigation Tabs */}
-            <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-6">
-              <div class="flex items-center gap-2 overflow-x-auto pb-3 no-scrollbar">
-                <button 
-                  onClick={() => setSelectedSemester('all')}
-                  class={`px-4 py-2 rounded-xl text-xs font-bold whitespace-nowrap transition-all ${selectedSemester === 'all' ? 'bg-blue-600 text-white shadow-md' : 'bg-white dark:bg-slate-900 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-800 hover:border-blue-500'}`}>
-                  All Phases ({JOURNEY_DATA.milestones.length})
-                </button>
-                {JOURNEY_DATA.semesters.map(sem => {
-                  const count = JOURNEY_DATA.milestones.filter(m => m.semesterId === sem.id).length;
                   return (
-                    <button 
-                      key={sem.id}
-                      onClick={() => setSelectedSemester(sem.id)}
-                      class={`px-4 py-2 rounded-xl text-xs font-bold whitespace-nowrap transition-all ${selectedSemester === sem.id ? 'bg-blue-600 text-white shadow-md' : 'bg-white dark:bg-slate-900 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-800 hover:border-blue-500'}`}>
-                      {sem.label} ({count})
-                    </button>
+                    <div 
+                      key={phase.id}
+                      onClick={() => setActivePhaseId(phase.id)}
+                      class={`glass-card phase-card rounded-2xl p-4 sm:p-5 flex flex-col justify-between ${isActive ? 'active ring-2 ring-blue-500 dark:ring-blue-400 bg-blue-50/50 dark:bg-slate-900' : 'opacity-80 hover:opacity-100'}`}>
+                      <div>
+                        <div class="flex items-center justify-between gap-2 mb-2">
+                          <i class={`${phase.icon} text-lg sm:text-xl text-blue-500`}></i>
+                          <span class="px-2 py-0.5 rounded-md bg-blue-500/10 text-blue-600 dark:text-blue-400 text-[10px] font-bold">
+                            {totalItems} Items
+                          </span>
+                        </div>
+                        <div class="font-extrabold text-sm sm:text-base text-slate-900 dark:text-white leading-snug mb-1">
+                          {phase.title}
+                        </div>
+                        <div class="text-xs font-semibold text-slate-500 dark:text-slate-400 line-clamp-1">
+                          {phase.subtitle}
+                        </div>
+                      </div>
+
+                      <div class="pt-3 mt-3 border-t border-slate-200 dark:border-slate-800/80 flex items-center justify-between text-[11px] font-bold">
+                        <span class="text-slate-400">{phase.period}</span>
+                        {isActive ? (
+                          <span class="text-blue-500 flex items-center gap-1">
+                            <span>Viewing</span>
+                            <i class="fa-solid fa-circle-check text-[10px]"></i>
+                          </span>
+                        ) : (
+                          <span class="text-slate-400 hover:text-blue-500">Select Phase</span>
+                        )}
+                      </div>
+                    </div>
                   );
                 })}
               </div>
             </section>
 
-            {/* 5. Live Search & Category Multi-Filter Bar */}
-            <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-10">
-              <div class="glass-card rounded-2xl p-5 space-y-4">
-                {/* Search Input */}
-                <div class="relative">
-                  <i class="fa-solid fa-magnifying-glass absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 text-sm"></i>
-                  <input 
-                    type="text" 
-                    value={searchQuery}
-                    onChange={(e) => setSearchQuery(e.target.value)}
-                    placeholder="Search 150+ hackathons, awards, projects, UP Police, AIT Bangkok..."
-                    class="w-full pl-11 pr-4 py-3 rounded-xl bg-slate-50 dark:bg-slate-900/80 border border-slate-200 dark:border-slate-800 text-sm text-slate-900 dark:text-white focus:outline-none focus:border-blue-500 transition-colors"
-                  />
-                  {searchQuery && (
-                    <button onClick={() => setSearchQuery('')} class="absolute right-4 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 text-xs">
-                      <i class="fa-solid fa-xmark"></i>
-                    </button>
-                  )}
-                </div>
-
-                {/* Category Chips */}
-                <div class="flex items-center gap-2 overflow-x-auto pb-1 no-scrollbar">
-                  <span class="text-xs font-bold uppercase tracking-wider text-slate-400 shrink-0 mr-1">Categories:</span>
-                  {JOURNEY_DATA.categories.map(cat => (
-                    <button 
-                      key={cat.id}
-                      onClick={() => setSelectedCategory(cat.id)}
-                      class={`px-3 py-1.5 rounded-lg text-xs font-semibold flex items-center gap-1.5 shrink-0 transition-all ${selectedCategory === cat.id ? 'bg-blue-500/15 text-blue-600 dark:text-blue-400 border border-blue-500/40' : 'bg-slate-100 dark:bg-slate-900/60 text-slate-600 dark:text-slate-400 border border-slate-200 dark:border-slate-800 hover:border-slate-400'}`}>
-                      <i class={cat.icon}></i>
-                      <span>{cat.label}</span>
-                    </button>
-                  ))}
-                </div>
-
-                {/* Status Chips */}
-                <div class="flex items-center gap-2 pt-2 border-t border-slate-200 dark:border-slate-800">
-                  <span class="text-xs font-bold uppercase tracking-wider text-slate-400 mr-1">Status:</span>
-                  <button 
-                    onClick={() => setStatusFilter('all')}
-                    class={`px-3 py-1 rounded-md text-xs font-semibold transition-all ${statusFilter === 'all' ? 'bg-slate-900 text-white dark:bg-white dark:text-slate-900' : 'text-slate-500 hover:text-slate-900 dark:hover:text-white'}`}>
-                    All Statuses
-                  </button>
-                  <button 
-                    onClick={() => setStatusFilter('completed')}
-                    class={`px-3 py-1 rounded-md text-xs font-semibold transition-all ${statusFilter === 'completed' ? 'bg-emerald-500/20 text-emerald-600 dark:text-emerald-400 border border-emerald-500/40' : 'text-slate-500 hover:text-emerald-500'}`}>
-                    ✓ Completed
-                  </button>
-                  <button 
-                    onClick={() => setStatusFilter('current')}
-                    class={`px-3 py-1 rounded-md text-xs font-semibold transition-all ${statusFilter === 'current' ? 'bg-blue-500/20 text-blue-600 dark:text-blue-400 border border-blue-500/40' : 'text-slate-500 hover:text-blue-500'}`}>
-                    ● Current Focus
-                  </button>
-                  <button 
-                    onClick={() => setStatusFilter('planned')}
-                    class={`px-3 py-1 rounded-md text-xs font-semibold transition-all ${statusFilter === 'planned' ? 'bg-slate-500/20 text-slate-600 dark:text-slate-400 border border-slate-500/40' : 'text-slate-500 hover:text-slate-400'}`}>
-                    ○ Planned Roadmap
-                  </button>
-                </div>
-              </div>
-            </section>
-
-            {/* 6. Skill Evolution Track */}
-            <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12">
-              <h2 class="text-xl font-extrabold text-slate-900 dark:text-white mb-4 flex items-center gap-2">
-                <i class="fa-solid fa-chart-line text-blue-500"></i>
-                <span>Technical & Skill Progression</span>
-              </h2>
-              <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-                {JOURNEY_DATA.skillEvolution.map(phase => (
-                  <div key={phase.phaseId} class="glass-card rounded-2xl p-5">
-                    <div class="font-bold text-sm text-slate-900 dark:text-white mb-0.5">{phase.phaseTitle}</div>
-                    <div class="text-xs font-semibold text-slate-400 mb-3">{phase.period}</div>
-                    <div class="flex flex-wrap gap-2">
-                      {phase.skills.map((s, idx) => (
-                        <span key={idx} class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-xs font-semibold text-slate-700 dark:text-slate-300">
-                          <span>{s.name}</span>
-                          <span class="text-[10px] font-bold px-1.5 py-0.5 rounded bg-blue-500/10 text-blue-600 dark:text-blue-400 uppercase">
-                            {s.level}
-                          </span>
-                        </span>
-                      ))}
+            {/* 4. ACTIVE FOCUSED PHASE HEADER & FILTER BAR */}
+            <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-8">
+              <div class="glass-card rounded-2xl p-5 sm:p-6 border border-slate-200 dark:border-slate-800 space-y-4">
+                
+                {/* Active Phase Banner */}
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-slate-200 dark:border-slate-800">
+                  <div>
+                    <div class="inline-flex items-center gap-2 text-xs font-bold text-blue-500 uppercase tracking-wider mb-1">
+                      <i class={activePhase.icon}></i>
+                      <span>Focused Phase View</span>
                     </div>
+                    <h2 class="text-2xl font-extrabold text-slate-900 dark:text-white">
+                      {activePhase.title} ({activePhase.period})
+                    </h2>
+                    <p class="text-xs sm:text-sm text-slate-500 dark:text-slate-400 font-medium">
+                      {activePhase.subtitle}
+                    </p>
                   </div>
-                ))}
+
+                  <div class="flex items-center gap-2">
+                    <span class="text-xs font-bold text-slate-400">Semesters in Phase:</span>
+                    {activePhase.semesters.map(s => (
+                      <span key={s.id} class="px-3 py-1 rounded-lg bg-blue-500/10 text-blue-600 dark:text-blue-400 text-xs font-bold border border-blue-500/30">
+                        {s.num}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Live Search & Category Filter */}
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                  {/* Search Bar */}
+                  <div class="md:col-span-1 relative">
+                    <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400 text-xs"></i>
+                    <input 
+                      type="text" 
+                      value={searchQuery}
+                      onChange={(e) => setSearchQuery(e.target.value)}
+                      placeholder={`Search in ${activePhase.shortTitle}...`}
+                      class="w-full pl-9 pr-3 py-2 rounded-xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-xs text-slate-900 dark:text-white focus:outline-none focus:border-blue-500 transition-colors"
+                    />
+                    {searchQuery && (
+                      <button onClick={() => setSearchQuery('')} class="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-600 text-xs">
+                        <i class="fa-solid fa-xmark"></i>
+                      </button>
+                    )}
+                  </div>
+
+                  {/* Category Chips */}
+                  <div class="md:col-span-2 flex items-center gap-2 overflow-x-auto pb-1 no-scrollbar">
+                    {JOURNEY_DATA.categories.map(cat => (
+                      <button 
+                        key={cat.id}
+                        onClick={() => setSelectedCategory(cat.id)}
+                        class={`px-3 py-1.5 rounded-lg text-xs font-semibold flex items-center gap-1.5 shrink-0 transition-all ${selectedCategory === cat.id ? 'bg-blue-500/20 text-blue-600 dark:text-blue-400 border border-blue-500/40' : 'bg-slate-100 dark:bg-slate-900/60 text-slate-600 dark:text-slate-400 border border-slate-200 dark:border-slate-800 hover:border-slate-400'}`}>
+                        <i class={cat.icon}></i>
+                        <span>{cat.label}</span>
+                      </button>
+                    ))}
+                  </div>
+                </div>
+
               </div>
             </section>
 
-            {/* 7. Collapsible High-Capacity Semester Feed */}
-            <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-16 flex-1">
-              {semesterGroups.length === 0 ? (
-                <div class="glass-card rounded-2xl p-12 text-center text-slate-500">
-                  <i class="fa-solid fa-folder-open text-4xl mb-3 block text-slate-400"></i>
-                  <p class="font-bold text-base">No milestones found matching your search or filters.</p>
-                  <p class="text-xs text-slate-400 mt-1">Try clearing your search query or selecting "All Phases".</p>
-                </div>
-              ) : (
-                <div class="space-y-8">
-                  {semesterGroups.map(group => {
-                    const isCollapsed = collapsedSemesters[group.id];
-                    return (
-                      <div key={group.id} class="glass-card rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800">
-                        {/* Semester Header Accordion Control */}
-                        <button 
-                          onClick={() => toggleSemesterCollapse(group.id)}
-                          class="w-full px-6 py-4 bg-slate-100/80 dark:bg-slate-900/80 border-b border-slate-200 dark:border-slate-800 flex items-center justify-between text-left hover:bg-slate-200/50 dark:hover:bg-slate-800/50 transition-colors">
-                          <div class="flex items-center gap-3">
-                            <i class={`fa-solid ${isCollapsed ? 'fa-folder' : 'fa-folder-open'} text-blue-500 text-base`}></i>
-                            <div>
-                              <div class="font-extrabold text-base text-slate-900 dark:text-white">{group.name}</div>
-                              <div class="text-xs font-semibold text-slate-400">{group.year}</div>
-                            </div>
-                          </div>
-                          <div class="flex items-center gap-3">
-                            <span class="px-3 py-1 rounded-full bg-blue-500/10 text-blue-600 dark:text-blue-400 text-xs font-bold">
-                              {group.items.length} Milestones
-                            </span>
-                            <i class={`fa-solid ${isCollapsed ? 'fa-chevron-down' : 'fa-chevron-up'} text-xs text-slate-400`}></i>
-                          </div>
-                        </button>
-
-                        {/* Semester Items Grid */}
-                        {!isCollapsed && (
-                          <div class="p-6 grid grid-cols-1 md:grid-cols-2 gap-6">
-                            {group.items.map(m => (
-                              <div 
-                                key={m.id}
-                                onClick={() => setActiveModalItem(m)}
-                                class="glass-card glass-card-hover rounded-xl p-5 cursor-pointer flex flex-col justify-between group">
-                                <div>
-                                  {/* Card Top Header Meta */}
-                                  <div class="flex items-center justify-between gap-2 mb-3">
-                                    <span class="px-2.5 py-1 rounded-md bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-[11px] font-bold text-slate-600 dark:text-slate-400 uppercase tracking-wider">
-                                      {m.category}
-                                    </span>
-                                    
-                                    {/* Status Badge */}
-                                    {m.status === 'completed' && (
-                                      <span class="px-2.5 py-0.5 rounded-full bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/30 text-[11px] font-bold flex items-center gap-1">
-                                        <i class="fa-solid fa-check text-[10px]"></i> Completed
-                                      </span>
-                                    )}
-                                    {m.status === 'current' && (
-                                      <span class="px-2.5 py-0.5 rounded-full bg-blue-500/10 text-blue-600 dark:text-blue-400 border border-blue-500/30 text-[11px] font-bold flex items-center gap-1">
-                                        <span class="w-1.5 h-1.5 rounded-full bg-blue-500 pulse-dot"></span> Current
-                                      </span>
-                                    )}
-                                    {m.status === 'planned' && (
-                                      <span class="px-2.5 py-0.5 rounded-full bg-slate-500/10 text-slate-500 dark:text-slate-400 border border-slate-500/30 text-[11px] font-bold flex items-center gap-1">
-                                        <i class="fa-regular fa-clock text-[10px]"></i> Planned
-                                      </span>
-                                    )}
-                                  </div>
-
-                                  <h3 class="font-extrabold text-base text-slate-900 dark:text-white mb-2 group-hover:text-blue-500 transition-colors leading-snug">
-                                    {m.title}
-                                  </h3>
-                                  <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed mb-4">
-                                    {m.shortDescription}
-                                  </p>
-
-                                  {/* Story Highlights */}
-                                  <div class="space-y-2 pt-3 border-t border-slate-100 dark:border-slate-800/80 text-xs">
-                                    <div>
-                                      <span class="font-bold text-blue-600 dark:text-blue-400 uppercase text-[10px] block">What Happened</span>
-                                      <span class="text-slate-600 dark:text-slate-400">{m.whatHappened}</span>
-                                    </div>
-                                    <div>
-                                      <span class="font-bold text-blue-600 dark:text-blue-400 uppercase text-[10px] block">Why It Mattered</span>
-                                      <span class="text-slate-600 dark:text-slate-400">{m.whyItMattered}</span>
-                                    </div>
-                                  </div>
-                                </div>
-
-                                {/* Card Footer Evidence & Click Trigger */}
-                                <div class="pt-4 mt-4 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between text-xs">
-                                  <span class="font-bold text-blue-600 dark:text-blue-400 group-hover:underline flex items-center gap-1">
-                                    <span>Read Full Narrative</span>
-                                    <i class="fa-solid fa-arrow-right text-[10px]"></i>
-                                  </span>
-                                  <span class="text-[11px] text-slate-400 font-semibold">{m.startDate}</span>
-                                </div>
-                              </div>
-                            ))}
-                          </div>
+            {/* 5. SEQUENTIAL SEMESTER BOXES (Master Classification Containers) */}
+            <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-16 flex-1 space-y-10">
+              {semesterBoxes.map((semBox, boxIdx) => (
+                <div key={semBox.id} class="glass-card rounded-3xl p-6 sm:p-8 border border-slate-200 dark:border-slate-800 space-y-6">
+                  
+                  {/* Semester Box Sequential Header */}
+                  <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-4 border-b border-slate-200 dark:border-slate-800">
+                    <div class="flex items-center gap-3">
+                      <div class="w-10 h-10 rounded-2xl bg-blue-500/10 text-blue-600 dark:text-blue-400 border border-blue-500/30 flex items-center justify-center font-extrabold text-sm">
+                        0{boxIdx + 1}
+                      </div>
+                      <div>
+                        <h3 class="text-xl sm:text-2xl font-extrabold text-slate-900 dark:text-white">
+                          {semBox.title}
+                        </h3>
+                        {semBox.desc && (
+                          <p class="text-xs text-slate-500 dark:text-slate-400 font-medium">
+                            {semBox.desc}
+                          </p>
                         )}
                       </div>
-                    );
-                  })}
+                    </div>
+
+                    <div class="flex items-center gap-2">
+                      <span class="px-3 py-1 rounded-full bg-blue-500/10 text-blue-600 dark:text-blue-400 text-xs font-bold">
+                        {semBox.items.length} Milestones
+                      </span>
+                    </div>
+                  </div>
+
+                  {/* Milestone Cards Grid Inside Semester Box */}
+                  {semBox.items.length === 0 ? (
+                    <div class="py-8 text-center text-slate-400 text-xs font-semibold">
+                      <i class="fa-solid fa-folder-open text-2xl mb-2 block"></i>
+                      <span>No milestones found matching your category/search filters in {semBox.num}.</span>
+                    </div>
+                  ) : (
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                      {semBox.items.map(m => (
+                        <div 
+                          key={m.id}
+                          onClick={() => setActiveModalItem(m)}
+                          class="glass-card glass-card-hover rounded-2xl p-5 sm:p-6 cursor-pointer flex flex-col justify-between group border border-slate-200 dark:border-slate-800/80">
+                          <div>
+                            {/* Card Top Meta */}
+                            <div class="flex items-center justify-between gap-2 mb-3">
+                              <span class="px-2.5 py-1 rounded-md bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-[11px] font-bold text-slate-600 dark:text-slate-400 uppercase tracking-wider">
+                                {m.category}
+                              </span>
+                              
+                              {m.status === 'completed' && (
+                                <span class="px-2.5 py-0.5 rounded-full bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/30 text-[11px] font-bold flex items-center gap-1">
+                                  <i class="fa-solid fa-check text-[10px]"></i> Completed
+                                </span>
+                              )}
+                              {m.status === 'current' && (
+                                <span class="px-2.5 py-0.5 rounded-full bg-blue-500/10 text-blue-600 dark:text-blue-400 border border-blue-500/30 text-[11px] font-bold flex items-center gap-1">
+                                  <span class="w-1.5 h-1.5 rounded-full bg-blue-500 pulse-dot"></span> Current Focus
+                                </span>
+                              )}
+                              {m.status === 'planned' && (
+                                <span class="px-2.5 py-0.5 rounded-full bg-slate-500/10 text-slate-500 dark:text-slate-400 border border-slate-500/30 text-[11px] font-bold flex items-center gap-1">
+                                  <i class="fa-regular fa-clock text-[10px]"></i> Planned
+                                </span>
+                              )}
+                            </div>
+
+                            <h4 class="font-extrabold text-base sm:text-lg text-slate-900 dark:text-white mb-2 group-hover:text-blue-500 transition-colors leading-snug">
+                              {m.title}
+                            </h4>
+                            <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed mb-4">
+                              {m.shortDescription}
+                            </p>
+
+                            {/* Key Story Highlights */}
+                            <div class="space-y-2 pt-3 border-t border-slate-100 dark:border-slate-800/80 text-xs">
+                              <div>
+                                <span class="font-bold text-blue-600 dark:text-blue-400 uppercase text-[10px] block">What Happened</span>
+                                <span class="text-slate-600 dark:text-slate-400">{m.whatHappened}</span>
+                              </div>
+                              <div>
+                                <span class="font-bold text-blue-600 dark:text-blue-400 uppercase text-[10px] block">Why It Mattered</span>
+                                <span class="text-slate-600 dark:text-slate-400">{m.whyItMattered}</span>
+                              </div>
+                            </div>
+                          </div>
+
+                          {/* Card Bottom CTA */}
+                          <div class="pt-4 mt-4 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between text-xs">
+                            <span class="font-bold text-blue-600 dark:text-blue-400 group-hover:underline flex items-center gap-1">
+                              <span>Read Full Narrative & Evidence</span>
+                              <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                            </span>
+                            <span class="text-[11px] text-slate-400 font-semibold">{m.startDate}</span>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  )}
+
                 </div>
-              )}
+              ))}
             </section>
 
-            {/* 8. Slide-Up Detailed Modal Drawer */}
+            {/* 6. Slide-Up Detailed Modal Drawer */}
             {activeModalItem && (
               <div class="fixed inset-0 z-50 flex items-center justify-center p-4 modal-overlay bg-slate-950/70 backdrop-blur-md">
                 <div class="glass-card rounded-3xl max-w-2xl w-full max-h-[85vh] overflow-y-auto p-6 sm:p-8 relative modal-content border border-slate-200 dark:border-slate-800 shadow-2xl">
@@ -500,7 +428,7 @@
                     {activeModalItem.fullDescription}
                   </p>
 
-                  {/* Detailed Growth Breakdown */}
+                  {/* Growth Story Breakdown */}
                   <div class="space-y-4 p-5 rounded-2xl bg-slate-50 dark:bg-slate-900/60 border border-slate-200 dark:border-slate-800 mb-6 text-xs sm:text-sm">
                     <div>
                       <span class="font-extrabold text-blue-600 dark:text-blue-400 uppercase text-xs block mb-0.5">Detailed Story</span>
@@ -532,7 +460,7 @@
                     </div>
                   </div>
 
-                  {/* Verified Evidence Links */}
+                  {/* Evidence Links */}
                   {activeModalItem.evidence && (
                     <div>
                       <span class="font-extrabold text-slate-400 text-xs uppercase tracking-wider block mb-2">Verified Documents & Links</span>
@@ -564,7 +492,7 @@
               </div>
             )}
 
-            {/* 9. Footer Section */}
+            {/* 7. Footer Section */}
             <footer class="border-t border-slate-200 dark:border-slate-800 py-10 text-center text-xs text-slate-500">
               <div class="max-w-7xl mx-auto px-4 space-y-4">
                 <div class="flex flex-wrap justify-center gap-6 font-semibold">

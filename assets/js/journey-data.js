@@ -1,8 +1,6 @@
 /**
  * GAUTAM KUMAR MAURYA (gkm563) — MASTER JOURNEY DATASET
- * Decoupled data module powering btech-journey.html
- * 
- * Supports high-capacity multi-category milestones per semester.
+ * Structured for Phase-Isolated Exploration & Sequential Semester Flow.
  */
 
 const JOURNEY_DATA = {
@@ -19,7 +17,82 @@ const JOURNEY_DATA = {
     currentStatusText: "3rd Year (Semester 6) · Academic Rank 1 Branch Topper · AKTU Rank 5"
   },
 
-  // Categories definition
+  // 1. Primary Phase Cards Selection (Top Control Engine)
+  phases: [
+    {
+      id: "pre-college",
+      title: "Pre-College Foundation",
+      shortTitle: "Pre-College",
+      subtitle: "School & Board Academic Honors",
+      period: "Before 2023",
+      icon: "fa-solid fa-graduation-cap",
+      accentColor: "from-amber-500 to-orange-500",
+      badgeColor: "amber",
+      semesters: [
+        { id: "pre-college", title: "School & UP Board Achievements", num: "Foundation" }
+      ]
+    },
+    {
+      id: "year-1",
+      title: "1st Year B.Tech",
+      shortTitle: "1st Year",
+      subtitle: "Computer Science Foundations & DSA",
+      period: "2023 – 2024",
+      icon: "fa-solid fa-rocket",
+      accentColor: "from-blue-500 to-cyan-500",
+      badgeColor: "blue",
+      semesters: [
+        { id: "sem-1", title: "1st Semester (Semester 1)", num: "Sem 1", desc: "C Programming, Matrix Math, Physics & Lab Foundations" },
+        { id: "sem-2", title: "2nd Semester (Semester 2)", num: "Sem 2", desc: "Python Programming, DSA & Web Dev Projects" }
+      ]
+    },
+    {
+      id: "year-2",
+      title: "2nd Year B.Tech",
+      shortTitle: "2nd Year",
+      subtitle: "AKTU Rank 5, Cyber Fellowship & Open Source",
+      period: "2024 – 2025",
+      icon: "fa-solid fa-shield-halved",
+      accentColor: "from-indigo-500 to-purple-500",
+      badgeColor: "indigo",
+      semesters: [
+        { id: "sem-3", title: "3rd Semester (Semester 3)", num: "Sem 3", desc: "Branch Rank 1 Topper, AKTU Rank 5, OOP & Operating Systems" },
+        { id: "sem-4", title: "4th Semester (Semester 4)", num: "Sem 4", desc: "UP Police APCSIP-2026 Fellowship & MediaWiki Gerrit Patches" }
+      ]
+    },
+    {
+      id: "year-3",
+      title: "3rd Year B.Tech (CURRENT)",
+      shortTitle: "3rd Year (Current)",
+      subtitle: "AIT Bangkok Fellowship, GFG VP & Agentic AI",
+      period: "2025 – 2026",
+      icon: "fa-solid fa-bolt",
+      accentColor: "from-emerald-500 to-teal-500",
+      badgeColor: "emerald",
+      isCurrent: true,
+      semesters: [
+        { id: "sem-5", title: "5th Semester (Semester 5)", num: "Sem 5", desc: "GFG VP Leadership, GSA 650+ Event, PrayagrajRooms Launch" },
+        { id: "sem-6", title: "6th Semester (CURRENT)", num: "Sem 6", desc: "AIT Bangkok GIIP-2026 International Fellowship & BusSetu" }
+      ]
+    },
+    {
+      id: "year-4",
+      title: "4th Year B.Tech (ROADMAP)",
+      shortTitle: "4th Year (Roadmap)",
+      subtitle: "Advanced AI Research, Capstone & Graduation",
+      period: "2026 – 2027",
+      icon: "fa-solid fa-compass",
+      accentColor: "from-slate-500 to-slate-700",
+      badgeColor: "slate",
+      isPlanned: true,
+      semesters: [
+        { id: "sem-7", title: "7th Semester (Roadmap)", num: "Sem 7", desc: "Deep Learning Research & Multi-Agent Architecture" },
+        { id: "sem-8", title: "8th Semester & Graduation", num: "Sem 8", desc: "B.Tech Thesis Defense & Full-Time AI Engineering Launch" }
+      ]
+    }
+  ],
+
+  // 2. Categories definition
   categories: [
     { id: "all", label: "All Categories", icon: "fa-solid fa-layer-group" },
     { id: "Academic", label: "Academic Honors", icon: "fa-solid fa-graduation-cap" },
@@ -30,82 +103,10 @@ const JOURNEY_DATA = {
     { id: "Leadership", label: "Leadership & Community", icon: "fa-solid fa-users" },
     { id: "Award", label: "Awards & Recognition", icon: "fa-solid fa-trophy" },
     { id: "Event", label: "Events & Workshops", icon: "fa-solid fa-calendar-check" },
-    { id: "Certification", label: "Certifications & Credentials", icon: "fa-solid fa-certificate" }
+    { id: "Certification", label: "Certifications", icon: "fa-solid fa-certificate" }
   ],
 
-  // Skill Evolution Progression (Honest non-numeric labels)
-  skillEvolution: [
-    {
-      phaseId: "pre-college",
-      phaseTitle: "Pre-College Foundation",
-      period: "Before 2023",
-      skills: [
-        { name: "Mathematics & Physics", level: "Built With" },
-        { name: "C Programming", level: "Explored" },
-        { name: "Academic Discipline", level: "Used in Production" }
-      ]
-    },
-    {
-      phaseId: "year-1",
-      phaseTitle: "B.Tech Year 1 (Semesters 1 & 2)",
-      period: "2023 – 2024",
-      skills: [
-        { name: "Python Programming", level: "Built With" },
-        { name: "Data Structures & Algorithms", level: "Learning" },
-        { name: "HTML / CSS / JavaScript", level: "Built With" },
-        { name: "Engineering Physics & Math", level: "Built With" }
-      ]
-    },
-    {
-      phaseId: "year-2",
-      phaseTitle: "B.Tech Year 2 (Semesters 3 & 4)",
-      period: "2024 – 2025",
-      skills: [
-        { name: "Object-Oriented Programming (Java/Python)", level: "Built With" },
-        { name: "Database Management Systems (SQL)", level: "Used in Production" },
-        { name: "Cyber Security & Digital Forensics", level: "Used in Production" },
-        { name: "MediaWiki / PHP Core Development", level: "Contributed To" },
-        { name: "OSINT Reconnaissance", level: "Used in Production" }
-      ]
-    },
-    {
-      phaseId: "year-3",
-      phaseTitle: "B.Tech Year 3 (Semesters 5 & 6 — CURRENT FOCUS)",
-      period: "2025 – 2026",
-      skills: [
-        { name: "Agentic AI & LLMs", level: "Learning & Built With" },
-        { name: "Ubiquitous GIS & QGIS Spatial Analysis", level: "Used in Production" },
-        { name: "Drone Telemetry & Sensor Analytics", level: "Explored" },
-        { name: "Data Science & Power BI Dashboards", level: "Used in Production" },
-        { name: "Full-Stack Web Engineering", level: "Used in Production" }
-      ]
-    },
-    {
-      phaseId: "year-4",
-      phaseTitle: "B.Tech Year 4 (Semesters 7 & 8 — ROADMAP)",
-      period: "2026 – 2027",
-      skills: [
-        { name: "Advanced Deep Learning & AI Research", level: "Planned" },
-        { name: "Production Enterprise Architecture", level: "Planned" },
-        { name: "Open Source Leadership", level: "Planned" }
-      ]
-    }
-  ],
-
-  // Semesters Definition for Accordions & Tabs
-  semesters: [
-    { id: "pre-college", name: "Pre-College Foundation", label: "Before College", year: "School & Board Honors" },
-    { id: "sem-1", name: "Semester 1", label: "Sem 1 (Year 1)", year: "2023 – 2024" },
-    { id: "sem-2", name: "Semester 2", label: "Sem 2 (Year 1)", year: "2023 – 2024" },
-    { id: "sem-3", name: "Semester 3", label: "Sem 3 (Year 2)", year: "2024 – 2025" },
-    { id: "sem-4", name: "Semester 4", label: "Sem 4 (Year 2)", year: "2024 – 2025" },
-    { id: "sem-5", name: "Semester 5", label: "Sem 5 (Year 3)", year: "2025 – 2026" },
-    { id: "sem-6", name: "Semester 6 (CURRENT)", label: "Sem 6 (Current)", year: "2025 – 2026" },
-    { id: "sem-7", name: "Semester 7 (Roadmap)", label: "Sem 7 (Year 4)", year: "2026 – 2027" },
-    { id: "sem-8", name: "Semester 8 & Graduation", label: "Sem 8 & Graduation", year: "2026 – 2027" }
-  ],
-
-  // Master Journey Items List
+  // 3. Master Milestones List
   milestones: [
     /* ════════════════════════════════════════════════════════════
        PRE-COLLEGE FOUNDATION
@@ -117,6 +118,7 @@ const JOURNEY_DATA = {
       fullDescription: "Recognized for outstanding academic diligence, mathematical problem solving, and maintaining a perfect 100% attendance record throughout the academic session. Presented directly by a visiting professor from Malaviya National Institute of Technology (MNIT).",
       startDate: "Pre-College",
       endDate: "2023",
+      phaseId: "pre-college",
       semesterId: "pre-college",
       category: "Award",
       status: "completed",
@@ -144,6 +146,7 @@ const JOURNEY_DATA = {
       fullDescription: "Received prestigious state-level academic recognition as a District Topper in UP Board examinations, presented on stage by the executive leadership of Uttar Pradesh Secondary Education Board.",
       startDate: "Pre-College",
       endDate: "2023",
+      phaseId: "pre-college",
       semesterId: "pre-college",
       category: "Award",
       status: "completed",
@@ -166,7 +169,7 @@ const JOURNEY_DATA = {
     },
 
     /* ════════════════════════════════════════════════════════════
-       SEMESTER 1 (YEAR 1)
+       1ST YEAR B.TECH (SEMESTER 1)
        ════════════════════════════════════════════════════════════ */
     {
       id: "sem-1-c-programming-mastery",
@@ -175,6 +178,7 @@ const JOURNEY_DATA = {
       fullDescription: "Immersed in procedural programming, array manipulations, dynamic memory allocation, and pointers under AKTU Lucknow Semester 1 syllabus. Built CLI algorithms and console applications.",
       startDate: "Aug 2023",
       endDate: "Jan 2024",
+      phaseId: "year-1",
       semesterId: "sem-1",
       category: "Academic",
       status: "completed",
@@ -196,6 +200,7 @@ const JOURNEY_DATA = {
       fullDescription: "Completed Semester 1 engineering mathematics (matrices, calculus, vector calculus) and physics laboratory practicals (interferometry, diffraction, semiconductor optics).",
       startDate: "Aug 2023",
       endDate: "Jan 2024",
+      phaseId: "year-1",
       semesterId: "sem-1",
       category: "Academic",
       status: "completed",
@@ -212,7 +217,7 @@ const JOURNEY_DATA = {
     },
 
     /* ════════════════════════════════════════════════════════════
-       SEMESTER 2 (YEAR 1)
+       1ST YEAR B.TECH (SEMESTER 2)
        ════════════════════════════════════════════════════════════ */
     {
       id: "sem-2-python-dsa-foundations",
@@ -221,6 +226,7 @@ const JOURNEY_DATA = {
       fullDescription: "Shifted into Python programming and Data Structures & Algorithms (arrays, linked lists, stacks, queues, trees). Built algorithmic scripts and explored data manipulation libraries.",
       startDate: "Feb 2024",
       endDate: "Jul 2024",
+      phaseId: "year-1",
       semesterId: "sem-2",
       category: "Academic",
       status: "completed",
@@ -242,6 +248,7 @@ const JOURNEY_DATA = {
       fullDescription: "Began self-directed full-stack web development learning. Created responsive web pages, interactive CSS animations, and JavaScript DOM manipulation scripts.",
       startDate: "Apr 2024",
       endDate: "Jul 2024",
+      phaseId: "year-1",
       semesterId: "sem-2",
       category: "Project",
       status: "completed",
@@ -258,7 +265,7 @@ const JOURNEY_DATA = {
     },
 
     /* ════════════════════════════════════════════════════════════
-       SEMESTER 3 (YEAR 2)
+       2ND YEAR B.TECH (SEMESTER 3)
        ════════════════════════════════════════════════════════════ */
     {
       id: "sem-3-aktu-rank-5-topper",
@@ -267,6 +274,7 @@ const JOURNEY_DATA = {
       fullDescription: "Achieved top academic performance across Object-Oriented Programming (Java/Python), Operating Systems, Discrete Mathematics, and Computer Organization. Honored as Branch Rank 1 Topper and College Rank 5 Awardee.",
       startDate: "Aug 2024",
       endDate: "Jan 2025",
+      phaseId: "year-2",
       semesterId: "sem-3",
       category: "Academic",
       status: "completed",
@@ -289,7 +297,7 @@ const JOURNEY_DATA = {
     },
 
     /* ════════════════════════════════════════════════════════════
-       SEMESTER 4 (YEAR 2)
+       2ND YEAR B.TECH (SEMESTER 4)
        ════════════════════════════════════════════════════════════ */
     {
       id: "sem-4-up-police-fellowship",
@@ -298,6 +306,7 @@ const JOURNEY_DATA = {
       fullDescription: "Participated in Amroha Police Cyber Security Internship Program (APCSIP-2026). Applied data science to digital forensics, Call Detail Record (CDR) sorting, OSINT recon, and cyber awareness. Presented Best Content Creator Award by DSP Anjali Kataria.",
       startDate: "Jan 2025",
       endDate: "Feb 2025",
+      phaseId: "year-2",
       semesterId: "sem-4",
       category: "Internship",
       status: "completed",
@@ -325,6 +334,7 @@ const JOURNEY_DATA = {
       fullDescription: "Entered production open-source engineering via Wikimedia Gerrit. Merged patches resolving internationalization metadata, UI rendering, and Pywikibot automation bugs. Recognized in WikiClub Tech India Technical Impact Report at IIIT Hyderabad.",
       startDate: "Jan 2025",
       endDate: "May 2025",
+      phaseId: "year-2",
       semesterId: "sem-4",
       category: "Open Source",
       status: "completed",
@@ -347,7 +357,7 @@ const JOURNEY_DATA = {
     },
 
     /* ════════════════════════════════════════════════════════════
-       SEMESTER 5 (YEAR 3)
+       3RD YEAR B.TECH (SEMESTER 5)
        ════════════════════════════════════════════════════════════ */
     {
       id: "sem-5-gfg-vp-and-gsa-mega-event",
@@ -356,6 +366,7 @@ const JOURNEY_DATA = {
       fullDescription: "Led technical student initiatives as Vice President of GeeksforGeeks Student Chapter UIT Prayagraj. Co-organized a massive 650+ attendee tech conference as Google Student Ambassador team member, awarded on stage by Principal Sir, Dean Student Welfare (DSW), and Department HODs. Co-founded PrayagrajRooms portal.",
       startDate: "Aug 2025",
       endDate: "Dec 2025",
+      phaseId: "year-3",
       semesterId: "sem-5",
       category: "Leadership",
       status: "completed",
@@ -378,7 +389,7 @@ const JOURNEY_DATA = {
     },
 
     /* ════════════════════════════════════════════════════════════
-       SEMESTER 6 (YEAR 3 — CURRENT FOCUS)
+       3RD YEAR B.TECH (SEMESTER 6 — CURRENT FOCUS)
        ════════════════════════════════════════════════════════════ */
     {
       id: "sem-6-ait-bangkok-fellowship",
@@ -387,6 +398,7 @@ const JOURNEY_DATA = {
       fullDescription: "Selected for Global Innovation Internship Program (GIIP-2026) at Asian Institute of Technology (AIT Bangkok, Thailand). Executed research in Agentic AI, Ubiquitous GIS spatial mapping, UAV drone telemetry, KMITL robotics research, and developed BusSetu transit platform capstone.",
       startDate: "Jan 2026",
       endDate: "Present",
+      phaseId: "year-3",
       semesterId: "sem-6",
       category: "Internship",
       status: "current",
@@ -413,7 +425,7 @@ const JOURNEY_DATA = {
     },
 
     /* ════════════════════════════════════════════════════════════
-       SEMESTERS 7 & 8 (ROADMAP)
+       4TH YEAR B.TECH (SEMESTERS 7 & 8 — ROADMAP)
        ════════════════════════════════════════════════════════════ */
     {
       id: "sem-7-advanced-ai-research",
@@ -422,6 +434,7 @@ const JOURNEY_DATA = {
       fullDescription: "Upcoming roadmap milestone for 4th year Semester 7: Deep learning models, multi-agent AI systems, research paper submission, and enterprise production system architecture.",
       startDate: "Aug 2026",
       endDate: "Dec 2026",
+      phaseId: "year-4",
       semesterId: "sem-7",
       category: "Learning",
       status: "planned",
@@ -443,6 +456,7 @@ const JOURNEY_DATA = {
       fullDescription: "Upcoming final milestone: Successful defense of B.Tech thesis/capstone project, completion of all 8 semesters under AKTU Lucknow, and launch into full-time AI Engineering / Data Science role.",
       startDate: "Jan 2027",
       endDate: "Jun 2027",
+      phaseId: "year-4",
       semesterId: "sem-8",
       category: "Academic",
       status: "planned",
