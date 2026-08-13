@@ -70,10 +70,14 @@
     <!-- Master Journey Data File -->
     <script src="assets/js/journey-data.js"></script>
 </head>
-<body class="bg-slate-50 text-slate-900 dark:bg-slate-950 dark:text-slate-100 font-sans min-h-screen transition-colors duration-300">
+<body class="bg-slate-50 text-slate-900 dark:bg-slate-950 dark:text-slate-100 font-sans min-h-screen transition-colors duration-300 relative overflow-x-hidden">
+
+    <!-- Ambient Floating Glass Blobs -->
+    <div class="fixed top-10 left-[10%] w-[350px] h-[350px] bg-blue-500/10 rounded-full blur-[80px] pointer-events-none float-air"></div>
+    <div class="fixed top-[40%] right-[10%] w-[400px] h-[400px] bg-purple-500/10 rounded-full blur-[90px] pointer-events-none float-air-delayed"></div>
 
     <!-- React Application Mount Root -->
-    <div id="react-journey-root"></div>
+    <div id="react-journey-root" class="relative z-10"></div>
 
     <!-- React 18 Application Script -->
     <script type="text/babel">
@@ -85,6 +89,7 @@
         const [selectedCategory, setSelectedCategory] = useState('all');
         const [searchQuery, setSearchQuery] = useState('');
         const [activeModalItem, setActiveModalItem] = useState(null);
+        const [isLoading, setIsLoading] = useState(false);
 
         // Apply dark/light theme class to <html>
         useEffect(() => {
@@ -99,6 +104,13 @@
 
         const toggleTheme = () => {
           setTheme(prev => (prev === 'dark' ? 'light' : 'dark'));
+        };
+
+        const handlePhaseChange = (phaseId) => {
+          if (phaseId === activePhaseId) return;
+          setIsLoading(true);
+          setActivePhaseId(phaseId);
+          setTimeout(() => setIsLoading(false), 250);
         };
 
         // Current active phase object
@@ -137,14 +149,26 @@
           });
         }, [activePhase, activePhaseMilestones]);
 
+        // Glass Chip Color Class Generator
+        const getChipClass = (badgeColor) => {
+          switch (badgeColor) {
+            case 'amber': return 'glass-chip-amber';
+            case 'blue': return 'glass-chip-blue';
+            case 'indigo': return 'glass-chip-indigo';
+            case 'emerald': return 'glass-chip-emerald';
+            case 'purple': return 'glass-chip-purple';
+            default: return 'glass-chip-blue';
+          }
+        };
+
         return (
           <div class="min-h-screen flex flex-col">
             
             {/* 1. Header Navbar */}
-            <header class="sticky top-0 z-50 glass-header border-b border-slate-200 dark:border-slate-800 transition-colors">
+            <header class="sticky top-0 z-50 glass-header border-b border-slate-200 dark:border-slate-800/80 transition-colors">
               <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between gap-4">
                 <a href="index.html" class="flex items-center gap-3 group text-decoration-none">
-                  <img src="assets/images/profile/Gautam_Kumar_Maurya.jpg" alt="Gautam Kumar Maurya" class="w-10 h-10 rounded-full object-cover border-2 border-blue-500 group-hover:scale-105 transition-transform" />
+                  <img src="assets/images/profile/Gautam_Kumar_Maurya.jpg" alt="Gautam Kumar Maurya" class="w-10 h-10 rounded-full object-cover border-2 border-blue-500 float-air" />
                   <div>
                     <div class="font-bold text-sm text-slate-900 dark:text-white leading-tight">Gautam Kumar Maurya</div>
                     <div class="text-xs font-semibold text-blue-600 dark:text-blue-400">B.Tech Engineering Journey</div>
@@ -152,11 +176,11 @@
                 </a>
 
                 <div class="flex items-center gap-3">
-                  <a href="index.html" class="px-4 py-2 rounded-xl bg-blue-50 hover:bg-blue-100 dark:bg-blue-950/40 dark:hover:bg-blue-900/60 text-blue-600 dark:text-blue-400 border border-blue-200 dark:border-blue-800 text-xs font-semibold flex items-center gap-2 transition-all">
+                  <a href="index.html" class="px-4 py-2 rounded-xl bg-blue-500/10 hover:bg-blue-500/20 text-blue-600 dark:text-blue-400 border border-blue-500/30 text-xs font-semibold flex items-center gap-2 transition-all hover:scale-105">
                     <i class="fa-solid fa-arrow-left"></i>
                     <span class="hidden sm:inline">Portfolio Home</span>
                   </a>
-                  <button onClick={toggleTheme} class="w-9 h-9 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 text-slate-700 dark:text-slate-200 flex items-center justify-center hover:border-blue-500 hover:text-blue-500 transition-all" title="Toggle Theme">
+                  <button onClick={toggleTheme} class="w-9 h-9 rounded-xl border border-slate-200 dark:border-slate-800 bg-white/80 dark:bg-slate-900/80 text-slate-700 dark:text-slate-200 flex items-center justify-center hover:border-blue-500 hover:text-blue-500 transition-all hover:scale-105" title="Toggle Theme">
                     <i class={theme === 'dark' ? 'fa-solid fa-sun text-amber-400' : 'fa-solid fa-moon text-slate-700'}></i>
                   </button>
                 </div>
@@ -165,7 +189,7 @@
 
             {/* 2. Hero Header Section */}
             <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-10 pb-6 text-center">
-              <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-50 dark:bg-blue-950/60 border border-blue-200 dark:border-blue-800 text-blue-600 dark:text-blue-400 text-xs font-bold uppercase tracking-wider mb-4">
+              <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass-chip-blue text-xs font-bold uppercase tracking-wider mb-4 float-air">
                 <i class="fa-solid fa-graduation-cap"></i>
                 <span>United Institute of Technology (UIT) · AKTU Lucknow</span>
               </div>
@@ -175,35 +199,38 @@
               </h1>
               
               <p class="max-w-2xl mx-auto text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed mb-6">
-                Select a timeline phase below to explore Gautam's focused journey, sequential semester milestones, and engineering achievements.
+                Select a timeline phase card below to explore Gautam's focused journey, sequential semester milestones, and engineering achievements.
               </p>
 
-              <div class="inline-flex items-center gap-3 px-5 py-2.5 rounded-full bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-xs sm:text-sm font-semibold text-slate-900 dark:text-white shadow-sm">
+              <div class="inline-flex items-center gap-3 px-5 py-2.5 rounded-full glass-card border border-slate-200 dark:border-slate-800 text-xs sm:text-sm font-semibold text-slate-900 dark:text-white shadow-lg">
                 <span class="w-2.5 h-2.5 rounded-full bg-blue-500 pulse-dot"></span>
                 <span>{JOURNEY_DATA.meta.currentStatusText}</span>
               </div>
             </section>
 
-            {/* 3. PRIMARY PHASE SELECTOR CARDS (Top Hero Control — 4 Active Phases) */}
+            {/* 3. PRIMARY PHASE SELECTOR CARDS (Top Hero Control — Floating & Glowing Cards) */}
             <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-10">
-              <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4">
-                {JOURNEY_DATA.phases.map(phase => {
+              <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
+                {JOURNEY_DATA.phases.map((phase, pIdx) => {
                   const isActive = activePhaseId === phase.id;
                   const totalItems = JOURNEY_DATA.milestones.filter(m => m.phaseId === phase.id).length;
+                  const chipClass = getChipClass(phase.badgeColor);
 
                   return (
                     <div 
                       key={phase.id}
-                      onClick={() => setActivePhaseId(phase.id)}
-                      class={`glass-card phase-card rounded-2xl p-4 sm:p-5 flex flex-col justify-between ${isActive ? 'active ring-2 ring-blue-500 dark:ring-blue-400 bg-blue-50/50 dark:bg-slate-900' : 'opacity-80 hover:opacity-100'}`}>
+                      onClick={() => handlePhaseChange(phase.id)}
+                      class={`glass-card phase-card rounded-2xl p-5 flex flex-col justify-between ${pIdx % 2 === 0 ? 'float-air' : 'float-air-delayed'} ${isActive ? 'active ring-2 ring-blue-500 dark:ring-blue-400 bg-blue-500/10 dark:bg-slate-900' : 'opacity-85 hover:opacity-100'}`}>
                       <div>
-                        <div class="flex items-center justify-between gap-2 mb-2">
-                          <i class={`${phase.icon} text-lg sm:text-xl text-blue-500`}></i>
-                          <span class="px-2 py-0.5 rounded-md bg-blue-500/10 text-blue-600 dark:text-blue-400 text-[10px] font-bold">
+                        <div class="flex items-center justify-between gap-2 mb-3">
+                          <div class="w-9 h-9 rounded-xl bg-blue-500/10 text-blue-500 border border-blue-500/30 flex items-center justify-center">
+                            <i class={`${phase.icon} text-base`}></i>
+                          </div>
+                          <span class={`px-2.5 py-0.5 rounded-full text-[11px] font-bold ${chipClass}`}>
                             {totalItems} Items
                           </span>
                         </div>
-                        <div class="font-extrabold text-sm sm:text-base text-slate-900 dark:text-white leading-snug mb-1">
+                        <div class="font-extrabold text-base text-slate-900 dark:text-white leading-snug mb-1">
                           {phase.title}
                         </div>
                         <div class="text-xs font-semibold text-slate-500 dark:text-slate-400 line-clamp-1">
@@ -214,12 +241,12 @@
                       <div class="pt-3 mt-3 border-t border-slate-200 dark:border-slate-800/80 flex items-center justify-between text-[11px] font-bold">
                         <span class="text-slate-400">{phase.period}</span>
                         {isActive ? (
-                          <span class="text-blue-500 flex items-center gap-1">
-                            <span>Viewing</span>
+                          <span class="text-blue-500 flex items-center gap-1 font-bold">
+                            <span>Active View</span>
                             <i class="fa-solid fa-circle-check text-[10px]"></i>
                           </span>
                         ) : (
-                          <span class="text-slate-400 hover:text-blue-500">Select Phase</span>
+                          <span class="text-slate-400 hover:text-blue-500">Click to View</span>
                         )}
                       </div>
                     </div>
@@ -230,14 +257,14 @@
 
             {/* 4. ACTIVE FOCUSED PHASE HEADER & FILTER BAR */}
             <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-8">
-              <div class="glass-card rounded-2xl p-5 sm:p-6 border border-slate-200 dark:border-slate-800 space-y-4">
+              <div class="glass-card rounded-2xl p-5 sm:p-6 border border-slate-200 dark:border-slate-800 space-y-4 shadow-xl">
                 
                 {/* Active Phase Banner */}
                 <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-slate-200 dark:border-slate-800">
                   <div>
                     <div class="inline-flex items-center gap-2 text-xs font-bold text-blue-500 uppercase tracking-wider mb-1">
                       <i class={activePhase.icon}></i>
-                      <span>Focused Phase View</span>
+                      <span>Focused Timeline View</span>
                     </div>
                     <h2 class="text-2xl font-extrabold text-slate-900 dark:text-white">
                       {activePhase.title} ({activePhase.period})
@@ -248,9 +275,9 @@
                   </div>
 
                   <div class="flex items-center gap-2">
-                    <span class="text-xs font-bold text-slate-400">Semesters in Phase:</span>
+                    <span class="text-xs font-bold text-slate-400">Semesters:</span>
                     {activePhase.semesters.map(s => (
-                      <span key={s.id} class="px-3 py-1 rounded-lg bg-blue-500/10 text-blue-600 dark:text-blue-400 text-xs font-bold border border-blue-500/30">
+                      <span key={s.id} class="px-3 py-1 rounded-lg glass-chip-blue text-xs font-bold">
                         {s.num}
                       </span>
                     ))}
@@ -282,7 +309,7 @@
                       <button 
                         key={cat.id}
                         onClick={() => setSelectedCategory(cat.id)}
-                        class={`px-3 py-1.5 rounded-lg text-xs font-semibold flex items-center gap-1.5 shrink-0 transition-all ${selectedCategory === cat.id ? 'bg-blue-500/20 text-blue-600 dark:text-blue-400 border border-blue-500/40' : 'bg-slate-100 dark:bg-slate-900/60 text-slate-600 dark:text-slate-400 border border-slate-200 dark:border-slate-800 hover:border-slate-400'}`}>
+                        class={`px-3 py-1.5 rounded-lg text-xs font-semibold flex items-center gap-1.5 shrink-0 transition-all ${selectedCategory === cat.id ? 'glass-chip-blue' : 'bg-slate-100 dark:bg-slate-900/60 text-slate-600 dark:text-slate-400 border border-slate-200 dark:border-slate-800 hover:border-slate-400'}`}>
                         <i class={cat.icon}></i>
                         <span>{cat.label}</span>
                       </button>
@@ -293,108 +320,111 @@
               </div>
             </section>
 
-            {/* 5. SEQUENTIAL SEMESTER BOXES (Master Classification Containers) */}
+            {/* 5. SEQUENTIAL SEMESTER BOXES (Master Classification Containers with Skeleton Shimmer) */}
             <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-16 flex-1 space-y-10">
-              {semesterBoxes.map((semBox, boxIdx) => (
-                <div key={semBox.id} class="glass-card rounded-3xl p-6 sm:p-8 border border-slate-200 dark:border-slate-800 space-y-6">
-                  
-                  {/* Semester Box Sequential Header */}
-                  <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-4 border-b border-slate-200 dark:border-slate-800">
-                    <div class="flex items-center gap-3">
-                      <div class="w-10 h-10 rounded-2xl bg-blue-500/10 text-blue-600 dark:text-blue-400 border border-blue-500/30 flex items-center justify-center font-extrabold text-sm">
-                        0{boxIdx + 1}
-                      </div>
-                      <div>
-                        <h3 class="text-xl sm:text-2xl font-extrabold text-slate-900 dark:text-white">
-                          {semBox.title}
-                        </h3>
-                        {semBox.desc && (
-                          <p class="text-xs text-slate-500 dark:text-slate-400 font-medium">
-                            {semBox.desc}
-                          </p>
-                        )}
-                      </div>
-                    </div>
-
-                    <div class="flex items-center gap-2">
-                      <span class="px-3 py-1 rounded-full bg-blue-500/10 text-blue-600 dark:text-blue-400 text-xs font-bold">
-                        {semBox.items.length} Milestones
-                      </span>
-                    </div>
-                  </div>
-
-                  {/* Milestone Cards Grid Inside Semester Box */}
-                  {semBox.items.length === 0 ? (
-                    <div class="py-8 text-center text-slate-400 text-xs font-semibold">
-                      <i class="fa-solid fa-folder-open text-2xl mb-2 block"></i>
-                      <span>No milestones found matching your category/search filters in {semBox.num}.</span>
-                    </div>
-                  ) : (
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                      {semBox.items.map(m => (
-                        <div 
-                          key={m.id}
-                          onClick={() => setActiveModalItem(m)}
-                          class="glass-card glass-card-hover rounded-2xl p-5 sm:p-6 cursor-pointer flex flex-col justify-between group border border-slate-200 dark:border-slate-800/80">
-                          <div>
-                            {/* Card Top Meta */}
-                            <div class="flex items-center justify-between gap-2 mb-3">
-                              <span class="px-2.5 py-1 rounded-md bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-[11px] font-bold text-slate-600 dark:text-slate-400 uppercase tracking-wider">
-                                {m.category}
-                              </span>
-                              
-                              {m.status === 'completed' && (
-                                <span class="px-2.5 py-0.5 rounded-full bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/30 text-[11px] font-bold flex items-center gap-1">
-                                  <i class="fa-solid fa-check text-[10px]"></i> Completed
-                                </span>
-                              )}
-                              {m.status === 'current' && (
-                                <span class="px-2.5 py-0.5 rounded-full bg-blue-500/10 text-blue-600 dark:text-blue-400 border border-blue-500/30 text-[11px] font-bold flex items-center gap-1">
-                                  <span class="w-1.5 h-1.5 rounded-full bg-blue-500 pulse-dot"></span> Current Focus
-                                </span>
-                              )}
-                              {m.status === 'planned' && (
-                                <span class="px-2.5 py-0.5 rounded-full bg-slate-500/10 text-slate-500 dark:text-slate-400 border border-slate-500/30 text-[11px] font-bold flex items-center gap-1">
-                                  <i class="fa-regular fa-clock text-[10px]"></i> Planned
-                                </span>
-                              )}
-                            </div>
-
-                            <h4 class="font-extrabold text-base sm:text-lg text-slate-900 dark:text-white mb-2 group-hover:text-blue-500 transition-colors leading-snug">
-                              {m.title}
-                            </h4>
-                            <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed mb-4">
-                              {m.shortDescription}
-                            </p>
-
-                            {/* Key Story Highlights */}
-                            <div class="space-y-2 pt-3 border-t border-slate-100 dark:border-slate-800/80 text-xs">
-                              <div>
-                                <span class="font-bold text-blue-600 dark:text-blue-400 uppercase text-[10px] block">What Happened</span>
-                                <span class="text-slate-600 dark:text-slate-400">{m.whatHappened}</span>
-                              </div>
-                              <div>
-                                <span class="font-bold text-blue-600 dark:text-blue-400 uppercase text-[10px] block">Why It Mattered</span>
-                                <span class="text-slate-600 dark:text-slate-400">{m.whyItMattered}</span>
-                              </div>
-                            </div>
-                          </div>
-
-                          {/* Card Bottom CTA */}
-                          <div class="pt-4 mt-4 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between text-xs">
-                            <span class="font-bold text-blue-600 dark:text-blue-400 group-hover:underline flex items-center gap-1">
-                              <span>Read Full Narrative & Evidence</span>
-                              <i class="fa-solid fa-arrow-right text-[10px]"></i>
-                            </span>
-                            <span class="text-[11px] text-slate-400 font-semibold">{m.startDate}</span>
-                          </div>
-                        </div>
-                      ))}
-                    </div>
-                  )}
-
+              {isLoading ? (
+                /* Skeleton Loading Shimmer Placeholder */
+                <div class="space-y-6">
+                  <div class="glass-card rounded-3xl p-8 border border-slate-200 dark:border-slate-800 skeleton-shimmer h-64"></div>
+                  <div class="glass-card rounded-3xl p-8 border border-slate-200 dark:border-slate-800 skeleton-shimmer h-64"></div>
                 </div>
-              ))}
+              ) : (
+                semesterBoxes.map((semBox, boxIdx) => (
+                  <div key={semBox.id} class="glass-card rounded-3xl p-6 sm:p-8 border border-slate-200 dark:border-slate-800 space-y-6 shadow-xl">
+                    
+                    {/* Semester Box Sequential Header */}
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-4 border-b border-slate-200 dark:border-slate-800">
+                      <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-2xl bg-blue-500/15 text-blue-500 border border-blue-500/30 flex items-center justify-center font-extrabold text-sm">
+                          0{boxIdx + 1}
+                        </div>
+                        <div>
+                          <h3 class="text-xl sm:text-2xl font-extrabold text-slate-900 dark:text-white">
+                            {semBox.title}
+                          </h3>
+                          {semBox.desc && (
+                            <p class="text-xs text-slate-500 dark:text-slate-400 font-medium">
+                              {semBox.desc}
+                            </p>
+                          )}
+                        </div>
+                      </div>
+
+                      <div class="flex items-center gap-2">
+                        <span class="px-3 py-1 rounded-full glass-chip-indigo text-xs font-bold">
+                          {semBox.items.length} Milestones
+                        </span>
+                      </div>
+                    </div>
+
+                    {/* Milestone Cards Grid Inside Semester Box */}
+                    {semBox.items.length === 0 ? (
+                      <div class="py-8 text-center text-slate-400 text-xs font-semibold">
+                        <i class="fa-solid fa-folder-open text-2xl mb-2 block"></i>
+                        <span>No milestones found matching your category/search filters in {semBox.num}.</span>
+                      </div>
+                    ) : (
+                      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        {semBox.items.map(m => (
+                          <div 
+                            key={m.id}
+                            onClick={() => setActiveModalItem(m)}
+                            class="glass-card glass-card-hover rounded-2xl p-5 sm:p-6 cursor-pointer flex flex-col justify-between group border border-slate-200 dark:border-slate-800/80">
+                            <div>
+                              {/* Card Top Meta */}
+                              <div class="flex items-center justify-between gap-2 mb-3">
+                                <span class="px-2.5 py-1 rounded-md glass-chip-blue text-[11px] font-bold uppercase tracking-wider">
+                                  {m.category}
+                                </span>
+                                
+                                {m.status === 'completed' && (
+                                  <span class="px-2.5 py-0.5 rounded-full glass-chip-emerald text-[11px] font-bold flex items-center gap-1">
+                                    <i class="fa-solid fa-check text-[10px]"></i> Completed
+                                  </span>
+                                )}
+                                {m.status === 'current' && (
+                                  <span class="px-2.5 py-0.5 rounded-full glass-chip-blue text-[11px] font-bold flex items-center gap-1">
+                                    <span class="w-1.5 h-1.5 rounded-full bg-blue-500 pulse-dot"></span> Current Focus
+                                  </span>
+                                )}
+                              </div>
+
+                              <h4 class="font-extrabold text-base sm:text-lg text-slate-900 dark:text-white mb-2 group-hover:text-blue-500 transition-colors leading-snug">
+                                {m.title}
+                              </h4>
+                              <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed mb-4">
+                                {m.shortDescription}
+                              </p>
+
+                              {/* Key Story Highlights */}
+                              <div class="space-y-2 pt-3 border-t border-slate-100 dark:border-slate-800/80 text-xs">
+                                <div>
+                                  <span class="font-bold text-blue-600 dark:text-blue-400 uppercase text-[10px] block">What Happened</span>
+                                  <span class="text-slate-600 dark:text-slate-400">{m.whatHappened}</span>
+                                </div>
+                                <div>
+                                  <span class="font-bold text-blue-600 dark:text-blue-400 uppercase text-[10px] block">Why It Mattered</span>
+                                  <span class="text-slate-600 dark:text-slate-400">{m.whyItMattered}</span>
+                                </div>
+                              </div>
+                            </div>
+
+                            {/* Card Bottom CTA */}
+                            <div class="pt-4 mt-4 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between text-xs">
+                              <span class="font-bold text-blue-600 dark:text-blue-400 group-hover:underline flex items-center gap-1">
+                                <span>Read Full Narrative & Evidence</span>
+                                <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                              </span>
+                              <span class="text-[11px] text-slate-400 font-semibold">{m.startDate}</span>
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    )}
+
+                  </div>
+                ))
+              )}
             </section>
 
             {/* 6. Slide-Up Detailed Modal Drawer */}
@@ -409,7 +439,7 @@
                   </button>
 
                   <div class="flex items-center gap-2 mb-3">
-                    <span class="px-2.5 py-1 rounded-md bg-blue-500/10 text-blue-600 dark:text-blue-400 text-xs font-bold uppercase tracking-wider">
+                    <span class="px-2.5 py-1 rounded-md glass-chip-blue text-xs font-bold uppercase tracking-wider">
                       {activeModalItem.category}
                     </span>
                     <span class="text-xs text-slate-400 font-semibold">{activeModalItem.startDate} – {activeModalItem.endDate}</span>
@@ -453,7 +483,7 @@
                     <span class="font-extrabold text-slate-400 text-xs uppercase tracking-wider block mb-2">Competencies & Tools</span>
                     <div class="flex flex-wrap gap-2">
                       {activeModalItem.skills.map((s, i) => (
-                        <span key={i} class="px-2.5 py-1 rounded-md bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-xs font-semibold text-slate-700 dark:text-slate-300">
+                        <span key={i} class="px-2.5 py-1 rounded-md glass-chip-blue text-xs font-semibold">
                           {s}
                         </span>
                       ))}
@@ -466,22 +496,22 @@
                       <span class="font-extrabold text-slate-400 text-xs uppercase tracking-wider block mb-2">Verified Documents & Links</span>
                       <div class="flex flex-wrap gap-2">
                         {activeModalItem.evidence.links && activeModalItem.evidence.links.map((l, i) => (
-                          <a key={i} href={l} target="_blank" class="px-3 py-1.5 rounded-lg bg-blue-50 hover:bg-blue-100 dark:bg-blue-950/60 dark:hover:bg-blue-900/60 text-blue-600 dark:text-blue-400 border border-blue-200 dark:border-blue-800 text-xs font-semibold flex items-center gap-1.5 transition-colors">
+                          <a key={i} href={l} target="_blank" class="px-3 py-1.5 rounded-lg glass-chip-blue text-xs font-semibold flex items-center gap-1.5 transition-colors">
                             <i class="fa-solid fa-arrow-up-right-from-square"></i> Full Report Page
                           </a>
                         ))}
                         {activeModalItem.evidence.github && (
-                          <a href={activeModalItem.evidence.github} target="_blank" class="px-3 py-1.5 rounded-lg bg-slate-100 hover:bg-slate-200 dark:bg-slate-900 dark:hover:bg-slate-800 text-slate-800 dark:text-slate-200 border border-slate-200 dark:border-slate-800 text-xs font-semibold flex items-center gap-1.5 transition-colors">
+                          <a href={activeModalItem.evidence.github} target="_blank" class="px-3 py-1.5 rounded-lg glass-chip-purple text-xs font-semibold flex items-center gap-1.5 transition-colors">
                             <i class="fa-brands fa-github"></i> GitHub Repository
                           </a>
                         )}
                         {activeModalItem.evidence.certificate && (
-                          <a href={activeModalItem.evidence.certificate} target="_blank" class="px-3 py-1.5 rounded-lg bg-amber-50 hover:bg-amber-100 dark:bg-amber-950/60 dark:hover:bg-amber-900/60 text-amber-600 dark:text-amber-400 border border-amber-200 dark:border-amber-800 text-xs font-semibold flex items-center gap-1.5 transition-colors">
+                          <a href={activeModalItem.evidence.certificate} target="_blank" class="px-3 py-1.5 rounded-lg glass-chip-amber text-xs font-semibold flex items-center gap-1.5 transition-colors">
                             <i class="fa-solid fa-award"></i> Certificate PDF
                           </a>
                         )}
                         {activeModalItem.evidence.linkedin && (
-                          <a href={activeModalItem.evidence.linkedin} target="_blank" class="px-3 py-1.5 rounded-lg bg-sky-50 hover:bg-sky-100 dark:bg-sky-950/60 dark:hover:bg-sky-900/60 text-sky-600 dark:text-sky-400 border border-sky-200 dark:border-sky-800 text-xs font-semibold flex items-center gap-1.5 transition-colors">
+                          <a href={activeModalItem.evidence.linkedin} target="_blank" class="px-3 py-1.5 rounded-lg glass-chip-blue text-xs font-semibold flex items-center gap-1.5 transition-colors">
                             <i class="fa-brands fa-linkedin"></i> LinkedIn Post
                           </a>
                         )}
@@ -493,7 +523,7 @@
             )}
 
             {/* 7. Footer Section */}
-            <footer class="border-t border-slate-200 dark:border-slate-800 py-10 text-center text-xs text-slate-500">
+            <footer class="border-t border-slate-200 dark:border-slate-800 py-10 text-center text-xs text-slate-500 relative z-10">
               <div class="max-w-7xl mx-auto px-4 space-y-4">
                 <div class="flex flex-wrap justify-center gap-6 font-semibold">
                   <a href="index.html" class="hover:text-blue-500 transition-colors">Portfolio Home</a>
