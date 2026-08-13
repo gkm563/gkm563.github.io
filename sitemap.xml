@@ -59,12 +59,17 @@
     </image:image>
   </url>
 
-  <!-- ===== FAQ & Knowledge Base ===== -->
+  <!-- ===== B.Tech Academic & Engineering Journey ===== -->
   <url>
-    <loc>https://gkm563.github.io/faq.html</loc>
-    <lastmod>2026-08-05</lastmod>
+    <loc>https://gkm563.github.io/btech-journey.html</loc>
+    <lastmod>2026-08-13</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.80</priority>
+    <priority>0.95</priority>
+    <image:image>
+      <image:loc>https://gkm563.github.io/assets/images/profile/Gautam_Kumar_Maurya.jpg</image:loc>
+      <image:title>Gautam Kumar Maurya — 4-Year B.Tech CSE (Data Science) Journey</image:title>
+      <image:caption>Official B.Tech Academic and Growth Journey of Gautam Kumar Maurya at United Institute of Technology, Prayagraj.</image:caption>
+    </image:image>
   </url>
 
 </urlset>
