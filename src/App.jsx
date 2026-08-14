@@ -5,7 +5,8 @@ import {
   Users, Trophy, Calendar, Award, ArrowLeft, 
   Sun, Moon, Search, X, Check, Clock, ExternalLink, 
   Github, Linkedin, Building2, ChevronRight, FolderOpen, Sparkles, Compass,
-  Activity, BarChart3, Star, Share2, Copy, Eye, SlidersHorizontal, ChevronDown, CheckCircle2
+  Activity, BarChart3, Star, Share2, Copy, Eye, SlidersHorizontal, ChevronDown, CheckCircle2,
+  FileText, Globe, Heart, MessageSquare, Send, Mail, MapPin
 } from 'lucide-react';
 import { JOURNEY_DATA } from './data/journeyData.js';
 
@@ -134,9 +135,11 @@ export default function App() {
   return (
     <div className="min-h-screen bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-slate-100 font-sans transition-colors duration-300 relative overflow-x-hidden">
       
-      {/* 1. Ultra-Clean Glass Navbar */}
-      <header className="sticky top-0 z-50 bg-white/80 dark:bg-slate-950/80 backdrop-blur-2xl border-b border-slate-200/80 dark:border-slate-800/80 transition-colors">
+      {/* 1. ULTRA-PREMIUM PROPER HEADER NAVBAR */}
+      <header className="sticky top-0 z-50 bg-white/85 dark:bg-slate-950/85 backdrop-blur-2xl border-b border-slate-200/80 dark:border-slate-800/80 transition-colors">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between gap-4">
+          
+          {/* Left Brand Identifier */}
           <a href="index.html" className="flex items-center gap-3 group text-decoration-none">
             <div className="relative">
               <img src="assets/images/profile/Gautam_Kumar_Maurya.jpg" alt="Gautam Kumar Maurya" className="w-10 h-10 rounded-full object-cover border-2 border-blue-500 group-hover:scale-105 transition-transform" />
@@ -148,20 +151,39 @@ export default function App() {
                 <span className="text-blue-500 text-xs">✓</span>
               </div>
               <div className="text-xs font-semibold text-blue-600 dark:text-blue-400">
-                B.Tech CSE (Data Science) · AI Fellow & Topper
+                B.Tech CSE (Data Science) · Student Leader & Researcher
               </div>
             </div>
           </a>
 
+          {/* Middle Desktop Navigation Links */}
+          <nav className="hidden md:flex items-center gap-6 text-xs font-bold text-slate-600 dark:text-slate-300">
+            <a href="index.html" className="hover:text-blue-500 transition-colors">Portfolio Home</a>
+            <a href="ait-global-innovation-internship.html" className="hover:text-blue-500 transition-colors">AIT Bangkok</a>
+            <a href="up-police-internship.html" className="hover:text-blue-500 transition-colors">UP Police</a>
+            <a href="open-source-contributions.html" className="hover:text-blue-500 transition-colors">Open Source</a>
+            <a href="faq.html" className="hover:text-blue-500 transition-colors">FAQ</a>
+          </nav>
+
+          {/* Right Action CTA Buttons */}
           <div className="flex items-center gap-3">
-            <a href="index.html" className="px-4 py-2 rounded-xl bg-blue-500/10 hover:bg-blue-500/20 text-blue-600 dark:text-blue-400 border border-blue-500/30 text-xs font-bold flex items-center gap-2 transition-all hover:scale-105">
-              <ArrowLeft className="w-4 h-4" />
-              <span className="hidden sm:inline">Portfolio Home</span>
+            <a 
+              href="assets/docs/Gautam_Kumar_Maurya_Resume.pdf" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="px-3.5 py-1.5 rounded-xl bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold flex items-center gap-1.5 shadow-md shadow-blue-500/20 transition-all hover:scale-105">
+              <FileText className="w-3.5 h-3.5" />
+              <span className="hidden sm:inline">Resume</span>
             </a>
-            <button onClick={toggleTheme} className="w-9 h-9 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 text-slate-700 dark:text-slate-200 flex items-center justify-center hover:border-blue-500 hover:text-blue-500 transition-all hover:scale-105" title="Toggle Dark/Light Theme">
+
+            <button 
+              onClick={toggleTheme} 
+              className="w-9 h-9 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 text-slate-700 dark:text-slate-200 flex items-center justify-center hover:border-blue-500 hover:text-blue-500 transition-all hover:scale-105" 
+              title="Toggle Dark/Light Theme">
               {theme === 'dark' ? <Sun className="w-4 h-4 text-amber-400" /> : <Moon className="w-4 h-4 text-slate-700" />}
             </button>
           </div>
+
         </div>
       </header>
 
@@ -676,17 +698,96 @@ export default function App() {
         </div>
       )}
 
-      {/* 11. Footer Section */}
-      <footer className="border-t border-slate-200 dark:border-slate-800 py-10 text-center text-xs text-slate-500 relative z-10">
-        <div className="max-w-7xl mx-auto px-4 space-y-4">
-          <div className="flex flex-wrap justify-center gap-6 font-semibold">
-            <a href="index.html" className="hover:text-blue-500 transition-colors">Portfolio Home</a>
-            <a href="ait-global-innovation-internship.html" className="hover:text-blue-500 transition-colors">AIT Bangkok Fellowship</a>
-            <a href="up-police-internship.html" className="hover:text-blue-500 transition-colors">UP Police Fellowship</a>
-            <a href="open-source-contributions.html" className="hover:text-blue-500 transition-colors">Open Source Patches</a>
-            <a href="faq.html" className="hover:text-blue-500 transition-colors">FAQ & Contact</a>
+      {/* 11. ULTRA-PROPER RICH FOOTER */}
+      <footer className="border-t border-slate-200 dark:border-slate-800 bg-white/80 dark:bg-slate-950/80 backdrop-blur-2xl pt-12 pb-8 relative z-10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+          
+          {/* Footer Grid 4-Columns */}
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+            
+            {/* Column 1: Profile & Degree Bio */}
+            <div className="space-y-3 md:col-span-1">
+              <div className="flex items-center gap-3">
+                <img src="assets/images/profile/Gautam_Kumar_Maurya.jpg" alt="Gautam Kumar Maurya" className="w-10 h-10 rounded-full object-cover border-2 border-blue-500" />
+                <div>
+                  <div className="font-extrabold text-sm text-slate-900 dark:text-white">Gautam Kumar Maurya</div>
+                  <div className="text-xs text-blue-500 font-semibold">gkm563</div>
+                </div>
+              </div>
+              <p className="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">
+                B.Tech in Computer Science & Engineering (Data Science) scholar at United Institute of Technology (UIT Prayagraj), affiliated with Dr. A.P.J. Abdul Kalam Technical University (AKTU Lucknow).
+              </p>
+              <div className="flex items-center gap-2 text-xs text-slate-400 font-semibold">
+                <MapPin className="w-3.5 h-3.5 text-red-500" />
+                <span>Prayagraj, Uttar Pradesh, India</span>
+              </div>
+            </div>
+
+            {/* Column 2: B.Tech Journey Eras */}
+            <div className="space-y-2">
+              <div className="text-xs font-extrabold uppercase tracking-wider text-slate-900 dark:text-white">
+                B.Tech Journey Eras
+              </div>
+              <ul className="space-y-1.5 text-xs text-slate-500 dark:text-slate-400 font-medium">
+                <li><button onClick={() => setActivePhaseId('pre-college')} className="hover:text-blue-500 transition-colors">🎓 Pre-College (92.67%)</button></li>
+                <li><button onClick={() => setActivePhaseId('year-1')} className="hover:text-blue-500 transition-colors">🚀 1st Year (Topper & C/Python)</button></li>
+                <li><button onClick={() => setActivePhaseId('year-2')} className="hover:text-blue-500 transition-colors">🛡️ 2nd Year (AKTU Rank 5 & MediaWiki)</button></li>
+                <li><button onClick={() => setActivePhaseId('year-3')} className="hover:text-blue-500 transition-colors">⚡ 3rd Year (AIT Bangkok & UP Police)</button></li>
+              </ul>
+            </div>
+
+            {/* Column 3: Impact Portals */}
+            <div className="space-y-2">
+              <div className="text-xs font-extrabold uppercase tracking-wider text-slate-900 dark:text-white">
+                Special Impact Portals
+              </div>
+              <ul className="space-y-1.5 text-xs text-slate-500 dark:text-slate-400 font-medium">
+                <li><a href="ait-global-innovation-internship.html" className="hover:text-blue-500 transition-colors">AIT Bangkok International Research</a></li>
+                <li><a href="up-police-internship.html" className="hover:text-blue-500 transition-colors">UP Police Cyber Security Fellowship</a></li>
+                <li><a href="open-source-contributions.html" className="hover:text-blue-500 transition-colors">MediaWiki Open Source Gerrit Patches</a></li>
+                <li><a href="https://prayagrajrooms.in" target="_blank" rel="noopener noreferrer" className="hover:text-blue-500 transition-colors">PrayagrajRooms Housing Platform</a></li>
+                <li><a href="faq.html" className="hover:text-blue-500 transition-colors">Frequently Asked Questions & Contact</a></li>
+              </ul>
+            </div>
+
+            {/* Column 4: Verified Profiles */}
+            <div className="space-y-3">
+              <div className="text-xs font-extrabold uppercase tracking-wider text-slate-900 dark:text-white">
+                Connect & Open Source
+              </div>
+              <div className="flex flex-wrap gap-2">
+                <a href="https://github.com/gkm563" target="_blank" rel="noopener noreferrer" className="p-2 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-200 hover:bg-blue-500 hover:text-white transition-all" title="GitHub">
+                  <Github className="w-4 h-4" />
+                </a>
+                <a href="https://www.linkedin.com/in/gkm563/" target="_blank" rel="noopener noreferrer" className="p-2 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-200 hover:bg-blue-500 hover:text-white transition-all" title="LinkedIn">
+                  <Linkedin className="w-4 h-4" />
+                </a>
+                <a href="https://gerrit.wikimedia.org/r/q/owner:gkm563" target="_blank" rel="noopener noreferrer" className="p-2 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-200 hover:bg-blue-500 hover:text-white transition-all" title="Wikimedia Gerrit">
+                  <GitCommit className="w-4 h-4" />
+                </a>
+                <a href="https://t.me/gkm563" target="_blank" rel="noopener noreferrer" className="p-2 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-200 hover:bg-blue-500 hover:text-white transition-all" title="Telegram">
+                  <Send className="w-4 h-4" />
+                </a>
+              </div>
+              <p className="text-[11px] text-slate-400">
+                Contact: <a href="mailto:gautamkumarmaurya563@gmail.com" className="text-blue-500 hover:underline">gautamkumarmaurya563@gmail.com</a>
+              </p>
+            </div>
+
           </div>
-          <p>© 2026 Gautam Kumar Maurya (gkm563). B.Tech Computer Science & Engineering (Data Science).</p>
+
+          {/* Bottom Copyright & Tech Stack */}
+          <div className="pt-6 border-t border-slate-200 dark:border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-slate-500 font-medium">
+            <div>
+              © 2026 Gautam Kumar Maurya (gkm563). All Rights Reserved.
+            </div>
+            <div className="flex items-center gap-2 text-[11px]">
+              <span>Built with React 18 & Tailwind CSS</span>
+              <span>·</span>
+              <span className="text-emerald-500 font-bold">Deployed on GitHub Pages</span>
+            </div>
+          </div>
+
         </div>
       </footer>
 
