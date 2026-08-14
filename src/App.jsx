@@ -156,7 +156,7 @@ export default function App() {
           {/* Left Brand Identifier */}
           <a href="index.html" className="flex items-center gap-3 group text-decoration-none">
             <div className="relative">
-              <img src="assets/images/profile/Gautam_Kumar_Maurya.jpg" alt="Gautam Kumar Maurya" className="w-10 h-10 rounded-full object-cover border-2 border-blue-500 group-hover:scale-105 transition-transform" />
+              <img src="assets/images/profile/Gautam_Kumar_Maurya.jpg" alt="Gautam Kumar Maurya" loading="eager" decoding="async" className="w-10 h-10 rounded-full object-cover border-2 border-blue-500 group-hover:scale-105 transition-transform" />
               <span className="w-3 h-3 bg-emerald-500 border-2 border-white dark:border-slate-950 rounded-full absolute bottom-0 right-0"></span>
             </div>
             <div>
@@ -644,7 +644,7 @@ export default function App() {
                       key={imgIdx} 
                       onClick={() => setLightboxImage(imgUrl)}
                       className="group relative rounded-xl overflow-hidden border border-slate-200 dark:border-slate-800 aspect-video cursor-pointer bg-slate-100 dark:bg-slate-900">
-                      <img src={imgUrl} alt="LinkedIn Media Evidence" className="w-full h-full object-cover group-hover:scale-105 transition-transform" />
+                      <img src={imgUrl} alt="LinkedIn Media Evidence" loading="lazy" decoding="async" className="w-full h-full object-cover group-hover:scale-105 transition-transform" />
                       <div className="absolute inset-0 bg-slate-950/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white text-xs font-semibold gap-1">
                         <Eye className="w-4 h-4" /> Expand Image
                       </div>
