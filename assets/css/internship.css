@@ -1071,29 +1071,46 @@ a:hover {
 /* ═══════════════════════════════════════
    SPECIAL HONORS & AWARDS CARDS
    ═══════════════════════════════════════ */
+/* Ultra-Attractive Honors Banner for Light & Dark Mode */
 .honors-banner {
-  background: linear-gradient(135deg, rgba(245, 158, 11, 0.15) 0%, rgba(11, 18, 32, 0.9) 100%);
-  border: 1px solid rgba(245, 158, 11, 0.4);
+  background: linear-gradient(135deg, rgba(245, 158, 11, 0.18) 0%, rgba(254, 243, 199, 0.8) 100%);
+  border: 2px solid rgba(245, 158, 11, 0.5);
   border-radius: 24px;
   padding: 36px;
   text-align: center;
   margin-bottom: 48px;
-  box-shadow: 0 10px 30px -10px rgba(245, 158, 11, 0.2);
+  box-shadow: 0 14px 40px -10px rgba(245, 158, 11, 0.3);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  transition: all 0.3s ease;
+}
+
+.dark .honors-banner {
+  background: linear-gradient(135deg, rgba(245, 158, 11, 0.18) 0%, rgba(11, 18, 32, 0.95) 100%);
+  border-color: rgba(245, 158, 11, 0.5);
 }
 
 .honors-badge {
   display: inline-flex;
   align-items: center;
-  gap: 10px;
-  padding: 8px 24px;
+  gap: 12px;
+  padding: 12px 28px;
   border-radius: 99px;
-  background: rgba(245, 158, 11, 0.2);
-  border: 1px solid var(--color-warning);
-  color: #FDE047;
+  background: #fff;
+  border: 2px solid #d97706;
+  color: #b45309;
   font-size: var(--fs-lead);
   font-weight: 800;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.06em;
+  box-shadow: 0 6px 25px rgba(245, 158, 11, 0.25);
+  transition: all 0.3s ease;
+}
+
+.dark .honors-badge {
+  background: rgba(245, 158, 11, 0.2);
+  border-color: var(--color-warning);
+  color: #FDE047;
 }
 
 .honors-grid {
