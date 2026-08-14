@@ -132,9 +132,6 @@ export const JOURNEY_DATA = {
   ],
 
   milestones: [
-    /* ════════════════════════════════════════════════════════════
-       PHASE 0: PRE-COLLEGE FOUNDATION (BEFORE AUG 2023)
-       ════════════════════════════════════════════════════════════ */
     {
       id: "pre-college-up-board-92",
       title: "Class 12 UP Board State Ranker (92.67%) & Honored by Secretary UP Board",
@@ -156,11 +153,14 @@ export const JOURNEY_DATA = {
       whatILearned: "Rigorous academic strategy, problem-solving persistence, and public technical representation.",
       impact: "Laid the bedrock for pursuing B.Tech in CSE (Data Science).",
       evidence: {
-        images: ["assets/images/gallery/gautam-kumar-maurya-upsmp.jpg"],
+        images: [
+          "assets/images/gallery/gautam-kumar-maurya-upsmp.jpg",
+          "https://media.licdn.com/dms/image/v2/D5622AQGeOBm-Ht0XGg/feedshare-shrink_1280/B56ZcQy8OgHEAs-/0/1748333482350?e=1788393600&v=beta&t=67DXAddsU_h7ZXQnBJxMexQh9v3AdN4uP0eUK9V68GA"
+        ],
         links: [],
         github: null,
         certificate: null,
-        linkedin: null
+        linkedin: "https://www.linkedin.com/in/gkm563/"
       }
     },
     {
@@ -214,9 +214,6 @@ export const JOURNEY_DATA = {
       evidence: { images: [], links: [], github: null, certificate: null, linkedin: null }
     },
 
-    /* ════════════════════════════════════════════════════════════
-       PHASE 1: 1ST YEAR B.TECH (AUG 2023 – JUL 2024)
-       ════════════════════════════════════════════════════════════ */
     {
       id: "sem-1-first-year-topper-award",
       title: "Awarded 1st Year Overall Academic Topper at UIT Prayagraj",
@@ -248,7 +245,7 @@ export const JOURNEY_DATA = {
     {
       id: "sem-1-c-programming-mastery",
       title: "C Programming & Algorithmic Problem Solving",
-      shortDescription: "Mastered algorithmic logic, pointers, dynamic memory allocation, and control structures in C.",
+      shortDescription: "Mastered algorithmic logic, pointers, memory allocation, and control structures in C.",
       fullDescription: "Completed rigorous C programming coursework and lab practicals under AKTU Semester 1 syllabus. Built CLI tools, sorting algorithms, and pointer manipulation scripts.",
       startDate: "Aug 2023",
       endDate: "Jan 2024",
@@ -346,9 +343,6 @@ export const JOURNEY_DATA = {
       }
     },
 
-    /* ════════════════════════════════════════════════════════════
-       PHASE 2: 2ND YEAR B.TECH (AUG 2024 – JUL 2025)
-       ════════════════════════════════════════════════════════════ */
     {
       id: "sem-3-aktu-rank-5-topper",
       title: "CSE (Data Science) Branch Rank 1 Topper & AKTU Rank 5 Excellence Award",
@@ -370,11 +364,15 @@ export const JOURNEY_DATA = {
       whatILearned: "Process scheduling, memory management, discrete proofs, and OOP design patterns.",
       impact: "Earned academic prestige and student leadership opportunities within the department.",
       evidence: {
-        images: ["assets/images/gallery/gautam-kumar-maurya-aktu.jpg", "assets/images/gallery/gautam-kumar-maurya-uit-topper.jpg"],
+        images: [
+          "assets/images/gallery/gautam-kumar-maurya-aktu.jpg",
+          "assets/images/gallery/gautam-kumar-maurya-uit-topper.jpg",
+          "https://media.licdn.com/dms/image/v2/D5622AQGXZlhJZsEYiA/feedshare-shrink_800/B56Zb4yB0vHoAg-/0/1747930592560?e=1788393600&v=beta&t=DMKBsRh0Phiqh_TfAgo-PXncriPCVNKvWBJ-5nLwce4"
+        ],
         links: [],
         github: null,
         certificate: null,
-        linkedin: null
+        linkedin: "https://www.linkedin.com/in/gkm563/"
       }
     },
     {
@@ -448,7 +446,10 @@ export const JOURNEY_DATA = {
       whatILearned: "Gerrit patch review workflow, PHP unit testing, Jenkins CI, and open source collaboration.",
       impact: "Established global open-source engineering profile.",
       evidence: {
-        images: ["assets/images/gallery/gautam-kumar-maurya-gfg-award.jpg"],
+        images: [
+          "https://media.licdn.com/dms/image/v2/D5622AQEhYOWywZ76tQ/feedshare-shrink_800/B56ZcUpjdrHgAk-/0/1748398128970?e=1788393600&v=beta&t=XtE0llrmk4odW3HTiZJFyepSk02b4fwT6Teq6yAQ3U8",
+          "assets/images/gallery/gautam-kumar-maurya-gfg-award.jpg"
+        ],
         links: ["open-source-contributions.html"],
         github: "https://github.com/gkm563",
         certificate: "https://upload.wikimedia.org/wikipedia/commons/d/d9/%281%29WikiClubTech_Technical_Impact_Report_Jan_Jun_2026_%281%29.pdf",
@@ -478,9 +479,6 @@ export const JOURNEY_DATA = {
       evidence: { images: [], links: [], github: null, certificate: null, linkedin: null }
     },
 
-    /* ════════════════════════════════════════════════════════════
-       PHASE 3: 3RD YEAR B.TECH — CURRENT FOCUS (AUG 2025 – JUL 2026)
-       ════════════════════════════════════════════════════════════ */
     {
       id: "sem-5-prayagrajrooms-co-founder",
       title: "PrayagrajRooms – Co-Founder & CTO (Student Housing Platform)",
@@ -502,7 +500,9 @@ export const JOURNEY_DATA = {
       whatILearned: "System architecture, server optimization, database indexing, and user feedback iterations.",
       impact: "Platform live and serving hundreds of active student property searches.",
       evidence: {
-        images: [],
+        images: [
+          "https://media.licdn.com/dms/image/v2/D5622AQGM0YhcbcdAig/feedshare-shrink_800/B56ZZyQ1wqHAAg-/0/1745673739585?e=1788393600&v=beta&t=21McQOJhi94zJPZ7UCPgGXfQr8-xw_BdVrx-3Yz-49Q"
+        ],
         links: ["https://prayagrajrooms.in"],
         github: "https://github.com/gkm563",
         certificate: null,
@@ -530,7 +530,10 @@ export const JOURNEY_DATA = {
       whatILearned: "Large-scale event logistics, stage management, and institutional coordination.",
       impact: "Awarded on stage by Principal, DSW, and Department HODs.",
       evidence: {
-        images: ["assets/images/gallery/gautam-kumar-maurya-gsa.jpg"],
+        images: [
+          "assets/images/gallery/gautam-kumar-maurya-gsa.jpg",
+          "https://media.licdn.com/dms/image/v2/D5622AQGBO8r7Uzmtgw/feedshare-shrink_480/B56Zb4yB0QHgAY-/0/1747930590381?e=1788393600&v=beta&t=musabo5bFUdqVC27e9Kuj_y9AE92a1nHpckZ26n9XFU"
+        ],
         links: [],
         github: null,
         certificate: null,
@@ -558,7 +561,10 @@ export const JOURNEY_DATA = {
       whatILearned: "Curating coding contest problems, platform administration, and team leadership.",
       impact: "Mentored hundreds of junior students in DSA and web development.",
       evidence: {
-        images: ["assets/images/gallery/gautam-kumar-maurya-gfg-award.jpg"],
+        images: [
+          "assets/images/gallery/gautam-kumar-maurya-gfg-award.jpg",
+          "https://media.licdn.com/dms/image/v2/D5622AQEpvVApZeH4tw/feedshare-shrink_800/B56Zbg88dTG4Ag-/0/1747530800308?e=1788393600&v=beta&t=fYshPjr5b9a0bi9key6Mpv1HmbCUNdp0s8zYzVMr5xM"
+        ],
         links: [],
         github: "https://github.com/gkm563",
         certificate: null,
@@ -586,7 +592,11 @@ export const JOURNEY_DATA = {
       whatILearned: "CDR/IPDR sorting, OSINT recon, digital evidence chain of custody, and threat monitoring.",
       impact: "Published APCSIP report and received official commendation award.",
       evidence: {
-        images: ["assets/images/gallery/gautam-kumar-maurya-up-police.jpg", "assets/images/gallery/gautam-kumar-maurya-best-content-creator-award.jpg"],
+        images: [
+          "assets/images/gallery/gautam-kumar-maurya-up-police.jpg",
+          "assets/images/gallery/gautam-kumar-maurya-best-content-creator-award.jpg",
+          "https://media.licdn.com/dms/image/v2/D5622AQGeOBm-Ht0XGg/feedshare-shrink_1280/B56ZcQy8OgHEAs-/0/1748333482350?e=1788393600&v=beta&t=67DXAddsU_h7ZXQnBJxMexQh9v3AdN4uP0eUK9V68GA"
+        ],
         links: ["up-police-internship.html"],
         github: null,
         certificate: "assets/images/gallery/gautam-kumar-maurya-best-content-creator-award.jpg",
@@ -615,9 +625,9 @@ export const JOURNEY_DATA = {
       impact: "Published comprehensive GIIP-2026 research portal and daily log repository.",
       evidence: {
         images: [
+          "https://media.licdn.com/dms/image/v2/D562DAQHsA0GO-Z47Cw/profile-treasury-image-shrink_8192_8192/B56ZbEAe.hH4Ag-/0/1747045185762?e=1787191200&v=beta&t=ymbC3OwQZ6KFMNnXZj7UVEcFMv-sykcTIx12djoUqqo",
           "assets/images/ait-bangkok/gautam-kumar-maurya-gkm-ait-bangkok-thailand-internship-1.jpg",
-          "assets/images/ait-bangkok/gautam-kumar-maurya-gkm-ait-bangkok-thailand-internship-13.jpg",
-          "assets/images/ait-bangkok/gautam-kumar-maurya-gkm-ait-bangkok-thailand-internship-145.jpg"
+          "assets/images/ait-bangkok/gautam-kumar-maurya-gkm-ait-bangkok-thailand-internship-13.jpg"
         ],
         links: ["ait-global-innovation-internship.html"],
         github: "https://github.com/gkm563",
@@ -674,7 +684,9 @@ export const JOURNEY_DATA = {
       whatILearned: "Hackathon architecture, agent API evaluation, and technical mentorship.",
       impact: "Guided dozens of student teams in building AI agent applications.",
       evidence: {
-        images: [],
+        images: [
+          "https://media.licdn.com/dms/image/v2/D5622AQFhQ4fk3GhTqg/feedshare-shrink_160/B56ZalznsgHgAc-/0/1746538500685?e=1788393600&v=beta&t=7QbokXKar1fNGoCHHNhj9DbPR4fUtk3oHAv4Wu9_cvI"
+        ],
         links: [],
         github: "https://github.com/gkm563",
         certificate: "https://app.truscholar.io/profile?credId=69d5ba34a0a1d70eaf471499",

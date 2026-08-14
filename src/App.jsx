@@ -391,6 +391,23 @@ export default function App() {
               </div>
             </div>
 
+            {/* LinkedIn & Verified Photos Gallery */}
+            {activeModalItem.evidence && activeModalItem.evidence.images && activeModalItem.evidence.images.length > 0 && (
+              <div className="mb-6">
+                <span className="font-extrabold text-slate-400 text-xs uppercase tracking-wider block mb-2">Verified LinkedIn Photos & Media</span>
+                <div className="grid grid-cols-2 gap-3">
+                  {activeModalItem.evidence.images.map((imgUrl, imgIdx) => (
+                    <a key={imgIdx} href={imgUrl} target="_blank" rel="noopener noreferrer" className="group relative rounded-xl overflow-hidden border border-slate-200 dark:border-slate-800 aspect-video block bg-slate-100 dark:bg-slate-900">
+                      <img src={imgUrl} alt="LinkedIn Media Evidence" className="w-full h-full object-cover group-hover:scale-105 transition-transform" />
+                      <div className="absolute inset-0 bg-slate-950/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white text-xs font-semibold gap-1">
+                        <ExternalLink className="w-3.5 h-3.5" /> View Full Image
+                      </div>
+                    </a>
+                  ))}
+                </div>
+              </div>
+            )}
+
             {/* Skill Badges */}
             <div className="mb-6">
               <span className="font-extrabold text-slate-400 text-xs uppercase tracking-wider block mb-2">Competencies & Tools</span>
