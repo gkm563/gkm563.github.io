@@ -5,20 +5,33 @@
   <!-- ===== Portfolio Home ===== -->
   <url>
     <loc>https://gkm563.github.io/</loc>
-    <lastmod>2026-08-05</lastmod>
+    <lastmod>2026-08-14</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
     <image:image>
       <image:loc>https://gkm563.github.io/assets/images/profile/Gautam_Kumar_Maurya.jpg</image:loc>
       <image:title>Gautam Kumar Maurya — Full-Stack AI Engineer Portfolio</image:title>
-      <image:caption>Official profile photo of Gautam Kumar Maurya (gkm563), Full-Stack AI Engineer, Data Scientist & Academic Topper at United Institute of Technology, Prayagraj.</image:caption>
+      <image:caption>Official profile photo of Gautam Kumar Maurya (gkm563), Full-Stack AI Engineer, Data Scientist &amp; Academic Topper at United Institute of Technology, Prayagraj.</image:caption>
+    </image:image>
+  </url>
+
+  <!-- ===== B.Tech Academic & Engineering Journey ===== -->
+  <url>
+    <loc>https://gkm563.github.io/btech-journey.html</loc>
+    <lastmod>2026-08-14</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.95</priority>
+    <image:image>
+      <image:loc>https://gkm563.github.io/assets/images/profile/Gautam_Kumar_Maurya.jpg</image:loc>
+      <image:title>Gautam Kumar Maurya — 4-Year B.Tech CSE (Data Science) Journey</image:title>
+      <image:caption>Official B.Tech Academic and Growth Journey of Gautam Kumar Maurya at United Institute of Technology, Prayagraj.</image:caption>
     </image:image>
   </url>
 
   <!-- ===== UP Police Cyber Security Internship ===== -->
   <url>
     <loc>https://gkm563.github.io/up-police-internship.html</loc>
-    <lastmod>2026-08-05</lastmod>
+    <lastmod>2026-08-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.90</priority>
     <image:image>
@@ -31,14 +44,9 @@
   <!-- ===== AIT Bangkok Global Innovation Internship ===== -->
   <url>
     <loc>https://gkm563.github.io/ait-global-innovation-internship.html</loc>
-    <lastmod>2026-08-05</lastmod>
+    <lastmod>2026-08-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.90</priority>
-    <image:image>
-      <image:loc>https://gkm563.github.io/assets/images/ait-bangkok/Asian_Institute_of_Technology-Logo.png</image:loc>
-      <image:title>Asian Institute of Technology (AIT), Bangkok — GIIP-2026</image:title>
-      <image:caption>AIT Bangkok official logo — host of the Global Innovation Internship Program 2026 attended by Gautam Kumar Maurya.</image:caption>
-    </image:image>
     <image:image>
       <image:loc>https://gkm563.github.io/assets/images/profile/Gautam_Kumar_Maurya.jpg</image:loc>
       <image:title>Gautam Kumar Maurya at AIT Bangkok</image:title>
@@ -49,26 +57,26 @@
   <!-- ===== Open Source Contributions ===== -->
   <url>
     <loc>https://gkm563.github.io/open-source-contributions.html</loc>
-    <lastmod>2026-08-05</lastmod>
+    <lastmod>2026-08-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.90</priority>
     <image:image>
       <image:loc>https://gkm563.github.io/assets/images/profile/Gautam_Kumar_Maurya.jpg</image:loc>
-      <image:title>Gautam Kumar Maurya — Open Source Contributions (Wikimedia & WikiClub India)</image:title>
+      <image:title>Gautam Kumar Maurya — Open Source Contributions (Wikimedia &amp; WikiClub India)</image:title>
       <image:caption>Gautam Kumar Maurya open source contributions across Wikimedia Gerrit, GitLab, Translatewiki, and GitHub.</image:caption>
     </image:image>
   </url>
 
-  <!-- ===== B.Tech Academic & Engineering Journey ===== -->
+  <!-- ===== FAQ & Contact Deep Dive ===== -->
   <url>
-    <loc>https://gkm563.github.io/btech-journey.html</loc>
-    <lastmod>2026-08-13</lastmod>
+    <loc>https://gkm563.github.io/faq.html</loc>
+    <lastmod>2026-08-14</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.95</priority>
+    <priority>0.85</priority>
     <image:image>
       <image:loc>https://gkm563.github.io/assets/images/profile/Gautam_Kumar_Maurya.jpg</image:loc>
-      <image:title>Gautam Kumar Maurya — 4-Year B.Tech CSE (Data Science) Journey</image:title>
-      <image:caption>Official B.Tech Academic and Growth Journey of Gautam Kumar Maurya at United Institute of Technology, Prayagraj.</image:caption>
+      <image:title>Gautam Kumar Maurya — FAQ &amp; Contact Deep Dive</image:title>
+      <image:caption>Frequently Asked Questions about Gautam Kumar Maurya (gkm563), full-stack skills, and achievements.</image:caption>
     </image:image>
   </url>
 
