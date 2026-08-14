@@ -5,7 +5,7 @@ import {
   Users, Trophy, Calendar, Award, ArrowLeft, 
   Sun, Moon, Search, X, Check, Clock, ExternalLink, 
   Github, Linkedin, Building2, ChevronRight, FolderOpen, Sparkles, Compass,
-  Activity, BarChart3, Star, Share2, Copy, Eye, SlidersHorizontal
+  Activity, BarChart3, Star, Share2, Copy, Eye, SlidersHorizontal, ChevronDown, CheckCircle2
 } from 'lucide-react';
 import { JOURNEY_DATA } from './data/journeyData.js';
 
@@ -18,6 +18,13 @@ export default function App() {
   const [copiedId, setCopiedId] = useState(null);
   const [activeSkillTab, setActiveSkillTab] = useState('year-3');
   const [lightboxImage, setLightboxImage] = useState(null);
+  const [starredIds, setStarredIds] = useState(() => {
+    try {
+      return JSON.parse(localStorage.getItem('gkm_starred_milestones')) || [];
+    } catch {
+      return [];
+    }
+  });
 
   useEffect(() => {
     const html = document.documentElement;
@@ -32,8 +39,19 @@ export default function App() {
     localStorage.setItem('gkm_theme', theme);
   }, [theme]);
 
+  useEffect(() => {
+    localStorage.setItem('gkm_starred_milestones', JSON.stringify(starredIds));
+  }, [starredIds]);
+
   const toggleTheme = () => {
     setTheme(prev => (prev === 'dark' ? 'light' : 'dark'));
+  };
+
+  const toggleStar = (mId, e) => {
+    e.stopPropagation();
+    setStarredIds(prev => 
+      prev.includes(mId) ? prev.filter(id => id !== mId) : [...prev, mId]
+    );
   };
 
   const handleCopyLink = (mId, e) => {
@@ -44,6 +62,11 @@ export default function App() {
     setTimeout(() => setCopiedId(null), 2000);
   };
 
+  const popularTags = [
+    "AIT Bangkok", "UP Police", "MediaWiki", "AKTU Rank 5", 
+    "PrayagrajRooms", "GFG VP", "Google Cloud", "Anthropic"
+  ];
+
   const activePhase = useMemo(() => {
     return JOURNEY_DATA.phases.find(p => p.id === activePhaseId) || JOURNEY_DATA.phases[1];
   }, [activePhaseId]);
@@ -52,7 +75,11 @@ export default function App() {
     if (!JOURNEY_DATA || !JOURNEY_DATA.milestones) return [];
     return JOURNEY_DATA.milestones.filter(m => {
       if (m.phaseId !== activePhaseId) return false;
-      if (selectedCategory !== 'all' && m.category !== selectedCategory) return false;
+      if (selectedCategory === 'starred') {
+        if (!starredIds.includes(m.id)) return false;
+      } else if (selectedCategory !== 'all' && m.category !== selectedCategory) {
+        return false;
+      }
       if (searchQuery.trim() !== '') {
         const q = searchQuery.toLowerCase();
         const matchTitle = m.title.toLowerCase().includes(q);
@@ -63,7 +90,7 @@ export default function App() {
       }
       return true;
     });
-  }, [activePhaseId, selectedCategory, searchQuery]);
+  }, [activePhaseId, selectedCategory, searchQuery, starredIds]);
 
   const semesterBoxes = useMemo(() => {
     if (!activePhase || !activePhase.semesters) return [];
@@ -161,12 +188,12 @@ export default function App() {
         {/* 3. INTERACTIVE IMPACT METRICS COUNTER BAR */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-5xl mx-auto text-left">
           {statsCounter.map((st, i) => (
-            <div key={i} className="bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl border border-slate-200 dark:border-slate-800 rounded-2xl p-4 transition-all duration-300 hover:-translate-y-1 hover:border-blue-500/50 shadow-lg">
+            <div key={i} className="bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl border border-slate-200 dark:border-slate-800 rounded-2xl p-4 transition-all duration-300 hover:-translate-y-1.5 hover:scale-[1.02] hover:border-blue-500/50 shadow-xl group">
               <div className="flex items-center justify-between mb-2">
-                <st.icon className={`w-5 h-5 ${st.color}`} />
+                <st.icon className={`w-5 h-5 ${st.color} group-hover:scale-110 transition-transform`} />
                 <span className="text-[10px] font-extrabold uppercase px-2 py-0.5 rounded-md bg-slate-100 dark:bg-slate-800 text-slate-500">Verified</span>
               </div>
-              <div className="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white mb-0.5">
+              <div className="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white mb-0.5 group-hover:text-blue-500 transition-colors">
                 {st.val}
               </div>
               <div className="text-xs font-bold text-slate-700 dark:text-slate-200 leading-snug">
@@ -180,8 +207,35 @@ export default function App() {
         </div>
       </section>
 
-      {/* 4. PRIMARY PHASE SELECTOR CARDS (Top Control Bar) */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 my-10">
+      {/* 4. INTERACTIVE STEPPER TIMELINE PROGRESS BAR */}
+      <section className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 my-6">
+        <div className="bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl rounded-2xl p-4 border border-slate-200 dark:border-slate-800 shadow-md">
+          <div className="flex items-center justify-between relative">
+            {/* Horizontal Line Connector */}
+            <div className="absolute top-1/2 left-6 right-6 -translate-y-1/2 h-0.5 bg-slate-200 dark:bg-slate-800 z-0"></div>
+            
+            {JOURNEY_DATA.phases.map((ph, idx) => {
+              const isActive = activePhaseId === ph.id;
+              return (
+                <button 
+                  key={ph.id}
+                  onClick={() => setActivePhaseId(ph.id)}
+                  className={`relative z-10 flex flex-col items-center gap-1 group transition-all`}>
+                  <div className={`w-10 h-10 rounded-full flex items-center justify-center font-extrabold text-xs transition-all duration-300 ${isActive ? 'bg-blue-500 text-white ring-4 ring-blue-500/30 scale-110 shadow-lg' : 'bg-slate-100 dark:bg-slate-800 text-slate-500 hover:bg-slate-200 dark:hover:bg-slate-700'}`}>
+                    0{idx + 1}
+                  </div>
+                  <span className={`text-[11px] font-bold transition-colors ${isActive ? 'text-blue-500' : 'text-slate-400 group-hover:text-slate-600'}`}>
+                    {ph.shortTitle}
+                  </span>
+                </button>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* 5. PRIMARY PHASE SELECTOR CARDS (Dynamic Era Controls) */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 my-6">
         <div className="flex items-center justify-between gap-2 mb-4">
           <h3 className="text-sm font-extrabold text-slate-400 uppercase tracking-wider flex items-center gap-2">
             <Compass className="w-4 h-4 text-blue-500" />
@@ -199,7 +253,7 @@ export default function App() {
               <div 
                 key={phase.id}
                 onClick={() => setActivePhaseId(phase.id)}
-                className={`bg-white/90 dark:bg-slate-900/90 backdrop-blur-xl border border-slate-200/80 dark:border-slate-800/80 rounded-2xl p-5 flex flex-col justify-between cursor-pointer transition-all duration-300 hover:-translate-y-1.5 ${isActive ? 'ring-2 ring-blue-500 dark:ring-blue-400 bg-blue-500/10 dark:bg-slate-900 shadow-2xl scale-[1.02]' : 'opacity-85 hover:opacity-100'}`}>
+                className={`bg-white/90 dark:bg-slate-900/90 backdrop-blur-xl border border-slate-200/80 dark:border-slate-800/80 rounded-2xl p-5 flex flex-col justify-between cursor-pointer transition-all duration-300 hover:-translate-y-2 hover:scale-[1.03] ${isActive ? 'ring-2 ring-blue-500 dark:ring-blue-400 bg-blue-500/10 dark:bg-slate-900 shadow-2xl scale-[1.02]' : 'opacity-85 hover:opacity-100'}`}>
                 <div>
                   <div className="flex items-center justify-between gap-2 mb-3">
                     <div className="w-10 h-10 rounded-xl bg-blue-500/10 text-blue-500 border border-blue-500/30 flex items-center justify-center">
@@ -237,7 +291,7 @@ export default function App() {
         </div>
       </section>
 
-      {/* 5. INTERACTIVE COMPETENCY & SKILL MATRIX SHOWCASE */}
+      {/* 6. INTERACTIVE COMPETENCY & SKILL MATRIX SHOWCASE */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-10">
         <div className="bg-white/90 dark:bg-slate-900/90 backdrop-blur-xl rounded-3xl p-6 sm:p-8 border border-slate-200 dark:border-slate-800 shadow-xl space-y-6">
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-slate-200 dark:border-slate-800">
@@ -257,7 +311,7 @@ export default function App() {
                 <button 
                   key={se.phaseId}
                   onClick={() => setActiveSkillTab(se.phaseId)}
-                  className={`px-3 py-1.5 rounded-xl text-xs font-bold shrink-0 transition-all ${activeSkillTab === se.phaseId ? 'bg-purple-500 text-white shadow-md' : 'bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700'}`}>
+                  className={`px-3 py-1.5 rounded-xl text-xs font-bold shrink-0 transition-all ${activeSkillTab === se.phaseId ? 'bg-purple-500 text-white shadow-md scale-105' : 'bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700'}`}>
                   {se.phaseTitle.split(' ')[0]} {se.phaseTitle.split(' ')[1] || ''}
                 </button>
               ))}
@@ -270,7 +324,7 @@ export default function App() {
             return (
               <div key={se.phaseId} className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
                 {se.skills.map((sk, skIdx) => (
-                  <div key={skIdx} className="p-4 rounded-2xl bg-slate-50 dark:bg-slate-950/60 border border-slate-200 dark:border-slate-800 flex items-center justify-between gap-3">
+                  <div key={skIdx} className="p-4 rounded-2xl bg-slate-50 dark:bg-slate-950/60 border border-slate-200 dark:border-slate-800 flex items-center justify-between gap-3 hover:-translate-y-1 transition-transform">
                     <div className="flex items-center gap-3">
                       <div className="w-8 h-8 rounded-lg bg-purple-500/10 text-purple-500 flex items-center justify-center font-bold text-xs">
                         #{skIdx + 1}
@@ -289,7 +343,7 @@ export default function App() {
         </div>
       </section>
 
-      {/* 6. ACTIVE FOCUSED ERA FILTER & SEARCH BAR */}
+      {/* 7. ACTIVE ERA SEARCH BAR & QUICK FILTER CHIPS */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-8">
         <div className="bg-white/90 dark:bg-slate-900/90 backdrop-blur-xl rounded-2xl p-5 sm:p-6 border border-slate-200 dark:border-slate-800 space-y-4 shadow-xl">
           
@@ -318,6 +372,19 @@ export default function App() {
             </div>
           </div>
 
+          {/* Quick Filter Tags Bar */}
+          <div className="flex items-center gap-2 overflow-x-auto pb-1 no-scrollbar border-b border-slate-200 dark:border-slate-800/80 pt-1">
+            <span className="text-xs font-extrabold text-slate-400 shrink-0">Popular Tags:</span>
+            {popularTags.map((tag, tIdx) => (
+              <button 
+                key={tIdx}
+                onClick={() => setSearchQuery(searchQuery === tag ? '' : tag)}
+                className={`px-2.5 py-1 rounded-md text-[11px] font-bold shrink-0 transition-all ${searchQuery === tag ? 'bg-blue-500 text-white' : 'bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-700'}`}>
+                #{tag}
+              </button>
+            ))}
+          </div>
+
           {/* Live Search & Category Filter */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             {/* Search Bar */}
@@ -339,6 +406,13 @@ export default function App() {
 
             {/* Category Chips */}
             <div className="md:col-span-2 flex items-center gap-2 overflow-x-auto pb-1 no-scrollbar">
+              <button 
+                onClick={() => setSelectedCategory('starred')}
+                className={`px-3 py-1.5 rounded-lg text-xs font-extrabold flex items-center gap-1.5 shrink-0 transition-all ${selectedCategory === 'starred' ? 'bg-amber-500 text-white shadow-sm' : 'bg-slate-100 dark:bg-slate-900/60 text-amber-500 border border-slate-200 dark:border-slate-800 hover:border-amber-500'}`}>
+                <Star className="w-3.5 h-3.5 fill-amber-400" />
+                <span>Starred ({starredIds.length})</span>
+              </button>
+
               {JOURNEY_DATA.categories.map(cat => (
                 <button 
                   key={cat.id}
@@ -354,7 +428,7 @@ export default function App() {
         </div>
       </section>
 
-      {/* 7. SEQUENTIAL SEMESTER BOXES WITH ACTION BUTTONS */}
+      {/* 8. SEQUENTIAL SEMESTER BOXES WITH ADVANCED CARDS */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-16 flex-1 space-y-10">
         {semesterBoxes.map((semBox, boxIdx) => (
           <div key={semBox.id} className="bg-white/90 dark:bg-slate-900/90 backdrop-blur-xl rounded-3xl p-6 sm:p-8 border border-slate-200 dark:border-slate-800 space-y-6 shadow-xl">
@@ -392,70 +466,80 @@ export default function App() {
               </div>
             ) : (
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                {semBox.items.map(m => (
-                  <div 
-                    key={m.id}
-                    id={m.id}
-                    onClick={() => setActiveModalItem(m)}
-                    className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-5 sm:p-6 cursor-pointer flex flex-col justify-between group transition-all duration-300 hover:-translate-y-1.5 hover:border-blue-500/60 hover:shadow-2xl">
-                    <div>
-                      {/* Card Top Meta */}
-                      <div className="flex items-center justify-between gap-2 mb-3">
-                        <span className="px-2.5 py-1 rounded-md bg-blue-500/10 text-blue-600 dark:text-blue-400 border border-blue-500/30 text-[11px] font-extrabold uppercase tracking-wider">
-                          {m.category}
+                {semBox.items.map(m => {
+                  const isStarred = starredIds.includes(m.id);
+                  return (
+                    <div 
+                      key={m.id}
+                      id={m.id}
+                      onClick={() => setActiveModalItem(m)}
+                      className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-5 sm:p-6 cursor-pointer flex flex-col justify-between group transition-all duration-300 hover:-translate-y-2 hover:scale-[1.02] hover:border-blue-500/60 hover:shadow-2xl">
+                      <div>
+                        {/* Card Top Meta */}
+                        <div className="flex items-center justify-between gap-2 mb-3">
+                          <span className="px-2.5 py-1 rounded-md bg-blue-500/10 text-blue-600 dark:text-blue-400 border border-blue-500/30 text-[11px] font-extrabold uppercase tracking-wider">
+                            {m.category}
+                          </span>
+                          
+                          <div className="flex items-center gap-2">
+                            <button 
+                              onClick={(e) => toggleStar(m.id, e)}
+                              className="p-1 rounded-lg text-slate-400 hover:text-amber-500 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
+                              title={isStarred ? "Unstar Milestone" : "Star Milestone"}>
+                              <Star className={`w-4 h-4 ${isStarred ? 'fill-amber-400 text-amber-400' : ''}`} />
+                            </button>
+
+                            <button 
+                              onClick={(e) => handleCopyLink(m.id, e)}
+                              className="p-1 rounded-lg text-slate-400 hover:text-blue-500 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
+                              title="Copy Milestone Link">
+                              {copiedId === m.id ? <Check className="w-4 h-4 text-emerald-500" /> : <Copy className="w-4 h-4" />}
+                            </button>
+
+                            {m.status === 'completed' && (
+                              <span className="px-2.5 py-0.5 rounded-full bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/30 text-[11px] font-extrabold flex items-center gap-1">
+                                <Check className="w-3 h-3" /> Completed
+                              </span>
+                            )}
+                            {m.status === 'current' && (
+                              <span className="px-2.5 py-0.5 rounded-full bg-blue-500/10 text-blue-600 dark:text-blue-400 border border-blue-500/30 text-[11px] font-extrabold flex items-center gap-1">
+                                <span className="w-1.5 h-1.5 rounded-full bg-blue-500 animate-pulse"></span> Current Focus
+                              </span>
+                            )}
+                          </div>
+                        </div>
+
+                        <h4 className="font-extrabold text-base sm:text-lg text-slate-900 dark:text-white mb-2 group-hover:text-blue-500 transition-colors leading-snug">
+                          {m.title}
+                        </h4>
+                        <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed mb-4 font-medium">
+                          {m.shortDescription}
+                        </p>
+
+                        {/* Key Story Highlights */}
+                        <div className="space-y-2 pt-3 border-t border-slate-100 dark:border-slate-800/80 text-xs">
+                          <div>
+                            <span className="font-extrabold text-blue-600 dark:text-blue-400 uppercase text-[10px] block">What Happened</span>
+                            <span className="text-slate-600 dark:text-slate-400 font-medium">{m.whatHappened}</span>
+                          </div>
+                          <div>
+                            <span className="font-extrabold text-blue-600 dark:text-blue-400 uppercase text-[10px] block">Why It Mattered</span>
+                            <span className="text-slate-600 dark:text-slate-400 font-medium">{m.whyItMattered}</span>
+                          </div>
+                        </div>
+                      </div>
+
+                      {/* Card Bottom CTA */}
+                      <div className="pt-4 mt-4 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between text-xs">
+                        <span className="font-extrabold text-blue-600 dark:text-blue-400 group-hover:underline flex items-center gap-1">
+                          <span>Read Story & Evidence</span>
+                          <ChevronRight className="w-3.5 h-3.5" />
                         </span>
-                        
-                        <div className="flex items-center gap-2">
-                          <button 
-                            onClick={(e) => handleCopyLink(m.id, e)}
-                            className="p-1 rounded-lg text-slate-400 hover:text-blue-500 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
-                            title="Copy Milestone Link">
-                            {copiedId === m.id ? <Check className="w-3.5 h-3.5 text-emerald-500" /> : <Copy className="w-3.5 h-3.5" />}
-                          </button>
-
-                          {m.status === 'completed' && (
-                            <span className="px-2.5 py-0.5 rounded-full bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/30 text-[11px] font-extrabold flex items-center gap-1">
-                              <Check className="w-3 h-3" /> Completed
-                            </span>
-                          )}
-                          {m.status === 'current' && (
-                            <span className="px-2.5 py-0.5 rounded-full bg-blue-500/10 text-blue-600 dark:text-blue-400 border border-blue-500/30 text-[11px] font-extrabold flex items-center gap-1">
-                              <span className="w-1.5 h-1.5 rounded-full bg-blue-500 animate-pulse"></span> Current Focus
-                            </span>
-                          )}
-                        </div>
-                      </div>
-
-                      <h4 className="font-extrabold text-base sm:text-lg text-slate-900 dark:text-white mb-2 group-hover:text-blue-500 transition-colors leading-snug">
-                        {m.title}
-                      </h4>
-                      <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed mb-4 font-medium">
-                        {m.shortDescription}
-                      </p>
-
-                      {/* Key Story Highlights */}
-                      <div className="space-y-2 pt-3 border-t border-slate-100 dark:border-slate-800/80 text-xs">
-                        <div>
-                          <span className="font-extrabold text-blue-600 dark:text-blue-400 uppercase text-[10px] block">What Happened</span>
-                          <span className="text-slate-600 dark:text-slate-400 font-medium">{m.whatHappened}</span>
-                        </div>
-                        <div>
-                          <span className="font-extrabold text-blue-600 dark:text-blue-400 uppercase text-[10px] block">Why It Mattered</span>
-                          <span className="text-slate-600 dark:text-slate-400 font-medium">{m.whyItMattered}</span>
-                        </div>
+                        <span className="text-[11px] text-slate-400 font-bold">{m.startDate}</span>
                       </div>
                     </div>
-
-                    {/* Card Bottom CTA */}
-                    <div className="pt-4 mt-4 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between text-xs">
-                      <span className="font-extrabold text-blue-600 dark:text-blue-400 group-hover:underline flex items-center gap-1">
-                        <span>Read Story & Evidence</span>
-                        <ChevronRight className="w-3.5 h-3.5" />
-                      </span>
-                      <span className="text-[11px] text-slate-400 font-bold">{m.startDate}</span>
-                    </div>
-                  </div>
-                ))}
+                  );
+                })}
               </div>
             )}
 
@@ -463,7 +547,7 @@ export default function App() {
         ))}
       </section>
 
-      {/* 8. Slide-Up Detailed Modal Drawer */}
+      {/* 9. Slide-Up Detailed Modal Drawer */}
       {activeModalItem && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/70 backdrop-blur-md">
           <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl max-w-2xl w-full max-h-[85vh] overflow-y-auto p-6 sm:p-8 relative shadow-2xl">
@@ -578,7 +662,7 @@ export default function App() {
         </div>
       )}
 
-      {/* 9. Lightbox Image Zoom Viewer Modal */}
+      {/* 10. Lightbox Image Zoom Viewer Modal */}
       {lightboxImage && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/90 backdrop-blur-xl" onClick={() => setLightboxImage(null)}>
           <div className="relative max-w-4xl w-full flex items-center justify-center" onClick={(e) => e.stopPropagation()}>
@@ -592,7 +676,7 @@ export default function App() {
         </div>
       )}
 
-      {/* 10. Footer Section */}
+      {/* 11. Footer Section */}
       <footer className="border-t border-slate-200 dark:border-slate-800 py-10 text-center text-xs text-slate-500 relative z-10">
         <div className="max-w-7xl mx-auto px-4 space-y-4">
           <div className="flex flex-wrap justify-center gap-6 font-semibold">
