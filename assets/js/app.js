@@ -30,34 +30,70 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // --------------------------------------------------
-  // 2. Sticky Navbar Glass & Scroll Progress
+  // 2. Floating Animated Glass Capsule Navbar & Scroll Progress
   // --------------------------------------------------
   const navbar = document.getElementById('navbar');
   const progressBar = document.getElementById('scroll-progress');
 
-  window.addEventListener('scroll', () => {
+  // Dynamically inject floating navbar animation styles
+  if (!document.getElementById('floating-navbar-styles')) {
+    const styleEl = document.createElement('style');
+    styleEl.id = 'floating-navbar-styles';
+    styleEl.innerHTML = `
+      #navbar {
+        transition: all 0.45s cubic-bezier(0.34, 1.56, 0.64, 1) !important;
+      }
+      #navbar.floating-nav-active {
+        top: 0.75rem !important;
+        left: 1rem !important;
+        right: 1rem !important;
+        max-width: 72rem !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        border-radius: 1.25rem !important;
+        background: rgba(255, 255, 255, 0.88) !important;
+        backdrop-filter: blur(24px) !important;
+        -webkit-backdrop-filter: blur(24px) !important;
+        border: 1px solid rgba(226, 232, 240, 0.85) !important;
+        box-shadow: 0 20px 45px -10px rgba(0, 0, 0, 0.15), 0 0 20px rgba(37, 99, 235, 0.1) !important;
+      }
+      .dark #navbar.floating-nav-active {
+        background: rgba(9, 13, 22, 0.9) !important;
+        border: 1px solid rgba(255, 255, 255, 0.12) !important;
+        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.6), 0 0 25px rgba(59, 130, 246, 0.15) !important;
+      }
+      @media (max-width: 640px) {
+        #navbar.floating-nav-active {
+          top: 0.5rem !important;
+          left: 0.5rem !important;
+          right: 0.5rem !important;
+          border-radius: 1rem !important;
+        }
+      }
+    `;
+    document.head.appendChild(styleEl);
+  }
+
+  function handleNavbarScroll() {
     const scrollPos = window.scrollY;
     
-    // Glass shadow on scroll
     if (navbar) {
-      if (scrollPos > 20) {
-        navbar.classList.add('shadow-sm');
+      if (scrollPos > 40) {
+        navbar.classList.add('floating-nav-active');
       } else {
-        navbar.classList.remove('shadow-sm');
+        navbar.classList.remove('floating-nav-active');
       }
     }
 
-    // Progress bar fill
     if (progressBar) {
-      const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-      const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-      const scrolled = (winScroll / height) * 100;
-      progressBar.style.width = scrolled + '%';
+      const winHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      const scrolled = (scrollPos / winHeight) * 100;
+      progressBar.style.width = `${scrolled}%`;
     }
+  }
 
-    // ScrollSpy active link highlighting
-    highlightActiveNavLink();
-  });
+  window.addEventListener('scroll', handleNavbarScroll, { passive: true });
+  handleNavbarScroll();
 
   function highlightActiveNavLink() {
     const sections = document.querySelectorAll('section[id]');

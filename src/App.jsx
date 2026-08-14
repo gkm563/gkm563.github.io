@@ -132,11 +132,25 @@ export default function App() {
     }
   };
 
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 40);
+    };
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   return (
     <div className="min-h-screen bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-slate-100 font-sans transition-colors duration-300 relative overflow-x-hidden">
       
-      {/* 1. ULTRA-PREMIUM PROPER HEADER NAVBAR */}
-      <header className="sticky top-0 z-50 bg-white/85 dark:bg-slate-950/85 backdrop-blur-2xl border-b border-slate-200/80 dark:border-slate-800/80 transition-colors">
+      {/* 1. ULTRA-PREMIUM FLOATING ANIMATED HEADER NAVBAR */}
+      <header className={`sticky z-50 transition-all duration-500 ${
+        isScrolled 
+          ? 'top-3 left-4 right-4 max-w-6xl mx-auto rounded-2xl bg-white/88 dark:bg-slate-950/90 backdrop-blur-2xl border border-slate-200/85 dark:border-slate-800/85 shadow-2xl scale-[0.99]' 
+          : 'top-0 left-0 right-0 bg-white/80 dark:bg-slate-950/80 backdrop-blur-2xl border-b border-slate-200/80 dark:border-slate-800/80'
+      }`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between gap-4">
           
           {/* Left Brand Identifier */}
