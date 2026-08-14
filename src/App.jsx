@@ -4,7 +4,8 @@ import {
   Layers, Laptop, Code, Briefcase, GitCommit, 
   Users, Trophy, Calendar, Award, ArrowLeft, 
   Sun, Moon, Search, X, Check, Clock, ExternalLink, 
-  Github, Linkedin, Building2, ChevronRight, FolderOpen, Sparkles, Compass
+  Github, Linkedin, Building2, ChevronRight, FolderOpen, Sparkles, Compass,
+  Activity, BarChart3, Star, Share2, Copy, Eye, SlidersHorizontal
 } from 'lucide-react';
 import { JOURNEY_DATA } from './data/journeyData.js';
 
@@ -14,6 +15,9 @@ export default function App() {
   const [selectedCategory, setSelectedCategory] = useState('all');
   const [searchQuery, setSearchQuery] = useState('');
   const [activeModalItem, setActiveModalItem] = useState(null);
+  const [copiedId, setCopiedId] = useState(null);
+  const [activeSkillTab, setActiveSkillTab] = useState('year-3');
+  const [lightboxImage, setLightboxImage] = useState(null);
 
   useEffect(() => {
     const html = document.documentElement;
@@ -30,6 +34,14 @@ export default function App() {
 
   const toggleTheme = () => {
     setTheme(prev => (prev === 'dark' ? 'light' : 'dark'));
+  };
+
+  const handleCopyLink = (mId, e) => {
+    e.stopPropagation();
+    const url = `${window.location.origin}${window.location.pathname}#${mId}`;
+    navigator.clipboard.writeText(url);
+    setCopiedId(mId);
+    setTimeout(() => setCopiedId(null), 2000);
   };
 
   const activePhase = useMemo(() => {
@@ -63,6 +75,15 @@ export default function App() {
       };
     });
   }, [activePhase, activePhaseMilestones]);
+
+  const statsCounter = useMemo(() => {
+    return [
+      { label: "Merged Wikimedia Patches", val: "15+", sub: "MediaWiki Core & Gerrit", icon: GitCommit, color: "text-blue-500" },
+      { label: "Conference Participants", val: "650+", sub: "Gemini & GFG Student Leader", icon: Users, color: "text-purple-500" },
+      { label: "International & Cyber Fellowships", val: "2", sub: "AIT Bangkok & UP Police", icon: Award, color: "text-emerald-500" },
+      { label: "Academic Standing", val: "Rank 1", sub: "Branch Topper & AKTU Rank 5", icon: Trophy, color: "text-amber-500" }
+    ];
+  }, []);
 
   const renderIcon = (iconName, className = "w-4 h-4") => {
     switch (iconName) {
@@ -128,18 +149,47 @@ export default function App() {
           My B.Tech Journey & Technical Evolution
         </h1>
         
-        <p className="max-w-2xl mx-auto text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed mb-6">
+        <p className="max-w-2xl mx-auto text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed mb-6 font-medium">
           An interactive timeline documenting Gautam's academic toppers, international research fellowships, open-source code contributions, and community leadership from Pre-College to B.Tech Graduation.
         </p>
 
-        <div className="inline-flex items-center gap-3 px-5 py-2.5 rounded-full bg-white/90 dark:bg-slate-900/90 border border-slate-200 dark:border-slate-800 text-xs sm:text-sm font-bold text-slate-900 dark:text-white shadow-xl backdrop-blur-xl">
+        <div className="inline-flex items-center gap-3 px-5 py-2.5 rounded-full bg-white/90 dark:bg-slate-900/90 border border-slate-200 dark:border-slate-800 text-xs sm:text-sm font-bold text-slate-900 dark:text-white shadow-xl backdrop-blur-xl mb-8">
           <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></span>
           <span>{JOURNEY_DATA.meta.currentStatusText}</span>
         </div>
+
+        {/* 3. INTERACTIVE IMPACT METRICS COUNTER BAR */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-5xl mx-auto text-left">
+          {statsCounter.map((st, i) => (
+            <div key={i} className="bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl border border-slate-200 dark:border-slate-800 rounded-2xl p-4 transition-all duration-300 hover:-translate-y-1 hover:border-blue-500/50 shadow-lg">
+              <div className="flex items-center justify-between mb-2">
+                <st.icon className={`w-5 h-5 ${st.color}`} />
+                <span className="text-[10px] font-extrabold uppercase px-2 py-0.5 rounded-md bg-slate-100 dark:bg-slate-800 text-slate-500">Verified</span>
+              </div>
+              <div className="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white mb-0.5">
+                {st.val}
+              </div>
+              <div className="text-xs font-bold text-slate-700 dark:text-slate-200 leading-snug">
+                {st.label}
+              </div>
+              <div className="text-[11px] font-medium text-slate-400">
+                {st.sub}
+              </div>
+            </div>
+          ))}
+        </div>
       </section>
 
-      {/* 3. PRIMARY PHASE SELECTOR CARDS (Top Hero Control) */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-10">
+      {/* 4. PRIMARY PHASE SELECTOR CARDS (Top Control Bar) */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 my-10">
+        <div className="flex items-center justify-between gap-2 mb-4">
+          <h3 className="text-sm font-extrabold text-slate-400 uppercase tracking-wider flex items-center gap-2">
+            <Compass className="w-4 h-4 text-blue-500" />
+            <span>Select Focus Era</span>
+          </h3>
+          <span className="text-xs font-bold text-slate-400">4 Active Eras</span>
+        </div>
+
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
           {JOURNEY_DATA.phases.map((phase) => {
             const isActive = activePhaseId === phase.id;
@@ -187,7 +237,59 @@ export default function App() {
         </div>
       </section>
 
-      {/* 4. ACTIVE FOCUSED PHASE HEADER & FILTER BAR */}
+      {/* 5. INTERACTIVE COMPETENCY & SKILL MATRIX SHOWCASE */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-10">
+        <div className="bg-white/90 dark:bg-slate-900/90 backdrop-blur-xl rounded-3xl p-6 sm:p-8 border border-slate-200 dark:border-slate-800 shadow-xl space-y-6">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-slate-200 dark:border-slate-800">
+            <div>
+              <div className="inline-flex items-center gap-2 text-xs font-extrabold text-purple-500 uppercase tracking-wider mb-1">
+                <BarChart3 className="w-4 h-4" />
+                <span>Technical Skill Evolution Matrix</span>
+              </div>
+              <h3 className="text-xl font-extrabold text-slate-900 dark:text-white">
+                Core Competencies Acquired Over Time
+              </h3>
+            </div>
+
+            {/* Skill Era Selector Tabs */}
+            <div className="flex items-center gap-2 overflow-x-auto pb-1 no-scrollbar">
+              {JOURNEY_DATA.skillEvolution.map(se => (
+                <button 
+                  key={se.phaseId}
+                  onClick={() => setActiveSkillTab(se.phaseId)}
+                  className={`px-3 py-1.5 rounded-xl text-xs font-bold shrink-0 transition-all ${activeSkillTab === se.phaseId ? 'bg-purple-500 text-white shadow-md' : 'bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700'}`}>
+                  {se.phaseTitle.split(' ')[0]} {se.phaseTitle.split(' ')[1] || ''}
+                </button>
+              ))}
+            </div>
+          </div>
+
+          {/* Render Active Skill Tab Grid */}
+          {JOURNEY_DATA.skillEvolution.map(se => {
+            if (se.phaseId !== activeSkillTab) return null;
+            return (
+              <div key={se.phaseId} className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+                {se.skills.map((sk, skIdx) => (
+                  <div key={skIdx} className="p-4 rounded-2xl bg-slate-50 dark:bg-slate-950/60 border border-slate-200 dark:border-slate-800 flex items-center justify-between gap-3">
+                    <div className="flex items-center gap-3">
+                      <div className="w-8 h-8 rounded-lg bg-purple-500/10 text-purple-500 flex items-center justify-center font-bold text-xs">
+                        #{skIdx + 1}
+                      </div>
+                      <div>
+                        <div className="font-extrabold text-xs text-slate-900 dark:text-white">{sk.name}</div>
+                        <div className="text-[11px] font-semibold text-slate-400">{sk.level}</div>
+                      </div>
+                    </div>
+                    <span className="w-2 h-2 rounded-full bg-purple-500 animate-ping"></span>
+                  </div>
+                ))}
+              </div>
+            );
+          })}
+        </div>
+      </section>
+
+      {/* 6. ACTIVE FOCUSED ERA FILTER & SEARCH BAR */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-8">
         <div className="bg-white/90 dark:bg-slate-900/90 backdrop-blur-xl rounded-2xl p-5 sm:p-6 border border-slate-200 dark:border-slate-800 space-y-4 shadow-xl">
           
@@ -252,7 +354,7 @@ export default function App() {
         </div>
       </section>
 
-      {/* 5. SEQUENTIAL SEMESTER BOXES */}
+      {/* 7. SEQUENTIAL SEMESTER BOXES WITH ACTION BUTTONS */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-16 flex-1 space-y-10">
         {semesterBoxes.map((semBox, boxIdx) => (
           <div key={semBox.id} className="bg-white/90 dark:bg-slate-900/90 backdrop-blur-xl rounded-3xl p-6 sm:p-8 border border-slate-200 dark:border-slate-800 space-y-6 shadow-xl">
@@ -293,6 +395,7 @@ export default function App() {
                 {semBox.items.map(m => (
                   <div 
                     key={m.id}
+                    id={m.id}
                     onClick={() => setActiveModalItem(m)}
                     className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-5 sm:p-6 cursor-pointer flex flex-col justify-between group transition-all duration-300 hover:-translate-y-1.5 hover:border-blue-500/60 hover:shadow-2xl">
                     <div>
@@ -302,16 +405,25 @@ export default function App() {
                           {m.category}
                         </span>
                         
-                        {m.status === 'completed' && (
-                          <span className="px-2.5 py-0.5 rounded-full bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/30 text-[11px] font-extrabold flex items-center gap-1">
-                            <Check className="w-3 h-3" /> Completed
-                          </span>
-                        )}
-                        {m.status === 'current' && (
-                          <span className="px-2.5 py-0.5 rounded-full bg-blue-500/10 text-blue-600 dark:text-blue-400 border border-blue-500/30 text-[11px] font-extrabold flex items-center gap-1">
-                            <span className="w-1.5 h-1.5 rounded-full bg-blue-500 animate-pulse"></span> Current Focus
-                          </span>
-                        )}
+                        <div className="flex items-center gap-2">
+                          <button 
+                            onClick={(e) => handleCopyLink(m.id, e)}
+                            className="p-1 rounded-lg text-slate-400 hover:text-blue-500 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
+                            title="Copy Milestone Link">
+                            {copiedId === m.id ? <Check className="w-3.5 h-3.5 text-emerald-500" /> : <Copy className="w-3.5 h-3.5" />}
+                          </button>
+
+                          {m.status === 'completed' && (
+                            <span className="px-2.5 py-0.5 rounded-full bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/30 text-[11px] font-extrabold flex items-center gap-1">
+                              <Check className="w-3 h-3" /> Completed
+                            </span>
+                          )}
+                          {m.status === 'current' && (
+                            <span className="px-2.5 py-0.5 rounded-full bg-blue-500/10 text-blue-600 dark:text-blue-400 border border-blue-500/30 text-[11px] font-extrabold flex items-center gap-1">
+                              <span className="w-1.5 h-1.5 rounded-full bg-blue-500 animate-pulse"></span> Current Focus
+                            </span>
+                          )}
+                        </div>
                       </div>
 
                       <h4 className="font-extrabold text-base sm:text-lg text-slate-900 dark:text-white mb-2 group-hover:text-blue-500 transition-colors leading-snug">
@@ -351,7 +463,7 @@ export default function App() {
         ))}
       </section>
 
-      {/* 6. Slide-Up Detailed Modal Drawer */}
+      {/* 8. Slide-Up Detailed Modal Drawer */}
       {activeModalItem && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/70 backdrop-blur-md">
           <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl max-w-2xl w-full max-h-[85vh] overflow-y-auto p-6 sm:p-8 relative shadow-2xl">
@@ -408,12 +520,15 @@ export default function App() {
                 <span className="font-extrabold text-slate-400 text-xs uppercase tracking-wider block mb-2">Verified Photos & Media</span>
                 <div className="grid grid-cols-2 gap-3">
                   {activeModalItem.evidence.images.map((imgUrl, imgIdx) => (
-                    <a key={imgIdx} href={imgUrl} target="_blank" rel="noopener noreferrer" className="group relative rounded-xl overflow-hidden border border-slate-200 dark:border-slate-800 aspect-video block bg-slate-100 dark:bg-slate-900">
+                    <div 
+                      key={imgIdx} 
+                      onClick={() => setLightboxImage(imgUrl)}
+                      className="group relative rounded-xl overflow-hidden border border-slate-200 dark:border-slate-800 aspect-video cursor-pointer bg-slate-100 dark:bg-slate-900">
                       <img src={imgUrl} alt="LinkedIn Media Evidence" className="w-full h-full object-cover group-hover:scale-105 transition-transform" />
                       <div className="absolute inset-0 bg-slate-950/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white text-xs font-semibold gap-1">
-                        <ExternalLink className="w-3.5 h-3.5" /> View Image
+                        <Eye className="w-4 h-4" /> Expand Image
                       </div>
-                    </a>
+                    </div>
                   ))}
                 </div>
               </div>
@@ -463,7 +578,21 @@ export default function App() {
         </div>
       )}
 
-      {/* 7. Footer Section */}
+      {/* 9. Lightbox Image Zoom Viewer Modal */}
+      {lightboxImage && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/90 backdrop-blur-xl" onClick={() => setLightboxImage(null)}>
+          <div className="relative max-w-4xl w-full flex items-center justify-center" onClick={(e) => e.stopPropagation()}>
+            <button 
+              onClick={() => setLightboxImage(null)}
+              className="absolute -top-12 right-0 w-10 h-10 rounded-full bg-white/20 text-white flex items-center justify-center hover:bg-red-500 transition-colors">
+              <X className="w-5 h-5" />
+            </button>
+            <img src={lightboxImage} alt="Expanded Evidence" className="max-h-[85vh] w-auto rounded-2xl shadow-2xl object-contain border border-slate-800" />
+          </div>
+        </div>
+      )}
+
+      {/* 10. Footer Section */}
       <footer className="border-t border-slate-200 dark:border-slate-800 py-10 text-center text-xs text-slate-500 relative z-10">
         <div className="max-w-7xl mx-auto px-4 space-y-4">
           <div className="flex flex-wrap justify-center gap-6 font-semibold">
