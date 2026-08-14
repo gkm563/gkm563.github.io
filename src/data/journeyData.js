@@ -1,6 +1,6 @@
 /**
- * GAUTAM KUMAR MAURYA (gkm563) — MASTER REACT JOURNEY DATASET
- * Modular React Data Store.
+ * GAUTAM KUMAR MAURYA (gkm563) — MASTER LINKEDIN DATASET
+ * Extracted directly from official LinkedIn Export & Verified Academic Records.
  */
 
 export const JOURNEY_DATA = {
@@ -14,7 +14,7 @@ export const JOURNEY_DATA = {
     expectedGraduationYear: 2027,
     currentYear: 3,
     currentSemester: 6,
-    currentStatusText: "3rd Year (Semester 6) · Academic Rank 1 Branch Topper · AKTU Rank 5"
+    currentStatusText: "3rd Year (Semester 6) · Academic Rank 1 Branch Topper · AKTU Rank 5 · AIT Bangkok & UP Police Fellow"
   },
 
   phases: [
@@ -22,52 +22,52 @@ export const JOURNEY_DATA = {
       id: "pre-college",
       title: "Pre-College Foundation",
       shortTitle: "Pre-College",
-      subtitle: "School & Board Academic Honors",
-      period: "Before 2023",
+      subtitle: "UP Board 92.67% & School Rank 1 Honors",
+      period: "Before Aug 2023",
       icon: "GraduationCap",
       badgeColor: "amber",
       semesters: [
-        { id: "pre-college", title: "School & UP Board Achievements", num: "Foundation" }
+        { id: "pre-college", title: "School & UP Board Honors", num: "Foundation" }
       ]
     },
     {
       id: "year-1",
       title: "1st Year B.Tech",
       shortTitle: "1st Year",
-      subtitle: "Computer Science Foundations & DSA",
+      subtitle: "1st Year Topper, C/Python & Google Cloud Badges",
       period: "2023 – 2024",
       icon: "Rocket",
       badgeColor: "blue",
       semesters: [
         { id: "sem-1", title: "1st Semester (Semester 1)", num: "Sem 1", desc: "C Programming, Matrix Math, Physics & Lab Foundations" },
-        { id: "sem-2", title: "2nd Semester (Semester 2)", num: "Sem 2", desc: "Python Programming, DSA & Web Dev Projects" }
+        { id: "sem-2", title: "2nd Semester (Semester 2)", num: "Sem 2", desc: "Python DSA, PDFBAZI Launch & 12+ Google Cloud AI Badges" }
       ]
     },
     {
       id: "year-2",
       title: "2nd Year B.Tech",
       shortTitle: "2nd Year",
-      subtitle: "AKTU Rank 5, Cyber Fellowship & Open Source",
+      subtitle: "Branch Rank 1, AKTU Rank 5 & MediaWiki Gerrit",
       period: "2024 – 2025",
       icon: "ShieldCheck",
       badgeColor: "indigo",
       semesters: [
-        { id: "sem-3", title: "3rd Semester (Semester 3)", num: "Sem 3", desc: "Branch Rank 1 Topper, AKTU Rank 5, OOP & Operating Systems" },
-        { id: "sem-4", title: "4th Semester (Semester 4)", num: "Sem 4", desc: "UP Police APCSIP-2026 Fellowship & MediaWiki Gerrit Patches" }
+        { id: "sem-3", title: "3rd Semester (Semester 3)", num: "Sem 3", desc: "Branch Rank 1 Topper, AKTU Rank 5, Java OOP & Operating Systems" },
+        { id: "sem-4", title: "4th Semester (Semester 4)", num: "Sem 4", desc: "MediaWiki Core Open Source Gerrit Patches & Ethical Hacking" }
       ]
     },
     {
       id: "year-3",
       title: "3rd Year B.Tech (CURRENT)",
       shortTitle: "3rd Year (Current)",
-      subtitle: "AIT Bangkok Fellowship, GFG VP & Agentic AI",
+      subtitle: "AIT Bangkok, UP Police Award, GFG VP & PrayagrajRooms",
       period: "2025 – 2026",
       icon: "Zap",
       badgeColor: "emerald",
       isCurrent: true,
       semesters: [
-        { id: "sem-5", title: "5th Semester (Semester 5)", num: "Sem 5", desc: "GFG VP Leadership, GSA 650+ Event, PrayagrajRooms Launch" },
-        { id: "sem-6", title: "6th Semester (CURRENT)", num: "Sem 6", desc: "AIT Bangkok GIIP-2026 International Fellowship & BusSetu" }
+        { id: "sem-5", title: "5th Semester (Semester 5)", num: "Sem 5", desc: "GFG VP Leadership, PrayagrajRooms CTO Launch & Gemini 650+ Event" },
+        { id: "sem-6", title: "6th Semester (CURRENT)", num: "Sem 6", desc: "AIT Bangkok Fellowship, UP Police Cyber Award & Anthropic Certifications" }
       ]
     }
   ],
@@ -75,14 +75,13 @@ export const JOURNEY_DATA = {
   categories: [
     { id: "all", label: "All Categories", icon: "Layers" },
     { id: "Academic", label: "Academic Honors", icon: "GraduationCap" },
-    { id: "Hackathon", label: "Hackathons & Competitions", icon: "Laptop" },
-    { id: "Project", label: "Engineering Projects", icon: "Code" },
     { id: "Internship", label: "Internships & Fellowships", icon: "Briefcase" },
     { id: "Open Source", label: "Open Source Contributions", icon: "GitCommit" },
     { id: "Leadership", label: "Leadership & Community", icon: "Users" },
+    { id: "Project", label: "Engineering Projects", icon: "Code" },
     { id: "Award", label: "Awards & Recognition", icon: "Trophy" },
-    { id: "Event", label: "Events & Workshops", icon: "Calendar" },
-    { id: "Certification", label: "Certifications", icon: "Award" }
+    { id: "Certification", label: "Certifications & Credentials", icon: "Award" },
+    { id: "Event", label: "Events & Hackathons", icon: "Laptop" }
   ],
 
   skillEvolution: [
@@ -91,8 +90,8 @@ export const JOURNEY_DATA = {
       phaseTitle: "Pre-College Foundation",
       period: "Before 2023",
       skills: [
-        { name: "Mathematics & Physics", level: "Built With" },
-        { name: "C Programming", level: "Explored" },
+        { name: "Mathematics (92.67%)", level: "Built With" },
+        { name: "Physics & Chemistry", level: "Built With" },
         { name: "Academic Discipline", level: "Used in Production" }
       ]
     },
@@ -101,10 +100,10 @@ export const JOURNEY_DATA = {
       phaseTitle: "B.Tech Year 1 (Semesters 1 & 2)",
       period: "2023 – 2024",
       skills: [
-        { name: "Python Programming", level: "Built With" },
-        { name: "Data Structures & Algorithms", level: "Learning" },
-        { name: "HTML / CSS / JavaScript", level: "Built With" },
-        { name: "Engineering Physics & Math", level: "Built With" }
+        { name: "C Programming & Pointers", level: "Built With" },
+        { name: "Python & DSA", level: "Built With" },
+        { name: "Google Cloud & LLM Badges", level: "Used in Production" },
+        { name: "HTML5 / CSS3 / Client JS", level: "Built With" }
       ]
     },
     {
@@ -112,11 +111,10 @@ export const JOURNEY_DATA = {
       phaseTitle: "B.Tech Year 2 (Semesters 3 & 4)",
       period: "2024 – 2025",
       skills: [
-        { name: "Object-Oriented Programming (Java/Python)", level: "Built With" },
-        { name: "Database Management Systems (SQL)", level: "Used in Production" },
-        { name: "Cyber Security & Digital Forensics", level: "Used in Production" },
-        { name: "MediaWiki / PHP Core Development", level: "Contributed To" },
-        { name: "OSINT Reconnaissance", level: "Used in Production" }
+        { name: "Java & OOP Systems", level: "Built With" },
+        { name: "Operating Systems & SQL", level: "Used in Production" },
+        { name: "MediaWiki Core & Gerrit", level: "Contributed To" },
+        { name: "Ethical Hacking & Forensics", level: "Used in Production" }
       ]
     },
     {
@@ -124,36 +122,67 @@ export const JOURNEY_DATA = {
       phaseTitle: "B.Tech Year 3 (Semesters 5 & 6 — CURRENT FOCUS)",
       period: "2025 – 2026",
       skills: [
-        { name: "Agentic AI & LLMs", level: "Learning & Built With" },
-        { name: "Ubiquitous GIS & QGIS Spatial Analysis", level: "Used in Production" },
-        { name: "Drone Telemetry & Sensor Analytics", level: "Explored" },
-        { name: "Data Science & Power BI Dashboards", level: "Used in Production" },
-        { name: "Full-Stack Web Engineering", level: "Used in Production" }
+        { name: "Agentic AI & Claude LLMs", level: "Learning & Built With" },
+        { name: "Ubiquitous GIS & QGIS Spatial", level: "Used in Production" },
+        { name: "OSINT & Digital Forensics", level: "Used in Production" },
+        { name: "Full-Stack Web (CTO)", level: "Used in Production" },
+        { name: "Community Leadership (650+)", level: "Used in Production" }
       ]
     }
   ],
 
   milestones: [
+    /* ════════════════════════════════════════════════════════════
+       PHASE 0: PRE-COLLEGE FOUNDATION (BEFORE AUG 2023)
+       ════════════════════════════════════════════════════════════ */
     {
-      id: "pre-college-mnit-award",
-      title: "School Academic Topper & 100% Attendance Award by MNIT Professor",
-      shortDescription: "Awarded 1st Rank School Academic Topper and 100% Attendance Award presented on stage by an MNIT Professor.",
-      fullDescription: "Recognized for outstanding academic diligence, mathematical problem solving, and maintaining a perfect 100% attendance record throughout the academic session. Presented directly by a visiting professor from Malaviya National Institute of Technology (MNIT).",
-      startDate: "Pre-College",
-      endDate: "2023",
+      id: "pre-college-up-board-92",
+      title: "Class 12 UP Board State Ranker (92.67%) & Honored by Secretary UP Board",
+      shortDescription: "Scored 92.67% in Class 12 Board exams; honored on stage by Secretary UP Board, Dainik Jagran, and United Group.",
+      fullDescription: "Achieved top academic distinction with 92.67% marks in Class 12 UP Board examinations at Jwala Devi Saraswati Vidya Mandir Inter College (JDSVMIC Prayagraj). Awarded state recognition by the Secretary of UP Board (माध्यमिक शिक्षा परिषद्), Dainik Jagran, and United Group of Institutions.",
+      startDate: "Apr 2023",
+      endDate: "Jun 2023",
       phaseId: "pre-college",
       semesterId: "pre-college",
       category: "Award",
       status: "completed",
       importance: "major",
-      skills: ["Academic Excellence", "Mathematics", "Diligence & Discipline"],
-      organization: "MNIT / School Administration",
-      role: "School Academic Topper",
+      skills: ["Academic Excellence", "Mathematics (92.67%)", "State Honor"],
+      organization: "Board of High School and Intermediate Education UP (UPSMSP) / JDSVMIC",
+      role: "Class 12 Board Topper Scholar",
       location: "Prayagraj, Uttar Pradesh, India",
-      whatHappened: "Secured 1st Rank across all academic subjects while maintaining an unbroken 100% attendance record.",
-      whyItMattered: "Instilled foundational discipline, punctuality, and early confidence in analytical studies.",
-      whatILearned: "Time management under academic pressure and commitment to long-term goals.",
-      impact: "Laid the mathematical and technical foundation for pursuing Computer Science Engineering.",
+      whatHappened: "Secured 92.67% in Class 12 exams and received public felicitations from state education secretarial authorities and Dainik Jagran.",
+      whyItMattered: "Earned public recognition and scholarship admission into United Institute of Technology B.Tech CSE (Data Science).",
+      whatILearned: "Rigorous academic strategy, problem-solving persistence, and public technical representation.",
+      impact: "Laid the bedrock for pursuing B.Tech in CSE (Data Science).",
+      evidence: {
+        images: ["assets/images/gallery/gautam-kumar-maurya-upsmp.jpg"],
+        links: [],
+        github: null,
+        certificate: null,
+        linkedin: null
+      }
+    },
+    {
+      id: "pre-college-class-11-topper",
+      title: "School Rank 1 Topper in Class 11 & Awarded by MNIT Professor",
+      shortDescription: "Secured 1st Rank across all streams in Class 11; awarded on stage by JDSVMIC Principal and visiting MNIT Professor.",
+      fullDescription: "Achieved 1st Rank in Class 11 at Jwala Devi SVM Inter College, maintaining 100% attendance and top marks across Physics, Chemistry, and Mathematics. Awarded directly by an MNIT (Malaviya National Institute of Technology) Professor.",
+      startDate: "Mar 2022",
+      endDate: "Apr 2023",
+      phaseId: "pre-college",
+      semesterId: "pre-college",
+      category: "Academic",
+      status: "completed",
+      importance: "major",
+      skills: ["Mathematics", "Physics", "Academic Discipline", "100% Attendance"],
+      organization: "Jwala Devi SVM Inter College (JDSVMIC) / MNIT",
+      role: "Class 11 School Topper",
+      location: "Prayagraj, Uttar Pradesh, India",
+      whatHappened: "Secured 1st Rank across all streams in Class 11 and received academic excellence award.",
+      whyItMattered: "Proved unbroken academic focus and mathematical diligence.",
+      whatILearned: "Punctuality, advanced algebra, and analytical mechanics.",
+      impact: "Prepared for Class 12 board examination success.",
       evidence: {
         images: ["assets/images/gallery/gautam-kumar-maurya-iita.jpg"],
         links: [],
@@ -163,39 +192,64 @@ export const JOURNEY_DATA = {
       }
     },
     {
-      id: "pre-college-up-board-topper",
-      title: "UP Board District Topper Award by Board Directors & Secretary",
-      shortDescription: "Honored by UP Board Chairman, Director & Secretary (सचिव - माध्यमिक शिक्षा परिषद्) for district rank academic excellence.",
-      fullDescription: "Received prestigious state-level academic recognition as a District Topper in UP Board examinations, presented on stage by the executive leadership of Uttar Pradesh Secondary Education Board.",
-      startDate: "Pre-College",
-      endDate: "2023",
+      id: "pre-college-class-10-honor",
+      title: "Class 10 UP Board High School Honor (91%)",
+      shortDescription: "Scored 91% in Class 10 High School Board examinations at JDSVMIC Prayagraj.",
+      fullDescription: "Achieved 91% aggregate marks in Class 10 UP Board examinations, building a foundational interest in science, mathematics, and computing.",
+      startDate: "Jul 2019",
+      endDate: "Apr 2021",
       phaseId: "pre-college",
       semesterId: "pre-college",
+      category: "Academic",
+      status: "completed",
+      importance: "normal",
+      skills: ["High School Science", "Mathematics", "Problem Solving"],
+      organization: "JDSVMIC Prayagraj / UP Board",
+      role: "High School Scholar",
+      location: "Prayagraj, India",
+      whatHappened: "Scored 91% in Class 10 High School Board exams.",
+      whyItMattered: "Established strong analytical baseline.",
+      whatILearned: "Foundational mathematics and physical sciences.",
+      impact: "Selected science stream for senior secondary education.",
+      evidence: { images: [], links: [], github: null, certificate: null, linkedin: null }
+    },
+
+    /* ════════════════════════════════════════════════════════════
+       PHASE 1: 1ST YEAR B.TECH (AUG 2023 – JUL 2024)
+       ════════════════════════════════════════════════════════════ */
+    {
+      id: "sem-1-first-year-topper-award",
+      title: "Awarded 1st Year Overall Academic Topper at UIT Prayagraj",
+      shortDescription: "Awarded 1st Year Academic Topper for top GPA performance across 1st Year B.Tech courses.",
+      fullDescription: "Received official college recognition as the 1st Year Overall Academic Topper at United Institute of Technology, Prayagraj under AKTU Lucknow syllabus.",
+      startDate: "Aug 2023",
+      endDate: "Jul 2024",
+      phaseId: "year-1",
+      semesterId: "sem-1",
       category: "Award",
       status: "completed",
       importance: "major",
-      skills: ["State Academic Honor", "Problem Solving", "Board Rank Excellence"],
-      organization: "Board of High School and Intermediate Education UP (UPSMSP)",
-      role: "District Topper Scholar",
-      location: "Uttar Pradesh, India",
-      whatHappened: "Achieved top academic ranking in district board examinations.",
-      whyItMattered: "Earned public recognition from state education directors and secretarial authorities.",
-      whatILearned: "Structured exam strategy, clear technical exposition, and analytical perseverance.",
-      impact: "Earned entrance into United Institute of Technology B.Tech CSE (Data Science) program.",
+      skills: ["Academic Excellence", "C Programming", "Engineering Math", "Physics"],
+      organization: "United Institute of Technology (UIT Prayagraj)",
+      role: "1st Year Topper Scholar",
+      location: "Prayagraj, Uttar Pradesh, India",
+      whatHappened: "Achieved highest academic marks in 1st Year B.Tech and awarded 1st Year Topper honor.",
+      whyItMattered: "Set the benchmark for academic leadership in the institute.",
+      whatILearned: "Consistent study strategy, C language internals, and calculus.",
+      impact: "Earned academic prestige in the department.",
       evidence: {
-        images: ["assets/images/gallery/gautam-kumar-maurya-upsmp.jpg"],
+        images: ["assets/images/gallery/gautam-kumar-maurya-uit-topper.jpg"],
         links: [],
         github: null,
         certificate: null,
         linkedin: null
       }
     },
-
     {
       id: "sem-1-c-programming-mastery",
-      title: "C Programming & Algorithmic Problem Solving Mastery",
-      shortDescription: "Mastered fundamental algorithmic logic, pointers, memory allocation, and control structures in C.",
-      fullDescription: "Immersed in procedural programming, array manipulations, dynamic memory allocation, and pointers under AKTU Lucknow Semester 1 syllabus. Built CLI algorithms and console applications.",
+      title: "C Programming & Algorithmic Problem Solving",
+      shortDescription: "Mastered algorithmic logic, pointers, dynamic memory allocation, and control structures in C.",
+      fullDescription: "Completed rigorous C programming coursework and lab practicals under AKTU Semester 1 syllabus. Built CLI tools, sorting algorithms, and pointer manipulation scripts.",
       startDate: "Aug 2023",
       endDate: "Jan 2024",
       phaseId: "year-1",
@@ -204,43 +258,20 @@ export const JOURNEY_DATA = {
       status: "completed",
       importance: "normal",
       skills: ["C Programming", "Algorithms", "Pointers", "Memory Management"],
-      organization: "United Institute of Technology (UIT Prayagraj)",
+      organization: "UIT Prayagraj / AKTU Lucknow",
       role: "1st Year Engineering Scholar",
-      location: "Prayagraj, Uttar Pradesh, India",
-      whatHappened: "Completed C programming practicals, sorting algorithms, and CLI tools with top lab marks.",
-      whyItMattered: "Built understanding of low-level computer system operations and memory management.",
+      location: "Prayagraj, India",
+      whatHappened: "Completed C programming practicals with top lab evaluation marks.",
+      whyItMattered: "Built understanding of low-level memory allocation and hardware interaction.",
       whatILearned: "Pointer arithmetic, dynamic allocation (malloc/calloc), and algorithmic complexity.",
       impact: "Formed core logic foundation for Data Structures & Algorithms in Semester 2.",
       evidence: { images: [], links: [], github: null, certificate: null, linkedin: null }
     },
     {
-      id: "sem-1-math-physics-labs",
-      title: "Engineering Physics & Mathematics-I Academic Excellence",
-      shortDescription: "Studied matrix calculus, differential equations, laser optics, and quantum physics lab experiments.",
-      fullDescription: "Completed Semester 1 engineering mathematics (matrices, calculus, vector calculus) and physics laboratory practicals (interferometry, diffraction, semiconductor optics).",
-      startDate: "Aug 2023",
-      endDate: "Jan 2024",
-      phaseId: "year-1",
-      semesterId: "sem-1",
-      category: "Academic",
-      status: "completed",
-      importance: "normal",
-      skills: ["Mathematics-I", "Engineering Physics", "Lab Analytics"],
-      organization: "UIT Prayagraj / AKTU Lucknow",
-      role: "1st Year Engineering Scholar",
-      location: "Prayagraj, Uttar Pradesh, India",
-      whatHappened: "Achieved excellent marks in Semester 1 theoretical and practical examinations.",
-      whyItMattered: "Provided mathematical tools needed for Data Science and Machine Learning models.",
-      whatILearned: "Eigenvalues, differential equations, and physical sensor principles.",
-      impact: "Strengthened GPA baseline in 1st year.",
-      evidence: { images: [], links: [], github: null, certificate: null, linkedin: null }
-    },
-
-    {
       id: "sem-2-python-dsa-foundations",
       title: "Python Programming & Data Structures Foundation",
-      shortDescription: "Explored Python data structures, recursion, object-oriented concepts, and algorithm analysis.",
-      fullDescription: "Shifted into Python programming and Data Structures & Algorithms (arrays, linked lists, stacks, queues, trees). Built algorithmic scripts and explored data manipulation libraries.",
+      shortDescription: "Mastered Python data structures, recursion, object-oriented principles, and algorithm analysis.",
+      fullDescription: "Shifted into Python programming and Data Structures & Algorithms (arrays, linked lists, stacks, queues, trees). Analyzed Big-O time and space complexities.",
       startDate: "Feb 2024",
       endDate: "Jul 2024",
       phaseId: "year-1",
@@ -249,38 +280,75 @@ export const JOURNEY_DATA = {
       status: "completed",
       importance: "normal",
       skills: ["Python", "Data Structures", "Recursion", "OOP Principles"],
-      organization: "United Institute of Technology (UIT Prayagraj)",
+      organization: "UIT Prayagraj / AKTU Lucknow",
       role: "1st Year Engineering Scholar",
-      location: "Prayagraj, Uttar Pradesh, India",
-      whatHappened: "Built Python data structures project and analyzed algorithm time complexities (Big-O notation).",
-      whyItMattered: "Discovered true passion for Data Science and modern software engineering.",
-      whatILearned: "Tree traversals, dictionary hashing, OOP encapsulation, and module architecture.",
-      impact: "Set up smooth entry into 2nd year CSE (Data Science) specialized subjects.",
+      location: "Prayagraj, India",
+      whatHappened: "Built Python data structures modules and solved algorithmic challenges.",
+      whyItMattered: "Discovered passion for Data Science and software engineering.",
+      whatILearned: "Tree traversals, dictionary hashing, OOP encapsulation, and module design.",
+      impact: "Prepared for 2nd year core computer science subjects.",
       evidence: { images: [], links: [], github: null, certificate: null, linkedin: null }
     },
     {
-      id: "sem-2-web-dev-ideation",
-      title: "First Web Development Projects & Responsive UI Design",
-      shortDescription: "Designed dynamic responsive web layouts using HTML5, CSS3, JavaScript, and Flexbox.",
-      fullDescription: "Began self-directed full-stack web development learning. Created responsive web pages, interactive CSS animations, and JavaScript DOM manipulation scripts.",
+      id: "sem-2-google-cloud-genai-cohort",
+      title: "Google Cloud & Microsoft Generative AI Professional Certifications (12+ Badges)",
+      shortDescription: "Earned 12+ official Google Cloud Badges & Microsoft Generative AI Professional Certificate.",
+      fullDescription: "Completed specialized AI learning paths across Google Cloud Skills Boost and Microsoft LinkedIn Learning. Earned badges in Gemini for Google Workspace, LLMs, Responsible AI, and Copilot for Security.",
       startDate: "Apr 2024",
+      endDate: "May 2024",
+      phaseId: "year-1",
+      semesterId: "sem-2",
+      category: "Certification",
+      status: "completed",
+      importance: "major",
+      skills: ["Generative AI", "Google Cloud", "Gemini API", "Microsoft Copilot", "LLMs"],
+      organization: "Google Cloud Skills Boost / Microsoft & LinkedIn",
+      role: "AI Certified Developer",
+      location: "Online / Global",
+      whatHappened: "Earned 12+ verified badges including Introduction to Large Language Models and Gemini in Google Docs/Sheets/Meet.",
+      whyItMattered: "Early certification in frontier Generative AI tools and Google Cloud infrastructure.",
+      whatILearned: "Prompt engineering, LLM architecture, responsible AI ethics, and Cloud API integration.",
+      impact: "Laid foundation for Agentic AI research in 3rd year.",
+      evidence: {
+        images: [],
+        links: ["https://www.cloudskillsboost.google/public_profiles/73fd1a6e-8ae1-45db-bf81-aef2047f1f50"],
+        github: null,
+        certificate: "https://www.linkedin.com/learning/certificates/83fc309fdd74841a7853778779b161ce5728bb516a64321dc1bc3fb8d04a4f12",
+        linkedin: null
+      }
+    },
+    {
+      id: "sem-2-pdfbazi-launch",
+      title: "PDFBAZI – Client-Side Browser PDF Processing Web Application",
+      shortDescription: "Built and deployed PDFBAZI, an all-in-one browser-side PDF utility tool on Netlify.",
+      fullDescription: "Designed and deployed PDFBAZI, a client-side web application enabling PDF merging, splitting, compression, conversion, watermarking, and password protection directly inside the browser using JavaScript, protecting data privacy with zero server uploads.",
+      startDate: "May 2024",
       endDate: "Jul 2024",
       phaseId: "year-1",
       semesterId: "sem-2",
       category: "Project",
       status: "completed",
       importance: "normal",
-      skills: ["HTML5", "CSS3", "JavaScript", "Responsive UI"],
+      skills: ["JavaScript", "PDF-Lib", "Client-Side Processing", "Netlify", "UI Design"],
       organization: "Self-Directed Software Project",
-      role: "Frontend Developer",
+      role: "Full-Stack Developer",
       location: "Prayagraj, India",
-      whatHappened: "Deployed initial portfolio websites and project landing pages.",
-      whyItMattered: "Unlocked ability to showcase engineering work globally on GitHub Pages.",
-      whatILearned: "DOM events, CSS Grid/Flexbox, dynamic rendering, and cross-browser compatibility.",
-      impact: "Paved the way for complex full-stack web platforms built in Year 2 and Year 3.",
-      evidence: { images: [], links: [], github: "https://github.com/gkm563", certificate: null, linkedin: null }
+      whatHappened: "Built client-side PDF utility application with zero server storage overhead.",
+      whyItMattered: "Demonstrated ability to build privacy-first client-side web utilities.",
+      whatILearned: "Binary data manipulation, Blob URLs, Web Workers, and Netlify deployment.",
+      impact: "Gained thousands of user impressions and feedback.",
+      evidence: {
+        images: [],
+        links: [],
+        github: "https://github.com/gkm563",
+        certificate: null,
+        linkedin: null
+      }
     },
 
+    /* ════════════════════════════════════════════════════════════
+       PHASE 2: 2ND YEAR B.TECH (AUG 2024 – JUL 2025)
+       ════════════════════════════════════════════════════════════ */
     {
       id: "sem-3-aktu-rank-5-topper",
       title: "CSE (Data Science) Branch Rank 1 Topper & AKTU Rank 5 Excellence Award",
@@ -309,39 +377,60 @@ export const JOURNEY_DATA = {
         linkedin: null
       }
     },
-
     {
-      id: "sem-4-up-police-fellowship",
-      title: "UP Police APCSIP-2026 Cyber Fellowship & Best Content Creator Award",
-      shortDescription: "Completed 15-day digital forensic fellowship with Amroha Police; won Best Content Creator Award under DSP Anjali Kataria.",
-      fullDescription: "Participated in Amroha Police Cyber Security Internship Program (APCSIP-2026). Applied data science to digital forensics, Call Detail Record (CDR) sorting, OSINT recon, and cyber awareness. Presented Best Content Creator Award by DSP Anjali Kataria.",
-      startDate: "Jan 2025",
-      endDate: "Feb 2025",
+      id: "sem-3-mygov-ambassador",
+      title: "MyGov India Campus Ambassador",
+      shortDescription: "Appointed Campus Ambassador for MyGov India, promoting citizen engagement initiatives.",
+      fullDescription: "Represented Government of India's flagship MyGov digital engagement platform on campus, conducting digital awareness sessions and student participation drives.",
+      startDate: "Oct 2024",
+      endDate: "May 2025",
       phaseId: "year-2",
-      semesterId: "sem-4",
-      category: "Internship",
+      semesterId: "sem-3",
+      category: "Leadership",
       status: "completed",
-      importance: "major",
-      skills: ["Digital Forensics", "OSINT Recon", "CDR Sorting", "Cyber Investigation", "Technical Communication"],
-      organization: "Amroha Police Cyber Crime Cell, UP Police",
-      role: "Cyber Security Fellow & Lead Awardee",
-      location: "Amroha, Uttar Pradesh, India",
-      whatHappened: "Executed OSINT mapping, CDR data extraction, and cyber safety campaigns under DSP Anjali Kataria.",
-      whyItMattered: "First major government cyber security fellowship applying engineering data science to active law enforcement intelligence.",
-      whatILearned: "Call detail record pattern extraction, OSINT intelligence gathering, and digital chain of custody.",
-      impact: "Published dedicated APCSIP report and received official commendation.",
+      importance: "normal",
+      skills: ["Public Relations", "Digital Outreach", "Community Engagement"],
+      organization: "MyGov India (Government of India)",
+      role: "Campus Ambassador",
+      location: "Prayagraj, India",
+      whatHappened: "Promoted national digital initiatives and student innovation contests.",
+      whyItMattered: "Expanded student network and government initiative advocacy.",
+      whatILearned: "Campaign coordination, public relations, and student outreach.",
+      impact: "Engaged 300+ students in national hackathons and quizzes.",
+      evidence: { images: [], links: [], github: null, certificate: null, linkedin: null }
+    },
+    {
+      id: "sem-3-goldman-sachs-simulation",
+      title: "Goldman Sachs Operations Job Simulation & AI Aware Certification",
+      shortDescription: "Completed Goldman Sachs Operations Simulation on Forage and CBSE x Intel AI Aware Certification.",
+      fullDescription: "Successfully completed the Goldman Sachs Operations Job Simulation on Forage, solving operational workflow and data risk tasks. Also earned CBSE x Intel AI Aware Certification.",
+      startDate: "Oct 2024",
+      endDate: "Dec 2024",
+      phaseId: "year-2",
+      semesterId: "sem-3",
+      category: "Certification",
+      status: "completed",
+      importance: "normal",
+      skills: ["Operations Analysis", "Data Risk", "Financial Workflows", "Intel AI"],
+      organization: "Goldman Sachs (Forage) / CBSE & Intel",
+      role: "Operations Simulation Fellow",
+      location: "Online",
+      whatHappened: "Analyzed operational data risks and completed financial workflow simulations.",
+      whyItMattered: "Gained insight into global investment bank technology operations.",
+      whatILearned: "Process optimization, operational risk management, and data auditing.",
+      impact: "Broadened understanding of enterprise data systems.",
       evidence: {
-        images: ["assets/images/gallery/gautam-kumar-maurya-up-police.jpg", "assets/images/gallery/gautam-kumar-maurya-best-content-creator-award.jpg"],
-        links: ["up-police-internship.html"],
+        images: [],
+        links: [],
         github: null,
-        certificate: "assets/images/gallery/gautam-kumar-maurya-best-content-creator-award.jpg",
-        linkedin: "https://www.linkedin.com/in/gkm563/"
+        certificate: "https://forage-uploads-prod.s3.amazonaws.com/completion-certificates/MBA4MnZTNFEoJZGnk/wNge9cjzNTXD2acrv_MBA4MnZTNFEoJZGnk_bBi8bNYDErqisAyR3_1733448552562_completion_certificate.pdf",
+        linkedin: null
       }
     },
     {
       id: "sem-4-mediawiki-gerrit-contributions",
-      title: "MediaWiki Core Open Source Contributor (Wikipedia Tech Stack)",
-      shortDescription: "Authored and merged production PHP/JS code patches into MediaWiki Core, MinervaNeue, and Pywikibot.",
+      title: "MediaWiki Core Open Source Contributor (Wikimedia Foundation)",
+      shortDescription: "Authored and merged production PHP/JS code patches into MediaWiki Core, MinervaNeue, and GrowthExperiments.",
       fullDescription: "Entered production open-source engineering via Wikimedia Gerrit. Merged patches resolving internationalization metadata, UI rendering, and Pywikibot automation bugs. Recognized in WikiClub Tech India Technical Impact Report at IIIT Hyderabad.",
       startDate: "Jan 2025",
       endDate: "May 2025",
@@ -366,53 +455,161 @@ export const JOURNEY_DATA = {
         linkedin: "https://www.linkedin.com/in/gkm563/"
       }
     },
-
     {
-      id: "sem-5-gfg-vp-and-gsa-mega-event",
-      title: "GeeksforGeeks VP Leadership & 650+ Attendee Tech Conference Organizer",
-      shortDescription: "Appointed VP of GFG UIT Chapter; co-organized 650+ attendee tech event and awarded on stage by Principal, DSW & HODs.",
-      fullDescription: "Led technical student initiatives as Vice President of GeeksforGeeks Student Chapter UIT Prayagraj. Co-organized a massive 650+ attendee tech conference as Google Student Ambassador team member, awarded on stage by Principal Sir, Dean Student Welfare (DSW), and Department HODs. Co-founded PrayagrajRooms portal.",
-      startDate: "Aug 2025",
-      endDate: "Dec 2025",
+      id: "sem-4-code-resite-ethical-hacking",
+      title: "Ethical Hacking Intern at Code Resite & FCRF Campus Ambassador",
+      shortDescription: "Executed vulnerability scans, security audits, and threat research; served as Future Crime Research Foundation Ambassador.",
+      fullDescription: "Completed Ethical Hacking Internship at Code Resite, learning web application vulnerability assessment, penetration testing fundamentals, and security scanning. Served concurrently as Campus Ambassador for Future Crime Research Foundation (FCRF).",
+      startDate: "May 2025",
+      endDate: "Aug 2025",
+      phaseId: "year-2",
+      semesterId: "sem-4",
+      category: "Internship",
+      status: "completed",
+      importance: "normal",
+      skills: ["Ethical Hacking", "Vulnerability Assessment", "Cyber Forensics", "Network Security"],
+      organization: "Code Resite / Future Crime Research Foundation (FCRF)",
+      role: "Ethical Hacking Intern",
+      location: "Online",
+      whatHappened: "Performed web security audits and vulnerability assessments.",
+      whyItMattered: "Built offensive and defensive cybersecurity foundations.",
+      whatILearned: "OWASP Top 10, Nmap reconnaissance, Burp Suite intercepting, and patch remediation.",
+      impact: "Prepared for UP Police Cyber Security Fellowship in 3rd year.",
+      evidence: { images: [], links: [], github: null, certificate: null, linkedin: null }
+    },
+
+    /* ════════════════════════════════════════════════════════════
+       PHASE 3: 3RD YEAR B.TECH — CURRENT FOCUS (AUG 2025 – JUL 2026)
+       ════════════════════════════════════════════════════════════ */
+    {
+      id: "sem-5-prayagrajrooms-co-founder",
+      title: "PrayagrajRooms – Co-Founder & CTO (Student Housing Platform)",
+      shortDescription: "Co-founded PrayagrajRooms, designing and deploying full-stack web infrastructure for verified student accommodation.",
+      fullDescription: "Co-founded PrayagrajRooms to solve student housing discovery in Prayagraj. Designed and developed the complete web application, property filtering engine, dynamic map integrations, and deployment architecture.",
+      startDate: "Sep 2025",
+      endDate: "Present",
       phaseId: "year-3",
       semesterId: "sem-5",
-      category: "Leadership",
-      status: "completed",
+      category: "Project",
+      status: "current",
       importance: "major",
-      skills: ["Leadership", "Event Management", "Public Speaking", "Community Building", "Web Development"],
-      organization: "GeeksforGeeks Student Chapter UIT Prayagraj / GSA Team",
-      role: "Vice President & Event Co-Organizer",
+      skills: ["Full-Stack Web", "Node.js", "MongoDB", "CTO Leadership", "Deployment Architecture"],
+      organization: "PrayagrajRooms",
+      role: "Co-Founder & CTO",
       location: "Prayagraj, Uttar Pradesh, India",
-      whatHappened: "Spearheaded student coding initiatives, hosted technical workshops, and co-founded PrayagrajRooms housing platform.",
-      whyItMattered: "Demonstrated large-scale leadership and community impact beyond academic rank.",
-      whatILearned: "Event logistics, team delegation, institutional sponsorship, and full-stack product launch.",
-      impact: "Expanded tech developer ecosystem for 650+ students across the college.",
+      whatHappened: "Launched student housing platform connecting students directly with verified property listings.",
+      whyItMattered: "Real-world commercial startup product serving local college student community.",
+      whatILearned: "System architecture, server optimization, database indexing, and user feedback iterations.",
+      impact: "Platform live and serving hundreds of active student property searches.",
       evidence: {
-        images: ["assets/images/gallery/gautam-kumar-maurya-gsa.jpg", "assets/images/gallery/gautam-kumar-maurya-gfg-award.jpg", "assets/images/gallery/gautam-kumar-maurya-ffdg.jpg"],
+        images: [],
         links: ["https://prayagrajrooms.in"],
         github: "https://github.com/gkm563",
         certificate: null,
         linkedin: "https://www.linkedin.com/in/gkm563/"
       }
     },
-
+    {
+      id: "sem-5-gemini-builders-650-event",
+      title: "Gemini Builders Community Core Member & 650+ Participant Tech Event",
+      shortDescription: "Co-organized 2 offline tech events with 650+ participants across 1st, 2nd, and 3rd year students.",
+      fullDescription: "Served as Core Team Member for Gemini Builders Community. Co-organized 2 offline technical conferences with 650+ student participants from 1st, 2nd, and 3rd year engineering batches. Managed end-to-end event planning, registrations, speaker management, and on-ground coordination.",
+      startDate: "Nov 2025",
+      endDate: "Present",
+      phaseId: "year-3",
+      semesterId: "sem-5",
+      category: "Leadership",
+      status: "completed",
+      importance: "major",
+      skills: ["Community Building", "Event Logistics", "Faculty Coordination", "Public Speaking"],
+      organization: "✦ Gemini Builders Community",
+      role: "Core Team Member",
+      location: "Prayagraj, Uttar Pradesh, India",
+      whatHappened: "Spearheaded 2 offline tech conferences with 650+ participants.",
+      whyItMattered: "Largest student technical conference execution in the institute.",
+      whatILearned: "Large-scale event logistics, stage management, and institutional coordination.",
+      impact: "Awarded on stage by Principal, DSW, and Department HODs.",
+      evidence: {
+        images: ["assets/images/gallery/gautam-kumar-maurya-gsa.jpg"],
+        links: [],
+        github: null,
+        certificate: null,
+        linkedin: "https://www.linkedin.com/in/gkm563/"
+      }
+    },
+    {
+      id: "sem-5-gfg-vp-and-flagship-event",
+      title: "GeeksforGeeks Student Chapter UIT Vice President & Technical Head",
+      shortDescription: "Vice President & Technical Head; co-organized 4 tech events including flagship conference with 600+ registrations.",
+      fullDescription: "Led the technical team of GeeksforGeeks Student Chapter UIT Prayagraj. Co-organized 4 technical events (2 offline and 2 online), including a flagship coding competition with 600+ registrations. Guided participants and coordinated speakers.",
+      startDate: "Jul 2025",
+      endDate: "Present",
+      phaseId: "year-3",
+      semesterId: "sem-5",
+      category: "Leadership",
+      status: "completed",
+      importance: "major",
+      skills: ["Leadership", "Technical Mentorship", "Coding Competitions", "Event Management"],
+      organization: "GeeksforGeeks Student Chapter - UIT",
+      role: "Vice President & Technical Head",
+      location: "Prayagraj, Uttar Pradesh, India",
+      whatHappened: "Co-organized 4 technical events with 600+ registrations.",
+      whyItMattered: "Elevated student competitive programming culture across the college.",
+      whatILearned: "Curating coding contest problems, platform administration, and team leadership.",
+      impact: "Mentored hundreds of junior students in DSA and web development.",
+      evidence: {
+        images: ["assets/images/gallery/gautam-kumar-maurya-gfg-award.jpg"],
+        links: [],
+        github: "https://github.com/gkm563",
+        certificate: null,
+        linkedin: "https://www.linkedin.com/in/gkm563/"
+      }
+    },
+    {
+      id: "sem-6-up-police-cyber-award",
+      title: "UP Police APCSIP-2026 Cyber Fellowship & Best Content Creator Award",
+      shortDescription: "Completed 15-day digital forensic fellowship with Amroha Police; won Best Content Creator Award under DSP Anjali Kataria.",
+      fullDescription: "Participated in Amroha Police Cyber Security Internship Program (APCSIP-2026). Applied data science to digital forensics, Call Detail Record (CDR) sorting, OSINT recon, dark web investigation, and malware analysis. Awarded Best Content Creator by DSP Anjali Kataria.",
+      startDate: "Jun 2026",
+      endDate: "Jul 2026",
+      phaseId: "year-3",
+      semesterId: "sem-6",
+      category: "Internship",
+      status: "completed",
+      importance: "major",
+      skills: ["Digital Forensics", "OSINT Recon", "CDR & Tower Dump Sorting", "Dark Web Investigation", "Cyber Threat Intelligence"],
+      organization: "Uttar Pradesh Police (Amroha Police Cyber Crime Cell)",
+      role: "Cyber Security Fellow & Lead Awardee",
+      location: "Amroha, Uttar Pradesh, India",
+      whatHappened: "Executed OSINT mapping, CDR tower dump analysis, and cyber awareness under DSP Anjali Kataria.",
+      whyItMattered: "State government cyber security fellowship applying data science to active law enforcement intelligence.",
+      whatILearned: "CDR/IPDR sorting, OSINT recon, digital evidence chain of custody, and threat monitoring.",
+      impact: "Published APCSIP report and received official commendation award.",
+      evidence: {
+        images: ["assets/images/gallery/gautam-kumar-maurya-up-police.jpg", "assets/images/gallery/gautam-kumar-maurya-best-content-creator-award.jpg"],
+        links: ["up-police-internship.html"],
+        github: null,
+        certificate: "assets/images/gallery/gautam-kumar-maurya-best-content-creator-award.jpg",
+        linkedin: "https://www.linkedin.com/in/gkm563/"
+      }
+    },
     {
       id: "sem-6-ait-bangkok-fellowship",
       title: "AIT Bangkok GIIP-2026 International Research Fellowship (Thailand)",
       shortDescription: "Participating in 15-day international research fellowship in Thailand; researching Agentic AI, Ubiquitous GIS, and BusSetu capstone.",
       fullDescription: "Selected for Global Innovation Internship Program (GIIP-2026) at Asian Institute of Technology (AIT Bangkok, Thailand). Executed research in Agentic AI, Ubiquitous GIS spatial mapping, UAV drone telemetry, KMITL robotics research, and developed BusSetu transit platform capstone.",
-      startDate: "Jan 2026",
-      endDate: "Present",
+      startDate: "Jun 2026",
+      endDate: "Jul 2026",
       phaseId: "year-3",
       semesterId: "sem-6",
       category: "Internship",
-      status: "current",
+      status: "completed",
       importance: "major",
       skills: ["Agentic AI", "Ubiquitous GIS", "QGIS", "Drone Telemetry", "Robotics", "Power BI", "Data Analytics"],
       organization: "Asian Institute of Technology (AIT), Bangkok, Thailand",
       role: "GIIP International Research Fellow",
-      location: "Pathum Thani / Bangkok, Thailand",
-      whatHappened: "Executed daily frontier research labs, drone spatial surveys, and built BusSetu public transit navigation capstone.",
+      location: "Bangkok City, Thailand",
+      whatHappened: "Executed daily frontier research labs, drone spatial surveys, KMITL robotics lab visits, and built BusSetu transit navigation capstone.",
       whyItMattered: "First international cross-border research fellowship working directly under international PhDs and professors.",
       whatILearned: "Autonomous AI agent workflows, spatial vector analysis in QGIS, drone sensor payload telemetry, and international academic collaboration.",
       impact: "Published comprehensive GIIP-2026 research portal and daily log repository.",
@@ -426,6 +623,62 @@ export const JOURNEY_DATA = {
         github: "https://github.com/gkm563",
         certificate: null,
         linkedin: "https://www.linkedin.com/in/gkm563/"
+      }
+    },
+    {
+      id: "sem-6-anthropic-claude-certifications",
+      title: "Anthropic Claude 101, Claude Code & AI Fluency Certifications (6 Badges)",
+      shortDescription: "Earned 6 official Anthropic Certifications across Claude 101, Claude Code, Platform 101, AI Fluency, and Claude Cowork.",
+      fullDescription: "Completed Anthropic's official technical certification suites, mastering Claude 101, Claude Code CLI automation, Claude Platform APIs, AI Fluency Framework, and Claude Cowork workflow integration.",
+      startDate: "Jun 2026",
+      endDate: "Jun 2026",
+      phaseId: "year-3",
+      semesterId: "sem-6",
+      category: "Certification",
+      status: "completed",
+      importance: "major",
+      skills: ["Anthropic Claude", "Claude Code CLI", "Claude Platform API", "AI Fluency Framework"],
+      organization: "Anthropic",
+      role: "Anthropic Certified AI Specialist",
+      location: "Global / Online",
+      whatHappened: "Earned 6 verified Anthropic Skilljar certificates in frontier AI model integration.",
+      whyItMattered: "Demonstrated early mastery of Anthropic's developer tooling and autonomous code agents.",
+      whatILearned: "Claude Code CLI workflows, prompt caching, tool use function calling, and agentic task evaluation.",
+      impact: "Applied Anthropic agentic tools to portfolio and research platforms.",
+      evidence: {
+        images: [],
+        links: ["https://verify.skilljar.com/c/z2yqufezpj9r"],
+        github: null,
+        certificate: "https://verify.skilljar.com/c/z2yqufezpj9r",
+        linkedin: null
+      }
+    },
+    {
+      id: "sem-6-gdg-apl-mentor-and-buildx",
+      title: "GDG Prayagraj APL Mentor & UDTech BuildX 2026 Hackathon Lead Developer",
+      shortDescription: "Served as Mentor in Agentic Premier League (APL) with GDG Prayagraj; built BuildX 2026 Hackathon platform.",
+      fullDescription: "Served as Mentor in Agentic Premier League (APL) with GDG Prayagraj, guiding participants through AI agent challenges. As Technical Head at UDTech India, built the official BuildX 2026 Hackathon website from scratch. Earned Open Source Connect Global (OSCG-2026) credential.",
+      startDate: "Feb 2026",
+      endDate: "May 2026",
+      phaseId: "year-3",
+      semesterId: "sem-6",
+      category: "Event",
+      status: "completed",
+      importance: "major",
+      skills: ["Agentic AI Mentorship", "Hackathon Platform Dev", "Open Source Connect", "GDG Community"],
+      organization: "GDG Prayagraj / UDTech India / Open Source Connect",
+      role: "APL Mentor & Hackathon Technical Head",
+      location: "Prayagraj, Uttar Pradesh, India",
+      whatHappened: "Mentored participants in Agentic Premier League and built full-stack hackathon platform for BuildX 2026.",
+      whyItMattered: "Pioneered agentic AI hackathon mentorship in the regional developer community.",
+      whatILearned: "Hackathon architecture, agent API evaluation, and technical mentorship.",
+      impact: "Guided dozens of student teams in building AI agent applications.",
+      evidence: {
+        images: [],
+        links: [],
+        github: "https://github.com/gkm563",
+        certificate: "https://app.truscholar.io/profile?credId=69d5ba34a0a1d70eaf471499",
+        linkedin: null
       }
     }
   ]
