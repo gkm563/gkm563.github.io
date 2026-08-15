@@ -164,7 +164,7 @@ html.dark .site-header {
 .nav-menu {
   display: flex;
   align-items: center;
-  gap: 28px;
+  gap: 16px;
   list-style: none;
 }
 
@@ -1509,8 +1509,66 @@ body.dark .project-stat-label {
     --fs-h2: 28px;
     --fs-h3: 22px;
   }
-  .nav-menu { display: none; }
+  .nav-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: rgba(248, 250, 252, 0.95);
+    border-bottom: 1px solid rgba(226, 232, 240, 0.8);
+    box-shadow: 0 10px 30px rgba(15, 23, 42, 0.05);
+    flex-direction: column;
+    align-items: stretch;
+    padding: 16px 24px;
+    gap: 8px;
+    z-index: 999;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+  }
+  html.dark .nav-menu {
+    background: rgba(15, 23, 42, 0.95);
+    border-bottom-color: rgba(30, 41, 59, 0.8);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+  }
+  .nav-menu.active {
+    display: flex;
+    animation: slideDownNav 0.3s ease forwards;
+  }
+  .nav-menu li {
+    width: 100%;
+  }
+  .nav-menu .nav-link {
+    display: block;
+    width: 100%;
+    padding: 8px 12px;
+    border-radius: 8px;
+  }
+  .nav-menu .nav-link:hover,
+  .nav-menu .nav-link.active {
+    background: var(--color-accent-light);
+    color: var(--color-accent);
+  }
+  html.dark .nav-menu .nav-link:hover,
+  html.dark .nav-menu .nav-link.active {
+    background: rgba(59, 130, 246, 0.15);
+    color: #3B82F6;
+  }
+  .nav-menu .nav-link::after {
+    display: none;
+  }
   .mobile-toggle { display: block; }
+}
+
+@keyframes slideDownNav {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @media (max-width: 640px) {
@@ -1518,6 +1576,20 @@ body.dark .project-stat-label {
     --fs-hero: 36px;
     --fs-h1: 28px;
     --fs-h2: 22px;
+  }
+  .back-portfolio-btn span {
+    display: none;
+  }
+  .back-portfolio-btn {
+    width: 38px;
+    height: 38px;
+    padding: 0;
+    justify-content: center;
+    border-radius: 10px;
+  }
+  .brand-logo a span,
+  .brand-logo a .brand-badge {
+    display: none !important;
   }
   .hero-section { padding-top: 100px; }
   .day-section { padding: 20px; }

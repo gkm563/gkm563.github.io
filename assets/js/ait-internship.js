@@ -6,6 +6,7 @@
 document.addEventListener('DOMContentLoaded', () => {
   initThemeToggle();
   initProgressBar();
+  initFloatingNavbar();
   initScrollSpy();
   initGalleryFilters();
   initLightbox();
@@ -254,5 +255,65 @@ function initMobileMenu() {
     toggleBtn.addEventListener('click', () => {
       navMenu.classList.toggle('active');
     });
+  }
+}
+
+/* Floating Capsule Navbar on Scroll */
+function initFloatingNavbar() {
+  const header = document.querySelector('.site-header');
+  if (header && !document.getElementById('ait-floating-styles')) {
+    const styleEl = document.createElement('style');
+    styleEl.id = 'ait-floating-styles';
+    styleEl.innerHTML = `
+      .site-header {
+        transition: top 0.45s cubic-bezier(0.34,1.56,0.64,1),
+                    left 0.45s cubic-bezier(0.34,1.56,0.64,1),
+                    right 0.45s cubic-bezier(0.34,1.56,0.64,1),
+                    border-radius 0.45s cubic-bezier(0.34,1.56,0.64,1),
+                    background 0.45s ease,
+                    box-shadow 0.45s ease,
+                    margin 0.45s ease,
+                    width 0.45s ease !important;
+        will-change: transform;
+      }
+      .site-header.nav-float {
+        top: 0.75rem !important;
+        left: 1rem !important;
+        right: 1rem !important;
+        width: auto !important;
+        max-width: 72rem !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        border-radius: 1.25rem !important;
+        background: rgba(255,255,255,0.88) !important;
+        backdrop-filter: blur(24px) !important;
+        -webkit-backdrop-filter: blur(24px) !important;
+        border: 1px solid rgba(226,232,240,0.85) !important;
+        box-shadow: 0 20px 45px -10px rgba(0,0,0,0.12), 0 0 20px rgba(37,99,235,0.08) !important;
+      }
+      html.dark .site-header.nav-float,
+      body.dark .site-header.nav-float {
+        background: rgba(15,23,42,0.92) !important;
+        border: 1px solid rgba(255,255,255,0.10) !important;
+        box-shadow: 0 25px 50px -12px rgba(0,0,0,0.6), 0 0 25px rgba(59,130,246,0.12) !important;
+      }
+      @media (max-width: 640px) {
+        .site-header.nav-float {
+          top: 0.5rem !important;
+          left: 0.5rem !important;
+          right: 0.5rem !important;
+          border-radius: 1rem !important;
+        }
+      }
+    `;
+    document.head.appendChild(styleEl);
+
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 40) {
+        header.classList.add('nav-float');
+      } else {
+        header.classList.remove('nav-float');
+      }
+    }, { passive: true });
   }
 }
