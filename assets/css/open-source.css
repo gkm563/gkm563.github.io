@@ -1490,7 +1490,7 @@ a:hover {
 /* ═══════════════════════════════════════
    RESPONSIVE MEDIA QUERIES
    ═══════════════════════════════════════ */
-@media (max-width: 1180px) {
+@media (max-width: 1024px) {
   :root {
     --fs-hero: 44px;
     --fs-h1: 36px;
@@ -1564,6 +1564,21 @@ a:hover {
 }
 
 @media (max-width: 640px) {
+  .back-home-btn span {
+    display: none;
+  }
+
+  .back-home-btn {
+    width: 38px;
+    height: 38px;
+    padding: 0;
+    justify-content: center;
+  }
+
+  .brand-title {
+    font-size: 14px;
+  }
+
   .hero-section {
     padding: 70px 0 50px 0;
   }
@@ -1665,4 +1680,10 @@ a:hover {
 .img-skeleton-wrapper.loaded .skeleton-loader {
   opacity: 0;
   pointer-events: none;
+}
+
+@media (max-width: 440px) {
+  .brand-title {
+    display: none;
+  }
 }
