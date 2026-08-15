@@ -29,7 +29,7 @@ window.PORTFOLIO_TRANSLATIONS = {
             "Full-Stack AI Engineer | Cyber Security Researcher | Data Scientist",
             "Consistent Academic Topper (1st Rank CSE DS Branch | Rank 5 College)",
             "Founder & Organizer @ CDN UIT | VP @ GFG UIT Chapter",
-            "Co-Lead @ HackerRank UIT | Technical Head @ E-Cell UIT",
+            "Co-Lead @ HackerRank UIT | AIT Bangkok GIIP Fellow",
             "15+ Merged Patches (Wikimedia Gerrit, GitLab, GitHub) | WikiClub Featured",
             "Founder @ PrayagrajRooms (prayagrajrooms.in)",
             "Awarded Best Content Creator by DSP Anjali Kataria (UP Police)"
@@ -47,7 +47,7 @@ window.PORTFOLIO_TRANSLATIONS = {
         about_point_2_text: "Authored and merged <strong>15+ patches</strong> across major open-source platforms including Wikimedia Gerrit, GitLab, and GitHub (featured by <strong>WikiClub India</strong>).",
         about_point_3_title: "15-Day UP Police & AIT Bangkok Internships:",
         about_point_3_text: "Honored with the <strong>Best Content Creator Award</strong> by <strong>DSP Anjali Kataria Ma'am</strong> (UP Police Cyber Internship) and completed 15-day international GIIP research at <strong>AIT Bangkok</strong>.",
-        about_para_2: "Gautam is a rapid tech learner continuously updated with the latest AI systems, Agentic AI, LLMs, and security frameworks. He specializes in building web applications with minimal vulnerability, helping startup founders launch their initial products live to market. He serves as Founder & Organizer of CDN UIT, Vice President of GFG UIT, Co-Lead of HackerRank UIT, and Technical Head of E-Cell UIT.",
+        about_para_2: "Gautam is a rapid tech learner continuously updated with the latest AI systems, Agentic AI, LLMs, and security frameworks. He specializes in building web applications with minimal vulnerability, helping startup founders launch their initial products live to market. He serves as Founder & Organizer of CDN UIT, Vice President of GFG UIT, and Co-Lead of HackerRank UIT.",
 
         // Narrator Module
         narrator_title: "Gautam's Voice Narrator",
@@ -55,7 +55,7 @@ window.PORTFOLIO_TRANSLATIONS = {
         narrator_voice_female: "Female Voice",
         narrator_play_title: "Play Story Narration",
         narrator_stop_title: "Stop Story Narration",
-        narrator_script: "Hello and welcome! I'm Gautam Kumar Maurya (gkm563), a Full-Stack AI Engineer, Cyber Security Researcher, and Data Scientist. I am an Academic Topper at United Institute of Technology, holding 1st Rank in my CSE Data Science branch and 5th Rank across the college in 1st year. I specialize in building secure web applications with minimal vulnerability, helping startup founders launch products live to market, and contributing to open source ecosystems with 15 plus merged patches. I also serve as Founder of CDN UIT, Vice President of GFG UIT, Co-Lead of HackerRank UIT, and Technical Head of E-Cell UIT. Explore my live work, projects like PrayagrajRooms, or connect with me directly!",
+        narrator_script: "Hello and welcome! I'm Gautam Kumar Maurya (gkm563), a Full-Stack AI Engineer, Cyber Security Researcher, and Data Scientist. I am an Academic Topper at United Institute of Technology, holding 1st Rank in my CSE Data Science branch and 5th Rank across the college in 1st year. I specialize in building secure web applications with minimal vulnerability, helping startup founders launch products live to market, and contributing to open source ecosystems with 15 plus merged patches. I also serve as Founder of CDN UIT, Vice President of GFG UIT, and Co-Lead of HackerRank UIT. Explore my live work, projects like PrayagrajRooms, or connect with me directly!",
 
         // Technical Arsenal Section
         skills_title: "Technical Arsenal",
