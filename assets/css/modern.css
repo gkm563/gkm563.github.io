@@ -491,3 +491,113 @@ a[aria-label*="Profile"]:hover, a[aria-label*="Email"]:hover, a[aria-label*="Wha
   opacity: 0;
   pointer-events: none;
 }
+
+/* ==========================================================================
+   GKM PREMIUM ANIMATION SUPPORT STYLES
+   ========================================================================== */
+
+/* ── Custom Cursor ─────────────────────────────────── */
+.gkm-cursor-dot,
+.gkm-cursor-ring {
+  position: fixed;
+  top: 0; left: 0;
+  pointer-events: none;
+  z-index: 9999;
+  border-radius: 50%;
+  mix-blend-mode: difference;
+  will-change: transform;
+}
+
+.gkm-cursor-dot {
+  width: 8px; height: 8px;
+  background: #2563eb;
+  transform: translate(-50%, -50%);
+}
+
+.gkm-cursor-ring {
+  width: 28px; height: 28px;
+  border: 2px solid rgba(37, 99, 235, 0.6);
+  background: transparent;
+  transform: translate(-50%, -50%);
+}
+
+@media (max-width: 1023px) {
+  .gkm-cursor-dot, .gkm-cursor-ring { display: none; }
+}
+
+/* ── Tech Orbs ─────────────────────────────────────── */
+.tech-orb {
+  will-change: transform;
+  transition: box-shadow 0.25s ease;
+  user-select: none;
+  line-height: 1.2;
+}
+
+.tech-orb:hover {
+  box-shadow: 0 8px 28px rgba(0,0,0,0.22);
+}
+
+/* ── SVG Rings ─────────────────────────────────────── */
+.gkm-ring {
+  will-change: transform;
+  transform-origin: center center;
+}
+
+/* ── gkm-reveal base state (GSAP sets from state) ─── */
+.gkm-reveal {
+  /* GSAP handles opacity/transform; no default hide needed */
+}
+
+/* ── Section headings animation target ─────────────── */
+.section-heading {
+  will-change: transform, opacity;
+}
+
+/* ── Floating badge extra hover glow ──────────────── */
+.floating-badge {
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.floating-badge:hover {
+  box-shadow: 0 12px 32px rgba(37, 99, 235, 0.18);
+}
+
+/* ── Improved ambient glow orbs ───────────────────── */
+.bg-glow-blue {
+  position: absolute;
+  width: 480px; height: 480px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(37, 99, 235, 0.10) 0%, transparent 70%);
+  filter: blur(40px);
+  pointer-events: none;
+  will-change: transform;
+}
+
+.bg-glow-sky {
+  position: absolute;
+  width: 380px; height: 380px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(2, 132, 199, 0.08) 0%, transparent 70%);
+  filter: blur(40px);
+  pointer-events: none;
+  will-change: transform;
+}
+
+/* ── Scroll-triggered number counters ─────────────── */
+[data-count] {
+  font-variant-numeric: tabular-nums;
+}
+
+/* ── Performance: contain layout for heavy sections ── */
+#skills, #projects, #achievements {
+  contain: layout style;
+}
+
+/* ── Reduced motion overrides ─────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  .tech-orb, .floating-badge, .gkm-ring, .bg-glow-blue, .bg-glow-sky {
+    animation: none !important;
+    transition: none !important;
+  }
+  .gkm-cursor-dot, .gkm-cursor-ring { display: none !important; }
+}

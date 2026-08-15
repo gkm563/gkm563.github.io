@@ -270,19 +270,12 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // --------------------------------------------------
-  // 8. 3D Perspective Card Tilt
+  // 8. 3D Perspective Card Tilt (kept for profile card)
   // --------------------------------------------------
   init3DTiltCards();
 
-  // --------------------------------------------------
-  // 9. GSAP ScrollTrigger Reveals
-  // --------------------------------------------------
-  initGSAPAnimations();
-
-  // --------------------------------------------------
-  // 10. Magnetic Button Interactions
-  // --------------------------------------------------
-  initMagneticButtons();
+  // NOTE: GSAP animations and magnetic buttons are handled
+  // by assets/js/gkm-animations.js (loaded after this file)
 });
 
 /* 3D Perspective Card Tilt */
