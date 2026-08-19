@@ -180,6 +180,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // 11. Magnetic Button Hover Pull
   initMagneticButtons();
+
+  // 12. Collapsible Details & Task Accordion
+  initCollapsibleDetails();
+
+  // 13. Phabricator Live Activity Feed Toggle
+  initPhabricatorFeed();
 });
 
 /* GSAP ScrollTrigger Animations */
@@ -201,7 +207,7 @@ function initGSAPAnimations() {
         .from('.metric-card', { y: 25, opacity: 0, stagger: 0.06, clearProps: 'all' }, '-=0.5');
 
   // Fail-safe section reveal using ScrollTrigger without locking opacity:0
-  const sectionSelectors = ['#journey', '#recognition', '#contributions', '#ecosystem', '#community', '#gallery', '#future'];
+  const sectionSelectors = ['#journey', '#recognition', '#phabricator-profile', '#contributions', '#ecosystem', '#community', '#gallery', '#future'];
 
   sectionSelectors.forEach(secId => {
     const secEl = document.querySelector(secId);
@@ -212,7 +218,7 @@ function initGSAPAnimations() {
         trigger: secEl,
         start: 'top 90%',
         onEnter: () => {
-          const cards = secEl.querySelectorAll('.journey-card, .recog-card, .contrib-card, .gallery-item');
+          const cards = secEl.querySelectorAll('.journey-card, .recog-card, .contrib-card, .gallery-item, .phab-card, .phab-feed-card');
           if (cards.length > 0) {
             gsap.from(cards, {
               y: 30,
@@ -457,4 +463,64 @@ function initStatsCountUp() {
       });
     }
   });
+}
+
+/* Collapsible Details & Task Accordion */
+function initCollapsibleDetails() {
+  const cardsList = document.querySelectorAll('.contrib-card');
+  cardsList.forEach(card => {
+    const toggleBtn = card.querySelector('.contrib-toggle-btn');
+    if (toggleBtn) {
+      toggleBtn.addEventListener('click', () => {
+        const isExpanded = card.classList.toggle('expanded');
+        const text = toggleBtn.querySelector('span');
+        if (text) {
+          text.textContent = isExpanded ? 'Hide Details' : 'Technical Details';
+        }
+      });
+    }
+  });
+
+  const inspectAllBtn = document.getElementById('btn-inspect-all');
+  if (inspectAllBtn) {
+    inspectAllBtn.addEventListener('click', () => {
+      const isExpanded = inspectAllBtn.classList.toggle('active');
+      const textEl = inspectAllBtn.querySelector('span');
+      const iconEl = inspectAllBtn.querySelector('i');
+      
+      cardsList.forEach(card => {
+        const toggleBtn = card.querySelector('.contrib-toggle-btn');
+        const text = toggleBtn ? toggleBtn.querySelector('span') : null;
+        
+        if (isExpanded) {
+          card.classList.add('expanded');
+          if (text) text.textContent = 'Hide Details';
+        } else {
+          card.classList.remove('expanded');
+          if (text) text.textContent = 'Technical Details';
+        }
+      });
+
+      if (textEl) textEl.textContent = isExpanded ? 'Collapse All Details' : 'Expand All Details';
+      if (iconEl) iconEl.className = isExpanded ? 'fa-solid fa-compress' : 'fa-solid fa-expand';
+    });
+  }
+}
+
+/* Phabricator Live Activity Feed Toggle */
+function initPhabricatorFeed() {
+  const showMoreBtn = document.getElementById('phab-show-more-btn');
+  const hiddenActivities = document.querySelectorAll('.phab-timeline-item.hidden-activity');
+  if (showMoreBtn) {
+    showMoreBtn.addEventListener('click', () => {
+      const isExpanded = showMoreBtn.classList.toggle('expanded');
+      hiddenActivities.forEach(item => {
+        item.style.display = isExpanded ? 'block' : 'none';
+      });
+      const text = showMoreBtn.querySelector('span');
+      if (text) {
+        text.textContent = isExpanded ? 'Show Less Activities' : 'Show More Activities';
+      }
+    });
+  }
 }
