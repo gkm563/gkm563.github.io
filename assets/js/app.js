@@ -274,6 +274,38 @@ document.addEventListener('DOMContentLoaded', () => {
   // --------------------------------------------------
   init3DTiltCards();
 
+  // --------------------------------------------------
+  // 9. Leadership Section Grid Toggle
+  // --------------------------------------------------
+  const toggleLeadershipBtn = document.getElementById('toggle-leadership-btn');
+  const additionalLeadership = document.getElementById('additional-leadership');
+
+  if (toggleLeadershipBtn && additionalLeadership) {
+    toggleLeadershipBtn.addEventListener('click', () => {
+      const isHidden = additionalLeadership.classList.contains('hidden');
+      const textSpan = toggleLeadershipBtn.querySelector('span');
+      const icon = toggleLeadershipBtn.querySelector('i') || toggleLeadershipBtn.querySelector('[data-lucide]');
+
+      if (isHidden) {
+        additionalLeadership.classList.remove('hidden');
+        setTimeout(() => {
+          additionalLeadership.classList.remove('opacity-0', 'max-h-0');
+          additionalLeadership.classList.add('opacity-100', 'max-h-[2000px]');
+        }, 10);
+        if (textSpan) textSpan.textContent = 'Hide Additional Roles';
+        if (icon) icon.style.transform = 'rotate(180deg)';
+      } else {
+        additionalLeadership.classList.remove('opacity-100', 'max-h-[2000px]');
+        additionalLeadership.classList.add('opacity-0', 'max-h-0');
+        setTimeout(() => {
+          additionalLeadership.classList.add('hidden');
+        }, 500);
+        if (textSpan) textSpan.textContent = 'Show Other Community & Ambassador Roles';
+        if (icon) icon.style.transform = 'rotate(0deg)';
+      }
+    });
+  }
+
   // NOTE: GSAP animations and magnetic buttons are handled
   // by assets/js/gkm-animations.js (loaded after this file)
 });
