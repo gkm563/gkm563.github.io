@@ -478,6 +478,34 @@ export const JOURNEY_DATA = {
       impact: "Prepared for UP Police Cyber Security Fellowship in 3rd year.",
       evidence: { images: [], links: [], github: null, certificate: null, linkedin: null }
     },
+    {
+      id: "sem-4-techeraa",
+      title: "Technical Associate & Content Writer at TechEraa",
+      shortDescription: "Co-authored and formatted tech articles; designed layouts and managed technical writing submissions.",
+      fullDescription: "Appointed as Technical Associate and Content Writer at TechEraa. Researched technical frameworks, co-authored developer-centric tutorials, and published content to drive student community engagement.",
+      startDate: "Apr 2026",
+      endDate: "Present",
+      phaseId: "year-2",
+      semesterId: "sem-4",
+      category: "Leadership",
+      status: "current",
+      importance: "normal",
+      skills: ["Technical Writing", "Content Creation", "Community Management", "Web Layouts"],
+      organization: "TechEraa",
+      role: "Technical Associate & Content Writer",
+      location: "Online",
+      whatHappened: "Joined TechEraa to lead technical articles and layout drafting.",
+      whyItMattered: "Enhanced developer communication skills and built student engagement.",
+      whatILearned: "SEO writing, layout design, content formatting, and tech documentation.",
+      impact: "Contributed to TechEraa's resource library and online developer outreach.",
+      evidence: {
+        images: [],
+        links: [],
+        github: null,
+        certificate: null,
+        linkedin: "https://www.linkedin.com/in/gkm563/"
+      }
+    },
 
     {
       id: "sem-5-prayagrajrooms-co-founder",
