@@ -288,15 +288,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
       if (isHidden) {
         additionalLeadership.classList.remove('hidden');
+        // Small delay to allow display block changes to register in browser flow
         setTimeout(() => {
-          additionalLeadership.classList.remove('opacity-0', 'max-h-0');
-          additionalLeadership.classList.add('opacity-100', 'max-h-[2000px]');
+          additionalLeadership.style.maxHeight = '2000px';
+          additionalLeadership.style.opacity = '1';
         }, 10);
         if (textSpan) textSpan.textContent = 'Hide Additional Roles';
         if (icon) icon.style.transform = 'rotate(180deg)';
       } else {
-        additionalLeadership.classList.remove('opacity-100', 'max-h-[2000px]');
-        additionalLeadership.classList.add('opacity-0', 'max-h-0');
+        additionalLeadership.style.maxHeight = '0px';
+        additionalLeadership.style.opacity = '0';
         setTimeout(() => {
           additionalLeadership.classList.add('hidden');
         }, 500);
