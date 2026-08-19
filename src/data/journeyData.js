@@ -10,11 +10,11 @@ export const JOURNEY_DATA = {
     degree: "B.Tech in Computer Science & Engineering (Data Science)",
     institution: "United Institute of Technology (UIT Prayagraj)",
     university: "Dr. A.P.J. Abdul Kalam Technical University (AKTU Lucknow)",
-    startYear: 2023,
-    expectedGraduationYear: 2027,
+    startYear: 2024,
+    expectedGraduationYear: 2028,
     currentYear: 3,
-    currentSemester: 6,
-    currentStatusText: "3rd Year (Semester 6) · Academic Rank 1 Branch Topper · AKTU Rank 5 · AIT Bangkok & UP Police Fellow"
+    currentSemester: 5,
+    currentStatusText: "3rd Year (Semester 5) · Academic Rank 1 Branch Topper (SGPA 8.5) · AKTU Rank 5 (1st Year Topper) · AIT Bangkok & UP Police Fellow"
   },
 
   phases: [
@@ -34,8 +34,8 @@ export const JOURNEY_DATA = {
       id: "year-1",
       title: "1st Year B.Tech",
       shortTitle: "1st Year",
-      subtitle: "1st Year Topper, C/Python & Google Cloud Badges",
-      period: "2023 – 2024",
+      subtitle: "1st Year Topper (Rank 5 College Overall), C/Python & Google Cloud Badges",
+      period: "2024 – 2025",
       icon: "Rocket",
       badgeColor: "blue",
       semesters: [
@@ -47,12 +47,12 @@ export const JOURNEY_DATA = {
       id: "year-2",
       title: "2nd Year B.Tech",
       shortTitle: "2nd Year",
-      subtitle: "Branch Rank 1, AKTU Rank 5 & MediaWiki Gerrit",
-      period: "2024 – 2025",
+      subtitle: "Branch Rank 1 Topper (SGPA 8.5) & MediaWiki Gerrit",
+      period: "2025 – 2026",
       icon: "ShieldCheck",
       badgeColor: "indigo",
       semesters: [
-        { id: "sem-3", title: "3rd Semester (Semester 3)", num: "Sem 3", desc: "Branch Rank 1 Topper, AKTU Rank 5, Java OOP & Operating Systems" },
+        { id: "sem-3", title: "3rd Semester (Semester 3)", num: "Sem 3", desc: "Branch Rank 1 Topper, Java OOP & Operating Systems" },
         { id: "sem-4", title: "4th Semester (Semester 4)", num: "Sem 4", desc: "MediaWiki Core Open Source Gerrit Patches & Ethical Hacking" }
       ]
     },
@@ -61,13 +61,13 @@ export const JOURNEY_DATA = {
       title: "3rd Year B.Tech (CURRENT)",
       shortTitle: "3rd Year (Current)",
       subtitle: "AIT Bangkok, UP Police Award, GFG VP & PrayagrajRooms",
-      period: "2025 – 2026",
+      period: "2026 – 2027",
       icon: "Zap",
       badgeColor: "emerald",
       isCurrent: true,
       semesters: [
-        { id: "sem-5", title: "5th Semester (Semester 5)", num: "Sem 5", desc: "GFG VP Leadership, PrayagrajRooms CTO Launch & Gemini 650+ Event" },
-        { id: "sem-6", title: "6th Semester (CURRENT)", num: "Sem 6", desc: "AIT Bangkok Fellowship, UP Police Cyber Award & Anthropic Certifications" }
+        { id: "sem-5", title: "5th Semester (Semester 5 - CURRENT)", num: "Sem 5", desc: "GFG VP Leadership, PrayagrajRooms CTO Launch & Gemini 650+ Event" },
+        { id: "sem-6", title: "6th Semester", num: "Sem 6", desc: "AIT Bangkok Fellowship, UP Police Cyber Award & Anthropic Certifications" }
       ]
     }
   ],
@@ -98,7 +98,7 @@ export const JOURNEY_DATA = {
     {
       phaseId: "year-1",
       phaseTitle: "B.Tech Year 1 (Semesters 1 & 2)",
-      period: "2023 – 2024",
+      period: "2024 – 2025",
       skills: [
         { name: "C Programming & Pointers", level: "Built With" },
         { name: "Python & DSA", level: "Built With" },
@@ -109,7 +109,7 @@ export const JOURNEY_DATA = {
     {
       phaseId: "year-2",
       phaseTitle: "B.Tech Year 2 (Semesters 3 & 4)",
-      period: "2024 – 2025",
+      period: "2025 – 2026",
       skills: [
         { name: "Java & OOP Systems", level: "Built With" },
         { name: "Operating Systems & SQL", level: "Used in Production" },
@@ -120,7 +120,7 @@ export const JOURNEY_DATA = {
     {
       phaseId: "year-3",
       phaseTitle: "B.Tech Year 3 (Semesters 5 & 6 — CURRENT FOCUS)",
-      period: "2025 – 2026",
+      period: "2026 – 2027",
       skills: [
         { name: "Agentic AI & Claude LLMs", level: "Learning & Built With" },
         { name: "Ubiquitous GIS & QGIS Spatial", level: "Used in Production" },
@@ -216,11 +216,11 @@ export const JOURNEY_DATA = {
 
     {
       id: "sem-1-first-year-topper-award",
-      title: "Awarded 1st Year Overall Academic Topper at UIT Prayagraj",
-      shortDescription: "Awarded 1st Year Academic Topper for top GPA performance across 1st Year B.Tech courses.",
-      fullDescription: "Received official college recognition as the 1st Year Overall Academic Topper at United Institute of Technology, Prayagraj under AKTU Lucknow syllabus.",
-      startDate: "Aug 2023",
-      endDate: "Jul 2024",
+      title: "1st Year Topper (Rank 5 College Overall in AKTU Exam)",
+      shortDescription: "Secured Rank 5 overall in United Institute of Technology in the B.Tech 1st Year AKTU exams in May 2025.",
+      fullDescription: "Achieved top academic performance in the B.Tech 1st Year results of Dr. A.P.J. Abdul Kalam Technical University (AKTU), securing Rank 5 overall at United Institute of Technology (UIT Naini, Prayagraj).",
+      startDate: "Aug 2024",
+      endDate: "May 2025",
       phaseId: "year-1",
       semesterId: "sem-1",
       category: "Award",
@@ -230,7 +230,7 @@ export const JOURNEY_DATA = {
       organization: "United Institute of Technology (UIT Prayagraj)",
       role: "1st Year Topper Scholar",
       location: "Prayagraj, Uttar Pradesh, India",
-      whatHappened: "Achieved highest academic marks in 1st Year B.Tech and awarded 1st Year Topper honor.",
+      whatHappened: "Secured Rank 5 overall in United Institute of Technology in the B.Tech 1st Year AKTU exams.",
       whyItMattered: "Set the benchmark for academic leadership in the institute.",
       whatILearned: "Consistent study strategy, C language internals, and calculus.",
       impact: "Earned academic prestige in the department.",
@@ -345,11 +345,11 @@ export const JOURNEY_DATA = {
 
     {
       id: "sem-3-aktu-rank-5-topper",
-      title: "CSE (Data Science) Branch Rank 1 Topper & AKTU Rank 5 Excellence Award",
-      shortDescription: "Ranked 1st in CSE (Data Science) branch and 5th overall across the college in AKTU semester exams.",
-      fullDescription: "Achieved top academic performance across Object-Oriented Programming (Java/Python), Operating Systems, Discrete Mathematics, and Computer Organization. Honored as Branch Rank 1 Topper and College Rank 5 Awardee.",
-      startDate: "Aug 2024",
-      endDate: "Jan 2025",
+      title: "Rank 1 in CSE (Data Science) - 2nd Year (SGPA 8.5)",
+      shortDescription: "Secured Rank 1 in CSE (Data Science) branch during the 2nd Year B.Tech AKTU exams with an SGPA of 8.5.",
+      fullDescription: "Ranked 1st in the Computer Science and Engineering (Data Science) branch for the entire 2nd Year B.Tech class at United Institute of Technology, achieving a branch-wide Rank 1 and an SGPA of 8.5 in the AKTU examinations.",
+      startDate: "Aug 2025",
+      endDate: "Jun 2026",
       phaseId: "year-2",
       semesterId: "sem-3",
       category: "Academic",
@@ -359,7 +359,7 @@ export const JOURNEY_DATA = {
       organization: "United Institute of Technology (UIT Prayagraj) / AKTU Lucknow",
       role: "Branch Rank 1 Scholar",
       location: "Prayagraj, Uttar Pradesh, India",
-      whatHappened: "Secured Rank 1 in CSE (Data Science) branch and Rank 5 college-wide in AKTU exams.",
+      whatHappened: "Secured Rank 1 in CSE (Data Science) branch with an SGPA of 8.5 in the 2nd Year B.Tech AKTU exams.",
       whyItMattered: "Validated deep theoretical understanding of core computer science systems.",
       whatILearned: "Process scheduling, memory management, discrete proofs, and OOP design patterns.",
       impact: "Earned academic prestige and student leadership opportunities within the department.",
