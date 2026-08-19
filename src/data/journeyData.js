@@ -572,6 +572,34 @@ export const JOURNEY_DATA = {
       }
     },
     {
+      id: "sem-5-portfolio-website",
+      title: "Personal Professional Portfolio Website Launch",
+      shortDescription: "Built and launched interactive portfolio site with modern responsive UI and Telegram contact integration.",
+      fullDescription: "Designed and engineered my official professional portfolio website to showcase my coding projects, academic records, and certifications. Built with clean HTML5/CSS3 and modular JS, deployed on GitHub Pages, and integrated with a real-time message notification system via Telegram Bot API.",
+      startDate: "Oct 2025",
+      endDate: "Present",
+      phaseId: "year-3",
+      semesterId: "sem-5",
+      category: "Project",
+      status: "current",
+      importance: "normal",
+      skills: ["HTML5", "CSS3", "JavaScript", "Telegram API", "GitHub Pages"],
+      organization: "Gautam Kumar Maurya (Personal Project)",
+      role: "Lead Developer",
+      location: "Prayagraj, Uttar Pradesh, India",
+      whatHappened: "Engineered and launched my portfolio website to present structured credentials and receive real-time messages.",
+      whyItMattered: "Serves as the main hub for professional outreach, showcasing my technical credentials to global recruiters and open-source networks.",
+      whatILearned: "Responsive CSS design, custom scroll triggers, DOM animation, API request flows, and production hosting setups.",
+      impact: "Maintains a live, fast-loading digital footprint visited by hundreds of developers and peers.",
+      evidence: {
+        images: [],
+        links: ["https://gkm563.github.io/gkmportfolio/"],
+        github: "https://github.com/gkm563/gkmportfolio",
+        certificate: null,
+        linkedin: "https://www.linkedin.com/in/gkm563/"
+      }
+    },
+    {
       id: "sem-6-up-police-cyber-award",
       title: "UP Police APCSIP-2026 Cyber Fellowship & Best Content Creator Award",
       shortDescription: "Completed 15-day digital forensic fellowship with Amroha Police; won Best Content Creator Award under DSP Anjali Kataria.",
