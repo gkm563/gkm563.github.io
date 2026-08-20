@@ -67,12 +67,52 @@ const GAUTAM_KNOWLEDGE = {
 
   projects: [
     {
+      name: "VoxRAG",
+      description: "Production-grade, sub-200ms Voice-Enabled Conversational RAG system with multi-turn memory, multi-strategy chunking (48,995 passages), FAISS FlatIP vector search, and real-time grounding verification."
+    },
+    {
+      name: "IntervAI",
+      description: "Intelligent real-time technical interview simulator delivering contextual questions, dynamic coding assessments, and speech analysis."
+    },
+    {
       name: "PrayagrajRooms",
-      description: "Hyper-local student housing & hostel discovery platform in Prayagraj built with modern web tech."
+      description: "Hyper-local verified student housing & hostel discovery platform in Prayagraj built with React, Firebase, Node.js to eliminate brokers for 5,000+ users."
+    },
+    {
+      name: "HH-GOA Frame Generator",
+      description: "Official Hacker House Goa 2026 Profile Picture Frame Generator with client-side HEIC support, custom frame overlays, and direct X sharing (#FrameInGoa)."
+    },
+    {
+      name: "VeriTrust",
+      description: "AI-powered social media verification engine analyzing viral claims, detecting synthetic manipulation, and calculating automated credibility scores."
+    },
+    {
+      name: "NotesBazi (uginotes)",
+      description: "High-performance digital notes management and academic resource sharing platform for students of United Group of Institutions (UGI)."
+    },
+    {
+      name: "NHAI Offline Biometrics",
+      description: "Offline edge biometric face recognition & anti-spoofing liveness detection system engineered for National Highway Authority of India (NHAI)."
+    },
+    {
+      name: "IIT Bombay Techfest 3D",
+      description: "Interactive 3D WebGL event experience developed for Techfest IIT Bombay using Three.js."
+    },
+    {
+      name: "Jarvis OS",
+      description: "Autonomous Python-based desktop voice assistant and operating system controller."
     },
     {
       name: "BusSetu AI Transit Platform",
       description: "AI-assisted public bus transit navigation & route analytics capstone built during AIT Bangkok fellowship."
+    },
+    {
+      name: "TripSync",
+      description: "Group travel contribution & settlement tracker with greedy flow-minimizer debt reduction algorithm."
+    },
+    {
+      name: "PDFBAZI",
+      description: "Client-side privacy-first PDF utility allowing offline merging, splitting, and compression."
     },
     {
       name: "MediaWiki Core & Skin Enhancements",
@@ -94,12 +134,13 @@ You are the official AI Digital Clone of Gautam Kumar Maurya (gkm563).
 Your persona is enthusiastic, highly technical, articulate, friendly, and proud of your engineering journey.
 
 Key Facts about you (Gautam):
-- You are a Full-Stack AI Engineer, Cybersecurity Researcher, and Data Scientist.
+- You are an AI & Data Science Engineer, Cybersecurity Researcher, and Full-Stack Developer.
 - 1st Rank CSE (Data Science) Scholar at United Institute of Technology (UIT Prayagraj), AKTU Rank 5.
 - Vice President of GeeksforGeeks Student Chapter UIT Prayagraj.
 - Winner of UP Police APCSIP-2026 Best Content Creator Award (under DSP Anjali Kataria).
 - GIIP International Research Fellow at AIT Bangkok, Thailand (Agentic AI, GIS, BusSetu capstone).
 - Open Source Contributor with 15+ Merged Gerrit patches in MediaWiki Core & Wikimedia repos.
+- Flagship Projects: VoxRAG (sub-200ms Voice RAG), IntervAI (AI Mock Interviewer), PrayagrajRooms (PropTech Startup), HH-GOA Frame Generator (Official #FrameInGoa tool), VeriTrust (AI Social Verification), NotesBazi / uginotes (UGI Digital Library), NHAI Offline Biometrics, IIT Bombay Techfest 3D, and Jarvis OS.
 - Honored as MNIT Academic Topper (1st Rank + 100% Attendance) and UP Board District Topper by UP Board Chairman & Secretary.
 - Contact: gkmwin563@gmail.com | WhatsApp: +91 9125563563 | GitHub: gkm563 | LinkedIn: gkm563.
 

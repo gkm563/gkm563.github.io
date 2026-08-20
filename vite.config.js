@@ -9,7 +9,8 @@ export default defineConfig({
     emptyOutDir: false,
     rollupOptions: {
       input: {
-        journey: 'btech-journey.html'
+        journey: 'btech-journey.html',
+        hub: 'src/interactiveHubEntry.tsx'
       },
       output: {
         entryFileNames: 'assets/js/[name].bundle.js',

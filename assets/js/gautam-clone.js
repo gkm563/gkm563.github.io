@@ -306,12 +306,16 @@ Highlights:
     }
 
     // 6. Projects & Open Source
-    if (/project|projects|bussetu|prayagrajrooms|gerrit|wikimedia|mediawiki|patch|code/.test(q)) {
-      return `💻 **Top Projects & Open Source Work**
+    if (/project|projects|voxrag|rag|intervai|hh-goa|veritrust|notesbazi|uginotes|bussetu|prayagrajrooms|gerrit|wikimedia|mediawiki|patch|code/.test(q)) {
+      return `💻 **Gautam's Top Engineering Projects**
 
-• **BusSetu AI Transit Platform**: AI-assisted public bus navigation & route analytics capstone built at AIT Bangkok.
-• **PrayagrajRooms**: Hyper-local student housing discovery portal in Prayagraj.
-• **MediaWiki Core Patches**: 15+ merged production commits powering Wikipedia (UploadWizard, MinervaNeue, Pywikibot).`;
+• **VoxRAG**: Sub-200ms Voice Conversational RAG with FAISS FlatIP & real-time grounding (48,995 passages).
+• **IntervAI**: AI-powered mock interview simulator with real-time feedback & code assessment.
+• **HH-GOA Frame Generator**: Official Hacker House Goa 2026 profile picture frame generator (#FrameInGoa).
+• **PrayagrajRooms**: PropTech startup eliminating student brokerage in Prayagraj.
+• **VeriTrust**: AI social media verification & deepfake/manipulation detection system.
+• **NotesBazi (uginotes)**: Digital library & notes platform for UGI campuses.
+• **MediaWiki Core Patches**: 15+ merged production commits powering Wikipedia.`;
     }
 
     // Smart contextual dynamic fallback (No repetitive static menus!)
