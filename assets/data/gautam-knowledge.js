@@ -133,8 +133,8 @@ window.GKM_KNOWLEDGE = {
       source: "https://gkm563.github.io"
     },
     {
-      title: "1st Place — WikiClub UIT Open Source Contribution Sprint",
-      detail: "Won 1st place in a 1-week open source sprint. Submitted and merged 7 patches to Wikimedia infrastructure using Gerrit and Phabricator review systems. Also opened 10+ reviews.",
+      title: "1st Place — 1-Week Open Source Marathon by WikiClub Tech UIT",
+      detail: "Won 1st place in the 1-week Open Source Marathon organized by WikiClub Tech UIT. Submitted and merged 7+ patches to Wikimedia / MediaWiki infrastructure using Gerrit and Phabricator review systems.",
       date: "May 25, 2026",
       source: "https://www.linkedin.com/in/gkm563"
     },
@@ -534,10 +534,10 @@ window.GKM_KNOWLEDGE = {
       likes: 1180
     },
     {
-      title: "WikiClub UIT Sprint: 1st Place",
+      title: "WikiClub Tech UIT Marathon: 1st Place",
       date: "May 25, 2026",
-      summary: "Won 1st Place in 1-week Open Source Contribution Sprint by WikiClub UIT. Submitted and merged multiple patches to Wikimedia infrastructure via Gerrit and Phabricator. Merged 7 patches, opened 10+ reviews.",
-      hashtags: "#opensource #wikipedia #wikimedia #gerrit",
+      summary: "Won 1st Place in 1-week Open Source Contribution Marathon by WikiClub Tech UIT. Submitted and merged multiple patches to Wikimedia infrastructure via Gerrit and Phabricator. Merged 7+ patches, opened 10+ reviews.",
+      hashtags: "#opensource #wikipedia #wikimedia #gerrit #wikiclubtech",
       link: "https://www.linkedin.com/in/gkm563",
       likes: 1560
     },

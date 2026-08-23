@@ -447,12 +447,43 @@ export const JOURNEY_DATA = {
       impact: "Established global open-source engineering profile.",
       evidence: {
         images: [
+          "assets/images/gallery/gautam-kumar-maurya-wikiclub-marathon-1st.jpg",
           "https://media.licdn.com/dms/image/v2/D5622AQEhYOWywZ76tQ/feedshare-shrink_800/B56ZcUpjdrHgAk-/0/1748398128970?e=1788393600&v=beta&t=XtE0llrmk4odW3HTiZJFyepSk02b4fwT6Teq6yAQ3U8",
           "assets/images/gallery/gautam-kumar-maurya-gfg-award.jpg"
         ],
         links: ["open-source-contributions.html"],
         github: "https://github.com/gkm563",
         certificate: "https://upload.wikimedia.org/wikipedia/commons/d/d9/%281%29WikiClubTech_Technical_Impact_Report_Jan_Jun_2026_%281%29.pdf",
+        linkedin: "https://www.linkedin.com/in/gkm563/"
+      }
+    },
+    {
+      id: "sem-4-wikiclub-marathon-1st-place",
+      title: "1st Place Winner — 1-Week Open Source Marathon (WikiClub Tech UIT)",
+      shortDescription: "Won 1st Place in the 1-Week Open Source Marathon by WikiClub Tech UIT for merging production Wikimedia / MediaWiki patches.",
+      fullDescription: "Secured 1st Rank across the institution in the intensive 1-Week Open Source Contribution Marathon organized by WikiClub Tech UIT. Authored and submitted production patches to MediaWiki Core and extensions, navigated Gerrit peer review pipelines, and received 1st place recognition and swags.",
+      startDate: "Feb 2025",
+      endDate: "Apr 2025",
+      phaseId: "year-2",
+      semesterId: "sem-4",
+      category: "Award",
+      status: "completed",
+      importance: "major",
+      skills: ["MediaWiki Core", "Gerrit Code Review", "Git", "PHP", "Open Source Leadership", "Problem Solving"],
+      organization: "WikiClub Tech UIT / Wikimedia Foundation",
+      role: "1st Place Winner & Lead Contributor",
+      location: "United Institute of Technology, Prayagraj",
+      whatHappened: "Achieved 1st Rank in the open source marathon by submitting and merging production patches to Wikimedia repositories.",
+      whyItMattered: "Demonstrated peer-reviewed open source engineering capability under timed marathon pressure.",
+      whatILearned: "Fast code review iterations, Gerrit workflows, and production Git collaboration standards.",
+      impact: "Inspired student developer community engagement in the Wikimedia technical ecosystem.",
+      evidence: {
+        images: [
+          "assets/images/gallery/gautam-kumar-maurya-wikiclub-marathon-1st.jpg"
+        ],
+        links: ["open-source-contributions.html"],
+        github: "https://github.com/gkm563",
+        certificate: null,
         linkedin: "https://www.linkedin.com/in/gkm563/"
       }
     },
