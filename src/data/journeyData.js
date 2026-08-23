@@ -652,7 +652,7 @@ export const JOURNEY_DATA = {
       impact: "Maintains a live, fast-loading digital footprint visited by hundreds of developers and peers.",
       evidence: {
         images: [],
-        links: ["https://gkm563.github.io/gkmportfolio/"],
+        links: ["https://gkm563.github.io/"],
         github: "https://github.com/gkm563/gkmportfolio",
         certificate: null,
         linkedin: "https://www.linkedin.com/in/gkm563/"
