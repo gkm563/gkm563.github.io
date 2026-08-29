@@ -19,11 +19,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <meta name="format-detection" content="telephone=no, date=no, address=no, email=no">
 
-    <!-- Performance: Preconnect to external origins -->
+    <!-- ═══════════════════════════════════════
+         PERFORMANCE ACCELERATION — DNS PREFETCH & PRECONNECT
+    ═══════════════════════════════════════ -->
+    <link rel="dns-prefetch" href="//fonts.googleapis.com">
+    <link rel="dns-prefetch" href="//fonts.gstatic.com">
+    <link rel="dns-prefetch" href="//cdnjs.cloudflare.com">
+    <link rel="dns-prefetch" href="//cdn.tailwindcss.com">
+    <link rel="dns-prefetch" href="//unpkg.com">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preconnect" href="https://unpkg.com">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
     <link rel="preconnect" href="https://cdn.tailwindcss.com">
+    <link rel="preconnect" href="https://unpkg.com">
+
+    <!-- Preload Critical LCP Hero Image -->
+    <link rel="preload" as="image" href="assets/images/profile/Gautam_Kumar_Maurya.jpg" type="image/jpeg" fetchpriority="high">
 
     <!-- ═══════════════════════════════════════
          PRIMARY SEO — TITLE, DESCRIPTION & KEYWORDS
@@ -385,14 +396,22 @@
       }
     </script>
 
-    <!-- FontAwesome Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Optimized Non-Blocking Google Fonts Loading -->
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" media="print" onload="this.media='all'">
+    <noscript>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap">
+    </noscript>
 
-    <!-- Lucide Icons -->
-    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Optimized Non-Blocking FontAwesome Icons -->
+    <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" media="print" onload="this.media='all'">
+    <noscript>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    </noscript>
 
-    <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Lucide Icons (Deferred) -->
+    <script src="https://unpkg.com/lucide@latest" defer></script>
 
     <!-- Custom Theme & Animations -->
     <link rel="stylesheet" href="assets/css/modern.css">
@@ -1832,6 +1851,7 @@
                         <div class="relative h-56 overflow-hidden bg-slate-200 dark:bg-slate-800">
                             <img src="assets/images/gallery/gautam-kumar-maurya-wikiclub-marathon-1st.jpg" 
                                  alt="1st Rank in 1-Week Open Source Marathon by WikiClub Tech UIT" 
+                                 loading="lazy" decoding="async"
                                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                             <div class="absolute top-3 right-3 px-2.5 py-1 rounded-full bg-purple-600/90 backdrop-blur-md text-white text-[10px] font-bold uppercase tracking-wider">
                                 Open Source 1st Rank
@@ -1850,6 +1870,7 @@
                         <div class="relative h-56 overflow-hidden bg-slate-200 dark:bg-slate-800">
                             <img src="assets/images/ait-bangkok/gautam-kumar-maurya-gkm-ait-bangkok-thailand-internship-145.jpg" 
                                  alt="Global Innovation Internship AIT Bangkok" 
+                                 loading="lazy" decoding="async"
                                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                             <div class="absolute top-3 right-3 px-2.5 py-1 rounded-full bg-emerald-600/90 backdrop-blur-md text-white text-[10px] font-bold uppercase tracking-wider">
                                 International Fellowship
@@ -1868,6 +1889,7 @@
                         <div class="relative h-56 overflow-hidden bg-slate-200 dark:bg-slate-800">
                             <img src="assets/images/gallery/gautam-kumar-maurya-best-content-creator-award.jpg" 
                                  alt="Best Content Creator Award" 
+                                 loading="lazy" decoding="async"
                                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                             <div class="absolute top-3 right-3 px-2.5 py-1 rounded-full bg-sky-600/90 backdrop-blur-md text-white text-[10px] font-bold uppercase tracking-wider">
                                 UP Police Fellowship
@@ -1886,6 +1908,7 @@
                         <div class="relative h-56 overflow-hidden bg-slate-200 dark:bg-slate-800">
                             <img src="assets/images/gallery/gautam-kumar-maurya-aktu.jpg" 
                                  alt="AKTU Branch Topper" 
+                                 loading="lazy" decoding="async"
                                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                             <div class="absolute top-3 right-3 px-2.5 py-1 rounded-full bg-amber-600/90 backdrop-blur-md text-white text-[10px] font-bold uppercase tracking-wider">
                                 Academic Honor
@@ -1904,6 +1927,7 @@
                         <div class="relative h-56 overflow-hidden bg-slate-200 dark:bg-slate-800">
                             <img src="assets/images/gallery/gautam-kumar-maurya-ffdg.jpg" 
                                  alt="FlutterFlow Developers Group" 
+                                 loading="lazy" decoding="async"
                                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                             <div class="absolute top-3 right-3 px-2.5 py-1 rounded-full bg-indigo-600/90 backdrop-blur-md text-white text-[10px] font-bold uppercase tracking-wider">
                                 Developer Meetup
@@ -1922,6 +1946,7 @@
                         <div class="relative h-56 overflow-hidden bg-slate-200 dark:bg-slate-800">
                             <img src="assets/images/gallery/gautam-kumar-maurya-uit-topper.jpg" 
                                  alt="UIT Academic Excellence" 
+                                 loading="lazy" decoding="async"
                                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                             <div class="absolute top-3 right-3 px-2.5 py-1 rounded-full bg-purple-600/90 backdrop-blur-md text-white text-[10px] font-bold uppercase tracking-wider">
                                 Academic Rank 1
@@ -1940,6 +1965,7 @@
                         <div class="relative h-56 overflow-hidden bg-slate-200 dark:bg-slate-800">
                             <img src="assets/images/gallery/gautam-kumar-maurya-gfg-award.jpg" 
                                  alt="GeeksforGeeks Student Chapter – UIT" 
+                                 loading="lazy" decoding="async"
                                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                             <div class="absolute top-3 right-3 px-2.5 py-1 rounded-full bg-emerald-600/90 backdrop-blur-md text-white text-[10px] font-bold uppercase tracking-wider">
                                 Student Leadership
@@ -1958,6 +1984,7 @@
                         <div class="relative h-56 overflow-hidden bg-slate-200 dark:bg-slate-800">
                             <img src="assets/images/gallery/gautam-kumar-maurya-gsa.jpg" 
                                  alt="Google Student Ambassador Event Co-Organizer" 
+                                 loading="lazy" decoding="async"
                                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                             <div class="absolute top-3 right-3 px-2.5 py-1 rounded-full bg-blue-600/90 backdrop-blur-md text-white text-[10px] font-bold uppercase tracking-wider">
                                 Co-Organizer (650+)
@@ -1976,6 +2003,7 @@
                         <div class="relative h-56 overflow-hidden bg-slate-200 dark:bg-slate-800">
                             <img src="assets/images/gallery/gautam-kumar-maurya-1st-in-webdie.jpg" 
                                  alt="Webdie Hackathon Champion" 
+                                 loading="lazy" decoding="async"
                                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                             <div class="absolute top-3 right-3 px-2.5 py-1 rounded-full bg-amber-600/90 backdrop-blur-md text-white text-[10px] font-bold uppercase tracking-wider">
                                 Hackathon 1st Rank
@@ -1994,6 +2022,7 @@
                         <div class="relative h-56 overflow-hidden bg-slate-200 dark:bg-slate-800">
                             <img src="assets/images/gallery/gautam-kumar-maurya-iita.jpg" 
                                  alt="MNIT Professor Academic Topper Award" 
+                                 loading="lazy" decoding="async"
                                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                             <div class="absolute top-3 right-3 px-2.5 py-1 rounded-full bg-amber-600/90 backdrop-blur-md text-white text-[10px] font-bold uppercase tracking-wider">
                                 Academic Honor
@@ -2012,6 +2041,7 @@
                         <div class="relative h-56 overflow-hidden bg-slate-200 dark:bg-slate-800">
                             <img src="assets/images/gallery/gautam-kumar-maurya-school.jpg" 
                                  alt="School Academic Journey" 
+                                 loading="lazy" decoding="async"
                                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                             <div class="absolute top-3 right-3 px-2.5 py-1 rounded-full bg-rose-600/90 backdrop-blur-md text-white text-[10px] font-bold uppercase tracking-wider">
                                 Early Milestones
@@ -2030,6 +2060,7 @@
                         <div class="relative h-56 overflow-hidden bg-slate-200 dark:bg-slate-800">
                             <img src="assets/images/gallery/gautam-kumar-maurya-upsmp.jpg" 
                                  alt="UP Board District Topper Award" 
+                                 loading="lazy" decoding="async"
                                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                             <div class="absolute top-3 right-3 px-2.5 py-1 rounded-full bg-emerald-600/90 backdrop-blur-md text-white text-[10px] font-bold uppercase tracking-wider">
                                 State Honor
@@ -2048,6 +2079,7 @@
                         <div class="relative h-56 overflow-hidden bg-slate-200 dark:bg-slate-800">
                             <img src="assets/images/gallery/gautam-kumar-maurya-up-police.jpg" 
                                  alt="Cyber Security Internship" 
+                                 loading="lazy" decoding="async"
                                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                             <div class="absolute top-3 right-3 px-2.5 py-1 rounded-full bg-sky-600/90 backdrop-blur-md text-white text-[10px] font-bold uppercase tracking-wider">
                                 Cyber Security
@@ -2339,21 +2371,22 @@
         <span>Portfolio link copied to clipboard!</span>
     </div>
 
-    <!-- GSAP 3 & ScrollTrigger CDNs -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <!-- GSAP 3 & ScrollTrigger CDNs (Deferred) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
 
-    <!-- Application Script -->
-    <script src="assets/js/app.js"></script>
-    <!-- Premium GSAP Animation System -->
-    <script src="assets/js/gkm-animations.js"></script>
-    <script src="assets/js/gautam-knowledge.js"></script>
-    <script src="assets/js/gautam-clone.js"></script>
+    <!-- Application Scripts (Deferred) -->
+    <script src="assets/js/app.js" defer></script>
+    <script src="assets/js/gkm-animations.js" defer></script>
+    <script src="assets/js/gautam-knowledge.js" defer></script>
+    <script src="assets/js/gautam-clone.js" defer></script>
     <script>
-      // Initialize Lucide icons on load
-      if (window.lucide) {
-        window.lucide.createIcons();
-      }
+      // Initialize Lucide icons when DOM is interactive
+      document.addEventListener('DOMContentLoaded', () => {
+        if (window.lucide) {
+          window.lucide.createIcons();
+        }
+      });
     </script>
 
 </body>

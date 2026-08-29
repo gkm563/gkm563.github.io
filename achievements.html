@@ -54,12 +54,32 @@
       };
     </script>
 
-    <!-- Google Fonts & Font Awesome & Lucide Icons -->
+    <!-- DNS Prefetch & Preconnect -->
+    <link rel="dns-prefetch" href="//fonts.googleapis.com">
+    <link rel="dns-prefetch" href="//fonts.gstatic.com">
+    <link rel="dns-prefetch" href="//cdnjs.cloudflare.com">
+    <link rel="dns-prefetch" href="//cdn.tailwindcss.com">
+    <link rel="dns-prefetch" href="//unpkg.com">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Fira+Code:wght@500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+
+    <!-- Non-Blocking Google Fonts -->
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Fira+Code:wght@500;600;700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Fira+Code:wght@500;600;700&display=swap" media="print" onload="this.media='all'">
+    <noscript>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Fira+Code:wght@500;600;700&display=swap">
+    </noscript>
+
+    <!-- Non-Blocking Font Awesome -->
+    <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" media="print" onload="this.media='all'">
+    <noscript>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    </noscript>
+
+    <!-- Lucide Icons (Deferred) -->
+    <script src="https://unpkg.com/lucide@latest" defer></script>
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="./assets/css/modern.css">
@@ -241,7 +261,7 @@
                 <div class="award-card glass-card rounded-3xl border border-slate-200 dark:border-slate-800 overflow-hidden hover-elevate flex flex-col justify-between" data-category="gov">
                     <div>
                         <div class="aspect-video w-full overflow-hidden bg-slate-100 dark:bg-slate-900 relative group cursor-pointer" onclick="openLightbox('assets/images/gallery/gautam-kumar-maurya-best-content-creator-award.jpg', 'Awarded Best Content Creator by DSP Anjali Kataria Ma\'am during UP Police Cyber Security Internship')">
-                            <img src="assets/images/gallery/gautam-kumar-maurya-best-content-creator-award.jpg" alt="Best Content Creator Award by DSP Anjali Kataria" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            <img src="assets/images/gallery/gautam-kumar-maurya-best-content-creator-award.jpg" alt="Best Content Creator Award by DSP Anjali Kataria" loading="lazy" decoding="async" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                             <div class="absolute inset-0 bg-slate-950/30 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white">
                                 <i data-lucide="zoom-in" class="w-6 h-6"></i>
                             </div>
@@ -270,7 +290,7 @@
                 <div class="award-card glass-card rounded-3xl border border-slate-200 dark:border-slate-800 overflow-hidden hover-elevate flex flex-col justify-between" data-category="hackathons">
                     <div>
                         <div class="aspect-video w-full overflow-hidden bg-slate-100 dark:bg-slate-900 relative group cursor-pointer" onclick="openLightbox('assets/images/gallery/gautam-kumar-maurya-1st-in-webdie.jpg', '1st Place WebDie Web Development Trophy at Enigma XIII')">
-                            <img src="assets/images/gallery/gautam-kumar-maurya-1st-in-webdie.jpg" alt="1st Place WebDie Winner Gautam Kumar Maurya" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            <img src="assets/images/gallery/gautam-kumar-maurya-1st-in-webdie.jpg" alt="1st Place WebDie Winner Gautam Kumar Maurya" loading="lazy" decoding="async" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                             <div class="absolute inset-0 bg-slate-950/30 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white">
                                 <i data-lucide="zoom-in" class="w-6 h-6"></i>
                             </div>
@@ -299,7 +319,7 @@
                 <div class="award-card glass-card rounded-3xl border border-slate-200 dark:border-slate-800 overflow-hidden hover-elevate flex flex-col justify-between" data-category="hackathons">
                     <div>
                         <div class="aspect-video w-full overflow-hidden bg-slate-100 dark:bg-slate-900 relative group cursor-pointer" onclick="openLightbox('assets/images/gallery/gautam-kumar-maurya-wikiclub-marathon-1st.jpg', '1st Place in 1-Week Open Source Marathon by WikiClub Tech UIT')">
-                            <img src="assets/images/gallery/gautam-kumar-maurya-wikiclub-marathon-1st.jpg" alt="1st Place WikiClub Tech Marathon Winner Gautam Kumar Maurya" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            <img src="assets/images/gallery/gautam-kumar-maurya-wikiclub-marathon-1st.jpg" alt="1st Place WikiClub Tech Marathon Winner Gautam Kumar Maurya" loading="lazy" decoding="async" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                             <div class="absolute inset-0 bg-slate-950/30 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white">
                                 <i data-lucide="zoom-in" class="w-6 h-6"></i>
                             </div>
@@ -328,7 +348,7 @@
                 <div class="award-card glass-card rounded-3xl border border-slate-200 dark:border-slate-800 overflow-hidden hover-elevate flex flex-col justify-between" data-category="academic">
                     <div>
                         <div class="aspect-video w-full overflow-hidden bg-slate-100 dark:bg-slate-900 relative group cursor-pointer" onclick="openLightbox('assets/images/gallery/gautam-kumar-maurya-uit-topper.jpg', 'Academic Rank 1 CSE (Data Science) Felicitation at United Institute of Technology')">
-                            <img src="assets/images/gallery/gautam-kumar-maurya-uit-topper.jpg" alt="Academic Rank 1 Scholar Gautam Kumar Maurya" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            <img src="assets/images/gallery/gautam-kumar-maurya-uit-topper.jpg" alt="Academic Rank 1 Scholar Gautam Kumar Maurya" loading="lazy" decoding="async" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                             <div class="absolute inset-0 bg-slate-950/30 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white">
                                 <i data-lucide="zoom-in" class="w-6 h-6"></i>
                             </div>
@@ -357,7 +377,7 @@
                 <div class="award-card glass-card rounded-3xl border border-slate-200 dark:border-slate-800 overflow-hidden hover-elevate flex flex-col justify-between" data-category="leadership">
                     <div>
                         <div class="aspect-video w-full overflow-hidden bg-slate-100 dark:bg-slate-900 relative group cursor-pointer" onclick="openLightbox('assets/images/gallery/gautam-kumar-maurya-ait-bangkok-145.jpg', 'AIT Bangkok GIIP-2026 Thailand Research Fellowship')">
-                            <img src="assets/images/gallery/gautam-kumar-maurya-ait-bangkok-145.jpg" alt="AIT Bangkok GIIP Fellowship Gautam Kumar Maurya" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            <img src="assets/images/gallery/gautam-kumar-maurya-ait-bangkok-145.jpg" alt="AIT Bangkok GIIP Fellowship Gautam Kumar Maurya" loading="lazy" decoding="async" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                             <div class="absolute inset-0 bg-slate-950/30 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white">
                                 <i data-lucide="zoom-in" class="w-6 h-6"></i>
                             </div>
@@ -386,7 +406,7 @@
                 <div class="award-card glass-card rounded-3xl border border-slate-200 dark:border-slate-800 overflow-hidden hover-elevate flex flex-col justify-between" data-category="academic">
                     <div>
                         <div class="aspect-video w-full overflow-hidden bg-slate-100 dark:bg-slate-900 relative group cursor-pointer" onclick="openLightbox('assets/images/gallery/gautam-kumar-maurya-upsmp.jpg', 'Honored by Secretary UP Board and Dainik Jagran for 92.67% Class 12th Board Score')">
-                            <img src="assets/images/gallery/gautam-kumar-maurya-upsmp.jpg" alt="UP Board 92.67% Felicitation Gautam Kumar Maurya" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            <img src="assets/images/gallery/gautam-kumar-maurya-upsmp.jpg" alt="UP Board 92.67% Felicitation Gautam Kumar Maurya" loading="lazy" decoding="async" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                             <div class="absolute inset-0 bg-slate-950/30 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white">
                                 <i data-lucide="zoom-in" class="w-6 h-6"></i>
                             </div>
