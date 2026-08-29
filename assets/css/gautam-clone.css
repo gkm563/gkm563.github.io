@@ -449,16 +449,28 @@ html:not(.dark) .gkm-clone-input {
 /* Mobile Responsiveness for Chat Window */
 @media (max-width: 480px) {
   .gkm-clone-window {
-    right: 12px;
-    bottom: 84px;
-    width: calc(100vw - 24px);
-    height: 520px;
-    border-radius: 20px;
+    right: 8px !important;
+    left: 8px !important;
+    bottom: 80px !important;
+    width: auto !important;
+    max-width: calc(100vw - 16px) !important;
+    height: min(560px, calc(100dvh - 100px)) !important;
+    max-height: 85vh !important;
+    border-radius: 20px !important;
   }
 
   .gkm-clone-fab {
-    bottom: 20px;
-    right: 20px;
-    padding: 8px 14px 8px 10px;
+    bottom: 16px !important;
+    right: 16px !important;
+    padding: 8px 12px 8px 10px !important;
+    gap: 8px !important;
+  }
+
+  .gkm-fab-title {
+    font-size: 12px !important;
+  }
+
+  .gkm-fab-subtitle {
+    font-size: 10px !important;
   }
 }

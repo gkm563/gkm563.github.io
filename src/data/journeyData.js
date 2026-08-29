@@ -707,11 +707,8 @@ export const JOURNEY_DATA = {
       whatILearned: "High-pressure operational management, institutional leadership, judge coordination, and student mentorship.",
       impact: "Successfully prepared top teams to represent the institute at the National Smart India Hackathon 2026.",
       evidence: {
-        images: [
-          "assets/images/mentors/dr-manas-pandey.jpg",
-          "assets/images/mentors/dr-dhananjay-sharma.jpg"
-        ],
-        links: ["https://www.linkedin.com/in/gkm563/"],
+        images: [],
+        links: [],
         github: null,
         certificate: null,
         linkedin: "https://www.linkedin.com/in/gkm563/"
