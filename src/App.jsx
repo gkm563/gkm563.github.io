@@ -191,16 +191,16 @@ export default function App() {
           </a>
 
           {/* Desktop Navigation Links */}
-          <nav className="hidden lg:flex items-center gap-7 text-sm font-medium text-slate-600 dark:text-slate-300">
+          <nav className="hidden lg:flex items-center gap-6 text-sm font-medium text-slate-600 dark:text-slate-300">
             <a href="index.html" className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors flex items-center gap-1">
               <ArrowLeft className="w-3.5 h-3.5" />
               <span>Back to Portfolio</span>
             </a>
+            <a href="certifications.html" className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Certifications</a>
+            <a href="achievements.html" className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Achievements</a>
             <a href="ait-global-innovation-internship.html" className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">GIIP Thailand</a>
             <a href="up-police-internship.html" className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">UP Police</a>
             <a href="open-source-contributions.html" className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Wikimedia</a>
-            <a href="index.html#projects" className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Projects</a>
-            <a href="index.html#achievements" className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Awards</a>
           </nav>
 
           {/* Right Action CTA Buttons */}
@@ -257,10 +257,11 @@ export default function App() {
                   <ArrowLeft className="w-4 h-4 text-blue-600" />
                   <span>Main Portfolio Home</span>
                 </a>
+                <a href="certifications.html" className="p-2.5 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800">40+ Certifications</a>
+                <a href="achievements.html" className="p-2.5 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800">Honors & Awards</a>
                 <a href="index.html#projects" className="p-2.5 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800">Projects</a>
                 <a href="index.html#experience" className="p-2.5 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800">Internships & Research</a>
                 <a href="index.html#leadership" className="p-2.5 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800">Leadership Roles</a>
-                <a href="index.html#achievements" className="p-2.5 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800">Awards & Honors</a>
               </nav>
 
               <div className="mt-6 pt-6 border-t border-slate-200 dark:border-slate-800 flex flex-col gap-2">
