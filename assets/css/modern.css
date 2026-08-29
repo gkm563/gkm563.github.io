@@ -563,19 +563,21 @@ a[aria-label*="Profile"]:hover, a[aria-label*="Email"]:hover, a[aria-label*="Wha
 
 .float-badge-1 {
   top: 6%;
-  right: -15px;
+  right: -24px;
   animation: floatAirSlow 6.5s ease-in-out infinite;
 }
 
 .float-badge-2 {
-  bottom: 22%;
-  left: -25px;
+  top: 34%;
+  left: -40px;
+  bottom: auto;
   animation: floatAirMedium 5.8s ease-in-out infinite 1.6s;
 }
 
 .float-badge-3 {
-  bottom: 4%;
-  right: -10px;
+  bottom: 8%;
+  right: -24px;
+  top: auto;
   animation: floatAirSlow 7.2s ease-in-out infinite 3.2s;
 }
 
