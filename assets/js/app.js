@@ -62,14 +62,19 @@ document.addEventListener('DOMContentLoaded', () => {
   const sections = document.querySelectorAll('section[id]');
   const navLinks = document.querySelectorAll('.nav-link');
 
-  function handleNavbarScroll() {
+  let isTicking = false;
+  let isNavFloating = false;
+
+  function updateNavbar() {
     const scrollPos = window.scrollY;
     
     if (navbar) {
-      if (scrollPos > 35) {
+      if (!isNavFloating && scrollPos > 40) {
         navbar.classList.add('floating-nav-active');
-      } else {
+        isNavFloating = true;
+      } else if (isNavFloating && scrollPos < 15) {
         navbar.classList.remove('floating-nav-active');
+        isNavFloating = false;
       }
     }
 
@@ -100,6 +105,13 @@ document.addEventListener('DOMContentLoaded', () => {
           }
         });
       }
+    }
+  }
+
+  function handleNavbarScroll() {
+    if (!isTicking) {
+      window.requestAnimationFrame(updateNavbar);
+      isTicking = true;
     }
   }
 

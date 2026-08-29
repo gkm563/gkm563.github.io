@@ -95,55 +95,65 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* ══════════════════════════════════════════════════
-   ULTRA-SMOOTH FLOATING CAPSULE NAVBAR SYSTEM
+   APPLE-GRADE FLUID FLOATING CAPSULE NAVBAR
    ══════════════════════════════════════════════════ */
 #navbar {
   position: fixed;
   top: 0;
-  left: 0;
-  right: 0;
-  width: 100%;
+  left: 50% !important;
+  right: auto !important;
+  transform: translateX(-50%) !important;
+  width: 100% !important;
+  max-width: 100% !important;
   z-index: 50;
-  background: rgba(248, 250, 252, 0.85);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
+  border-radius: 0px;
+  background: rgba(248, 250, 252, 0.82);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid transparent;
   border-bottom: 1px solid rgba(226, 232, 240, 0.7);
-  transition: all 0.45s cubic-bezier(0.16, 1, 0.3, 1) !important;
-  will-change: transform, top, border-radius, background-color, box-shadow, width;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.03);
+  transition: top 0.45s cubic-bezier(0.25, 1, 0.5, 1),
+              width 0.45s cubic-bezier(0.25, 1, 0.5, 1),
+              max-width 0.45s cubic-bezier(0.25, 1, 0.5, 1),
+              border-radius 0.45s cubic-bezier(0.25, 1, 0.5, 1),
+              border-color 0.4s ease,
+              background-color 0.4s ease,
+              box-shadow 0.45s cubic-bezier(0.25, 1, 0.5, 1) !important;
+  will-change: top, width, border-radius, box-shadow;
 }
 
 .dark #navbar,
 .dark-theme #navbar {
-  background: rgba(11, 15, 25, 0.85);
+  background: rgba(11, 15, 25, 0.82);
   border-bottom: 1px solid rgba(30, 41, 59, 0.7);
 }
 
 #navbar .nav-inner-wrapper {
-  height: 5rem;
+  height: 4.75rem;
   padding: 0 1.5rem;
   max-width: 80rem;
   margin: 0 auto;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  transition: height 0.4s cubic-bezier(0.16, 1, 0.3, 1), padding 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: height 0.45s cubic-bezier(0.25, 1, 0.5, 1),
+              padding 0.45s cubic-bezier(0.25, 1, 0.5, 1) !important;
 }
 
+/* Floating Capsule State */
 #navbar.floating-nav-active {
   top: 0.85rem !important;
-  left: 50% !important;
-  right: auto !important;
-  transform: translateX(-50%) !important;
   width: min(calc(100% - 2rem), 1180px) !important;
   max-width: 1180px !important;
   border-radius: 9999px !important;
   background: rgba(255, 255, 255, 0.94) !important;
-  backdrop-filter: blur(28px) saturate(180%) !important;
-  -webkit-backdrop-filter: blur(28px) saturate(180%) !important;
+  backdrop-filter: blur(28px) saturate(200%) !important;
+  -webkit-backdrop-filter: blur(28px) saturate(200%) !important;
   border: 1px solid rgba(226, 232, 240, 0.95) !important;
   box-shadow: 0 16px 40px -8px rgba(15, 23, 42, 0.12), 
               0 0 25px rgba(37, 99, 235, 0.08),
-              inset 0 1px 1px rgba(255, 255, 255, 0.8) !important;
+              inset 0 1px 1px rgba(255, 255, 255, 0.9) !important;
 }
 
 .dark #navbar.floating-nav-active,
