@@ -327,6 +327,41 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // --------------------------------------------------
+  // 10. FAQ Accordion Handler
+  // --------------------------------------------------
+  const faqToggles = document.querySelectorAll('.faq-toggle');
+  faqToggles.forEach(toggle => {
+    toggle.addEventListener('click', () => {
+      const item = toggle.closest('.faq-item');
+      const content = item.querySelector('.faq-content');
+      const icon = toggle.querySelector('.faq-icon');
+      const isExpanded = toggle.getAttribute('aria-expanded') === 'true';
+
+      // Close all other items
+      faqToggles.forEach(otherToggle => {
+        if (otherToggle !== toggle) {
+          otherToggle.setAttribute('aria-expanded', 'false');
+          const otherItem = otherToggle.closest('.faq-item');
+          const otherContent = otherItem.querySelector('.faq-content');
+          const otherIcon = otherToggle.querySelector('.faq-icon');
+          if (otherContent) otherContent.classList.add('hidden');
+          if (otherIcon) otherIcon.style.transform = 'rotate(0deg)';
+        }
+      });
+
+      // Toggle clicked item
+      toggle.setAttribute('aria-expanded', !isExpanded);
+      if (isExpanded) {
+        content.classList.add('hidden');
+        if (icon) icon.style.transform = 'rotate(0deg)';
+      } else {
+        content.classList.remove('hidden');
+        if (icon) icon.style.transform = 'rotate(180deg)';
+      }
+    });
+  });
+
   // NOTE: GSAP animations and magnetic buttons are handled
   // by assets/js/gkm-animations.js (loaded after this file)
 });
