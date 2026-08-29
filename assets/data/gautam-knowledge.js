@@ -156,48 +156,78 @@ window.GKM_KNOWLEDGE = {
     },
     {
       title: "APCSIP-2026 — Selected by UP Police for Cybersecurity Internship",
-      detail: "Cleared a competitive 3-stage selection process (application, shortlisting, 50-MCQ online test on 24 May 2026) to join the Amroha Police Cyber Security Internship Program. One of the few B.Tech students selected.",
+      detail: "Cleared a competitive 3-stage selection process (application, shortlisting, 50-MCQ online test on 24 May 2026) to join the Amroha Police Cyber Security Internship Program. Awarded Best Content Creator by DSP Anjali Kataria.",
       date: "June 2026",
       source: "https://gkm563.github.io/up-police-internship.html"
+    },
+    {
+      title: "Shortlisted for Land Ports Authority of India (LPAI) Internship 2026",
+      detail: "Shortlisted for the national LPAI Internship Program (September–October 2026 cohort) under Ministry of External Affairs / Home Affairs exploring border logistics, smart port data systems, and trade facilitation.",
+      date: "August 2026",
+      source: "https://www.linkedin.com/in/gkm563"
+    },
+    {
+      title: "Lead Organizer — Smart India Hackathon (SIH) 2026 Internal Hackathon",
+      detail: "Spearheaded the 15-day on-ground execution of the SIH 2026 College-Level Internal Hackathon at UIT Prayagraj managing 76 teams, 500+ participants, and 8-member evaluation panels.",
+      date: "August 2026",
+      source: "https://www.linkedin.com/in/gkm563"
+    },
+    {
+      title: "EduWiki Hub Global Mentorship Program — Cohort 2 Mentee",
+      detail: "Selected as an India representative in the 2nd Cohort of EduWiki Hub Mentorship Program by Wikipedia & Education User Group.",
+      date: "July 2026",
+      source: "https://meta.wikimedia.org/wiki/Wikipedia_%26_Education_User_Group/EduWiki_Hub"
+    },
+    {
+      title: "CyberSuraksha Scholar — C3iHub, IIT Kanpur & realme India",
+      detail: "Shortlisted for advanced CyberSuraksha Cybersecurity training organized by C3iHub at IIT Kanpur and realme India via AKTU.",
+      date: "August 2026",
+      source: "https://www.linkedin.com/in/gkm563"
     }
   ],
 
   communityRoles: [
     {
+      org: "GFG UIT (GeeksForGeeks Student Chapter — UIT Prayagraj)",
+      role: "Vice President (2026–27 tenure) & Ex-Technical Head",
+      impact: "Leading technical operations, organizing college-wide coding competitions (600+ registrations), and mentoring 500+ junior students.",
+      source: "https://gkm563.github.io"
+    },
+    {
+      org: "HackerRank UIT Student Club",
+      role: "Co-Lead & Core Member",
+      impact: "Organized Orientation 2026 and inaugural Departmental Coding Contest for 140+ 2nd-year CSE students on HackerRank platform.",
+      source: "https://www.linkedin.com/in/gkm563"
+    },
+    {
+      org: "Smart India Hackathon (SIH 2026) — UIT Internal",
+      role: "Lead Student Organizer & Coordinator",
+      impact: "Spearheaded 15-day college-wide hackathon with 76 teams, 500+ participants, and 8 judging panels.",
+      source: "https://www.linkedin.com/in/gkm563"
+    },
+    {
+      org: "Open Source Connect India (OSCI'26)",
+      role: "Campus Lead",
+      impact: "Promoting campus-wide open-source workflows, Git/GitHub, and student contributions to global FOSS projects.",
+      source: "https://www.linkedin.com/in/gkm563"
+    },
+    {
       org: "GDG on Campus — UIT Prayagraj (Google Developer Groups)",
-      role: "Campus Lead / Ambassador",
-      impact: "Organizes Google-affiliated developer events, tech talks, and workshops for UIT students",
+      role: "Volunteer & Mentor",
+      impact: "Organizes Google-affiliated developer events, tech talks, and served as mentor in Agentic Premier League.",
       source: "https://gdg.community.dev/gdg-on-campus-united-institute-of-technology-prayagraj-india/"
     },
     {
-      org: "GFG UIT (GeeksForGeeks Student Chapter — UIT Prayagraj)",
-      role: "Technical Head",
-      impact: "580+ members impacted, 15+ technical events organized including coding contests, workshops, and guest sessions",
-      source: "https://gkm563.github.io"
+      org: "PrayagrajRooms (PropTech Startup)",
+      role: "Co-Founder & CTO",
+      impact: "Architected and launched full-stack room discovery platform serving 5,000+ university students in Prayagraj.",
+      source: "https://prayagrajrooms.in"
     },
     {
-      org: "GSA (Google Student Ambassador Program equivalent)",
-      role: "Core Member",
-      impact: "650+ members impacted through structured learning programs and events",
-      source: "https://gkm563.github.io"
-    },
-    {
-      org: "UDTech India",
-      role: "Technical Head",
-      impact: "Leads technical strategy and development for UDTech India national initiatives",
-      source: "https://gkm563.github.io"
-    },
-    {
-      org: "WikiClub UIT",
-      role: "Active Contributor & 1st Place Winner",
-      impact: "Won 1st place in contribution sprint, merged 7 Wikimedia patches",
-      source: "https://hi.wikipedia.org/wiki/%E0%A4%B8%E0%A4%A6%E0%A4%B8%E0%A5%8D%E0%A4%AF:Gkm563"
-    },
-    {
-      org: "Vidnya (EdTech Startup)",
-      role: "CTO (Co-founder)",
-      impact: "Leads all technical development and AI integration for the Vidnya education technology platform",
-      source: "https://gkm563.github.io"
+      org: "WikiClub UIT / Wikiclub Tech India (OKI-IIITH)",
+      role: "Active Contributor, 1st Place Winner & EduWiki Mentee",
+      impact: "15+ merged production patches across MediaWiki Core, MinervaNeue, and Pywikibot via Gerrit.",
+      source: "https://gkm563.github.io/open-source-contributions.html"
     }
   ],
 
