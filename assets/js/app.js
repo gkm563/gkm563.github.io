@@ -34,6 +34,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (themeToggleBtn) {
     themeToggleBtn.addEventListener('click', () => {
+      themeToggleBtn.classList.remove('theme-spin-anim');
+      void themeToggleBtn.offsetWidth; // trigger reflow
+      themeToggleBtn.classList.add('theme-spin-anim');
+      setTimeout(() => themeToggleBtn.classList.remove('theme-spin-anim'), 600);
+
       const isCurrentlyDark = document.documentElement.classList.contains('dark');
       const nextTheme = isCurrentlyDark ? 'light' : 'dark';
       applyGlobalTheme(nextTheme);
@@ -54,51 +59,14 @@ document.addEventListener('DOMContentLoaded', () => {
   // --------------------------------------------------
   const navbar = document.getElementById('navbar');
   const progressBar = document.getElementById('scroll-progress');
-
-  // Dynamically inject floating navbar animation styles
-  if (!document.getElementById('floating-navbar-styles')) {
-    const styleEl = document.createElement('style');
-    styleEl.id = 'floating-navbar-styles';
-    styleEl.innerHTML = `
-      #navbar {
-        transition: all 0.45s cubic-bezier(0.34, 1.56, 0.64, 1) !important;
-      }
-      #navbar.floating-nav-active {
-        top: 0.75rem !important;
-        left: 1rem !important;
-        right: 1rem !important;
-        max-width: 72rem !important;
-        margin-left: auto !important;
-        margin-right: auto !important;
-        border-radius: 1.25rem !important;
-        background: rgba(255, 255, 255, 0.88) !important;
-        backdrop-filter: blur(24px) !important;
-        -webkit-backdrop-filter: blur(24px) !important;
-        border: 1px solid rgba(226, 232, 240, 0.85) !important;
-        box-shadow: 0 20px 45px -10px rgba(0, 0, 0, 0.15), 0 0 20px rgba(37, 99, 235, 0.1) !important;
-      }
-      .dark #navbar.floating-nav-active {
-        background: rgba(9, 13, 22, 0.9) !important;
-        border: 1px solid rgba(255, 255, 255, 0.12) !important;
-        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.6), 0 0 25px rgba(59, 130, 246, 0.15) !important;
-      }
-      @media (max-width: 640px) {
-        #navbar.floating-nav-active {
-          top: 0.5rem !important;
-          left: 0.5rem !important;
-          right: 0.5rem !important;
-          border-radius: 1rem !important;
-        }
-      }
-    `;
-    document.head.appendChild(styleEl);
-  }
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('.nav-link');
 
   function handleNavbarScroll() {
     const scrollPos = window.scrollY;
     
     if (navbar) {
-      if (scrollPos > 40) {
+      if (scrollPos > 35) {
         navbar.classList.add('floating-nav-active');
       } else {
         navbar.classList.remove('floating-nav-active');
@@ -107,34 +75,36 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (progressBar) {
       const winHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-      const scrolled = (scrollPos / winHeight) * 100;
+      const scrolled = winHeight > 0 ? (scrollPos / winHeight) * 100 : 0;
       progressBar.style.width = `${scrolled}%`;
+    }
+
+    // Scroll-Spy Link Highlight
+    if (sections.length > 0 && navLinks.length > 0) {
+      let currentSectionId = '';
+      sections.forEach(sec => {
+        const sectionTop = sec.offsetTop - 140;
+        const sectionHeight = sec.offsetHeight;
+        if (scrollPos >= sectionTop && scrollPos < sectionTop + sectionHeight) {
+          currentSectionId = sec.getAttribute('id');
+        }
+      });
+
+      if (currentSectionId) {
+        navLinks.forEach(link => {
+          const href = link.getAttribute('href');
+          if (href === `#${currentSectionId}`) {
+            link.classList.add('active');
+          } else if (href && href.startsWith('#')) {
+            link.classList.remove('active');
+          }
+        });
+      }
     }
   }
 
   window.addEventListener('scroll', handleNavbarScroll, { passive: true });
   handleNavbarScroll();
-
-  function highlightActiveNavLink() {
-    const sections = document.querySelectorAll('section[id]');
-    const navLinks = document.querySelectorAll('.nav-link');
-    const scrollY = window.pageYOffset;
-
-    sections.forEach(current => {
-      const sectionHeight = current.offsetHeight;
-      const sectionTop = current.offsetTop - 120;
-      const sectionId = current.getAttribute('id');
-
-      if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
-        navLinks.forEach(link => {
-          link.classList.remove('active');
-          if (link.getAttribute('href') === `#${sectionId}`) {
-            link.classList.add('active');
-          }
-        });
-      }
-    });
-  }
 
   // --------------------------------------------------
   // 3. Mobile Navigation Drawer Toggle

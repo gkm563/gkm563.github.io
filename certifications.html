@@ -98,7 +98,7 @@
          1. STICKY UNIFIED NAVBAR
     ═══════════════════════════════════════ -->
     <header id="navbar" class="fixed top-0 left-0 right-0 z-50 glass-nav transition-all duration-300">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+        <div class="nav-inner-wrapper max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
             
             <!-- Brand Logo -->
             <a href="index.html" class="flex items-center gap-3 group">
@@ -558,6 +558,11 @@
 
         if (themeBtn) {
             themeBtn.addEventListener('click', () => {
+                themeBtn.classList.remove('theme-spin-anim');
+                void themeBtn.offsetWidth;
+                themeBtn.classList.add('theme-spin-anim');
+                setTimeout(() => themeBtn.classList.remove('theme-spin-anim'), 600);
+
                 const isDark = document.documentElement.classList.contains('dark') || document.documentElement.classList.contains('dark-theme');
                 const next = isDark ? 'light' : 'dark';
                 applyTheme(next);
@@ -629,14 +634,22 @@
             });
         }
 
-        // 4. Scroll Progress
+        // 4. Floating Navbar & Scroll Progress
+        const navHeader = document.getElementById('navbar');
         window.addEventListener('scroll', () => {
             const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            if (navHeader) {
+                if (scrollTop > 35) {
+                    navHeader.classList.add('floating-nav-active');
+                } else {
+                    navHeader.classList.remove('floating-nav-active');
+                }
+            }
             const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
             const progress = scrollHeight > 0 ? (scrollTop / scrollHeight) * 100 : 0;
             const bar = document.getElementById('scroll-progress');
             if (bar) bar.style.width = progress + '%';
-        });
+        }, { passive: true });
     </script>
 </body>
 </html>
