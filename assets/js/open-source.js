@@ -76,27 +76,36 @@ document.addEventListener('DOMContentLoaded', () => {
   const applyTheme = (theme) => {
     const icon = themeToggleBtn ? themeToggleBtn.querySelector('i') : null;
     if (theme === 'dark') {
-      document.documentElement.classList.add('dark-theme');
-      document.body.classList.add('dark-theme');
+      document.documentElement.classList.add('dark', 'dark-theme');
+      document.body.classList.add('dark', 'dark-theme');
       if (icon) icon.className = 'fas fa-sun';
     } else {
-      document.documentElement.classList.remove('dark-theme');
-      document.body.classList.remove('dark-theme');
+      document.documentElement.classList.remove('dark', 'dark-theme');
+      document.body.classList.remove('dark', 'dark-theme');
       if (icon) icon.className = 'fas fa-moon';
     }
+    try {
+      localStorage.setItem('portfolio-theme', theme);
+      localStorage.setItem('gkm_theme', theme);
+    } catch (e) {}
   };
 
-  const savedTheme = localStorage.getItem('portfolio-theme') || 'light';
+  const savedTheme = localStorage.getItem('portfolio-theme') || localStorage.getItem('gkm_theme') || 'light';
   applyTheme(savedTheme);
 
   if (themeToggleBtn) {
     themeToggleBtn.addEventListener('click', () => {
-      const isDark = document.documentElement.classList.contains('dark-theme');
+      const isDark = document.documentElement.classList.contains('dark') || document.documentElement.classList.contains('dark-theme');
       const nextTheme = isDark ? 'light' : 'dark';
-      localStorage.setItem('portfolio-theme', nextTheme);
       applyTheme(nextTheme);
     });
   }
+
+  window.addEventListener('storage', (e) => {
+    if (e.key === 'portfolio-theme' || e.key === 'gkm_theme') {
+      if (e.newValue) applyTheme(e.newValue);
+    }
+  });
 
   // 3. Mobile Navigation Drawer Toggle
   const mobileToggle = document.getElementById('mobile-toggle');

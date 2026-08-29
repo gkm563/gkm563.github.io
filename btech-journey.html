@@ -1,8 +1,22 @@
 <!DOCTYPE html>
-<html lang="en" class="dark">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Instant Theme Detection Script (Synchronizes seamlessly with https://gkm563.github.io/) -->
+    <script>
+        (function() {
+            try {
+                const saved = localStorage.getItem('portfolio-theme') || localStorage.getItem('gkm_theme');
+                if (saved === 'dark' || (!saved && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                    document.documentElement.classList.add('dark', 'dark-theme');
+                } else {
+                    document.documentElement.classList.remove('dark', 'dark-theme');
+                }
+            } catch (e) {}
+        })();
+    </script>
     
     <!-- SEO Primary Meta Tags -->
     <title>Gautam Kumar Maurya — B.Tech CSE (Data Science) 4-Year Engineering Journey & Growth Story</title>

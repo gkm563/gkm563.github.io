@@ -6,12 +6,20 @@ import {
   Sun, Moon, Search, X, Check, Clock, ExternalLink, 
   Github, Linkedin, Building2, ChevronRight, FolderOpen, Sparkles, Compass,
   Activity, BarChart3, Star, Share2, Copy, Eye, SlidersHorizontal, ChevronDown, CheckCircle2,
-  FileText, Globe, Heart, MessageSquare, Send, Mail, MapPin
+  FileText, Globe, Heart, MessageSquare, Send, Mail, MapPin, Menu, ArrowUpRight
 } from 'lucide-react';
 import { JOURNEY_DATA } from './data/journeyData.js';
 
 export default function App() {
-  const [theme, setTheme] = useState(() => localStorage.getItem('gkm_theme') || 'dark');
+  const [theme, setTheme] = useState(() => {
+    try {
+      const saved = localStorage.getItem('portfolio-theme') || localStorage.getItem('gkm_theme');
+      if (saved === 'dark' || saved === 'light') return saved;
+      return document.documentElement.classList.contains('dark') ? 'dark' : 'light';
+    } catch {
+      return 'light';
+    }
+  });
   const [activePhaseId, setActivePhaseId] = useState('year-1');
   const [selectedCategory, setSelectedCategory] = useState('all');
   const [searchQuery, setSearchQuery] = useState('');
@@ -19,6 +27,7 @@ export default function App() {
   const [copiedId, setCopiedId] = useState(null);
   const [activeSkillTab, setActiveSkillTab] = useState('year-3');
   const [lightboxImage, setLightboxImage] = useState(null);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [starredIds, setStarredIds] = useState(() => {
     try {
       return JSON.parse(localStorage.getItem('gkm_starred_milestones')) || [];
@@ -31,14 +40,30 @@ export default function App() {
     const html = document.documentElement;
     const body = document.body;
     if (theme === 'dark') {
-      html.classList.add('dark');
-      body.classList.add('dark');
+      html.classList.add('dark', 'dark-theme');
+      body.classList.add('dark', 'dark-theme');
     } else {
-      html.classList.remove('dark');
-      body.classList.remove('dark');
+      html.classList.remove('dark', 'dark-theme');
+      body.classList.remove('dark', 'dark-theme');
     }
-    localStorage.setItem('gkm_theme', theme);
+    try {
+      localStorage.setItem('portfolio-theme', theme);
+      localStorage.setItem('gkm_theme', theme);
+    } catch (e) {}
   }, [theme]);
+
+  // Synchronize cross-tab and cross-page theme changes
+  useEffect(() => {
+    const handleStorageChange = (e) => {
+      if (e.key === 'portfolio-theme' || e.key === 'gkm_theme') {
+        if (e.newValue === 'dark' || e.newValue === 'light') {
+          setTheme(e.newValue);
+        }
+      }
+    };
+    window.addEventListener('storage', handleStorageChange);
+    return () => window.removeEventListener('storage', handleStorageChange);
+  }, []);
 
   useEffect(() => {
     localStorage.setItem('gkm_starred_milestones', JSON.stringify(starredIds));
@@ -145,64 +170,126 @@ export default function App() {
   return (
     <div className="min-h-screen bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-slate-100 font-sans transition-colors duration-300 relative overflow-x-hidden">
       
-      {/* 1. ULTRA-PREMIUM FLOATING ANIMATED HEADER NAVBAR */}
-      <header className={`sticky z-50 transition-all duration-500 ${
+      {/* 1. ULTRA-PREMIUM UNIFIED HEADER NAVBAR */}
+      <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled 
-          ? 'top-3 left-4 right-4 max-w-6xl mx-auto rounded-2xl bg-white/88 dark:bg-slate-950/90 backdrop-blur-2xl border border-slate-200/85 dark:border-slate-800/85 shadow-2xl scale-[0.99]' 
-          : 'top-0 left-0 right-0 bg-white/80 dark:bg-slate-950/80 backdrop-blur-2xl border-b border-slate-200/80 dark:border-slate-800/80'
+          ? 'bg-white/90 dark:bg-slate-950/90 backdrop-blur-xl border-b border-slate-200/80 dark:border-slate-800/80 shadow-md py-3' 
+          : 'bg-white/75 dark:bg-slate-950/75 backdrop-blur-lg border-b border-slate-200/60 dark:border-slate-800/60 py-4'
       }`}>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between gap-4">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
           
-          {/* Left Brand Identifier */}
+          {/* Brand Logo & Identifier */}
           <a href="index.html" className="flex items-center gap-3 group text-decoration-none">
-            <div className="relative">
-              <img src="assets/images/profile/Gautam_Kumar_Maurya.jpg" alt="Gautam Kumar Maurya" loading="eager" decoding="async" className="w-10 h-10 rounded-full object-cover border-2 border-blue-500 group-hover:scale-105 transition-transform" />
-              <span className="w-3 h-3 bg-emerald-500 border-2 border-white dark:border-slate-950 rounded-full absolute bottom-0 right-0"></span>
-            </div>
-            <div>
-              <div className="font-extrabold text-sm text-slate-900 dark:text-white leading-tight flex items-center gap-1.5">
-                <span>Gautam Kumar Maurya</span>
+            <img src="assets/images/profile/Gautam_Kumar_Maurya.jpg" alt="Gautam Kumar Maurya Logo" className="w-10 h-10 rounded-xl object-cover border-2 border-blue-600 shadow-md group-hover:scale-105 transition-transform duration-200" />
+            <div className="flex flex-col">
+              <span className="font-bold text-slate-900 dark:text-white tracking-tight text-base sm:text-lg group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors flex items-center gap-1.5">
+                <span>Gautam K. Maurya</span>
                 <span className="text-blue-500 text-xs">✓</span>
-              </div>
-              <div className="text-xs font-semibold text-blue-600 dark:text-blue-400">
-                B.Tech CSE (Data Science) · Student Leader & Researcher
-              </div>
+              </span>
+              <span className="text-xs font-mono text-slate-500 dark:text-slate-400">@gkm563</span>
             </div>
           </a>
 
-          {/* Middle Desktop Navigation Links */}
-          <nav className="hidden md:flex items-center gap-6 text-xs font-bold text-slate-600 dark:text-slate-300">
-            <a href="index.html" className="hover:text-blue-500 transition-colors">Portfolio Home</a>
-            <a href="ait-global-innovation-internship.html" className="hover:text-blue-500 transition-colors">AIT Bangkok</a>
-            <a href="up-police-internship.html" className="hover:text-blue-500 transition-colors">UP Police</a>
-            <a href="open-source-contributions.html" className="hover:text-blue-500 transition-colors">Open Source</a>
-            <a href="faq.html" className="hover:text-blue-500 transition-colors">FAQ</a>
+          {/* Desktop Navigation Links */}
+          <nav className="hidden lg:flex items-center gap-7 text-sm font-medium text-slate-600 dark:text-slate-300">
+            <a href="index.html" className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors flex items-center gap-1">
+              <ArrowLeft className="w-3.5 h-3.5" />
+              <span>Back to Portfolio</span>
+            </a>
+            <a href="ait-global-innovation-internship.html" className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">GIIP Thailand</a>
+            <a href="up-police-internship.html" className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">UP Police</a>
+            <a href="open-source-contributions.html" className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Wikimedia</a>
+            <a href="index.html#projects" className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Projects</a>
+            <a href="index.html#achievements" className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Awards</a>
           </nav>
 
           {/* Right Action CTA Buttons */}
           <div className="flex items-center gap-3">
+            {/* Theme Toggle Button */}
+            <button 
+              onClick={toggleTheme} 
+              aria-label="Toggle Theme" 
+              title="Toggle Theme"
+              className="p-2.5 rounded-xl border border-slate-200 dark:border-slate-800 bg-white/90 dark:bg-slate-900/90 text-slate-700 dark:text-slate-200 flex items-center justify-center hover:bg-slate-100 dark:hover:bg-slate-800 hover:text-blue-600 dark:hover:text-blue-400 transition-all hover:scale-105 shadow-sm">
+              {theme === 'dark' ? <Sun className="w-4 h-4 text-amber-400" /> : <Moon className="w-4 h-4 text-slate-700" />}
+            </button>
+
+            {/* Resume Download CTA */}
             <a 
               href="assets/docs/Gautam_Kumar_Maurya_Resume.pdf" 
               target="_blank" 
-              rel="noopener noreferrer"
-              className="px-3.5 py-1.5 rounded-xl bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold flex items-center gap-1.5 shadow-md shadow-blue-500/20 transition-all hover:scale-105">
-              <FileText className="w-3.5 h-3.5" />
-              <span className="hidden sm:inline">Resume</span>
+              rel="noopener noreferrer" 
+              className="hidden sm:inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-blue-600 hover:bg-blue-700 text-white text-sm font-semibold shadow-sm hover:shadow-md transition-all hover:scale-105">
+              <FileText className="w-4 h-4" />
+              <span>Resume</span>
             </a>
 
+            {/* Mobile Menu Button */}
             <button 
-              onClick={toggleTheme} 
-              className="w-9 h-9 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 text-slate-700 dark:text-slate-200 flex items-center justify-center hover:border-blue-500 hover:text-blue-500 transition-all hover:scale-105" 
-              title="Toggle Dark/Light Theme">
-              {theme === 'dark' ? <Sun className="w-4 h-4 text-amber-400" /> : <Moon className="w-4 h-4 text-slate-700" />}
+              onClick={() => setIsMobileMenuOpen(true)}
+              aria-label="Open Navigation Menu"
+              className="lg:hidden p-2.5 rounded-xl border border-slate-200 dark:border-slate-800 bg-white/90 dark:bg-slate-900/90 text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
+              <Menu className="w-5 h-5" />
             </button>
           </div>
 
         </div>
       </header>
 
+      {/* Mobile Drawer Overlay & Panel */}
+      {isMobileMenuOpen && (
+        <div className="fixed inset-0 z-50 bg-slate-950/60 backdrop-blur-md lg:hidden transition-all duration-300">
+          <div className="absolute inset-0 bg-slate-900/50 backdrop-blur-sm" onClick={() => setIsMobileMenuOpen(false)}></div>
+          <div className="relative ml-auto w-4/5 max-w-sm h-full bg-white dark:bg-slate-900 shadow-2xl p-6 flex flex-col justify-between overflow-y-auto z-10">
+            <div>
+              <div className="flex items-center justify-between pb-6 border-b border-slate-200 dark:border-slate-800">
+                <div className="flex items-center gap-3">
+                  <img src="assets/images/profile/Gautam_Kumar_Maurya.jpg" alt="Gautam Kumar Maurya Logo" className="w-9 h-9 rounded-xl object-cover border-2 border-blue-600" />
+                  <span className="font-bold text-slate-900 dark:text-white">Navigation</span>
+                </div>
+                <button onClick={() => setIsMobileMenuOpen(false)} className="p-2 text-slate-500 hover:text-slate-900 dark:hover:text-white">
+                  <X className="w-5 h-5" />
+                </button>
+              </div>
+
+              <nav className="mt-6 flex flex-col gap-4 text-base font-medium text-slate-700 dark:text-slate-200">
+                <a href="index.html" className="p-2.5 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 flex items-center gap-2">
+                  <ArrowLeft className="w-4 h-4 text-blue-600" />
+                  <span>Main Portfolio Home</span>
+                </a>
+                <a href="index.html#projects" className="p-2.5 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800">Projects</a>
+                <a href="index.html#experience" className="p-2.5 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800">Internships & Research</a>
+                <a href="index.html#leadership" className="p-2.5 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800">Leadership Roles</a>
+                <a href="index.html#achievements" className="p-2.5 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800">Awards & Honors</a>
+              </nav>
+
+              <div className="mt-6 pt-6 border-t border-slate-200 dark:border-slate-800 flex flex-col gap-2">
+                <a href="./ait-global-innovation-internship.html" className="p-2.5 rounded-xl bg-blue-50 dark:bg-blue-950/40 text-blue-600 dark:text-blue-400 font-medium text-sm flex items-center justify-between">
+                  <span>GIIP-2026 Thailand</span>
+                  <ArrowUpRight className="w-4 h-4" />
+                </a>
+                <a href="./up-police-internship.html" className="p-2.5 rounded-xl bg-sky-50 dark:bg-sky-950/40 text-sky-600 dark:text-sky-400 font-medium text-sm flex items-center justify-between">
+                  <span>APCSIP-2026 Cyber</span>
+                  <ArrowUpRight className="w-4 h-4" />
+                </a>
+                <a href="./open-source-contributions.html" className="p-2.5 rounded-xl bg-emerald-50 dark:bg-emerald-950/40 text-emerald-600 dark:text-emerald-400 font-medium text-sm flex items-center justify-between">
+                  <span>Wikimedia Open Source</span>
+                  <ArrowUpRight className="w-4 h-4" />
+                </a>
+              </div>
+            </div>
+
+            <div className="pt-6 border-t border-slate-200 dark:border-slate-800">
+              <a href="assets/docs/Gautam_Kumar_Maurya_Resume.pdf" target="_blank" rel="noopener noreferrer" className="w-full py-3 rounded-xl bg-blue-600 text-white font-semibold flex items-center justify-center gap-2 shadow-md">
+                <FileText className="w-4 h-4" /> Download Resume
+              </a>
+            </div>
+          </div>
+        </div>
+      )}
+
       {/* 2. Premium Hero Header Section */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-10 pb-6 text-center">
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-28 pb-6 text-center">
         <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-gradient-to-r from-blue-500/10 via-purple-500/10 to-emerald-500/10 border border-blue-500/30 text-blue-600 dark:text-blue-400 text-xs font-bold uppercase tracking-wider mb-4">
           <Sparkles className="w-4 h-4 text-amber-400" />
           <span>Engineering Growth & Leadership Tracker</span>

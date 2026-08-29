@@ -10,24 +10,44 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // --------------------------------------------------
-  // 1. Theme Switcher (Dark / Light)
+  // 1. Unified Theme Switcher (Dark / Light Synchronized)
   // --------------------------------------------------
   const themeToggleBtn = document.getElementById('theme-toggle');
-  const currentTheme = localStorage.getItem('portfolio-theme') || 'light';
+  const currentTheme = localStorage.getItem('portfolio-theme') || localStorage.getItem('gkm_theme') || 'light';
 
-  if (currentTheme === 'dark') {
-    document.documentElement.classList.add('dark');
-  } else {
-    document.documentElement.classList.remove('dark');
-  }
+  const applyGlobalTheme = (t) => {
+    const isDark = t === 'dark';
+    if (isDark) {
+      document.documentElement.classList.add('dark', 'dark-theme');
+      if (document.body) document.body.classList.add('dark', 'dark-theme');
+    } else {
+      document.documentElement.classList.remove('dark', 'dark-theme');
+      if (document.body) document.body.classList.remove('dark', 'dark-theme');
+    }
+    try {
+      localStorage.setItem('portfolio-theme', t);
+      localStorage.setItem('gkm_theme', t);
+    } catch (e) {}
+  };
+
+  applyGlobalTheme(currentTheme);
 
   if (themeToggleBtn) {
     themeToggleBtn.addEventListener('click', () => {
-      document.documentElement.classList.toggle('dark');
-      const isDark = document.documentElement.classList.contains('dark');
-      localStorage.setItem('portfolio-theme', isDark ? 'dark' : 'light');
+      const isCurrentlyDark = document.documentElement.classList.contains('dark');
+      const nextTheme = isCurrentlyDark ? 'light' : 'dark';
+      applyGlobalTheme(nextTheme);
     });
   }
+
+  // Cross-tab / cross-page sync
+  window.addEventListener('storage', (e) => {
+    if (e.key === 'portfolio-theme' || e.key === 'gkm_theme') {
+      if (e.newValue === 'dark' || e.newValue === 'light') {
+        applyGlobalTheme(e.newValue);
+      }
+    }
+  });
 
   // --------------------------------------------------
   // 2. Floating Animated Glass Capsule Navbar & Scroll Progress

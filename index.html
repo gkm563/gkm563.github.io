@@ -3,15 +3,16 @@
 
 <head>
     <script>
-        // Ensure Light theme is active by default
+        // Synchronized Theme Loader (Seamlessly connected across all subpages)
         (function() {
-            const savedTheme = localStorage.getItem('portfolio-theme');
-            if (savedTheme === 'dark') {
-                document.documentElement.classList.add('dark');
-            } else {
-                document.documentElement.classList.remove('dark');
-                localStorage.setItem('portfolio-theme', 'light');
-            }
+            try {
+                const savedTheme = localStorage.getItem('portfolio-theme') || localStorage.getItem('gkm_theme');
+                if (savedTheme === 'dark') {
+                    document.documentElement.classList.add('dark', 'dark-theme');
+                } else if (savedTheme === 'light') {
+                    document.documentElement.classList.remove('dark', 'dark-theme');
+                }
+            } catch (e) {}
         })();
     </script>
     <meta charset="UTF-8">

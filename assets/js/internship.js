@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   };
 
-  const savedTheme = localStorage.getItem('portfolio-theme') || 'light';
+  const savedTheme = localStorage.getItem('portfolio-theme') || localStorage.getItem('gkm_theme') || 'light';
   applyTheme(savedTheme);
 
   if (themeToggleBtn) {
@@ -32,9 +32,16 @@ document.addEventListener('DOMContentLoaded', () => {
       const isDark = document.documentElement.classList.contains('dark') || document.documentElement.classList.contains('dark-theme');
       const nextTheme = isDark ? 'light' : 'dark';
       localStorage.setItem('portfolio-theme', nextTheme);
+      localStorage.setItem('gkm_theme', nextTheme);
       applyTheme(nextTheme);
     });
   }
+
+  window.addEventListener('storage', (e) => {
+    if (e.key === 'portfolio-theme' || e.key === 'gkm_theme') {
+      if (e.newValue) applyTheme(e.newValue);
+    }
+  });
 
   // 1. Scroll Progress Bar Update
   const scrollProgress = document.getElementById('scroll-progress');
