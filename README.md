@@ -101,18 +101,25 @@ Gautam Kumar Maurya (gkm563) | Best Full-Stack Developer in Prayagraj | Best SEO
 * 🔗 **Track Milestone:** [**gkm563.github.io/btech-journey.html**](https://gkm563.github.io/btech-journey.html)
 
 ### 🔒 Cyber Security Intern — UP Police x Amroha Police (APCSIP-2026)
-* **On-Ground Investigation & Forensics:** 15-day fellowship with UP Police & Amroha Police Cyber Crime Cell focused on digital forensics, OSINT recon, Android malware analysis, CDR sorting, and SOC monitoring.
+* **On-Ground Investigation & Forensics:** 15-day fellowship with UP Police & Amroha Police Cyber Crime Cell focused on digital forensics, OSINT recon, Android malware analysis, CDR/IPDR sorting, cell ID dump analysis, and SOC monitoring.
 * 🥇 **Special Honor:** Awarded the **Best Content Creator Award** directly by **DSP Anjali Kataria Ma'am**.
 * 🔗 **Read Full Case Study:** [**gkm563.github.io/up-police-internship.html**](https://gkm563.github.io/up-police-internship.html)
 
 ### ✈️ AI & Data Science Scholar — GIIP 2026 (AIT Bangkok, Thailand)
-* **International Research Fellowship:** 15-day research program at Asian Institute of Technology (AIT), Bangkok, Thailand covering Agentic AI, Quantum GIS (QGIS), UAV Drone Telemetry, and EDA.
+* **International Research Fellowship:** 15-day research program at Asian Institute of Technology (AIT), Bangkok, Thailand covering Agentic AI, Quantum GIS (QGIS), UAV Drone Telemetry, Power BI, and EDA.
+* **Innovation Lab:** Explored Robotics & IoT research at KMITL Bangkok.
 * **Lead Architect:** Engineered [**BusSetu**](https://bussetu-three.vercel.app/) live transit tracking engine.
 * 🔗 **Read Full International Report:** [**gkm563.github.io/ait-global-innovation-internship.html**](https://gkm563.github.io/ait-global-innovation-internship.html)
 
 ### 🏠 Co-Founder & CTO — PrayagrajRooms (`prayagrajrooms.in`)
-* Zero-broker student housing and room discovery platform engineered over **10+ months** of dedicated development with HTML5/CSS3, PHP, MySQL, CSRF protection, and WhatsApp deep links to serve 5000+ college students across Prayagraj.
+* Zero-broker student housing and room discovery platform engineered over **10+ months** of dedicated development with HTML5/CSS3, PHP, MySQL, CSRF protection, and WhatsApp deep links to serve **5,000+ college students** across Prayagraj.
 * 🔗 **Live Platform:** [**prayagrajrooms.in**](https://prayagrajrooms.in)
+
+### 💻 Full-Stack Developer Intern — Heisyn
+* Engineered full-stack web modules, responsive component libraries, and integrated performant backend REST APIs.
+
+### 🛠️ Technical Head — UDTech India
+* Designed, engineered, and deployed the official platform for the **BuildX 2026 Hackathon** from scratch (frontend, backend, registration pipelines, and production hosting).
 
 ### 🌾 Startup Collaboration — Vindhya Millets
 * Technical collaboration with a Government of India supported ecosystem startup providing digital presence, catalog download dashboards, and SEO optimization.
@@ -123,11 +130,13 @@ Gautam Kumar Maurya (gkm563) | Best Full-Stack Developer in Prayagraj | Best SEO
 <summary><b>👑 Community Leadership & Positions of Responsibility (Click to Expand/Collapse)</b></summary>
 <br>
 
-* 🌟 **Vice President — GeeksforGeeks (GFG) Student Chapter, UIT:** Serving as Vice President and Ex-Technical Head driving coding drives and bootcamps for **600+ participants**.
+* 🌟 **Vice President — GeeksforGeeks (GFG) Student Chapter, UIT:** Serving as Vice President (previously Technical Head), co-organized **4 technical events** (including flagship events with **600+ registrations**) with faculty coordination and participant mentorship.
 * 🏆 **Lead Organizer — Smart India Hackathon (SIH 2026 Internal):** Spearheaded 15-day college-level internal hackathon with **76 teams and 500+ participants**.
-* 🎯 **Co-Lead — HackerRank Student Club, UIT:** Co-leading competitive programming initiatives, organized inaugural contest for **140+ 2nd-year CSE students** (250k+ impressions).
-* 🌐 **Campus Lead — Open Source Connect India (OSCI'26):** Mentoring student developers in Git/GitHub pipelines and open-source contributions.
+* 🎯 **Core Member / Co-Lead — HackerRank Student Club, UIT:** Co-leading competitive programming initiatives, organized inaugural contest for **140+ 2nd-year CSE students** (250k+ impressions).
+* 🌐 **Campus Lead — Open Source Connect India (OSCI'26):** Mentoring student developers in Git/GitHub pipelines, patch reviews, and open-source contribution workflows.
 * 🌍 **EduWiki Hub Global Mentee — Wikipedia & Education User Group:** Mentee in Cohort 2 representing India on international open knowledge platforms.
+* 💡 **Volunteer & Mentor — Google Developer Group (GDG) Prayagraj:** Active community volunteer across 10+ workshops, technical sessions, and served as **Mentor in the Agentic Premier League (APL)**.
+* ✦ **Core Team Member — Gemini Builders Community:** Co-organized 2 offline technical events with **650+ participants** across 1st, 2nd, and 3rd year engineering batches.
 * 🔹 **Core Organizing Team — [AI Prayagraj] Build with Gemma: Kaggle:** Co-organized Google AI event covering edge LLM fine-tuning and Kaggle workflows for 100+ attendees.
 
 </details>
