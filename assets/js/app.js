@@ -147,6 +147,31 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // --------------------------------------------------
+  // 3.5. Interactive Developer Terminal Tabs
+  // --------------------------------------------------
+  const terminalTabBtns = document.querySelectorAll('.terminal-tab-btn');
+  const terminalPanes = document.querySelectorAll('.terminal-tab-pane');
+
+  if (terminalTabBtns.length > 0 && terminalPanes.length > 0) {
+    terminalTabBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const targetTab = btn.getAttribute('data-tab');
+        terminalTabBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        terminalPanes.forEach(pane => {
+          if (pane.id === `tab-${targetTab}`) {
+            pane.classList.remove('hidden');
+            pane.classList.add('animate-fade-in');
+          } else {
+            pane.classList.add('hidden');
+          }
+        });
+      });
+    });
+  }
+
+  // --------------------------------------------------
   // 4. Skills Category Tabs Filter
   // --------------------------------------------------
   const skillTabs = document.querySelectorAll('.skill-tab-btn');
