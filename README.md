@@ -76,6 +76,7 @@ Gautam Kumar Maurya (gkm563) | Best Full-Stack Developer in Prayagraj | Best SEO
 <summary><b>🥇 Honors, Awards & Academic Distinctions (Click to Expand/Collapse)</b></summary>
 <br>
 
+* 🌍 **Selected Participant — Youths Innovate AI Mentorship Program (Fall Cohort 2026)** – Selected among **800+ international applicants** for an international online mentorship experience focused on AI, machine learning innovation, and real-world impact.
 * 🇮🇳 **Shortlisted for LPAI Internship Program 2026** – Land Ports Authority of India (Border Infrastructure & Data Logistics).
 * 🏆 **Lead Organizer — Smart India Hackathon (SIH) 2026** – Spearheaded 15-day college-wide internal hackathon at UIT with **76 teams and 500+ participants**.
 * 🛡️ **CyberSuraksha Scholar (IIT Kanpur)** – Shortlisted for cybersecurity virtual lab training by **C3iHub, IIT Kanpur** & realme India.

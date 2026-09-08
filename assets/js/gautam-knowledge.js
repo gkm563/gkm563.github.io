@@ -38,6 +38,11 @@ const GAUTAM_KNOWLEDGE = {
 
   fellowships: [
     {
+      name: "Youths Innovate AI Mentorship Program (Fall Cohort 2026)",
+      location: "International / Global Online AI Mentorship",
+      details: "Selected among 800+ global applicants for an international online mentorship experience focused on AI architectures, machine learning innovation, and real-world impact."
+    },
+    {
       name: "AIT Bangkok Global Innovation Internship (GIIP-2026)",
       location: "Asian Institute of Technology, Bangkok, Thailand",
       details: "15-day international fellowship in Agentic AI, Ubiquitous GIS, Drone Telemetry, Python EDA, Power BI dashboards, and KMITL Robotics Research. Built BusSetu transit platform capstone."

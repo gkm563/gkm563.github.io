@@ -668,6 +668,34 @@ const JOURNEY_DATA = {
         certificate: "https://app.truscholar.io/profile?credId=69d5ba34a0a1d70eaf471499",
         linkedin: null
       }
+    },
+    {
+      id: "sem-6-youths-innovate-ai-mentorship",
+      title: "Youths Innovate AI Mentorship Program – Fall Cohort 2026",
+      shortDescription: "Selected among 800+ international applicants for a global online AI mentorship experience focused on AI, innovation, and real-world impact.",
+      fullDescription: "Selected among 800+ global applicants for the Youths Innovate AI Mentorship Program (Fall Cohort 2026), an international online mentorship experience bringing together young innovators interested in AI, machine learning architectures, and real-world impact.",
+      startDate: "Aug 2026",
+      endDate: "Present",
+      phaseId: "year-3",
+      semesterId: "sem-6",
+      category: "Leadership",
+      status: "current",
+      importance: "major",
+      skills: ["AI Mentorship", "Machine Learning", "Innovation", "Global Collaboration"],
+      organization: "Youths Innovate AI",
+      role: "Selected International Mentee & Innovator",
+      location: "Global Online",
+      whatHappened: "Selected in competitive global cohort (800+ applicants) for hands-on frontier AI mentorship and real-world project development.",
+      whyItMattered: "Direct exposure to international AI mentors, global peers, and impactful AI solution frameworks.",
+      whatILearned: "Applied AI problem formulation, cross-border innovation strategy, and real-world project deployment.",
+      impact: "Representing student developers on an international AI mentorship stage.",
+      evidence: {
+        images: [],
+        links: [],
+        github: "https://github.com/gkm563",
+        certificate: null,
+        linkedin: "https://www.linkedin.com/in/gkm563/"
+      }
     }
   ]
 };
