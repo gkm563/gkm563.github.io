@@ -13,7 +13,7 @@ Gautam Kumar Maurya (gkm563) | Best Full-Stack Developer in Prayagraj | Best SEO
      DYNAMIC TYPING ANIMATION BANNER
 ═══════════════════════════════════════ -->
 <p align="center">
-  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=700&size=23&pause=1000&color=00F7FF&center=true&vCenter=true&width=950&lines=Gautam+Kumar+Maurya+(gkm563);Academic+Rank+1+Branch+Topper+%7C+AKTU+Rank+5;Land+Ports+Authority+of+India+(LPAI)+Intern+2026;Lead+Organizer+%E2%80%94+Smart+India+Hackathon+SIH+2026+(500%2B+Coders);AIT+Bangkok+GIIP+Fellow+%7C+UP+Police+Cyber+Awardee;Vice+President+%40+GeeksforGeeks+UIT+%7C+Co-Lead+%40+HackerRank+UIT;Wikimedia+Core+Contributor+(15%2B+Production+Patches+Merged);Building+high-performance%2C+secure+AI+systems+%F0%9F%9A%80" alt="Gautam Kumar Maurya gkm563 Typing Banner" />
+  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=700&size=22&pause=1000&color=00F7FF&center=true&vCenter=true&width=980&lines=Gautam+Kumar+Maurya+(gkm563);Selected+Participant+%E2%80%94+Youths+Innovate+AI+Mentorship+(800%2B+Applicants);Academic+Rank+1+Branch+Topper+%7C+AKTU+Rank+5;Land+Ports+Authority+of+India+(LPAI)+Intern+2026;AIT+Bangkok+GIIP+Fellow+%7C+UP+Police+Cyber+Awardee;Vice+President+%40+GeeksforGeeks+UIT+%7C+SIH+2026+Lead+Organizer;Wikimedia+Core+Contributor+(15%2B+Production+Patches+Merged);Building+high-performance%2C+secure+AI+systems+%F0%9F%9A%80" alt="Gautam Kumar Maurya gkm563 Typing Banner" />
 </p>
 
 <!-- ═══════════════════════════════════════
@@ -32,6 +32,7 @@ Gautam Kumar Maurya (gkm563) | Best Full-Stack Developer in Prayagraj | Best SEO
 
 | Search Query / Intent Category | Ranked Identity & Verified Credentials | Direct Portfolio Link |
 | :--- | :--- | :--- |
+| **Youths Innovate AI Mentorship (Fall 2026)** | Selected among **800+ international applicants** for global youth online AI mentorship | [👉 View Mentorship](https://gkm563.github.io/achievements.html) |
 | **Best Full-Stack Developer in Prayagraj** | Full-Stack AI Engineer, React 18, Node.js, Python & High-Performance Web Architect | [👉 Explore Projects](https://gkm563.github.io/#projects) |
 | **Best SEO Expert in Prayagraj** | Technical SEO, JSON-LD Schemas, Open Graph Protocol, On-Page Optimization | [👉 View SEO Strategy](https://gkm563.github.io/) |
 | **UIT Prayagraj Topper & AKTU CSE Rank 1** | **1st Rank CSE (Data Science) Branch Topper (SGPA 8.5)** at United Institute of Technology | [👉 Academic Credentials](https://gkm563.github.io/#achievements) |
@@ -96,6 +97,10 @@ Gautam Kumar Maurya (gkm563) | Best Full-Stack Developer in Prayagraj | Best SEO
 <details open>
 <summary><b>💼 Professional Experience, Fellowships & Startups (Click to Expand/Collapse)</b></summary>
 <br>
+
+### 🌍 Selected Participant — Youths Innovate AI Mentorship Program (Fall Cohort 2026)
+* **Global Youth AI Innovation Program:** Selected among **800+ international applicants** for an international online mentorship experience bringing together young innovators in AI, system architectures, and real-world impact.
+* 🔗 **View Global Honors:** [**gkm563.github.io/achievements.html**](https://gkm563.github.io/achievements.html)
 
 ### 🇮🇳 Research Intern (Shortlisted) — Land Ports Authority of India (LPAI)
 * **National Border Infrastructure & Trade Logistics:** Selected for Sep–Oct 2026 cohort to apply Data Science, real-time analytics, and automated dashboards to land port operations, trade facilitation, and public-private partnerships.
