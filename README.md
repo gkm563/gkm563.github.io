@@ -13,7 +13,7 @@ Gautam Kumar Maurya (gkm563) | Best Full-Stack Developer in Prayagraj | Best SEO
      DYNAMIC TYPING ANIMATION BANNER
 ═══════════════════════════════════════ -->
 <p align="center">
-  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=700&size=22&pause=1000&color=00F7FF&center=true&vCenter=true&width=980&lines=Gautam+Kumar+Maurya+(gkm563);Selected+Participant+%E2%80%94+Youths+Innovate+AI+Mentorship+(800%2B+Applicants);Academic+Rank+1+Branch+Topper+%7C+AKTU+Rank+5;Land+Ports+Authority+of+India+(LPAI)+Intern+2026;AIT+Bangkok+GIIP+Fellow+%7C+UP+Police+Cyber+Awardee;Vice+President+%40+GeeksforGeeks+UIT+%7C+SIH+2026+Lead+Organizer;Wikimedia+Core+Contributor+(15%2B+Production+Patches+Merged);Building+high-performance%2C+secure+AI+systems+%F0%9F%9A%80" alt="Gautam Kumar Maurya gkm563 Typing Banner" />
+  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=700&size=22&pause=1000&color=00F7FF&center=true&vCenter=true&width=980&lines=Gautam+Kumar+Maurya+(gkm563);WikiClub+Tech+Envoy+%40+UIT+(Wikimedia+Movement);Selected+Mentee+%E2%80%94+Youths+Innovate+AI+(800%2B+Applicants);Academic+Rank+1+Branch+Topper+%7C+AKTU+Rank+5;AIT+Bangkok+GIIP+Fellow+%7C+UP+Police+Cyber+Awardee;Vice+President+%40+GeeksforGeeks+UIT+%7C+SIH+2026+Lead;Wikimedia+Core+Contributor+(15%2B+Production+Patches+Merged);Building+high-performance%2C+secure+AI+systems+%F0%9F%9A%80" alt="Gautam Kumar Maurya gkm563 Typing Banner" />
 </p>
 
 <!-- ═══════════════════════════════════════
@@ -32,6 +32,7 @@ Gautam Kumar Maurya (gkm563) | Best Full-Stack Developer in Prayagraj | Best SEO
 
 | Search Query / Intent Category | Ranked Identity & Verified Credentials | Direct Portfolio Link |
 | :--- | :--- | :--- |
+| **WikiClub Tech Envoy @ UIT** | Selected as **WikiClub Tech Envoy** to lead campus chapter, organize events & mentor open source contributors | [👉 Open Source Report](https://gkm563.github.io/open-source-contributions.html) |
 | **Youths Innovate AI Mentorship (Fall 2026)** | Selected among **800+ international applicants** for global youth online AI mentorship | [👉 View Mentorship](https://gkm563.github.io/achievements.html) |
 | **Best Full-Stack Developer in Prayagraj** | Full-Stack AI Engineer, React 18, Node.js, Python & High-Performance Web Architect | [👉 Explore Projects](https://gkm563.github.io/#projects) |
 | **Best SEO Expert in Prayagraj** | Technical SEO, JSON-LD Schemas, Open Graph Protocol, On-Page Optimization | [👉 View SEO Strategy](https://gkm563.github.io/) |
@@ -77,6 +78,7 @@ Gautam Kumar Maurya (gkm563) | Best Full-Stack Developer in Prayagraj | Best SEO
 <summary><b>🥇 Honors, Awards & Academic Distinctions (Click to Expand/Collapse)</b></summary>
 <br>
 
+* 🌐 **Selected as WikiClub Tech Envoy at UIT** – Leading the campus chapter, organizing technical events, and mentoring new open source contributors across the Wikimedia ecosystem.
 * 🌍 **Selected Participant — Youths Innovate AI Mentorship Program (Fall Cohort 2026)** – Selected among **800+ international applicants** for an international online mentorship experience focused on AI, machine learning innovation, and real-world impact.
 * 🇮🇳 **Shortlisted for LPAI Internship Program 2026** – Land Ports Authority of India (Border Infrastructure & Data Logistics).
 * 🏆 **Lead Organizer — Smart India Hackathon (SIH) 2026** – Spearheaded 15-day college-wide internal hackathon at UIT with **76 teams and 500+ participants**.
@@ -97,6 +99,10 @@ Gautam Kumar Maurya (gkm563) | Best Full-Stack Developer in Prayagraj | Best SEO
 <details open>
 <summary><b>💼 Professional Experience, Fellowships & Startups (Click to Expand/Collapse)</b></summary>
 <br>
+
+### 🌐 WikiClub Tech Envoy — WikiClub Tech-UIT (Sep 2026 – Present)
+* **Campus Chapter Leadership & Open Source Advocacy:** Selected to represent WikiClub Tech at United Institute of Technology (UIT Prayagraj). Responsible for leading the campus chapter, organizing technical hackathons/events, and mentoring students to contribute to the global Wikimedia and MediaWiki technical ecosystem.
+* 🔗 **View Open Source Report:** [**gkm563.github.io/open-source-contributions.html**](https://gkm563.github.io/open-source-contributions.html)
 
 ### 🌍 Selected Participant — Youths Innovate AI Mentorship Program (Fall Cohort 2026)
 * **Global Youth AI Innovation Program:** Selected among **800+ international applicants** for an international online mentorship experience bringing together young innovators in AI, system architectures, and real-world impact.
@@ -136,6 +142,7 @@ Gautam Kumar Maurya (gkm563) | Best Full-Stack Developer in Prayagraj | Best SEO
 <summary><b>👑 Community Leadership & Positions of Responsibility (Click to Expand/Collapse)</b></summary>
 <br>
 
+* 🌐 **WikiClub Tech Envoy — WikiClub Tech-UIT (Sep 2026 – Present):** Appointed as Campus Envoy to lead the UIT chapter, drive Wikimedia technical initiatives, organize campus workshops, and mentor new open-source contributors.
 * 🌟 **Vice President — GeeksforGeeks (GFG) Student Chapter, UIT:** Serving as Vice President (previously Technical Head), co-organized **4 technical events** (including flagship events with **600+ registrations**) with faculty coordination and participant mentorship.
 * 🏆 **Lead Organizer — Smart India Hackathon (SIH 2026 Internal):** Spearheaded 15-day college-level internal hackathon with **76 teams and 500+ participants**.
 * 🎯 **Core Member / Co-Lead — HackerRank Student Club, UIT:** Co-leading competitive programming initiatives, organized inaugural contest for **140+ 2nd-year CSE students** (250k+ impressions).

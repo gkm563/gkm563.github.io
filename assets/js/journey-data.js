@@ -14,7 +14,7 @@ const JOURNEY_DATA = {
     expectedGraduationYear: 2027,
     currentYear: 3,
     currentSemester: 6,
-    currentStatusText: "3rd Year (Semester 6) · Academic Rank 1 Branch Topper · AKTU Rank 5 · AIT Bangkok & UP Police Fellow"
+    currentStatusText: "3rd Year (Semester 6) · WikiClub Tech Envoy @ UIT · Academic Rank 1 Branch Topper · AIT Bangkok & UP Police Fellow"
   },
 
   phases: [
@@ -692,6 +692,34 @@ const JOURNEY_DATA = {
       evidence: {
         images: [],
         links: [],
+        github: "https://github.com/gkm563",
+        certificate: null,
+        linkedin: "https://www.linkedin.com/in/gkm563/"
+      }
+    },
+    {
+      id: "sem-6-wikiclub-tech-envoy-uit",
+      title: "Appointed WikiClub Tech Envoy at United Institute of Technology (UIT)",
+      shortDescription: "Selected as WikiClub Tech Envoy at UIT to lead the campus chapter, organize technical hackathons/events, and mentor new Wikimedia open source contributors.",
+      fullDescription: "Delightfully selected as WikiClub Tech Envoy at United Institute of Technology (UIT Prayagraj). Recognized for commitment to collaborative learning, open-source advocacy, and technical excellence across Wikimedia projects. Tasked with leading the campus chapter, representing WikiClub Tech in national technical forums, organizing technical events/workshops, and mentoring aspiring open source contributors.",
+      startDate: "Sep 2026",
+      endDate: "Present",
+      phaseId: "year-3",
+      semesterId: "sem-6",
+      category: "Leadership",
+      status: "current",
+      importance: "major",
+      skills: ["Open Source Leadership", "Wikimedia Movement", "Community Management", "Event Organizing", "Technical Mentorship", "MediaWiki"],
+      organization: "WikiClub Tech-UIT / Wikimedia Movement",
+      role: "WikiClub Tech Envoy (Campus Chapter Lead)",
+      location: "Prayagraj, Uttar Pradesh, India (On-site)",
+      whatHappened: "Appointed WikiClub Tech Envoy at UIT for proven track record of open-source advocacy and technical contributions to MediaWiki.",
+      whyItMattered: "High-visibility leadership position at the forefront of the Wikimedia open source student ecosystem in North India.",
+      whatILearned: "Campus chapter governance, community building, workshop curation, and global Wikimedia leadership pathways.",
+      impact: "Leading technical open-source initiatives and onboarding students into production Gerrit code contributions.",
+      evidence: {
+        images: ["assets/images/gallery/gautam-kumar-maurya-wiki.jpg", "assets/images/gallery/gautam-kumar-maurya-wikiclub-marathon-1st.jpg"],
+        links: ["open-source-contributions.html"],
         github: "https://github.com/gkm563",
         certificate: null,
         linkedin: "https://www.linkedin.com/in/gkm563/"

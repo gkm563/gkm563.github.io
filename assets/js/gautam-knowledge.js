@@ -10,7 +10,9 @@ const GAUTAM_KNOWLEDGE = {
     title: "Full-Stack AI Engineer, Cybersecurity Researcher & Data Scientist",
     college: "United Institute of Technology (UIT Prayagraj)",
     roles: [
+      "WikiClub Tech Envoy at United Institute of Technology (UIT)",
       "Vice President of GeeksforGeeks Student Chapter (UIT Prayagraj)",
+      "Selected Mentee at Youths Innovate AI (Fall 2026)",
       "GIIP International Fellow at AIT Bangkok, Thailand",
       "UP Police Cyber Security Fellow (APCSIP-2026)",
       "Open Source MediaWiki Core Developer",
@@ -55,7 +57,8 @@ const GAUTAM_KNOWLEDGE = {
   ],
 
   openSource: {
-    highlights: "30+ Wikimedia contributions, 15+ merged Gerrit patches into MediaWiki Core, MinervaNeue, GrowthExperiments, Pywikibot, Wikifunctions, translatewiki.net, and wikimedia/language-data.",
+    leadership: "WikiClub Tech Envoy at UIT — leading campus chapter, organizing technical events, and mentoring contributors across the Wikimedia open source ecosystem.",
+    highlights: "WikiClub Tech Envoy @ UIT, 30+ Wikimedia contributions, 15+ merged Gerrit patches into MediaWiki Core, MinervaNeue, GrowthExperiments, Pywikibot, Wikifunctions, translatewiki.net, and wikimedia/language-data.",
     patches: [
       "mediawiki/extensions/UploadWizard: Fix ampersand rendering in category navigation (T431918)",
       "mediawiki/core: Update Magahi (mag) namespace translations (T432382 - Merged)",
