@@ -406,10 +406,10 @@
     </script>
 
     <!-- Optimized Non-Blocking Google Fonts Loading -->
-    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" media="print" onload="this.media='all'">
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Caveat:wght@600;700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Caveat:wght@600;700&display=swap" media="print" onload="this.media='all'">
     <noscript>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Caveat:wght@600;700&display=swap">
     </noscript>
 
     <!-- Optimized Non-Blocking FontAwesome Icons -->
@@ -443,41 +443,39 @@
         <div class="nav-inner-wrapper max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
             
             <!-- Brand Logo -->
-            <a href="#hero" class="flex items-center gap-2.5 group shrink-0 pl-1">
-                <img src="assets/images/profile/Gautam_Kumar_Maurya.jpg" alt="Gautam Kumar Maurya Logo" class="w-9 h-9 rounded-full object-cover border-2 border-blue-600 shadow-sm group-hover:scale-105 transition-transform duration-200">
-                <div class="flex flex-col leading-tight">
-                    <span class="font-bold text-slate-900 dark:text-white tracking-tight text-sm sm:text-base group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
-                        Gautam K. Maurya
-                    </span>
-                    <span class="text-[11px] font-mono text-slate-500 dark:text-slate-400">@gkm563</span>
+            <a href="#hero" class="flex items-center gap-3 group shrink-0 pl-1">
+                <span class="text-xl sm:text-2xl font-black text-slate-950 dark:text-white tracking-tight flex items-center font-heading">
+                    GKM<span class="w-2 h-2 rounded-full bg-blue-600 inline-block ml-1"></span>
+                </span>
+                <div class="hidden sm:flex flex-col leading-tight border-l border-slate-200 dark:border-slate-800 pl-3">
+                    <span class="font-bold text-xs sm:text-sm text-slate-900 dark:text-white">Gautam K. Maurya</span>
+                    <span class="text-[10px] sm:text-[11px] text-slate-500 dark:text-slate-400 font-medium">Engineer · Builder · Open Source</span>
                 </div>
             </a>
 
             <!-- Desktop Nav Links -->
-            <nav class="hidden lg:flex items-center gap-1 xl:gap-2 text-[13px] font-medium text-slate-600 dark:text-slate-300">
-                <a href="#about" class="nav-link">About</a>
-                <a href="#skills" class="nav-link">Skills</a>
-                <a href="#projects" class="nav-link">Projects</a>
-                <a href="#experience" class="nav-link">Internships</a>
-                <a href="#now" class="nav-link font-semibold text-emerald-600 dark:text-emerald-400">Now</a>
-                <a href="./btech-journey.html" class="nav-link font-semibold text-blue-600 dark:text-blue-400">Journey</a>
-                <a href="./certifications.html" class="nav-link">Certificates</a>
-                <a href="./achievements.html" class="nav-link">Awards</a>
-                <a href="#contact" class="nav-link">Contact</a>
+            <nav class="hidden lg:flex items-center gap-6 xl:gap-8 text-sm font-medium">
+                <a href="#hero" class="mockup-nav-link active">Home</a>
+                <a href="#about" class="mockup-nav-link">About</a>
+                <a href="#projects" class="mockup-nav-link">Projects</a>
+                <a href="#experience" class="mockup-nav-link">Experience</a>
+                <a href="./achievements.html" class="mockup-nav-link">Achievements</a>
+                <a href="./btech-journey.html" class="mockup-nav-link">Blogs</a>
+                <a href="#contact" class="mockup-nav-link">Contact</a>
             </nav>
 
             <!-- Action Buttons -->
-            <div class="flex items-center gap-2 sm:gap-2.5 shrink-0 pr-1">
+            <div class="flex items-center gap-3 shrink-0 pr-1">
                 <!-- Theme Toggle Button -->
-                <button id="theme-toggle" aria-label="Toggle Theme" title="Toggle Theme" class="p-2 rounded-full border border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition-all flex items-center justify-center">
+                <button id="theme-toggle" aria-label="Toggle Theme" title="Toggle Theme" class="w-9 h-9 rounded-full border border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition-all flex items-center justify-center">
                     <i data-lucide="moon" class="w-4 h-4 hidden dark:block"></i>
                     <i data-lucide="sun" class="w-4 h-4 block dark:hidden"></i>
                 </button>
 
-                <!-- PDF Resume Download -->
-                <a href="assets/docs/Gautam_Kumar_Maurya_Resume.pdf" target="_blank" rel="noopener" class="hidden sm:inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-blue-600 hover:bg-blue-700 text-white text-xs font-semibold shadow-sm hover:shadow-md transition-all">
-                    <i data-lucide="file-text" class="w-3.5 h-3.5"></i>
-                    <span>Resume</span>
+                <!-- Pill CTA: Let's Connect ↗ -->
+                <a href="#contact" class="hidden sm:inline-flex items-center gap-1.5 px-4 sm:px-5 py-2 rounded-full bg-slate-950 text-white hover:bg-slate-800 dark:bg-white dark:text-slate-950 dark:hover:bg-slate-200 text-xs sm:text-sm font-semibold shadow-sm transition-all">
+                    <span>Let's Connect</span>
+                    <i class="fa-solid fa-arrow-up-right-from-square text-[11px]"></i>
                 </a>
 
                 <!-- Mobile Menu Hamburger Button -->
@@ -551,462 +549,309 @@
 
     <main class="pt-24">
         <!-- ═══════════════════════════════════════
-             2. HERO SECTION
+             2. HERO SECTION (MOCKUP ACCURATE)
         ═══════════════════════════════════════ -->
-        <section id="hero" class="relative overflow-hidden py-16 lg:py-28">
-            <!-- Background Glow Orbs (parallax targets) -->
-            <div class="bg-glow-blue hero-bg-orb" style="position:absolute;top:-80px;left:-80px;"></div>
-            <div class="bg-glow-sky hero-bg-orb" style="position:absolute;top:33%;right:-80px;"></div>
-            <!-- Extra ambient orb -->
-            <div class="hero-bg-orb" style="position:absolute;bottom:-60px;left:40%;width:320px;height:320px;border-radius:50%;background:radial-gradient(circle,rgba(124,58,237,0.07) 0%,transparent 70%);pointer-events:none;"></div>
-
-            <!-- Animated SVG Decorative Ring -->
-            <div style="position:absolute;top:10%;right:8%;opacity:0.18;pointer-events:none;z-index:1;" class="hidden lg:block" aria-hidden="true">
-                <svg class="gkm-ring" width="200" height="200" viewBox="0 0 200 200" fill="none">
-                    <circle cx="100" cy="100" r="80" stroke="#2563eb" stroke-width="1.5" stroke-dasharray="8 6"/>
-                    <circle cx="100" cy="100" r="55" stroke="#38bdf8" stroke-width="1" stroke-dasharray="4 8"/>
-                </svg>
-            </div>
-            <div style="position:absolute;bottom:12%;left:5%;opacity:0.12;pointer-events:none;z-index:1;" class="hidden lg:block" aria-hidden="true">
-                <svg class="gkm-ring" width="130" height="130" viewBox="0 0 130 130" fill="none" style="animation-direction:reverse;">
-                    <circle cx="65" cy="65" r="50" stroke="#10b981" stroke-width="1.5" stroke-dasharray="6 5"/>
-                    <circle cx="65" cy="65" r="30" stroke="#6366f1" stroke-width="1" stroke-dasharray="3 7"/>
-                </svg>
-            </div>
+        <section id="hero" class="relative overflow-hidden pt-10 pb-16 lg:pt-16 lg:pb-24">
+            <!-- Background Soft Ambient Glow -->
+            <div class="absolute top-0 right-1/4 w-96 h-96 rounded-full bg-indigo-500/10 dark:bg-indigo-600/15 blur-3xl pointer-events-none"></div>
+            <div class="absolute top-1/3 left-10 w-80 h-80 rounded-full bg-blue-500/10 dark:bg-blue-600/10 blur-3xl pointer-events-none"></div>
 
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-                <div class="grid lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+                <div class="grid lg:grid-cols-12 gap-8 lg:gap-6 items-center">
                     
-                    <!-- Text Content (7 cols) -->
-                    <div class="lg:col-span-7 flex flex-col items-start text-left">
-                        
-                        <!-- Live Availability Signal Pill -->
-                        <div class="hero-status-badge inline-flex items-center gap-2.5 px-4 py-2 rounded-full live-signal-pill mb-6 shadow-sm">
-                            <span class="live-pulse-dot"></span>
-                            <span>Available for Full-Stack & AI Engineering Roles · SGPA 8.5 Rank 1</span>
+                    <!-- Left Column: Eyebrow + Bold Headline + Bio + CTAs (5 cols) -->
+                    <div class="lg:col-span-5 flex flex-col items-start text-left">
+                        <!-- Eyebrow -->
+                        <div class="flex items-center gap-3 mb-6">
+                            <span class="text-xs font-bold tracking-widest text-slate-400 dark:text-slate-500 uppercase">TURNING IDEAS INTO IMPACT</span>
+                            <div class="h-px bg-slate-300 dark:bg-slate-700 w-12"></div>
                         </div>
 
                         <!-- Main H1 Headline -->
-                        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 dark:text-white tracking-tight leading-[1.08] mb-6">
-                            Architecting <span class="gradient-text">Applied AI Systems</span>, Scaled Web & Cyber Forensics.
+                        <h1 class="text-5xl sm:text-6xl xl:text-7xl font-black text-slate-950 dark:text-white tracking-tight leading-[1.04] mb-6">
+                            Build.<br>
+                            Solve.<br>
+                            <span class="text-indigo-600 dark:text-indigo-400">Create Impact.</span>
                         </h1>
 
-                        <!-- Senior Bio / Subtitle -->
-                        <h2 class="text-base sm:text-lg text-slate-600 dark:text-slate-300 leading-relaxed font-normal mb-8 max-w-2xl">
-                            Hi, I'm <strong class="text-slate-900 dark:text-white font-semibold">Gautam Kumar Maurya (gkm563)</strong> — Full-Stack AI Engineer, <strong class="text-slate-900 dark:text-white font-semibold">WikiClub Tech Envoy @ UIT</strong> (Wikimedia Movement), Selected Mentee at <strong class="text-slate-900 dark:text-white font-semibold">Youths Innovate AI (Fall 2026)</strong>, AIT Bangkok GIIP Research Fellow (Thailand), UP Police Cyber Security Awardee, Co-Founder of <a href="https://prayagrajrooms.in" target="_blank" rel="noopener" class="text-blue-600 dark:text-blue-400 underline font-medium hover:text-blue-700">PrayagrajRooms</a> (5,000+ Users), and Vice President of GeeksforGeeks UIT Chapter.
-                        </h2>
+                        <!-- Bio -->
+                        <p class="text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed mb-8 max-w-md">
+                            Hi, I'm <strong class="text-slate-950 dark:text-white font-bold">Gautam Kumar Maurya (gkm563)</strong> — a Full-Stack AI Engineer, open source contributor, and tech leader, passionate about building scalable solutions at the intersection of AI, Web, and Cybersecurity.
+                        </p>
 
-                        <!-- Call-to-Action Buttons -->
-                        <div class="cta-buttons flex flex-wrap items-center gap-3.5 w-full sm:w-auto mb-8">
-                            <button onclick="if(window.gautamAI) window.gautamAI.toggleWindow(true)" data-magnetic class="open-gautam-ai-btn px-5 py-3 rounded-xl bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-bold shadow-lg hover:shadow-indigo-500/25 transition-all flex items-center justify-center gap-2 cursor-pointer transform hover:-translate-y-0.5">
-                                <i class="fa-solid fa-robot text-base text-cyan-300"></i>
-                                <span>Talk to Gautam AI Clone</span>
-                            </button>
-                            <a href="#projects" data-magnetic class="px-5 py-3 rounded-xl bg-slate-900 dark:bg-white text-white dark:text-slate-950 font-semibold shadow-md hover:shadow-lg transition-all flex items-center justify-center gap-2">
-                                <span>Explore Projects</span>
-                                <i data-lucide="arrow-down" class="w-4 h-4"></i>
+                        <!-- Buttons -->
+                        <div class="flex flex-wrap items-center gap-3.5 mb-6">
+                            <a href="#projects" class="px-6 py-3 rounded-full bg-slate-950 text-white hover:bg-slate-800 dark:bg-white dark:text-slate-950 dark:hover:bg-slate-200 text-sm font-semibold transition-all flex items-center gap-2 shadow-sm hover:shadow-md">
+                                <span>View My Work</span>
+                                <i class="fa-solid fa-arrow-right text-xs"></i>
                             </a>
-                            <a href="assets/docs/Gautam_Kumar_Maurya_Resume.pdf" target="_blank" rel="noopener" class="px-5 py-3 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-slate-800 dark:text-slate-200 font-semibold hover:bg-slate-50 dark:hover:bg-slate-800 transition-all flex items-center justify-center gap-2">
-                                <i data-lucide="download" class="w-4 h-4 text-blue-600"></i>
-                                <span>Resume</span>
+                            <a href="assets/docs/Gautam_Kumar_Maurya_Resume.pdf" target="_blank" rel="noopener" class="px-6 py-3 rounded-full bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-700 text-slate-800 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-800 text-sm font-semibold transition-all flex items-center gap-2 shadow-sm">
+                                <i class="fa-solid fa-arrow-down text-xs"></i>
+                                <span>Download Resume</span>
                             </a>
                         </div>
+                    </div>
 
-                        <!-- Social Icon Links -->
-                        <div class="social-row flex items-center gap-4 pt-6 border-t border-slate-200 dark:border-slate-800/80 w-full">
-                            <span class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Connect:</span>
-                            <div class="flex items-center gap-2.5">
-                                <a href="https://github.com/gkm563" target="_blank" rel="noopener" aria-label="GitHub Profile" class="p-2.5 rounded-xl bg-slate-100 dark:bg-slate-900 text-slate-700 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-blue-50 dark:hover:bg-slate-800 transition-all flex items-center justify-center">
-                                    <i class="fa-brands fa-github text-lg"></i>
-                                </a>
-                                <a href="https://www.linkedin.com/in/gkm563/" target="_blank" rel="noopener" aria-label="LinkedIn Profile" class="p-2.5 rounded-xl bg-slate-100 dark:bg-slate-900 text-slate-700 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-blue-50 dark:hover:bg-slate-800 transition-all flex items-center justify-center">
-                                    <i class="fa-brands fa-linkedin text-lg"></i>
-                                </a>
-                                <a href="mailto:gkmwin563@gmail.com" aria-label="Email Me" class="p-2.5 rounded-xl bg-slate-100 dark:bg-slate-900 text-slate-700 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-blue-50 dark:hover:bg-slate-800 transition-all flex items-center justify-center">
-                                    <i class="fa-solid fa-envelope text-lg"></i>
-                                </a>
-                                <a href="https://x.com/gkm563" target="_blank" rel="noopener" aria-label="Twitter X Profile" class="p-2.5 rounded-xl bg-slate-100 dark:bg-slate-900 text-slate-700 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-blue-50 dark:hover:bg-slate-800 transition-all flex items-center justify-center">
-                                    <i class="fa-brands fa-x-twitter text-lg"></i>
-                                </a>
-                                <a href="https://www.youtube.com/@GKM563" target="_blank" rel="noopener" aria-label="YouTube Channel" class="p-2.5 rounded-xl bg-slate-100 dark:bg-slate-900 text-slate-700 dark:text-slate-300 hover:text-red-600 dark:hover:text-red-400 hover:bg-red-50 dark:hover:bg-slate-800 transition-all flex items-center justify-center">
-                                    <i class="fa-brands fa-youtube text-lg"></i>
-                                </a>
-                                <a href="https://api.whatsapp.com/send?phone=919125563563&text=Hi%20Gautam,%20I%20visited%20your%20portfolio!" target="_blank" rel="noopener" aria-label="WhatsApp Direct" class="p-2.5 rounded-xl bg-emerald-50 dark:bg-emerald-950/40 text-emerald-600 dark:text-emerald-400 hover:bg-emerald-100 dark:hover:bg-emerald-900/50 transition-all flex items-center justify-center">
-                                    <i class="fa-brands fa-whatsapp text-lg"></i>
+                    <!-- Middle Column: Handwritten Accent + 4 Feature Pills (3 cols) -->
+                    <div class="lg:col-span-3 flex flex-col items-center lg:items-start justify-center">
+                        <div class="mb-5 flex flex-col items-center lg:items-start">
+                            <img src="assets/images/profile/handwritten_better_tech_trans.png" alt="Better Technology A Brighter Tomorrow" class="w-36 sm:w-44 h-auto dark:invert select-none pointer-events-none transform -rotate-1">
+                        </div>
+
+                        <!-- 4 Feature Pills -->
+                        <div class="flex flex-col gap-2.5 w-full max-w-xs">
+                            <div class="mockup-feature-pill">
+                                <div class="pill-icon"><i class="fa-solid fa-code"></i></div>
+                                <span>Full-Stack Development</span>
+                            </div>
+                            <div class="mockup-feature-pill">
+                                <div class="pill-icon"><i class="fa-solid fa-robot"></i></div>
+                                <span>Applied AI &amp; ML</span>
+                            </div>
+                            <div class="mockup-feature-pill">
+                                <div class="pill-icon"><i class="fa-solid fa-shield-halved"></i></div>
+                                <span>Cybersecurity &amp; Forensics</span>
+                            </div>
+                            <div class="mockup-feature-pill">
+                                <div class="pill-icon"><i class="fa-solid fa-users"></i></div>
+                                <span>Community &amp; Leadership</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Column: Gautam Portrait Composition (4 cols) -->
+                    <div class="lg:col-span-4 flex items-center justify-center relative">
+                        <div class="relative w-full max-w-md mx-auto">
+                            <div class="relative rounded-3xl overflow-hidden shadow-2xl border border-slate-200/80 dark:border-slate-800 bg-white/70 dark:bg-slate-900/60 backdrop-blur-xl group">
+                                <img src="assets/images/profile/gautam_hero_portrait_clean.jpg" alt="Gautam Kumar Maurya — Build for People, Scale for Impact" class="w-full h-auto object-contain select-none transform group-hover:scale-[1.01] transition-transform duration-500">
+                                <!-- Interactive Pulsing Live Dot overlay over the badge in the image -->
+                                <a href="#contact" class="absolute z-20 cursor-pointer group/dot" style="left:86.4%;top:74.6%;transform:translate(-50%,-50%);width:24px;height:24px;" title="Available for Full-Time &amp; Internships · Get in Touch">
+                                    <span class="absolute inset-0 rounded-full bg-emerald-400 animate-ping opacity-75"></span>
+                                    <span class="relative block w-3.5 h-3.5 mx-auto mt-1 rounded-full bg-emerald-500 shadow-sm shadow-emerald-500/50"></span>
                                 </a>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Profile Image & Executive Verified Credentials Column (5 cols) -->
-                    <div class="lg:col-span-5 flex justify-center relative">
-                        <div class="relative w-full max-w-md">
+                </div>
+            </div>
+        </section>
 
-                            <!-- Floating 3D Tech Badges -->
-                            <div class="tech-orb absolute -top-4 -left-4 z-20 px-3.5 py-1.5 rounded-xl bg-blue-600/90 text-white font-mono text-xs font-bold shadow-xl backdrop-blur-md cursor-default select-none flex items-center gap-1.5">
-                                <span class="w-2 h-2 rounded-full bg-cyan-300 animate-pulse"></span>
-                                <span>Full-Stack &amp; AI</span>
-                            </div>
-                            <div class="tech-orb absolute -bottom-3 -right-3 z-20 px-3.5 py-1.5 rounded-xl bg-violet-600/90 text-white font-mono text-xs font-bold shadow-xl backdrop-blur-md cursor-default select-none flex items-center gap-1.5">
-                                <span class="w-2 h-2 rounded-full bg-purple-300 animate-pulse"></span>
-                                <span>Cybersecurity</span>
-                            </div>
+        <!-- ═══════════════════════════════════════
+             2.5 FLOATING METRICS STRIP (MOCKUP ACCURATE)
+        ═══════════════════════════════════════ -->
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-6 sm:-mt-10 relative z-20">
+            <div class="mockup-metrics-card bg-white dark:bg-slate-900 rounded-2xl shadow-xl shadow-slate-200/50 dark:shadow-black/40 border border-slate-100 dark:border-slate-800 py-6 px-4 sm:px-8">
+                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 items-center gap-6 divide-y sm:divide-y-0 sm:divide-x divide-slate-100 dark:divide-slate-800">
+                    <!-- Metric 1 -->
+                    <div class="metric-col px-3 text-center sm:text-left">
+                        <div class="text-2xl sm:text-3xl font-black text-blue-600 dark:text-blue-400">5,000+</div>
+                        <div class="text-xs font-medium text-slate-500 dark:text-slate-400 mt-1">Users (PrayagrajRooms)</div>
+                    </div>
+                    <!-- Metric 2 -->
+                    <div class="metric-col px-3 text-center sm:text-left">
+                        <div class="text-2xl sm:text-3xl font-black text-blue-600 dark:text-blue-400">10+</div>
+                        <div class="text-xs font-medium text-slate-500 dark:text-slate-400 mt-1">Projects Built</div>
+                    </div>
+                    <!-- Metric 3 -->
+                    <div class="metric-col px-3 text-center sm:text-left">
+                        <div class="text-2xl sm:text-3xl font-black text-blue-600 dark:text-blue-400">3+</div>
+                        <div class="text-xs font-medium text-slate-500 dark:text-slate-400 mt-1">Leadership Roles</div>
+                    </div>
+                    <!-- Metric 4 -->
+                    <div class="metric-col px-3 text-center sm:text-left">
+                        <div class="text-2xl sm:text-3xl font-black text-blue-600 dark:text-blue-400">5+</div>
+                        <div class="text-xs font-medium text-slate-500 dark:text-slate-400 mt-1">Awards &amp; Recognitions</div>
+                    </div>
+                    <!-- Metric 5 -->
+                    <div class="metric-col px-3 text-center sm:text-left">
+                        <div class="text-2xl sm:text-3xl font-black text-blue-600 dark:text-blue-400">Open Source</div>
+                        <div class="text-xs font-medium text-slate-500 dark:text-slate-400 mt-1">Active Contributor</div>
+                    </div>
+                    <!-- Metric 6 Signature -->
+                    <div class="metric-col px-3 flex items-center justify-center pt-4 sm:pt-0">
+                        <img src="assets/images/profile/handwritten_signature_trans.png" alt="Gautam Keep Building" class="h-12 sm:h-14 w-auto dark:invert select-none pointer-events-none">
+                    </div>
+                </div>
+            </div>
+        </div>
 
-                            <!-- Floating Subpage Badge 1: AIT Bangkok -->
-                            <a href="./ait-global-innovation-internship.html" class="floating-badge float-badge-1">
-                                <div class="floating-badge-icon" style="background: rgba(37, 99, 235, 0.15); color: #2563eb;">
-                                    <i class="fa-solid fa-earth-asia"></i>
+        <!-- ═══════════════════════════════════════
+             2.8 FEATURED IN / ASSOCIATED WITH STRIP
+        ═══════════════════════════════════════ -->
+        <section class="py-12 bg-transparent border-b border-slate-200/60 dark:border-slate-800/80">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex items-center gap-3 mb-6">
+                    <span class="text-xs font-bold tracking-widest text-slate-400 dark:text-slate-500 uppercase">FEATURED IN / ASSOCIATED WITH</span>
+                    <div class="h-px bg-slate-200 dark:bg-slate-800 flex-1 max-w-[80px]"></div>
+                </div>
+                <div class="flex flex-wrap lg:flex-nowrap items-center justify-between gap-6 overflow-x-auto pb-2">
+                    <div class="flex items-center gap-4 sm:gap-6 divide-x divide-slate-200 dark:divide-slate-800">
+                        <!-- Wikimedia -->
+                        <a href="./open-source-contributions.html" class="mockup-partner-item group flex items-center gap-2 pl-0 hover:opacity-80 transition-opacity">
+                            <i class="fa-brands fa-wikipedia-w text-2xl text-slate-900 dark:text-white"></i>
+                            <span class="font-bold text-sm text-slate-800 dark:text-slate-200">Wikimedia Movement</span>
+                        </a>
+                        <!-- GeeksforGeeks -->
+                        <div class="mockup-partner-item flex items-center gap-2 pl-4 sm:pl-6">
+                            <svg class="h-6 w-6" viewBox="0 0 32 32" fill="#0F9D58"><path d="M14.6 19.3c-.4.5-.9.9-1.5 1.2-.6.3-1.3.4-2.1.4-1.2 0-2.2-.4-3-1.2s-1.2-1.8-1.2-3.1c0-1.3.4-2.3 1.2-3.1.8-.8 1.8-1.2 3-1.2.8 0 1.5.1 2.1.4.6.3 1.1.7 1.5 1.2l1.9-2.1c-.8-.8-1.7-1.4-2.7-1.8s-2.1-.6-3.3-.6c-2.1 0-3.9.7-5.3 2.1C3.7 12.6 3 14.3 3 16.6s.7 4 2.1 5.4c1.4 1.4 3.2 2.1 5.3 2.1 1.2 0 2.3-.2 3.3-.6 1-.4 1.9-1 2.7-1.8l-1.8-2.4zm2.8-6.6c.4-.5.9-.9 1.5-1.2.6-.3 1.3-.4 2.1-.4 1.2 0 2.2.4 3 1.2.8.8 1.2 1.8 1.2 3.1 0 1.3-.4 2.3-1.2 3.1-.8.8-1.8 1.2-3 1.2-.8 0-1.5-.1-2.1-.4-.6-.3-1.1-.7-1.5-1.2l-1.9 2.1c.8.8 1.7 1.4 2.7 1.8 1 .4 2.1.6 3.3.6 2.1 0 3.9-.7 5.3-2.1 1.4-1.4 2.1-3.1 2.1-5.4s-.7-4-2.1-5.4C26.9 8.7 25.1 8 23 8c-1.2 0-2.3.2-3.3.6-1 .4-1.9 1-2.7 1.8l1.8 2.3z"/></svg>
+                            <span class="font-bold text-sm text-slate-800 dark:text-slate-200">GeeksforGeeks</span>
+                        </div>
+                        <!-- HackerRank -->
+                        <a href="https://www.hackerrank.com/profile/gkm563" target="_blank" rel="noopener" class="mockup-partner-item group flex items-center gap-2 pl-4 sm:pl-6 hover:opacity-80 transition-opacity">
+                            <div class="w-6 h-6 rounded bg-[#001E2B] flex items-center justify-center text-[#00EA64] font-black text-xs">H</div>
+                            <span class="font-bold text-sm text-slate-800 dark:text-slate-200">HackerRank</span>
+                        </a>
+                        <!-- AIT Bangkok -->
+                        <a href="./ait-global-innovation-internship.html" class="mockup-partner-item group flex items-center gap-2 pl-4 sm:pl-6 hover:opacity-80 transition-opacity">
+                            <img src="assets/images/ait-bangkok/Asian_Institute_of_Technology-Logo.png" alt="AIT Bangkok Logo" class="h-6 w-auto object-contain">
+                            <span class="font-bold text-sm text-slate-800 dark:text-slate-200">AIT Bangkok</span>
+                        </a>
+                        <!-- UP Police -->
+                        <a href="./up-police-internship.html" class="mockup-partner-item group flex items-center gap-2 pl-4 sm:pl-6 hover:opacity-80 transition-opacity">
+                            <img src="assets/images/up-police/logos/up-police-logo-uttar-pradesh-police-up-police-logo-11563421838xjer0uaxol.png" alt="UP Police Logo" class="h-6 w-auto object-contain">
+                            <span class="font-bold text-sm text-slate-800 dark:text-slate-200">UP Police</span>
+                        </a>
+                        <!-- PrayagrajRooms -->
+                        <a href="https://prayagrajrooms.in" target="_blank" rel="noopener" class="mockup-partner-item group flex items-center gap-2 pl-4 sm:pl-6 hover:opacity-80 transition-opacity">
+                            <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
+                            <span class="font-bold text-sm text-slate-800 dark:text-slate-200">PrayagrajRooms</span>
+                        </a>
+                    </div>
+                    <!-- Right tagline -->
+                    <div class="hidden xl:flex flex-col text-right text-xs text-slate-400 leading-snug shrink-0">
+                        <span>Communities.</span>
+                        <span>Opportunities.</span>
+                        <span class="font-semibold text-slate-600 dark:text-slate-300">A Larger Impact.</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══════════════════════════════════════
+             3. PROJECTS (MOCKUP ACCURATE: FROM IDEAS TO REAL-WORLD SOLUTIONS)
+        ═══════════════════════════════════════ -->
+        <section id="projects" class="py-16 bg-white dark:bg-slate-900/50 border-b border-slate-200/60 dark:border-slate-800">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <!-- Eyebrow & Headline -->
+                <div class="flex items-center gap-3 mb-2">
+                    <span class="text-xs font-bold tracking-widest text-slate-400 dark:text-slate-500 uppercase">PROJECTS</span>
+                    <div class="h-px bg-slate-300 dark:bg-slate-700 w-12"></div>
+                </div>
+
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-10">
+                    <h2 class="text-3xl sm:text-4xl font-black text-slate-950 dark:text-white tracking-tight">
+                        From Ideas to <span class="text-indigo-600 dark:text-indigo-400">Real-World Solutions</span>
+                    </h2>
+                    <button onclick="const el = document.getElementById('all-projects-wrapper'); el.classList.toggle('hidden'); const btn = this.querySelector('span'); btn.textContent = el.classList.contains('hidden') ? 'View All Projects →' : 'Hide Extended Catalogue ↑';" class="px-5 py-2.5 rounded-full border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 text-slate-700 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-800 text-sm font-semibold transition-all flex items-center gap-2 shadow-sm shrink-0">
+                        <span>View All Projects →</span>
+                    </button>
+                </div>
+
+                <!-- 3 Mockup Featured Cards Grid -->
+                <div class="grid md:grid-cols-3 gap-6">
+                    
+                    <!-- Card 1: PrayagrajRooms -->
+                    <div class="mockup-project-card group bg-white dark:bg-slate-900 p-6 rounded-2xl border border-slate-200/80 dark:border-slate-800 shadow-sm hover:shadow-md transition-all flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-start justify-between mb-4">
+                                <div class="w-12 h-12 rounded-xl bg-blue-50 dark:bg-blue-950/60 text-blue-600 dark:text-blue-400 flex items-center justify-center text-xl">
+                                    <i class="fa-solid fa-house-chimney"></i>
                                 </div>
-                                <div>
-                                    <div class="floating-badge-title">AIT Bangkok GIIP</div>
-                                    <div class="floating-badge-sub">Thailand Fellow 2026</div>
-                                </div>
-                            </a>
+                                <a href="https://prayagrajrooms.in" target="_blank" rel="noopener" class="w-8 h-8 rounded-full bg-slate-50 dark:bg-slate-800 text-slate-400 group-hover:text-blue-600 dark:group-hover:text-blue-400 flex items-center justify-center transition-colors">
+                                    <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+                                </a>
+                            </div>
+                            <div class="flex items-center gap-2 mb-2">
+                                <h3 class="font-bold text-lg text-slate-950 dark:text-white">PrayagrajRooms</h3>
+                                <span class="px-2 py-0.5 rounded-full bg-blue-50 text-blue-600 dark:bg-blue-950/60 dark:text-blue-400 text-[11px] font-semibold">Featured</span>
+                            </div>
+                            <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed mb-6">
+                                A complete room rental platform with 5,000+ users, secure payments, admin portal, and multi-role dashboards.
+                            </p>
+                        </div>
+                        <div class="flex flex-wrap gap-1.5 pt-4 border-t border-slate-100 dark:border-slate-800/80">
+                            <span class="mockup-tag">Web Development</span>
+                            <span class="mockup-tag">PHP</span>
+                            <span class="mockup-tag">MySQL</span>
+                            <span class="mockup-tag">Real Users</span>
+                        </div>
+                    </div>
 
-                            <!-- Floating Subpage Badge 2: UP Police APCSIP -->
-                            <a href="./up-police-internship.html" class="floating-badge float-badge-2">
-                                <div class="floating-badge-icon" style="background: rgba(2, 132, 199, 0.15); color: #0284c7;">
+                    <!-- Card 2: Gautam AI Clone -->
+                    <div onclick="if(window.gautamAI) window.gautamAI.toggleWindow(true)" class="mockup-project-card group bg-white dark:bg-slate-900 p-6 rounded-2xl border border-slate-200/80 dark:border-slate-800 shadow-sm hover:shadow-md transition-all flex flex-col justify-between cursor-pointer">
+                        <div>
+                            <div class="flex items-start justify-between mb-4">
+                                <div class="w-12 h-12 rounded-xl bg-indigo-600 text-white flex items-center justify-center text-xl shadow-md shadow-indigo-600/20">
+                                    <i class="fa-solid fa-bars-staggered"></i>
+                                </div>
+                                <div class="w-8 h-8 rounded-full bg-slate-50 dark:bg-slate-800 text-slate-400 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 flex items-center justify-center transition-colors">
+                                    <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-2 mb-2">
+                                <h3 class="font-bold text-lg text-slate-950 dark:text-white">Gautam AI Clone</h3>
+                                <span class="px-2 py-0.5 rounded-full bg-indigo-50 text-indigo-600 dark:bg-indigo-950/60 dark:text-indigo-400 text-[11px] font-semibold">Interactive</span>
+                            </div>
+                            <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed mb-6">
+                                An AI-powered personal assistant trained on my journey, projects, and experiences.
+                            </p>
+                        </div>
+                        <div class="flex flex-wrap gap-1.5 pt-4 border-t border-slate-100 dark:border-slate-800/80">
+                            <span class="mockup-tag">AI</span>
+                            <span class="mockup-tag">RAG</span>
+                            <span class="mockup-tag">LLM</span>
+                            <span class="mockup-tag">Personal Assistant</span>
+                        </div>
+                    </div>
+
+                    <!-- Card 3: Cyber Forensics Lab -->
+                    <div class="mockup-project-card group bg-white dark:bg-slate-900 p-6 rounded-2xl border border-slate-200/80 dark:border-slate-800 shadow-sm hover:shadow-md transition-all flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-start justify-between mb-4">
+                                <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-blue-500 to-indigo-600 text-white flex items-center justify-center text-xl shadow-md shadow-blue-500/20">
                                     <i class="fa-solid fa-shield-halved"></i>
                                 </div>
-                                <div>
-                                    <div class="floating-badge-title">UP Police APCSIP</div>
-                                    <div class="floating-badge-sub">Best Content Creator</div>
-                                </div>
-                            </a>
-
-                            <!-- Floating Subpage Badge 3: Wikimedia Core -->
-                            <a href="./open-source-contributions.html" class="floating-badge float-badge-3">
-                                <div class="floating-badge-icon" style="background: rgba(16, 185, 129, 0.15); color: #10b981;">
-                                    <i class="fa-brands fa-wikipedia-w"></i>
-                                </div>
-                                <div>
-                                    <div class="floating-badge-title">Wikimedia Core</div>
-                                    <div class="floating-badge-sub">15+ Merged Patches</div>
-                                </div>
-                            </a>
-
-                            <!-- Card Container -->
-                            <div class="hero-profile-card float-levitate glass-card rounded-3xl p-4 shadow-2xl border border-slate-200/90 dark:border-slate-800 relative z-10 overflow-hidden bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl">
-                                <div class="relative rounded-2xl overflow-hidden aspect-[4/5]">
-                                    <img src="assets/images/profile/Gautam_Kumar_Maurya.jpg" alt="Gautam Kumar Maurya — Full-Stack AI Engineer" class="w-full h-full object-cover object-center transform hover:scale-105 transition-transform duration-500" loading="eager">
-                                    
-                                    <!-- Overlay Gradient -->
-                                    <div class="absolute inset-0 bg-gradient-to-t from-slate-950/85 via-slate-950/20 to-transparent"></div>
-
-                                    <!-- Bottom Overlay Badge inside Image -->
-                                    <div class="absolute bottom-4 left-4 right-4 text-white p-3.5 rounded-2xl bg-slate-900/75 backdrop-blur-md border border-white/15 shadow-lg">
-                                        <div class="flex items-center justify-between">
-                                            <div>
-                                                <div class="text-xs text-cyan-300 font-semibold flex items-center gap-1.5">
-                                                    <span>Academic Rank 1 Topper</span>
-                                                    <span>•</span>
-                                                    <span class="text-emerald-400">SGPA 8.5</span>
-                                                </div>
-                                                <div class="text-sm font-bold text-white mt-0.5">United Institute of Technology</div>
-                                            </div>
-                                            <span class="p-1.5 rounded-full bg-blue-600/40 text-blue-300">
-                                                <i data-lucide="award" class="w-4 h-4"></i>
-                                            </span>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!-- Quick Highlight Pills Below Image -->
-                                <div class="grid grid-cols-2 gap-2.5 mt-3.5">
-                                    <a href="./btech-journey.html" class="p-2.5 rounded-xl bg-slate-50 dark:bg-slate-900/90 border border-slate-100 dark:border-slate-800 hover:border-blue-500/50 transition-colors text-center group">
-                                        <div class="text-base font-extrabold text-blue-600 dark:text-blue-400 group-hover:scale-105 transition-transform">5,000+</div>
-                                        <div class="text-[11px] text-slate-500 dark:text-slate-400 font-medium">Users (PrayagrajRooms)</div>
-                                    </a>
-                                    <a href="./certifications.html" class="p-2.5 rounded-xl bg-slate-50 dark:bg-slate-900/90 border border-slate-100 dark:border-slate-800 hover:border-emerald-500/50 transition-colors text-center group">
-                                        <div class="text-base font-extrabold text-emerald-600 dark:text-emerald-400 group-hover:scale-105 transition-transform">40+</div>
-                                        <div class="text-[11px] text-slate-500 dark:text-slate-400 font-medium">Verified Credentials</div>
-                                    </a>
-                                </div>
+                                <a href="./up-police-internship.html" class="w-8 h-8 rounded-full bg-slate-50 dark:bg-slate-800 text-slate-400 group-hover:text-blue-600 dark:group-hover:text-blue-400 flex items-center justify-center transition-colors">
+                                    <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+                                </a>
                             </div>
+                            <div class="flex items-center gap-2 mb-2">
+                                <h3 class="font-bold text-lg text-slate-950 dark:text-white">Cyber Forensics Lab</h3>
+                            </div>
+                            <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed mb-6">
+                                Tools and writeups for digital forensics, memory analysis, and incident response.
+                            </p>
+                        </div>
+                        <div class="flex flex-wrap gap-1.5 pt-4 border-t border-slate-100 dark:border-slate-800/80">
+                            <span class="mockup-tag">Cybersecurity</span>
+                            <span class="mockup-tag">DFIR</span>
+                            <span class="mockup-tag">Writeups</span>
+                            <span class="mockup-tag">Research</span>
                         </div>
                     </div>
 
                 </div>
-            </div>
-        </section>
 
-        <!-- ═══════════════════════════════════════
-             2.5 EXECUTIVE METRIC COUNTERS HUB
-        ═══════════════════════════════════════ -->
-        <section class="py-10 border-y border-slate-200/80 dark:border-slate-800/80 bg-slate-100/50 dark:bg-slate-950">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
-                    
-                    <!-- Metric 1 -->
-                    <div class="metric-counter-card group">
-                        <div class="text-xs font-bold uppercase tracking-wider text-blue-600 dark:text-blue-400 mb-1">Production Reach</div>
-                        <div class="metric-number text-3xl sm:text-4xl text-slate-900 dark:text-white mb-1.5">5,000+</div>
-                        <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">Active Users Served across PrayagrajRooms &amp; Web Systems.</p>
-                    </div>
-
-                    <!-- Metric 2 -->
-                    <div class="metric-counter-card group">
-                        <div class="text-xs font-bold uppercase tracking-wider text-emerald-600 dark:text-emerald-400 mb-1">Open Source</div>
-                        <div class="metric-number text-3xl sm:text-4xl text-slate-900 dark:text-white mb-1.5">15+</div>
-                        <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">Production Patches Merged into Wikimedia MediaWiki Core.</p>
-                    </div>
-
-                    <!-- Metric 3 -->
-                    <div class="metric-counter-card group">
-                        <div class="text-xs font-bold uppercase tracking-wider text-purple-600 dark:text-purple-400 mb-1">Verified Credentials</div>
-                        <div class="metric-number text-3xl sm:text-4xl text-slate-900 dark:text-white mb-1.5">40+</div>
-                        <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">Certifications across Anthropic Claude, Google Cloud &amp; IIT Kanpur.</p>
-                    </div>
-
-                    <!-- Metric 4 -->
-                    <div class="metric-counter-card group">
-                        <div class="text-xs font-bold uppercase tracking-wider text-amber-600 dark:text-amber-400 mb-1">Academic Merit</div>
-                        <div class="metric-number text-3xl sm:text-4xl text-slate-900 dark:text-white mb-1.5">Rank 1</div>
-                        <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">CSE Data Science Scholar (SGPA 8.5) &amp; UP Board Topper.</p>
-                    </div>
-
-                </div>
-            </div>
-        </section>
-
-        <!-- ═══════════════════════════════════════
-             3. ABOUT PREVIEW SECTION
-        ═══════════════════════════════════════ -->
-        <section id="about" class="py-20 bg-white dark:bg-slate-900/50 border-y border-slate-200/60 dark:border-slate-800">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                
-                <!-- Section Header -->
-                <div class="max-w-3xl mb-12">
-                    <h2 class="text-xs font-semibold uppercase tracking-widest text-blue-600 dark:text-blue-400 mb-2">About Me</h2>
-                    <h3 class="text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white tracking-tight">
-                        Engineered for Performance, <span class="gradient-text">Driven by Innovation</span>.
-                    </h3>
-                </div>
-
-                <!-- Executive 4-Pillars Quick Matrix -->
-                <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-14">
-                    <div class="glass-card p-5 rounded-2xl border border-blue-200/80 dark:border-blue-900/40 hover-elevate">
-                        <div class="flex items-center gap-3 mb-2.5">
-                            <span class="w-8 h-8 rounded-xl bg-blue-100 dark:bg-blue-950 text-blue-600 flex items-center justify-center font-bold text-sm">💻</span>
-                            <h4 class="font-bold text-slate-900 dark:text-white text-sm">Full-Stack & Systems</h4>
-                        </div>
-                        <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">Co-Founder @ PrayagrajRooms (5k+ Users) & BuildX Platform. React, Node, TypeScript, SQL.</p>
-                    </div>
-
-                    <div class="glass-card p-5 rounded-2xl border border-purple-200/80 dark:border-purple-900/40 hover-elevate">
-                        <div class="flex items-center gap-3 mb-2.5">
-                            <span class="w-8 h-8 rounded-xl bg-purple-100 dark:bg-purple-950 text-purple-600 flex items-center justify-center font-bold text-sm">🤖</span>
-                            <h4 class="font-bold text-slate-900 dark:text-white text-sm">Applied AI & ML</h4>
-                        </div>
-                        <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">VoxRAG (sub-200ms Voice RAG), IntervAI, AIT Bangkok GIIP Research Fellow (Thailand).</p>
-                    </div>
-
-                    <div class="glass-card p-5 rounded-2xl border border-sky-200/80 dark:border-sky-900/40 hover-elevate">
-                        <div class="flex items-center gap-3 mb-2.5">
-                            <span class="w-8 h-8 rounded-xl bg-sky-100 dark:bg-sky-950 text-sky-600 flex items-center justify-center font-bold text-sm">🛡️</span>
-                            <h4 class="font-bold text-slate-900 dark:text-white text-sm">Cyber & Forensics</h4>
-                        </div>
-                        <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">UP Police APCSIP Best Content Creator Awardee & C3iHub IIT Kanpur Trainee. OSINT & Threat Analysis.</p>
-                    </div>
-
-                    <div class="glass-card p-5 rounded-2xl border border-emerald-200/80 dark:border-emerald-900/40 hover-elevate">
-                        <div class="flex items-center gap-3 mb-2.5">
-                            <span class="w-8 h-8 rounded-xl bg-emerald-100 dark:bg-emerald-950 text-emerald-600 flex items-center justify-center font-bold text-sm">🌐</span>
-                            <h4 class="font-bold text-slate-900 dark:text-white text-sm">Open Source & Merit</h4>
-                        </div>
-                        <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">15+ Merged MediaWiki Patches, VP @ GeeksforGeeks UIT Chapter & Academic Rank 1 (SGPA 8.5).</p>
-                    </div>
-                </div>
-
-                <div class="grid lg:grid-cols-12 gap-10">
-                    
-                    <!-- Narrative Description (7 cols) -->
-                    <div class="lg:col-span-7 space-y-6 text-base sm:text-lg text-slate-600 dark:text-slate-300 leading-relaxed">
-                        <p>
-                            I am <strong class="text-slate-900 dark:text-white">Gautam Kumar Maurya (gkm563)</strong> — a Full-Stack Software Engineer, AI Developer, and Cybersecurity Researcher. Currently pursuing B.Tech in CSE (Data Science) at United Institute of Technology (UIT), Prayagraj, I hold <strong class="text-slate-900 dark:text-white">Academic Rank 1 in CSE (Data Science) for 2nd Year (SGPA 8.5)</strong> and <strong class="text-slate-900 dark:text-white">Rank 5 College Overall for 1st Year</strong> in AKTU examinations with top academic honors.
-                        </p>
-                        <p>
-                            As <strong class="text-slate-900 dark:text-white">WikiClub Tech Envoy at UIT</strong> and <strong class="text-slate-900 dark:text-white">Vice President of the GeeksforGeeks UIT Chapter</strong>, I bridge academic excellence with production software engineering and open-source leadership. I co-founded <strong class="text-slate-900 dark:text-white">PrayagrajRooms</strong> (a student platform serving 5,000+ users), contribute actively to <strong class="text-slate-900 dark:text-white">Wikimedia MediaWiki Core</strong> (15+ merged production patches, featured in IIIT Hyderabad's Open Source Report), and mentor emerging engineers.
-                        </p>
-                        <p>
-                            My credentials include representing India as an international <strong class="text-slate-900 dark:text-white">GIIP-2026 Research Fellow at AIT Bangkok, Thailand</strong>, being selected among 800+ global applicants for the <strong class="text-slate-900 dark:text-white">Youths Innovate AI Mentorship Program (Fall Cohort 2026)</strong>, and completing the government cybersecurity fellowship with <strong class="text-slate-900 dark:text-white">UP Police &amp; Amroha Police Cyber Crime Cell (APCSIP-2026)</strong>, where I was honored with the Best Content Creator Award by DSP Anjali Kataria.
-                        </p>
-                    </div>
-
-                    <!-- Highlight Cards Grid (5 cols) -->
-                    <div class="lg:col-span-5 grid sm:grid-cols-2 gap-4">
-                        
-                        <!-- Card 1 -->
-                        <div class="glass-card p-5 rounded-2xl border border-slate-200 dark:border-slate-800 hover-elevate">
-                            <div class="w-10 h-10 rounded-xl bg-blue-50 dark:bg-blue-950/50 text-blue-600 dark:text-blue-400 flex items-center justify-center mb-4">
-                                <i data-lucide="award" class="w-5 h-5"></i>
-                            </div>
-                            <h4 class="font-bold text-slate-900 dark:text-white text-base mb-1">Academic Rank 1</h4>
-                            <p class="text-xs text-slate-500 dark:text-slate-400">Rank 1 CSE DS 2nd Year (SGPA 8.5), Rank 5 College 1st Year.</p>
-                        </div>
-
-                        <!-- Card 2 -->
-                        <div class="glass-card p-5 rounded-2xl border border-slate-200 dark:border-slate-800 hover-elevate">
-                            <div class="w-10 h-10 rounded-xl bg-emerald-50 dark:bg-emerald-950/50 text-emerald-600 dark:text-emerald-400 flex items-center justify-center mb-4">
-                                <i data-lucide="globe" class="w-5 h-5"></i>
-                            </div>
-                            <h4 class="font-bold text-slate-900 dark:text-white text-base mb-1">GIIP Scholar</h4>
-                            <p class="text-xs text-slate-500 dark:text-slate-400">International Research Scholar at AIT Bangkok, Thailand.</p>
-                        </div>
-
-                        <!-- Card 3 -->
-                        <div class="glass-card p-5 rounded-2xl border border-slate-200 dark:border-slate-800 hover-elevate">
-                            <div class="w-10 h-10 rounded-xl bg-purple-50 dark:bg-purple-950/50 text-purple-600 dark:text-purple-400 flex items-center justify-center mb-4">
-                                <i data-lucide="shield-check" class="w-5 h-5"></i>
-                            </div>
-                            <h4 class="font-bold text-slate-900 dark:text-white text-base mb-1">UP Police Awardee</h4>
-                            <p class="text-xs text-slate-500 dark:text-slate-400">Best Content Creator Award by DSP Anjali Kataria (APCSIP-2026).</p>
-                        </div>
-
-                        <!-- Card 4 -->
-                        <div class="glass-card p-5 rounded-2xl border border-slate-200 dark:border-slate-800 hover-elevate">
-                            <div class="w-10 h-10 rounded-xl bg-sky-50 dark:bg-sky-950/50 text-sky-600 dark:text-sky-400 flex items-center justify-center mb-4">
-                                <i data-lucide="users" class="w-5 h-5"></i>
-                            </div>
-                            <h4 class="font-bold text-slate-900 dark:text-white text-base mb-1">CDN Founder</h4>
-                            <p class="text-xs text-slate-500 dark:text-slate-400">Founder & Organizer of Coding & Development Network UIT.</p>
-                        </div>
-
-                    </div>
-
-                </div>
-            </div>
-        </section>
-
-        <!-- ═══════════════════════════════════════
-             4. SKILLS MATRIX
-        ═══════════════════════════════════════ -->
-        <section id="skills" class="py-20">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                
-                <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
-                    <div>
-                        <h2 class="text-xs font-semibold uppercase tracking-widest text-blue-600 dark:text-blue-400 mb-2">Technical Proficiency</h2>
-                        <h3 class="text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white tracking-tight">
-                            Skills & <span class="gradient-text">Tech Stack</span>
-                        </h3>
-                    </div>
-
-                    <!-- Category Tab Filter Buttons -->
-                    <div class="flex flex-wrap gap-2 mt-6 md:mt-0">
-                        <button class="skill-tab-btn tab-btn px-4 py-2 rounded-xl border border-slate-200 dark:border-slate-800 text-sm font-medium text-slate-600 dark:text-slate-300 hover:border-blue-600 active" data-category="all">All Skills</button>
-                        <button class="skill-tab-btn tab-btn px-4 py-2 rounded-xl border border-slate-200 dark:border-slate-800 text-sm font-medium text-slate-600 dark:text-slate-300 hover:border-blue-600" data-category="frontend">Frontend</button>
-                        <button class="skill-tab-btn tab-btn px-4 py-2 rounded-xl border border-slate-200 dark:border-slate-800 text-sm font-medium text-slate-600 dark:text-slate-300 hover:border-blue-600" data-category="backend">Backend & DB</button>
-                        <button class="skill-tab-btn tab-btn px-4 py-2 rounded-xl border border-slate-200 dark:border-slate-800 text-sm font-medium text-slate-600 dark:text-slate-300 hover:border-blue-600" data-category="ai">AI & Data</button>
-                        <button class="skill-tab-btn tab-btn px-4 py-2 rounded-xl border border-slate-200 dark:border-slate-800 text-sm font-medium text-slate-600 dark:text-slate-300 hover:border-blue-600" data-category="security">Security & Tools</button>
-                    </div>
-                </div>
-
-                <!-- Skill Cards Grid -->
-                <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                    
-                    <!-- Card 1: Frontend -->
-                    <div class="skill-category-card glass-card p-6 rounded-2xl border border-slate-200 dark:border-slate-800 hover-elevate" data-category="frontend">
-                        <div class="flex items-center gap-3 mb-4">
-                            <div class="p-2.5 rounded-xl bg-blue-50 dark:bg-blue-950/50 text-blue-600 dark:text-blue-400">
-                                <i data-lucide="layout" class="w-5 h-5"></i>
-                            </div>
-                            <h4 class="font-bold text-slate-900 dark:text-white">Frontend Web</h4>
-                        </div>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="tech-pill">React.js</span>
-                            <span class="tech-pill">JavaScript (ES6+)</span>
-                            <span class="tech-pill">Tailwind CSS</span>
-                            <span class="tech-pill">HTML5 / CSS3</span>
-                            <span class="tech-pill">TypeScript</span>
-                            <span class="tech-pill">Next.js UI</span>
+                <!-- Extended Catalogue (Revealed on click) -->
+                <div id="all-projects-wrapper" class="hidden mt-12 pt-12 border-t border-slate-200/80 dark:border-slate-800">
+                    <div class="flex items-center justify-between mb-8">
+                        <div>
+                            <h3 class="text-xs font-semibold uppercase tracking-widest text-blue-600 dark:text-blue-400 mb-1">Extended Catalogue</h3>
+                            <h4 class="text-2xl font-bold text-slate-900 dark:text-white">All Production Builds &amp; Research Platforms</h4>
                         </div>
                     </div>
-
-                    <!-- Card 2: Backend -->
-                    <div class="skill-category-card glass-card p-6 rounded-2xl border border-slate-200 dark:border-slate-800 hover-elevate" data-category="backend">
-                        <div class="flex items-center gap-3 mb-4">
-                            <div class="p-2.5 rounded-xl bg-emerald-50 dark:bg-emerald-950/50 text-emerald-600 dark:text-emerald-400">
-                                <i data-lucide="server" class="w-5 h-5"></i>
-                            </div>
-                            <h4 class="font-bold text-slate-900 dark:text-white">Backend & APIs</h4>
-                        </div>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="tech-pill">Python</span>
-                            <span class="tech-pill">Node.js</span>
-                            <span class="tech-pill">PHP</span>
-                            <span class="tech-pill">REST APIs</span>
-                            <span class="tech-pill">Firebase</span>
-                            <span class="tech-pill">MySQL</span>
-                            <span class="tech-pill">PostgreSQL</span>
-                        </div>
-                    </div>
-
-                    <!-- Card 3: AI & Data Science -->
-                    <div class="skill-category-card glass-card p-6 rounded-2xl border border-slate-200 dark:border-slate-800 hover-elevate" data-category="ai">
-                        <div class="flex items-center gap-3 mb-4">
-                            <div class="p-2.5 rounded-xl bg-purple-50 dark:bg-purple-950/50 text-purple-600 dark:text-purple-400">
-                                <i data-lucide="cpu" class="w-5 h-5"></i>
-                            </div>
-                            <h4 class="font-bold text-slate-900 dark:text-white">AI & Data Science</h4>
-                        </div>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="tech-pill">Machine Learning</span>
-                            <span class="tech-pill">AI Agents</span>
-                            <span class="tech-pill">Pandas & NumPy</span>
-                            <span class="tech-pill">Scikit-learn</span>
-                            <span class="tech-pill">Data Analytics</span>
-                            <span class="tech-pill">Prompt Engineering</span>
-                        </div>
-                    </div>
-
-                    <!-- Card 4: Security & DevOps -->
-                    <div class="skill-category-card glass-card p-6 rounded-2xl border border-slate-200 dark:border-slate-800 hover-elevate" data-category="security">
-                        <div class="flex items-center gap-3 mb-4">
-                            <div class="p-2.5 rounded-xl bg-amber-50 dark:bg-amber-950/50 text-amber-600 dark:text-amber-400">
-                                <i data-lucide="shield" class="w-5 h-5"></i>
-                            </div>
-                            <h4 class="font-bold text-slate-900 dark:text-white">Cyber & Open Source</h4>
-                        </div>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="tech-pill">Ethical Hacking</span>
-                            <span class="tech-pill">OSINT</span>
-                            <span class="tech-pill">MediaWiki Core</span>
-                            <span class="tech-pill">Git & GitHub</span>
-                            <span class="tech-pill">Phabricator / Gerrit</span>
-                            <span class="tech-pill">Linux Admin</span>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </section>
-
-        <!-- ═══════════════════════════════════════
-             5. FEATURED PROJECTS
-        ═══════════════════════════════════════ -->
-        <section id="projects" class="py-20 bg-white dark:bg-slate-900/50 border-y border-slate-200/60 dark:border-slate-800">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                
-                <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
-                    <div>
-                        <h2 class="text-xs font-semibold uppercase tracking-widest text-blue-600 dark:text-blue-400 mb-2">Selected Works</h2>
-                        <h3 class="text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white tracking-tight">
-                            Featured Projects & <span class="gradient-text">Open Source Systems</span>
-                        </h3>
-                    </div>
-
-                    <div class="flex flex-wrap gap-2 mt-6 md:mt-0">
+                    <div class="flex flex-wrap gap-2 mt-6 md:mt-0 mb-8">
                         <button class="project-tab-btn tab-btn px-4 py-2 rounded-xl border border-slate-200 dark:border-slate-800 text-sm font-medium text-slate-600 dark:text-slate-300 hover:border-blue-600 active" data-category="all">All Projects</button>
                         <button class="project-tab-btn tab-btn px-4 py-2 rounded-xl border border-slate-200 dark:border-slate-800 text-sm font-medium text-slate-600 dark:text-slate-300 hover:border-blue-600" data-category="ai">AI & ML</button>
                         <button class="project-tab-btn tab-btn px-4 py-2 rounded-xl border border-slate-200 dark:border-slate-800 text-sm font-medium text-slate-600 dark:text-slate-300 hover:border-blue-600" data-category="startup">Startups</button>
                         <button class="project-tab-btn tab-btn px-4 py-2 rounded-xl border border-slate-200 dark:border-slate-800 text-sm font-medium text-slate-600 dark:text-slate-300 hover:border-blue-600" data-category="web">Web Apps</button>
                         <button class="project-tab-btn tab-btn px-4 py-2 rounded-xl border border-slate-200 dark:border-slate-800 text-sm font-medium text-slate-600 dark:text-slate-300 hover:border-blue-600" data-category="utility">Utilities & Tools</button>
                     </div>
-                </div>
 
-                <!-- Projects Grid -->
-                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Projects Grid -->
+                    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                     
                     <!-- Project 1: VoxRAG (Production Voice RAG) -->
                     <div class="project-item-card glass-card rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 hover-elevate flex flex-col justify-between" data-category="ai web">
@@ -1379,6 +1224,219 @@
                                 <span>GitHub Repo</span>
                                 <i data-lucide="github" class="w-3.5 h-3.5"></i>
                             </a>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══════════════════════════════════════
+             3. ABOUT PREVIEW SECTION
+        ═══════════════════════════════════════ -->
+        <section id="about" class="py-20 bg-white dark:bg-slate-900/50 border-y border-slate-200/60 dark:border-slate-800">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <!-- Section Header -->
+                <div class="max-w-3xl mb-12">
+                    <h2 class="text-xs font-semibold uppercase tracking-widest text-blue-600 dark:text-blue-400 mb-2">About Me</h2>
+                    <h3 class="text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white tracking-tight">
+                        Engineered for Performance, <span class="gradient-text">Driven by Innovation</span>.
+                    </h3>
+                </div>
+
+                <!-- Executive 4-Pillars Quick Matrix -->
+                <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-14">
+                    <div class="glass-card p-5 rounded-2xl border border-blue-200/80 dark:border-blue-900/40 hover-elevate">
+                        <div class="flex items-center gap-3 mb-2.5">
+                            <span class="w-8 h-8 rounded-xl bg-blue-100 dark:bg-blue-950 text-blue-600 flex items-center justify-center font-bold text-sm">💻</span>
+                            <h4 class="font-bold text-slate-900 dark:text-white text-sm">Full-Stack & Systems</h4>
+                        </div>
+                        <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">Co-Founder @ PrayagrajRooms (5k+ Users) & BuildX Platform. React, Node, TypeScript, SQL.</p>
+                    </div>
+
+                    <div class="glass-card p-5 rounded-2xl border border-purple-200/80 dark:border-purple-900/40 hover-elevate">
+                        <div class="flex items-center gap-3 mb-2.5">
+                            <span class="w-8 h-8 rounded-xl bg-purple-100 dark:bg-purple-950 text-purple-600 flex items-center justify-center font-bold text-sm">🤖</span>
+                            <h4 class="font-bold text-slate-900 dark:text-white text-sm">Applied AI & ML</h4>
+                        </div>
+                        <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">VoxRAG (sub-200ms Voice RAG), IntervAI, AIT Bangkok GIIP Research Fellow (Thailand).</p>
+                    </div>
+
+                    <div class="glass-card p-5 rounded-2xl border border-sky-200/80 dark:border-sky-900/40 hover-elevate">
+                        <div class="flex items-center gap-3 mb-2.5">
+                            <span class="w-8 h-8 rounded-xl bg-sky-100 dark:bg-sky-950 text-sky-600 flex items-center justify-center font-bold text-sm">🛡️</span>
+                            <h4 class="font-bold text-slate-900 dark:text-white text-sm">Cyber & Forensics</h4>
+                        </div>
+                        <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">UP Police APCSIP Best Content Creator Awardee & C3iHub IIT Kanpur Trainee. OSINT & Threat Analysis.</p>
+                    </div>
+
+                    <div class="glass-card p-5 rounded-2xl border border-emerald-200/80 dark:border-emerald-900/40 hover-elevate">
+                        <div class="flex items-center gap-3 mb-2.5">
+                            <span class="w-8 h-8 rounded-xl bg-emerald-100 dark:bg-emerald-950 text-emerald-600 flex items-center justify-center font-bold text-sm">🌐</span>
+                            <h4 class="font-bold text-slate-900 dark:text-white text-sm">Open Source & Merit</h4>
+                        </div>
+                        <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">15+ Merged MediaWiki Patches, VP @ GeeksforGeeks UIT Chapter & Academic Rank 1 (SGPA 8.5).</p>
+                    </div>
+                </div>
+
+                <div class="grid lg:grid-cols-12 gap-10">
+                    
+                    <!-- Narrative Description (7 cols) -->
+                    <div class="lg:col-span-7 space-y-6 text-base sm:text-lg text-slate-600 dark:text-slate-300 leading-relaxed">
+                        <p>
+                            I am <strong class="text-slate-900 dark:text-white">Gautam Kumar Maurya (gkm563)</strong> — a Full-Stack Software Engineer, AI Developer, and Cybersecurity Researcher. Currently pursuing B.Tech in CSE (Data Science) at United Institute of Technology (UIT), Prayagraj, I hold <strong class="text-slate-900 dark:text-white">Academic Rank 1 in CSE (Data Science) for 2nd Year (SGPA 8.5)</strong> and <strong class="text-slate-900 dark:text-white">Rank 5 College Overall for 1st Year</strong> in AKTU examinations with top academic honors.
+                        </p>
+                        <p>
+                            As <strong class="text-slate-900 dark:text-white">WikiClub Tech Envoy at UIT</strong> and <strong class="text-slate-900 dark:text-white">Vice President of the GeeksforGeeks UIT Chapter</strong>, I bridge academic excellence with production software engineering and open-source leadership. I co-founded <strong class="text-slate-900 dark:text-white">PrayagrajRooms</strong> (a student platform serving 5,000+ users), contribute actively to <strong class="text-slate-900 dark:text-white">Wikimedia MediaWiki Core</strong> (15+ merged production patches, featured in IIIT Hyderabad's Open Source Report), and mentor emerging engineers.
+                        </p>
+                        <p>
+                            My credentials include representing India as an international <strong class="text-slate-900 dark:text-white">GIIP-2026 Research Fellow at AIT Bangkok, Thailand</strong>, being selected among 800+ global applicants for the <strong class="text-slate-900 dark:text-white">Youths Innovate AI Mentorship Program (Fall Cohort 2026)</strong>, and completing the government cybersecurity fellowship with <strong class="text-slate-900 dark:text-white">UP Police &amp; Amroha Police Cyber Crime Cell (APCSIP-2026)</strong>, where I was honored with the Best Content Creator Award by DSP Anjali Kataria.
+                        </p>
+                    </div>
+
+                    <!-- Highlight Cards Grid (5 cols) -->
+                    <div class="lg:col-span-5 grid sm:grid-cols-2 gap-4">
+                        
+                        <!-- Card 1 -->
+                        <div class="glass-card p-5 rounded-2xl border border-slate-200 dark:border-slate-800 hover-elevate">
+                            <div class="w-10 h-10 rounded-xl bg-blue-50 dark:bg-blue-950/50 text-blue-600 dark:text-blue-400 flex items-center justify-center mb-4">
+                                <i data-lucide="award" class="w-5 h-5"></i>
+                            </div>
+                            <h4 class="font-bold text-slate-900 dark:text-white text-base mb-1">Academic Rank 1</h4>
+                            <p class="text-xs text-slate-500 dark:text-slate-400">Rank 1 CSE DS 2nd Year (SGPA 8.5), Rank 5 College 1st Year.</p>
+                        </div>
+
+                        <!-- Card 2 -->
+                        <div class="glass-card p-5 rounded-2xl border border-slate-200 dark:border-slate-800 hover-elevate">
+                            <div class="w-10 h-10 rounded-xl bg-emerald-50 dark:bg-emerald-950/50 text-emerald-600 dark:text-emerald-400 flex items-center justify-center mb-4">
+                                <i data-lucide="globe" class="w-5 h-5"></i>
+                            </div>
+                            <h4 class="font-bold text-slate-900 dark:text-white text-base mb-1">GIIP Scholar</h4>
+                            <p class="text-xs text-slate-500 dark:text-slate-400">International Research Scholar at AIT Bangkok, Thailand.</p>
+                        </div>
+
+                        <!-- Card 3 -->
+                        <div class="glass-card p-5 rounded-2xl border border-slate-200 dark:border-slate-800 hover-elevate">
+                            <div class="w-10 h-10 rounded-xl bg-purple-50 dark:bg-purple-950/50 text-purple-600 dark:text-purple-400 flex items-center justify-center mb-4">
+                                <i data-lucide="shield-check" class="w-5 h-5"></i>
+                            </div>
+                            <h4 class="font-bold text-slate-900 dark:text-white text-base mb-1">UP Police Awardee</h4>
+                            <p class="text-xs text-slate-500 dark:text-slate-400">Best Content Creator Award by DSP Anjali Kataria (APCSIP-2026).</p>
+                        </div>
+
+                        <!-- Card 4 -->
+                        <div class="glass-card p-5 rounded-2xl border border-slate-200 dark:border-slate-800 hover-elevate">
+                            <div class="w-10 h-10 rounded-xl bg-sky-50 dark:bg-sky-950/50 text-sky-600 dark:text-sky-400 flex items-center justify-center mb-4">
+                                <i data-lucide="users" class="w-5 h-5"></i>
+                            </div>
+                            <h4 class="font-bold text-slate-900 dark:text-white text-base mb-1">CDN Founder</h4>
+                            <p class="text-xs text-slate-500 dark:text-slate-400">Founder & Organizer of Coding & Development Network UIT.</p>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══════════════════════════════════════
+             4. SKILLS MATRIX
+        ═══════════════════════════════════════ -->
+        <section id="skills" class="py-20">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+                    <div>
+                        <h2 class="text-xs font-semibold uppercase tracking-widest text-blue-600 dark:text-blue-400 mb-2">Technical Proficiency</h2>
+                        <h3 class="text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white tracking-tight">
+                            Skills & <span class="gradient-text">Tech Stack</span>
+                        </h3>
+                    </div>
+
+                    <!-- Category Tab Filter Buttons -->
+                    <div class="flex flex-wrap gap-2 mt-6 md:mt-0">
+                        <button class="skill-tab-btn tab-btn px-4 py-2 rounded-xl border border-slate-200 dark:border-slate-800 text-sm font-medium text-slate-600 dark:text-slate-300 hover:border-blue-600 active" data-category="all">All Skills</button>
+                        <button class="skill-tab-btn tab-btn px-4 py-2 rounded-xl border border-slate-200 dark:border-slate-800 text-sm font-medium text-slate-600 dark:text-slate-300 hover:border-blue-600" data-category="frontend">Frontend</button>
+                        <button class="skill-tab-btn tab-btn px-4 py-2 rounded-xl border border-slate-200 dark:border-slate-800 text-sm font-medium text-slate-600 dark:text-slate-300 hover:border-blue-600" data-category="backend">Backend & DB</button>
+                        <button class="skill-tab-btn tab-btn px-4 py-2 rounded-xl border border-slate-200 dark:border-slate-800 text-sm font-medium text-slate-600 dark:text-slate-300 hover:border-blue-600" data-category="ai">AI & Data</button>
+                        <button class="skill-tab-btn tab-btn px-4 py-2 rounded-xl border border-slate-200 dark:border-slate-800 text-sm font-medium text-slate-600 dark:text-slate-300 hover:border-blue-600" data-category="security">Security & Tools</button>
+                    </div>
+                </div>
+
+                <!-- Skill Cards Grid -->
+                <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                    
+                    <!-- Card 1: Frontend -->
+                    <div class="skill-category-card glass-card p-6 rounded-2xl border border-slate-200 dark:border-slate-800 hover-elevate" data-category="frontend">
+                        <div class="flex items-center gap-3 mb-4">
+                            <div class="p-2.5 rounded-xl bg-blue-50 dark:bg-blue-950/50 text-blue-600 dark:text-blue-400">
+                                <i data-lucide="layout" class="w-5 h-5"></i>
+                            </div>
+                            <h4 class="font-bold text-slate-900 dark:text-white">Frontend Web</h4>
+                        </div>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="tech-pill">React.js</span>
+                            <span class="tech-pill">JavaScript (ES6+)</span>
+                            <span class="tech-pill">Tailwind CSS</span>
+                            <span class="tech-pill">HTML5 / CSS3</span>
+                            <span class="tech-pill">TypeScript</span>
+                            <span class="tech-pill">Next.js UI</span>
+                        </div>
+                    </div>
+
+                    <!-- Card 2: Backend -->
+                    <div class="skill-category-card glass-card p-6 rounded-2xl border border-slate-200 dark:border-slate-800 hover-elevate" data-category="backend">
+                        <div class="flex items-center gap-3 mb-4">
+                            <div class="p-2.5 rounded-xl bg-emerald-50 dark:bg-emerald-950/50 text-emerald-600 dark:text-emerald-400">
+                                <i data-lucide="server" class="w-5 h-5"></i>
+                            </div>
+                            <h4 class="font-bold text-slate-900 dark:text-white">Backend & APIs</h4>
+                        </div>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="tech-pill">Python</span>
+                            <span class="tech-pill">Node.js</span>
+                            <span class="tech-pill">PHP</span>
+                            <span class="tech-pill">REST APIs</span>
+                            <span class="tech-pill">Firebase</span>
+                            <span class="tech-pill">MySQL</span>
+                            <span class="tech-pill">PostgreSQL</span>
+                        </div>
+                    </div>
+
+                    <!-- Card 3: AI & Data Science -->
+                    <div class="skill-category-card glass-card p-6 rounded-2xl border border-slate-200 dark:border-slate-800 hover-elevate" data-category="ai">
+                        <div class="flex items-center gap-3 mb-4">
+                            <div class="p-2.5 rounded-xl bg-purple-50 dark:bg-purple-950/50 text-purple-600 dark:text-purple-400">
+                                <i data-lucide="cpu" class="w-5 h-5"></i>
+                            </div>
+                            <h4 class="font-bold text-slate-900 dark:text-white">AI & Data Science</h4>
+                        </div>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="tech-pill">Machine Learning</span>
+                            <span class="tech-pill">AI Agents</span>
+                            <span class="tech-pill">Pandas & NumPy</span>
+                            <span class="tech-pill">Scikit-learn</span>
+                            <span class="tech-pill">Data Analytics</span>
+                            <span class="tech-pill">Prompt Engineering</span>
+                        </div>
+                    </div>
+
+                    <!-- Card 4: Security & DevOps -->
+                    <div class="skill-category-card glass-card p-6 rounded-2xl border border-slate-200 dark:border-slate-800 hover-elevate" data-category="security">
+                        <div class="flex items-center gap-3 mb-4">
+                            <div class="p-2.5 rounded-xl bg-amber-50 dark:bg-amber-950/50 text-amber-600 dark:text-amber-400">
+                                <i data-lucide="shield" class="w-5 h-5"></i>
+                            </div>
+                            <h4 class="font-bold text-slate-900 dark:text-white">Cyber & Open Source</h4>
+                        </div>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="tech-pill">Ethical Hacking</span>
+                            <span class="tech-pill">OSINT</span>
+                            <span class="tech-pill">MediaWiki Core</span>
+                            <span class="tech-pill">Git & GitHub</span>
+                            <span class="tech-pill">Phabricator / Gerrit</span>
+                            <span class="tech-pill">Linux Admin</span>
                         </div>
                     </div>
 
