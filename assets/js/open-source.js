@@ -395,14 +395,17 @@ function initContributionsFilter() {
 
       const filter = btn.getAttribute('data-filter');
       cards.forEach(card => {
-        const cat = card.getAttribute('data-category');
-        const status = card.getAttribute('data-status');
+        const cat = card.getAttribute('data-category') || '';
+        const status = card.getAttribute('data-status') || '';
+        const catTokens = cat.split(/\s+/);
 
         if (filter === 'all') {
           card.style.display = 'flex';
         } else if (filter === 'merged' && status === 'merged') {
           card.style.display = 'flex';
-        } else if (cat === filter) {
+        } else if (filter === 'review' && (status === 'review' || status === 'conflict')) {
+          card.style.display = 'flex';
+        } else if (catTokens.includes(filter)) {
           card.style.display = 'flex';
         } else {
           card.style.display = 'none';

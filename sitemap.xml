@@ -5,7 +5,7 @@
   <!-- ===== Portfolio Home ===== -->
   <url>
     <loc>https://gkm563.github.io/</loc>
-    <lastmod>2026-08-20</lastmod>
+    <lastmod>2026-10-03</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
     <image:image>
@@ -18,7 +18,7 @@
   <!-- ===== B.Tech Academic & Engineering Journey ===== -->
   <url>
     <loc>https://gkm563.github.io/btech-journey.html</loc>
-    <lastmod>2026-08-20</lastmod>
+    <lastmod>2026-10-03</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.95</priority>
     <image:image>
@@ -31,7 +31,7 @@
   <!-- ===== UP Police Cyber Security Internship ===== -->
   <url>
     <loc>https://gkm563.github.io/up-police-internship.html</loc>
-    <lastmod>2026-08-20</lastmod>
+    <lastmod>2026-10-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.90</priority>
     <image:image>
@@ -44,7 +44,7 @@
   <!-- ===== AIT Bangkok Global Innovation Internship ===== -->
   <url>
     <loc>https://gkm563.github.io/ait-global-innovation-internship.html</loc>
-    <lastmod>2026-08-20</lastmod>
+    <lastmod>2026-10-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.90</priority>
     <image:image>
@@ -57,7 +57,7 @@
   <!-- ===== Open Source Contributions ===== -->
   <url>
     <loc>https://gkm563.github.io/open-source-contributions.html</loc>
-    <lastmod>2026-08-20</lastmod>
+    <lastmod>2026-10-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.90</priority>
     <image:image>
@@ -67,10 +67,49 @@
     </image:image>
   </url>
 
+  <!-- ===== Technical Events & Hackathons Organised ===== -->
+  <url>
+    <loc>https://gkm563.github.io/events.html</loc>
+    <lastmod>2026-10-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+    <image:image>
+      <image:loc>https://gkm563.github.io/assets/images/gallery/gautam-kumar-maurya-gsa.jpg</image:loc>
+      <image:title>Gautam Kumar Maurya — Technical Events, Hackathons &amp; Summits Organised</image:title>
+      <image:caption>Gautam Kumar Maurya addressing 650+ attendees at the UIT Main Auditorium during Gemini Builders / Google Student Ambassador summit.</image:caption>
+    </image:image>
+  </url>
+
+  <!-- ===== Achievements & Honors Showcase ===== -->
+  <url>
+    <loc>https://gkm563.github.io/achievements.html</loc>
+    <lastmod>2026-10-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.92</priority>
+    <image:image>
+      <image:loc>https://gkm563.github.io/assets/images/profile/Gautam_Kumar_Maurya.jpg</image:loc>
+      <image:title>Gautam Kumar Maurya — Verified Honors &amp; Achievements</image:title>
+      <image:caption>Stage awards, branch topper medals, UP Police felicitation, and hackathon trophies won by Gautam Kumar Maurya.</image:caption>
+    </image:image>
+  </url>
+
+  <!-- ===== Verified Certifications & Licenses ===== -->
+  <url>
+    <loc>https://gkm563.github.io/certifications.html</loc>
+    <lastmod>2026-10-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.88</priority>
+    <image:image>
+      <image:loc>https://gkm563.github.io/assets/images/profile/Gautam_Kumar_Maurya.jpg</image:loc>
+      <image:title>Gautam Kumar Maurya — 40+ Verified Certifications</image:title>
+      <image:caption>Verified credentials in AI, Machine Learning, Digital Forensics, Cybersecurity, and Software Engineering.</image:caption>
+    </image:image>
+  </url>
+
   <!-- ===== FAQ & Contact Deep Dive ===== -->
   <url>
     <loc>https://gkm563.github.io/faq.html</loc>
-    <lastmod>2026-08-20</lastmod>
+    <lastmod>2026-10-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
     <image:image>
