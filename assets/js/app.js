@@ -320,7 +320,7 @@ document.addEventListener('DOMContentLoaded', () => {
           additionalLeadership.style.maxHeight = '2000px';
           additionalLeadership.style.opacity = '1';
         }, 10);
-        if (textSpan) textSpan.textContent = 'Hide Additional Roles';
+        if (textSpan) textSpan.textContent = 'Collapse Additional Roles';
         if (icon) icon.style.transform = 'rotate(180deg)';
       } else {
         additionalLeadership.style.maxHeight = '0px';
@@ -328,7 +328,7 @@ document.addEventListener('DOMContentLoaded', () => {
         setTimeout(() => {
           additionalLeadership.classList.add('hidden');
         }, 500);
-        if (textSpan) textSpan.textContent = 'Show Other Community & Ambassador Roles';
+        if (textSpan) textSpan.textContent = 'Explore More Leadership & Ambassador Roles';
         if (icon) icon.style.transform = 'rotate(0deg)';
       }
     });
