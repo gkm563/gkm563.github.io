@@ -796,53 +796,90 @@
         </div>
 
         <!-- ═══════════════════════════════════════
-             2.8 FEATURED IN / ASSOCIATED WITH STRIP
+             2.8 FEATURED IN / ASSOCIATED WITH STRIP (BENTO SYSTEM)
         ═══════════════════════════════════════ -->
-        <section class="py-12 bg-transparent border-b border-slate-200/60 dark:border-slate-800/80">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="flex items-center gap-3 mb-6">
-                    <span class="text-xs font-bold tracking-widest text-slate-400 dark:text-slate-500 uppercase">FEATURED IN / ASSOCIATED WITH</span>
-                    <div class="h-px bg-slate-200 dark:bg-slate-800 flex-1 max-w-[80px]"></div>
+        <section class="py-12 section-dot-grid border-b border-slate-200/60 dark:border-slate-800/80 relative overflow-hidden">
+            <!-- Ambient Glow -->
+            <div class="section-ambient-glow-blue -top-24 -left-24 opacity-60"></div>
+
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-6">
+                    <div class="section-pill-tag">
+                        <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                        <span>FEATURED IN &amp; ASSOCIATED ORGANIZATIONS</span>
+                    </div>
+                    <div class="text-xs font-mono text-slate-500 dark:text-slate-400">
+                        Communities • Research • Real World Impact
+                    </div>
                 </div>
-                <div class="flex flex-wrap lg:flex-nowrap items-center justify-between gap-6 overflow-x-auto pb-2">
-                    <div class="flex items-center gap-4 sm:gap-6 divide-x divide-slate-200 dark:divide-slate-800">
-                        <!-- Wikimedia -->
-                        <a href="./open-source-contributions.html" class="mockup-partner-item group flex items-center gap-2 pl-0 hover:opacity-80 transition-opacity">
-                            <i class="fa-brands fa-wikipedia-w text-2xl text-slate-900 dark:text-white"></i>
-                            <span class="font-bold text-sm text-slate-800 dark:text-slate-200">Wikimedia Movement</span>
-                        </a>
-                        <!-- GeeksforGeeks -->
-                        <div class="mockup-partner-item flex items-center gap-2 pl-4 sm:pl-6">
-                            <svg class="h-6 w-6" viewBox="0 0 32 32" fill="#0F9D58"><path d="M14.6 19.3c-.4.5-.9.9-1.5 1.2-.6.3-1.3.4-2.1.4-1.2 0-2.2-.4-3-1.2s-1.2-1.8-1.2-3.1c0-1.3.4-2.3 1.2-3.1.8-.8 1.8-1.2 3-1.2.8 0 1.5.1 2.1.4.6.3 1.1.7 1.5 1.2l1.9-2.1c-.8-.8-1.7-1.4-2.7-1.8s-2.1-.6-3.3-.6c-2.1 0-3.9.7-5.3 2.1C3.7 12.6 3 14.3 3 16.6s.7 4 2.1 5.4c1.4 1.4 3.2 2.1 5.3 2.1 1.2 0 2.3-.2 3.3-.6 1-.4 1.9-1 2.7-1.8l-1.8-2.4zm2.8-6.6c.4-.5.9-.9 1.5-1.2.6-.3 1.3-.4 2.1-.4 1.2 0 2.2.4 3 1.2.8.8 1.2 1.8 1.2 3.1 0 1.3-.4 2.3-1.2 3.1-.8.8-1.8 1.2-3 1.2-.8 0-1.5-.1-2.1-.4-.6-.3-1.1-.7-1.5-1.2l-1.9 2.1c.8.8 1.7 1.4 2.7 1.8 1 .4 2.1.6 3.3.6 2.1 0 3.9-.7 5.3-2.1 1.4-1.4 2.1-3.1 2.1-5.4s-.7-4-2.1-5.4C26.9 8.7 25.1 8 23 8c-1.2 0-2.3.2-3.3.6-1 .4-1.9 1-2.7 1.8l1.8 2.3z"/></svg>
-                            <span class="font-bold text-sm text-slate-800 dark:text-slate-200">GeeksforGeeks</span>
+
+                <!-- 6 Responsive Bento Partner Cards -->
+                <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 sm:gap-4">
+                    <!-- Wikimedia -->
+                    <a href="./open-source-contributions.html" class="bento-card p-3.5 sm:p-4 rounded-2xl flex flex-col justify-between group hover:border-purple-500/40 transition-all">
+                        <div class="w-9 h-9 rounded-xl bg-purple-50 dark:bg-purple-950/70 text-slate-900 dark:text-white flex items-center justify-center text-lg mb-2 shadow-sm">
+                            <i class="fa-brands fa-wikipedia-w"></i>
                         </div>
-                        <!-- HackerRank -->
-                        <a href="https://www.hackerrank.com/profile/gkm563" target="_blank" rel="noopener" class="mockup-partner-item group flex items-center gap-2 pl-4 sm:pl-6 hover:opacity-80 transition-opacity">
-                            <div class="w-6 h-6 rounded bg-[#001E2B] flex items-center justify-center text-[#00EA64] font-black text-xs">H</div>
-                            <span class="font-bold text-sm text-slate-800 dark:text-slate-200">HackerRank</span>
-                        </a>
-                        <!-- AIT Bangkok -->
-                        <a href="./ait-global-innovation-internship.html" class="mockup-partner-item group flex items-center gap-2 pl-4 sm:pl-6 hover:opacity-80 transition-opacity">
-                            <img src="assets/images/ait-bangkok/Asian_Institute_of_Technology-Logo.png" alt="AIT Bangkok Logo" class="h-6 w-auto object-contain">
-                            <span class="font-bold text-sm text-slate-800 dark:text-slate-200">AIT Bangkok</span>
-                        </a>
-                        <!-- UP Police -->
-                        <a href="./up-police-internship.html" class="mockup-partner-item group flex items-center gap-2 pl-4 sm:pl-6 hover:opacity-80 transition-opacity">
-                            <img src="assets/images/up-police/logos/up-police-logo-uttar-pradesh-police-up-police-logo-11563421838xjer0uaxol.png" alt="UP Police Logo" class="h-6 w-auto object-contain">
-                            <span class="font-bold text-sm text-slate-800 dark:text-slate-200">UP Police</span>
-                        </a>
-                        <!-- PrayagrajRooms -->
-                        <a href="https://prayagrajrooms.in" target="_blank" rel="noopener" class="mockup-partner-item group flex items-center gap-2 pl-4 sm:pl-6 hover:opacity-80 transition-opacity">
-                            <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
-                            <span class="font-bold text-sm text-slate-800 dark:text-slate-200">PrayagrajRooms</span>
-                        </a>
+                        <div>
+                            <div class="font-bold text-xs sm:text-sm text-slate-900 dark:text-white group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors">Wikimedia</div>
+                            <div class="text-[10px] text-slate-500 dark:text-slate-400 font-mono mt-0.5">Tech Envoy</div>
+                        </div>
+                    </a>
+
+                    <!-- GeeksforGeeks -->
+                    <div class="bento-card p-3.5 sm:p-4 rounded-2xl flex flex-col justify-between group hover:border-emerald-500/40 transition-all">
+                        <div class="w-9 h-9 rounded-xl bg-emerald-50 dark:bg-emerald-950/70 text-emerald-600 flex items-center justify-center text-lg mb-2 shadow-sm">
+                            <svg class="h-5 w-5" viewBox="0 0 32 32" fill="#0F9D58"><path d="M14.6 19.3c-.4.5-.9.9-1.5 1.2-.6.3-1.3.4-2.1.4-1.2 0-2.2-.4-3-1.2s-1.2-1.8-1.2-3.1c0-1.3.4-2.3 1.2-3.1.8-.8 1.8-1.2 3-1.2.8 0 1.5.1 2.1.4.6.3 1.1.7 1.5 1.2l1.9-2.1c-.8-.8-1.7-1.4-2.7-1.8s-2.1-.6-3.3-.6c-2.1 0-3.9.7-5.3 2.1C3.7 12.6 3 14.3 3 16.6s.7 4 2.1 5.4c1.4 1.4 3.2 2.1 5.3 2.1 1.2 0 2.3-.2 3.3-.6 1-.4 1.9-1 2.7-1.8l-1.8-2.4zm2.8-6.6c.4-.5.9-.9 1.5-1.2.6-.3 1.3-.4 2.1-.4 1.2 0 2.2.4 3 1.2.8.8 1.2 1.8 1.2 3.1 0 1.3-.4 2.3-1.2 3.1-.8.8-1.8 1.2-3 1.2-.8 0-1.5-.1-2.1-.4-.6-.3-1.1-.7-1.5-1.2l-1.9 2.1c.8.8 1.7 1.4 2.7 1.8 1 .4 2.1.6 3.3.6 2.1 0 3.9-.7 5.3-2.1 1.4-1.4 2.1-3.1 2.1-5.4s-.7-4-2.1-5.4C26.9 8.7 25.1 8 23 8c-1.2 0-2.3.2-3.3.6-1 .4-1.9 1-2.7 1.8l1.8 2.3z"/></svg>
+                        </div>
+                        <div>
+                            <div class="font-bold text-xs sm:text-sm text-slate-900 dark:text-white group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors">GeeksforGeeks</div>
+                            <div class="text-[10px] text-slate-500 dark:text-slate-400 font-mono mt-0.5">Vice President</div>
+                        </div>
                     </div>
-                    <!-- Right tagline -->
-                    <div class="hidden xl:flex flex-col text-right text-xs text-slate-400 leading-snug shrink-0">
-                        <span>Communities.</span>
-                        <span>Opportunities.</span>
-                        <span class="font-semibold text-slate-600 dark:text-slate-300">A Larger Impact.</span>
-                    </div>
+
+                    <!-- HackerRank -->
+                    <a href="https://www.hackerrank.com/profile/gkm563" target="_blank" rel="noopener" class="bento-card p-3.5 sm:p-4 rounded-2xl flex flex-col justify-between group hover:border-red-500/40 transition-all">
+                        <div class="w-9 h-9 rounded-xl bg-[#001E2B] text-[#00EA64] flex items-center justify-center font-black text-sm mb-2 shadow-sm">
+                            H
+                        </div>
+                        <div>
+                            <div class="font-bold text-xs sm:text-sm text-slate-900 dark:text-white group-hover:text-emerald-500 transition-colors">HackerRank</div>
+                            <div class="text-[10px] text-slate-500 dark:text-slate-400 font-mono mt-0.5">Co-Lead &amp; VP</div>
+                        </div>
+                    </a>
+
+                    <!-- AIT Bangkok -->
+                    <a href="./ait-global-innovation-internship.html" class="bento-card p-3.5 sm:p-4 rounded-2xl flex flex-col justify-between group hover:border-blue-500/40 transition-all">
+                        <div class="w-9 h-9 rounded-xl bg-blue-50 dark:bg-blue-950/70 p-1.5 flex items-center justify-center mb-2 shadow-sm">
+                            <img src="assets/images/ait-bangkok/Asian_Institute_of_Technology-Logo.png" alt="AIT Bangkok Logo" class="h-5 w-auto object-contain">
+                        </div>
+                        <div>
+                            <div class="font-bold text-xs sm:text-sm text-slate-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">AIT Bangkok</div>
+                            <div class="text-[10px] text-slate-500 dark:text-slate-400 font-mono mt-0.5">GIIP Fellow</div>
+                        </div>
+                    </a>
+
+                    <!-- UP Police -->
+                    <a href="./up-police-internship.html" class="bento-card p-3.5 sm:p-4 rounded-2xl flex flex-col justify-between group hover:border-sky-500/40 transition-all">
+                        <div class="w-9 h-9 rounded-xl bg-sky-50 dark:bg-sky-950/70 p-1.5 flex items-center justify-center mb-2 shadow-sm">
+                            <img src="assets/images/up-police/logos/up-police-logo-uttar-pradesh-police-up-police-logo-11563421838xjer0uaxol.png" alt="UP Police Logo" class="h-5 w-auto object-contain">
+                        </div>
+                        <div>
+                            <div class="font-bold text-xs sm:text-sm text-slate-900 dark:text-white group-hover:text-sky-600 dark:group-hover:text-sky-400 transition-colors">UP Police</div>
+                            <div class="text-[10px] text-slate-500 dark:text-slate-400 font-mono mt-0.5">APCSIP Fellow</div>
+                        </div>
+                    </a>
+
+                    <!-- PrayagrajRooms -->
+                    <a href="https://prayagrajrooms.in" target="_blank" rel="noopener" class="bento-card p-3.5 sm:p-4 rounded-2xl flex flex-col justify-between group hover:border-blue-500/40 transition-all">
+                        <div class="w-9 h-9 rounded-xl bg-blue-100 dark:bg-blue-950/70 text-blue-600 dark:text-blue-400 flex items-center justify-center mb-2 shadow-sm">
+                            <i class="fa-solid fa-house-chimney text-sm"></i>
+                        </div>
+                        <div>
+                            <div class="font-bold text-xs sm:text-sm text-slate-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">PrayagrajRooms</div>
+                            <div class="text-[10px] text-slate-500 dark:text-slate-400 font-mono mt-0.5">Co-Founder &amp; CTO</div>
+                        </div>
+                    </a>
                 </div>
             </div>
         </section>
@@ -850,21 +887,31 @@
         <!-- ═══════════════════════════════════════
              3. PROJECTS (MOCKUP ACCURATE: FROM IDEAS TO REAL-WORLD SOLUTIONS)
         ═══════════════════════════════════════ -->
-        <section id="projects" class="py-16 bg-white dark:bg-slate-900/50 border-b border-slate-200/60 dark:border-slate-800">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <section id="projects" class="py-20 section-dot-grid border-b border-slate-200/60 dark:border-slate-800 relative overflow-hidden">
+            <!-- Ambient Blue Glow -->
+            <div class="section-ambient-glow-blue -top-24 right-10 opacity-70"></div>
+            <div class="section-ambient-glow-purple bottom-10 -left-20 opacity-50"></div>
+
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                 
-                <!-- Eyebrow & Headline -->
-                <div class="flex items-center gap-3 mb-2">
-                    <span class="text-xs font-bold tracking-widest text-slate-400 dark:text-slate-500 uppercase">PROJECTS</span>
-                    <div class="h-px bg-slate-300 dark:bg-slate-700 w-12"></div>
+                <!-- Eyebrow Pill -->
+                <div class="section-pill-tag mb-4">
+                    <span class="font-mono text-blue-600 dark:text-blue-400">&gt;_</span>
+                    <span>PRODUCTION BUILDS &amp; RESEARCH PLATFORMS</span>
                 </div>
 
-                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-10">
-                    <h2 class="text-3xl sm:text-4xl font-black text-slate-950 dark:text-white tracking-tight">
-                        From Ideas to <span class="text-indigo-600 dark:text-indigo-400">Real-World Solutions</span>
-                    </h2>
-                    <button onclick="const el = document.getElementById('all-projects-wrapper'); el.classList.toggle('hidden'); const btn = this.querySelector('span'); btn.textContent = el.classList.contains('hidden') ? 'View All Projects →' : 'Hide Extended Catalogue ↑';" class="px-5 py-2.5 rounded-full border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 text-slate-700 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-800 text-sm font-semibold transition-all flex items-center gap-2 shadow-sm shrink-0">
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-12">
+                    <div>
+                        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-950 dark:text-white tracking-tight leading-tight font-heading">
+                            From Ideas to <span class="text-blue-600">Real-World Solutions</span>
+                        </h2>
+                        <p class="text-sm sm:text-base text-slate-600 dark:text-slate-400 mt-2 max-w-2xl leading-relaxed">
+                            Practical, high-performance platforms engineered for active users, production scale, and verifiable community impact.
+                        </p>
+                    </div>
+                    <button onclick="const el = document.getElementById('all-projects-wrapper'); el.classList.toggle('hidden'); const btn = this.querySelector('span'); btn.textContent = el.classList.contains('hidden') ? 'View All Projects →' : 'Hide Extended Catalogue ↑';" class="px-6 py-3 rounded-full border border-slate-200 dark:border-slate-800 bg-white/90 dark:bg-slate-900/90 hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-900 dark:text-white text-xs sm:text-sm font-bold shadow-sm transition-all flex items-center gap-2 shrink-0">
                         <span>View All Projects →</span>
+                        <i data-lucide="arrow-right" class="w-4 h-4"></i>
                     </button>
                 </div>
 
@@ -872,7 +919,7 @@
                 <div class="grid md:grid-cols-3 gap-6">
                     
                     <!-- Card 1: PrayagrajRooms -->
-                    <div class="mockup-project-card group bg-white dark:bg-slate-900 p-6 rounded-2xl border border-slate-200/80 dark:border-slate-800 shadow-sm hover:shadow-md transition-all flex flex-col justify-between">
+                    <div class="bento-card p-6 sm:p-7 rounded-3xl flex flex-col justify-between group">
                         <div>
                             <div class="flex items-start justify-between mb-4">
                                 <div class="w-12 h-12 rounded-xl bg-blue-50 dark:bg-blue-950/60 text-blue-600 dark:text-blue-400 flex items-center justify-center text-xl">
@@ -899,7 +946,7 @@
                     </div>
 
                     <!-- Card 2: Gautam AI Clone -->
-                    <div onclick="if(window.gautamAI) window.gautamAI.toggleWindow(true)" class="mockup-project-card group bg-white dark:bg-slate-900 p-6 rounded-2xl border border-slate-200/80 dark:border-slate-800 shadow-sm hover:shadow-md transition-all flex flex-col justify-between cursor-pointer">
+                    <div onclick="if(window.gautamAI) window.gautamAI.toggleWindow(true)" class="bento-card p-6 sm:p-7 rounded-3xl flex flex-col justify-between group cursor-pointer">
                         <div>
                             <div class="flex items-start justify-between mb-4">
                                 <div class="w-12 h-12 rounded-xl bg-indigo-600 text-white flex items-center justify-center text-xl shadow-md shadow-indigo-600/20">
@@ -926,7 +973,7 @@
                     </div>
 
                     <!-- Card 3: Cyber Forensics Lab -->
-                    <div class="mockup-project-card group bg-white dark:bg-slate-900 p-6 rounded-2xl border border-slate-200/80 dark:border-slate-800 shadow-sm hover:shadow-md transition-all flex flex-col justify-between">
+                    <div class="bento-card p-6 sm:p-7 rounded-3xl flex flex-col justify-between group">
                         <div>
                             <div class="flex items-start justify-between mb-4">
                                 <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-blue-500 to-indigo-600 text-white flex items-center justify-center text-xl shadow-md shadow-blue-500/20">
@@ -973,7 +1020,7 @@
                     <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                     
                     <!-- Project 1: VoxRAG (Production Voice RAG) -->
-                    <div class="project-item-card glass-card rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 hover-elevate flex flex-col justify-between" data-category="ai web">
+                    <div class="bento-card rounded-2xl overflow-hidden flex flex-col justify-between" data-category="ai web">
                         <div class="p-6">
                             <div class="flex items-center justify-between mb-3">
                                 <span class="px-3 py-1 rounded-full bg-purple-100 text-purple-700 dark:bg-purple-950 dark:text-purple-300 text-xs font-semibold">Sub-200ms Voice RAG</span>
@@ -1000,7 +1047,7 @@
                     </div>
 
                     <!-- Project 2: IntervAI (AI Mock Interview Platform) -->
-                    <div class="project-item-card glass-card rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 hover-elevate flex flex-col justify-between" data-category="ai web">
+                    <div class="bento-card rounded-2xl overflow-hidden flex flex-col justify-between" data-category="ai web">
                         <div class="p-6">
                             <div class="flex items-center justify-between mb-3">
                                 <span class="px-3 py-1 rounded-full bg-indigo-100 text-indigo-700 dark:bg-indigo-950 dark:text-indigo-300 text-xs font-semibold">AI Interviewer</span>
@@ -1027,7 +1074,7 @@
                     </div>
 
                     <!-- Project 3: PrayagrajRooms (Featured Co-Founder Startup) -->
-                    <div class="project-item-card glass-card rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 hover-elevate flex flex-col justify-between" data-category="startup web">
+                    <div class="bento-card rounded-2xl overflow-hidden flex flex-col justify-between" data-category="startup web">
                         <div class="p-6">
                             <div class="flex items-center justify-between mb-3">
                                 <span class="px-3 py-1 rounded-full bg-blue-100 text-blue-700 dark:bg-blue-950 dark:text-blue-300 text-xs font-semibold">Co-Founder Startup</span>
@@ -1056,7 +1103,7 @@
                     </div>
 
                     <!-- Project 4: HH-GOA (Hacker House Goa 2026 Profile Picture Generator) -->
-                    <div class="project-item-card glass-card rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 hover-elevate flex flex-col justify-between" data-category="web utility">
+                    <div class="bento-card rounded-2xl overflow-hidden flex flex-col justify-between" data-category="web utility">
                         <div class="p-6">
                             <div class="flex items-center justify-between mb-3">
                                 <span class="px-3 py-1 rounded-full bg-amber-100 text-amber-700 dark:bg-amber-950 dark:text-amber-300 text-xs font-semibold">Official Community Tool</span>
@@ -1082,7 +1129,7 @@
                     </div>
 
                     <!-- Project 5: VeriTrust (AI Social Media Verification) -->
-                    <div class="project-item-card glass-card rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 hover-elevate flex flex-col justify-between" data-category="ai utility">
+                    <div class="bento-card rounded-2xl overflow-hidden flex flex-col justify-between" data-category="ai utility">
                         <div class="p-6">
                             <div class="flex items-center justify-between mb-3">
                                 <span class="px-3 py-1 rounded-full bg-emerald-100 text-emerald-700 dark:bg-emerald-950 dark:text-emerald-300 text-xs font-semibold">AI Verification</span>
@@ -1108,7 +1155,7 @@
                     </div>
 
                     <!-- Project 6: NotesBazi / uginotes (EdTech Digital Library) -->
-                    <div class="project-item-card glass-card rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 hover-elevate flex flex-col justify-between" data-category="startup web">
+                    <div class="bento-card rounded-2xl overflow-hidden flex flex-col justify-between" data-category="startup web">
                         <div class="p-6">
                             <div class="flex items-center justify-between mb-3">
                                 <span class="px-3 py-1 rounded-full bg-teal-100 text-teal-700 dark:bg-teal-950 dark:text-teal-300 text-xs font-semibold">Campus Digital Library</span>
@@ -1134,7 +1181,7 @@
                     </div>
 
                     <!-- Project 7: NHAI Offline Biometrics -->
-                    <div class="project-item-card glass-card rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 hover-elevate flex flex-col justify-between" data-category="ai utility">
+                    <div class="bento-card rounded-2xl overflow-hidden flex flex-col justify-between" data-category="ai utility">
                         <div class="p-6">
                             <div class="flex items-center justify-between mb-3">
                                 <span class="px-3 py-1 rounded-full bg-cyan-100 text-cyan-700 dark:bg-cyan-950 dark:text-cyan-300 text-xs font-semibold">Edge AI Biometrics</span>
@@ -1161,7 +1208,7 @@
                     </div>
 
                     <!-- Project 8: IITB-TECHFEST-3D (3D Interactive Website) -->
-                    <div class="project-item-card glass-card rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 hover-elevate flex flex-col justify-between" data-category="web">
+                    <div class="bento-card rounded-2xl overflow-hidden flex flex-col justify-between" data-category="web">
                         <div class="p-6">
                             <div class="flex items-center justify-between mb-3">
                                 <span class="px-3 py-1 rounded-full bg-violet-100 text-violet-700 dark:bg-violet-950 dark:text-violet-300 text-xs font-semibold">3D WebGL</span>
@@ -1187,7 +1234,7 @@
                     </div>
 
                     <!-- Project 9: jarvis-os (Autonomous AI Assistant) -->
-                    <div class="project-item-card glass-card rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 hover-elevate flex flex-col justify-between" data-category="ai utility">
+                    <div class="bento-card rounded-2xl overflow-hidden flex flex-col justify-between" data-category="ai utility">
                         <div class="p-6">
                             <div class="flex items-center justify-between mb-3">
                                 <span class="px-3 py-1 rounded-full bg-sky-100 text-sky-700 dark:bg-sky-950 dark:text-sky-300 text-xs font-semibold">Autonomous Assistant</span>
@@ -1213,7 +1260,7 @@
                     </div>
 
                     <!-- Project 10: BusSetu (Live Transit Platform) -->
-                    <div class="project-item-card glass-card rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 hover-elevate flex flex-col justify-between" data-category="startup web">
+                    <div class="bento-card rounded-2xl overflow-hidden flex flex-col justify-between" data-category="startup web">
                         <div class="p-6">
                             <div class="flex items-center justify-between mb-3">
                                 <span class="px-3 py-1 rounded-full bg-emerald-100 text-emerald-700 dark:bg-emerald-950 dark:text-emerald-300 text-xs font-semibold">Live Transit</span>
@@ -1239,7 +1286,7 @@
                     </div>
 
                     <!-- Project 11: TripSync (Group Settlement Platform) -->
-                    <div class="project-item-card glass-card rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 hover-elevate flex flex-col justify-between" data-category="web utility">
+                    <div class="bento-card rounded-2xl overflow-hidden flex flex-col justify-between" data-category="web utility">
                         <div class="p-6">
                             <div class="flex items-center justify-between mb-3">
                                 <span class="px-3 py-1 rounded-full bg-sky-100 text-sky-700 dark:bg-sky-950 dark:text-sky-300 text-xs font-semibold">Travel Tech</span>
@@ -1265,7 +1312,7 @@
                     </div>
 
                     <!-- Project 12: PDFBAZI (Client-Side Privacy Utility) -->
-                    <div class="project-item-card glass-card rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 hover-elevate flex flex-col justify-between" data-category="utility web">
+                    <div class="bento-card rounded-2xl overflow-hidden flex flex-col justify-between" data-category="utility web">
                         <div class="p-6">
                             <div class="flex items-center justify-between mb-3">
                                 <span class="px-3 py-1 rounded-full bg-purple-100 text-purple-700 dark:bg-purple-950 dark:text-purple-300 text-xs font-semibold">Privacy Utility</span>
@@ -1294,7 +1341,7 @@
                     </div>
 
                     <!-- Project 13: CampusClick -->
-                    <div class="project-item-card glass-card rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 hover-elevate flex flex-col justify-between" data-category="web startup">
+                    <div class="bento-card rounded-2xl overflow-hidden flex flex-col justify-between" data-category="web startup">
                         <div class="p-6">
                             <div class="flex items-center justify-between mb-3">
                                 <span class="px-3 py-1 rounded-full bg-amber-100 text-amber-700 dark:bg-amber-950 dark:text-amber-300 text-xs font-semibold">EdTech Platform</span>
@@ -1322,7 +1369,7 @@
                     </div>
 
                     <!-- Project 14: BuildX India Portal -->
-                    <div class="project-item-card glass-card rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 hover-elevate flex flex-col justify-between" data-category="web">
+                    <div class="bento-card rounded-2xl overflow-hidden flex flex-col justify-between" data-category="web">
                         <div class="p-6">
                             <div class="flex items-center justify-between mb-3">
                                 <span class="px-3 py-1 rounded-full bg-rose-100 text-rose-700 dark:bg-rose-950 dark:text-rose-300 text-xs font-semibold">Hackathon Tech</span>
@@ -1353,33 +1400,37 @@
         <!-- ═══════════════════════════════════════
              3.5 OPEN SOURCE & UPSTREAM ENGINEERING
         ═══════════════════════════════════════ -->
-        <section id="opensource" class="py-20 bg-slate-50/70 dark:bg-slate-900/40 border-b border-slate-200/60 dark:border-slate-800">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <section id="opensource" class="py-20 section-dot-grid border-b border-slate-200/60 dark:border-slate-800 relative overflow-hidden">
+            <!-- Ambient Purple / Blue Glow -->
+            <div class="section-ambient-glow-purple -top-20 -right-20 opacity-70"></div>
+            <div class="section-ambient-glow-blue bottom-10 left-10 opacity-50"></div>
+
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                 
                 <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
                     <div>
-                        <div class="flex items-center gap-3 mb-2">
-                            <span class="text-xs font-bold tracking-widest text-blue-600 dark:text-blue-400 uppercase">WIKICLUB TECH ENVOY @ UIT &amp; 26+ GERRIT CONTRIBUTIONS</span>
-                            <div class="h-px bg-slate-300 dark:bg-slate-700 w-12"></div>
+                        <div class="section-pill-tag mb-4">
+                            <span class="font-mono text-purple-600 dark:text-purple-400">&gt;_</span>
+                            <span>26+ GERRIT PATCHES · WIKICLUB TECH ENVOY @ UIT</span>
                         </div>
-                        <h2 class="text-3xl sm:text-4xl font-black text-slate-950 dark:text-white tracking-tight">
-                            Open Source &amp; <span class="text-blue-600 dark:text-blue-400">Upstream Contributions</span>
+                        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-950 dark:text-white tracking-tight leading-tight font-heading">
+                            Open Source &amp; <span class="text-blue-600">Upstream Contributions</span>
                         </h2>
-                        <p class="text-sm sm:text-base text-slate-600 dark:text-slate-400 max-w-2xl mt-2 leading-relaxed">
+                        <p class="text-sm sm:text-base text-slate-600 dark:text-slate-400 max-w-2xl mt-3 leading-relaxed">
                             Serving as <strong>WikiClub Tech Envoy at UIT Prayagraj</strong> (Wikimedia Movement). Author of 26 upstream patches (13+ merged into production) across MediaWiki Core, TranslationNotifications, UploadWizard, MinervaNeue, GrowthExperiments, and Pywikibot.
                         </p>
                     </div>
 
                     <div class="mt-6 md:mt-0 flex flex-wrap items-center gap-3">
-                        <a href="./open-source-contributions.html" class="px-5 py-2.5 rounded-full bg-blue-600 hover:bg-blue-700 text-white text-xs sm:text-sm font-semibold transition-all flex items-center gap-2 shadow-sm">
+                        <a href="./open-source-contributions.html" class="px-6 py-3 rounded-full bg-blue-600 hover:bg-blue-700 text-white text-xs sm:text-sm font-bold shadow-md hover:shadow-lg transition-all flex items-center gap-2 group">
                             <span>Explore Full Ledger (30+ Patches)</span>
-                            <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                            <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
                         </a>
-                        <a href="https://gerrit.wikimedia.org/r/q/owner:gkmwin563%2540gmail.com" target="_blank" rel="noopener" class="px-4 py-2.5 rounded-full border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 text-slate-800 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-800 text-xs sm:text-sm font-semibold transition-all flex items-center gap-2">
+                        <a href="https://gerrit.wikimedia.org/r/q/owner:gkmwin563%2540gmail.com" target="_blank" rel="noopener" class="px-5 py-3 rounded-full border border-slate-300 dark:border-slate-700 bg-white/90 dark:bg-slate-900/90 text-slate-800 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 text-xs sm:text-sm font-semibold transition-all flex items-center gap-2 shadow-sm">
                             <span>Gerrit Logs</span>
                             <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
                         </a>
-                        <a href="https://phabricator.wikimedia.org/p/Gkm563/" target="_blank" rel="noopener" class="px-4 py-2.5 rounded-full border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 text-slate-800 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-800 text-xs sm:text-sm font-semibold transition-all flex items-center gap-2">
+                        <a href="https://phabricator.wikimedia.org/p/Gkm563/" target="_blank" rel="noopener" class="px-5 py-3 rounded-full border border-slate-300 dark:border-slate-700 bg-white/90 dark:bg-slate-900/90 text-slate-800 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 text-xs sm:text-sm font-semibold transition-all flex items-center gap-2 shadow-sm">
                             <span>Phabricator</span>
                             <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
                         </a>
@@ -1623,15 +1674,22 @@
         <!-- ═══════════════════════════════════════
              3. ABOUT PREVIEW SECTION
         ═══════════════════════════════════════ -->
-        <section id="about" class="py-20 bg-white dark:bg-slate-900/50 border-y border-slate-200/60 dark:border-slate-800">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <section id="about" class="py-20 section-dot-grid border-y border-slate-200/60 dark:border-slate-800 relative overflow-hidden">
+            <!-- Ambient Blue / Indigo Glow -->
+            <div class="section-ambient-glow-blue -top-20 -left-20 opacity-70"></div>
+            <div class="section-ambient-glow-purple bottom-10 right-10 opacity-50"></div>
+
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                 
                 <!-- Section Header -->
                 <div class="max-w-3xl mb-12">
-                    <h2 class="text-xs font-semibold uppercase tracking-widest text-blue-600 dark:text-blue-400 mb-2">About Me</h2>
-                    <h3 class="text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white tracking-tight">
-                        Engineered for Performance, <span class="gradient-text">Driven by Innovation</span>.
-                    </h3>
+                    <div class="section-pill-tag mb-4">
+                        <span class="font-mono text-blue-600 dark:text-blue-400">&gt;_</span>
+                        <span>ABOUT GAUTAM KUMAR MAURYA</span>
+                    </div>
+                    <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-950 dark:text-white tracking-tight leading-tight font-heading">
+                        Engineered for Performance, <span class="text-blue-600">Driven by Impact</span>.
+                    </h2>
                 </div>
 
                 <!-- Executive 4-Pillars Quick Matrix -->
@@ -1732,24 +1790,30 @@
         <!-- ═══════════════════════════════════════
              4. SKILLS MATRIX
         ═══════════════════════════════════════ -->
-        <section id="skills" class="py-20">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <section id="skills" class="py-20 section-dot-grid border-b border-slate-200/60 dark:border-slate-800 relative overflow-hidden">
+            <!-- Ambient Blue Glow -->
+            <div class="section-ambient-glow-blue top-1/3 -right-24 opacity-60"></div>
+
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                 
                 <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
                     <div>
-                        <h2 class="text-xs font-semibold uppercase tracking-widest text-blue-600 dark:text-blue-400 mb-2">Technical Proficiency</h2>
-                        <h3 class="text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white tracking-tight">
-                            Skills & <span class="gradient-text">Tech Stack</span>
-                        </h3>
+                        <div class="section-pill-tag mb-4">
+                            <span class="font-mono text-blue-600 dark:text-blue-400">&gt;_</span>
+                            <span>CORE TECHNICAL ARSENAL</span>
+                        </div>
+                        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-950 dark:text-white tracking-tight leading-tight font-heading">
+                            Engineering Skills &amp; <span class="text-blue-600">Tech Stack</span>
+                        </h2>
                     </div>
 
                     <!-- Category Tab Filter Buttons -->
                     <div class="flex flex-wrap gap-2 mt-6 md:mt-0">
-                        <button class="skill-tab-btn tab-btn px-4 py-2 rounded-xl border border-slate-200 dark:border-slate-800 text-sm font-medium text-slate-600 dark:text-slate-300 hover:border-blue-600 active" data-category="all">All Skills</button>
-                        <button class="skill-tab-btn tab-btn px-4 py-2 rounded-xl border border-slate-200 dark:border-slate-800 text-sm font-medium text-slate-600 dark:text-slate-300 hover:border-blue-600" data-category="frontend">Frontend</button>
-                        <button class="skill-tab-btn tab-btn px-4 py-2 rounded-xl border border-slate-200 dark:border-slate-800 text-sm font-medium text-slate-600 dark:text-slate-300 hover:border-blue-600" data-category="backend">Backend & DB</button>
-                        <button class="skill-tab-btn tab-btn px-4 py-2 rounded-xl border border-slate-200 dark:border-slate-800 text-sm font-medium text-slate-600 dark:text-slate-300 hover:border-blue-600" data-category="ai">AI & Data</button>
-                        <button class="skill-tab-btn tab-btn px-4 py-2 rounded-xl border border-slate-200 dark:border-slate-800 text-sm font-medium text-slate-600 dark:text-slate-300 hover:border-blue-600" data-category="security">Security & Tools</button>
+                        <button class="skill-tab-btn tab-btn px-4 py-2 rounded-full border border-slate-200 dark:border-slate-800 text-xs sm:text-sm font-semibold text-slate-700 dark:text-slate-300 hover:border-blue-600 active shadow-sm" data-category="all">All Skills</button>
+                        <button class="skill-tab-btn tab-btn px-4 py-2 rounded-full border border-slate-200 dark:border-slate-800 text-xs sm:text-sm font-semibold text-slate-700 dark:text-slate-300 hover:border-blue-600 shadow-sm" data-category="frontend">Frontend</button>
+                        <button class="skill-tab-btn tab-btn px-4 py-2 rounded-full border border-slate-200 dark:border-slate-800 text-xs sm:text-sm font-semibold text-slate-700 dark:text-slate-300 hover:border-blue-600 shadow-sm" data-category="backend">Backend &amp; DB</button>
+                        <button class="skill-tab-btn tab-btn px-4 py-2 rounded-full border border-slate-200 dark:border-slate-800 text-xs sm:text-sm font-semibold text-slate-700 dark:text-slate-300 hover:border-blue-600 shadow-sm" data-category="ai">AI &amp; Data</button>
+                        <button class="skill-tab-btn tab-btn px-4 py-2 rounded-full border border-slate-200 dark:border-slate-800 text-xs sm:text-sm font-semibold text-slate-700 dark:text-slate-300 hover:border-blue-600 shadow-sm" data-category="security">Security &amp; Tools</button>
                     </div>
                 </div>
 
@@ -1836,14 +1900,21 @@
         <!-- ═══════════════════════════════════════
              6. INTERNSHIPS & GLOBAL EXPERIENCE (BENTO GRID)
         ═══════════════════════════════════════ -->
-        <section id="experience" class="py-20">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <section id="experience" class="py-20 section-dot-grid border-b border-slate-200/60 dark:border-slate-800 relative overflow-hidden">
+            <!-- Ambient Blue Glow -->
+            <div class="section-ambient-glow-blue -top-24 -left-20 opacity-70"></div>
+            <div class="section-ambient-glow-purple bottom-10 right-10 opacity-50"></div>
+
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                 
                 <div class="max-w-3xl mb-12">
-                    <h2 class="text-xs font-semibold uppercase tracking-widest text-blue-600 dark:text-blue-400 mb-2">Global & Government Programs</h2>
-                    <h3 class="text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white tracking-tight">
-                        Internships & <span class="gradient-text">Global Research</span>
-                    </h3>
+                    <div class="section-pill-tag mb-4">
+                        <span class="font-mono text-blue-600 dark:text-blue-400">&gt;_</span>
+                        <span>INDUSTRY &amp; RESEARCH FELLOWSHIPS</span>
+                    </div>
+                    <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-950 dark:text-white tracking-tight leading-tight font-heading">
+                        Internships &amp; <span class="text-blue-600">Global Research</span>
+                    </h2>
                 </div>
 
                 <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -1939,58 +2010,108 @@
         <!-- ═══════════════════════════════════════
              7. LEADERSHIP & COMMUNITY
         ═══════════════════════════════════════ -->
-        <section id="leadership" class="py-20 bg-white dark:bg-slate-900/50 border-y border-slate-200/60 dark:border-slate-800">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <section id="leadership" class="py-20 section-dot-grid border-y border-slate-200/60 dark:border-slate-800 relative overflow-hidden">
+            <!-- Ambient Purple / Blue Glow -->
+            <div class="section-ambient-glow-purple -top-20 right-10 opacity-60"></div>
+            <div class="section-ambient-glow-blue bottom-10 -left-20 opacity-50"></div>
+
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                 
                 <div class="max-w-3xl mb-12">
-                    <h2 class="text-xs font-semibold uppercase tracking-widest text-blue-600 dark:text-blue-400 mb-2">Campus & Technical Roles</h2>
-                    <h3 class="text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white tracking-tight">
-                        Leadership & <span class="gradient-text">Community Roles</span>
-                    </h3>
+                    <div class="section-pill-tag mb-4">
+                        <span class="font-mono text-blue-600 dark:text-blue-400">&gt;_</span>
+                        <span>CAMPUS LEADERSHIP &amp; COMMUNITY BUILDING</span>
+                    </div>
+                    <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-950 dark:text-white tracking-tight leading-tight font-heading">
+                        Leadership &amp; <span class="text-blue-600">Community Roles</span>
+                    </h2>
                 </div>
 
                 <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
                     
-                    <!-- Role 1: WikiClub Tech Envoy @ UIT -->
-                    <div class="glass-card p-6 rounded-2xl border border-blue-200/80 dark:border-blue-900/60 hover-elevate shadow-sm">
-                        <div class="w-10 h-10 rounded-xl bg-blue-50 dark:bg-blue-950/50 text-blue-600 dark:text-blue-400 flex items-center justify-center font-bold mb-4 text-base">
-                            <i class="fa-brands fa-wikipedia-w"></i>
+                    <!-- Role 1: Founding Member & President @ UCC -->
+                    <div class="bento-card p-6 rounded-3xl border border-rose-200/80 dark:border-rose-900/60 flex flex-col justify-between group">
+                        <div>
+                            <div class="w-12 h-12 rounded-2xl bg-rose-100 dark:bg-rose-950/80 text-rose-600 dark:text-rose-400 flex items-center justify-center font-bold mb-5 shadow-sm text-xl">
+                                <i class="fa-solid fa-code"></i>
+                            </div>
+                            <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-rose-50 dark:bg-rose-950/70 text-rose-600 dark:text-rose-400 text-[11px] font-bold uppercase tracking-wider mb-2">
+                                Founding President
+                            </span>
+                            <h4 class="text-xl font-bold text-slate-900 dark:text-white mt-1 mb-1">UIT Coding Club (UCC)</h4>
+                            <div class="text-xs font-semibold text-rose-600 dark:text-rose-400 mb-3">Co-Founded with Dr. Dhananjay Sharma</div>
+                            <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
+                                Co-founded UCC with Dr. Dhananjay Sharma, established the 17-member leadership charter, and organized algorithmic coding competitions for 2nd and 3rd year engineering students.
+                            </p>
                         </div>
-                        <h4 class="text-lg font-bold text-slate-900 dark:text-white mb-1">WikiClub Tech Envoy</h4>
-                        <div class="text-xs font-semibold text-blue-600 dark:text-blue-400 mb-2">WikiClub Tech @ UIT (Wikimedia)</div>
-                        <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">Appointed Envoy leading campus chapter, organizing Gerrit hackathons, and mentoring open source contributors.</p>
+                        <div class="mt-5 pt-4 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between text-xs text-rose-600 dark:text-rose-400 font-bold">
+                            <span>150+ Contestants</span>
+                            <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                        </div>
                     </div>
 
-                    <!-- Role 2: GeeksforGeeks UIT Chapter (Vice President) -->
-                    <div class="glass-card p-6 rounded-2xl border border-emerald-200/80 dark:border-emerald-900/60 hover-elevate shadow-sm">
-                        <div class="w-10 h-10 rounded-xl bg-emerald-50 dark:bg-emerald-950/50 text-emerald-600 dark:text-emerald-400 flex items-center justify-center font-bold mb-4">
-                            GFG
+                    <!-- Role 2: WikiClub Tech Envoy @ UIT -->
+                    <div class="bento-card p-6 rounded-3xl border border-purple-200/80 dark:border-purple-900/60 flex flex-col justify-between group">
+                        <div>
+                            <div class="w-12 h-12 rounded-2xl bg-purple-100 dark:bg-purple-950/80 text-purple-600 dark:text-purple-400 flex items-center justify-center font-bold mb-5 shadow-sm text-xl">
+                                <i class="fa-brands fa-wikipedia-w"></i>
+                            </div>
+                            <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-purple-50 dark:bg-purple-950/70 text-purple-600 dark:text-purple-400 text-[11px] font-bold uppercase tracking-wider mb-2">
+                                Campus Envoy
+                            </span>
+                            <h4 class="text-xl font-bold text-slate-900 dark:text-white mt-1 mb-1">WikiClub Tech Envoy</h4>
+                            <div class="text-xs font-semibold text-purple-600 dark:text-purple-400 mb-3">Wikimedia Movement @ UIT</div>
+                            <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
+                                Appointed Envoy leading campus chapter, directing upstream Gerrit hackathons, authoring 26+ patches, and mentoring emerging contributors.
+                            </p>
                         </div>
-                        <h4 class="text-lg font-bold text-slate-900 dark:text-white mb-1">Vice President</h4>
-                        <div class="text-xs font-semibold text-emerald-600 dark:text-emerald-400 mb-2">GFG Student Chapter UIT</div>
-                        <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">Leading student technical sprints and coding events. Curated competitive programming drives and DSA bootcamps.</p>
+                        <div class="mt-5 pt-4 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between text-xs text-purple-600 dark:text-purple-400 font-bold">
+                            <span>26+ Gerrit Patches</span>
+                            <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                        </div>
                     </div>
 
-                    <!-- Role 3: HackerRank Chapter UIT (Co-Lead) -->
-                    <div class="glass-card p-6 rounded-2xl border border-red-200/80 dark:border-red-900/60 hover-elevate shadow-sm">
-                        <div class="w-10 h-10 rounded-xl bg-red-50 dark:bg-red-950/50 text-red-600 dark:text-red-400 flex items-center justify-center font-bold mb-4">
-                            HR
+                    <!-- Role 3: GeeksforGeeks UIT Chapter (Vice President) -->
+                    <div class="bento-card p-6 rounded-3xl border border-emerald-200/80 dark:border-emerald-900/60 flex flex-col justify-between group">
+                        <div>
+                            <div class="w-12 h-12 rounded-2xl bg-emerald-100 dark:bg-emerald-950/80 text-emerald-600 dark:text-emerald-400 flex items-center justify-center font-bold mb-5 shadow-sm text-xl">
+                                <svg class="h-6 w-6" viewBox="0 0 32 32" fill="#0F9D58"><path d="M14.6 19.3c-.4.5-.9.9-1.5 1.2-.6.3-1.3.4-2.1.4-1.2 0-2.2-.4-3-1.2s-1.2-1.8-1.2-3.1c0-1.3.4-2.3 1.2-3.1.8-.8 1.8-1.2 3-1.2.8 0 1.5.1 2.1.4.6.3 1.1.7 1.5 1.2l1.9-2.1c-.8-.8-1.7-1.4-2.7-1.8s-2.1-.6-3.3-.6c-2.1 0-3.9.7-5.3 2.1C3.7 12.6 3 14.3 3 16.6s.7 4 2.1 5.4c1.4 1.4 3.2 2.1 5.3 2.1 1.2 0 2.3-.2 3.3-.6 1-.4 1.9-1 2.7-1.8l-1.8-2.4zm2.8-6.6c.4-.5.9-.9 1.5-1.2.6-.3 1.3-.4 2.1-.4 1.2 0 2.2.4 3 1.2.8.8 1.2 1.8 1.2 3.1 0 1.3-.4 2.3-1.2 3.1-.8.8-1.8 1.2-3 1.2-.8 0-1.5-.1-2.1-.4-.6-.3-1.1-.7-1.5-1.2l-1.9 2.1c.8.8 1.7 1.4 2.7 1.8 1 .4 2.1.6 3.3.6 2.1 0 3.9-.7 5.3-2.1 1.4-1.4 2.1-3.1 2.1-5.4s-.7-4-2.1-5.4C26.9 8.7 25.1 8 23 8c-1.2 0-2.3.2-3.3.6-1 .4-1.9 1-2.7 1.8l1.8 2.3z"/></svg>
+                            </div>
+                            <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-50 dark:bg-emerald-950/70 text-emerald-600 dark:text-emerald-400 text-[11px] font-bold uppercase tracking-wider mb-2">
+                                Vice President
+                            </span>
+                            <h4 class="text-xl font-bold text-slate-900 dark:text-white mt-1 mb-1">GFG Student Chapter</h4>
+                            <div class="text-xs font-semibold text-emerald-600 dark:text-emerald-400 mb-3">United Institute of Technology</div>
+                            <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
+                                Curated orientation drives, SyntaxClash mega contest with merchandise swags, offline mentorship sessions, and Gateway to GATE keynote with GFG VP (AIR 12 &amp; 32) hosting 600+ students.
+                            </p>
                         </div>
-                        <h4 class="text-lg font-bold text-slate-900 dark:text-white mb-1">Co-Lead</h4>
-                        <div class="text-xs font-semibold text-red-600 dark:text-red-400 mb-2">HackerRank Chapter UIT</div>
-                        <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">Curating programming test cases, mentoring algorithmic problem solving, and directing competitive contests.</p>
+                        <div class="mt-5 pt-4 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between text-xs text-emerald-600 dark:text-emerald-400 font-bold">
+                            <span>600+ Auditorium Keynote</span>
+                            <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                        </div>
                     </div>
 
-                    <!-- Role 4: Open Source Connect (Campus Lead) -->
-                    <div class="glass-card p-6 rounded-2xl border border-sky-200/80 dark:border-sky-900/60 hover-elevate shadow-sm">
-                        <div class="w-10 h-10 rounded-xl bg-sky-50 dark:bg-sky-950/50 text-sky-600 dark:text-sky-400 flex items-center justify-center font-bold mb-4">
-                            OSC
+                    <!-- Role 4: HackerRank Chapter UIT (Co-Lead & VP) -->
+                    <div class="bento-card p-6 rounded-3xl border border-red-200/80 dark:border-red-900/60 flex flex-col justify-between group">
+                        <div>
+                            <div class="w-12 h-12 rounded-2xl bg-[#001E2B] text-[#00EA64] flex items-center justify-center font-black mb-5 shadow-sm text-2xl">
+                                H
+                            </div>
+                            <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-red-50 dark:bg-red-950/70 text-red-600 dark:text-red-400 text-[11px] font-bold uppercase tracking-wider mb-2">
+                                Co-Lead &amp; VP
+                            </span>
+                            <h4 class="text-xl font-bold text-slate-900 dark:text-white mt-1 mb-1">HackerRank UIT</h4>
+                            <div class="text-xs font-semibold text-red-600 dark:text-red-400 mb-3">Competitive Programming Chapter</div>
+                            <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
+                                Directing algorithmic test series, mentoring DSA problem solving, and co-convened the Gateway to GATE mega conclave with GFG Noida VP hosting 600+ students.
+                            </p>
                         </div>
-                        <h4 class="text-lg font-bold text-slate-900 dark:text-white mb-1">Campus Lead</h4>
-                        <div class="text-xs font-semibold text-sky-600 dark:text-sky-400 mb-2">Open Source Connect</div>
-                        <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">Appointed Campus Lead. Advocating for open-source workflows, Git/GitHub, and collaborative code sprints.</p>
+                        <div class="mt-5 pt-4 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between text-xs text-red-600 dark:text-red-400 font-bold">
+                            <span>Competitive Sprints</span>
+                            <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                        </div>
                     </div>
-
                 </div>
 
                 <!-- Collapsible Grid for Additional Leadership & Ambassador Roles -->
@@ -2141,7 +2262,7 @@
         <!-- ═══════════════════════════════════════
              7.5 EVENTS & HACKATHONS ORGANISED (1,500+ ATTENDEES)
         ═══════════════════════════════════════ -->
-        <section id="events" class="py-20 bg-slate-50/70 dark:bg-slate-950/40 relative overflow-hidden">
+        <section id="events" class="py-20 section-dot-grid border-b border-slate-200/60 dark:border-slate-800 relative overflow-hidden">
             <!-- Background Soft Ambient Glow -->
             <div class="absolute top-1/2 left-1/4 w-96 h-96 rounded-full bg-blue-500/10 dark:bg-blue-600/10 blur-3xl pointer-events-none"></div>
 
@@ -2361,14 +2482,20 @@
         <!-- ═══════════════════════════════════════
              8. ACHIEVEMENTS & AWARDS
         ═══════════════════════════════════════ -->
-        <section id="achievements" class="py-20">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <section id="achievements" class="py-20 section-dot-grid border-b border-slate-200/60 dark:border-slate-800 relative overflow-hidden">
+            <!-- Ambient Blue Glow -->
+            <div class="section-ambient-glow-blue top-1/4 -right-20 opacity-60"></div>
+
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                 
                 <div class="max-w-3xl mb-12">
-                    <h2 class="text-xs font-semibold uppercase tracking-widest text-blue-600 dark:text-blue-400 mb-2">Honors & Recognition</h2>
-                    <h3 class="text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white tracking-tight">
-                        Honors, Awards & <span class="gradient-text">Achievements</span>
-                    </h3>
+                    <div class="section-pill-tag mb-4">
+                        <span class="font-mono text-blue-600 dark:text-blue-400">&gt;_</span>
+                        <span>HONORS &amp; RECOGNITIONS</span>
+                    </div>
+                    <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-950 dark:text-white tracking-tight leading-tight font-heading">
+                        Honors, Awards &amp; <span class="text-blue-600">Achievements</span>
+                    </h2>
                 </div>
 
                 <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -2512,12 +2639,20 @@
         <!-- ═══════════════════════════════════════
              9. TECHNICAL FOCUS AREAS
         ═══════════════════════════════════════ -->
-        <section id="technical-focus" class="py-20 bg-white dark:bg-slate-900/50 border-y border-slate-200/60 dark:border-slate-800">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <section id="technical-focus" class="py-20 section-dot-grid border-y border-slate-200/60 dark:border-slate-800 relative overflow-hidden">
+            <!-- Ambient Purple Glow -->
+            <div class="section-ambient-glow-purple -top-24 left-10 opacity-60"></div>
+
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                 
                 <div class="max-w-3xl mb-12">
-                    <h2 class="text-xs font-semibold uppercase tracking-widest text-blue-600 dark:text-blue-400 mb-2">Areas of Specialization</h2>
-                    <h3 class="text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white tracking-tight">Technical Focus</h3>
+                    <div class="section-pill-tag mb-4">
+                        <span class="font-mono text-blue-600 dark:text-blue-400">&gt;_</span>
+                        <span>AREAS OF SPECIALIZATION</span>
+                    </div>
+                    <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-950 dark:text-white tracking-tight leading-tight font-heading">
+                        Technical Focus &amp; <span class="text-blue-600">Architecture</span>
+                    </h2>
                 </div>
 
                 <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -2589,14 +2724,23 @@
         <!-- ═══════════════════════════════════════
              9.5 PROFESSIONAL JOURNEY GALLERY
         ═══════════════════════════════════════ -->
-        <section id="gallery" class="py-20 bg-slate-100/50 dark:bg-slate-900/30 border-t border-slate-200/60 dark:border-slate-800">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <section id="gallery" class="py-20 section-dot-grid border-t border-slate-200/60 dark:border-slate-800 relative overflow-hidden">
+            <!-- Ambient Glow -->
+            <div class="section-ambient-glow-blue -top-20 -right-20 opacity-70"></div>
+            <div class="section-ambient-glow-purple bottom-10 left-10 opacity-50"></div>
+
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                 
                 <div class="max-w-3xl mb-12">
-                    <h2 class="text-xs font-semibold uppercase tracking-widest text-blue-600 dark:text-blue-400 mb-2">Visual Timeline</h2>
-                    <h3 class="text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white tracking-tight">Professional Journey Gallery</h3>
-                    <p class="text-sm sm:text-base text-slate-600 dark:text-slate-400 italic mt-2">
-                        "A visual timeline highlighting key milestones from my academic, professional, open-source, and international experiences."
+                    <div class="section-pill-tag mb-4">
+                        <span class="font-mono text-blue-600 dark:text-blue-400">&gt;_</span>
+                        <span>PHOTO &amp; EVENT GALLERY</span>
+                    </div>
+                    <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-950 dark:text-white tracking-tight leading-tight font-heading">
+                        Professional Journey <span class="text-blue-600">Gallery</span>
+                    </h2>
+                    <p class="text-sm sm:text-base text-slate-600 dark:text-slate-400 mt-2">
+                        A visual timeline highlighting key milestones from academic, professional, open-source, and international experiences.
                     </p>
                 </div>
 
@@ -2890,21 +3034,24 @@
         <!-- ═══════════════════════════════════════
              06. NOW — LIVE STATUS DISPATCH
         ═══════════════════════════════════════ -->
-        <section id="now" class="py-20 bg-slate-100/60 dark:bg-slate-900/60 border-t border-slate-200/60 dark:border-slate-800">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <section id="now" class="py-20 section-dot-grid border-t border-slate-200/60 dark:border-slate-800 relative overflow-hidden">
+            <!-- Ambient Blue Glow -->
+            <div class="section-ambient-glow-blue top-1/2 -left-20 opacity-60"></div>
+
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                 
                 <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
                     <div>
-                        <div class="editorial-eyebrow mb-2">
-                            <span class="now-pulse-indicator"></span>
+                        <div class="section-pill-tag mb-4">
+                            <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
                             <span>06 // NOW — LIVE DISPATCH · 2026</span>
                         </div>
-                        <h3 class="text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white tracking-tight">
-                            What I Am Focused On <span class="gradient-text">Right Now</span>
-                        </h3>
+                        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-950 dark:text-white tracking-tight leading-tight font-heading">
+                            What I Am Focused On <span class="text-blue-600">Right Now</span>
+                        </h2>
                     </div>
                     <div class="mt-4 md:mt-0">
-                        <span class="telemetry-tag">
+                        <span class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-xs font-mono font-bold text-slate-700 dark:text-slate-300 shadow-sm">
                             <i data-lucide="radio" class="w-3.5 h-3.5 text-emerald-500"></i>
                             <span>PRAYAGRAJ · UPDATED FALL 2026</span>
                         </span>
@@ -2991,18 +3138,21 @@
         <!-- ═══════════════════════════════════════
              07. ENGINEERING DEEP DIVES & FIELD REPORTS
         ═══════════════════════════════════════ -->
-        <section id="deep-dives" class="py-20 bg-white dark:bg-slate-900/50 border-t border-slate-200/60 dark:border-slate-800">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <section id="deep-dives" class="py-20 section-dot-grid border-t border-slate-200/60 dark:border-slate-800 relative overflow-hidden">
+            <!-- Ambient Glow -->
+            <div class="section-ambient-glow-purple -top-24 right-10 opacity-60"></div>
+
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                 
                 <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
                     <div>
-                        <div class="flex items-center gap-3 mb-2">
-                            <span class="text-xs font-bold tracking-widest text-blue-600 dark:text-blue-400 uppercase">IN-DEPTH FIELD DOCUMENTATION</span>
-                            <div class="h-px bg-slate-300 dark:bg-slate-700 w-12"></div>
+                        <div class="section-pill-tag mb-4">
+                            <span class="font-mono text-blue-600 dark:text-blue-400">&gt;_</span>
+                            <span>IN-DEPTH DOCUMENTATION &amp; FIELD REPORTS</span>
                         </div>
-                        <h3 class="text-3xl sm:text-4xl font-bold text-slate-950 dark:text-white tracking-tight">
-                            Engineering Deep Dives &amp; <span class="text-blue-600 dark:text-blue-400">Field Reports</span>
-                        </h3>
+                        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-950 dark:text-white tracking-tight leading-tight font-heading">
+                            Engineering Deep Dives &amp; <span class="text-blue-600">Field Reports</span>
+                        </h2>
                     </div>
                     <p class="text-sm text-slate-600 dark:text-slate-400 max-w-md mt-4 md:mt-0 leading-relaxed">
                         Comprehensive writeups, technical architecture reviews, and verified documentation from international and government research programs.
@@ -3125,14 +3275,20 @@
         <!-- ═══════════════════════════════════════
              9.5. RECRUITER & CLIENT FAQ (INTERACTIVE)
         ═══════════════════════════════════════ -->
-        <section id="faq" class="py-20 bg-slate-50/60 dark:bg-slate-900/40 border-t border-slate-200/60 dark:border-slate-800">
-            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <section id="faq" class="py-20 section-dot-grid border-t border-slate-200/60 dark:border-slate-800 relative overflow-hidden">
+            <!-- Ambient Blue Glow -->
+            <div class="section-ambient-glow-blue top-1/2 -left-20 opacity-60"></div>
+
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                 
                 <div class="text-center max-w-2xl mx-auto mb-12">
-                    <h2 class="text-xs font-semibold uppercase tracking-widest text-blue-600 dark:text-blue-400 mb-2">Instant Answers</h2>
-                    <h3 class="text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white tracking-tight">
-                        Frequently Asked <span class="gradient-text">Questions</span>
-                    </h3>
+                    <div class="section-pill-tag mb-4">
+                        <span class="font-mono text-blue-600 dark:text-blue-400">&gt;_</span>
+                        <span>INSTANT ANSWERS FOR RECRUITERS &amp; PEERS</span>
+                    </div>
+                    <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-950 dark:text-white tracking-tight leading-tight font-heading">
+                        Frequently Asked <span class="text-blue-600">Questions</span>
+                    </h2>
                     <p class="text-sm text-slate-600 dark:text-slate-400 mt-2">
                         Quick answers for recruiters, engineering managers, and technical collaborators.
                     </p>
@@ -3205,17 +3361,24 @@
         <!-- ═══════════════════════════════════════
              10. CONTACT SECTION
         ═══════════════════════════════════════ -->
-        <section id="contact" class="py-20 relative overflow-hidden">
+        <section id="contact" class="py-20 section-dot-grid border-t border-slate-200/60 dark:border-slate-800 relative overflow-hidden">
+            <!-- Ambient Glow -->
+            <div class="section-ambient-glow-blue -top-24 right-10 opacity-70"></div>
+            <div class="section-ambient-glow-purple bottom-10 -left-20 opacity-50"></div>
+
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                 
                 <div class="grid lg:grid-cols-12 gap-12 items-start">
                     
                     <!-- Left Info Column (5 cols) -->
                     <div class="lg:col-span-5">
-                        <h2 class="text-xs font-semibold uppercase tracking-widest text-blue-600 dark:text-blue-400 mb-2">Get in Touch</h2>
-                        <h3 class="text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white tracking-tight mb-6">
-                            Let's Connect & <span class="gradient-text">Build the Future</span>
-                        </h3>
+                        <div class="section-pill-tag mb-4">
+                            <span class="font-mono text-blue-600 dark:text-blue-400">&gt;_</span>
+                            <span>GET IN TOUCH &amp; COLLABORATE</span>
+                        </div>
+                        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-950 dark:text-white tracking-tight mb-6 leading-tight font-heading">
+                            Let's Connect &amp; <span class="text-blue-600">Build Together</span>
+                        </h2>
                         <p class="text-base text-slate-600 dark:text-slate-300 leading-relaxed mb-8">
                             Have an exciting project, startup idea, or technical role? Feel free to reach out directly via email, WhatsApp, or through the contact form.
                         </p>
