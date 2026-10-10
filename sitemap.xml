@@ -57,13 +57,26 @@
   <!-- ===== Open Source Contributions ===== -->
   <url>
     <loc>https://gkm563.github.io/open-source-contributions.html</loc>
-    <lastmod>2026-10-03</lastmod>
+    <lastmod>2026-10-10</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.90</priority>
+    <priority>0.92</priority>
     <image:image>
       <image:loc>https://gkm563.github.io/assets/images/profile/Gautam_Kumar_Maurya.jpg</image:loc>
       <image:title>Gautam Kumar Maurya — Open Source Contributions (Wikimedia &amp; WikiClub India)</image:title>
       <image:caption>Gautam Kumar Maurya open source contributions across Wikimedia Gerrit, GitLab, Translatewiki, and GitHub.</image:caption>
+    </image:image>
+  </url>
+
+  <!-- ===== Road to Wiki Fellowship & Graduation 2026 ===== -->
+  <url>
+    <loc>https://gkm563.github.io/road-to-wiki.html</loc>
+    <lastmod>2026-10-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+    <image:image>
+      <image:loc>https://gkm563.github.io/assets/images/wiki/road-to-wiki-program-banner.webp</image:loc>
+      <image:title>Road to Wiki — Cohort 2 Technical Fellowship &amp; Graduation 2026</image:title>
+      <image:caption>Gautam Kumar Maurya Road to Wiki Cohort 2 fellowship by WikiClub Tech, OKI at IIIT Hyderabad &amp; Wikimedia Foundation.</image:caption>
     </image:image>
   </url>
 

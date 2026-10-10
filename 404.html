@@ -3,14 +3,52 @@
 <head>
   <meta charset="UTF-8">
   <script>
-    // Automatic Redirect for legacy repository paths (e.g., /gkmportfolio/ -> /)
+    // Automatic Redirect & Self-Healing for malformed URLs and legacy paths
     (function() {
       var path = window.location.pathname;
+
+      // 1. Redirect legacy repository paths (e.g., /gkmportfolio/ -> /)
       if (path.indexOf('/gkmportfolio') === 0) {
         var cleanPath = path.replace(/^\/gkmportfolio(\/|$)/, '/');
         var target = 'https://gkm563.github.io' + cleanPath + window.location.search + window.location.hash;
         window.location.replace(target);
+        return;
       }
+
+      // 2. Auto-heal accidental trailing characters like ')', ']', '.', ',', ';', '%29'
+      try {
+        var decodedPath = decodeURIComponent(path);
+        var cleaned = decodedPath.replace(/[\)\]\.,;\s\/\\]+$/, '');
+
+        // List of all valid portfolio routes
+        var validPages = [
+          'road-to-wiki',
+          'events-organized',
+          'open-source-contributions',
+          'achievements',
+          'certifications',
+          'ait-global-innovation-internship',
+          'up-police-internship',
+          'btech-journey',
+          'faq'
+        ];
+
+        for (var i = 0; i < validPages.length; i++) {
+          var p = validPages[i];
+          if (cleaned.endsWith('/' + p) || cleaned.endsWith('/' + p + '.html')) {
+            var dest = 'https://gkm563.github.io/' + p + '.html' + window.location.search + window.location.hash;
+            if (window.location.href !== dest) {
+              window.location.replace(dest);
+              return;
+            }
+          }
+        }
+
+        // If path was dirty and differs from decodedPath, redirect to cleaned
+        if (cleaned !== decodedPath && cleaned.length > 1) {
+          window.location.replace('https://gkm563.github.io' + cleaned + window.location.search + window.location.hash);
+        }
+      } catch (e) {}
     })();
   </script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
@@ -108,9 +146,11 @@
     <a href="https://gkm563.github.io/" class="btn-primary">← Portfolio Home</a>
     
     <div class="nav-links">
+      <a href="road-to-wiki.html" class="btn-secondary" style="border-color: #2563eb; color: #60a5fa;">⭐ Road to Wiki Fellowship</a>
+      <a href="open-source-contributions.html" class="btn-secondary">Wikimedia Open Source</a>
+      <a href="events-organized.html" class="btn-secondary">Technical Events Organised</a>
       <a href="ait-global-innovation-internship.html" class="btn-secondary">AIT Bangkok GIIP</a>
       <a href="up-police-internship.html" class="btn-secondary">UP Police APCSIP</a>
-      <a href="open-source-contributions.html" class="btn-secondary">Wikimedia Open Source</a>
     </div>
   </main>
 </body>
