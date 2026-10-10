@@ -246,34 +246,28 @@
     </script>
 </head>
 
-<body class="bg-slate-50 text-slate-900 dark:bg-slate-950 dark:text-slate-100 min-h-screen font-sans transition-colors duration-300 relative overflow-x-hidden">
-
-    <!-- Ambient Floating Air Blobs -->
-    <div class="fixed top-12 left-[6%] w-[420px] h-[420px] bg-blue-500/10 rounded-full blur-[90px] pointer-events-none float-air-slow"></div>
-    <div class="fixed top-[45%] right-[5%] w-[450px] h-[450px] bg-indigo-500/10 rounded-full blur-[100px] pointer-events-none float-air-medium"></div>
+<body class="bg-[#FBFBFA] text-slate-900 dark:bg-slate-950 dark:text-slate-100 min-h-screen font-sans transition-colors duration-300 relative overflow-x-hidden">
 
     <!-- Scroll Progress Bar -->
     <div id="scroll-progress" class="fixed top-0 left-0 h-1 bg-gradient-to-r from-blue-600 via-indigo-600 to-emerald-500 z-50 transition-all duration-150" style="width: 0%;"></div>
 
     <!-- ═══════════════════════════════════════
-         1. STICKY UNIFIED NAVBAR
+         1. STICKY UNIFIED NAVBAR (MOCKUP ACCURATE)
     ═══════════════════════════════════════ -->
     <header id="navbar" class="fixed top-0 left-0 right-0 z-50 glass-nav transition-all duration-300">
         <div class="nav-inner-wrapper max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
             
-            <!-- Brand Logo -->
-            <a href="index.html" class="flex items-center gap-2.5 group shrink-0 pl-1">
-                <img src="assets/images/profile/Gautam_Kumar_Maurya.jpg" alt="Gautam Kumar Maurya Logo" class="w-9 h-9 rounded-full object-cover border-2 border-blue-600 shadow-sm group-hover:scale-105 transition-transform duration-200">
-                <div class="flex flex-col leading-tight">
-                    <span class="font-bold text-sm sm:text-base text-slate-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">Gautam K. Maurya</span>
-                    <span class="text-[10px] sm:text-[11px] text-slate-500 dark:text-slate-400 font-medium">Event Organizer · Community Leader</span>
-                </div>
+            <!-- Brand Logo (< /> GKM • from Mockup) -->
+            <a href="index.html" class="flex items-center gap-1.5 group shrink-0 pl-1 font-heading">
+                <span class="text-blue-600 font-mono font-bold text-2xl leading-none">&lt;/&gt;</span>
+                <span class="text-2xl sm:text-3xl font-black text-slate-950 dark:text-white tracking-tight">GKM</span>
+                <span class="w-2.5 h-2.5 rounded-full bg-blue-600 inline-block ml-0.5"></span>
             </a>
 
             <!-- Desktop Nav Links -->
-            <nav class="hidden lg:flex items-center gap-6 xl:gap-7 text-sm font-medium">
+            <nav class="hidden lg:flex items-center gap-5 xl:gap-7 text-sm font-medium">
                 <a href="index.html" class="mockup-nav-link">Home</a>
-                <a href="events-organized.html" class="mockup-nav-link active">Events Organised (17+)</a>
+                <a href="events-organized.html" class="mockup-nav-link active">Events (17+)</a>
                 <a href="achievements.html" class="mockup-nav-link">Achievements</a>
                 <a href="open-source-contributions.html" class="mockup-nav-link">Open Source</a>
                 <a href="btech-journey.html" class="mockup-nav-link">Journey</a>
@@ -282,16 +276,16 @@
             </nav>
 
             <!-- Action Buttons -->
-            <div class="flex items-center gap-2.5 sm:gap-3 shrink-0 pr-1">
+            <div class="flex items-center gap-3 shrink-0 pr-1">
                 <!-- Theme Toggle Button -->
                 <button id="theme-toggle" aria-label="Toggle Theme" title="Toggle Theme" class="w-9 h-9 rounded-full border border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition-all flex items-center justify-center">
                     <i data-lucide="moon" class="w-4 h-4 hidden dark:block"></i>
                     <i data-lucide="sun" class="w-4 h-4 block dark:hidden"></i>
                 </button>
 
-                <!-- Back to Home CTA -->
-                <a href="index.html" class="hidden sm:inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-slate-900 hover:bg-slate-800 text-white dark:bg-white dark:text-slate-950 dark:hover:bg-slate-200 text-xs sm:text-sm font-semibold shadow-sm transition-all">
-                    <i data-lucide="arrow-left" class="w-3.5 h-3.5"></i>
+                <!-- Back to Home / Portfolio (Black pill from Mockup) -->
+                <a href="index.html" class="hidden sm:inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-slate-950 text-white hover:bg-slate-800 dark:bg-white dark:text-slate-950 dark:hover:bg-slate-200 text-xs sm:text-sm font-bold shadow-md transition-all">
+                    <i data-lucide="arrow-left" class="w-4 h-4"></i>
                     <span>Portfolio</span>
                 </a>
 
@@ -310,31 +304,35 @@
             <div>
                 <div class="flex items-center justify-between pb-6 border-b border-slate-200 dark:border-slate-800">
                     <div class="flex items-center gap-3">
-                        <img src="assets/images/profile/Gautam_Kumar_Maurya.jpg" alt="Gautam Kumar Maurya Logo" class="w-9 h-9 rounded-full object-cover border-2 border-blue-600">
-                        <div>
-                            <span class="font-bold text-slate-900 dark:text-white block text-sm">Gautam Maurya</span>
-                            <span class="text-xs text-blue-600 dark:text-blue-400 font-medium">Events Portfolio</span>
-                        </div>
+                        <img src="assets/images/profile/Gautam_Kumar_Maurya.jpg" alt="Gautam Kumar Maurya Logo" class="w-9 h-9 rounded-xl object-cover border-2 border-blue-600">
+                        <span class="font-bold text-slate-900 dark:text-white">Navigation</span>
                     </div>
-                    <button id="mobile-drawer-close-btn" class="p-2 text-slate-500 hover:text-slate-900 dark:hover:text-white">
+                    <button id="mobile-drawer-close-btn" onclick="document.getElementById('mobile-drawer').classList.add('translate-x-full')" class="p-2 text-slate-500 hover:text-slate-900 dark:hover:text-white">
                         <i data-lucide="x" class="w-5 h-5"></i>
                     </button>
                 </div>
 
                 <nav class="mt-6 flex flex-col gap-2 text-base font-medium text-slate-700 dark:text-slate-200">
-                    <a href="index.html" class="p-2.5 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800">Home Portfolio</a>
-                    <a href="events-organized.html" class="p-2.5 rounded-lg bg-blue-50 dark:bg-blue-950/40 text-blue-600 dark:text-blue-400 font-semibold">Events Organised (17+)</a>
-                    <a href="achievements.html" class="p-2.5 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800">Honors &amp; Awards</a>
-                    <a href="open-source-contributions.html" class="p-2.5 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800">Wikimedia Open Source</a>
-                    <a href="btech-journey.html" class="p-2.5 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800">B.Tech 4-Year Journey</a>
-                    <a href="certifications.html" class="p-2.5 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800">40+ Certifications</a>
-                    <a href="index.html#contact" class="p-2.5 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800">Contact &amp; Bookings</a>
+                    <a href="index.html" class="mobile-nav-link p-2.5 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800">Home Portfolio</a>
+                    <a href="events-organized.html" class="mobile-nav-link p-2.5 rounded-lg bg-blue-50 dark:bg-blue-950/40 text-blue-600 dark:text-blue-400 font-semibold">Events Organised (17+)</a>
+                    <a href="achievements.html" class="mobile-nav-link p-2.5 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800">Honors &amp; Awards</a>
+                    <a href="open-source-contributions.html" class="mobile-nav-link p-2.5 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800">Wikimedia Open Source</a>
+                    <a href="btech-journey.html" class="mobile-nav-link p-2.5 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800">B.Tech 4-Year Journey</a>
+                    <a href="certifications.html" class="mobile-nav-link p-2.5 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800">40+ Certifications</a>
+                    <a href="index.html#contact" class="mobile-nav-link p-2.5 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800">Contact &amp; Bookings</a>
                 </nav>
+
+                <div class="mt-6 pt-6 border-t border-slate-200 dark:border-slate-800 flex flex-col gap-2">
+                    <a href="index.html#contact" class="p-2.5 rounded-xl bg-blue-50 dark:bg-blue-950/40 text-blue-600 dark:text-blue-400 font-medium text-sm flex items-center justify-between">
+                        <span>Invite Gautam to Organize</span>
+                        <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+                    </a>
+                </div>
             </div>
 
             <div class="pt-6 border-t border-slate-200 dark:border-slate-800">
-                <a href="index.html#contact" class="w-full py-3 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-semibold flex items-center justify-center gap-2 shadow-md">
-                    <i data-lucide="send" class="w-4 h-4"></i> Invite Gautam to Organize
+                <a href="index.html" class="w-full py-3 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-semibold flex items-center justify-center gap-2 shadow-md">
+                    <i data-lucide="arrow-left" class="w-4 h-4"></i> Back to Main Portfolio
                 </a>
             </div>
         </div>
@@ -346,92 +344,154 @@
     <main class="pt-24 lg:pt-28">
 
         <!-- ═══════════════════════════════════════
-             2. HERO SECTION — EVENT LEADERSHIP
+             2. HERO SECTION — EVENT LEADERSHIP (MOCKUP ACCURATE)
         ═══════════════════════════════════════ -->
-        <section class="relative overflow-hidden pt-6 pb-10 lg:pt-10 lg:pb-14">
+        <section class="relative overflow-hidden pt-8 pb-14 lg:pt-12 lg:pb-16 hero-dot-grid">
+            <!-- Ambient Blue / Indigo Background Glow (Matching index.html) -->
+            <div class="absolute top-1/4 right-10 w-[550px] h-[550px] bg-gradient-to-tr from-blue-500/15 via-sky-400/10 to-indigo-500/15 rounded-full blur-3xl pointer-events-none"></div>
+            <div class="absolute bottom-10 left-10 w-96 h-96 bg-blue-400/10 dark:bg-blue-600/10 rounded-full blur-3xl pointer-events-none"></div>
+
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                 
-                <div class="text-center max-w-4xl mx-auto mb-10">
-                    <!-- Eyebrow Pill -->
-                    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-50 dark:bg-blue-950/60 border border-blue-200/80 dark:border-blue-800/80 text-xs font-bold text-blue-600 dark:text-blue-400 uppercase tracking-wider mb-5 shadow-sm">
-                        <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
-                        <span>Verified Event Organizer &amp; Technical Community Leader</span>
+                <div class="max-w-4xl mx-auto text-center sm:text-left">
+                    <!-- Top Tag Pills (Matching index.html) -->
+                    <div class="flex flex-wrap items-center justify-center sm:justify-start gap-2.5 sm:gap-3 mb-5">
+                        <!-- Pill 1: >_ 4,200+ ATTENDEES · 17+ EVENTS · 4 MEGA SUMMITS -->
+                        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white dark:bg-slate-900 border-2 border-slate-900 dark:border-slate-300 text-[11px] sm:text-xs font-black uppercase tracking-wider text-slate-900 dark:text-white shadow-sm">
+                            <span class="font-mono font-bold text-sm leading-none">&gt;_</span>
+                            <span>4,200+ ATTENDEES · 17+ EVENTS · 4 MEGA SUMMITS</span>
+                        </div>
+
+                        <!-- Pill 2: @gkm563 -->
+                        <a href="https://github.com/gkm563" target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-3.5 py-1.5 rounded-full bg-blue-100 dark:bg-blue-950/80 text-blue-600 dark:text-blue-400 text-xs font-bold hover:bg-blue-200 dark:hover:bg-blue-900 transition-colors shadow-sm">
+                            @gkm563
+                        </a>
+
+                        <!-- Pill 3: Key Roles -->
+                        <span class="inline-flex items-center px-3.5 py-1.5 rounded-full bg-emerald-100 dark:bg-emerald-950/80 text-emerald-700 dark:text-emerald-300 text-xs font-bold shadow-sm">
+                            UCC PRESIDENT · GFG VP · SIH CONVENOR
+                        </span>
                     </div>
 
                     <!-- Main H1 Headline -->
-                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black text-slate-950 dark:text-white tracking-tight leading-[1.1] mb-5">
-                        17+ Technical Events Organised.<br>
-                        <span class="bg-gradient-to-r from-blue-600 via-indigo-600 to-emerald-500 bg-clip-text text-transparent">4,200+ Student Builders Mobilized.</span>
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-black text-slate-950 dark:text-white tracking-tight leading-[1.08] mb-4 font-heading">
+                        Technical Leadership.<br>
+                        <span class="text-blue-600">Events</span> &amp; Hackathons.
                     </h1>
 
+                    <!-- Subheadline -->
+                    <h2 class="text-lg sm:text-xl font-bold text-slate-700 dark:text-slate-200 mb-4">
+                        Community Architecture, Stage Keynotes &amp; Real-World Builder Movements
+                    </h2>
+
                     <!-- Narrative Lead -->
-                    <p class="text-base sm:text-lg text-slate-600 dark:text-slate-300 leading-relaxed max-w-3xl mx-auto mb-8">
-                        As <strong>Founding President @ UCC (UIT Coding Club)</strong> (founded with faculty mentor Dr. Dhananjay Sharma), <strong>Vice President @ GeeksforGeeks UIT</strong>, <strong>Vice President @ HackerRank UIT</strong>, <strong>Co-Lead @ Gemini Builders</strong>, and <strong>WikiClub Tech Envoy</strong>, I have spearheaded large-scale student developer movements — from <strong>single-handedly organizing the Smart India Hackathon (SIH) Internal Conclave</strong> (77 teams, 462 students, 8 evaluation panels) recognized as the best in college history, to packing 600+ seat auditoriums for <strong>Gateway to GATE</strong> (hosting GFG Noida VP / AIR 12 &amp; 32 ex-ISRO) and <strong>Vibe Coding with Google Gemini</strong>, to curating <strong>Syntax Clash Hackathon</strong> with exclusive swags, and directing the <strong>UCC 2nd &amp; 3rd Year Algorithmic Coding Challenge</strong>.
+                    <p class="text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed mb-6 max-w-3xl">
+                        Hi, I'm <strong class="text-slate-950 dark:text-white font-bold">Gautam Kumar Maurya</strong>, a B.Tech CSE (Data Science) student at UIT Prayagraj. As <strong class="text-slate-900 dark:text-white">Founding President @ UCC (UIT Coding Club)</strong> (founded with faculty mentor Dr. Dhananjay Sharma), <strong class="text-slate-900 dark:text-white">Vice President @ GeeksforGeeks UIT</strong>, <strong class="text-slate-900 dark:text-white">Vice President @ HackerRank UIT</strong>, <strong class="text-slate-900 dark:text-white">WikiClub Tech Envoy</strong>, and <strong class="text-slate-900 dark:text-white">Co-Lead @ Gemini Builders</strong>, I architect and direct large-scale developer initiatives.
+                        Most notably, I <strong class="text-slate-900 dark:text-white">single-handedly organized the Smart India Hackathon (SIH) Internal Presentation Conclave at UIT</strong> (77 teams, 462 students, 37 problem statements, 8 jury panels) recognized as the best SIH in college history, mobilized 600+ seat auditoriums for <strong class="text-slate-900 dark:text-white">Gateway to GATE</strong> (hosting GFG Noida VP / AIR 12 &amp; 32 ex-ISRO) and <strong class="text-slate-900 dark:text-white">Vibe Coding with Google Gemini</strong>, curated the <strong class="text-slate-900 dark:text-white">Syntax Clash Hackathon</strong> distributing official GFG swags, and launched the <strong class="text-slate-900 dark:text-white">UCC 2nd &amp; 3rd Year Algorithmic Coding Challenge</strong>.
                     </p>
 
-                    <!-- CTAs -->
-                    <div class="flex flex-wrap items-center justify-center gap-3">
-                        <a href="#events-grid" class="px-6 py-3 rounded-full bg-blue-600 hover:bg-blue-700 text-white font-semibold text-sm shadow-md hover:shadow-lg transition-all flex items-center gap-2">
+                    <!-- Academic & Merit Quick Info Box (Matching index.html) -->
+                    <div class="w-full max-w-3xl flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-6 p-4 rounded-2xl bg-white/90 dark:bg-slate-900/90 border border-slate-200/80 dark:border-slate-800 shadow-sm backdrop-blur-md mb-6 text-left">
+                        <!-- UCC Leadership -->
+                        <div class="flex items-center gap-3 flex-1">
+                            <div class="w-10 h-10 rounded-full bg-red-100 dark:bg-red-950/70 text-red-600 dark:text-red-400 flex items-center justify-center shrink-0 text-sm shadow-sm font-bold">
+                                UCC
+                            </div>
+                            <div>
+                                <div class="text-xs sm:text-sm font-bold text-slate-900 dark:text-white leading-tight">Founding President @ UCC</div>
+                                <div class="text-[11px] sm:text-xs text-slate-500 dark:text-slate-400 leading-tight mt-0.5">UIT Coding Club · Co-founded with Dr. Dhananjay Sharma</div>
+                            </div>
+                        </div>
+
+                        <!-- Divider -->
+                        <div class="hidden sm:block w-px h-8 bg-slate-200 dark:bg-slate-800"></div>
+
+                        <!-- SIH Conclave Lead -->
+                        <div class="flex items-center gap-3 flex-1">
+                            <div class="w-10 h-10 rounded-full bg-orange-100 dark:bg-orange-950/70 text-orange-600 dark:text-orange-400 flex items-center justify-center shrink-0 text-base shadow-sm">
+                                <i class="fa-solid fa-trophy"></i>
+                            </div>
+                            <div>
+                                <div class="text-xs sm:text-sm font-bold text-slate-900 dark:text-white leading-tight">Solo Lead Convenor — SIH Conclave</div>
+                                <div class="text-[11px] sm:text-xs text-slate-500 dark:text-slate-400 leading-tight mt-0.5">77 Teams · 462 Students · 8 Jury Panels (Best in History)</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- CTA Action Buttons (Matching index.html Pill Style) -->
+                    <div class="hero-cta-group flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-3.5 w-full sm:w-auto mb-6">
+                        <!-- Explore Events Pill -->
+                        <a href="#events-grid" class="hero-cta-btn inline-flex items-center justify-center gap-2 px-6 sm:px-7 py-3.5 rounded-full bg-blue-600 hover:bg-blue-700 text-white font-bold text-sm shadow-md hover:shadow-lg shadow-blue-500/25 transition-all group w-full sm:w-auto text-center">
                             <span>Browse All Events (17+)</span>
-                            <i data-lucide="arrow-down" class="w-4 h-4"></i>
+                            <i data-lucide="arrow-down" class="w-4 h-4 group-hover:translate-y-0.5 transition-transform"></i>
                         </a>
-                        <a href="https://api.whatsapp.com/send?phone=919125563563&text=Hi%20Gautam,%20we%20want%20to%20invite%20you%20to%20organize%20or%20lead%20a%20technical%20event!" target="_blank" rel="noopener" class="px-5 py-3 rounded-full bg-emerald-600 hover:bg-emerald-700 text-white font-semibold text-sm shadow-sm transition-all flex items-center gap-2">
+
+                        <!-- SIH Conclave Spotlight Pill -->
+                        <a href="#event-sih" class="hero-cta-btn inline-flex items-center justify-center gap-2 px-6 sm:px-7 py-3.5 rounded-full bg-amber-400 hover:bg-amber-500 text-slate-950 font-bold text-sm border-2 border-slate-950/20 shadow-sm hover:shadow-md transition-all group w-full sm:w-auto text-center">
+                            <span>Smart India Hackathon Spotlight</span>
+                            <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
+                        </a>
+
+                        <!-- Invite Gautam Pill -->
+                        <a href="https://api.whatsapp.com/send?phone=919125563563&text=Hi%20Gautam,%20we%20want%20to%20invite%20you%20to%20organize%20or%20lead%20a%20technical%20event!" target="_blank" rel="noopener" class="hero-cta-btn inline-flex items-center justify-center gap-2 px-5 py-3.5 rounded-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-sm shadow-sm transition-all w-full sm:w-auto text-center">
                             <i class="fa-brands fa-whatsapp"></i>
-                            <span>Invite Gautam to Organize ↗</span>
+                            <span>Invite to Organize</span>
                         </a>
-                        <a href="index.html" class="px-5 py-3 rounded-full bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-700 text-slate-800 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-800 font-semibold text-sm transition-all flex items-center gap-2">
+
+                        <!-- View Main Portfolio -->
+                        <a href="index.html" class="hero-cta-btn inline-flex items-center justify-center gap-2 px-5 py-3.5 rounded-full bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-700 text-slate-800 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 font-bold text-sm transition-all w-full sm:w-auto text-center">
                             <i data-lucide="user" class="w-4 h-4 text-slate-400"></i>
-                            <span>View Full Portfolio</span>
+                            <span>Home Portfolio</span>
                         </a>
                     </div>
                 </div>
 
                 <!-- ═══════════════════════════════════════
-                     AGGREGATE IMPACT METRICS DASHBOARD
+                     AGGREGATE IMPACT METRICS DASHBOARD (MOCKUP ACCURATE)
                 ═══════════════════════════════════════ -->
-                <div class="mockup-metrics-card bg-white dark:bg-slate-900 rounded-3xl shadow-xl shadow-slate-200/50 dark:shadow-black/40 border border-slate-100 dark:border-slate-800 p-6 sm:p-8 mb-12">
+                <div class="mockup-metrics-card bg-white dark:bg-slate-900 rounded-3xl shadow-xl shadow-slate-200/50 dark:shadow-black/40 border border-slate-100 dark:border-slate-800 p-6 sm:p-8 mt-10">
                     <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 divide-y sm:divide-y-0 sm:divide-x divide-slate-100 dark:divide-slate-800">
                         
                         <!-- Metric 1 -->
                         <div class="text-center sm:text-left sm:pl-3 pt-3 sm:pt-0">
                             <div class="text-3xl sm:text-4xl font-black text-blue-600 dark:text-blue-400 tracking-tight">4,200+</div>
                             <div class="text-xs font-bold text-slate-900 dark:text-white uppercase tracking-wider mt-1">Total Footfall</div>
-                            <div class="text-[11px] text-slate-500 dark:text-slate-400">Cumulative attendees across events</div>
+                            <div class="text-[11px] text-slate-500 dark:text-slate-400">Cumulative attendees across 17+ events</div>
                         </div>
 
                         <!-- Metric 2 -->
                         <div class="text-center sm:text-left sm:pl-4 pt-3 sm:pt-0">
-                            <div class="text-3xl sm:text-4xl font-black text-indigo-600 dark:text-indigo-400 tracking-tight">17+</div>
-                            <div class="text-xs font-bold text-slate-900 dark:text-white uppercase tracking-wider mt-1">Events Executed</div>
-                            <div class="text-[11px] text-slate-500 dark:text-slate-400">Conferences, hackathons &amp; sprints</div>
+                            <div class="text-3xl sm:text-4xl font-black text-blue-600 dark:text-blue-400 tracking-tight">77 Teams</div>
+                            <div class="text-xs font-bold text-slate-900 dark:text-white uppercase tracking-wider mt-1">SIH Conclave</div>
+                            <div class="text-[11px] text-slate-500 dark:text-slate-400">462 Students · Solo Organised</div>
                         </div>
 
                         <!-- Metric 3 -->
                         <div class="text-center sm:text-left sm:pl-4 pt-3 sm:pt-0">
-                            <div class="text-3xl sm:text-4xl font-black text-purple-600 dark:text-purple-400 tracking-tight">4 Mega</div>
-                            <div class="text-xs font-bold text-slate-900 dark:text-white uppercase tracking-wider mt-1">500+ Summits</div>
-                            <div class="text-[11px] text-slate-500 dark:text-slate-400">SIH Conclave, Gateway to GATE, Vibe Coding</div>
+                            <div class="text-3xl sm:text-4xl font-black text-blue-600 dark:text-blue-400 tracking-tight">17+</div>
+                            <div class="text-xs font-bold text-slate-900 dark:text-white uppercase tracking-wider mt-1">Events Executed</div>
+                            <div class="text-[11px] text-slate-500 dark:text-slate-400">Conferences, hackathons &amp; sprints</div>
                         </div>
 
                         <!-- Metric 4 -->
                         <div class="text-center sm:text-left sm:pl-4 pt-3 sm:pt-0">
-                            <div class="text-3xl sm:text-4xl font-black text-emerald-600 dark:text-emerald-400 tracking-tight">500+</div>
-                            <div class="text-xs font-bold text-slate-900 dark:text-white uppercase tracking-wider mt-1">Swags &amp; Bags</div>
-                            <div class="text-[11px] text-slate-500 dark:text-slate-400">GFG backpacks, pens, stickers &amp; certs</div>
+                            <div class="text-3xl sm:text-4xl font-black text-blue-600 dark:text-blue-400 tracking-tight">4 Mega</div>
+                            <div class="text-xs font-bold text-slate-900 dark:text-white uppercase tracking-wider mt-1">500+ Summits</div>
+                            <div class="text-[11px] text-slate-500 dark:text-slate-400">SIH Conclave, Gateway to GATE, Gemini</div>
                         </div>
 
                         <!-- Metric 5 -->
                         <div class="text-center sm:text-left sm:pl-4 pt-3 sm:pt-0">
-                            <div class="text-3xl sm:text-4xl font-black text-rose-600 dark:text-rose-400 tracking-tight">12+</div>
-                            <div class="text-xs font-bold text-slate-900 dark:text-white uppercase tracking-wider mt-1">Partner Brands</div>
-                            <div class="text-[11px] text-slate-500 dark:text-slate-400">UCC, SIH (MoE), GFG, HackerRank, Google GSA</div>
+                            <div class="text-3xl sm:text-4xl font-black text-blue-600 dark:text-blue-400 tracking-tight">500+</div>
+                            <div class="text-xs font-bold text-slate-900 dark:text-white uppercase tracking-wider mt-1">Swags &amp; Bags</div>
+                            <div class="text-[11px] text-slate-500 dark:text-slate-400">GFG backpacks, pens, stickers &amp; certs</div>
                         </div>
 
                         <!-- Metric 6 -->
                         <div class="text-center sm:text-left sm:pl-4 pt-3 sm:pt-0">
-                            <div class="text-3xl sm:text-4xl font-black text-amber-600 dark:text-amber-400 tracking-tight">150+ Hrs</div>
-                            <div class="text-xs font-bold text-slate-900 dark:text-white uppercase tracking-wider mt-1">Tech Mentorship</div>
-                            <div class="text-[11px] text-slate-500 dark:text-slate-400">Stage talks, code reviews &amp; labs</div>
+                            <div class="text-3xl sm:text-4xl font-black text-blue-600 dark:text-blue-400 tracking-tight">12+</div>
+                            <div class="text-xs font-bold text-slate-900 dark:text-white uppercase tracking-wider mt-1">Partner Brands</div>
+                            <div class="text-[11px] text-slate-500 dark:text-slate-400">UCC, SIH (MoE), GFG, HackerRank, Google</div>
                         </div>
 
                     </div>
@@ -441,142 +501,168 @@
         </section>
 
         <!-- ═══════════════════════════════════════
-             2.5 WORKED WITH — ORGANIZATIONS & COMMUNITIES PARTNERED WITH
+             2.5 WORKED WITH — ORGANIZATIONS & COMMUNITIES PARTNERED WITH (BENTO SYSTEM)
         ═══════════════════════════════════════ -->
-        <section class="py-12 bg-slate-100/60 dark:bg-slate-900/60 border-y border-slate-200/80 dark:border-slate-800">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                
-                <div class="text-center max-w-2xl mx-auto mb-8">
-                    <span class="text-xs font-bold text-blue-600 dark:text-blue-400 uppercase tracking-widest">Ecosystem Collaborations</span>
-                    <h2 class="text-2xl sm:text-3xl font-black text-slate-900 dark:text-white tracking-tight mt-1">
-                        Organizations &amp; Communities <span class="gradient-text">Partnered With</span>
-                    </h2>
-                    <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 mt-2">
-                        Leading student developer chapters, multinational technology communities, and institutional initiatives.
-                    </p>
+        <section class="py-14 section-dot-grid border-y border-slate-200/60 dark:border-slate-800/80 relative overflow-hidden">
+            <!-- Ambient Glow (Matching index.html) -->
+            <div class="section-ambient-glow-blue -top-24 -left-24 opacity-60"></div>
+
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-8">
+                    <div class="section-pill-tag">
+                        <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                        <span>ORGANIZATIONS &amp; COMMUNITIES PARTNERED WITH</span>
+                    </div>
+                    <div class="text-xs font-mono text-slate-500 dark:text-slate-400">
+                        Founding Chapters • Global Communities • Campus Host
+                    </div>
                 </div>
 
-                <!-- Brand Logos & Badges Grid -->
-                <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-3.5 sm:gap-4">
+                <!-- 12 Clean Responsive Bento Partner Cards -->
+                <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 sm:gap-4">
                     
-                                        <!-- Brand UCC: UIT Coding Club -->
-                    <div class="glass-card p-4 rounded-2xl border border-red-200/80 dark:border-red-900/60 hover-elevate flex flex-col items-center text-center group bg-red-50/20 dark:bg-red-950/20">
-                        <div class="w-12 h-12 rounded-xl bg-red-50 dark:bg-red-950/60 text-red-600 dark:text-red-400 flex items-center justify-center p-1 mb-2 shadow-sm group-hover:scale-110 transition-transform">
-                            <img src="assets/images/gallery/ucc-emblem.png" alt="UCC UIT Coding Club Seal" class="max-h-10 max-w-10 object-contain">
+                    <!-- Brand 1: UCC (UIT Coding Club) -->
+                    <div class="bento-card p-4 rounded-2xl flex flex-col justify-between group hover:border-red-500/50 transition-all">
+                        <div class="w-10 h-10 rounded-xl bg-red-50 dark:bg-red-950/70 text-red-600 dark:text-red-400 flex items-center justify-center p-1 mb-3 shadow-sm group-hover:scale-105 transition-transform">
+                            <img src="assets/images/gallery/ucc-emblem.png" alt="UCC UIT Coding Club Seal" class="max-h-8 max-w-8 object-contain">
                         </div>
-                        <h4 class="text-sm font-bold text-slate-900 dark:text-white">UCC (UIT Coding Club)</h4>
-                        <span class="text-[11px] text-red-600 dark:text-red-400 font-semibold mt-0.5">Founding President</span>
-                        <p class="text-[10px] text-slate-500 dark:text-slate-400 mt-1">Co-founded with Dr. Dhananjay Sharma · 2nd &amp; 3rd Yr Contest</p>
+                        <div>
+                            <div class="font-bold text-xs sm:text-sm text-slate-900 dark:text-white group-hover:text-red-600 dark:group-hover:text-red-400 transition-colors leading-tight">UCC Coding Club</div>
+                            <div class="text-[10px] text-red-600 dark:text-red-400 font-mono font-semibold mt-1">Founding President</div>
+                            <div class="text-[10px] text-slate-500 dark:text-slate-400 mt-1 line-clamp-1">Dr. Dhananjay Sharma</div>
+                        </div>
                     </div>
 
-                    <!-- Brand 0: Smart India Hackathon / MoE Innovation Cell -->
-                    <div class="glass-card p-4 rounded-2xl border border-orange-200/80 dark:border-orange-900/60 hover-elevate flex flex-col items-center text-center group bg-orange-50/20 dark:bg-orange-950/20">
-                        <div class="w-12 h-12 rounded-xl bg-orange-50 dark:bg-orange-950/60 text-orange-600 dark:text-orange-400 flex items-center justify-center p-1 mb-2 shadow-sm group-hover:scale-110 transition-transform">
-                            <img src="assets/images/gallery/sih-logo.png" alt="Smart India Hackathon Logo" class="max-h-9 max-w-9 object-contain">
+                    <!-- Brand 2: Smart India Hackathon / MoE -->
+                    <div class="bento-card p-4 rounded-2xl flex flex-col justify-between group hover:border-orange-500/50 transition-all">
+                        <div class="w-10 h-10 rounded-xl bg-orange-50 dark:bg-orange-950/70 text-orange-600 dark:text-orange-400 flex items-center justify-center p-1 mb-3 shadow-sm group-hover:scale-105 transition-transform">
+                            <img src="assets/images/gallery/sih-logo.png" alt="Smart India Hackathon Logo" class="max-h-8 max-w-8 object-contain">
                         </div>
-                        <h4 class="text-sm font-bold text-slate-900 dark:text-white">SIH (MoE &amp; AICTE)</h4>
-                        <span class="text-[11px] text-orange-600 dark:text-orange-400 font-semibold mt-0.5">Lead Student Convenor</span>
-                        <p class="text-[10px] text-slate-500 dark:text-slate-400 mt-1">77 Teams · 462 Students · 8 Panels</p>
+                        <div>
+                            <div class="font-bold text-xs sm:text-sm text-slate-900 dark:text-white group-hover:text-orange-600 dark:group-hover:text-orange-400 transition-colors leading-tight">SIH (MoE &amp; AICTE)</div>
+                            <div class="text-[10px] text-orange-600 dark:text-orange-400 font-mono font-semibold mt-1">Solo Convenor</div>
+                            <div class="text-[10px] text-slate-500 dark:text-slate-400 mt-1 line-clamp-1">77 Teams · 462 Students</div>
+                        </div>
                     </div>
 
-                    <!-- Brand 1: GeeksforGeeks -->
-                    <div class="glass-card p-4 rounded-2xl border border-slate-200 dark:border-slate-800 hover-elevate flex flex-col items-center text-center group">
-                        <div class="w-12 h-12 rounded-xl bg-emerald-50 dark:bg-emerald-950/60 text-emerald-600 dark:text-emerald-400 flex items-center justify-center font-black text-lg mb-2 shadow-sm group-hover:scale-110 transition-transform">
+                    <!-- Brand 3: GeeksforGeeks -->
+                    <div class="bento-card p-4 rounded-2xl flex flex-col justify-between group hover:border-emerald-500/50 transition-all">
+                        <div class="w-10 h-10 rounded-xl bg-emerald-50 dark:bg-emerald-950/70 text-emerald-600 dark:text-emerald-400 flex items-center justify-center text-sm font-black mb-3 shadow-sm group-hover:scale-105 transition-transform">
                             GFG
                         </div>
-                        <h4 class="text-sm font-bold text-slate-900 dark:text-white">GeeksforGeeks</h4>
-                        <span class="text-[11px] text-emerald-600 dark:text-emerald-400 font-semibold mt-0.5">Vice President @ UIT</span>
-                        <p class="text-[10px] text-slate-500 dark:text-slate-400 mt-1">Gateway to GATE, Syntax Clash, 4 Sprints</p>
+                        <div>
+                            <div class="font-bold text-xs sm:text-sm text-slate-900 dark:text-white group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors leading-tight">GeeksforGeeks</div>
+                            <div class="text-[10px] text-emerald-600 dark:text-emerald-400 font-mono font-semibold mt-1">Vice President @ UIT</div>
+                            <div class="text-[10px] text-slate-500 dark:text-slate-400 mt-1 line-clamp-1">Gateway to GATE, Syntax</div>
+                        </div>
                     </div>
 
-                    <!-- Brand 2: HackerRank -->
-                    <div class="glass-card p-4 rounded-2xl border border-slate-200 dark:border-slate-800 hover-elevate flex flex-col items-center text-center group">
-                        <div class="w-12 h-12 rounded-xl bg-green-50 dark:bg-green-950/60 text-green-600 dark:text-green-400 flex items-center justify-center font-black text-lg mb-2 shadow-sm group-hover:scale-110 transition-transform">
-                            <i class="fa-brands fa-hackerrank text-xl"></i>
+                    <!-- Brand 4: HackerRank -->
+                    <a href="https://www.hackerrank.com/profile/gkm563" target="_blank" rel="noopener" class="bento-card p-4 rounded-2xl flex flex-col justify-between group hover:border-green-500/50 transition-all">
+                        <div class="w-10 h-10 rounded-xl bg-[#001E2B] text-[#00EA64] flex items-center justify-center text-sm font-black mb-3 shadow-sm group-hover:scale-105 transition-transform">
+                            <i class="fa-brands fa-hackerrank text-lg"></i>
                         </div>
-                        <h4 class="text-sm font-bold text-slate-900 dark:text-white">HackerRank</h4>
-                        <span class="text-[11px] text-green-600 dark:text-green-400 font-semibold mt-0.5">Vice President / Co-Lead</span>
-                        <p class="text-[10px] text-slate-500 dark:text-slate-400 mt-1">Competitive coding drives &amp; GATE collab</p>
+                        <div>
+                            <div class="font-bold text-xs sm:text-sm text-slate-900 dark:text-white group-hover:text-green-500 transition-colors leading-tight">HackerRank</div>
+                            <div class="text-[10px] text-green-600 dark:text-green-400 font-mono font-semibold mt-1">VP &amp; Co-Lead</div>
+                            <div class="text-[10px] text-slate-500 dark:text-slate-400 mt-1 line-clamp-1">Coding Drives &amp; Contests</div>
+                        </div>
+                    </a>
+
+                    <!-- Brand 5: Google Gemini Builders -->
+                    <div class="bento-card p-4 rounded-2xl flex flex-col justify-between group hover:border-blue-500/50 transition-all">
+                        <div class="w-10 h-10 rounded-xl bg-blue-50 dark:bg-blue-950/70 text-blue-600 dark:text-blue-400 flex items-center justify-center text-sm mb-3 shadow-sm group-hover:scale-105 transition-transform">
+                            <i class="fa-brands fa-google text-base"></i>
+                        </div>
+                        <div>
+                            <div class="font-bold text-xs sm:text-sm text-slate-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors leading-tight">Gemini Builders</div>
+                            <div class="text-[10px] text-blue-600 dark:text-blue-400 font-mono font-semibold mt-1">Co-Lead &amp; Speaker</div>
+                            <div class="text-[10px] text-slate-500 dark:text-slate-400 mt-1 line-clamp-1">600+ Builders Summit</div>
+                        </div>
                     </div>
 
-                    <!-- Brand 3: Google Student Ambassadors / Gemini -->
-                    <div class="glass-card p-4 rounded-2xl border border-slate-200 dark:border-slate-800 hover-elevate flex flex-col items-center text-center group">
-                        <div class="w-12 h-12 rounded-xl bg-blue-50 dark:bg-blue-950/60 text-blue-600 dark:text-blue-400 flex items-center justify-center font-black text-lg mb-2 shadow-sm group-hover:scale-110 transition-transform">
-                            <i class="fa-brands fa-google text-lg"></i>
+                    <!-- Brand 6: Wikimedia Movement -->
+                    <a href="./open-source-contributions.html" class="bento-card p-4 rounded-2xl flex flex-col justify-between group hover:border-purple-500/50 transition-all">
+                        <div class="w-10 h-10 rounded-xl bg-purple-50 dark:bg-purple-950/70 text-purple-600 dark:text-purple-400 flex items-center justify-center text-sm mb-3 shadow-sm group-hover:scale-105 transition-transform">
+                            <i class="fa-brands fa-wikipedia-w text-base"></i>
                         </div>
-                        <h4 class="text-sm font-bold text-slate-900 dark:text-white">Gemini Builders</h4>
-                        <span class="text-[11px] text-blue-600 dark:text-blue-400 font-semibold mt-0.5">Co-Lead &amp; Speaker</span>
-                        <p class="text-[10px] text-slate-500 dark:text-slate-400 mt-1">650+ Auditorium Summit, Vibe Coding</p>
-                    </div>
-
-                    <!-- Brand 4: Wikimedia / WikiClub Tech -->
-                    <div class="glass-card p-4 rounded-2xl border border-slate-200 dark:border-slate-800 hover-elevate flex flex-col items-center text-center group">
-                        <div class="w-12 h-12 rounded-xl bg-purple-50 dark:bg-purple-950/60 text-purple-600 dark:text-purple-400 flex items-center justify-center font-black text-lg mb-2 shadow-sm group-hover:scale-110 transition-transform">
-                            <i class="fa-brands fa-wikipedia-w text-lg"></i>
+                        <div>
+                            <div class="font-bold text-xs sm:text-sm text-slate-900 dark:text-white group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors leading-tight">Wikimedia</div>
+                            <div class="text-[10px] text-purple-600 dark:text-purple-400 font-mono font-semibold mt-1">WikiClub Envoy</div>
+                            <div class="text-[10px] text-slate-500 dark:text-slate-400 mt-1 line-clamp-1">Gerrit Reviews &amp; Sprints</div>
                         </div>
-                        <h4 class="text-sm font-bold text-slate-900 dark:text-white">Wikimedia Movement</h4>
-                        <span class="text-[11px] text-purple-600 dark:text-purple-400 font-semibold mt-0.5">WikiClub Tech Envoy</span>
-                        <p class="text-[10px] text-slate-500 dark:text-slate-400 mt-1">Gerrit reviews, open source sprints</p>
-                    </div>
-
-                    <!-- Brand 5: UDTech India -->
-                    <div class="glass-card p-4 rounded-2xl border border-slate-200 dark:border-slate-800 hover-elevate flex flex-col items-center text-center group">
-                        <div class="w-12 h-12 rounded-xl bg-sky-50 dark:bg-sky-950/60 text-sky-600 dark:text-sky-400 flex items-center justify-center font-black text-lg mb-2 shadow-sm group-hover:scale-110 transition-transform">
-                            UDT
-                        </div>
-                        <h4 class="text-sm font-bold text-slate-900 dark:text-white">UDTech India</h4>
-                        <span class="text-[11px] text-sky-600 dark:text-sky-400 font-semibold mt-0.5">Technical Head</span>
-                        <p class="text-[10px] text-slate-500 dark:text-slate-400 mt-1">BuildX 2026 Hackathon Platform</p>
-                    </div>
-
-                    <!-- Brand 6: GDG Prayagraj -->
-                    <div class="glass-card p-4 rounded-2xl border border-slate-200 dark:border-slate-800 hover-elevate flex flex-col items-center text-center group">
-                        <div class="w-12 h-12 rounded-xl bg-amber-50 dark:bg-amber-950/60 text-amber-600 dark:text-amber-400 flex items-center justify-center font-black text-lg mb-2 shadow-sm group-hover:scale-110 transition-transform">
-                            GDG
-                        </div>
-                        <h4 class="text-sm font-bold text-slate-900 dark:text-white">GDG Prayagraj</h4>
-                        <span class="text-[11px] text-amber-600 dark:text-amber-400 font-semibold mt-0.5">Hackathon Mentor</span>
-                        <p class="text-[10px] text-slate-500 dark:text-slate-400 mt-1">Agentic Premier League (APL)</p>
-                    </div>
+                    </a>
 
                     <!-- Brand 7: C3iHub IIT Kanpur -->
-                    <div class="glass-card p-4 rounded-2xl border border-slate-200 dark:border-slate-800 hover-elevate flex flex-col items-center text-center group">
-                        <div class="w-12 h-12 rounded-xl bg-cyan-50 dark:bg-cyan-950/60 text-cyan-600 dark:text-cyan-400 flex items-center justify-center font-black text-lg mb-2 shadow-sm group-hover:scale-110 transition-transform">
+                    <div class="bento-card p-4 rounded-2xl flex flex-col justify-between group hover:border-cyan-500/50 transition-all">
+                        <div class="w-10 h-10 rounded-xl bg-cyan-50 dark:bg-cyan-950/70 text-cyan-600 dark:text-cyan-400 flex items-center justify-center text-xs font-black mb-3 shadow-sm group-hover:scale-105 transition-transform">
                             IIT-K
                         </div>
-                        <h4 class="text-sm font-bold text-slate-900 dark:text-white">C3iHub, IIT Kanpur</h4>
-                        <span class="text-[11px] text-cyan-600 dark:text-cyan-400 font-semibold mt-0.5">Cyber Trainee &amp; Amb.</span>
-                        <p class="text-[10px] text-slate-500 dark:text-slate-400 mt-1">CyberSuraksha training program</p>
+                        <div>
+                            <div class="font-bold text-xs sm:text-sm text-slate-900 dark:text-white group-hover:text-cyan-600 dark:group-hover:text-cyan-400 transition-colors leading-tight">C3iHub IIT Kanpur</div>
+                            <div class="text-[10px] text-cyan-600 dark:text-cyan-400 font-mono font-semibold mt-1">Cyber Trainee</div>
+                            <div class="text-[10px] text-slate-500 dark:text-slate-400 mt-1 line-clamp-1">CyberSuraksha Program</div>
+                        </div>
                     </div>
 
-                    <!-- Brand 8: UIT Prayagraj -->
-                    <div class="glass-card p-4 rounded-2xl border border-slate-200 dark:border-slate-800 hover-elevate flex flex-col items-center text-center group">
-                        <div class="w-12 h-12 rounded-xl bg-indigo-50 dark:bg-indigo-950/60 text-indigo-600 dark:text-indigo-400 flex items-center justify-center font-black text-lg mb-2 shadow-sm group-hover:scale-110 transition-transform">
+                    <!-- Brand 8: UP Police Cyber Cell -->
+                    <a href="./up-police-internship.html" class="bento-card p-4 rounded-2xl flex flex-col justify-between group hover:border-blue-500/50 transition-all">
+                        <div class="w-10 h-10 rounded-xl bg-blue-50 dark:bg-blue-950/70 text-blue-600 dark:text-blue-400 flex items-center justify-center text-base mb-3 shadow-sm group-hover:scale-105 transition-transform">
+                            <i class="fa-solid fa-shield-halved"></i>
+                        </div>
+                        <div>
+                            <div class="font-bold text-xs sm:text-sm text-slate-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors leading-tight">UP Police Cyber</div>
+                            <div class="text-[10px] text-blue-600 dark:text-blue-400 font-mono font-semibold mt-1">Investigation Trainee</div>
+                            <div class="text-[10px] text-slate-500 dark:text-slate-400 mt-1 line-clamp-1">APCSIP-2026 Fellow</div>
+                        </div>
+                    </a>
+
+                    <!-- Brand 9: UDTech India -->
+                    <div class="bento-card p-4 rounded-2xl flex flex-col justify-between group hover:border-sky-500/50 transition-all">
+                        <div class="w-10 h-10 rounded-xl bg-sky-50 dark:bg-sky-950/70 text-sky-600 dark:text-sky-400 flex items-center justify-center text-xs font-black mb-3 shadow-sm group-hover:scale-105 transition-transform">
+                            UDT
+                        </div>
+                        <div>
+                            <div class="font-bold text-xs sm:text-sm text-slate-900 dark:text-white group-hover:text-sky-600 dark:group-hover:text-sky-400 transition-colors leading-tight">UDTech India</div>
+                            <div class="text-[10px] text-sky-600 dark:text-sky-400 font-mono font-semibold mt-1">Technical Head</div>
+                            <div class="text-[10px] text-slate-500 dark:text-slate-400 mt-1 line-clamp-1">BuildX 2026 Platform</div>
+                        </div>
+                    </div>
+
+                    <!-- Brand 10: GDG Prayagraj -->
+                    <div class="bento-card p-4 rounded-2xl flex flex-col justify-between group hover:border-amber-500/50 transition-all">
+                        <div class="w-10 h-10 rounded-xl bg-amber-50 dark:bg-amber-950/70 text-amber-600 dark:text-amber-400 flex items-center justify-center text-xs font-black mb-3 shadow-sm group-hover:scale-105 transition-transform">
+                            GDG
+                        </div>
+                        <div>
+                            <div class="font-bold text-xs sm:text-sm text-slate-900 dark:text-white group-hover:text-amber-600 dark:group-hover:text-amber-400 transition-colors leading-tight">GDG Prayagraj</div>
+                            <div class="text-[10px] text-amber-600 dark:text-amber-400 font-mono font-semibold mt-1">Hackathon Mentor</div>
+                            <div class="text-[10px] text-slate-500 dark:text-slate-400 mt-1 line-clamp-1">Agentic AI League</div>
+                        </div>
+                    </div>
+
+                    <!-- Brand 11: UIT Prayagraj -->
+                    <div class="bento-card p-4 rounded-2xl flex flex-col justify-between group hover:border-indigo-500/50 transition-all">
+                        <div class="w-10 h-10 rounded-xl bg-indigo-50 dark:bg-indigo-950/70 text-indigo-600 dark:text-indigo-400 flex items-center justify-center text-xs font-black mb-3 shadow-sm group-hover:scale-105 transition-transform">
                             UIT
                         </div>
-                        <h4 class="text-sm font-bold text-slate-900 dark:text-white">UIT Prayagraj</h4>
-                        <span class="text-[11px] text-indigo-600 dark:text-indigo-400 font-semibold mt-0.5">Campus Host Institution</span>
-                        <p class="text-[10px] text-slate-500 dark:text-slate-400 mt-1">Main Auditorium, labs &amp; staging</p>
-                    </div>
-
-                    <!-- Brand 9: UP Police Cyber Cell -->
-                    <div class="glass-card p-4 rounded-2xl border border-slate-200 dark:border-slate-800 hover-elevate flex flex-col items-center text-center group">
-                        <div class="w-12 h-12 rounded-xl bg-blue-50 dark:bg-blue-950/60 text-blue-600 dark:text-blue-400 flex items-center justify-center font-black text-lg mb-2 shadow-sm group-hover:scale-110 transition-transform">
-                            👮
+                        <div>
+                            <div class="font-bold text-xs sm:text-sm text-slate-900 dark:text-white group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors leading-tight">UIT Prayagraj</div>
+                            <div class="text-[10px] text-indigo-600 dark:text-indigo-400 font-mono font-semibold mt-1">Host Institution</div>
+                            <div class="text-[10px] text-slate-500 dark:text-slate-400 mt-1 line-clamp-1">Auditorium &amp; Staging</div>
                         </div>
-                        <h4 class="text-sm font-bold text-slate-900 dark:text-white">UP Police Cyber Cell</h4>
-                        <span class="text-[11px] text-blue-600 dark:text-blue-400 font-semibold mt-0.5">Law Enforcement Partner</span>
-                        <p class="text-[10px] text-slate-500 dark:text-slate-400 mt-1">APCSIP-2026 digital investigation</p>
                     </div>
 
-                    <!-- Brand 10: Open Source Connect -->
-                    <div class="glass-card p-4 rounded-2xl border border-slate-200 dark:border-slate-800 hover-elevate flex flex-col items-center text-center group">
-                        <div class="w-12 h-12 rounded-xl bg-teal-50 dark:bg-teal-950/60 text-teal-600 dark:text-teal-400 flex items-center justify-center font-black text-lg mb-2 shadow-sm group-hover:scale-110 transition-transform">
+                    <!-- Brand 12: Open Source Connect -->
+                    <div class="bento-card p-4 rounded-2xl flex flex-col justify-between group hover:border-teal-500/50 transition-all">
+                        <div class="w-10 h-10 rounded-xl bg-teal-50 dark:bg-teal-950/70 text-teal-600 dark:text-teal-400 flex items-center justify-center text-xs font-black mb-3 shadow-sm group-hover:scale-105 transition-transform">
                             OSC
                         </div>
-                        <h4 class="text-sm font-bold text-slate-900 dark:text-white">Open Source Connect</h4>
-                        <span class="text-[11px] text-teal-600 dark:text-teal-400 font-semibold mt-0.5">Campus Lead</span>
-                        <p class="text-[10px] text-slate-500 dark:text-slate-400 mt-1">Git/GitHub workshops &amp; collaboration</p>
+                        <div>
+                            <div class="font-bold text-xs sm:text-sm text-slate-900 dark:text-white group-hover:text-teal-600 dark:group-hover:text-teal-400 transition-colors leading-tight">Open Source Connect</div>
+                            <div class="text-[10px] text-teal-600 dark:text-teal-400 font-mono font-semibold mt-1">Campus Lead</div>
+                            <div class="text-[10px] text-slate-500 dark:text-slate-400 mt-1 line-clamp-1">Git/GitHub Sprints</div>
+                        </div>
                     </div>
 
                 </div>
@@ -607,13 +693,13 @@
                                 All Years (17)
                             </button>
                             <button class="event-year-pill px-3 py-1.5 rounded-full text-xs font-bold bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition-all" data-year="2026">
-                                2026 (9)
+                                2026 (7)
                             </button>
                             <button class="event-year-pill px-3 py-1.5 rounded-full text-xs font-bold bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition-all" data-year="2025">
-                                2025 (5)
+                                2025 (8)
                             </button>
                             <button class="event-year-pill px-3 py-1.5 rounded-full text-xs font-bold bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition-all" data-year="2024">
-                                2024 (3)
+                                2024 (2)
                             </button>
                         </div>
                     </div>
@@ -624,8 +710,11 @@
                         <button class="event-chapter-pill active px-3 py-1 rounded-full text-xs font-medium bg-blue-600 text-white shadow-sm transition-all" data-chapter="all">
                             All Chapters (17)
                         </button>
-                                                <button class="event-chapter-pill px-3 py-1 rounded-full text-xs font-medium bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition-all flex items-center gap-1" data-chapter="ucc">
+                        <button class="event-chapter-pill px-3 py-1 rounded-full text-xs font-medium bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition-all flex items-center gap-1" data-chapter="ucc">
                             <span>🔴 UCC Coding Club (1)</span>
+                        </button>
+                        <button class="event-chapter-pill px-3 py-1 rounded-full text-xs font-medium bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition-all flex items-center gap-1" data-chapter="hackathons">
+                            <span>⚡ SIH &amp; Hackathons (7)</span>
                         </button>
                         <button class="event-chapter-pill px-3 py-1 rounded-full text-xs font-medium bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition-all flex items-center gap-1" data-chapter="gfg">
                             <span>🟢 GeeksforGeeks (6)</span>
@@ -639,9 +728,6 @@
                         <button class="event-chapter-pill px-3 py-1 rounded-full text-xs font-medium bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition-all flex items-center gap-1" data-chapter="wikiclub">
                             <span>🟣 WikiClub Tech (1)</span>
                         </button>
-                        <button class="event-chapter-pill px-3 py-1 rounded-full text-xs font-medium bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition-all flex items-center gap-1" data-chapter="hackathons">
-                            <span>⚡ Hackathons &amp; SIH (5)</span>
-                        </button>
                     </div>
 
                     <!-- Organizing Capacity / Role Filter Pills -->
@@ -651,7 +737,7 @@
                             All Roles
                         </button>
                         <button class="event-role-pill px-2.5 py-1 rounded-full text-xs font-medium bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition-all" data-role="vp">
-                            👑 Vice President &amp; Co-Lead
+                            👑 Founding President &amp; VP
                         </button>
                         <button class="event-role-pill px-2.5 py-1 rounded-full text-xs font-medium bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition-all" data-role="speaker">
                             🎤 Keynote &amp; Workshop Speaker
@@ -665,17 +751,88 @@
 
                 <!-- Live Counter Indicator -->
                 <div class="flex items-center justify-between text-xs text-slate-500 dark:text-slate-400 mb-6 font-medium">
-                    <span id="events-count-display">Showing all 15 technical events &amp; hackathons</span>
+                    <span id="events-count-display">Showing all 17 technical events &amp; hackathons</span>
                     <span>Click any event card to view the full verification dossier &amp; photos</span>
                 </div>
 
-                <!-- Events Cards Grid (15 Real Documented Events) -->
+                <!-- Events Cards Grid (17 Real Documented Events in Bento Architecture) -->
                 <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8" id="events-card-wrapper">
                     
                     <!-- ═══════════════════════════════════════
-                         EVENT 1: GATEWAY TO GATE (600+ ATTENDEES - GFG & HACKERRANK)
+                         EVENT 1: SMART INDIA HACKATHON (SIH) INTERNAL CONCLAVE (SOLO CONVENOR)
                     ═══════════════════════════════════════ -->
-                    <div class="event-item-card glass-card rounded-3xl border border-emerald-300 dark:border-emerald-800/80 overflow-hidden hover-elevate flex flex-col justify-between group cursor-pointer shadow-md" 
+                    <div id="event-sih" class="event-item-card bento-card rounded-3xl border border-orange-300 dark:border-orange-800/80 overflow-hidden flex flex-col justify-between group cursor-pointer shadow-md hover:border-orange-500/60 transition-all" 
+                         data-year="2025"
+                         data-chapter="hackathons sih"
+                         data-role="judge vp"
+                         data-title="Smart India Hackathon (SIH) — College Internal Presentation Conclave"
+                         data-org="Ministry of Education (MoE) Innovation Cell, AICTE &amp; UIT Prayagraj"
+                         data-role="Lead Student Convenor &amp; Solo Organizer"
+                         data-date="Sep 2025 – Feb 2026"
+                         data-venue="Auditorium, Seminar Halls &amp; 8 Evaluation Labs, UIT Prayagraj"
+                         data-footfall="77 Teams · 462 Students (500+ Footfall)"
+                         data-img="assets/images/gallery/sih-logo.png"
+                         data-desc="Official internal presentation conclave of Smart India Hackathon (SIH) — single-handedly organized and executed by Gautam Kumar Maurya at United Institute of Technology. Mobilized 77 teams comprising 462 students (285 male, 177 female) across 37 problem statements (Software, Hardware, and Open categories). Coordinated 8 distinct evaluation jury panels, directed 8 operational volunteers, and successfully nominated 45 shortlisted teams + 5 waitlisted teams directly to the MoE Innovation Cell portal. Recognized by campus leadership as the best organized SIH in college history."
+                         data-tags="77 Teams,462 Students,285 Male / 177 Female,37 Problem Statements,50 Nominated Teams,8 Jury Panels,MoE Portal Nomination,Best SIH in College History"
+                         data-swags="Official MoE Hackathon Certificates, Shortlist Merit Dossiers &amp; Jury Desk Mementos">
+                        
+                        <div>
+                            <!-- Card Image with Badges -->
+                            <div class="aspect-video w-full overflow-hidden bg-gradient-to-br from-orange-950 via-slate-900 to-slate-950 relative flex items-center justify-center p-6">
+                                <img src="assets/images/gallery/sih-logo.png" alt="Smart India Hackathon Conclave organized by Gautam Kumar Maurya" loading="lazy" class="max-h-24 max-w-full object-contain group-hover:scale-105 transition-transform duration-500 drop-shadow-xl">
+                                <div class="absolute inset-0 bg-gradient-to-t from-slate-950/85 via-transparent to-transparent"></div>
+                                <span class="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-orange-600/90 backdrop-blur-md text-white font-bold text-[10px] uppercase tracking-wider shadow-sm">
+                                    <i class="fa-solid fa-trophy mr-1"></i> 77 Teams · 462 Students
+                                </span>
+                                <span class="absolute top-3 right-3 px-2.5 py-1 rounded-full bg-slate-950/80 backdrop-blur-md text-amber-300 font-bold text-[10px] uppercase">
+                                    <i class="fa-solid fa-crown mr-1"></i> Solo Convenor
+                                </span>
+                                <div class="absolute bottom-3 left-3 right-3 text-white text-xs font-semibold drop-shadow-md">
+                                    <i class="fa-solid fa-location-dot text-orange-400 mr-1"></i> Main Auditorium &amp; 8 Jury Labs · UIT
+                                </div>
+                            </div>
+
+                            <!-- Card Body -->
+                            <div class="p-6">
+                                <div class="flex items-center justify-between mb-2">
+                                    <span class="text-xs font-bold text-orange-600 dark:text-orange-400 uppercase tracking-wide">SIH (MoE &amp; AICTE)</span>
+                                    <span class="text-xs px-2 py-0.5 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-500 font-bold">2025</span>
+                                </div>
+                                <h3 class="text-lg font-bold text-slate-900 dark:text-white group-hover:text-orange-600 dark:group-hover:text-orange-400 transition-colors mb-2 leading-snug">
+                                    Smart India Hackathon (SIH): College Internal Presentation Conclave
+                                </h3>
+                                <div class="flex flex-wrap items-center gap-2 mb-3">
+                                    <div class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-lg bg-orange-50 dark:bg-orange-950/50 text-orange-600 dark:text-orange-400 text-xs font-semibold">
+                                        <i data-lucide="award" class="w-3.5 h-3.5"></i>
+                                        <span>Solo Lead Convenor &amp; Architect</span>
+                                    </div>
+                                    <span class="px-2 py-0.5 rounded-lg bg-amber-50 dark:bg-amber-950/50 text-[10px] font-bold text-amber-600 dark:text-amber-400">Best in College History</span>
+                                </div>
+                                <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed mb-4 line-clamp-3">
+                                    Single-handedly organized the official SIH internal conclave. Coordinated 77 teams (462 students: 285 male / 177 female), 37 problem statements, 8 jury panels, and nominated 45 shortlisted + 5 waitlisted teams to MoE portal.
+                                </p>
+                                
+                                <div class="flex flex-wrap gap-1.5">
+                                    <span class="px-2 py-0.5 rounded-md bg-orange-50 dark:bg-orange-950/40 text-[11px] font-medium text-orange-700 dark:text-orange-300">77 Teams (462 Coders)</span>
+                                    <span class="px-2 py-0.5 rounded-md bg-slate-100 dark:bg-slate-800 text-[11px] font-medium text-slate-600 dark:text-slate-300">8 Jury Panels</span>
+                                    <span class="px-2 py-0.5 rounded-md bg-slate-100 dark:bg-slate-800 text-[11px] font-medium text-slate-600 dark:text-slate-300">MoE Portal Nominated</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card Footer -->
+                        <div class="px-6 pb-6 pt-2">
+                            <button class="w-full py-2.5 rounded-xl bg-orange-50 dark:bg-orange-950/40 text-orange-600 dark:text-orange-400 text-xs font-bold flex items-center justify-center gap-2 group-hover:bg-orange-600 group-hover:text-white transition-all shadow-sm">
+                                <span>View Event Dossier &amp; Jury Records</span>
+                                <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- ═══════════════════════════════════════
+                         EVENT 2: GATEWAY TO GATE (600+ ATTENDEES - GFG & HACKERRANK)
+                    ═══════════════════════════════════════ -->
+                    <div class="event-item-card bento-card rounded-3xl border border-emerald-300 dark:border-emerald-800/80 overflow-hidden flex flex-col justify-between group cursor-pointer shadow-md hover:border-emerald-500/60 transition-all" 
                          data-year="2026"
                          data-chapter="gfg hackerrank"
                          data-role="vp"
@@ -712,7 +869,7 @@
                                     <span class="text-xs font-bold text-emerald-600 dark:text-emerald-400 uppercase tracking-wide">GFG UIT &amp; HackerRank</span>
                                     <span class="text-xs px-2 py-0.5 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-500 font-bold">2026</span>
                                 </div>
-                                <h3 class="text-lg font-bold text-slate-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors mb-2 leading-snug">
+                                <h3 class="text-lg font-bold text-slate-900 dark:text-white group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors mb-2 leading-snug">
                                     Gateway to GATE: Keynote with GFG VP &amp; ex-ISRO Scientist (AIR 12 &amp; 32)
                                 </h3>
                                 <div class="flex flex-wrap items-center gap-2 mb-3">
@@ -744,9 +901,9 @@
                     </div>
 
                     <!-- ═══════════════════════════════════════
-                         EVENT 2: VIBE CODING WITH GOOGLE GEMINI (600+ BUILDERS)
+                         EVENT 3: VIBE CODING WITH GOOGLE GEMINI (600+ BUILDERS)
                     ═══════════════════════════════════════ -->
-                    <div class="event-item-card glass-card rounded-3xl border border-blue-300 dark:border-blue-800/80 overflow-hidden hover-elevate flex flex-col justify-between group cursor-pointer shadow-md" 
+                    <div class="event-item-card bento-card rounded-3xl border border-blue-300 dark:border-blue-800/80 overflow-hidden flex flex-col justify-between group cursor-pointer shadow-md hover:border-blue-500/60 transition-all" 
                          data-year="2026"
                          data-chapter="gemini"
                          data-role="speaker"
@@ -812,9 +969,77 @@
                     </div>
 
                     <!-- ═══════════════════════════════════════
-                         EVENT 3: SYNTAX CLASH HACKATHON (GFG UIT - BAGS, PENS, STICKERS)
+                         EVENT 4: UCC 2ND & 3RD YEAR ALGORITHMIC CODING CHALLENGE
                     ═══════════════════════════════════════ -->
-                    <div class="event-item-card glass-card rounded-3xl border border-slate-200 dark:border-slate-800 overflow-hidden hover-elevate flex flex-col justify-between group cursor-pointer" 
+                    <div id="event-ucc" class="event-item-card bento-card rounded-3xl border border-red-300 dark:border-red-800/80 overflow-hidden flex flex-col justify-between group cursor-pointer shadow-md hover:border-red-500/60 transition-all" 
+                         data-year="2025"
+                         data-chapter="ucc"
+                         data-role="vp judge"
+                         data-title="UCC 2nd &amp; 3rd Year Algorithmic Coding Challenge"
+                         data-org="UIT Coding Club (UCC) · Mentored by Dr. Dhananjay Sharma"
+                         data-role="Founding President &amp; Lead Architect"
+                         data-date="Oct 2025"
+                         data-venue="Computer Labs &amp; Online Leaderboard Portal, UIT Prayagraj"
+                         data-footfall="320+ Competitive Programmers"
+                         data-img="assets/images/gallery/ucc-emblem.png"
+                         data-desc="Inaugural competitive programming tournament organized under the newly founded UIT Coding Club (UCC), founded by Gautam Kumar Maurya in partnership with faculty mentor Dr. Dhananjay Sharma. Tailored specifically for 2nd and 3rd-year engineering undergraduates to elevate algorithmic depth, data structures proficiency, dynamic programming, and contest agility. Designed 6 novel problem statements with real-time test verification and automated scoreboards."
+                         data-tags="Founding President,UCC Coding Club,Dr. Dhananjay Sharma,2nd & 3rd Year Coders,DSA & Algorithms,Live Leaderboard"
+                         data-swags="UCC Club Badges, Top Performer Trophies &amp; Merit Certificates">
+                        
+                        <div>
+                            <div class="aspect-video w-full overflow-hidden bg-gradient-to-br from-red-950 via-slate-900 to-slate-950 relative flex items-center justify-center p-6">
+                                <img src="assets/images/gallery/ucc-emblem.png" alt="UCC UIT Coding Club Coding Challenge" loading="lazy" class="max-h-24 max-w-full object-contain group-hover:scale-105 transition-transform duration-500 drop-shadow-xl">
+                                <div class="absolute inset-0 bg-gradient-to-t from-slate-950/85 via-transparent to-transparent"></div>
+                                <span class="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-red-600/90 backdrop-blur-md text-white font-bold text-[10px] uppercase tracking-wider shadow-sm">
+                                    <i class="fa-solid fa-code mr-1"></i> 320+ Competitors
+                                </span>
+                                <span class="absolute top-3 right-3 px-2.5 py-1 rounded-full bg-slate-950/80 backdrop-blur-md text-red-300 font-bold text-[10px] uppercase">
+                                    <i class="fa-solid fa-crown mr-1"></i> Founding President
+                                </span>
+                                <div class="absolute bottom-3 left-3 right-3 text-white text-xs font-semibold drop-shadow-md">
+                                    <i class="fa-solid fa-location-dot text-red-400 mr-1"></i> Advanced Computing Labs · UIT
+                                </div>
+                            </div>
+
+                            <div class="p-6">
+                                <div class="flex items-center justify-between mb-2">
+                                    <span class="text-xs font-bold text-red-600 dark:text-red-400 uppercase tracking-wide">UCC (UIT Coding Club)</span>
+                                    <span class="text-xs px-2 py-0.5 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-500 font-bold">2025</span>
+                                </div>
+                                <h3 class="text-lg font-bold text-slate-900 dark:text-white group-hover:text-red-600 dark:group-hover:text-red-400 transition-colors mb-2 leading-snug">
+                                    UCC 2nd &amp; 3rd Year Algorithmic Coding Challenge
+                                </h3>
+                                <div class="flex flex-wrap items-center gap-2 mb-3">
+                                    <div class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-lg bg-red-50 dark:bg-red-950/50 text-red-600 dark:text-red-400 text-xs font-semibold">
+                                        <i data-lucide="crown" class="w-3.5 h-3.5"></i>
+                                        <span>Founding President (with Dr. Dhananjay Sharma)</span>
+                                    </div>
+                                    <span class="px-2 py-0.5 rounded-lg bg-slate-100 dark:bg-slate-800 text-[10px] font-bold text-slate-600 dark:text-slate-300">Targeted 2nd &amp; 3rd Yr</span>
+                                </div>
+                                <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed mb-4 line-clamp-3">
+                                    Contest curated for 2nd and 3rd year students under the newly established UIT Coding Club. Formulated novel algorithmic problems, automated edge testing, and awarded top coders.
+                                </p>
+                                
+                                <div class="flex flex-wrap gap-1.5">
+                                    <span class="px-2 py-0.5 rounded-md bg-red-50 dark:bg-red-950/40 text-[11px] font-medium text-red-700 dark:text-red-300">Dr. Dhananjay Sharma Mentorship</span>
+                                    <span class="px-2 py-0.5 rounded-md bg-slate-100 dark:bg-slate-800 text-[11px] font-medium text-slate-600 dark:text-slate-300">2nd &amp; 3rd Year</span>
+                                    <span class="px-2 py-0.5 rounded-md bg-slate-100 dark:bg-slate-800 text-[11px] font-medium text-slate-600 dark:text-slate-300">Live Scoreboard</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="px-6 pb-6 pt-2">
+                            <button class="w-full py-2.5 rounded-xl bg-red-50 dark:bg-red-950/40 text-red-600 dark:text-red-400 text-xs font-bold flex items-center justify-center gap-2 group-hover:bg-red-600 group-hover:text-white transition-all shadow-sm">
+                                <span>View Event Dossier &amp; Leaderboard</span>
+                                <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- ═══════════════════════════════════════
+                         EVENT 5: SYNTAX CLASH HACKATHON (GFG UIT - BAGS, PENS, STICKERS)
+                    ═══════════════════════════════════════ -->
+                    <div id="event-syntax-clash" class="event-item-card bento-card rounded-3xl border border-emerald-300 dark:border-emerald-800/80 overflow-hidden flex flex-col justify-between group cursor-pointer shadow-sm hover:border-emerald-500/60 hover-elevate transition-all" 
                          data-year="2025"
                          data-chapter="gfg hackathons"
                          data-role="vp"
@@ -832,11 +1057,11 @@
                         <div>
                             <div class="aspect-video w-full overflow-hidden bg-slate-900 relative">
                                 <img src="assets/images/gallery/gautam-kumar-maurya-gfg-award.jpg" alt="Syntax Clash GFG Hackathon organized by Gautam Kumar Maurya" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                                <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent"></div>
+                                <div class="absolute inset-0 bg-gradient-to-t from-slate-950/85 via-transparent to-transparent"></div>
                                 <span class="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-emerald-600/90 backdrop-blur-md text-white font-bold text-[10px] uppercase tracking-wider shadow-sm">
                                     <i class="fa-solid fa-gift mr-1"></i> Bags &amp; Swags Distributed
                                 </span>
-                                <span class="absolute top-3 right-3 px-2.5 py-1 rounded-full bg-slate-950/80 backdrop-blur-md text-green-400 font-bold text-[10px] uppercase">
+                                <span class="absolute top-3 right-3 px-2.5 py-1 rounded-full bg-slate-950/80 backdrop-blur-md text-green-300 font-bold text-[10px] uppercase">
                                     450+ Contestants
                                 </span>
                                 <div class="absolute bottom-3 left-3 right-3 text-white text-xs font-semibold drop-shadow-md">
@@ -849,7 +1074,7 @@
                                     <span class="text-xs font-bold text-emerald-600 dark:text-emerald-400 uppercase tracking-wide">GeeksforGeeks UIT</span>
                                     <span class="text-xs px-2 py-0.5 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-500 font-bold">2025</span>
                                 </div>
-                                <h3 class="text-lg font-bold text-slate-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors mb-2 leading-snug">
+                                <h3 class="text-lg font-bold text-slate-900 dark:text-white group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors mb-2 leading-snug">
                                     Syntax Clash: Large-Scale Coding Sprint &amp; Hackathon
                                 </h3>
                                 <div class="flex flex-wrap items-center gap-2 mb-3">
@@ -864,7 +1089,7 @@
                                 </p>
                                 
                                 <div class="flex flex-wrap gap-1.5">
-                                    <span class="px-2 py-0.5 rounded-md bg-slate-100 dark:bg-slate-800 text-[11px] font-medium text-slate-600 dark:text-slate-300">GFG Backpacks</span>
+                                    <span class="px-2 py-0.5 rounded-md bg-emerald-50 dark:bg-emerald-950/40 text-[11px] font-medium text-emerald-700 dark:text-emerald-300">GFG Backpacks</span>
                                     <span class="px-2 py-0.5 rounded-md bg-slate-100 dark:bg-slate-800 text-[11px] font-medium text-slate-600 dark:text-slate-300">Stickers &amp; Pens</span>
                                     <span class="px-2 py-0.5 rounded-md bg-slate-100 dark:bg-slate-800 text-[11px] font-medium text-slate-600 dark:text-slate-300">450+ Competitors</span>
                                 </div>
@@ -880,9 +1105,9 @@
                     </div>
 
                     <!-- ═══════════════════════════════════════
-                         EVENT 4: GFG GRAND ORIENTATION 2026 (CURRENT TENURE)
+                         EVENT 6: GFG GRAND ORIENTATION 2026 (CURRENT TENURE)
                     ═══════════════════════════════════════ -->
-                    <div class="event-item-card glass-card rounded-3xl border border-slate-200 dark:border-slate-800 overflow-hidden hover-elevate flex flex-col justify-between group cursor-pointer" 
+                    <div class="event-item-card bento-card rounded-3xl border border-slate-200/90 dark:border-slate-800 overflow-hidden flex flex-col justify-between group cursor-pointer shadow-sm hover:border-emerald-500/50 hover-elevate transition-all" 
                          data-year="2026"
                          data-chapter="gfg"
                          data-role="vp"
@@ -900,7 +1125,7 @@
                         <div>
                             <div class="aspect-video w-full overflow-hidden bg-slate-900 relative">
                                 <img src="assets/images/gallery/gautam-kumar-maurya-uit-topper.jpg" alt="GFG Chapter Grand Orientation 2026" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                                <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent"></div>
+                                <div class="absolute inset-0 bg-gradient-to-t from-slate-950/85 via-transparent to-transparent"></div>
                                 <span class="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-emerald-600/90 backdrop-blur-md text-white font-bold text-[10px] uppercase tracking-wider shadow-sm">
                                     <i class="fa-solid fa-flag mr-1"></i> Current Tenure
                                 </span>
@@ -917,7 +1142,7 @@
                                     <span class="text-xs font-bold text-emerald-600 dark:text-emerald-400 uppercase tracking-wide">GeeksforGeeks UIT</span>
                                     <span class="text-xs px-2 py-0.5 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-500 font-bold">2026</span>
                                 </div>
-                                <h3 class="text-lg font-bold text-slate-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors mb-2 leading-snug">
+                                <h3 class="text-lg font-bold text-slate-900 dark:text-white group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors mb-2 leading-snug">
                                     GeeksforGeeks Chapter Grand Orientation 2026
                                 </h3>
                                 <div class="flex flex-wrap items-center gap-2 mb-3">
@@ -948,9 +1173,9 @@
                     </div>
 
                     <!-- ═══════════════════════════════════════
-                         EVENT 5: GFG CHAPTER ORIENTATION (LAST TENURE)
+                         EVENT 7: GFG CHAPTER ORIENTATION (LAST TENURE)
                     ═══════════════════════════════════════ -->
-                    <div class="event-item-card glass-card rounded-3xl border border-slate-200 dark:border-slate-800 overflow-hidden hover-elevate flex flex-col justify-between group cursor-pointer" 
+                    <div class="event-item-card bento-card rounded-3xl border border-slate-200/90 dark:border-slate-800 overflow-hidden flex flex-col justify-between group cursor-pointer shadow-sm hover:border-blue-500/50 hover-elevate transition-all" 
                          data-year="2024"
                          data-chapter="gfg"
                          data-role="vp"
@@ -968,7 +1193,7 @@
                         <div>
                             <div class="aspect-video w-full overflow-hidden bg-slate-900 relative">
                                 <img src="assets/images/gallery/gautam-kumar-maurya-uit-topper.jpg" alt="GFG Chapter Orientation Last Tenure" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                                <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent"></div>
+                                <div class="absolute inset-0 bg-gradient-to-t from-slate-950/85 via-transparent to-transparent"></div>
                                 <span class="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-slate-950/80 backdrop-blur-md text-white font-bold text-[10px] uppercase tracking-wider shadow-sm">
                                     Last Tenure
                                 </span>
@@ -1006,9 +1231,9 @@
                     </div>
 
                     <!-- ═══════════════════════════════════════
-                         EVENT 6: 3 TECHNICAL EVENTS & CODING CHALLENGES (LAST TENURE)
+                         EVENT 8: 3 TECHNICAL EVENTS & CODING CHALLENGES (LAST TENURE)
                     ═══════════════════════════════════════ -->
-                    <div class="event-item-card glass-card rounded-3xl border border-slate-200 dark:border-slate-800 overflow-hidden hover-elevate flex flex-col justify-between group cursor-pointer" 
+                    <div class="event-item-card bento-card rounded-3xl border border-slate-200/90 dark:border-slate-800 overflow-hidden flex flex-col justify-between group cursor-pointer shadow-sm hover:border-emerald-500/50 hover-elevate transition-all" 
                          data-year="2025"
                          data-chapter="gfg"
                          data-role="vp"
@@ -1026,7 +1251,7 @@
                         <div>
                             <div class="aspect-video w-full overflow-hidden bg-slate-900 relative">
                                 <img src="assets/images/gallery/gautam-kumar-maurya-gfg-award.jpg" alt="3 Technical Coding Sprints Series" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                                <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent"></div>
+                                <div class="absolute inset-0 bg-gradient-to-t from-slate-950/85 via-transparent to-transparent"></div>
                                 <span class="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-emerald-600/90 backdrop-blur-md text-white font-bold text-[10px] uppercase tracking-wider shadow-sm">
                                     3 Contests Series
                                 </span>
@@ -1040,7 +1265,7 @@
                                     <span class="text-xs font-bold text-emerald-600 dark:text-emerald-400 uppercase tracking-wide">GeeksforGeeks UIT</span>
                                     <span class="text-xs px-2 py-0.5 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-500 font-bold">2025</span>
                                 </div>
-                                <h3 class="text-lg font-bold text-slate-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors mb-2 leading-snug">
+                                <h3 class="text-lg font-bold text-slate-900 dark:text-white group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors mb-2 leading-snug">
                                     3-Stage Technical Coding Sprint Series
                                 </h3>
                                 <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed mb-4 line-clamp-3">
@@ -1064,9 +1289,9 @@
                     </div>
 
                     <!-- ═══════════════════════════════════════
-                         EVENT 7: OFFLINE MENTORSHIP SESSION (LAST TENURE)
+                         EVENT 9: OFFLINE MENTORSHIP SESSION (LAST TENURE)
                     ═══════════════════════════════════════ -->
-                    <div class="event-item-card glass-card rounded-3xl border border-slate-200 dark:border-slate-800 overflow-hidden hover-elevate flex flex-col justify-between group cursor-pointer" 
+                    <div class="event-item-card bento-card rounded-3xl border border-indigo-300 dark:border-indigo-800/80 overflow-hidden flex flex-col justify-between group cursor-pointer shadow-sm hover:border-indigo-500/50 hover-elevate transition-all" 
                          data-year="2024"
                          data-chapter="gfg"
                          data-role="speaker"
@@ -1084,7 +1309,7 @@
                         <div>
                             <div class="aspect-video w-full overflow-hidden bg-slate-900 relative">
                                 <img src="assets/images/gallery/gautam-kumar-maurya-uit-topper.jpg" alt="Offline Mentorship Session GFG UIT" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                                <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent"></div>
+                                <div class="absolute inset-0 bg-gradient-to-t from-slate-950/85 via-transparent to-transparent"></div>
                                 <span class="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-indigo-600/90 backdrop-blur-md text-white font-bold text-[10px] uppercase tracking-wider shadow-sm">
                                     In-Person Lab Mentorship
                                 </span>
@@ -1098,7 +1323,7 @@
                                     <span class="text-xs font-bold text-indigo-600 dark:text-indigo-400 uppercase tracking-wide">GeeksforGeeks UIT</span>
                                     <span class="text-xs px-2 py-0.5 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-500 font-bold">2024</span>
                                 </div>
-                                <h3 class="text-lg font-bold text-slate-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors mb-2 leading-snug">
+                                <h3 class="text-lg font-bold text-slate-900 dark:text-white group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors mb-2 leading-snug">
                                     In-Person Offline Mentorship Lab &amp; DSA Clinic
                                 </h3>
                                 <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed mb-4 line-clamp-3">
@@ -1106,7 +1331,7 @@
                                 </p>
                                 
                                 <div class="flex flex-wrap gap-1.5">
-                                    <span class="px-2 py-0.5 rounded-md bg-slate-100 dark:bg-slate-800 text-[11px] font-medium text-slate-600 dark:text-slate-300">Hands-on Lab</span>
+                                    <span class="px-2 py-0.5 rounded-md bg-indigo-50 dark:bg-indigo-950/40 text-[11px] font-medium text-indigo-700 dark:text-indigo-300">Hands-on Lab</span>
                                     <span class="px-2 py-0.5 rounded-md bg-slate-100 dark:bg-slate-800 text-[11px] font-medium text-slate-600 dark:text-slate-300">1-on-1 Debugging</span>
                                     <span class="px-2 py-0.5 rounded-md bg-slate-100 dark:bg-slate-800 text-[11px] font-medium text-slate-600 dark:text-slate-300">Placement Prep</span>
                                 </div>
@@ -1114,7 +1339,7 @@
                         </div>
 
                         <div class="px-6 pb-6 pt-2">
-                            <button class="w-full py-2.5 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 text-xs font-bold flex items-center justify-center gap-2 group-hover:bg-blue-600 group-hover:text-white transition-all shadow-sm">
+                            <button class="w-full py-2.5 rounded-xl bg-indigo-50 dark:bg-indigo-950/40 text-indigo-600 dark:text-indigo-400 text-xs font-bold flex items-center justify-center gap-2 group-hover:bg-indigo-600 group-hover:text-white transition-all shadow-sm">
                                 <span>View Event Dossier</span>
                                 <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
                             </button>
@@ -1122,9 +1347,9 @@
                     </div>
 
                     <!-- ═══════════════════════════════════════
-                         EVENT 8: HACKERRANK COMPETITIVE PROGRAMMING LEAGUE (CURRENT TENURE)
+                         EVENT 10: HACKERRANK COMPETITIVE PROGRAMMING LEAGUE (CURRENT TENURE)
                     ═══════════════════════════════════════ -->
-                    <div class="event-item-card glass-card rounded-3xl border border-slate-200 dark:border-slate-800 overflow-hidden hover-elevate flex flex-col justify-between group cursor-pointer" 
+                    <div class="event-item-card bento-card rounded-3xl border border-green-300 dark:border-green-800/80 overflow-hidden flex flex-col justify-between group cursor-pointer shadow-sm hover:border-green-500/50 hover-elevate transition-all" 
                          data-year="2026"
                          data-chapter="hackerrank"
                          data-role="vp"
@@ -1142,7 +1367,7 @@
                         <div>
                             <div class="aspect-video w-full overflow-hidden bg-slate-900 relative">
                                 <img src="assets/images/gallery/gateway-to-gate-gfg-uit.jpg" alt="HackerRank Competitive Programming League" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                                <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent"></div>
+                                <div class="absolute inset-0 bg-gradient-to-t from-slate-950/85 via-transparent to-transparent"></div>
                                 <span class="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-green-600/90 backdrop-blur-md text-white font-bold text-[10px] uppercase tracking-wider shadow-sm">
                                     <i class="fa-brands fa-hackerrank mr-1"></i> HackerRank Chapter
                                 </span>
@@ -1156,7 +1381,7 @@
                                     <span class="text-xs font-bold text-green-600 dark:text-green-400 uppercase tracking-wide">HackerRank UIT</span>
                                     <span class="text-xs px-2 py-0.5 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-500 font-bold">2026</span>
                                 </div>
-                                <h3 class="text-lg font-bold text-slate-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors mb-2 leading-snug">
+                                <h3 class="text-lg font-bold text-slate-900 dark:text-white group-hover:text-green-600 dark:group-hover:text-green-400 transition-colors mb-2 leading-snug">
                                     HackerRank Competitive Programming Contests &amp; Sprints
                                 </h3>
                                 <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed mb-4 line-clamp-3">
@@ -1164,7 +1389,7 @@
                                 </p>
                                 
                                 <div class="flex flex-wrap gap-1.5">
-                                    <span class="px-2 py-0.5 rounded-md bg-slate-100 dark:bg-slate-800 text-[11px] font-medium text-slate-600 dark:text-slate-300">HackerRank Arena</span>
+                                    <span class="px-2 py-0.5 rounded-md bg-green-50 dark:bg-green-950/40 text-[11px] font-medium text-green-700 dark:text-green-300">HackerRank Arena</span>
                                     <span class="px-2 py-0.5 rounded-md bg-slate-100 dark:bg-slate-800 text-[11px] font-medium text-slate-600 dark:text-slate-300">Vice President</span>
                                     <span class="px-2 py-0.5 rounded-md bg-slate-100 dark:bg-slate-800 text-[11px] font-medium text-slate-600 dark:text-slate-300">350+ Coders</span>
                                 </div>
@@ -1172,7 +1397,7 @@
                         </div>
 
                         <div class="px-6 pb-6 pt-2">
-                            <button class="w-full py-2.5 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 text-xs font-bold flex items-center justify-center gap-2 group-hover:bg-blue-600 group-hover:text-white transition-all shadow-sm">
+                            <button class="w-full py-2.5 rounded-xl bg-green-50 dark:bg-green-950/40 text-green-600 dark:text-green-400 text-xs font-bold flex items-center justify-center gap-2 group-hover:bg-green-600 group-hover:text-white transition-all shadow-sm">
                                 <span>View Event Dossier</span>
                                 <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
                             </button>
@@ -1180,9 +1405,9 @@
                     </div>
 
                     <!-- ═══════════════════════════════════════
-                         EVENT 9: GEMINI BUILDERS INAUGURAL AUDITORIUM CONFERENCE (650+ ATTENDEES)
+                         EVENT 11: GEMINI BUILDERS INAUGURAL AUDITORIUM CONFERENCE (650+ ATTENDEES)
                     ═══════════════════════════════════════ -->
-                    <div class="event-item-card glass-card rounded-3xl border border-purple-300 dark:border-purple-800/80 overflow-hidden hover-elevate flex flex-col justify-between group cursor-pointer shadow-md" 
+                    <div class="event-item-card bento-card rounded-3xl border border-purple-300 dark:border-purple-800/80 overflow-hidden flex flex-col justify-between group cursor-pointer shadow-sm hover:border-purple-500/60 hover-elevate transition-all" 
                          data-year="2025"
                          data-chapter="gemini"
                          data-role="vp"
@@ -1200,11 +1425,11 @@
                         <div>
                             <div class="aspect-video w-full overflow-hidden bg-slate-900 relative">
                                 <img src="assets/images/gallery/gautam-kumar-maurya-gsa.jpg" alt="Gemini Builders Inaugural Conference 650+ attendees" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                                <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent"></div>
+                                <div class="absolute inset-0 bg-gradient-to-t from-slate-950/85 via-transparent to-transparent"></div>
                                 <span class="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-purple-600/90 backdrop-blur-md text-white font-bold text-[10px] uppercase tracking-wider shadow-sm">
                                     <i class="fa-solid fa-users mr-1"></i> 650+ Attendees
                                 </span>
-                                <span class="absolute top-3 right-3 px-2.5 py-1 rounded-full bg-slate-950/80 backdrop-blur-md text-emerald-400 font-bold text-[10px] uppercase">
+                                <span class="absolute top-3 right-3 px-2.5 py-1 rounded-full bg-slate-950/80 backdrop-blur-md text-emerald-300 font-bold text-[10px] uppercase">
                                     Stage Felicitation
                                 </span>
                                 <div class="absolute bottom-3 left-3 right-3 text-white text-xs font-semibold drop-shadow-md">
@@ -1217,7 +1442,7 @@
                                     <span class="text-xs font-bold text-purple-600 dark:text-purple-400 uppercase tracking-wide">Google GSA / Gemini</span>
                                     <span class="text-xs px-2 py-0.5 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-500 font-bold">2025</span>
                                 </div>
-                                <h3 class="text-lg font-bold text-slate-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors mb-2 leading-snug">
+                                <h3 class="text-lg font-bold text-slate-900 dark:text-white group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors mb-2 leading-snug">
                                     Gemini Builders Inaugural Tech Summit (650+ Footfall)
                                 </h3>
                                 <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed mb-4 line-clamp-3">
@@ -1241,9 +1466,9 @@
                     </div>
 
                     <!-- ═══════════════════════════════════════
-                         EVENT 10: WIKICLUB TECH 1-WEEK OPEN SOURCE MARATHON
+                         EVENT 12: WIKICLUB TECH 1-WEEK OPEN SOURCE MARATHON
                     ═══════════════════════════════════════ -->
-                    <div class="event-item-card glass-card rounded-3xl border border-slate-200 dark:border-slate-800 overflow-hidden hover-elevate flex flex-col justify-between group cursor-pointer" 
+                    <div class="event-item-card bento-card rounded-3xl border border-blue-300 dark:border-blue-800/80 overflow-hidden flex flex-col justify-between group cursor-pointer shadow-sm hover:border-blue-500/60 hover-elevate transition-all" 
                          data-year="2025"
                          data-chapter="wikiclub"
                          data-role="vp"
@@ -1261,11 +1486,11 @@
                         <div>
                             <div class="aspect-video w-full overflow-hidden bg-slate-900 relative">
                                 <img src="assets/images/gallery/gautam-kumar-maurya-wikiclub-marathon-1st.jpg" alt="WikiClub Tech UIT Open Source Marathon" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                                <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent"></div>
+                                <div class="absolute inset-0 bg-gradient-to-t from-slate-950/85 via-transparent to-transparent"></div>
                                 <span class="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-blue-600/90 backdrop-blur-md text-white font-bold text-[10px] uppercase tracking-wider shadow-sm">
                                     <i class="fa-brands fa-wikipedia-w mr-1"></i> Wikimedia Event
                                 </span>
-                                <span class="absolute top-3 right-3 px-2.5 py-1 rounded-full bg-slate-950/80 backdrop-blur-md text-amber-400 font-bold text-[10px] uppercase">
+                                <span class="absolute top-3 right-3 px-2.5 py-1 rounded-full bg-slate-950/80 backdrop-blur-md text-amber-300 font-bold text-[10px] uppercase">
                                     1st Rank Award
                                 </span>
                             </div>
@@ -1283,7 +1508,7 @@
                                 </p>
                                 
                                 <div class="flex flex-wrap gap-1.5">
-                                    <span class="px-2 py-0.5 rounded-md bg-slate-100 dark:bg-slate-800 text-[11px] font-medium text-slate-600 dark:text-slate-300">Gerrit Code Review</span>
+                                    <span class="px-2 py-0.5 rounded-md bg-blue-50 dark:bg-blue-950/40 text-[11px] font-medium text-blue-700 dark:text-blue-300">Gerrit Code Review</span>
                                     <span class="px-2 py-0.5 rounded-md bg-slate-100 dark:bg-slate-800 text-[11px] font-medium text-slate-600 dark:text-slate-300">1st Rank Champion</span>
                                     <span class="px-2 py-0.5 rounded-md bg-slate-100 dark:bg-slate-800 text-[11px] font-medium text-slate-600 dark:text-slate-300">Wikimedia Core</span>
                                 </div>
@@ -1299,9 +1524,9 @@
                     </div>
 
                     <!-- ═══════════════════════════════════════
-                         EVENT 11: UDTECH BUILDX 2026 NATIONAL HACKATHON
+                         EVENT 13: UDTECH BUILDX 2026 NATIONAL HACKATHON
                     ═══════════════════════════════════════ -->
-                    <div class="event-item-card glass-card rounded-3xl border border-slate-200 dark:border-slate-800 overflow-hidden hover-elevate flex flex-col justify-between group cursor-pointer" 
+                    <div class="event-item-card bento-card rounded-3xl border border-sky-300 dark:border-sky-800/80 overflow-hidden flex flex-col justify-between group cursor-pointer shadow-sm hover:border-sky-500/60 hover-elevate transition-all" 
                          data-year="2026"
                          data-chapter="hackathons"
                          data-role="judge"
@@ -1319,7 +1544,7 @@
                         <div>
                             <div class="aspect-video w-full overflow-hidden bg-slate-900 relative">
                                 <img src="assets/images/gallery/gautam-kumar-maurya-1st-in-webdie.jpg" alt="BuildX 2026 National Hackathon" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                                <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent"></div>
+                                <div class="absolute inset-0 bg-gradient-to-t from-slate-950/85 via-transparent to-transparent"></div>
                                 <span class="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-sky-600/90 backdrop-blur-md text-white font-bold text-[10px] uppercase tracking-wider shadow-sm">
                                     National Hackathon
                                 </span>
@@ -1333,7 +1558,7 @@
                                     <span class="text-xs font-bold text-sky-600 dark:text-sky-400 uppercase tracking-wide">UDTech India</span>
                                     <span class="text-xs px-2 py-0.5 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-500 font-bold">2026</span>
                                 </div>
-                                <h3 class="text-lg font-bold text-slate-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors mb-2 leading-snug">
+                                <h3 class="text-lg font-bold text-slate-900 dark:text-white group-hover:text-sky-600 dark:group-hover:text-sky-400 transition-colors mb-2 leading-snug">
                                     BuildX 2026 National Hackathon &amp; Portal
                                 </h3>
                                 <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed mb-4 line-clamp-3">
@@ -1341,7 +1566,7 @@
                                 </p>
                                 
                                 <div class="flex flex-wrap gap-1.5">
-                                    <span class="px-2 py-0.5 rounded-md bg-slate-100 dark:bg-slate-800 text-[11px] font-medium text-slate-600 dark:text-slate-300">Hackathon Judge</span>
+                                    <span class="px-2 py-0.5 rounded-md bg-sky-50 dark:bg-sky-950/40 text-[11px] font-medium text-sky-700 dark:text-sky-300">Hackathon Judge</span>
                                     <span class="px-2 py-0.5 rounded-md bg-slate-100 dark:bg-slate-800 text-[11px] font-medium text-slate-600 dark:text-slate-300">Platform Architect</span>
                                     <span class="px-2 py-0.5 rounded-md bg-slate-100 dark:bg-slate-800 text-[11px] font-medium text-slate-600 dark:text-slate-300">30+ Teams</span>
                                 </div>
@@ -1357,9 +1582,9 @@
                     </div>
 
                     <!-- ═══════════════════════════════════════
-                         EVENT 12: AGENTIC PREMIER LEAGUE (GDG PRAYAGRAJ)
+                         EVENT 14: AGENTIC PREMIER LEAGUE (GDG PRAYAGRAJ)
                     ═══════════════════════════════════════ -->
-                    <div class="event-item-card glass-card rounded-3xl border border-slate-200 dark:border-slate-800 overflow-hidden hover-elevate flex flex-col justify-between group cursor-pointer" 
+                    <div class="event-item-card bento-card rounded-3xl border border-amber-300 dark:border-amber-800/80 overflow-hidden flex flex-col justify-between group cursor-pointer shadow-sm hover:border-amber-500/60 hover-elevate transition-all" 
                          data-year="2026"
                          data-chapter="hackathons"
                          data-role="speaker"
@@ -1377,7 +1602,7 @@
                         <div>
                             <div class="aspect-video w-full overflow-hidden bg-slate-900 relative">
                                 <img src="assets/images/gallery/gautam-kumar-maurya-gsa.jpg" alt="GDG Prayagraj Agentic Premier League" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                                <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent"></div>
+                                <div class="absolute inset-0 bg-gradient-to-t from-slate-950/85 via-transparent to-transparent"></div>
                                 <span class="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-amber-600/90 backdrop-blur-md text-white font-bold text-[10px] uppercase tracking-wider shadow-sm">
                                     GDG Prayagraj
                                 </span>
@@ -1391,7 +1616,7 @@
                                     <span class="text-xs font-bold text-amber-600 dark:text-amber-400 uppercase tracking-wide">GDG Prayagraj</span>
                                     <span class="text-xs px-2 py-0.5 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-500 font-bold">2026</span>
                                 </div>
-                                <h3 class="text-lg font-bold text-slate-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors mb-2 leading-snug">
+                                <h3 class="text-lg font-bold text-slate-900 dark:text-white group-hover:text-amber-600 dark:group-hover:text-amber-400 transition-colors mb-2 leading-snug">
                                     Agentic Premier League (APL) Mentorship
                                 </h3>
                                 <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed mb-4 line-clamp-3">
@@ -1399,7 +1624,7 @@
                                 </p>
                                 
                                 <div class="flex flex-wrap gap-1.5">
-                                    <span class="px-2 py-0.5 rounded-md bg-slate-100 dark:bg-slate-800 text-[11px] font-medium text-slate-600 dark:text-slate-300">Agentic AI</span>
+                                    <span class="px-2 py-0.5 rounded-md bg-amber-50 dark:bg-amber-950/40 text-[11px] font-medium text-amber-700 dark:text-amber-300">Agentic AI</span>
                                     <span class="px-2 py-0.5 rounded-md bg-slate-100 dark:bg-slate-800 text-[11px] font-medium text-slate-600 dark:text-slate-300">GDG Mentor</span>
                                     <span class="px-2 py-0.5 rounded-md bg-slate-100 dark:bg-slate-800 text-[11px] font-medium text-slate-600 dark:text-slate-300">200+ Coders</span>
                                 </div>
@@ -1415,9 +1640,9 @@
                     </div>
 
                     <!-- ═══════════════════════════════════════
-                         EVENT 13: FLUTTERFLOW DEVELOPERS GROUP MEETUP
+                         EVENT 15: FLUTTERFLOW DEVELOPERS GROUP MEETUP
                     ═══════════════════════════════════════ -->
-                    <div class="event-item-card glass-card rounded-3xl border border-slate-200 dark:border-slate-800 overflow-hidden hover-elevate flex flex-col justify-between group cursor-pointer" 
+                    <div class="event-item-card bento-card rounded-3xl border border-indigo-300 dark:border-indigo-800/80 overflow-hidden flex flex-col justify-between group cursor-pointer shadow-sm hover:border-indigo-500/60 hover-elevate transition-all" 
                          data-year="2025"
                          data-chapter="hackathons"
                          data-role="speaker"
@@ -1435,7 +1660,7 @@
                         <div>
                             <div class="aspect-video w-full overflow-hidden bg-slate-900 relative">
                                 <img src="assets/images/gallery/gautam-kumar-maurya-ffdg.jpg" alt="FlutterFlow Developers Group Meetup" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                                <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent"></div>
+                                <div class="absolute inset-0 bg-gradient-to-t from-slate-950/85 via-transparent to-transparent"></div>
                                 <span class="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-indigo-600/90 backdrop-blur-md text-white font-bold text-[10px] uppercase tracking-wider shadow-sm">
                                     Developer Meetup
                                 </span>
@@ -1446,7 +1671,7 @@
                                     <span class="text-xs font-bold text-indigo-600 dark:text-indigo-400 uppercase tracking-wide">FlutterFlow Community</span>
                                     <span class="text-xs px-2 py-0.5 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-500 font-bold">2025</span>
                                 </div>
-                                <h3 class="text-lg font-bold text-slate-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors mb-2 leading-snug">
+                                <h3 class="text-lg font-bold text-slate-900 dark:text-white group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors mb-2 leading-snug">
                                     FlutterFlow Developers Group Meetup
                                 </h3>
                                 <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed mb-4 line-clamp-3">
@@ -1454,7 +1679,7 @@
                                 </p>
                                 
                                 <div class="flex flex-wrap gap-1.5">
-                                    <span class="px-2 py-0.5 rounded-md bg-slate-100 dark:bg-slate-800 text-[11px] font-medium text-slate-600 dark:text-slate-300">FlutterFlow</span>
+                                    <span class="px-2 py-0.5 rounded-md bg-indigo-50 dark:bg-indigo-950/40 text-[11px] font-medium text-indigo-700 dark:text-indigo-300">FlutterFlow</span>
                                     <span class="px-2 py-0.5 rounded-md bg-slate-100 dark:bg-slate-800 text-[11px] font-medium text-slate-600 dark:text-slate-300">Mobile Architecture</span>
                                 </div>
                             </div>
@@ -1469,9 +1694,9 @@
                     </div>
 
                     <!-- ═══════════════════════════════════════
-                         EVENT 14: WEBDIE FULL-STACK HACKATHON
+                         EVENT 16: WEBDIE FULL-STACK HACKATHON
                     ═══════════════════════════════════════ -->
-                    <div class="event-item-card glass-card rounded-3xl border border-slate-200 dark:border-slate-800 overflow-hidden hover-elevate flex flex-col justify-between group cursor-pointer" 
+                    <div class="event-item-card bento-card rounded-3xl border border-amber-300 dark:border-amber-800/80 overflow-hidden flex flex-col justify-between group cursor-pointer shadow-sm hover:border-amber-500/60 hover-elevate transition-all" 
                          data-year="2025"
                          data-chapter="hackathons"
                          data-role="judge"
@@ -1489,7 +1714,7 @@
                         <div>
                             <div class="aspect-video w-full overflow-hidden bg-slate-900 relative">
                                 <img src="assets/images/gallery/gautam-kumar-maurya-1st-in-webdie.jpg" alt="Webdie Hackathon Champion" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                                <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent"></div>
+                                <div class="absolute inset-0 bg-gradient-to-t from-slate-950/85 via-transparent to-transparent"></div>
                                 <span class="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-amber-600/90 backdrop-blur-md text-white font-bold text-[10px] uppercase tracking-wider shadow-sm">
                                     <i class="fa-solid fa-trophy mr-1"></i> 1st Place Champion
                                 </span>
@@ -1500,7 +1725,7 @@
                                     <span class="text-xs font-bold text-amber-600 dark:text-amber-400 uppercase tracking-wide">Webdie UIT</span>
                                     <span class="text-xs px-2 py-0.5 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-500 font-bold">2025</span>
                                 </div>
-                                <h3 class="text-lg font-bold text-slate-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors mb-2 leading-snug">
+                                <h3 class="text-lg font-bold text-slate-900 dark:text-white group-hover:text-amber-600 dark:group-hover:text-amber-400 transition-colors mb-2 leading-snug">
                                     Webdie Full Stack Hackathon
                                 </h3>
                                 <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed mb-4 line-clamp-3">
@@ -1508,7 +1733,7 @@
                                 </p>
                                 
                                 <div class="flex flex-wrap gap-1.5">
-                                    <span class="px-2 py-0.5 rounded-md bg-slate-100 dark:bg-slate-800 text-[11px] font-medium text-slate-600 dark:text-slate-300">1st Place</span>
+                                    <span class="px-2 py-0.5 rounded-md bg-amber-50 dark:bg-amber-950/40 text-[11px] font-medium text-amber-700 dark:text-amber-300">1st Place</span>
                                     <span class="px-2 py-0.5 rounded-md bg-slate-100 dark:bg-slate-800 text-[11px] font-medium text-slate-600 dark:text-slate-300">Full Stack</span>
                                 </div>
                             </div>
@@ -1523,9 +1748,9 @@
                     </div>
 
                     <!-- ═══════════════════════════════════════
-                         EVENT 15: FUTURE CRIME CYBER SECURITY SUMMIT
+                         EVENT 17: FUTURE CRIME CYBER SECURITY SUMMIT
                     ═══════════════════════════════════════ -->
-                    <div class="event-item-card glass-card rounded-3xl border border-slate-200 dark:border-slate-800 overflow-hidden hover-elevate flex flex-col justify-between group cursor-pointer" 
+                    <div class="event-item-card bento-card rounded-3xl border border-sky-300 dark:border-sky-800/80 overflow-hidden flex flex-col justify-between group cursor-pointer shadow-sm hover:border-sky-500/60 hover-elevate transition-all" 
                          data-year="2026"
                          data-chapter="hackathons"
                          data-role="speaker"
@@ -1543,7 +1768,7 @@
                         <div>
                             <div class="aspect-video w-full overflow-hidden bg-slate-900 relative">
                                 <img src="assets/images/gallery/gautam-kumar-maurya-up-police.jpg" alt="Future Crime Summit Cyber Security" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                                <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent"></div>
+                                <div class="absolute inset-0 bg-gradient-to-t from-slate-950/85 via-transparent to-transparent"></div>
                                 <span class="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-sky-600/90 backdrop-blur-md text-white font-bold text-[10px] uppercase tracking-wider shadow-sm">
                                     Cyber Security Summit
                                 </span>
@@ -1554,7 +1779,7 @@
                                     <span class="text-xs font-bold text-sky-600 dark:text-sky-400 uppercase tracking-wide">FCRF &amp; UP Police</span>
                                     <span class="text-xs px-2 py-0.5 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-500 font-bold">2026</span>
                                 </div>
-                                <h3 class="text-lg font-bold text-slate-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors mb-2 leading-snug">
+                                <h3 class="text-lg font-bold text-slate-900 dark:text-white group-hover:text-sky-600 dark:group-hover:text-sky-400 transition-colors mb-2 leading-snug">
                                     Future Crime Summit &amp; Cyber Awareness Drive
                                 </h3>
                                 <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed mb-4 line-clamp-3">
@@ -1562,7 +1787,7 @@
                                 </p>
                                 
                                 <div class="flex flex-wrap gap-1.5">
-                                    <span class="px-2 py-0.5 rounded-md bg-slate-100 dark:bg-slate-800 text-[11px] font-medium text-slate-600 dark:text-slate-300">Law Enforcement</span>
+                                    <span class="px-2 py-0.5 rounded-md bg-sky-50 dark:bg-sky-950/40 text-[11px] font-medium text-sky-700 dark:text-sky-300">Law Enforcement</span>
                                     <span class="px-2 py-0.5 rounded-md bg-slate-100 dark:bg-slate-800 text-[11px] font-medium text-slate-600 dark:text-slate-300">Cyber Forensics</span>
                                 </div>
                             </div>
@@ -1584,48 +1809,91 @@
         <!-- ═══════════════════════════════════════
              4. EVENT ORGANIZER FAQ SECTION (SEO & AEO / GEO)
         ═══════════════════════════════════════ -->
-        <section class="py-16 bg-white dark:bg-slate-900/50 border-b border-slate-200/60 dark:border-slate-800">
-            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <section id="faq" class="py-20 bg-slate-50 dark:bg-slate-950 border-b border-slate-200/60 dark:border-slate-800 relative overflow-hidden section-dot-grid">
+            <div class="section-ambient-glow section-ambient-glow-blue"></div>
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                 
                 <div class="text-center mb-12">
-                    <span class="text-xs font-bold text-blue-600 dark:text-blue-400 uppercase tracking-widest">Organizer FAQs &amp; Impact</span>
-                    <h2 class="text-3xl font-black text-slate-900 dark:text-white tracking-tight mt-1">
+                    <span class="section-pill-tag mb-3 inline-flex items-center gap-1.5">
+                        <i data-lucide="help-circle" class="w-3.5 h-3.5 text-blue-600"></i> Event Organizer FAQs
+                    </span>
+                    <h2 class="text-3xl sm:text-4xl font-black text-slate-950 dark:text-white tracking-tight mt-1 font-heading">
                         Frequently Asked Questions about <span class="gradient-text">Gautam's Events</span>
                     </h2>
+                    <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 mt-2 max-w-xl mx-auto">
+                        Answers regarding Smart India Hackathon (SIH) leadership, UIT Coding Club (UCC), mega auditorium conferences, and student footprint.
+                    </p>
                 </div>
 
                 <div class="space-y-4">
                     
-                    <!-- FAQ 1 -->
-                    <div class="faq-item glass-card rounded-2xl border border-slate-200 dark:border-slate-800 overflow-hidden transition-all duration-300">
-                        <button type="button" class="faq-trigger w-full px-6 py-5 text-left flex items-center justify-between gap-4 font-bold text-slate-900 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 focus:outline-none" aria-expanded="false">
-                            <span class="text-sm sm:text-base">What major technical events has Gautam Kumar Maurya organized as Vice President of GFG and HackerRank?</span>
+                    <!-- FAQ 1: Smart India Hackathon Solo Lead -->
+                    <div class="faq-item bento-card rounded-2xl border border-slate-200/90 dark:border-slate-800 overflow-hidden transition-all duration-300 hover:border-orange-500/40 bg-white/90 dark:bg-slate-900/80 backdrop-blur-md">
+                        <button type="button" class="faq-trigger w-full px-6 py-5 text-left flex items-center justify-between gap-4 font-bold text-slate-900 dark:text-white hover:text-orange-600 dark:hover:text-orange-400 focus:outline-none" aria-expanded="false">
+                            <span class="text-sm sm:text-base flex items-center gap-2">
+                                <span class="w-2 h-2 rounded-full bg-orange-500 shrink-0"></span>
+                                How did Gautam Kumar Maurya lead the Smart India Hackathon (SIH) Conclave at UIT?
+                            </span>
                             <i data-lucide="chevron-down" class="faq-icon w-5 h-5 text-slate-400 shrink-0 transition-transform duration-300"></i>
                         </button>
                         <div class="faq-content hidden px-6 pb-5 text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed border-t border-slate-100 dark:border-slate-800/60 pt-4">
-                            Gautam Kumar Maurya co-organized the mega <strong>Gateway to GATE</strong> conference bringing the Vice President of GeeksforGeeks Noida HQ (who secured AIR 12 and AIR 32 in GATE and is an ex-ISRO scientist) to address 600+ engineering students in the main auditorium. He also organized the flagship <strong>Syntax Clash</strong> hackathon distributing official GFG bags, pens, stickers, and merit awards, along with 4 distinct coding tournament sprints, chapter grand orientations, and in-person lab mentorship sessions.
+                            Gautam single-handedly convenored and organized the <strong>Smart India Hackathon (SIH) Internal Presentation Conclave</strong> at United Institute of Technology (UIT Prayagraj) — widely recognized as the most successful SIH conclave in the institution's history. He managed all operations: mobilizing <strong>77 competing teams</strong> (totaling <strong>462 students: 285 male / 177 female</strong>), vetting <strong>37 problem statements</strong> across Software, Hardware &amp; Open categories, nominating <strong>50 teams</strong> (45 shortlisted for official MoE portal submission + 5 on merit waitlist), and directing <strong>8 evaluation jury panels</strong> alongside 8 student volunteers.
                         </div>
                     </div>
 
-                    <!-- FAQ 2 -->
-                    <div class="faq-item glass-card rounded-2xl border border-slate-200 dark:border-slate-800 overflow-hidden transition-all duration-300">
-                        <button type="button" class="faq-trigger w-full px-6 py-5 text-left flex items-center justify-between gap-4 font-bold text-slate-900 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 focus:outline-none" aria-expanded="false">
-                            <span class="text-sm sm:text-base">What is Gautam's 'Vibe Coding with Google Gemini' masterclass?</span>
+                    <!-- FAQ 2: UIT Coding Club (UCC) -->
+                    <div class="faq-item bento-card rounded-2xl border border-slate-200/90 dark:border-slate-800 overflow-hidden transition-all duration-300 hover:border-red-500/40 bg-white/90 dark:bg-slate-900/80 backdrop-blur-md">
+                        <button type="button" class="faq-trigger w-full px-6 py-5 text-left flex items-center justify-between gap-4 font-bold text-slate-900 dark:text-white hover:text-red-600 dark:hover:text-red-400 focus:outline-none" aria-expanded="false">
+                            <span class="text-sm sm:text-base flex items-center gap-2">
+                                <span class="w-2 h-2 rounded-full bg-red-500 shrink-0"></span>
+                                What is the UIT Coding Club (UCC) founded by Gautam Kumar Maurya?
+                            </span>
                             <i data-lucide="chevron-down" class="faq-icon w-5 h-5 text-slate-400 shrink-0 transition-transform duration-300"></i>
                         </button>
                         <div class="faq-content hidden px-6 pb-5 text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed border-t border-slate-100 dark:border-slate-800/60 pt-4">
-                            As Co-Lead of the Gemini Builders Community under Google Student Ambassadors, Gautam conducted a campus-wide masterclass for <strong>600+ students</strong> on 'Vibe Coding' — teaching developers how to utilize natural language prompt engineering, agentic software loops, and Google Gemini APIs to turn application concepts directly into working code without tedious boilerplate.
+                            Gautam is the <strong>Founding Member and President</strong> of the <strong>UIT Coding Club (UCC)</strong>, established alongside esteemed faculty mentor <strong>Dr. Dhananjay Sharma</strong>. As President, Gautam designed and executed the <em>UCC 2nd &amp; 3rd Year Algorithmic Coding Challenge</em> for 320+ competitive coders, authoring 6 novel problem statements, automated test harnesses, and hosting live leaderboard scoreboards.
                         </div>
                     </div>
 
-                    <!-- FAQ 3 -->
-                    <div class="faq-item glass-card rounded-2xl border border-slate-200 dark:border-slate-800 overflow-hidden transition-all duration-300">
-                        <button type="button" class="faq-trigger w-full px-6 py-5 text-left flex items-center justify-between gap-4 font-bold text-slate-900 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 focus:outline-none" aria-expanded="false">
-                            <span class="text-sm sm:text-base">What is Gautam Kumar Maurya's total event footfall and attendee track record?</span>
+                    <!-- FAQ 3: Major GFG & HackerRank Events -->
+                    <div class="faq-item bento-card rounded-2xl border border-slate-200/90 dark:border-slate-800 overflow-hidden transition-all duration-300 hover:border-emerald-500/40 bg-white/90 dark:bg-slate-900/80 backdrop-blur-md">
+                        <button type="button" class="faq-trigger w-full px-6 py-5 text-left flex items-center justify-between gap-4 font-bold text-slate-900 dark:text-white hover:text-emerald-600 dark:hover:text-emerald-400 focus:outline-none" aria-expanded="false">
+                            <span class="text-sm sm:text-base flex items-center gap-2">
+                                <span class="w-2 h-2 rounded-full bg-emerald-500 shrink-0"></span>
+                                What major events has Gautam organized as Vice President of GFG and HackerRank?
+                            </span>
                             <i data-lucide="chevron-down" class="faq-icon w-5 h-5 text-slate-400 shrink-0 transition-transform duration-300"></i>
                         </button>
                         <div class="faq-content hidden px-6 pb-5 text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed border-t border-slate-100 dark:border-slate-800/60 pt-4">
-                            Gautam has mobilized over <strong>3,500+ cumulative attendees</strong> across 15+ technical events, hackathons, and algorithm sprints, with multiple peak auditorium events exceeding 600+ and 650+ attendees in the Main Auditorium at United Institute of Technology (UIT), Prayagraj.
+                            Gautam co-directed the flagship <strong>Gateway to GATE</strong> conference bringing the Vice President of GeeksforGeeks Noida HQ (ex-ISRO scientist with AIR 12 and AIR 32 in GATE) to address <strong>600+ students</strong> in the main auditorium. He also organized the <strong>Syntax Clash</strong> hackathon distributing official GFG backpacks, metal pens, stickers, and merit awards to 450+ coders, alongside a 3-Stage Coding Sprint series, annual chapter orientations, and intensive offline lab clinics.
+                        </div>
+                    </div>
+
+                    <!-- FAQ 4: Vibe Coding Masterclass -->
+                    <div class="faq-item bento-card rounded-2xl border border-slate-200/90 dark:border-slate-800 overflow-hidden transition-all duration-300 hover:border-blue-500/40 bg-white/90 dark:bg-slate-900/80 backdrop-blur-md">
+                        <button type="button" class="faq-trigger w-full px-6 py-5 text-left flex items-center justify-between gap-4 font-bold text-slate-900 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 focus:outline-none" aria-expanded="false">
+                            <span class="text-sm sm:text-base flex items-center gap-2">
+                                <span class="w-2 h-2 rounded-full bg-blue-500 shrink-0"></span>
+                                What is Gautam's 'Vibe Coding with Google Gemini' masterclass?
+                            </span>
+                            <i data-lucide="chevron-down" class="faq-icon w-5 h-5 text-slate-400 shrink-0 transition-transform duration-300"></i>
+                        </button>
+                        <div class="faq-content hidden px-6 pb-5 text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed border-t border-slate-100 dark:border-slate-800/60 pt-4">
+                            As Co-Lead of the Gemini Builders Community under Google Student Ambassadors, Gautam conducted a campus-wide auditorium masterclass for <strong>600+ students</strong> on <em>'Vibe Coding'</em> — demonstrating prompt engineering, agentic software synthesis, and deploying full-stack web applications live on stage at the speed of thought.
+                        </div>
+                    </div>
+
+                    <!-- FAQ 5: Footfall Track Record -->
+                    <div class="faq-item bento-card rounded-2xl border border-slate-200/90 dark:border-slate-800 overflow-hidden transition-all duration-300 hover:border-indigo-500/40 bg-white/90 dark:bg-slate-900/80 backdrop-blur-md">
+                        <button type="button" class="faq-trigger w-full px-6 py-5 text-left flex items-center justify-between gap-4 font-bold text-slate-900 dark:text-white hover:text-indigo-600 dark:hover:text-indigo-400 focus:outline-none" aria-expanded="false">
+                            <span class="text-sm sm:text-base flex items-center gap-2">
+                                <span class="w-2 h-2 rounded-full bg-indigo-500 shrink-0"></span>
+                                What is Gautam Kumar Maurya's total event footfall and attendee track record?
+                            </span>
+                            <i data-lucide="chevron-down" class="faq-icon w-5 h-5 text-slate-400 shrink-0 transition-transform duration-300"></i>
+                        </button>
+                        <div class="faq-content hidden px-6 pb-5 text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed border-t border-slate-100 dark:border-slate-800/60 pt-4">
+                            Gautam has mobilized over <strong>4,200+ cumulative attendees</strong> across <strong>17+ technical events</strong>, summits, hackathons, and algorithm leagues, featuring <strong>4 mega 500+ student auditorium summits</strong>, 500+ distributed swags and bags, and institutional honors from College Principals and Deans.
                         </div>
                     </div>
 
@@ -1741,32 +2009,53 @@
     </div>
 
     <!-- ═══════════════════════════════════════
-         5. FOOTER
+         5. FOOTER (EXACT 2026 INDEX.HTML CANONICAL BRAND & DESIGN)
     ═══════════════════════════════════════ -->
-    <footer class="py-12 bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6">
-            <div class="flex items-center gap-3">
-                <img src="assets/images/profile/Gautam_Kumar_Maurya.jpg" alt="Gautam Kumar Maurya" class="w-10 h-10 rounded-full border border-blue-600">
-                <div>
-                    <span class="font-bold text-sm text-slate-900 dark:text-white block">Gautam Kumar Maurya</span>
-                    <span class="text-xs text-slate-500">Student Community Leader &amp; Event Organizer</span>
+    <footer class="bg-white dark:bg-slate-950 border-t border-slate-200 dark:border-slate-800 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+                
+                <!-- Left Brand (< /> GKM • canonical brand) -->
+                <div class="flex items-center gap-3">
+                    <a href="index.html" class="flex items-center gap-1.5 group shrink-0 font-heading">
+                        <span class="text-blue-600 font-mono font-bold text-2xl leading-none">&lt;/&gt;</span>
+                        <span class="text-2xl font-black text-slate-950 dark:text-white tracking-tight">GKM</span>
+                        <span class="w-2.5 h-2.5 rounded-full bg-blue-600 inline-block ml-0.5"></span>
+                    </a>
+                    <span class="text-slate-300 dark:text-slate-700 hidden sm:inline">|</span>
+                    <span class="text-xs text-slate-500 dark:text-slate-400">© 2026 Gautam Kumar Maurya. All rights reserved.</span>
                 </div>
-            </div>
 
-            <div class="flex flex-wrap items-center gap-6 text-xs text-slate-600 dark:text-slate-400 font-medium">
-                <a href="index.html" class="hover:text-blue-600 transition-colors">Portfolio</a>
-                <a href="events-organized.html" class="hover:text-blue-600 transition-colors text-blue-600 font-bold">Events Organised (17+)</a>
-                <a href="achievements.html" class="hover:text-blue-600 transition-colors">Achievements</a>
-                <a href="open-source-contributions.html" class="hover:text-blue-600 transition-colors">Open Source</a>
-                <a href="btech-journey.html" class="hover:text-blue-600 transition-colors">Journey</a>
-                <a href="certifications.html" class="hover:text-blue-600 transition-colors">Certifications</a>
-            </div>
+                <!-- Center Quick Navigation -->
+                <div class="flex flex-wrap items-center gap-5 sm:gap-6 text-xs text-slate-600 dark:text-slate-400 font-medium">
+                    <a href="index.html" class="hover:text-blue-600 transition-colors">Portfolio</a>
+                    <a href="events-organized.html" class="hover:text-blue-600 transition-colors text-blue-600 font-bold">Events (17+)</a>
+                    <a href="achievements.html" class="hover:text-blue-600 transition-colors">Achievements</a>
+                    <a href="open-source-contributions.html" class="hover:text-blue-600 transition-colors">Open Source</a>
+                    <a href="btech-journey.html" class="hover:text-blue-600 transition-colors">Journey</a>
+                    <a href="certifications.html" class="hover:text-blue-600 transition-colors">Certifications</a>
+                    <a href="assets/docs/Gautam_Kumar_Maurya_Resume.pdf" target="_blank" rel="noopener" class="hover:text-blue-600 transition-colors">Resume PDF</a>
+                </div>
 
-            <div class="text-xs text-slate-500">
-                &copy; 2026 Gautam Kumar Maurya. All rights reserved.
+                <!-- Right Share / Back to top -->
+                <div class="flex items-center gap-3">
+                    <button id="share-copy-btn" class="p-2.5 rounded-xl border border-slate-200 dark:border-slate-800 text-slate-500 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-slate-50 dark:hover:bg-slate-900 transition-colors" title="Copy Page Link">
+                        <i data-lucide="share-2" class="w-4 h-4"></i>
+                    </button>
+                    <a href="#hero" class="p-2.5 rounded-xl border border-slate-200 dark:border-slate-800 text-slate-500 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-slate-50 dark:hover:bg-slate-900 transition-colors" title="Back to top">
+                        <i data-lucide="chevron-up" class="w-4 h-4"></i>
+                    </a>
+                </div>
+
             </div>
         </div>
     </footer>
+
+    <!-- Copy Toast Notification -->
+    <div id="toast-notification" class="toast-msg fixed bottom-6 right-6 z-50 px-4 py-3 rounded-xl bg-slate-900 text-white text-xs font-semibold shadow-xl border border-slate-800 flex items-center gap-2 opacity-0 pointer-events-none transition-opacity duration-300">
+        <i data-lucide="check-circle" class="w-4 h-4 text-emerald-400"></i>
+        <span>Events page link copied to clipboard!</span>
+    </div>
 
     <!-- ═══════════════════════════════════════
          CLIENT-SIDE MULTI-DIMENSIONAL FILTER SCRIPT
@@ -2055,6 +2344,24 @@
             const bar = document.getElementById('scroll-progress');
             if (bar) bar.style.width = progress + '%';
         }, { passive: true });
+
+        // 7. Share / Copy Page Link
+        const shareCopyBtn = document.getElementById('share-copy-btn');
+        const toastNotification = document.getElementById('toast-notification');
+        if (shareCopyBtn && toastNotification) {
+            shareCopyBtn.addEventListener('click', () => {
+                if (navigator.clipboard) {
+                    navigator.clipboard.writeText(window.location.href).then(() => {
+                        toastNotification.classList.remove('opacity-0', 'pointer-events-none');
+                        toastNotification.classList.add('opacity-100');
+                        setTimeout(() => {
+                            toastNotification.classList.remove('opacity-100');
+                            toastNotification.classList.add('opacity-0', 'pointer-events-none');
+                        }, 2500);
+                    });
+                }
+            });
+        }
 
         // Initialize Lucide icons on load
         window.addEventListener('DOMContentLoaded', () => {
