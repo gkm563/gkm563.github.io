@@ -1660,5 +1660,52 @@ html:not(.dark) .terminal-tab-btn.active {
   color: #94A3B8;
 }
 
+/* ==========================================================================
+   MOCKUP ACCURATE HERO STYLES & FLOATING BADGE ANIMATIONS
+   ========================================================================== */
+.hero-dot-grid {
+  background-image: radial-gradient(rgba(148, 163, 184, 0.3) 1.5px, transparent 1.5px);
+  background-size: 24px 24px;
+}
+
+.dark .hero-dot-grid {
+  background-image: radial-gradient(rgba(71, 85, 105, 0.35) 1.5px, transparent 1.5px);
+}
+
+@keyframes heroBadgeFloatSlow {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-8px) rotate(-0.5deg);
+  }
+}
+
+@keyframes heroBadgeFloatDelayed {
+  0%, 100% {
+    transform: translateY(-6px) rotate(0.5deg);
+  }
+  50% {
+    transform: translateY(4px) rotate(0deg);
+  }
+}
+
+.animate-hero-float-1 {
+  animation: heroBadgeFloatSlow 5s ease-in-out infinite;
+}
+
+.animate-hero-float-2 {
+  animation: heroBadgeFloatDelayed 6s ease-in-out infinite;
+}
+
+.animate-hero-float-3 {
+  animation: heroBadgeFloatSlow 4.5s ease-in-out infinite 1s;
+}
+
+.hero-glow-aura {
+  background: radial-gradient(circle at 75% 35%, rgba(59, 130, 246, 0.14) 0%, rgba(99, 102, 241, 0.08) 40%, transparent 70%);
+}
+
+
 
 

@@ -433,31 +433,26 @@
     <header id="navbar" class="fixed top-0 left-0 right-0 z-50 glass-nav transition-all duration-300">
         <div class="nav-inner-wrapper max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
             
-            <!-- Brand Logo -->
-            <a href="#hero" class="flex items-center gap-3 group shrink-0 pl-1">
-                <span class="text-xl sm:text-2xl font-black text-slate-950 dark:text-white tracking-tight flex items-center font-heading">
-                    GKM<span class="w-2 h-2 rounded-full bg-blue-600 inline-block ml-1"></span>
-                </span>
-                <div class="hidden sm:flex flex-col leading-tight border-l border-slate-200 dark:border-slate-800 pl-3">
-                    <span class="font-bold text-xs sm:text-sm text-slate-900 dark:text-white">Gautam K. Maurya</span>
-                    <span class="text-[10px] sm:text-[11px] text-slate-500 dark:text-slate-400 font-medium">Engineer · Builder · Open Source</span>
-                </div>
+            <!-- Brand Logo (< /> GKM • from Mockup) -->
+            <a href="#hero" class="flex items-center gap-1.5 group shrink-0 pl-1 font-heading">
+                <span class="text-blue-600 font-mono font-bold text-2xl leading-none">&lt;/&gt;</span>
+                <span class="text-2xl sm:text-3xl font-black text-slate-950 dark:text-white tracking-tight">GKM</span>
+                <span class="w-2.5 h-2.5 rounded-full bg-blue-600 inline-block ml-0.5"></span>
             </a>
 
-            <!-- Desktop Nav Links -->
+            <!-- Desktop Nav Links (About, Work, Events, Open Source, Experience, Achievements, Journey, Contact) -->
             <nav class="hidden lg:flex items-center gap-5 xl:gap-7 text-sm font-medium">
-                <a href="#hero" class="mockup-nav-link active">Home</a>
+                <a href="#about" class="mockup-nav-link">About</a>
                 <a href="#projects" class="mockup-nav-link">Work</a>
                 <a href="./events-organized.html" class="mockup-nav-link">Events</a>
                 <a href="#opensource" class="mockup-nav-link">Open Source</a>
                 <a href="#experience" class="mockup-nav-link">Experience</a>
                 <a href="./achievements.html" class="mockup-nav-link">Achievements</a>
                 <a href="./btech-journey.html" class="mockup-nav-link">Journey</a>
-                <a href="#about" class="mockup-nav-link">About</a>
                 <a href="#contact" class="mockup-nav-link">Contact</a>
             </nav>
 
-            <!-- Action Buttons -->
+            <!-- Action Buttons (Theme Toggle & Pill Resume Button from Mockup) -->
             <div class="flex items-center gap-3 shrink-0 pr-1">
                 <!-- Theme Toggle Button -->
                 <button id="theme-toggle" aria-label="Toggle Theme" title="Toggle Theme" class="w-9 h-9 rounded-full border border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition-all flex items-center justify-center">
@@ -465,10 +460,10 @@
                     <i data-lucide="sun" class="w-4 h-4 block dark:hidden"></i>
                 </button>
 
-                <!-- Pill CTA: Let's Connect ↗ -->
-                <a href="#contact" class="hidden sm:inline-flex items-center gap-1.5 px-4 sm:px-5 py-2 rounded-full bg-slate-950 text-white hover:bg-slate-800 dark:bg-white dark:text-slate-950 dark:hover:bg-slate-200 text-xs sm:text-sm font-semibold shadow-sm transition-all">
-                    <span>Let's Connect</span>
-                    <i class="fa-solid fa-arrow-up-right-from-square text-[11px]"></i>
+                <!-- Pill CTA: Resume (Black pill from Mockup) -->
+                <a href="assets/docs/Gautam_Kumar_Maurya_Resume.pdf" target="_blank" rel="noopener" class="hidden sm:inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-slate-950 text-white hover:bg-slate-800 dark:bg-white dark:text-slate-950 dark:hover:bg-slate-200 text-xs sm:text-sm font-bold shadow-md transition-all">
+                    <i data-lucide="download" class="w-4 h-4"></i>
+                    <span>Resume</span>
                 </a>
 
                 <!-- Mobile Menu Hamburger Button -->
@@ -548,117 +543,212 @@
         <!-- ═══════════════════════════════════════
              2. HERO SECTION (MOCKUP ACCURATE)
         ═══════════════════════════════════════ -->
-        <section id="hero" class="relative overflow-hidden pt-10 pb-16 lg:pt-16 lg:pb-24">
-            <!-- Background Soft Ambient Glow -->
-            <div class="absolute top-0 right-1/4 w-96 h-96 rounded-full bg-indigo-500/10 dark:bg-indigo-600/15 blur-3xl pointer-events-none"></div>
-            <div class="absolute top-1/3 left-10 w-80 h-80 rounded-full bg-blue-500/10 dark:bg-blue-600/10 blur-3xl pointer-events-none"></div>
+        <section id="hero" class="relative overflow-hidden pt-8 pb-14 lg:pt-14 lg:pb-20 hero-dot-grid">
+            <!-- Ambient Blue / Indigo Background Glow -->
+            <div class="absolute top-1/4 right-10 w-[550px] h-[550px] bg-gradient-to-tr from-blue-500/15 via-sky-400/10 to-indigo-500/15 rounded-full blur-3xl pointer-events-none"></div>
+            <div class="absolute bottom-10 left-10 w-96 h-96 bg-blue-400/10 dark:bg-blue-600/10 rounded-full blur-3xl pointer-events-none"></div>
 
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-                <div class="grid lg:grid-cols-12 gap-8 lg:gap-6 items-center">
+                <div class="grid lg:grid-cols-12 gap-10 lg:gap-8 items-center">
                     
-                    <!-- Left Column: Eyebrow + Bold Headline + Bio + CTAs (5 cols) -->
-                    <div class="lg:col-span-5 flex flex-col items-start text-left">
-                        <!-- Eyebrow with live pulse -->
-                        <div class="flex items-center gap-3 mb-5">
-                            <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-50 dark:bg-blue-950/60 border border-blue-200/80 dark:border-blue-800/80 text-[11px] font-bold tracking-wider text-blue-600 dark:text-blue-400 uppercase">
-                                <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
-                                Available for Roles &amp; Research · Greater Allahabad Area
-                            </span>
+                    <!-- Left Column: Pills + Headline + Bio + Academics + CTAs + Socials (7 cols) -->
+                    <div class="lg:col-span-7 flex flex-col items-start text-left">
+                        
+                        <!-- Top Tag Pills from Mockup -->
+                        <div class="flex flex-wrap items-center gap-2.5 sm:gap-3 mb-5">
+                            <!-- Pill 1: >_ FULL-STACK DEVELOPER & OPEN SOURCE -->
+                            <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white dark:bg-slate-900 border-2 border-slate-900 dark:border-slate-300 text-[11px] sm:text-xs font-black uppercase tracking-wider text-slate-900 dark:text-white shadow-sm">
+                                <span class="font-mono font-bold text-sm leading-none">&gt;_</span>
+                                <span>FULL-STACK DEVELOPER &amp; OPEN SOURCE</span>
+                            </div>
+
+                            <!-- Pill 2: @gkm563 -->
+                            <a href="https://github.com/gkm563" target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-3.5 py-1.5 rounded-full bg-blue-100 dark:bg-blue-950/80 text-blue-600 dark:text-blue-400 text-xs font-bold hover:bg-blue-200 dark:hover:bg-blue-900 transition-colors shadow-sm">
+                                @gkm563
+                            </a>
                         </div>
 
-                        <!-- Main H1 Headline -->
-                        <h1 class="text-4xl sm:text-6xl xl:text-7xl font-black text-slate-950 dark:text-white tracking-tight leading-[1.04] mb-5">
-                            Build.<br>
-                            Solve.<br>
-                            <span class="text-indigo-600 dark:text-indigo-400">Create Impact.</span>
+                        <!-- Main Headline: Build. Solve. Create Impact. -->
+                        <h1 class="text-5xl sm:text-6xl xl:text-7xl font-black text-slate-950 dark:text-white tracking-tight leading-[1.06] mb-4 font-heading">
+                            Build. Solve.<br>
+                            <span class="text-blue-600">Create</span> Impact.
                         </h1>
 
-                        <!-- Bio -->
-                        <p class="text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed mb-3 max-w-lg">
-                            Hi, I'm <strong class="text-slate-950 dark:text-white font-bold">Gautam Kumar Maurya</strong> <span class="text-xs px-2 py-0.5 rounded-full bg-blue-100/70 dark:bg-blue-950/70 border border-blue-200/60 dark:border-blue-800/60 font-semibold text-blue-700 dark:text-blue-300">He/Him</span> — <strong class="text-slate-900 dark:text-white">WikiClub Tech Envoy @ UIT</strong> | <strong class="text-slate-900 dark:text-white">Vice President @ GFG UIT</strong> | <strong class="text-slate-900 dark:text-white">Co-Lead @ HackerRank UIT</strong> | <strong class="text-slate-900 dark:text-white">Campus Lead @ Open Source Connect</strong> | <strong class="text-slate-900 dark:text-white">Open Source Contributor @ Wikimedia</strong> | <strong class="text-slate-900 dark:text-white">Cybersecurity Trainee @ C3iHub,IIT Kanpur</strong> | <strong class="text-slate-900 dark:text-white">Full Stack Developer</strong>.
-                        </p>
-                        <p class="text-xs sm:text-sm text-slate-500 dark:text-slate-400 leading-relaxed mb-5 max-w-lg">
-                            <i class="fa-solid fa-location-dot text-rose-500 mr-1"></i><strong>Greater Allahabad Area</strong> (Prayagraj, India) · B.Tech CSE (Data Science) <strong>Academic Rank 1 Topper (SGPA 8.5)</strong> at United Institute of Technology (UIT Prayagraj).
+                        <!-- Subheadline -->
+                        <h2 class="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white mb-4">
+                            Full Stack Developer &amp; Open Source Contributor
+                        </h2>
+
+                        <!-- Bio Description -->
+                        <p class="text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed mb-6 max-w-2xl">
+                            Hi, I'm <strong class="text-slate-950 dark:text-white font-bold">Gautam Kumar Maurya</strong>, a B.Tech CSE (Data Science) student at UIT, Prayagraj. <strong class="text-slate-900 dark:text-white">Founding President @ UCC</strong>, <strong class="text-slate-900 dark:text-white">WikiClub Tech Envoy @ UIT</strong>, <strong class="text-slate-900 dark:text-white">Vice President @ GFG UIT</strong>, <strong class="text-slate-900 dark:text-white">Co-Lead @ HackerRank UIT</strong>, <strong class="text-slate-900 dark:text-white">Open Source Contributor @ Wikimedia</strong>, and <strong class="text-slate-900 dark:text-white">Cybersecurity Trainee @ C3iHub, IIT Kanpur</strong>. I love building practical solutions, contributing to open source, and learning new technologies to create real-world impact.
                         </p>
 
-                        <!-- Verified Highlights Strip -->
-                        <div class="flex flex-wrap gap-2 mb-6">
-                            <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-slate-800/80 text-xs font-semibold text-slate-700 dark:text-slate-300">
-                                <i class="fa-brands fa-wikipedia-w text-blue-600 dark:text-blue-400"></i> WikiClub Tech Envoy
-                            </span>
-                            <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-slate-800/80 text-xs font-semibold text-slate-700 dark:text-slate-300">
-                                <i class="fa-solid fa-users-gear text-emerald-600 dark:text-emerald-400"></i> VP @ GFG &amp; Co-Lead HR
-                            </span>
-                            <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-slate-800/80 text-xs font-semibold text-slate-700 dark:text-slate-300">
-                                <i class="fa-solid fa-code-branch text-indigo-600 dark:text-indigo-400"></i> 26+ Wikimedia Patches
-                            </span>
-                            <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-slate-800/80 text-xs font-semibold text-slate-700 dark:text-slate-300">
-                                <i class="fa-solid fa-shield text-sky-600 dark:text-sky-400"></i> C3iHub IIT-K Trainee
-                            </span>
-                            <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-slate-800/80 text-xs font-semibold text-slate-700 dark:text-slate-300">
-                                <i class="fa-solid fa-medal text-amber-600 dark:text-amber-400"></i> Rank 1 CSE (DS)
-                            </span>
+                        <!-- Academic & Merit Quick Info Box from Mockup -->
+                        <div class="w-full max-w-xl flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-6 p-4 rounded-2xl bg-white/90 dark:bg-slate-900/90 border border-slate-200/80 dark:border-slate-800 shadow-sm backdrop-blur-md mb-6">
+                            <!-- Academic Program -->
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 rounded-full bg-blue-100 dark:bg-blue-950/70 text-blue-600 dark:text-blue-400 flex items-center justify-center shrink-0 text-base shadow-sm">
+                                    <i class="fa-solid fa-graduation-cap"></i>
+                                </div>
+                                <div>
+                                    <div class="text-xs sm:text-sm font-bold text-slate-900 dark:text-white leading-tight">B.Tech CSE (Data Science)</div>
+                                    <div class="text-[11px] sm:text-xs text-slate-500 dark:text-slate-400 leading-tight mt-0.5">United Institute of Technology, Prayagraj</div>
+                                </div>
+                            </div>
+
+                            <!-- Divider -->
+                            <div class="hidden sm:block w-px h-8 bg-slate-200 dark:bg-slate-800"></div>
+
+                            <!-- Academic Rank -->
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 rounded-full bg-blue-100 dark:bg-blue-950/70 text-blue-600 dark:text-blue-400 flex items-center justify-center shrink-0 text-base shadow-sm">
+                                    <i class="fa-solid fa-chart-simple"></i>
+                                </div>
+                                <div>
+                                    <div class="text-xs sm:text-sm font-bold text-slate-900 dark:text-white leading-tight">Academic Rank 1 · SGPA 8.5</div>
+                                    <div class="text-[11px] sm:text-xs text-slate-500 dark:text-slate-400 leading-tight mt-0.5">UIT, Prayagraj</div>
+                                </div>
+                            </div>
                         </div>
 
-                        <!-- Buttons -->
-                        <div class="flex flex-wrap items-center gap-2.5 mb-6">
-                            <a href="#projects" class="px-5 py-3 rounded-full bg-slate-950 text-white hover:bg-slate-800 dark:bg-white dark:text-slate-950 dark:hover:bg-slate-200 text-xs sm:text-sm font-semibold transition-all flex items-center gap-2 shadow-sm hover:shadow-md">
+                        <!-- CTA Action Buttons from Mockup -->
+                        <div class="flex flex-wrap items-center gap-3.5 mb-6">
+                            <!-- Explore My Work Button (Blue Pill) -->
+                            <a href="#projects" class="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-blue-600 hover:bg-blue-700 text-white font-bold text-sm shadow-md hover:shadow-lg shadow-blue-500/25 transition-all group">
                                 <span>Explore My Work</span>
-                                <i class="fa-solid fa-arrow-right text-xs"></i>
+                                <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
                             </a>
-                            <a href="https://www.linkedin.com/in/gkm563/overlay/contact-info/" target="_blank" rel="noopener" class="px-4 py-3 rounded-full bg-blue-600 hover:bg-blue-700 text-white text-xs sm:text-sm font-semibold transition-all flex items-center gap-1.5 shadow-sm" title="View LinkedIn Contact Info">
-                                <i class="fa-brands fa-linkedin text-sm"></i>
-                                <span>Contact Info ↗</span>
-                            </a>
-                            <a href="#opensource" class="px-4 py-3 rounded-full bg-blue-50 dark:bg-blue-950/60 border border-blue-200 dark:border-blue-800 text-blue-600 dark:text-blue-400 hover:bg-blue-100 dark:hover:bg-blue-900/40 text-xs sm:text-sm font-semibold transition-all flex items-center gap-1.5">
-                                <i class="fa-brands fa-wikipedia-w text-xs"></i>
-                                <span>Open Source</span>
-                            </a>
-                            <a href="assets/docs/Gautam_Kumar_Maurya_Resume.pdf" target="_blank" rel="noopener" class="px-4 py-3 rounded-full bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-700 text-slate-800 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-800 text-xs sm:text-sm font-semibold transition-all flex items-center gap-1.5 shadow-sm">
-                                <i class="fa-solid fa-arrow-down text-xs"></i>
-                                <span>Resume</span>
+
+                            <!-- Growth Timeline Button (Amber Golden Pill with dark text and border) -->
+                            <a href="./btech-journey.html" class="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-amber-400 hover:bg-amber-500 text-slate-950 font-bold text-sm border-2 border-slate-950/20 shadow-sm hover:shadow-md transition-all group">
+                                <span>Growth Timeline</span>
+                                <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
                             </a>
                         </div>
+
+                        <!-- Social Icons Row below CTAs -->
+                        <div class="flex items-center gap-2.5">
+                            <a href="https://github.com/gkm563" target="_blank" rel="noopener noreferrer" aria-label="GitHub Profile" class="w-10 h-10 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-blue-400 hover:border-blue-300 dark:hover:border-blue-700 flex items-center justify-center transition-all shadow-sm hover:shadow-md hover:-translate-y-0.5">
+                                <i class="fa-brands fa-github text-base"></i>
+                            </a>
+                            <a href="https://www.linkedin.com/in/gkm563" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile" class="w-10 h-10 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-blue-400 hover:border-blue-300 dark:hover:border-blue-700 flex items-center justify-center transition-all shadow-sm hover:shadow-md hover:-translate-y-0.5">
+                                <i class="fa-brands fa-linkedin-in text-base"></i>
+                            </a>
+                            <a href="./open-source-contributions.html" aria-label="Wikimedia Open Source" class="w-10 h-10 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-blue-400 hover:border-blue-300 dark:hover:border-blue-700 flex items-center justify-center transition-all shadow-sm hover:shadow-md hover:-translate-y-0.5">
+                                <i class="fa-brands fa-wikipedia-w text-base"></i>
+                            </a>
+                            <a href="https://instagram.com/gkm563" target="_blank" rel="noopener noreferrer" aria-label="Instagram Profile" class="w-10 h-10 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 text-slate-700 dark:text-slate-200 hover:text-rose-600 dark:hover:text-rose-400 hover:border-rose-300 dark:hover:border-rose-700 flex items-center justify-center transition-all shadow-sm hover:shadow-md hover:-translate-y-0.5">
+                                <i class="fa-brands fa-instagram text-base"></i>
+                            </a>
+                            <a href="mailto:gkmwin563@gmail.com" aria-label="Send Email" class="w-10 h-10 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-blue-400 hover:border-blue-300 dark:hover:border-blue-700 flex items-center justify-center transition-all shadow-sm hover:shadow-md hover:-translate-y-0.5">
+                                <i class="fa-solid fa-envelope text-base"></i>
+                            </a>
+                        </div>
+
                     </div>
 
-                    <!-- Middle Column: Handwritten Accent + 4 Feature Pills (3 cols) -->
-                    <div class="lg:col-span-3 flex flex-col items-center lg:items-start justify-center">
-                        <div class="mb-5 flex flex-col items-center lg:items-start">
-                            <img src="assets/images/profile/handwritten_better_tech_trans.png" alt="Better Technology A Brighter Tomorrow" class="w-36 sm:w-44 h-auto dark:invert select-none pointer-events-none transform -rotate-1">
-                        </div>
-
-                        <!-- 4 Feature Pills -->
-                        <div class="flex flex-col gap-2.5 w-full max-w-xs">
-                            <div class="mockup-feature-pill">
-                                <div class="pill-icon"><i class="fa-solid fa-code"></i></div>
-                                <span>Full Stack Developer</span>
-                            </div>
-                            <div class="mockup-feature-pill">
-                                <div class="pill-icon"><i class="fa-brands fa-wikipedia-w"></i></div>
-                                <span>WikiClub Tech Envoy @ UIT</span>
-                            </div>
-                            <div class="mockup-feature-pill">
-                                <div class="pill-icon"><i class="fa-solid fa-shield-halved"></i></div>
-                                <span>Cyber Trainee @ C3iHub IIT-K</span>
-                            </div>
-                            <div class="mockup-feature-pill">
-                                <div class="pill-icon"><i class="fa-solid fa-people-roof"></i></div>
-                                <span>VP @ GFG &amp; Co-Lead HR</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Right Column: Gautam Portrait Composition (4 cols) -->
-                    <div class="lg:col-span-4 flex items-center justify-center relative">
+                    <!-- Right Column: Visual Showcase + Floating Badges + Stats Bar (5 cols) -->
+                    <div class="lg:col-span-5 flex flex-col items-center justify-center relative pt-6 lg:pt-0">
                         <div class="relative w-full max-w-md mx-auto">
-                            <div class="relative rounded-3xl overflow-hidden shadow-2xl border border-slate-200/80 dark:border-slate-800 bg-white/70 dark:bg-slate-900/60 backdrop-blur-xl group">
-                                <img src="assets/images/profile/gautam_hero_portrait_clean.jpg" alt="Gautam Kumar Maurya — Build for People, Scale for Impact" class="w-full h-auto object-contain select-none transform group-hover:scale-[1.01] transition-transform duration-500">
-                                <!-- Interactive Pulsing Live Dot overlay over the badge in the image -->
-                                <a href="#contact" class="absolute z-20 cursor-pointer group/dot" style="left:86.4%;top:74.6%;transform:translate(-50%,-50%);width:24px;height:24px;" title="Available for Full-Time &amp; Internships · Get in Touch">
-                                    <span class="absolute inset-0 rounded-full bg-emerald-400 animate-ping opacity-75"></span>
-                                    <span class="relative block w-3.5 h-3.5 mx-auto mt-1 rounded-full bg-emerald-500 shadow-sm shadow-emerald-500/50"></span>
-                                </a>
+                            
+                            <!-- Multi-layer Soft Background Glow -->
+                            <div class="absolute -inset-4 bg-gradient-to-tr from-blue-500/15 via-indigo-500/10 to-cyan-500/15 rounded-[3rem] blur-2xl pointer-events-none"></div>
+
+                            <!-- Rotated Cyan/Blue Geometric Background Accent Shape -->
+                            <div class="absolute inset-x-4 top-8 bottom-4 bg-gradient-to-br from-blue-100 via-sky-50 to-blue-200 dark:from-blue-950/40 dark:via-slate-800 dark:to-indigo-950/40 rounded-[2.5rem] transform -rotate-3 scale-[0.98] border border-blue-200/60 dark:border-blue-800/40 shadow-inner pointer-events-none"></div>
+
+                            <!-- Main Portrait Showcase Container -->
+                            <div class="relative rounded-[2.5rem] bg-gradient-to-b from-blue-50/90 via-sky-50/50 to-blue-100/70 dark:from-slate-800/90 dark:via-slate-900/70 dark:to-slate-800/90 border-2 border-blue-200/90 dark:border-blue-800/80 shadow-2xl p-6 sm:p-8 flex items-end justify-center overflow-visible min-h-[440px] sm:min-h-[480px]">
+                                
+                                <!-- Playful Comic Doodle Sparkles around Head (Left & Right) -->
+                                <svg class="absolute top-16 left-6 w-8 h-8 text-amber-400 pointer-events-none z-20 animate-pulse" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round">
+                                    <path d="M14 4c-3 3-3 8 0 11" />
+                                    <path d="M19 2c-5 5-5 14 0 19" />
+                                </svg>
+                                <svg class="absolute top-20 right-6 w-8 h-8 text-amber-400 pointer-events-none z-20 animate-pulse" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round">
+                                    <path d="M10 4c3 3 3 8 0 11" />
+                                    <path d="M5 2c5 5 5 14 0 19" />
+                                </svg>
+
+                                <!-- Floating Badge 1: Top Left (WikiClub Tech Envoy) -->
+                                <div class="absolute -top-4 -left-4 sm:-left-6 z-30 bg-white/95 dark:bg-slate-900/95 backdrop-blur-md px-4 py-2.5 rounded-2xl border border-blue-200/90 dark:border-blue-800/90 shadow-xl shadow-blue-500/10 flex items-center gap-3 animate-hero-float-1 hover:scale-105 transition-transform cursor-pointer">
+                                    <div class="w-9 h-9 rounded-xl bg-blue-100 dark:bg-blue-950/80 text-blue-600 dark:text-blue-400 flex items-center justify-center font-bold text-sm shrink-0">
+                                        <i class="fa-solid fa-users"></i>
+                                    </div>
+                                    <div>
+                                        <div class="text-xs font-bold text-slate-900 dark:text-white leading-tight">WikiClub Tech Envoy</div>
+                                        <div class="text-[10px] text-slate-500 dark:text-slate-400 leading-tight">@ UIT Prayagraj</div>
+                                    </div>
+                                </div>
+
+                                <!-- Floating Badge 2: Top Right (C3iHub IIT-K Trainee) -->
+                                <div class="absolute top-12 -right-4 sm:-right-6 z-30 bg-white/95 dark:bg-slate-900/95 backdrop-blur-md px-4 py-2.5 rounded-2xl border border-blue-200/90 dark:border-blue-800/90 shadow-xl shadow-blue-500/10 flex items-center gap-3 animate-hero-float-2 hover:scale-105 transition-transform cursor-pointer">
+                                    <div class="w-9 h-9 rounded-xl bg-blue-100 dark:bg-blue-950/80 text-blue-600 dark:text-blue-400 flex items-center justify-center font-bold text-sm shrink-0">
+                                        <i class="fa-solid fa-shield-halved"></i>
+                                    </div>
+                                    <div>
+                                        <div class="text-xs font-bold text-slate-900 dark:text-white leading-tight">C3iHub IIT-K Trainee</div>
+                                        <div class="text-[10px] text-slate-500 dark:text-slate-400 leading-tight">Cybersecurity</div>
+                                    </div>
+                                </div>
+
+                                <!-- Portrait Cutout Image -->
+                                <div class="relative z-10 w-full max-w-[280px] sm:max-w-[320px] aspect-[4/5] flex items-end justify-center">
+                                    <img src="assets/images/profile/gautam-kumar-maurya-wiki-cutout.png" 
+                                         alt="Gautam Kumar Maurya — Full Stack Developer &amp; Open Source Contributor" 
+                                         class="w-full h-full object-contain object-bottom drop-shadow-2xl select-none transform hover:scale-[1.02] transition-transform duration-500">
+                                </div>
+
+                                <!-- Floating Badge 3: Bottom Left Overlay (Open Source Contributor) -->
+                                <div class="absolute bottom-5 -left-3 sm:-left-5 z-30 bg-white/95 dark:bg-slate-900/95 backdrop-blur-md px-4 py-2.5 rounded-2xl border border-blue-200/90 dark:border-blue-800/90 shadow-xl shadow-blue-500/10 flex items-center gap-3 animate-hero-float-3 hover:scale-105 transition-transform cursor-pointer">
+                                    <div class="w-9 h-9 rounded-xl bg-blue-100 dark:bg-blue-950/80 text-blue-600 dark:text-blue-400 flex items-center justify-center font-bold text-sm shrink-0">
+                                        <span class="font-mono font-bold text-xs">&lt;/&gt;</span>
+                                    </div>
+                                    <div>
+                                        <div class="text-xs font-bold text-slate-900 dark:text-white leading-tight">Open Source Contributor</div>
+                                        <div class="text-[10px] text-slate-500 dark:text-slate-400 leading-tight">Wikimedia</div>
+                                    </div>
+                                </div>
+
                             </div>
+
+                            <!-- Bottom Stats Bar Card Underneath Portrait Container from Mockup -->
+                            <div class="mt-4 bg-white/95 dark:bg-slate-900/95 backdrop-blur-md rounded-2xl border border-slate-200/90 dark:border-slate-800 shadow-xl p-3.5 sm:p-4 flex items-center justify-between divide-x divide-slate-100 dark:divide-slate-800">
+                                <!-- Stat 1: 26+ Wikimedia Patches -->
+                                <div class="flex items-center gap-2 sm:gap-2.5 px-2 sm:px-3 flex-1 justify-center sm:justify-start">
+                                    <div class="w-8 h-8 rounded-lg bg-blue-50 dark:bg-blue-950/60 text-blue-600 dark:text-blue-400 flex items-center justify-center shrink-0 text-sm">
+                                        <i class="fa-solid fa-code-branch"></i>
+                                    </div>
+                                    <div>
+                                        <div class="text-xs sm:text-sm font-black text-slate-900 dark:text-white leading-tight">26+</div>
+                                        <div class="text-[9px] sm:text-[10px] text-slate-500 dark:text-slate-400 font-medium leading-tight">Wikimedia Patches</div>
+                                    </div>
+                                </div>
+
+                                <!-- Stat 2: Multiple Community Roles -->
+                                <div class="flex items-center gap-2 sm:gap-2.5 px-2 sm:px-3 flex-1 justify-center sm:justify-start">
+                                    <div class="w-8 h-8 rounded-lg bg-indigo-50 dark:bg-indigo-950/60 text-indigo-600 dark:text-indigo-400 flex items-center justify-center shrink-0 text-sm">
+                                        <i class="fa-solid fa-users-gear"></i>
+                                    </div>
+                                    <div>
+                                        <div class="text-xs sm:text-sm font-black text-slate-900 dark:text-white leading-tight">Multiple</div>
+                                        <div class="text-[9px] sm:text-[10px] text-slate-500 dark:text-slate-400 font-medium leading-tight">Community Roles</div>
+                                    </div>
+                                </div>
+
+                                <!-- Stat 3: Rank 1 SGPA 8.5 -->
+                                <div class="flex items-center gap-2 sm:gap-2.5 px-2 sm:px-3 flex-1 justify-center sm:justify-start">
+                                    <div class="w-8 h-8 rounded-lg bg-amber-50 dark:bg-amber-950/60 text-amber-500 flex items-center justify-center shrink-0 text-sm">
+                                        <i class="fa-solid fa-trophy"></i>
+                                    </div>
+                                    <div>
+                                        <div class="text-xs sm:text-sm font-black text-slate-900 dark:text-white leading-tight">Rank 1</div>
+                                        <div class="text-[9px] sm:text-[10px] text-slate-500 dark:text-slate-400 font-medium leading-tight">SGPA 8.5</div>
+                                    </div>
+                                </div>
+                            </div>
+
                         </div>
                     </div>
 
