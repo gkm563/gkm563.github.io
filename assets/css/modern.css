@@ -120,27 +120,27 @@ h1, h2, h3, h4, h5, h6 {
   width: 100% !important;
   max-width: 100% !important;
   z-index: 50;
-  border-radius: 0px;
-  background: rgba(248, 250, 252, 0.82);
+  border-radius: 0px !important;
+  background: rgba(255, 255, 255, 0.9) !important;
   backdrop-filter: blur(20px) saturate(180%);
   -webkit-backdrop-filter: blur(20px) saturate(180%);
-  border: 1px solid transparent;
-  border-bottom: 1px solid rgba(226, 232, 240, 0.7);
-  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.03);
-  transition: top 0.45s cubic-bezier(0.25, 1, 0.5, 1),
-              width 0.45s cubic-bezier(0.25, 1, 0.5, 1),
-              max-width 0.45s cubic-bezier(0.25, 1, 0.5, 1),
-              border-radius 0.45s cubic-bezier(0.25, 1, 0.5, 1),
-              border-color 0.4s ease,
-              background-color 0.4s ease,
-              box-shadow 0.45s cubic-bezier(0.25, 1, 0.5, 1) !important;
+  border: 1px solid transparent !important;
+  border-bottom: 1px solid rgba(226, 232, 240, 0.85) !important;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.03) !important;
+  transition: top 0.38s cubic-bezier(0.16, 1, 0.3, 1),
+              width 0.38s cubic-bezier(0.16, 1, 0.3, 1),
+              max-width 0.38s cubic-bezier(0.16, 1, 0.3, 1),
+              border-radius 0.38s cubic-bezier(0.16, 1, 0.3, 1),
+              border 0.3s ease,
+              background-color 0.3s ease,
+              box-shadow 0.38s cubic-bezier(0.16, 1, 0.3, 1) !important;
   will-change: top, width, border-radius, box-shadow;
 }
 
 .dark #navbar,
 .dark-theme #navbar {
-  background: rgba(11, 15, 25, 0.82);
-  border-bottom: 1px solid rgba(30, 41, 59, 0.7);
+  background: rgba(11, 15, 25, 0.9) !important;
+  border-bottom: 1px solid rgba(30, 41, 59, 0.85) !important;
 }
 
 #navbar .nav-inner-wrapper {
@@ -151,17 +151,17 @@ h1, h2, h3, h4, h5, h6 {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  transition: height 0.45s cubic-bezier(0.25, 1, 0.5, 1),
-              padding 0.45s cubic-bezier(0.25, 1, 0.5, 1) !important;
+  transition: height 0.38s cubic-bezier(0.16, 1, 0.3, 1),
+              padding 0.38s cubic-bezier(0.16, 1, 0.3, 1) !important;
 }
 
 /* Floating Capsule State */
 #navbar.floating-nav-active {
-  top: 0.85rem !important;
+  top: 0.75rem !important;
   width: min(calc(100% - 2rem), 1180px) !important;
   max-width: 1180px !important;
   border-radius: 9999px !important;
-  background: rgba(255, 255, 255, 0.94) !important;
+  background: rgba(255, 255, 255, 0.95) !important;
   backdrop-filter: blur(28px) saturate(200%) !important;
   -webkit-backdrop-filter: blur(28px) saturate(200%) !important;
   border: 1px solid rgba(226, 232, 240, 0.95) !important;
@@ -172,7 +172,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .dark #navbar.floating-nav-active,
 .dark-theme #navbar.floating-nav-active {
-  background: rgba(11, 17, 30, 0.92) !important;
+  background: rgba(11, 17, 30, 0.94) !important;
   border: 1px solid rgba(59, 130, 246, 0.28) !important;
   box-shadow: 0 20px 48px -10px rgba(0, 0, 0, 0.7), 
               0 0 30px rgba(59, 130, 246, 0.18),

@@ -60,19 +60,19 @@ document.addEventListener('DOMContentLoaded', () => {
   const navbar = document.getElementById('navbar');
   const progressBar = document.getElementById('scroll-progress');
   const sections = document.querySelectorAll('section[id]');
-  const navLinks = document.querySelectorAll('.nav-link');
+  const navLinks = document.querySelectorAll('.mockup-nav-link, .nav-link');
 
   let isTicking = false;
   let isNavFloating = false;
 
   function updateNavbar() {
-    const scrollPos = window.scrollY;
+    const scrollPos = window.scrollY || window.pageYOffset || document.documentElement.scrollTop;
     
     if (navbar) {
-      if (!isNavFloating && scrollPos > 40) {
+      if (!isNavFloating && scrollPos > 35) {
         navbar.classList.add('floating-nav-active');
         isNavFloating = true;
-      } else if (isNavFloating && scrollPos < 15) {
+      } else if (isNavFloating && scrollPos <= 20) {
         navbar.classList.remove('floating-nav-active');
         isNavFloating = false;
       }
@@ -110,12 +110,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function handleNavbarScroll() {
     if (!isTicking) {
-      window.requestAnimationFrame(updateNavbar);
+      window.requestAnimationFrame(() => {
+        updateNavbar();
+        isTicking = false;
+      });
       isTicking = true;
     }
   }
 
   window.addEventListener('scroll', handleNavbarScroll, { passive: true });
+  window.addEventListener('DOMContentLoaded', handleNavbarScroll);
   handleNavbarScroll();
 
   // --------------------------------------------------
