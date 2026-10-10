@@ -1805,6 +1805,38 @@ html:not(.dark) .terminal-tab-btn.active {
   }
 }
 
+/* ══════════════════════════════════════════════════
+   HERO CTA BUTTON GROUP MOBILE RESPONSIVENESS
+   ══════════════════════════════════════════════════ */
+.hero-cta-group {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  width: 100%;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.hero-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  text-align: center;
+}
+
+@media (min-width: 480px) {
+  .hero-cta-group {
+    flex-direction: row;
+    align-items: center;
+    width: auto;
+    gap: 0.875rem;
+  }
+  .hero-cta-btn {
+    width: auto;
+  }
+}
+
 
 
 
