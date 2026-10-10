@@ -1840,3 +1840,52 @@ html:not(.dark) .terminal-tab-btn.active {
 
 
 
+
+
+/* ══════════════════════════════════════════════════
+   WIKIMEDIA GERRIT PATCHES FILTER & CONSOLE STYLES
+   ══════════════════════════════════════════════════ */
+.patch-filter-btn {
+  background: rgba(248, 250, 252, 0.9);
+  border-color: rgba(226, 232, 240, 0.9);
+  color: #64748b;
+  cursor: pointer;
+  user-select: none;
+}
+.dark .patch-filter-btn {
+  background: rgba(30, 41, 59, 0.6);
+  border-color: rgba(51, 65, 85, 0.8);
+  color: #94a3b8;
+}
+.patch-filter-btn:hover {
+  background: rgba(241, 245, 249, 1);
+  color: #0f172a;
+  border-color: rgba(203, 213, 225, 1);
+}
+.dark .patch-filter-btn:hover {
+  background: rgba(51, 65, 85, 0.9);
+  color: #ffffff;
+  border-color: rgba(71, 85, 105, 1);
+}
+.patch-filter-btn.active {
+  background: #2563eb !important;
+  color: #ffffff !important;
+  border-color: #2563eb !important;
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25) !important;
+}
+.dark .patch-filter-btn.active {
+  background: #3b82f6 !important;
+  color: #ffffff !important;
+  border-color: #3b82f6 !important;
+  box-shadow: 0 4px 14px rgba(59, 130, 246, 0.35) !important;
+}
+
+.patch-card {
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.patch-card:hover {
+  border-color: rgba(37, 99, 235, 0.45);
+}
+.dark .patch-card:hover {
+  border-color: rgba(59, 130, 246, 0.45);
+}

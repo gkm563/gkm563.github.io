@@ -373,6 +373,100 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+  // --------------------------------------------------
+  // 11. Wikimedia Gerrit Patches Filter & Live Search
+  // --------------------------------------------------
+  const patchFilterBtns = document.querySelectorAll('.patch-filter-btn');
+  const patchCards = document.querySelectorAll('.patch-card');
+  const patchSearchInput = document.getElementById('patch-search-input');
+  const noPatchesFound = document.getElementById('no-patches-found');
+
+  function filterPatches() {
+    const activeBtn = document.querySelector('.patch-filter-btn.active');
+    const filter = activeBtn ? activeBtn.getAttribute('data-filter') : 'all';
+    const query = patchSearchInput ? patchSearchInput.value.trim().toLowerCase() : '';
+
+    let visibleCount = 0;
+
+    patchCards.forEach(card => {
+      const status = card.getAttribute('data-status');
+      const category = card.getAttribute('data-category');
+      const tech = card.getAttribute('data-tech');
+      const text = card.textContent.toLowerCase();
+
+      let matchesFilter = false;
+      if (filter === 'all') {
+        matchesFilter = true;
+      } else if (filter === 'merged' && status === 'merged') {
+        matchesFilter = true;
+      } else if (filter === 'review' && status === 'review') {
+        matchesFilter = true;
+      } else if (filter === 'core' && category === 'core') {
+        matchesFilter = true;
+      } else if (filter === 'extensions' && category === 'extensions') {
+        matchesFilter = true;
+      } else if (filter === 'python' && tech === 'python') {
+        matchesFilter = true;
+      }
+
+      const matchesSearch = !query || text.includes(query);
+
+      if (matchesFilter && matchesSearch) {
+        card.style.display = 'flex';
+        visibleCount++;
+      } else {
+        card.style.display = 'none';
+      }
+    });
+
+    if (noPatchesFound) {
+      if (visibleCount === 0) {
+        noPatchesFound.classList.remove('hidden');
+      } else {
+        noPatchesFound.classList.add('hidden');
+      }
+    }
+  }
+
+  if (patchFilterBtns.length > 0 && patchCards.length > 0) {
+    patchFilterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        patchFilterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        filterPatches();
+      });
+    });
+  }
+
+  if (patchSearchInput) {
+    patchSearchInput.addEventListener('input', () => {
+      filterPatches();
+    });
+  }
+
+  // Copy git fetch command buttons
+  const copyFetchBtns = document.querySelectorAll('.copy-fetch-btn');
+  copyFetchBtns.forEach(btn => {
+    btn.addEventListener('click', async (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      const cmd = btn.getAttribute('data-cmd');
+      if (!cmd) return;
+      try {
+        await navigator.clipboard.writeText(cmd);
+        const originalHTML = btn.innerHTML;
+        btn.innerHTML = '<i data-lucide="check" class="w-3.5 h-3.5 text-emerald-500"></i><span class="text-emerald-500 font-bold">Copied!</span>';
+        if (window.lucide) window.lucide.createIcons();
+        setTimeout(() => {
+          btn.innerHTML = originalHTML;
+          if (window.lucide) window.lucide.createIcons();
+        }, 2000);
+      } catch (err) {
+        console.error('Failed to copy git command:', err);
+      }
+    });
+  });
+
   // NOTE: GSAP animations and magnetic buttons are handled
   // by assets/js/gkm-animations.js (loaded after this file)
 });
