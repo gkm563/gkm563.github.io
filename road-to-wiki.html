@@ -428,7 +428,7 @@
     <!-- ═══════════════════════════════════════
          1. STICKY / FLOATING CAPSULE NAVBAR
     ═══════════════════════════════════════ -->
-    <header id="navbar" class="fixed top-0 left-0 right-0 z-40 glass-nav transition-all duration-300">
+    <header id="navbar" class="fixed top-0 left-1/2 -translate-x-1/2 z-50 glass-nav transition-all duration-300">
         <div class="nav-inner-wrapper max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
             
             <!-- Brand Logo (< /> GKM • canonical brand) -->
@@ -474,7 +474,7 @@
     </header>
 
     <!-- Mobile Drawer Overlay & Panel -->
-    <div id="mobile-drawer" class="fixed inset-0 z-50 bg-slate-950/60 backdrop-blur-md translate-x-full transition-transform duration-300 lg:hidden">
+    <div id="mobile-drawer" class="fixed inset-0 z-[100] bg-slate-950/60 backdrop-blur-md translate-x-full transition-transform duration-300 lg:hidden">
         <div class="absolute inset-0 bg-slate-900/50 backdrop-blur-sm" id="mobile-drawer-close"></div>
         <div class="relative ml-auto w-4/5 max-w-sm h-full bg-white dark:bg-slate-900 shadow-2xl p-6 flex flex-col justify-between overflow-y-auto">
             <div>
@@ -484,19 +484,19 @@
                         <span class="font-black text-2xl tracking-tight text-slate-950 dark:text-white">GKM</span>
                         <span class="w-2.5 h-2.5 rounded-full bg-blue-600 inline-block ml-0.5"></span>
                     </div>
-                    <button id="mobile-drawer-close-btn" class="p-2 rounded-xl text-slate-500 hover:bg-slate-100 dark:hover:bg-slate-800">
+                    <button id="mobile-drawer-close-btn" aria-label="Close Navigation Menu" class="p-2 rounded-xl text-slate-500 hover:bg-slate-100 dark:hover:bg-slate-800">
                         <i data-lucide="x" class="w-5 h-5"></i>
                     </button>
                 </div>
 
                 <div class="py-6 space-y-4">
-                    <a href="index.html" class="block py-2 text-sm font-medium text-slate-700 dark:text-slate-300 hover:text-blue-600">Overview</a>
-                    <a href="open-source-contributions.html" class="block py-2 text-sm font-medium text-slate-700 dark:text-slate-300 hover:text-blue-600">Open Source Patches</a>
-                    <a href="road-to-wiki.html" class="block py-2 text-sm font-bold text-wiki-blue">Road to Wiki (Cohort 2)</a>
-                    <a href="events-organized.html" class="block py-2 text-sm font-medium text-slate-700 dark:text-slate-300 hover:text-blue-600">Events Organised (17+)</a>
-                    <a href="achievements.html" class="block py-2 text-sm font-medium text-slate-700 dark:text-slate-300 hover:text-blue-600">Achievements</a>
-                    <a href="btech-journey.html" class="block py-2 text-sm font-medium text-slate-700 dark:text-slate-300 hover:text-blue-600">Journey</a>
-                    <a href="assets/docs/Gautam_Kumar_Maurya_Resume.pdf" target="_blank" rel="noopener" class="block py-2 text-sm font-medium text-slate-700 dark:text-slate-300 hover:text-blue-600">Resume PDF</a>
+                    <a href="index.html" class="mobile-nav-link block py-2 text-sm font-medium text-slate-700 dark:text-slate-300 hover:text-blue-600">Overview</a>
+                    <a href="open-source-contributions.html" class="mobile-nav-link block py-2 text-sm font-medium text-slate-700 dark:text-slate-300 hover:text-blue-600">Open Source Patches</a>
+                    <a href="road-to-wiki.html" class="mobile-nav-link block py-2 text-sm font-bold text-wiki-blue">Road to Wiki (Cohort 2)</a>
+                    <a href="events-organized.html" class="mobile-nav-link block py-2 text-sm font-medium text-slate-700 dark:text-slate-300 hover:text-blue-600">Events Organised (17+)</a>
+                    <a href="achievements.html" class="mobile-nav-link block py-2 text-sm font-medium text-slate-700 dark:text-slate-300 hover:text-blue-600">Achievements</a>
+                    <a href="btech-journey.html" class="mobile-nav-link block py-2 text-sm font-medium text-slate-700 dark:text-slate-300 hover:text-blue-600">Journey</a>
+                    <a href="assets/docs/Gautam_Kumar_Maurya_Resume.pdf" target="_blank" rel="noopener" class="mobile-nav-link block py-2 text-sm font-medium text-slate-700 dark:text-slate-300 hover:text-blue-600">Resume PDF</a>
                 </div>
             </div>
 

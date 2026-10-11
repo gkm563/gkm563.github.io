@@ -123,31 +123,65 @@ document.addEventListener('DOMContentLoaded', () => {
   handleNavbarScroll();
 
   // --------------------------------------------------
-  // 3. Mobile Navigation Drawer Toggle
+  // 3. Mobile Navigation Drawer Toggle (Rock-Solid Mobile Experience)
   // --------------------------------------------------
   const mobileMenuBtn = document.getElementById('mobile-menu-btn');
   const mobileDrawer = document.getElementById('mobile-drawer');
   const mobileDrawerClose = document.getElementById('mobile-drawer-close');
-  const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+  const mobileDrawerCloseBtn = document.getElementById('mobile-drawer-close-btn');
+  const mobileNavLinks = document.querySelectorAll('.mobile-nav-link, #mobile-drawer a');
+
+  const openMobileDrawer = (e) => {
+    if (e) {
+      e.preventDefault();
+      e.stopPropagation();
+    }
+    if (mobileDrawer) {
+      mobileDrawer.classList.remove('translate-x-full');
+      document.body.style.overflow = 'hidden';
+      document.documentElement.style.overflow = 'hidden';
+    }
+  };
+
+  const closeMobileDrawer = (e) => {
+    if (e && e.preventDefault) {
+      e.stopPropagation();
+    }
+    if (mobileDrawer) {
+      mobileDrawer.classList.add('translate-x-full');
+      document.body.style.overflow = '';
+      document.documentElement.style.overflow = '';
+    }
+  };
 
   if (mobileMenuBtn && mobileDrawer) {
-    mobileMenuBtn.addEventListener('click', () => {
-      mobileDrawer.classList.remove('translate-x-full');
-    });
+    mobileMenuBtn.addEventListener('click', openMobileDrawer);
   }
 
   if (mobileDrawerClose && mobileDrawer) {
-    mobileDrawerClose.addEventListener('click', () => {
-      mobileDrawer.classList.add('translate-x-full');
-    });
+    mobileDrawerClose.addEventListener('click', closeMobileDrawer);
   }
+
+  if (mobileDrawerCloseBtn && mobileDrawer) {
+    mobileDrawerCloseBtn.addEventListener('click', closeMobileDrawer);
+  }
+
+  // Also catch any button or backdrop with data-close-drawer
+  document.querySelectorAll('[data-close-drawer], .close-drawer-btn').forEach(btn => {
+    btn.addEventListener('click', closeMobileDrawer);
+  });
 
   mobileNavLinks.forEach(link => {
     link.addEventListener('click', () => {
-      if (mobileDrawer) {
-        mobileDrawer.classList.add('translate-x-full');
-      }
+      closeMobileDrawer();
     });
+  });
+
+  // Close on Escape key press
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && mobileDrawer && !mobileDrawer.classList.contains('translate-x-full')) {
+      closeMobileDrawer();
+    }
   });
 
   // --------------------------------------------------

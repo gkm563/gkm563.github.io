@@ -155,13 +155,13 @@ h1, h2, h3, h4, h5, h6 {
               padding 0.38s cubic-bezier(0.16, 1, 0.3, 1) !important;
 }
 
-/* Floating Capsule State */
+/* Floating Capsule State — Mathematically Centered across all screens */
 #navbar.floating-nav-active {
   top: 0.75rem !important;
-  left: 0 !important;
-  right: 0 !important;
-  margin-left: auto !important;
-  margin-right: auto !important;
+  left: 50% !important;
+  right: auto !important;
+  transform: translateX(-50%) !important;
+  margin: 0 !important;
   width: min(calc(100% - 2rem), 1260px) !important;
   max-width: 1260px !important;
   border-radius: 9999px !important;
@@ -199,26 +199,56 @@ h1, h2, h3, h4, h5, h6 {
 
 @media (max-width: 1024px) {
   #navbar.floating-nav-active {
-    top: 0.6rem !important;
+    top: 0.5rem !important;
+    left: 50% !important;
+    right: auto !important;
+    transform: translateX(-50%) !important;
+    margin: 0 !important;
     width: calc(100% - 1.25rem) !important;
-    border-radius: 1.25rem !important;
+    max-width: calc(100% - 1.25rem) !important;
+    border-radius: 9999px !important;
   }
   #navbar.floating-nav-active .nav-inner-wrapper {
     height: 3.5rem !important;
-    padding: 0 1.25rem !important;
+    padding: 0 1rem !important;
   }
 }
 
 @media (max-width: 640px) {
   #navbar.floating-nav-active {
-    top: 0.45rem !important;
-    width: calc(100% - 0.75rem) !important;
-    border-radius: 1rem !important;
+    top: 0.4rem !important;
+    left: 50% !important;
+    right: auto !important;
+    transform: translateX(-50%) !important;
+    margin: 0 !important;
+    width: calc(100% - 1rem) !important;
+    max-width: calc(100% - 1rem) !important;
+    border-radius: 9999px !important;
   }
   #navbar.floating-nav-active .nav-inner-wrapper {
-    height: 3.4rem !important;
-    padding: 0 1rem !important;
+    height: 3.25rem !important;
+    padding: 0 0.75rem !important;
   }
+}
+
+/* ══════════════════════════════════════════════════
+   MOBILE NAVIGATION DRAWER OVERLAY & PANEL
+   ══════════════════════════════════════════════════ */
+#mobile-drawer {
+  position: fixed !important;
+  inset: 0 !important;
+  z-index: 1000 !important;
+  pointer-events: none;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease !important;
+}
+
+#mobile-drawer:not(.translate-x-full) {
+  pointer-events: auto !important;
+}
+
+#mobile-drawer > div:last-child {
+  touch-action: pan-y;
+  -webkit-overflow-scrolling: touch;
 }
 
 /* Nav Link Hover & Active State Indicator */
