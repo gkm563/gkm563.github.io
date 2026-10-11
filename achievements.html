@@ -47,7 +47,7 @@
     <link rel="apple-touch-icon" href="./assets/css/apple-touch-icon.png">
 
     <!-- Compiled Static Tailwind CSS Bundle -->
-    <link rel="stylesheet" href="./assets/css/portfolio.min.css">
+    <link rel="stylesheet" href="./assets/css/portfolio.min.css?v=20261011c">
 
     <!-- DNS Prefetch & Preconnect -->
     <link rel="dns-prefetch" href="//fonts.googleapis.com">
@@ -76,7 +76,7 @@
     <script src="https://unpkg.com/lucide@latest" defer></script>
 
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="./assets/css/modern.css">
+    <link rel="stylesheet" href="./assets/css/modern.css?v=20261011c">
 </head>
 
 <body class="bg-slate-50 text-slate-900 dark:bg-slate-950 dark:text-slate-100 min-h-screen font-sans transition-colors duration-300 relative overflow-x-hidden">
@@ -1219,10 +1219,15 @@
         if (mobileMenuBtn && mobileDrawer) {
             mobileMenuBtn.addEventListener('click', () => {
                 mobileDrawer.classList.remove('translate-x-full');
+                document.body.style.overflow = 'hidden';
             });
-            const closeDrawer = () => mobileDrawer.classList.add('translate-x-full');
+            const closeDrawer = () => {
+                mobileDrawer.classList.add('translate-x-full');
+                document.body.style.overflow = '';
+            };
             if (mobileDrawerClose) mobileDrawerClose.addEventListener('click', closeDrawer);
             if (mobileDrawerCloseBtn) mobileDrawerCloseBtn.addEventListener('click', closeDrawer);
+            mobileDrawer.querySelectorAll('a').forEach(a => a.addEventListener('click', closeDrawer));
         }
 
         // 3. Multi-Category Filter Logic

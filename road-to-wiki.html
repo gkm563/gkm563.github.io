@@ -68,7 +68,7 @@
     <link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png">
 
     <!-- Compiled Static Tailwind CSS Bundle -->
-    <link rel="stylesheet" href="./assets/css/portfolio.min.css">
+    <link rel="stylesheet" href="./assets/css/portfolio.min.css?v=20261011c">
 
     <!-- DNS Prefetch & Preconnect -->
     <link rel="dns-prefetch" href="//fonts.googleapis.com">
@@ -97,7 +97,7 @@
     <script src="https://unpkg.com/lucide@latest" defer></script>
 
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="./assets/css/modern.css">
+    <link rel="stylesheet" href="./assets/css/modern.css?v=20261011c">
 
     <!-- Schema.org JSON-LD Structured Data (Deep Entity Graph for SEO, AEO & GEO) -->
     <script type="application/ld+json">
@@ -2082,10 +2082,15 @@
         if (mobileMenuBtn && mobileDrawer) {
             mobileMenuBtn.addEventListener('click', () => {
                 mobileDrawer.classList.remove('translate-x-full');
+                document.body.style.overflow = 'hidden';
             });
-            const closeDrawer = () => mobileDrawer.classList.add('translate-x-full');
+            const closeDrawer = () => {
+                mobileDrawer.classList.add('translate-x-full');
+                document.body.style.overflow = '';
+            };
             if (mobileDrawerClose) mobileDrawerClose.addEventListener('click', closeDrawer);
             if (mobileDrawerCloseBtn) mobileDrawerCloseBtn.addEventListener('click', closeDrawer);
+            mobileDrawer.querySelectorAll('a').forEach(a => a.addEventListener('click', closeDrawer));
         }
 
         // 3. Scroll Progress Bar & Floating Nav
