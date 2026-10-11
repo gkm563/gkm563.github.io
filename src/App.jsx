@@ -191,12 +191,13 @@ export default function App() {
           </a>
 
           {/* Desktop Navigation Links */}
-          <nav className="hidden lg:flex items-center gap-6 text-sm font-medium text-slate-600 dark:text-slate-300">
+          <nav className="hidden lg:flex items-center gap-5 text-sm font-medium text-slate-600 dark:text-slate-300">
             <a href="index.html" className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors flex items-center gap-1">
               <ArrowLeft className="w-3.5 h-3.5" />
               <span>Back to Portfolio</span>
             </a>
-            <a href="events.html" className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Events</a>
+            <a href="road-to-wiki.html" className="hover:text-emerald-600 dark:text-emerald-400 transition-colors font-semibold">Road to Wiki</a>
+            <a href="events-organized.html" className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Events (17+)</a>
             <a href="certifications.html" className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Certifications</a>
             <a href="achievements.html" className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Achievements</a>
             <a href="ait-global-innovation-internship.html" className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">GIIP Thailand</a>
@@ -258,7 +259,8 @@ export default function App() {
                   <ArrowLeft className="w-4 h-4 text-blue-600" />
                   <span>Main Portfolio Home</span>
                 </a>
-                <a href="events.html" className="p-2.5 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 text-purple-600 dark:text-purple-400 font-semibold">Events Organised (10+)</a>
+                <a href="road-to-wiki.html" className="p-2.5 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 text-emerald-600 dark:text-emerald-400 font-semibold">Road to Wiki Fellowship</a>
+                <a href="events-organized.html" className="p-2.5 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 text-purple-600 dark:text-purple-400 font-semibold">Events Organised (17+)</a>
                 <a href="certifications.html" className="p-2.5 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800">40+ Certifications</a>
                 <a href="achievements.html" className="p-2.5 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800">Honors & Awards</a>
                 <a href="index.html#projects" className="p-2.5 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800">Projects</a>
@@ -267,6 +269,10 @@ export default function App() {
               </nav>
 
               <div className="mt-6 pt-6 border-t border-slate-200 dark:border-slate-800 flex flex-col gap-2">
+                <a href="./road-to-wiki.html" className="p-2.5 rounded-xl bg-emerald-50 dark:bg-emerald-950/40 text-emerald-600 dark:text-emerald-400 font-medium text-sm flex items-center justify-between">
+                  <span>Road to Wiki Conclave</span>
+                  <ArrowUpRight className="w-4 h-4" />
+                </a>
                 <a href="./ait-global-innovation-internship.html" className="p-2.5 rounded-xl bg-blue-50 dark:bg-blue-950/40 text-blue-600 dark:text-blue-400 font-medium text-sm flex items-center justify-between">
                   <span>GIIP-2026 Thailand</span>
                   <ArrowUpRight className="w-4 h-4" />
@@ -275,7 +281,7 @@ export default function App() {
                   <span>APCSIP-2026 Cyber</span>
                   <ArrowUpRight className="w-4 h-4" />
                 </a>
-                <a href="./open-source-contributions.html" className="p-2.5 rounded-xl bg-emerald-50 dark:bg-emerald-950/40 text-emerald-600 dark:text-emerald-400 font-medium text-sm flex items-center justify-between">
+                <a href="./open-source-contributions.html" className="p-2.5 rounded-xl bg-purple-50 dark:bg-purple-950/40 text-purple-600 dark:text-purple-400 font-medium text-sm flex items-center justify-between">
                   <span>Wikimedia Open Source</span>
                   <ArrowUpRight className="w-4 h-4" />
                 </a>
@@ -846,11 +852,13 @@ export default function App() {
                 Special Impact Portals
               </div>
               <ul className="space-y-1.5 text-xs text-slate-500 dark:text-slate-400 font-medium">
+                <li><a href="road-to-wiki.html" className="hover:text-emerald-500 transition-colors">Road to Wiki Fellowship &amp; Conclave</a></li>
+                <li><a href="open-source-contributions.html" className="hover:text-blue-500 transition-colors">MediaWiki Open Source Gerrit Patches</a></li>
                 <li><a href="ait-global-innovation-internship.html" className="hover:text-blue-500 transition-colors">AIT Bangkok International Research</a></li>
                 <li><a href="up-police-internship.html" className="hover:text-blue-500 transition-colors">UP Police Cyber Security Fellowship</a></li>
-                <li><a href="open-source-contributions.html" className="hover:text-blue-500 transition-colors">MediaWiki Open Source Gerrit Patches</a></li>
-                <li><a href="https://prayagrajrooms.in" target="_blank" rel="noopener noreferrer" className="hover:text-blue-500 transition-colors">PrayagrajRooms Housing Platform</a></li>
-                <li><a href="faq.html" className="hover:text-blue-500 transition-colors">Frequently Asked Questions & Contact</a></li>
+                <li><a href="events-organized.html" className="hover:text-purple-500 transition-colors">17+ Flagship Events Organised</a></li>
+                <li><a href="certifications.html" className="hover:text-cyan-500 transition-colors">40+ Verified Credentials Archive</a></li>
+                <li><a href="faq.html" className="hover:text-blue-500 transition-colors">Recruiter FAQ &amp; Quick Answers</a></li>
               </ul>
             </div>
 

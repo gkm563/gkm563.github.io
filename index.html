@@ -440,16 +440,17 @@
                 <span class="w-2.5 h-2.5 rounded-full bg-blue-600 inline-block ml-0.5"></span>
             </a>
 
-            <!-- Desktop Nav Links (About, Work, Events, Open Source, Experience, Achievements, Journey, Contact) -->
-            <nav class="hidden lg:flex items-center gap-5 xl:gap-7 text-sm font-medium">
-                <a href="#about" class="mockup-nav-link">About</a>
-                <a href="#projects" class="mockup-nav-link">Work</a>
-                <a href="./events-organized.html" class="mockup-nav-link">Events</a>
+            <!-- Desktop Nav Links (Projects, Open Source, Experience, Education, Skills, Leadership, Awards, Events, Dossiers, Contact) -->
+            <nav class="hidden lg:flex items-center gap-4 xl:gap-6 text-sm font-medium">
+                <a href="#projects" class="mockup-nav-link">Projects</a>
                 <a href="#opensource" class="mockup-nav-link">Open Source</a>
-                <a href="./road-to-wiki.html" class="mockup-nav-link">Road to Wiki</a>
                 <a href="#experience" class="mockup-nav-link">Experience</a>
-                <a href="./achievements.html" class="mockup-nav-link">Achievements</a>
-                <a href="./btech-journey.html" class="mockup-nav-link">Journey</a>
+                <a href="#education" class="mockup-nav-link">Education</a>
+                <a href="#skills" class="mockup-nav-link">Skills</a>
+                <a href="#leadership" class="mockup-nav-link">Leadership</a>
+                <a href="#achievements" class="mockup-nav-link">Awards</a>
+                <a href="#events" class="mockup-nav-link">Events</a>
+                <a href="#deep-dives" class="mockup-nav-link text-blue-600 dark:text-blue-400 font-bold">Dossiers</a>
                 <a href="#contact" class="mockup-nav-link">Contact</a>
             </nav>
 
@@ -490,47 +491,76 @@
                     </button>
                 </div>
 
-                <nav class="mt-6 flex flex-col gap-3 text-base font-medium text-slate-700 dark:text-slate-200">
-                    <a href="#about" class="mobile-nav-link p-2.5 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800">About</a>
-                    <a href="#skills" class="mobile-nav-link p-2.5 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800">Skills</a>
-                    <a href="#projects" class="mobile-nav-link p-2.5 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800">Projects</a>
-                    <a href="#experience" class="mobile-nav-link p-2.5 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800">Internships</a>
-                    <a href="#leadership" class="mobile-nav-link p-2.5 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800">Leadership</a>
-                                        <a href="#contact" class="mobile-nav-link p-2.5 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800">Contact</a>
+                <nav class="mt-6 flex flex-col gap-2.5 text-sm font-medium text-slate-700 dark:text-slate-200">
+                    <a href="#projects" class="mobile-nav-link p-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 flex items-center gap-2">
+                        <i data-lucide="folder-code" class="w-4 h-4 text-blue-600"></i> Featured Projects
+                    </a>
+                    <a href="#opensource" class="mobile-nav-link p-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 flex items-center gap-2">
+                        <i class="fa-brands fa-wikipedia-w text-purple-600 text-xs"></i> Open Source (26+ Patches)
+                    </a>
+                    <a href="#experience" class="mobile-nav-link p-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 flex items-center gap-2">
+                        <i data-lucide="briefcase" class="w-4 h-4 text-indigo-600"></i> Experience &amp; Fellowships
+                    </a>
+                    <a href="#education" class="mobile-nav-link p-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 flex items-center gap-2">
+                        <i data-lucide="graduation-cap" class="w-4 h-4 text-blue-600"></i> Education (Rank 1)
+                    </a>
+                    <a href="#skills" class="mobile-nav-link p-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 flex items-center gap-2">
+                        <i data-lucide="cpu" class="w-4 h-4 text-emerald-600"></i> Technical Skills
+                    </a>
+                    <a href="#leadership" class="mobile-nav-link p-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 flex items-center gap-2">
+                        <i data-lucide="users" class="w-4 h-4 text-rose-600"></i> Leadership &amp; Community
+                    </a>
+                    <a href="#achievements" class="mobile-nav-link p-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 flex items-center gap-2">
+                        <i data-lucide="trophy" class="w-4 h-4 text-amber-500"></i> Awards &amp; Honors
+                    </a>
+                    <a href="#events" class="mobile-nav-link p-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 flex items-center gap-2">
+                        <i data-lucide="calendar" class="w-4 h-4 text-purple-600"></i> Events Organised (17+)
+                    </a>
+                    <a href="#deep-dives" class="mobile-nav-link p-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 flex items-center gap-2 font-bold text-blue-600 dark:text-blue-400">
+                        <i data-lucide="layers" class="w-4 h-4"></i> Master Dossiers &amp; Hubs
+                    </a>
+                    <a href="#contact" class="mobile-nav-link p-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 flex items-center gap-2">
+                        <i data-lucide="mail" class="w-4 h-4 text-slate-500"></i> Contact
+                    </a>
                 </nav>
 
-                <div class="mt-6 pt-6 border-t border-slate-200 dark:border-slate-800 flex flex-col gap-2">
-                    <a href="./btech-journey.html" class="p-2.5 rounded-xl bg-blue-50 dark:bg-blue-950/40 text-blue-600 dark:text-blue-400 font-medium text-sm flex items-center justify-between">
-                        <span>B.Tech 4-Year Journey</span>
-                        <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+                <div class="mt-5 pt-5 border-t border-slate-200 dark:border-slate-800 flex flex-col gap-2">
+                    <span class="text-[10px] font-bold text-slate-400 uppercase tracking-wider px-2">Dedicated Portals</span>
+                    <a href="./road-to-wiki.html" class="p-2 rounded-xl bg-blue-50 dark:bg-blue-950/40 text-blue-600 dark:text-blue-400 font-bold text-xs flex items-center justify-between">
+                        <span>Road to Wiki Fellowship (3 Awards)</span>
+                        <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
                     </a>
-                    <a href="./certifications.html" class="p-2.5 rounded-xl bg-amber-50 dark:bg-amber-950/40 text-amber-600 dark:text-amber-400 font-medium text-sm flex items-center justify-between">
-                        <span>40+ Certifications & Badges</span>
-                        <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+                    <a href="./open-source-contributions.html" class="p-2 rounded-xl bg-purple-50 dark:bg-purple-950/40 text-purple-600 dark:text-purple-400 font-semibold text-xs flex items-center justify-between">
+                        <span>Wikimedia Ledger (26+ Patches)</span>
+                        <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
                     </a>
-                    <a href="./events-organized.html" class="p-2.5 rounded-xl bg-purple-50 dark:bg-purple-950/40 text-purple-600 dark:text-purple-400 font-medium text-sm flex items-center justify-between">
-                        <span>Events Organised (17+ · 4,200+ Footfall)</span>
-                        <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+                    <a href="./ait-global-innovation-internship.html" class="p-2 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 font-semibold text-xs flex items-center justify-between">
+                        <span>AIT Bangkok GIIP Thailand</span>
+                        <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
                     </a>
-                    <a href="./achievements.html" class="p-2.5 rounded-xl bg-purple-50 dark:bg-purple-950/40 text-purple-600 dark:text-purple-400 font-medium text-sm flex items-center justify-between">
-                        <span>Honors, Awards & Photos</span>
-                        <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+                    <a href="./up-police-internship.html" class="p-2 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 font-semibold text-xs flex items-center justify-between">
+                        <span>UP Police Cyber Security Brief</span>
+                        <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
                     </a>
-                    <a href="./ait-global-innovation-internship.html" class="p-2.5 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 font-medium text-sm flex items-center justify-between">
-                        <span>GIIP-2026 Thailand</span>
-                        <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+                    <a href="./events-organized.html" class="p-2 rounded-xl bg-purple-50 dark:bg-purple-950/40 text-purple-600 dark:text-purple-400 font-semibold text-xs flex items-center justify-between">
+                        <span>17+ Events Organised Dossier</span>
+                        <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
                     </a>
-                    <a href="./up-police-internship.html" class="p-2.5 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 font-medium text-sm flex items-center justify-between">
-                        <span>APCSIP-2026 Cyber</span>
-                        <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+                    <a href="./btech-journey.html" class="p-2 rounded-xl bg-blue-50 dark:bg-blue-950/40 text-blue-600 dark:text-blue-400 font-semibold text-xs flex items-center justify-between">
+                        <span>4-Year B.Tech Semester Journey</span>
+                        <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
                     </a>
-                    <a href="./open-source-contributions.html" class="p-2.5 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 font-medium text-sm flex items-center justify-between">
-                        <span>Wikimedia Open Source</span>
-                        <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+                    <a href="./certifications.html" class="p-2 rounded-xl bg-amber-50 dark:bg-amber-950/40 text-amber-600 dark:text-amber-400 font-semibold text-xs flex items-center justify-between">
+                        <span>30+ Verified Certifications</span>
+                        <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
                     </a>
-                    <a href="./road-to-wiki.html" class="p-2.5 rounded-xl bg-blue-50 dark:bg-blue-950/40 text-blue-600 dark:text-blue-400 font-bold text-sm flex items-center justify-between">
-                        <span>Road to Wiki (Cohort 2)</span>
-                        <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+                    <a href="./achievements.html" class="p-2 rounded-xl bg-emerald-50 dark:bg-emerald-950/40 text-emerald-600 dark:text-emerald-400 font-semibold text-xs flex items-center justify-between">
+                        <span>Complete Awards &amp; Honors</span>
+                        <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
+                    </a>
+                    <a href="./faq.html" class="p-2 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 font-semibold text-xs flex items-center justify-between">
+                        <span>Recruiter FAQ</span>
+                        <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
                     </a>
                 </div>
             </div>
@@ -790,7 +820,7 @@
                     <div class="metric-col px-3 text-center sm:text-left col-span-2 sm:col-span-1">
                         <div class="text-2xl sm:text-3xl font-black text-blue-600 dark:text-blue-400">2</div>
                         <div class="text-xs font-medium text-slate-500 dark:text-slate-400 mt-1">Gov/Global Fellowships</div>
-                    </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -915,86 +945,118 @@
                     </button>
                 </div>
 
-                <!-- 3 Mockup Featured Cards Grid -->
-                <div class="grid md:grid-cols-3 gap-6">
+                <!-- 4 Curated Flagship Project Cards Grid -->
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
                     
                     <!-- Card 1: PrayagrajRooms -->
-                    <div class="bento-card p-6 sm:p-7 rounded-3xl flex flex-col justify-between group">
+                    <div class="bento-card p-6 rounded-3xl flex flex-col justify-between group hover-elevate transition-all border border-blue-200/80 dark:border-blue-900/50">
                         <div>
                             <div class="flex items-start justify-between mb-4">
-                                <div class="w-12 h-12 rounded-xl bg-blue-50 dark:bg-blue-950/60 text-blue-600 dark:text-blue-400 flex items-center justify-center text-xl">
+                                <div class="w-11 h-11 rounded-2xl bg-blue-50 dark:bg-blue-950/60 text-blue-600 dark:text-blue-400 flex items-center justify-center text-lg shadow-sm">
                                     <i class="fa-solid fa-house-chimney"></i>
                                 </div>
-                                <a href="https://prayagrajrooms.in" target="_blank" rel="noopener" class="w-8 h-8 rounded-full bg-slate-50 dark:bg-slate-800 text-slate-400 group-hover:text-blue-600 dark:group-hover:text-blue-400 flex items-center justify-center transition-colors">
+                                <a href="https://prayagrajrooms.in" target="_blank" rel="noopener" aria-label="Visit PrayagrajRooms" class="w-8 h-8 rounded-full bg-slate-50 dark:bg-slate-800 text-slate-400 group-hover:text-blue-600 dark:group-hover:text-blue-400 flex items-center justify-center transition-colors">
                                     <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
                                 </a>
                             </div>
-                            <div class="flex items-center gap-2 mb-2">
+                            <div class="flex items-center gap-2 mb-1.5">
                                 <h3 class="font-bold text-lg text-slate-950 dark:text-white">PrayagrajRooms</h3>
-                                <span class="px-2 py-0.5 rounded-full bg-blue-50 text-blue-600 dark:bg-blue-950/60 dark:text-blue-400 text-[11px] font-semibold">Featured</span>
+                                <span class="px-2 py-0.5 rounded-full bg-blue-50 text-blue-600 dark:bg-blue-950/60 dark:text-blue-400 text-[10px] font-bold">5K+ Users</span>
                             </div>
-                            <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed mb-6">
-                                A complete room rental platform with 5,000+ users, secure payments, admin portal, and multi-role dashboards.
+                            <div class="text-[11px] font-semibold text-blue-600 dark:text-blue-400 mb-2">Production Full-Stack Platform</div>
+                            <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed mb-4">
+                                Solved chaotic student room hunting across Prayagraj. Built verified listings, landlord dashboard, booking workflows, and geocoded search serving 5,000+ active university tenants.
                             </p>
                         </div>
-                        <div class="flex flex-wrap gap-1.5 pt-4 border-t border-slate-100 dark:border-slate-800/80">
-                            <span class="mockup-tag">Web Development</span>
-                            <span class="mockup-tag">PHP</span>
-                            <span class="mockup-tag">MySQL</span>
-                            <span class="mockup-tag">Real Users</span>
+                        <div class="flex flex-wrap gap-1.5 pt-3 border-t border-slate-100 dark:border-slate-800/80">
+                            <span class="mockup-tag">React</span>
+                            <span class="mockup-tag">Node.js</span>
+                            <span class="mockup-tag">MongoDB</span>
+                            <span class="mockup-tag">Mapbox</span>
                         </div>
                     </div>
 
-                    <!-- Card 2: Gautam AI Clone -->
-                    <div onclick="if(window.gautamAI) window.gautamAI.toggleWindow(true)" class="bento-card p-6 sm:p-7 rounded-3xl flex flex-col justify-between group cursor-pointer">
+                    <!-- Card 2: VoxRAG -->
+                    <div class="bento-card p-6 rounded-3xl flex flex-col justify-between group hover-elevate transition-all border border-purple-200/80 dark:border-purple-900/50">
                         <div>
                             <div class="flex items-start justify-between mb-4">
-                                <div class="w-12 h-12 rounded-xl bg-indigo-600 text-white flex items-center justify-center text-xl shadow-md shadow-indigo-600/20">
-                                    <i class="fa-solid fa-bars-staggered"></i>
+                                <div class="w-11 h-11 rounded-2xl bg-purple-50 dark:bg-purple-950/60 text-purple-600 dark:text-purple-400 flex items-center justify-center text-lg shadow-sm">
+                                    <i class="fa-solid fa-microphone-lines"></i>
                                 </div>
-                                <div class="w-8 h-8 rounded-full bg-slate-50 dark:bg-slate-800 text-slate-400 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 flex items-center justify-center transition-colors">
+                                <a href="https://github.com/gkm563/VoxRAG" target="_blank" rel="noopener" aria-label="Visit VoxRAG GitHub" class="w-8 h-8 rounded-full bg-slate-50 dark:bg-slate-800 text-slate-400 group-hover:text-purple-600 dark:group-hover:text-purple-400 flex items-center justify-center transition-colors">
                                     <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
-                                </div>
+                                </a>
                             </div>
-                            <div class="flex items-center gap-2 mb-2">
-                                <h3 class="font-bold text-lg text-slate-950 dark:text-white">Gautam AI Clone</h3>
-                                <span class="px-2 py-0.5 rounded-full bg-indigo-50 text-indigo-600 dark:bg-indigo-950/60 dark:text-indigo-400 text-[11px] font-semibold">Interactive</span>
+                            <div class="flex items-center gap-2 mb-1.5">
+                                <h3 class="font-bold text-lg text-slate-950 dark:text-white">VoxRAG</h3>
+                                <span class="px-2 py-0.5 rounded-full bg-purple-50 text-purple-600 dark:bg-purple-950/60 dark:text-purple-400 text-[10px] font-bold">&lt;200ms Voice</span>
                             </div>
-                            <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed mb-6">
-                                An AI-powered personal assistant trained on my journey, projects, and experiences.
+                            <div class="text-[11px] font-semibold text-purple-600 dark:text-purple-400 mb-2">Multimodal Conversational AI</div>
+                            <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed mb-4">
+                                Sub-200ms real-time voice RAG architecture with 48,995 indexed passages, FAISS FlatIP vector retrieval, multi-turn memory, FastEmbed embeddings, and strict hallucination guardrails.
                             </p>
                         </div>
-                        <div class="flex flex-wrap gap-1.5 pt-4 border-t border-slate-100 dark:border-slate-800/80">
-                            <span class="mockup-tag">AI</span>
-                            <span class="mockup-tag">RAG</span>
-                            <span class="mockup-tag">LLM</span>
-                            <span class="mockup-tag">Personal Assistant</span>
+                        <div class="flex flex-wrap gap-1.5 pt-3 border-t border-slate-100 dark:border-slate-800/80">
+                            <span class="mockup-tag">Python</span>
+                            <span class="mockup-tag">FAISS FlatIP</span>
+                            <span class="mockup-tag">WebSockets</span>
+                            <span class="mockup-tag">FastAPI</span>
                         </div>
                     </div>
 
                     <!-- Card 3: Cyber Forensics Lab -->
-                    <div class="bento-card p-6 sm:p-7 rounded-3xl flex flex-col justify-between group">
+                    <div class="bento-card p-6 rounded-3xl flex flex-col justify-between group hover-elevate transition-all border border-sky-200/80 dark:border-sky-900/50">
                         <div>
                             <div class="flex items-start justify-between mb-4">
-                                <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-blue-500 to-indigo-600 text-white flex items-center justify-center text-xl shadow-md shadow-blue-500/20">
+                                <div class="w-11 h-11 rounded-2xl bg-sky-50 dark:bg-sky-950/60 text-sky-600 dark:text-sky-400 flex items-center justify-center text-lg shadow-sm">
                                     <i class="fa-solid fa-shield-halved"></i>
                                 </div>
-                                <a href="./up-police-internship.html" class="w-8 h-8 rounded-full bg-slate-50 dark:bg-slate-800 text-slate-400 group-hover:text-blue-600 dark:group-hover:text-blue-400 flex items-center justify-center transition-colors">
+                                <a href="./up-police-internship.html" aria-label="Visit UP Police Brief" class="w-8 h-8 rounded-full bg-slate-50 dark:bg-slate-800 text-slate-400 group-hover:text-sky-600 dark:group-hover:text-sky-400 flex items-center justify-center transition-colors">
                                     <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
                                 </a>
                             </div>
-                            <div class="flex items-center gap-2 mb-2">
+                            <div class="flex items-center gap-2 mb-1.5">
                                 <h3 class="font-bold text-lg text-slate-950 dark:text-white">Cyber Forensics Lab</h3>
+                                <span class="px-2 py-0.5 rounded-full bg-sky-50 text-sky-600 dark:bg-sky-950/60 dark:text-sky-400 text-[10px] font-bold">UP Police Award</span>
                             </div>
-                            <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed mb-6">
-                                Tools and writeups for digital forensics, memory analysis, and incident response.
+                            <div class="text-[11px] font-semibold text-sky-600 dark:text-sky-400 mb-2">DFIR &amp; OSINT Intelligence</div>
+                            <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed mb-4">
+                                Engineered investigative tools for packet inspection, volatility memory dump triage, and threat intel under UP Police Cyber Cell. Honored with Best Content Creator Award by DSP Anjali Kataria.
                             </p>
                         </div>
-                        <div class="flex flex-wrap gap-1.5 pt-4 border-t border-slate-100 dark:border-slate-800/80">
-                            <span class="mockup-tag">Cybersecurity</span>
-                            <span class="mockup-tag">DFIR</span>
-                            <span class="mockup-tag">Writeups</span>
-                            <span class="mockup-tag">Research</span>
+                        <div class="flex flex-wrap gap-1.5 pt-3 border-t border-slate-100 dark:border-slate-800/80">
+                            <span class="mockup-tag">Wireshark</span>
+                            <span class="mockup-tag">Volatility</span>
+                            <span class="mockup-tag">OSINT</span>
+                            <span class="mockup-tag">Python DFIR</span>
+                        </div>
+                    </div>
+
+                    <!-- Card 4: Gautam AI Clone -->
+                    <div onclick="if(window.gautamAI) window.gautamAI.toggleWindow(true)" class="bento-card p-6 rounded-3xl flex flex-col justify-between group hover-elevate transition-all border border-indigo-200/80 dark:border-indigo-900/50 cursor-pointer">
+                        <div>
+                            <div class="flex items-start justify-between mb-4">
+                                <div class="w-11 h-11 rounded-2xl bg-indigo-50 dark:bg-indigo-950/60 text-indigo-600 dark:text-indigo-400 flex items-center justify-center text-lg shadow-sm">
+                                    <i class="fa-solid fa-robot"></i>
+                                </div>
+                                <div class="w-8 h-8 rounded-full bg-slate-50 dark:bg-slate-800 text-slate-400 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 flex items-center justify-center transition-colors">
+                                    <i class="fa-solid fa-comment-dots text-xs"></i>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-2 mb-1.5">
+                                <h3 class="font-bold text-lg text-slate-950 dark:text-white">Gautam AI Clone</h3>
+                                <span class="px-2 py-0.5 rounded-full bg-emerald-50 text-emerald-600 dark:bg-emerald-950/60 dark:text-emerald-400 text-[10px] font-bold">Live AI Agent</span>
+                            </div>
+                            <div class="text-[11px] font-semibold text-indigo-600 dark:text-indigo-400 mb-2">Interactive Persona &amp; Knowledge Graph</div>
+                            <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed mb-4">
+                                Real-time AI digital clone with speech synthesis and semantic search grounded over 40+ verified projects, fellowships, and papers. Click to converse directly with my digital self.
+                            </p>
+                        </div>
+                        <div class="flex flex-wrap gap-1.5 pt-3 border-t border-slate-100 dark:border-slate-800/80">
+                            <span class="mockup-tag">RAG Agent</span>
+                            <span class="mockup-tag">Knowledge Graph</span>
+                            <span class="mockup-tag">Speech TTS</span>
+                            <span class="mockup-tag">Vanilla JS</span>
                         </div>
                     </div>
 
@@ -1398,7 +1460,8 @@
         <!-- ═══════════════════════════════════════
              3.5 OPEN SOURCE & UPSTREAM ENGINEERING
         ═══════════════════════════════════════ -->
-        <section id="opensource" class="py-20 section-dot-grid border-b border-slate-200/60 dark:border-slate-800 relative overflow-hidden">
+        <section id="open-source" class="py-20 section-dot-grid border-b border-slate-200/60 dark:border-slate-800 relative overflow-hidden">
+            <span id="opensource" class="sr-only"></span>
             <!-- Ambient Purple / Blue Glow -->
             <div class="section-ambient-glow-purple -top-20 -right-20 opacity-70"></div>
             <div class="section-ambient-glow-blue bottom-10 left-10 opacity-50"></div>
@@ -1522,12 +1585,12 @@
 
                         </div>
                         <div class="lg:w-5/12 grid grid-cols-2 gap-2 sm:gap-3 w-full">
-                            <a href="#gallery" class="group relative rounded-2xl overflow-hidden aspect-[4/3] bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm block hover:scale-105 transition-all">
+                            <a href="./road-to-wiki.html" class="group relative rounded-2xl overflow-hidden aspect-[4/3] bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm block hover:scale-105 transition-all" title="View Road to Wiki Award Details">
                                 <img src="assets/images/gallery/gautam-kumar-maurya-road-to-wiki-best-contributor.jpg" alt="Best Contributor Award Stage Photo" class="w-full h-full object-cover object-center">
                                 <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent"></div>
                                 <span class="absolute bottom-2 left-2 right-2 text-[10px] font-bold text-white leading-tight">Best Contributor</span>
                             </a>
-                            <a href="#gallery" class="group relative rounded-2xl overflow-hidden aspect-[4/3] bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm block hover:scale-105 transition-all">
+                            <a href="./road-to-wiki.html" class="group relative rounded-2xl overflow-hidden aspect-[4/3] bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm block hover:scale-105 transition-all" title="View Road to Wiki Award Details">
                                 <img src="assets/images/gallery/gautam-kumar-maurya-road-to-wiki-most-active-contributor.jpg" alt="Most Active Contributor Award Stage Photo" class="w-full h-full object-cover object-center">
                                 <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent"></div>
                                 <span class="absolute bottom-2 left-2 right-2 text-[10px] font-bold text-white leading-tight">Most Active</span>
@@ -1576,118 +1639,195 @@
         </section>
 
         <!-- ═══════════════════════════════════════
-             3. ABOUT PREVIEW SECTION
+             5. EXPERIENCE & RESEARCH FELLOWSHIPS (REVERSE CHRONOLOGICAL)
         ═══════════════════════════════════════ -->
-        <section id="about" class="py-20 section-dot-grid border-y border-slate-200/60 dark:border-slate-800 relative overflow-hidden">
-            <!-- Ambient Blue / Indigo Glow -->
-            <div class="section-ambient-glow-blue -top-20 -left-20 opacity-70"></div>
+        <section id="experience" class="py-20 section-dot-grid border-b border-slate-200/60 dark:border-slate-800 relative overflow-hidden">
+            <!-- Ambient Blue Glow -->
+            <div class="section-ambient-glow-blue -top-24 -left-20 opacity-70"></div>
             <div class="section-ambient-glow-purple bottom-10 right-10 opacity-50"></div>
 
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                 
-                <!-- Section Header -->
                 <div class="max-w-3xl mb-12">
                     <div class="section-pill-tag mb-4">
                         <span class="font-mono text-blue-600 dark:text-blue-400">&gt;_</span>
-                        <span>ABOUT GAUTAM KUMAR MAURYA</span>
+                        <span>INDUSTRY WORK &amp; RESEARCH FELLOWSHIPS</span>
                     </div>
                     <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-950 dark:text-white tracking-tight leading-tight font-heading">
-                        Engineered for Performance, <span class="text-blue-600">Driven by Impact</span>.
+                        Experience &amp; <span class="text-blue-600">Research Fellowships</span>
                     </h2>
+                    <p class="text-sm sm:text-base text-slate-600 dark:text-slate-400 mt-2 leading-relaxed">
+                        Industry engineering internships, government cyber crime fellowships, and international research appointments in reverse chronological order.
+                    </p>
                 </div>
 
-                <!-- Executive 4-Pillars Quick Matrix -->
-                <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-14">
-                    <div class="glass-card p-5 rounded-2xl border border-blue-200/80 dark:border-blue-900/40 hover-elevate">
-                        <div class="flex items-center gap-3 mb-2.5">
-                            <span class="w-8 h-8 rounded-xl bg-blue-100 dark:bg-blue-950 text-blue-600 flex items-center justify-center font-bold text-sm">💻</span>
-                            <h4 class="font-bold text-slate-900 dark:text-white text-sm">Full-Stack & Systems</h4>
-                        </div>
-                        <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">Co-Founder @ PrayagrajRooms (5k+ Users) & BuildX Platform. React, Node, TypeScript, SQL.</p>
-                    </div>
-
-                    <div class="glass-card p-5 rounded-2xl border border-purple-200/80 dark:border-purple-900/40 hover-elevate">
-                        <div class="flex items-center gap-3 mb-2.5">
-                            <span class="w-8 h-8 rounded-xl bg-purple-100 dark:bg-purple-950 text-purple-600 flex items-center justify-center font-bold text-sm">🤖</span>
-                            <h4 class="font-bold text-slate-900 dark:text-white text-sm">Applied AI & ML</h4>
-                        </div>
-                        <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">VoxRAG (sub-200ms Voice RAG), IntervAI, AIT Bangkok GIIP Research Fellow (Thailand).</p>
-                    </div>
-
-                    <div class="glass-card p-5 rounded-2xl border border-sky-200/80 dark:border-sky-900/40 hover-elevate">
-                        <div class="flex items-center gap-3 mb-2.5">
-                            <span class="w-8 h-8 rounded-xl bg-sky-100 dark:bg-sky-950 text-sky-600 flex items-center justify-center font-bold text-sm">🛡️</span>
-                            <h4 class="font-bold text-slate-900 dark:text-white text-sm">Cyber & Forensics</h4>
-                        </div>
-                        <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">UP Police APCSIP Best Content Creator Awardee & C3iHub IIT Kanpur Trainee. OSINT & Threat Analysis.</p>
-                    </div>
-
-                    <div class="glass-card p-5 rounded-2xl border border-emerald-200/80 dark:border-emerald-900/40 hover-elevate">
-                        <div class="flex items-center gap-3 mb-2.5">
-                            <span class="w-8 h-8 rounded-xl bg-emerald-100 dark:bg-emerald-950 text-emerald-600 flex items-center justify-center font-bold text-sm">🌐</span>
-                            <h4 class="font-bold text-slate-900 dark:text-white text-sm">Open Source & Merit</h4>
-                        </div>
-                        <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">15+ Merged MediaWiki Patches, VP @ GeeksforGeeks UIT Chapter & Academic Rank 1 (SGPA 8.5).</p>
-                    </div>
-                </div>
-
-                <div class="grid lg:grid-cols-12 gap-10">
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
                     
-                    <!-- Narrative Description (7 cols) -->
-                    <div class="lg:col-span-7 space-y-6 text-base sm:text-lg text-slate-600 dark:text-slate-300 leading-relaxed">
-                        <p>
-                            I am <strong class="text-slate-900 dark:text-white">Gautam Kumar Maurya (gkm563)</strong> — a Full-Stack Software Engineer, AI Developer, and Cybersecurity Researcher. Currently pursuing B.Tech in CSE (Data Science) at United Institute of Technology (UIT), Prayagraj, I hold <strong class="text-slate-900 dark:text-white">Academic Rank 1 in CSE (Data Science) for 2nd Year (SGPA 8.5)</strong> and <strong class="text-slate-900 dark:text-white">Rank 5 College Overall for 1st Year</strong> in AKTU examinations with top academic honors.
-                        </p>
-                        <p>
-                            As <strong class="text-slate-900 dark:text-white">WikiClub Tech Envoy at UIT</strong> and <strong class="text-slate-900 dark:text-white">Vice President of the GeeksforGeeks UIT Chapter</strong>, I bridge academic excellence with production software engineering and open-source leadership. I co-founded <strong class="text-slate-900 dark:text-white">PrayagrajRooms</strong> (a student platform serving 5,000+ users), contribute actively to <strong class="text-slate-900 dark:text-white">Wikimedia MediaWiki Core</strong> (15+ merged production patches, featured in IIIT Hyderabad's Open Source Report), and mentor emerging engineers.
-                        </p>
-                        <p>
-                            My credentials include representing India as an international <strong class="text-slate-900 dark:text-white">GIIP-2026 Research Fellow at AIT Bangkok, Thailand</strong>, being selected among 800+ global applicants for the <strong class="text-slate-900 dark:text-white">Youths Innovate AI Mentorship Program (Fall Cohort 2026)</strong>, and completing the government cybersecurity fellowship with <strong class="text-slate-900 dark:text-white">UP Police &amp; Amroha Police Cyber Crime Cell (APCSIP-2026)</strong>, where I was honored with the Best Content Creator Award by DSP Anjali Kataria.
-                        </p>
+                    <!-- Card 1: Heisyn (Industry Full Stack Internship) -->
+                    <div class="glass-card p-6 sm:p-7 rounded-3xl border border-slate-200 dark:border-slate-800 hover-elevate flex flex-col justify-between relative overflow-hidden group">
+                        <div class="absolute top-0 right-0 w-28 h-28 bg-violet-500/10 rounded-full blur-2xl group-hover:bg-violet-500/20 transition-all"></div>
+                        <div>
+                            <div class="w-11 h-11 rounded-2xl bg-violet-600 text-white flex items-center justify-center font-bold text-lg mb-5 shadow-md">
+                                💻
+                            </div>
+                            <span class="text-xs font-bold uppercase tracking-wider text-violet-600 dark:text-violet-400">Industry Internship</span>
+                            <h4 class="text-xl font-bold text-slate-900 dark:text-white mt-1 mb-1">Heisyn</h4>
+                            <div class="text-xs font-semibold text-slate-600 dark:text-slate-400 mb-3">Full Stack Developer Intern</div>
+                            <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed mb-5">
+                                Engineered commercial-grade full-stack features. Contributed to application scalability, schema design, RESTful API integrations, and database performance.
+                            </p>
+                        </div>
+                        <div class="pt-4 border-t border-slate-100 dark:border-slate-800/80 flex items-center justify-between text-xs text-violet-600 dark:text-violet-400 font-bold">
+                            <span>React · Node · PostgreSQL</span>
+                            <i data-lucide="check-circle" class="w-3.5 h-3.5"></i>
+                        </div>
                     </div>
 
-                    <!-- Highlight Cards Grid (5 cols) -->
-                    <div class="lg:col-span-5 grid sm:grid-cols-2 gap-4">
-                        
-                        <!-- Card 1 -->
-                        <div class="glass-card p-5 rounded-2xl border border-slate-200 dark:border-slate-800 hover-elevate">
-                            <div class="w-10 h-10 rounded-xl bg-blue-50 dark:bg-blue-950/50 text-blue-600 dark:text-blue-400 flex items-center justify-center mb-4">
-                                <i data-lucide="award" class="w-5 h-5"></i>
+                    <!-- Card 2: GIIP 2026 (AIT Bangkok - International Research Fellowship) -->
+                    <div class="glass-card p-6 sm:p-7 rounded-3xl border border-slate-200 dark:border-slate-800 hover-elevate flex flex-col justify-between relative overflow-hidden group">
+                        <div class="absolute top-0 right-0 w-28 h-28 bg-blue-500/10 rounded-full blur-2xl group-hover:bg-blue-500/20 transition-all"></div>
+                        <div>
+                            <div class="w-11 h-11 rounded-2xl bg-blue-600 text-white flex items-center justify-center font-bold text-lg mb-5 shadow-md">
+                                🇹🇭
                             </div>
-                            <h4 class="font-bold text-slate-900 dark:text-white text-base mb-1">Academic Rank 1</h4>
-                            <p class="text-xs text-slate-500 dark:text-slate-400">Rank 1 CSE DS 2nd Year (SGPA 8.5), Rank 5 College 1st Year.</p>
+                            <span class="text-xs font-bold uppercase tracking-wider text-blue-600 dark:text-blue-400">International Fellowship</span>
+                            <h4 class="text-xl font-bold text-slate-900 dark:text-white mt-1 mb-1">AIT Bangkok, Thailand</h4>
+                            <div class="text-xs font-semibold text-slate-600 dark:text-slate-400 mb-3">GIIP Research Fellow</div>
+                            <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed mb-5">
+                                15-day Global Innovation Internship Program at Asian Institute of Technology. Researched Agentic AI, Ubiquitous GIS, drone telemetry, and BusSetu public transit analytics.
+                            </p>
                         </div>
+                        <div>
+                            <a href="./ait-global-innovation-internship.html" class="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-xl bg-blue-600 hover:bg-blue-700 text-white text-xs font-semibold transition-all">
+                                <span>Read GIIP Report</span>
+                                <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                            </a>
+                        </div>
+                    </div>
 
-                        <!-- Card 2 -->
-                        <div class="glass-card p-5 rounded-2xl border border-slate-200 dark:border-slate-800 hover-elevate">
-                            <div class="w-10 h-10 rounded-xl bg-emerald-50 dark:bg-emerald-950/50 text-emerald-600 dark:text-emerald-400 flex items-center justify-center mb-4">
-                                <i data-lucide="globe" class="w-5 h-5"></i>
+                    <!-- Card 3: APCSIP 2026 (UP Police - Government Cyber Fellowship) -->
+                    <div class="glass-card p-6 sm:p-7 rounded-3xl border border-slate-200 dark:border-slate-800 hover-elevate flex flex-col justify-between relative overflow-hidden group">
+                        <div class="absolute top-0 right-0 w-28 h-28 bg-sky-500/10 rounded-full blur-2xl group-hover:bg-sky-500/20 transition-all"></div>
+                        <div>
+                            <div class="w-11 h-11 rounded-2xl bg-sky-600 text-white flex items-center justify-center font-bold text-lg mb-5 shadow-md">
+                                🚔
                             </div>
-                            <h4 class="font-bold text-slate-900 dark:text-white text-base mb-1">GIIP Scholar</h4>
-                            <p class="text-xs text-slate-500 dark:text-slate-400">International Research Scholar at AIT Bangkok, Thailand.</p>
+                            <span class="text-xs font-bold uppercase tracking-wider text-sky-600 dark:text-sky-400">Govt Cyber Fellowship</span>
+                            <h4 class="text-xl font-bold text-slate-900 dark:text-white mt-1 mb-1">UP Police Cyber Cell</h4>
+                            <div class="text-xs font-semibold text-slate-600 dark:text-slate-400 mb-3">APCSIP-2026 Cyber Fellow</div>
+                            <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed mb-5">
+                                Government cyber security fellowship. Awarded <strong class="text-slate-900 dark:text-white">Best Content Creator</strong> by DSP Anjali Kataria Ma'am for digital forensics, packet analysis, and OSINT triage.
+                            </p>
                         </div>
+                        <div>
+                            <a href="./up-police-internship.html" class="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-xl bg-sky-600 hover:bg-sky-700 text-white text-xs font-semibold transition-all">
+                                <span>Read Cyber Brief</span>
+                                <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                            </a>
+                        </div>
+                    </div>
 
-                        <!-- Card 3 -->
-                        <div class="glass-card p-5 rounded-2xl border border-slate-200 dark:border-slate-800 hover-elevate">
-                            <div class="w-10 h-10 rounded-xl bg-purple-50 dark:bg-purple-950/50 text-purple-600 dark:text-purple-400 flex items-center justify-center mb-4">
-                                <i data-lucide="shield-check" class="w-5 h-5"></i>
+                    <!-- Card 4: Youths Innovate AI (Global AI Mentorship) -->
+                    <div class="glass-card p-6 sm:p-7 rounded-3xl border border-slate-200 dark:border-slate-800 hover-elevate flex flex-col justify-between relative overflow-hidden group">
+                        <div class="absolute top-0 right-0 w-28 h-28 bg-indigo-500/10 rounded-full blur-2xl group-hover:bg-indigo-500/20 transition-all"></div>
+                        <div>
+                            <div class="w-11 h-11 rounded-2xl bg-indigo-600 text-white flex items-center justify-center font-bold text-lg mb-5 shadow-md">
+                                🤖
                             </div>
-                            <h4 class="font-bold text-slate-900 dark:text-white text-base mb-1">UP Police Awardee</h4>
-                            <p class="text-xs text-slate-500 dark:text-slate-400">Best Content Creator Award by DSP Anjali Kataria (APCSIP-2026).</p>
+                            <span class="text-xs font-bold uppercase tracking-wider text-indigo-600 dark:text-indigo-400">Global Mentorship</span>
+                            <h4 class="text-xl font-bold text-slate-900 dark:text-white mt-1 mb-1">Youths Innovate AI</h4>
+                            <div class="text-xs font-semibold text-slate-600 dark:text-slate-400 mb-3">AI &amp; ML Fellow · Fall 2026</div>
+                            <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed mb-5">
+                                Selected among <strong class="text-slate-900 dark:text-white">800+ global applicants</strong> for international mentorship focusing on applied ML pipelines, RAG systems, and AI real-world deployment.
+                            </p>
                         </div>
-
-                        <!-- Card 4 -->
-                        <div class="glass-card p-5 rounded-2xl border border-slate-200 dark:border-slate-800 hover-elevate">
-                            <div class="w-10 h-10 rounded-xl bg-sky-50 dark:bg-sky-950/50 text-sky-600 dark:text-sky-400 flex items-center justify-center mb-4">
-                                <i data-lucide="users" class="w-5 h-5"></i>
-                            </div>
-                            <h4 class="font-bold text-slate-900 dark:text-white text-base mb-1">CDN Founder</h4>
-                            <p class="text-xs text-slate-500 dark:text-slate-400">Founder & Organizer of Coding & Development Network UIT.</p>
+                        <div>
+                            <a href="./achievements.html" class="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white text-xs font-semibold transition-all">
+                                <span>View Selection</span>
+                                <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                            </a>
                         </div>
-
                     </div>
 
                 </div>
+            </div>
+        </section>
+
+        <!-- ═══════════════════════════════════════
+             6. EDUCATION & ACADEMIC EXCELLENCE
+        ═══════════════════════════════════════ -->
+        <section id="education" class="py-20 section-dot-grid border-b border-slate-200/60 dark:border-slate-800 relative overflow-hidden">
+            <div class="section-ambient-glow-blue -top-24 -left-20 opacity-60"></div>
+            <div class="section-ambient-glow-purple bottom-10 right-10 opacity-50"></div>
+
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+                    <div class="max-w-3xl">
+                        <div class="section-pill-tag mb-4">
+                            <span class="font-mono text-blue-600 dark:text-blue-400">&gt;_</span>
+                            <span>ACADEMIC MERIT &amp; FOUNDATIONAL RIGOR</span>
+                        </div>
+                        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-950 dark:text-white tracking-tight leading-tight font-heading">
+                            Education &amp; <span class="text-blue-600">Academic Standing</span>
+                        </h2>
+                        <p class="text-sm sm:text-base text-slate-600 dark:text-slate-400 mt-2 leading-relaxed">
+                            Combining rigorous engineering fundamentals in Computer Science &amp; Data Science with top-ranking academic performance.
+                        </p>
+                    </div>
+
+                    <div class="mt-6 md:mt-0">
+                        <a href="./btech-journey.html" class="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-blue-600 hover:bg-blue-700 text-white text-xs sm:text-sm font-bold shadow-md hover:shadow-lg transition-all group">
+                            <span>Explore 4-Year B.Tech Semester Journey</span>
+                            <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Bento Academic Spotlight Card -->
+                <div class="bento-card p-6 sm:p-8 rounded-3xl border border-slate-200/90 dark:border-slate-800 bg-white/90 dark:bg-slate-900/80 shadow-lg">
+                    <div class="grid lg:grid-cols-12 gap-8 items-center">
+                        <div class="lg:col-span-8 space-y-4">
+                            <div class="flex flex-wrap items-center gap-2.5">
+                                <span class="px-3 py-1 rounded-full bg-blue-50 dark:bg-blue-950/60 text-blue-600 dark:text-blue-400 text-xs font-bold uppercase tracking-wider">
+                                    Bachelor of Technology (B.Tech)
+                                </span>
+                                <span class="px-3 py-1 rounded-full bg-emerald-50 dark:bg-emerald-950/60 text-emerald-600 dark:text-emerald-400 text-xs font-bold uppercase tracking-wider">
+                                    2022 &ndash; 2026 (Final Year)
+                                </span>
+                            </div>
+                            <h3 class="text-2xl sm:text-3xl font-black text-slate-950 dark:text-white font-heading">
+                                Computer Science &amp; Engineering <span class="text-blue-600">(Data Science)</span>
+                            </h3>
+                            <div class="text-sm font-bold text-slate-700 dark:text-slate-300">
+                                United Institute of Technology (UIT), Prayagraj &bull; Dr. A.P.J. Abdul Kalam Technical University (AKTU)
+                            </div>
+                            <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+                                Maintaining departmental leadership as <strong class="text-slate-900 dark:text-white">Academic Rank 1 in CSE (Data Science)</strong> with an <strong class="text-slate-900 dark:text-white">SGPA of 8.5</strong>, alongside securing <strong class="text-slate-900 dark:text-white">Rank 5 College-Wide</strong> in 1st Year AKTU university examinations. Awardee of 100% Tuition Fee Merit Scholarship for consistent academic excellence.
+                            </p>
+                        </div>
+
+                        <!-- Right Stats Grid (4 cols) -->
+                        <div class="lg:col-span-4 grid grid-cols-2 gap-3">
+                            <div class="p-4 rounded-2xl bg-slate-50 dark:bg-slate-800/60 border border-slate-100 dark:border-slate-800 text-center">
+                                <div class="text-2xl sm:text-3xl font-black text-blue-600 dark:text-blue-400">Rank 1</div>
+                                <div class="text-[10px] font-bold text-slate-500 uppercase tracking-wider mt-1">CSE-DS Branch Topper</div>
+                            </div>
+                            <div class="p-4 rounded-2xl bg-slate-50 dark:bg-slate-800/60 border border-slate-100 dark:border-slate-800 text-center">
+                                <div class="text-2xl sm:text-3xl font-black text-emerald-600 dark:text-emerald-400">8.5</div>
+                                <div class="text-[10px] font-bold text-slate-500 uppercase tracking-wider mt-1">Semester SGPA</div>
+                            </div>
+                            <div class="p-4 rounded-2xl bg-slate-50 dark:bg-slate-800/60 border border-slate-100 dark:border-slate-800 text-center">
+                                <div class="text-2xl sm:text-3xl font-black text-purple-600 dark:text-purple-400">Rank 5</div>
+                                <div class="text-[10px] font-bold text-slate-500 uppercase tracking-wider mt-1">College Overall (1st Yr)</div>
+                            </div>
+                            <div class="p-4 rounded-2xl bg-slate-50 dark:bg-slate-800/60 border border-slate-100 dark:border-slate-800 text-center">
+                                <div class="text-2xl sm:text-3xl font-black text-amber-500">100%</div>
+                                <div class="text-[10px] font-bold text-slate-500 uppercase tracking-wider mt-1">Merit Scholarship</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </section>
 
@@ -1794,116 +1934,6 @@
                             <span class="tech-pill">Git & GitHub</span>
                             <span class="tech-pill">Phabricator / Gerrit</span>
                             <span class="tech-pill">Linux Admin</span>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </section>
-
-        <!-- ═══════════════════════════════════════
-             6. INTERNSHIPS & GLOBAL EXPERIENCE (BENTO GRID)
-        ═══════════════════════════════════════ -->
-        <section id="experience" class="py-20 section-dot-grid border-b border-slate-200/60 dark:border-slate-800 relative overflow-hidden">
-            <!-- Ambient Blue Glow -->
-            <div class="section-ambient-glow-blue -top-24 -left-20 opacity-70"></div>
-            <div class="section-ambient-glow-purple bottom-10 right-10 opacity-50"></div>
-
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-                
-                <div class="max-w-3xl mb-12">
-                    <div class="section-pill-tag mb-4">
-                        <span class="font-mono text-blue-600 dark:text-blue-400">&gt;_</span>
-                        <span>INDUSTRY &amp; RESEARCH FELLOWSHIPS</span>
-                    </div>
-                    <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-950 dark:text-white tracking-tight leading-tight font-heading">
-                        Internships &amp; <span class="text-blue-600">Global Research</span>
-                    </h2>
-                </div>
-
-                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-                    
-                    <!-- Highlight Card 1: Youths Innovate AI Mentorship -->
-                    <div class="glass-card p-6 sm:p-7 rounded-3xl border border-slate-200 dark:border-slate-800 hover-elevate flex flex-col justify-between relative overflow-hidden group">
-                        <div class="absolute top-0 right-0 w-28 h-28 bg-indigo-500/10 rounded-full blur-2xl group-hover:bg-indigo-500/20 transition-all"></div>
-                        <div>
-                            <div class="w-11 h-11 rounded-2xl bg-indigo-600 text-white flex items-center justify-center font-bold text-lg mb-5 shadow-md">
-                                🤖
-                            </div>
-                            <span class="text-xs font-bold uppercase tracking-wider text-indigo-600 dark:text-indigo-400">Fall Cohort 2026</span>
-                            <h4 class="text-xl font-bold text-slate-900 dark:text-white mt-1 mb-2.5">Youths Innovate AI</h4>
-                            <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed mb-5">
-                                Selected among <strong class="text-slate-900 dark:text-white">800+ global applicants</strong> for an international online mentorship experience in AI, ML innovation, and real-world system impact.
-                            </p>
-                        </div>
-                        <div>
-                            <a href="./achievements.html" class="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white text-xs font-semibold transition-all">
-                                <span>View Selection</span>
-                                <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- Highlight Card 2: GIIP 2026 (AIT Bangkok) -->
-                    <div class="glass-card p-6 sm:p-7 rounded-3xl border border-slate-200 dark:border-slate-800 hover-elevate flex flex-col justify-between relative overflow-hidden group">
-                        <div class="absolute top-0 right-0 w-28 h-28 bg-blue-500/10 rounded-full blur-2xl group-hover:bg-blue-500/20 transition-all"></div>
-                        <div>
-                            <div class="w-11 h-11 rounded-2xl bg-blue-600 text-white flex items-center justify-center font-bold text-lg mb-5 shadow-md">
-                                🇹🇭
-                            </div>
-                            <span class="text-xs font-bold uppercase tracking-wider text-blue-600 dark:text-blue-400">GIIP-2026</span>
-                            <h4 class="text-xl font-bold text-slate-900 dark:text-white mt-1 mb-2.5">AIT Bangkok, Thailand</h4>
-                            <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed mb-5">
-                                15-day Global Innovation Internship Program at Asian Institute of Technology. Researched Agentic AI, Ubiquitous GIS, and drone telemetry.
-                            </p>
-                        </div>
-                        <div>
-                            <a href="./ait-global-innovation-internship.html" class="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-xl bg-blue-600 hover:bg-blue-700 text-white text-xs font-semibold transition-all">
-                                <span>Read GIIP Report</span>
-                                <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- Highlight Card 3: APCSIP 2026 (UP Police) -->
-                    <div class="glass-card p-6 sm:p-7 rounded-3xl border border-slate-200 dark:border-slate-800 hover-elevate flex flex-col justify-between relative overflow-hidden group">
-                        <div class="absolute top-0 right-0 w-28 h-28 bg-sky-500/10 rounded-full blur-2xl group-hover:bg-sky-500/20 transition-all"></div>
-                        <div>
-                            <div class="w-11 h-11 rounded-2xl bg-sky-600 text-white flex items-center justify-center font-bold text-lg mb-5 shadow-md">
-                                🚔
-                            </div>
-                            <span class="text-xs font-bold uppercase tracking-wider text-sky-600 dark:text-sky-400">APCSIP-2026</span>
-                            <h4 class="text-xl font-bold text-slate-900 dark:text-white mt-1 mb-2.5">Amroha &amp; UP Police</h4>
-                            <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed mb-5">
-                                15-day government Cyber Security Internship. Awarded <strong class="text-slate-900 dark:text-white">Best Content Creator</strong> by DSP Anjali Kataria Ma'am for digital forensics.
-                            </p>
-                        </div>
-                        <div>
-                            <a href="./up-police-internship.html" class="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-xl bg-sky-600 hover:bg-sky-700 text-white text-xs font-semibold transition-all">
-                                <span>Read Brief</span>
-                                <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- Highlight Card 4: WikiClub Tech Envoy & Open Source -->
-                    <div class="glass-card p-6 sm:p-7 rounded-3xl border border-slate-200 dark:border-slate-800 hover-elevate flex flex-col justify-between relative overflow-hidden group">
-                        <div class="absolute top-0 right-0 w-28 h-28 bg-emerald-500/10 rounded-full blur-2xl group-hover:bg-emerald-500/20 transition-all"></div>
-                        <div>
-                            <div class="w-11 h-11 rounded-2xl bg-emerald-600 text-white flex items-center justify-center font-bold text-lg mb-5 shadow-md">
-                                🌐
-                            </div>
-                            <span class="text-xs font-bold uppercase tracking-wider text-emerald-600 dark:text-emerald-400">WikiClub Tech Envoy</span>
-                            <h4 class="text-xl font-bold text-slate-900 dark:text-white mt-1 mb-2.5">WikiClub Tech @ UIT</h4>
-                            <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed mb-5">
-                                Appointed <strong>WikiClub Tech Envoy</strong> to lead the campus chapter at UIT, organize open source hackathons, and mentor contributors on MediaWiki Core.
-                            </p>
-                        </div>
-                        <div>
-                            <a href="./open-source-contributions.html" class="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-semibold transition-all">
-                                <span>Open Source Report</span>
-                                <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
-                            </a>
                         </div>
                     </div>
 
@@ -2089,16 +2119,6 @@
                         <h4 class="text-lg font-bold text-slate-900 dark:text-white mb-1">Marketing & Event Intern</h4>
                         <div class="text-xs font-medium text-indigo-600 dark:text-indigo-400 mb-2">TECHhelp4U</div>
                         <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">Managing digital outreach and event logistics, executing social media campaigns, and coordinating student engagements.</p>
-                    </div>
-
-                    <!-- Additional 8: Heisyn (Full Stack Developer Intern) -->
-                    <div class="glass-card p-6 rounded-2xl border border-slate-200 dark:border-slate-800 hover-elevate">
-                        <div class="w-10 h-10 rounded-xl bg-violet-50 dark:bg-violet-950/50 text-violet-600 dark:text-violet-400 flex items-center justify-center font-bold mb-4">
-                            HS
-                        </div>
-                        <h4 class="text-lg font-bold text-slate-900 dark:text-white mb-1">Full Stack Developer Intern</h4>
-                        <div class="text-xs font-medium text-violet-600 dark:text-violet-400 mb-2">Heisyn</div>
-                        <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">Selected for engineering commercial-grade full-stack features. Contributing to application scalability and database schemas.</p>
                     </div>
 
                     <!-- Additional 7: MyGov India (Campus Ambassador) -->
@@ -2475,322 +2495,13 @@
             </div>
         </section>
 
-        <!-- ═══════════════════════════════════════
-             9.5 PROFESSIONAL JOURNEY GALLERY
-        ═══════════════════════════════════════ -->
-        <section id="gallery" class="py-20 section-dot-grid border-t border-slate-200/60 dark:border-slate-800 relative overflow-hidden">
-            <!-- Ambient Glow -->
-            <div class="section-ambient-glow-blue -top-20 -right-20 opacity-70"></div>
-            <div class="section-ambient-glow-purple bottom-10 left-10 opacity-50"></div>
-
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-                
-                <div class="max-w-3xl mb-12">
-                    <div class="section-pill-tag mb-4">
-                        <span class="font-mono text-blue-600 dark:text-blue-400">&gt;_</span>
-                        <span>PHOTO &amp; EVENT GALLERY</span>
-                    </div>
-                    <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-950 dark:text-white tracking-tight leading-tight font-heading">
-                        Professional Journey <span class="text-blue-600">Gallery</span>
-                    </h2>
-                    <p class="text-sm sm:text-base text-slate-600 dark:text-slate-400 mt-2">
-                        A visual timeline highlighting key milestones from academic, professional, open-source, and international experiences.
-                    </p>
-                </div>
-
-                <!-- Gallery Cards Grid -->
-                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-
-                    <!-- Award 1: Best Contributor Award — Road to Wiki Graduation 2026 -->
-                    <div class="glass-card rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-xl transition-all duration-300 group">
-                        <div class="relative h-64 overflow-hidden bg-slate-900">
-                            <img src="assets/images/gallery/gautam-kumar-maurya-road-to-wiki-best-contributor.jpg" 
-                                 alt="Best Contributor Award — Road to Wiki Graduation 2026" 
-                                 loading="lazy" decoding="async"
-                                 class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500">
-                            <div class="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-transparent to-transparent"></div>
-                            <div class="absolute top-3 right-3 px-2.5 py-1 rounded-full bg-emerald-600/90 backdrop-blur-md text-white text-[10px] font-bold uppercase tracking-wider">
-                                <i class="fa-solid fa-trophy mr-1"></i> Best Contributor
-                            </div>
-                            <div class="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-slate-950/80 backdrop-blur-md text-emerald-400 text-[10px] font-bold uppercase tracking-wider">
-                                Road to Wiki 2026
-                            </div>
-                        </div>
-                        <div class="p-5">
-                            <h4 class="font-bold text-slate-900 dark:text-white text-base mb-1.5 leading-snug">
-                                Best Contributor Award — Road to Wiki Graduation 2026
-                            </h4>
-                            <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
-                                Honored with the prestigious Best Contributor Award &amp; memento for outstanding technical contributions, upstream MediaWiki code merges, and leadership during the Road to Wiki Programme organized with Open Knowledge Initiatives (OKI, IIIT Hyderabad).
-                            </p>
-                        </div>
-                    </div>
-
-                    <!-- Card 2: Global Innovation Internship (Separates the two Road to Wiki awards) -->
-                    <div class="glass-card rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-xl transition-all duration-300 group">
-                        <div class="relative h-64 overflow-hidden bg-slate-200 dark:bg-slate-800">
-                            <img src="assets/images/ait-bangkok/gautam-kumar-maurya-gkm-ait-bangkok-thailand-internship-145.jpg" 
-                                 alt="Global Innovation Internship AIT Bangkok" 
-                                 loading="lazy" decoding="async"
-                                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                            <div class="absolute top-3 right-3 px-2.5 py-1 rounded-full bg-emerald-600/90 backdrop-blur-md text-white text-[10px] font-bold uppercase tracking-wider">
-                                International Fellowship
-                            </div>
-                        </div>
-                        <div class="p-5">
-                            <h4 class="font-bold text-slate-900 dark:text-white text-base mb-1.5 leading-snug">Global Innovation Internship</h4>
-                            <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
-                                Participating in the Global Innovation Internship Program at the Asian Institute of Technology (AIT), Bangkok, Thailand.
-                            </p>
-                        </div>
-                    </div>
-
-                    <!-- WikiClub Tech Open Source Marathon Winner Card -->
-                    <div class="glass-card rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-xl transition-all duration-300 group">
-                        <div class="relative h-64 overflow-hidden bg-slate-200 dark:bg-slate-800">
-                            <img src="assets/images/gallery/gautam-kumar-maurya-wikiclub-marathon-1st.jpg" 
-                                 alt="1st Rank in 1-Week Open Source Marathon by WikiClub Tech UIT" 
-                                 loading="lazy" decoding="async"
-                                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                            <div class="absolute top-3 right-3 px-2.5 py-1 rounded-full bg-purple-600/90 backdrop-blur-md text-white text-[10px] font-bold uppercase tracking-wider">
-                                Open Source 1st Rank
-                            </div>
-                        </div>
-                        <div class="p-5">
-                            <h4 class="font-bold text-slate-900 dark:text-white text-base mb-1.5 leading-snug">1-Week Open Source Marathon Winner</h4>
-                            <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
-                                Secured 1st Place in the 1-Week Open Source Contribution Marathon organized by WikiClub Tech UIT for authoring and merging production Wikimedia patches.
-                            </p>
-                        </div>
-                    </div>
-
-                    <!-- Card 3 -->
-                    <div class="glass-card rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-xl transition-all duration-300 group">
-                        <div class="relative h-56 overflow-hidden bg-slate-200 dark:bg-slate-800">
-                            <img src="assets/images/gallery/gautam-kumar-maurya-best-content-creator-award.jpg" 
-                                 alt="Best Content Creator Award" 
-                                 loading="lazy" decoding="async"
-                                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                            <div class="absolute top-3 right-3 px-2.5 py-1 rounded-full bg-sky-600/90 backdrop-blur-md text-white text-[10px] font-bold uppercase tracking-wider">
-                                UP Police Fellowship
-                            </div>
-                        </div>
-                        <div class="p-5">
-                            <h4 class="font-bold text-slate-900 dark:text-white text-base mb-1.5">Best Content Creator Award</h4>
-                            <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
-                                Recognized for excellence in technical content creation and community contributions.
-                            </p>
-                        </div>
-                    </div>
-
-                    <!-- Card 4 -->
-                    <div class="glass-card rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-xl transition-all duration-300 group">
-                        <div class="relative h-56 overflow-hidden bg-slate-200 dark:bg-slate-800">
-                            <img src="assets/images/gallery/gautam-kumar-maurya-aktu.jpg" 
-                                 alt="AKTU Branch Topper" 
-                                 loading="lazy" decoding="async"
-                                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                            <div class="absolute top-3 right-3 px-2.5 py-1 rounded-full bg-amber-600/90 backdrop-blur-md text-white text-[10px] font-bold uppercase tracking-wider">
-                                Academic Honor
-                            </div>
-                        </div>
-                        <div class="p-5">
-                            <h4 class="font-bold text-slate-900 dark:text-white text-base mb-1.5">AKTU Branch Topper</h4>
-                            <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
-                                Recognized as the Branch Topper in Computer Science & Engineering (Data Science) under Dr. A.P.J. Abdul Kalam Technical University (AKTU).
-                            </p>
-                        </div>
-                    </div>
-
-                    <!-- Card 5 -->
-                    <div class="glass-card rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-xl transition-all duration-300 group">
-                        <div class="relative h-56 overflow-hidden bg-slate-200 dark:bg-slate-800">
-                            <img src="assets/images/gallery/gautam-kumar-maurya-ffdg.jpg" 
-                                 alt="FlutterFlow Developers Group" 
-                                 loading="lazy" decoding="async"
-                                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                            <div class="absolute top-3 right-3 px-2.5 py-1 rounded-full bg-indigo-600/90 backdrop-blur-md text-white text-[10px] font-bold uppercase tracking-wider">
-                                Developer Meetup
-                            </div>
-                        </div>
-                        <div class="p-5">
-                            <h4 class="font-bold text-slate-900 dark:text-white text-base mb-1.5">FlutterFlow Developers Group</h4>
-                            <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
-                                Participating in developer meetups, workshops, and community collaboration.
-                            </p>
-                        </div>
-                    </div>
-
-                    <!-- Award 2: Most Active Contributor Award — Road to Wiki Graduation 2026 (Placed after FlutterFlow Developers Group) -->
-                    <div class="glass-card rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-xl transition-all duration-300 group">
-                        <div class="relative h-64 overflow-hidden bg-slate-900">
-                            <img src="assets/images/gallery/gautam-kumar-maurya-road-to-wiki-most-active-contributor.jpg" 
-                                 alt="Most Active Contributor Award — Road to Wiki Graduation 2026" 
-                                 loading="lazy" decoding="async"
-                                 class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500">
-                            <div class="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-transparent to-transparent"></div>
-                            <div class="absolute top-3 right-3 px-2.5 py-1 rounded-full bg-blue-600/90 backdrop-blur-md text-white text-[10px] font-bold uppercase tracking-wider">
-                                <i class="fa-solid fa-medal mr-1"></i> Most Active
-                            </div>
-                            <div class="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-slate-950/80 backdrop-blur-md text-blue-300 text-[10px] font-bold uppercase tracking-wider">
-                                Stage Felicitation
-                            </div>
-                        </div>
-                        <div class="p-5">
-                            <h4 class="font-bold text-slate-900 dark:text-white text-base mb-1.5 leading-snug">
-                                Most Active Contributor Award — Road to Wiki Graduation 2026
-                            </h4>
-                            <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
-                                Felicitated on stage with the framed recognition certificate for highest sustained commit activity, code reviews, and community enablement across the Road to Wiki Cohort 2 graduation ceremony.
-                            </p>
-                        </div>
-                    </div>
-
-                    <!-- Card 6 -->
-                    <div class="glass-card rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-xl transition-all duration-300 group">
-                        <div class="relative h-56 overflow-hidden bg-slate-200 dark:bg-slate-800">
-                            <img src="assets/images/gallery/gautam-kumar-maurya-uit-topper.jpg" 
-                                 alt="UIT Academic Excellence" 
-                                 loading="lazy" decoding="async"
-                                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                            <div class="absolute top-3 right-3 px-2.5 py-1 rounded-full bg-purple-600/90 backdrop-blur-md text-white text-[10px] font-bold uppercase tracking-wider">
-                                Academic Rank 1
-                            </div>
-                        </div>
-                        <div class="p-5">
-                            <h4 class="font-bold text-slate-900 dark:text-white text-base mb-1.5">UIT Academic Excellence</h4>
-                            <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
-                                Ranked among the Top 5 students at United Institute of Technology, Prayagraj.
-                            </p>
-                        </div>
-                    </div>
-
-                    <!-- Card 7 -->
-                    <div class="glass-card rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-xl transition-all duration-300 group">
-                        <div class="relative h-56 overflow-hidden bg-slate-200 dark:bg-slate-800">
-                            <img src="assets/images/gallery/gautam-kumar-maurya-gfg-award.jpg" 
-                                 alt="GeeksforGeeks Student Chapter – UIT" 
-                                 loading="lazy" decoding="async"
-                                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                            <div class="absolute top-3 right-3 px-2.5 py-1 rounded-full bg-emerald-600/90 backdrop-blur-md text-white text-[10px] font-bold uppercase tracking-wider">
-                                Student Leadership
-                            </div>
-                        </div>
-                        <div class="p-5">
-                            <h4 class="font-bold text-slate-900 dark:text-white text-base mb-1.5">GeeksforGeeks Student Chapter – UIT</h4>
-                            <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
-                                Recognition for leadership and contributions to the GeeksforGeeks Student Chapter.
-                            </p>
-                        </div>
-                    </div>
-
-                    <!-- Card 8 -->
-                    <div class="glass-card rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-xl transition-all duration-300 group">
-                        <div class="relative h-56 overflow-hidden bg-slate-200 dark:bg-slate-800">
-                            <img src="assets/images/gallery/gautam-kumar-maurya-gsa.jpg" 
-                                 alt="Google Student Ambassador Event Co-Organizer" 
-                                 loading="lazy" decoding="async"
-                                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                            <div class="absolute top-3 right-3 px-2.5 py-1 rounded-full bg-blue-600/90 backdrop-blur-md text-white text-[10px] font-bold uppercase tracking-wider">
-                                Co-Organizer (650+)
-                            </div>
-                        </div>
-                        <div class="p-5">
-                            <h4 class="font-bold text-slate-900 dark:text-white text-base mb-1.5">Google Student Ambassador Leadership</h4>
-                            <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
-                                Co-organized a mega 650+ attendee tech event as GSA; honored &amp; awarded on stage by Principal Sir, DSW, and all Department HODs.
-                            </p>
-                        </div>
-                    </div>
-
-                    <!-- Card 9 -->
-                    <div class="glass-card rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-xl transition-all duration-300 group">
-                        <div class="relative h-56 overflow-hidden bg-slate-200 dark:bg-slate-800">
-                            <img src="assets/images/gallery/gautam-kumar-maurya-1st-in-webdie.jpg" 
-                                 alt="Webdie Hackathon Champion" 
-                                 loading="lazy" decoding="async"
-                                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                            <div class="absolute top-3 right-3 px-2.5 py-1 rounded-full bg-amber-600/90 backdrop-blur-md text-white text-[10px] font-bold uppercase tracking-wider">
-                                Hackathon 1st Rank
-                            </div>
-                        </div>
-                        <div class="p-5">
-                            <h4 class="font-bold text-slate-900 dark:text-white text-base mb-1.5">Webdie Hackathon Champion</h4>
-                            <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
-                                Secured 1st Place in the Webdie Full Stack Development Hackathon.
-                            </p>
-                        </div>
-                    </div>
-
-                    <!-- MNIT Academic Topper Honor Card -->
-                    <div class="glass-card rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-xl transition-all duration-300 group">
-                        <div class="relative h-56 overflow-hidden bg-slate-200 dark:bg-slate-800">
-                            <img src="assets/images/gallery/gautam-kumar-maurya-iita.jpg" 
-                                 alt="MNIT Professor Academic Topper Award" 
-                                 loading="lazy" decoding="async"
-                                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                            <div class="absolute top-3 right-3 px-2.5 py-1 rounded-full bg-amber-600/90 backdrop-blur-md text-white text-[10px] font-bold uppercase tracking-wider">
-                                Academic Honor
-                            </div>
-                        </div>
-                        <div class="p-5">
-                            <h4 class="font-bold text-slate-900 dark:text-white text-base mb-1.5">MNIT Academic Topper Honor</h4>
-                            <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
-                                Honored by MNIT Professor for securing 1st Rank (School Academic Topper) &amp; maintaining 100% Attendance.
-                            </p>
-                        </div>
-                    </div>
-
-                    <!-- School Academic Journey Card -->
-                    <div class="glass-card rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-xl transition-all duration-300 group">
-                        <div class="relative h-56 overflow-hidden bg-slate-200 dark:bg-slate-800">
-                            <img src="assets/images/gallery/gautam-kumar-maurya-school.jpg" 
-                                 alt="School Academic Journey" 
-                                 loading="lazy" decoding="async"
-                                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                            <div class="absolute top-3 right-3 px-2.5 py-1 rounded-full bg-rose-600/90 backdrop-blur-md text-white text-[10px] font-bold uppercase tracking-wider">
-                                Early Milestones
-                            </div>
-                        </div>
-                        <div class="p-5">
-                            <h4 class="font-bold text-slate-900 dark:text-white text-base mb-1.5">School Academic Journey</h4>
-                            <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
-                                Academic achievements, competitions, and leadership during school education.
-                            </p>
-                        </div>
-                    </div>
-
-                    <!-- UP Board District Topper Award Card -->
-                    <div class="glass-card rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-xl transition-all duration-300 group">
-                        <div class="relative h-56 overflow-hidden bg-slate-200 dark:bg-slate-800">
-                            <img src="assets/images/gallery/gautam-kumar-maurya-upsmp.jpg" 
-                                 alt="UP Board District Topper Award" 
-                                 loading="lazy" decoding="async"
-                                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                            <div class="absolute top-3 right-3 px-2.5 py-1 rounded-full bg-emerald-600/90 backdrop-blur-md text-white text-[10px] font-bold uppercase tracking-wider">
-                                State Honor
-                            </div>
-                        </div>
-                        <div class="p-5">
-                            <h4 class="font-bold text-slate-900 dark:text-white text-base mb-1.5">UP Board District Topper Award</h4>
-                            <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
-                                Honored by the Chairman, Director &amp; Secretary (सचिव - माध्यमिक शिक्षा परिषद्) of UP Board for academic excellence as a District Topper.
-                            </p>
-                        </div>
-                    </div>
-
-
-                </div>
-
-            </div>
-        </section>
-
-        <!-- ═══════════════════════════════════════
-             07. ENGINEERING DEEP DIVES & FIELD REPORTS
+                <!-- ═══════════════════════════════════════
+             10. ENGINEERING DEEP DIVES & FIELD REPORTS
         ═══════════════════════════════════════ -->
         <section id="deep-dives" class="py-20 section-dot-grid border-t border-slate-200/60 dark:border-slate-800 relative overflow-hidden">
             <!-- Ambient Glow -->
             <div class="section-ambient-glow-purple -top-24 right-10 opacity-60"></div>
+            <div class="section-ambient-glow-blue bottom-10 left-10 opacity-50"></div>
 
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                 
@@ -2805,115 +2516,151 @@
                         </h2>
                     </div>
                     <p class="text-sm text-slate-600 dark:text-slate-400 max-w-md mt-4 md:mt-0 leading-relaxed">
-                        Comprehensive writeups, technical architecture reviews, and verified documentation from international and government research programs.
+                        Comprehensive writeups, technical architecture reviews, and verified documentation across all 8 dedicated portals.
                     </p>
                 </div>
 
-                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
                     <!-- Deep Dive 1: Wikimedia Open Source -->
-                    <a href="./open-source-contributions.html" class="glass-card p-6 sm:p-7 rounded-3xl border border-slate-200/80 dark:border-slate-800 hover-elevate flex flex-col justify-between group transition-all">
+                    <a href="./open-source-contributions.html" class="glass-card p-6 rounded-3xl border border-slate-200/80 dark:border-slate-800 hover-elevate flex flex-col justify-between group transition-all">
                         <div>
                             <div class="flex items-center justify-between mb-4">
                                 <span class="px-3 py-1 rounded-full bg-purple-50 dark:bg-purple-950/60 text-purple-600 dark:text-purple-400 text-xs font-bold uppercase tracking-wider">Wikimedia Movement</span>
                                 <i data-lucide="arrow-up-right" class="w-4 h-4 text-slate-400 group-hover:text-purple-600 transition-colors"></i>
                             </div>
-                            <h4 class="text-xl font-bold text-slate-900 dark:text-white mb-2">Wikimedia Core Impact Report</h4>
+                            <h4 class="text-lg font-bold text-slate-900 dark:text-white mb-2 leading-snug">Wikimedia Core Impact Report</h4>
                             <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed mb-6">
-                                15+ production patches merged across MediaWiki Core, MinervaNeue, and Pywikibot. Documented in the IIIT Hyderabad Technical Impact Report.
+                                15+ production patches merged across MediaWiki Core, MinervaNeue, and Pywikibot. Documented in the IIIT Hyderabad Technical Report.
                             </p>
                         </div>
                         <div class="pt-4 border-t border-slate-100 dark:border-slate-800/80 flex items-center justify-between text-xs font-bold text-purple-600 dark:text-purple-400">
-                            <span>Explore 15+ Gerrit Patches</span>
+                            <span>Explore 15+ Patches</span>
                             <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
                         </div>
                     </a>
 
-                    <!-- Deep Dive 2: AIT Bangkok GIIP -->
-                    <a href="./ait-global-innovation-internship.html" class="glass-card p-6 sm:p-7 rounded-3xl border border-slate-200/80 dark:border-slate-800 hover-elevate flex flex-col justify-between group transition-all">
+                    <!-- Deep Dive 2: Road to Wiki Fellowship -->
+                    <a href="./road-to-wiki.html" class="glass-card p-6 rounded-3xl border border-slate-200/80 dark:border-slate-800 hover-elevate flex flex-col justify-between group transition-all">
+                        <div>
+                            <div class="flex items-center justify-between mb-4">
+                                <span class="px-3 py-1 rounded-full bg-emerald-50 dark:bg-emerald-950/60 text-emerald-600 dark:text-emerald-400 text-xs font-bold uppercase tracking-wider">Cohort 2 Fellowship</span>
+                                <i data-lucide="arrow-up-right" class="w-4 h-4 text-slate-400 group-hover:text-emerald-600 transition-colors"></i>
+                            </div>
+                            <h4 class="text-lg font-bold text-slate-900 dark:text-white mb-2 leading-snug">Road to Wiki Fellowship</h4>
+                            <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed mb-6">
+                                9-month incubator by OKI &amp; Wikimedia. 3 phases, Proofread &amp; Translate tools, 3-day Gurugram Conclave &amp; Best Contributor Award.
+                            </p>
+                        </div>
+                        <div class="pt-4 border-t border-slate-100 dark:border-slate-800/80 flex items-center justify-between text-xs font-bold text-emerald-600 dark:text-emerald-400">
+                            <span>Read Conclave Dossier</span>
+                            <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                        </div>
+                    </a>
+
+                    <!-- Deep Dive 3: AIT Bangkok GIIP -->
+                    <a href="./ait-global-innovation-internship.html" class="glass-card p-6 rounded-3xl border border-slate-200/80 dark:border-slate-800 hover-elevate flex flex-col justify-between group transition-all">
                         <div>
                             <div class="flex items-center justify-between mb-4">
                                 <span class="px-3 py-1 rounded-full bg-blue-50 dark:bg-blue-950/60 text-blue-600 dark:text-blue-400 text-xs font-bold uppercase tracking-wider">Thailand Fellowship</span>
                                 <i data-lucide="arrow-up-right" class="w-4 h-4 text-slate-400 group-hover:text-blue-600 transition-colors"></i>
                             </div>
-                            <h4 class="text-xl font-bold text-slate-900 dark:text-white mb-2">AIT Bangkok 15-Day Research Log</h4>
+                            <h4 class="text-lg font-bold text-slate-900 dark:text-white mb-2 leading-snug">AIT Bangkok 15-Day Research Log</h4>
                             <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed mb-6">
-                                Complete day-by-day technical timeline covering Agentic AI, QGIS telemetry, drone mapping, and BusSetu public transit analytics in Thailand.
+                                Day-by-day technical timeline covering Agentic AI, QGIS telemetry, drone mapping, and BusSetu transit analytics in Thailand.
                             </p>
                         </div>
                         <div class="pt-4 border-t border-slate-100 dark:border-slate-800/80 flex items-center justify-between text-xs font-bold text-blue-600 dark:text-blue-400">
-                            <span>Read 15-Day Field Report</span>
+                            <span>Read 15-Day Report</span>
                             <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
                         </div>
                     </a>
 
-                    <!-- Deep Dive 3: UP Police Cyber -->
-                    <a href="./up-police-internship.html" class="glass-card p-6 sm:p-7 rounded-3xl border border-slate-200/80 dark:border-slate-800 hover-elevate flex flex-col justify-between group transition-all">
+                    <!-- Deep Dive 4: UP Police Cyber -->
+                    <a href="./up-police-internship.html" class="glass-card p-6 rounded-3xl border border-slate-200/80 dark:border-slate-800 hover-elevate flex flex-col justify-between group transition-all">
                         <div>
                             <div class="flex items-center justify-between mb-4">
                                 <span class="px-3 py-1 rounded-full bg-sky-50 dark:bg-sky-950/60 text-sky-600 dark:text-sky-400 text-xs font-bold uppercase tracking-wider">Govt Cyber Cell</span>
                                 <i data-lucide="arrow-up-right" class="w-4 h-4 text-slate-400 group-hover:text-sky-600 transition-colors"></i>
                             </div>
-                            <h4 class="text-xl font-bold text-slate-900 dark:text-white mb-2">UP Police APCSIP-2026 Brief</h4>
+                            <h4 class="text-lg font-bold text-slate-900 dark:text-white mb-2 leading-snug">UP Police APCSIP-2026 Brief</h4>
                             <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed mb-6">
-                                Digital forensics, OSINT investigations, and threat intelligence under DSP Anjali Kataria Ma'am with the Best Content Creator Award citation.
+                                Digital forensics, OSINT investigations, and threat intelligence under DSP Anjali Kataria Ma'am with Best Content Creator citation.
                             </p>
                         </div>
                         <div class="pt-4 border-t border-slate-100 dark:border-slate-800/80 flex items-center justify-between text-xs font-bold text-sky-600 dark:text-sky-400">
-                            <span>Read Cyber Investigation Brief</span>
+                            <span>Read Cyber Brief</span>
                             <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
                         </div>
                     </a>
 
-                    <!-- Deep Dive 4: B.Tech 4-Year Journey -->
-                    <a href="./btech-journey.html" class="glass-card p-6 sm:p-7 rounded-3xl border border-slate-200/80 dark:border-slate-800 hover-elevate flex flex-col justify-between group transition-all">
+                    <!-- Deep Dive 5: B.Tech 4-Year Journey -->
+                    <a href="./btech-journey.html" class="glass-card p-6 rounded-3xl border border-slate-200/80 dark:border-slate-800 hover-elevate flex flex-col justify-between group transition-all">
                         <div>
                             <div class="flex items-center justify-between mb-4">
-                                <span class="px-3 py-1 rounded-full bg-emerald-50 dark:bg-emerald-950/60 text-emerald-600 dark:text-emerald-400 text-xs font-bold uppercase tracking-wider">Interactive Journey</span>
-                                <i data-lucide="arrow-up-right" class="w-4 h-4 text-slate-400 group-hover:text-emerald-600 transition-colors"></i>
+                                <span class="px-3 py-1 rounded-full bg-indigo-50 dark:bg-indigo-950/60 text-indigo-600 dark:text-indigo-400 text-xs font-bold uppercase tracking-wider">Interactive Journey</span>
+                                <i data-lucide="arrow-up-right" class="w-4 h-4 text-slate-400 group-hover:text-indigo-600 transition-colors"></i>
                             </div>
-                            <h4 class="text-xl font-bold text-slate-900 dark:text-white mb-2">B.Tech Academic &amp; Tech Journey</h4>
+                            <h4 class="text-lg font-bold text-slate-900 dark:text-white mb-2 leading-snug">B.Tech Academic Journey</h4>
                             <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed mb-6">
-                                Interactive semester-by-semester breakdown from 1st Year to 4th Year, AKTU exams, leadership milestones, and tech blog logs.
+                                Semester-by-semester breakdown from 1st Year to 4th Year, AKTU exams, SGPA 8.5, branch rank 1 milestones, and tech blog logs.
                             </p>
                         </div>
-                        <div class="pt-4 border-t border-slate-100 dark:border-slate-800/80 flex items-center justify-between text-xs font-bold text-emerald-600 dark:text-emerald-400">
-                            <span>Explore Interactive Journey</span>
+                        <div class="pt-4 border-t border-slate-100 dark:border-slate-800/80 flex items-center justify-between text-xs font-bold text-indigo-600 dark:text-indigo-400">
+                            <span>Explore Journey</span>
                             <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
                         </div>
                     </a>
 
-                    <!-- Deep Dive 5: 40+ Certifications -->
-                    <a href="./certifications.html" class="glass-card p-6 sm:p-7 rounded-3xl border border-slate-200/80 dark:border-slate-800 hover-elevate flex flex-col justify-between group transition-all">
+                    <!-- Deep Dive 6: Awards & Recognitions -->
+                    <a href="./achievements.html" class="glass-card p-6 rounded-3xl border border-slate-200/80 dark:border-slate-800 hover-elevate flex flex-col justify-between group transition-all">
                         <div>
                             <div class="flex items-center justify-between mb-4">
-                                <span class="px-3 py-1 rounded-full bg-amber-50 dark:bg-amber-950/60 text-amber-600 dark:text-amber-400 text-xs font-bold uppercase tracking-wider">Verified Credentials</span>
+                                <span class="px-3 py-1 rounded-full bg-amber-50 dark:bg-amber-950/60 text-amber-600 dark:text-amber-400 text-xs font-bold uppercase tracking-wider">Honors &amp; Citations</span>
                                 <i data-lucide="arrow-up-right" class="w-4 h-4 text-slate-400 group-hover:text-amber-600 transition-colors"></i>
                             </div>
-                            <h4 class="text-xl font-bold text-slate-900 dark:text-white mb-2">40+ Certifications &amp; Badges</h4>
+                            <h4 class="text-lg font-bold text-slate-900 dark:text-white mb-2 leading-snug">Honors &amp; Awards Dossier</h4>
+                            <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed mb-6">
+                                Road to Wiki Best Contributor, UP Police DSP Award, AKTU Branch Topper, Webdie Hackathon 1st Rank, and stage felicitations.
+                            </p>
+                        </div>
+                        <div class="pt-4 border-t border-slate-100 dark:border-slate-800/80 flex items-center justify-between text-xs font-bold text-amber-600 dark:text-amber-400">
+                            <span>View All Citations</span>
+                            <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                        </div>
+                    </a>
+
+                    <!-- Deep Dive 7: 40+ Certifications -->
+                    <a href="./certifications.html" class="glass-card p-6 rounded-3xl border border-slate-200/80 dark:border-slate-800 hover-elevate flex flex-col justify-between group transition-all">
+                        <div>
+                            <div class="flex items-center justify-between mb-4">
+                                <span class="px-3 py-1 rounded-full bg-cyan-50 dark:bg-cyan-950/60 text-cyan-600 dark:text-cyan-400 text-xs font-bold uppercase tracking-wider">Verified Credentials</span>
+                                <i data-lucide="arrow-up-right" class="w-4 h-4 text-slate-400 group-hover:text-cyan-600 transition-colors"></i>
+                            </div>
+                            <h4 class="text-lg font-bold text-slate-900 dark:text-white mb-2 leading-snug">40+ Certifications &amp; Badges</h4>
                             <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed mb-6">
                                 Publicly verifiable licenses from Anthropic, C3iHub IIT Kanpur, Microsoft, IBM, Google Cloud, and Infosys Springboard.
                             </p>
                         </div>
-                        <div class="pt-4 border-t border-slate-100 dark:border-slate-800/80 flex items-center justify-between text-xs font-bold text-amber-600 dark:text-amber-400">
-                            <span>Verify Credentials &amp; IDs</span>
+                        <div class="pt-4 border-t border-slate-100 dark:border-slate-800/80 flex items-center justify-between text-xs font-bold text-cyan-600 dark:text-cyan-400">
+                            <span>Verify Credentials</span>
                             <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
                         </div>
                     </a>
 
-                    <!-- Deep Dive 6: Events Organised Dossier -->
-                    <a href="./events-organized.html" class="glass-card p-6 sm:p-7 rounded-3xl border border-slate-200/80 dark:border-slate-800 hover-elevate flex flex-col justify-between group transition-all">
+                    <!-- Deep Dive 8: Events Organised Dossier -->
+                    <a href="./events-organized.html" class="glass-card p-6 rounded-3xl border border-slate-200/80 dark:border-slate-800 hover-elevate flex flex-col justify-between group transition-all">
                         <div>
                             <div class="flex items-center justify-between mb-4">
                                 <span class="px-3 py-1 rounded-full bg-rose-50 dark:bg-rose-950/60 text-rose-600 dark:text-rose-400 text-xs font-bold uppercase tracking-wider">Campus Leadership</span>
                                 <i data-lucide="arrow-up-right" class="w-4 h-4 text-slate-400 group-hover:text-rose-600 transition-colors"></i>
                             </div>
-                            <h4 class="text-xl font-bold text-slate-900 dark:text-white mb-2">17+ Events Organised Dossier</h4>
+                            <h4 class="text-lg font-bold text-slate-900 dark:text-white mb-2 leading-snug">17+ Events Organised Dossier</h4>
                             <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed mb-6">
-                                Detailed timelines, partner brand archives, and full photo albums covering SIH Conclave, UCC coding challenge, GFG VP keynotes, and Google Vibe Coding.
+                                Detailed timelines, partner brand archives, and full photo albums covering SIH Conclave, UCC challenge, GFG VP keynotes, and Google Vibe.
                             </p>
                         </div>
                         <div class="pt-4 border-t border-slate-100 dark:border-slate-800/80 flex items-center justify-between text-xs font-bold text-rose-600 dark:text-rose-400">
-                            <span>Explore 17+ Events Archive</span>
+                            <span>Explore 17+ Events</span>
                             <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
                         </div>
                     </a>
@@ -3054,38 +2801,135 @@
     <!-- ═══════════════════════════════════════
          11. FOOTER
     ═══════════════════════════════════════ -->
-    <footer class="bg-white dark:bg-slate-950 border-t border-slate-200 dark:border-slate-800 py-12">
+        <!-- ═══════════════════════════════════════
+         11. MASTER 4-COLUMN FOOTER
+    ═══════════════════════════════════════ -->
+    <footer class="bg-white dark:bg-slate-950 border-t border-slate-200 dark:border-slate-800 pt-16 pb-12">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-8 pb-12 border-b border-slate-200 dark:border-slate-800">
                 
-                <!-- Left Brand -->
-                <div class="flex items-center gap-3">
-                    <img src="assets/images/profile/Gautam_Kumar_Maurya.jpg" alt="Gautam Kumar Maurya Logo" class="w-8 h-8 rounded-lg object-cover border border-blue-600">
-                    <span class="text-sm font-semibold text-slate-900 dark:text-white">Gautam Kumar Maurya</span>
-                    <span class="text-xs text-slate-400">© 2026. All rights reserved.</span>
+                <!-- Col 1: Identity & Bio (4 cols) -->
+                <div class="lg:col-span-4 space-y-4">
+                    <div class="flex items-center gap-3">
+                        <img src="assets/images/profile/Gautam_Kumar_Maurya.jpg" alt="Gautam Kumar Maurya" class="w-11 h-11 rounded-2xl object-cover border-2 border-blue-600 shadow-sm">
+                        <div>
+                            <h3 class="font-bold text-slate-950 dark:text-white text-base font-heading">Gautam Kumar Maurya</h3>
+                            <p class="text-xs text-blue-600 dark:text-blue-400 font-semibold">Full Stack · Agentic AI · Open Source</p>
+                        </div>
+                    </div>
+                    <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
+                        B.Tech CSE (Data Science) @ United Institute of Technology, Prayagraj (AKTU). Academic Rank 1 (SGPA 8.5). Upstream Wikimedia Core contributor, APCSIP UP Police Cyber Fellow, and AIT Bangkok GIIP Fellow.
+                    </p>
+                    <div class="flex items-center gap-2 pt-2">
+                        <a href="https://github.com/gkm563" target="_blank" rel="noopener" class="w-9 h-9 rounded-xl bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 flex items-center justify-center text-slate-700 dark:text-slate-300 hover:text-blue-600 hover:border-blue-500 transition-all text-sm" title="GitHub">
+                            <i class="fa-brands fa-github"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/gkm563/" target="_blank" rel="noopener" class="w-9 h-9 rounded-xl bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 flex items-center justify-center text-slate-700 dark:text-slate-300 hover:text-blue-600 hover:border-blue-500 transition-all text-sm" title="LinkedIn">
+                            <i class="fa-brands fa-linkedin"></i>
+                        </a>
+                        <a href="https://gerrit.wikimedia.org/r/q/owner:gkm563" target="_blank" rel="noopener" class="w-9 h-9 rounded-xl bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 flex items-center justify-center text-slate-700 dark:text-slate-300 hover:text-purple-600 hover:border-purple-500 transition-all text-sm" title="Wikimedia Gerrit">
+                            <i class="fa-brands fa-wikipedia-w"></i>
+                        </a>
+                        <a href="mailto:gkmwin563@gmail.com" class="w-9 h-9 rounded-xl bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 flex items-center justify-center text-slate-700 dark:text-slate-300 hover:text-rose-600 hover:border-rose-500 transition-all text-sm" title="Email">
+                            <i class="fa-solid fa-envelope"></i>
+                        </a>
+                        <a href="https://api.whatsapp.com/send?phone=919125563563" target="_blank" rel="noopener" class="w-9 h-9 rounded-xl bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 flex items-center justify-center text-slate-700 dark:text-slate-300 hover:text-emerald-600 hover:border-emerald-500 transition-all text-sm" title="WhatsApp">
+                            <i class="fa-brands fa-whatsapp"></i>
+                        </a>
+                    </div>
                 </div>
 
-                <!-- Center Quick Navigation -->
-                <div class="flex flex-wrap items-center gap-6 text-xs text-slate-500 dark:text-slate-400">
-                    <a href="#about" class="hover:text-blue-600">About</a>
-                    <a href="#projects" class="hover:text-blue-600">Projects</a>
-                    <a href="#experience" class="hover:text-blue-600">Internships</a>
-                    <a href="#gallery" class="hover:text-blue-600">Gallery</a>
-                    <a href="./open-source-contributions.html" class="hover:text-blue-600">Open Source</a>
-                    <a href="./faq.html" class="hover:text-blue-600 font-medium">FAQ</a>
-                    <a href="assets/docs/Gautam_Kumar_Maurya_Resume.pdf" target="_blank" rel="noopener" class="hover:text-blue-600">Resume PDF</a>
+                <!-- Col 2: Hub Navigation (2 cols) -->
+                <div class="lg:col-span-2 space-y-3">
+                    <h4 class="text-xs font-bold uppercase tracking-wider text-slate-950 dark:text-white">Navigation</h4>
+                    <ul class="space-y-2 text-xs text-slate-600 dark:text-slate-400">
+                        <li><a href="#hero" class="hover:text-blue-600 transition-colors">Identity &amp; Hero</a></li>
+                        <li><a href="#projects" class="hover:text-blue-600 transition-colors">Featured Projects</a></li>
+                        <li><a href="#open-source" class="hover:text-blue-600 transition-colors">Open Source</a></li>
+                        <li><a href="#experience" class="hover:text-blue-600 transition-colors">Experience &amp; Research</a></li>
+                        <li><a href="#education" class="hover:text-blue-600 transition-colors">Education &amp; Ranks</a></li>
+                        <li><a href="#skills" class="hover:text-blue-600 transition-colors">Skills Matrix</a></li>
+                        <li><a href="#leadership" class="hover:text-blue-600 transition-colors">Leadership &amp; Chapters</a></li>
+                        <li><a href="#achievements" class="hover:text-blue-600 transition-colors">Awards &amp; Recognitions</a></li>
+                        <li><a href="#events" class="hover:text-blue-600 transition-colors">Events Spotlight</a></li>
+                        <li><a href="#contact" class="hover:text-blue-600 transition-colors">Recruiter Contact</a></li>
+                    </ul>
                 </div>
 
-                <!-- Right Share / Back to top -->
+                <!-- Col 3: Dedicated Dossiers & Portals (3 cols) -->
+                <div class="lg:col-span-3 space-y-3">
+                    <h4 class="text-xs font-bold uppercase tracking-wider text-slate-950 dark:text-white">Dedicated Portals</h4>
+                    <ul class="space-y-2 text-xs text-slate-600 dark:text-slate-400">
+                        <li><a href="./open-source-contributions.html" class="hover:text-purple-600 transition-colors flex items-center gap-1.5"><i class="fa-brands fa-wikipedia-w text-[10px]"></i> Wikimedia &amp; Gerrit Ledger</a></li>
+                        <li><a href="./road-to-wiki.html" class="hover:text-emerald-600 transition-colors flex items-center gap-1.5"><i class="fa-solid fa-graduation-cap text-[10px]"></i> Road to Wiki Fellowship</a></li>
+                        <li><a href="./ait-global-innovation-internship.html" class="hover:text-blue-600 transition-colors flex items-center gap-1.5"><i class="fa-solid fa-earth-americas text-[10px]"></i> AIT Bangkok GIIP Report</a></li>
+                        <li><a href="./up-police-internship.html" class="hover:text-sky-600 transition-colors flex items-center gap-1.5"><i class="fa-solid fa-shield-halved text-[10px]"></i> UP Police Cyber Brief</a></li>
+                        <li><a href="./btech-journey.html" class="hover:text-indigo-600 transition-colors flex items-center gap-1.5"><i class="fa-solid fa-calendar-days text-[10px]"></i> B.Tech 4-Year Journey</a></li>
+                        <li><a href="./achievements.html" class="hover:text-amber-600 transition-colors flex items-center gap-1.5"><i class="fa-solid fa-trophy text-[10px]"></i> Awards &amp; Recognitions</a></li>
+                        <li><a href="./certifications.html" class="hover:text-cyan-600 transition-colors flex items-center gap-1.5"><i class="fa-solid fa-certificate text-[10px]"></i> 40+ Verified Credentials</a></li>
+                        <li><a href="./events-organized.html" class="hover:text-rose-600 transition-colors flex items-center gap-1.5"><i class="fa-solid fa-users text-[10px]"></i> 17+ Events Organised</a></li>
+                        <li><a href="./faq.html" class="hover:text-blue-600 transition-colors flex items-center gap-1.5"><i class="fa-solid fa-circle-question text-[10px]"></i> Recruiter FAQ</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 4: Public Verifications & Code (3 cols) -->
+                <div class="lg:col-span-3 space-y-3">
+                    <h4 class="text-xs font-bold uppercase tracking-wider text-slate-950 dark:text-white">Public Verifications</h4>
+                    <ul class="space-y-2 text-xs text-slate-600 dark:text-slate-400">
+                        <li>
+                            <a href="https://gerrit.wikimedia.org/r/q/owner:gkm563" target="_blank" rel="noopener" class="hover:text-blue-600 transition-colors flex items-center justify-between">
+                                <span>Gerrit Code Review</span>
+                                <span class="font-mono text-[10px] text-purple-600 dark:text-purple-400 font-bold">26+ Patches ↗</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://phabricator.wikimedia.org/p/gkm563/" target="_blank" rel="noopener" class="hover:text-blue-600 transition-colors flex items-center justify-between">
+                                <span>Wikimedia Phabricator</span>
+                                <span class="font-mono text-[10px] text-blue-600 dark:text-blue-400 font-bold">@gkm563 ↗</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://github.com/gkm563" target="_blank" rel="noopener" class="hover:text-blue-600 transition-colors flex items-center justify-between">
+                                <span>GitHub Repositories</span>
+                                <span class="font-mono text-[10px] text-slate-500 font-bold">@gkm563 ↗</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="assets/docs/Gautam_Kumar_Maurya_Resume.pdf" target="_blank" rel="noopener" class="hover:text-blue-600 transition-colors flex items-center justify-between">
+                                <span>Official Resume PDF</span>
+                                <span class="font-mono text-[10px] text-emerald-600 dark:text-emerald-400 font-bold">Download ↗</span>
+                            </a>
+                        </li>
+                    </ul>
+                    <div class="pt-4">
+                        <div class="p-3.5 rounded-2xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-xs">
+                            <div class="flex items-center gap-2 font-bold text-slate-900 dark:text-white mb-1">
+                                <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                                <span>Availability Status</span>
+                            </div>
+                            <p class="text-[11px] text-slate-600 dark:text-slate-400 leading-relaxed">
+                                Open for Software Engineering, AI &amp; Full-Stack developer opportunities.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Bottom Copyright & Actions Strip -->
+            <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500 dark:text-slate-400">
+                <div class="flex items-center gap-2 text-center sm:text-left">
+                    <span>© 2026 Gautam Kumar Maurya. Crafted with semantic HTML &amp; Tailwind CSS.</span>
+                </div>
                 <div class="flex items-center gap-3">
                     <button id="share-copy-btn" class="p-2.5 rounded-xl border border-slate-200 dark:border-slate-800 text-slate-500 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-slate-50 dark:hover:bg-slate-900 transition-colors" title="Copy Portfolio Link">
                         <i data-lucide="share-2" class="w-4 h-4"></i>
                     </button>
-                    <a href="#hero" class="p-2.5 rounded-xl border border-slate-200 dark:border-slate-800 text-slate-500 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-slate-50 dark:hover:bg-slate-900 transition-colors" title="Back to top">
+                    <a href="#hero" class="p-2.5 rounded-xl border border-slate-200 dark:border-slate-800 text-slate-500 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-slate-50 dark:hover:bg-slate-900 transition-colors flex items-center gap-1 font-semibold text-xs" title="Back to top">
+                        <span>Top</span>
                         <i data-lucide="chevron-up" class="w-4 h-4"></i>
                     </a>
                 </div>
-
             </div>
         </div>
     </footer>
