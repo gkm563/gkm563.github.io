@@ -158,8 +158,12 @@ h1, h2, h3, h4, h5, h6 {
 /* Floating Capsule State */
 #navbar.floating-nav-active {
   top: 0.75rem !important;
-  width: min(calc(100% - 2rem), 1180px) !important;
-  max-width: 1180px !important;
+  left: 0 !important;
+  right: 0 !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  width: min(calc(100% - 2rem), 1260px) !important;
+  max-width: 1260px !important;
   border-radius: 9999px !important;
   background: rgba(255, 255, 255, 0.95) !important;
   backdrop-filter: blur(28px) saturate(200%) !important;
@@ -181,8 +185,16 @@ h1, h2, h3, h4, h5, h6 {
 
 #navbar.floating-nav-active .nav-inner-wrapper {
   height: 3.75rem !important;
-  padding: 0 1rem 0 1.25rem !important;
+  padding: 0 1.5rem !important;
   max-width: 100% !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+@media (min-width: 1280px) {
+  #navbar.floating-nav-active .nav-inner-wrapper {
+    padding: 0 1.75rem !important;
+  }
 }
 
 @media (max-width: 1024px) {
@@ -193,7 +205,7 @@ h1, h2, h3, h4, h5, h6 {
   }
   #navbar.floating-nav-active .nav-inner-wrapper {
     height: 3.5rem !important;
-    padding: 0 0.85rem !important;
+    padding: 0 1.25rem !important;
   }
 }
 
@@ -205,7 +217,7 @@ h1, h2, h3, h4, h5, h6 {
   }
   #navbar.floating-nav-active .nav-inner-wrapper {
     height: 3.4rem !important;
-    padding: 0 0.75rem !important;
+    padding: 0 1rem !important;
   }
 }
 
@@ -1511,11 +1523,19 @@ html:not(.dark) .terminal-tab-btn.active {
 
 .mockup-nav-link {
   position: relative;
-  padding: 0.375rem 0.625rem;
-  font-size: 0.875rem;
+  padding: 0.25rem 0.45rem;
+  font-size: 0.8125rem;
   font-weight: 500;
   color: #475569;
+  white-space: nowrap;
   transition: color 0.2s ease;
+}
+
+@media (min-width: 1280px) {
+  .mockup-nav-link {
+    padding: 0.35rem 0.6rem;
+    font-size: 0.875rem;
+  }
 }
 
 .dark .mockup-nav-link {
