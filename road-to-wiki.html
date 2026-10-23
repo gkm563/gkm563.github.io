@@ -417,6 +417,121 @@
       .dark .glow-wiki-red {
         background: radial-gradient(circle, rgba(153, 0, 0, 0.24) 0%, rgba(248, 113, 113, 0.08) 45%, transparent 70%);
       }
+    
+      /* ═══════════════════════════════════════
+         INTERACTIVE & ANIMATION SYSTEM
+      ═══════════════════════════════════════ */
+      /* Smooth Reveal on Scroll */
+      .reveal-init {
+        opacity: 0;
+        transform: translateY(24px);
+        transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+        will-change: opacity, transform;
+      }
+      .reveal-visible {
+        opacity: 1 !important;
+        transform: translateY(0) scale(1) !important;
+      }
+      .stagger-1 { transition-delay: 60ms; }
+      .stagger-2 { transition-delay: 120ms; }
+      .stagger-3 { transition-delay: 180ms; }
+      .stagger-4 { transition-delay: 240ms; }
+
+      /* Floating Ambient Glow Orbs */
+      @keyframes floatSlow1 {
+        0%, 100% { transform: translate(0, 0) scale(1); }
+        50% { transform: translate(25px, -20px) scale(1.06); }
+      }
+      @keyframes floatSlow2 {
+        0%, 100% { transform: translate(0, 0) scale(1); }
+        50% { transform: translate(-20px, 25px) scale(0.96); }
+      }
+      @keyframes floatSlow3 {
+        0%, 100% { transform: translate(0, 0) scale(1); }
+        50% { transform: translate(18px, 18px) scale(1.04); }
+      }
+      .glow-wiki-blue { animation: floatSlow1 12s ease-in-out infinite alternate; }
+      .glow-wiki-green { animation: floatSlow2 16s ease-in-out infinite alternate; }
+      .glow-wiki-red { animation: floatSlow3 14s ease-in-out infinite alternate; }
+
+      /* Modern Spotlight Border Glow on Mouse Move */
+      .spotlight-card {
+        position: relative;
+        overflow: hidden;
+      }
+      .spotlight-card::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        border-radius: inherit;
+        padding: 1.5px;
+        background: radial-gradient(350px circle at var(--mouse-x, -500px) var(--mouse-y, -500px), rgba(0, 102, 153, 0.45), transparent 40%);
+        -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+        -webkit-mask-composite: xor;
+        mask-composite: exclude;
+        pointer-events: none;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        z-index: 2;
+      }
+      .spotlight-card:hover::before {
+        opacity: 1;
+      }
+      .dark .spotlight-card::before {
+        background: radial-gradient(350px circle at var(--mouse-x, -500px) var(--mouse-y, -500px), rgba(56, 189, 248, 0.5), transparent 40%);
+      }
+
+      /* Hover Zoom Icon on Lightbox Images */
+      .lightbox-trigger {
+        cursor: zoom-in;
+      }
+      .lightbox-trigger .zoom-pill {
+        opacity: 0;
+        transform: translateY(4px);
+        transition: all 0.25s ease;
+      }
+      .lightbox-trigger:hover .zoom-pill {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      /* Subnav Dock Active Pill */
+      .subnav-pill.active {
+        background-color: #006699;
+        color: #ffffff !important;
+        box-shadow: 0 4px 12px rgba(0, 102, 153, 0.35);
+      }
+      .dark .subnav-pill.active {
+        background-color: #0284c7;
+        color: #ffffff !important;
+        box-shadow: 0 4px 12px rgba(2, 132, 199, 0.45);
+      }
+
+      /* Filter Tabs Active */
+      .filter-tab-btn.active {
+        background-color: #006699;
+        color: #ffffff;
+        border-color: #006699;
+        box-shadow: 0 4px 14px rgba(0, 102, 153, 0.3);
+      }
+      .dark .filter-tab-btn.active {
+        background-color: #0284c7;
+        color: #ffffff;
+        border-color: #0284c7;
+        box-shadow: 0 4px 14px rgba(2, 132, 199, 0.4);
+      }
+
+      /* Pulse Ring on Milestone Active */
+      @keyframes pulseGlowRing {
+        0% { box-shadow: 0 0 0 0 rgba(0, 102, 153, 0.4); }
+        70% { box-shadow: 0 0 0 10px rgba(0, 102, 153, 0); }
+        100% { box-shadow: 0 0 0 0 rgba(0, 102, 153, 0); }
+      }
+      .card-highlight-pulse {
+        animation: pulseGlowRing 2s cubic-bezier(0.4, 0, 0.6, 1) 3;
+        border-color: #006699 !important;
+      }
+
     </style>
 </head>
 
@@ -744,12 +859,12 @@
                     </div>
 
                     <div class="metric-col px-3 border-r border-slate-200/60 dark:border-slate-800/80 last:border-none">
-                        <span class="text-2xl sm:text-3xl font-black text-wiki-red block font-heading">30+ Patches</span>
-                        <span class="text-xs font-semibold text-slate-500 dark:text-slate-400 mt-1 block">8 in WCT Impact Report</span>
+                        <span class="text-2xl sm:text-3xl font-black text-wiki-red block font-heading" data-counter="true" data-target="30" data-suffix="+">30+</span>
+                        <span class="text-xs font-semibold text-slate-500 dark:text-slate-400 mt-1 block"><span class="font-bold text-wiki-red" data-counter="true" data-target="8" data-suffix=" Patches">8</span> in WCT Impact Report</span>
                     </div>
 
                     <div class="metric-col px-3 border-r border-slate-200/60 dark:border-slate-800/80 last:border-none">
-                        <span class="text-2xl sm:text-3xl font-black text-wiki-blue block font-heading">3 Awards</span>
+                        <span class="text-2xl sm:text-3xl font-black text-wiki-blue block font-heading" data-counter="true" data-target="3" data-suffix=" Awards">3</span>
                         <span class="text-xs font-semibold text-slate-500 dark:text-slate-400 mt-1 block">Best &amp; Most Active Contributor</span>
                     </div>
 
@@ -789,7 +904,7 @@
                 <div class="grid md:grid-cols-2 gap-6 sm:gap-8 mb-12">
                     
                     <!-- Card 1: Rejection Fuel -->
-                    <div class="bento-card p-6 sm:p-7 rounded-3xl border border-[#006699]/30 dark:border-[#006699]/40 bg-white/95 dark:bg-slate-900/90 shadow-md flex flex-col justify-between hover-elevate transition-all group">
+                    <div class="bento-card spotlight-card reveal-init p-6 sm:p-7 rounded-3xl border border-[#006699]/30 dark:border-[#006699]/40 bg-white/95 dark:bg-slate-900/90 shadow-md flex flex-col justify-between hover-elevate transition-all group">
                         <div class="space-y-4">
                             <div class="flex items-center justify-between">
                                 <span class="px-3 py-1 rounded-full badge-wiki-blue text-[11px] font-bold uppercase tracking-wider">
@@ -817,7 +932,7 @@
                     </div>
 
                     <!-- Card 2: Late-Night Gerrit Battles -->
-                    <div class="bento-card p-6 sm:p-7 rounded-3xl border border-[#339966]/30 dark:border-[#339966]/40 bg-white/95 dark:bg-slate-900/90 shadow-md flex flex-col justify-between hover-elevate transition-all group">
+                    <div class="bento-card spotlight-card reveal-init p-6 sm:p-7 rounded-3xl border border-[#339966]/30 dark:border-[#339966]/40 bg-white/95 dark:bg-slate-900/90 shadow-md flex flex-col justify-between hover-elevate transition-all group">
                         <div class="space-y-4">
                             <div class="flex items-center justify-between">
                                 <span class="px-3 py-1 rounded-full badge-wiki-green text-[11px] font-bold uppercase tracking-wider">
@@ -845,7 +960,7 @@
                     </div>
 
                     <!-- Card 3: Google Meet Lifelines -->
-                    <div class="bento-card p-6 sm:p-7 rounded-3xl border border-[#990000]/30 dark:border-[#990000]/40 bg-white/95 dark:bg-slate-900/90 shadow-md flex flex-col justify-between hover-elevate transition-all group">
+                    <div class="bento-card spotlight-card reveal-init p-6 sm:p-7 rounded-3xl border border-[#990000]/30 dark:border-[#990000]/40 bg-white/95 dark:bg-slate-900/90 shadow-md flex flex-col justify-between hover-elevate transition-all group">
                         <div class="space-y-4">
                             <div class="flex items-center justify-between">
                                 <span class="px-3 py-1 rounded-full badge-wiki-red text-[11px] font-bold uppercase tracking-wider">
@@ -873,7 +988,7 @@
                     </div>
 
                     <!-- Card 4: The 30+ Merged Patches Breakthrough -->
-                    <div class="bento-card p-6 sm:p-7 rounded-3xl border border-[#006699]/30 dark:border-[#006699]/40 bg-white/95 dark:bg-slate-900/90 shadow-md flex flex-col justify-between hover-elevate transition-all group">
+                    <div class="bento-card spotlight-card reveal-init p-6 sm:p-7 rounded-3xl border border-[#006699]/30 dark:border-[#006699]/40 bg-white/95 dark:bg-slate-900/90 shadow-md flex flex-col justify-between hover-elevate transition-all group">
                         <div class="space-y-4">
                             <div class="flex items-center justify-between">
                                 <span class="px-3 py-1 rounded-full badge-wiki-blue text-[11px] font-bold uppercase tracking-wider">
@@ -936,11 +1051,27 @@
                     </p>
                 </div>
 
+                                <!-- Interactive Phase Navigation Stepper -->
+                <div class="flex items-center justify-center gap-2 mb-8 flex-wrap">
+                    <button type="button" class="phase-stepper-btn active px-4 py-2 rounded-full border border-[#006699]/40 bg-[#e6f2f8] dark:bg-[#006699]/30 text-[#006699] dark:text-[#38bdf8] text-xs font-bold transition-all shadow-sm flex items-center gap-2" data-phase="1">
+                        <span class="w-2 h-2 rounded-full bg-[#006699] dark:bg-[#38bdf8]"></span>
+                        <span>Phase 01 · Induction</span>
+                    </button>
+                    <button type="button" class="phase-stepper-btn px-4 py-2 rounded-full border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 text-slate-700 dark:text-slate-300 hover:border-[#339966]/40 hover:text-[#339966] text-xs font-bold transition-all shadow-sm flex items-center gap-2" data-phase="2">
+                        <span class="w-2 h-2 rounded-full bg-[#339966]"></span>
+                        <span>Phase 02 · Marathon &amp; Code</span>
+                    </button>
+                    <button type="button" class="phase-stepper-btn px-4 py-2 rounded-full border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 text-slate-700 dark:text-slate-300 hover:border-[#990000]/40 hover:text-[#990000] text-xs font-bold transition-all shadow-sm flex items-center gap-2" data-phase="3">
+                        <span class="w-2 h-2 rounded-full bg-[#990000]"></span>
+                        <span>Phase 03 · Tools &amp; Specialization</span>
+                    </button>
+                </div>
+
                 <!-- 3 Phase Cards Bento Grid -->
                 <div class="grid md:grid-cols-3 gap-6 sm:gap-8 mb-12">
                     
                     <!-- Phase 1: Induction & Technical Onboarding (Wikimedia Blue #006699) -->
-                    <div class="bento-card p-6 rounded-3xl border border-[#006699]/30 dark:border-[#006699]/40 bg-white/95 dark:bg-slate-900/90 shadow-md flex flex-col justify-between hover-elevate transition-all group">
+                    <div id="phase-card-1" class="bento-card spotlight-card p-6 rounded-3xl border border-[#006699]/30 dark:border-[#006699]/40 bg-white/95 dark:bg-slate-900/90 shadow-md flex flex-col justify-between hover-elevate transition-all group">
                         <div>
                             <div class="flex items-center justify-between mb-4">
                                 <span class="px-3 py-1 rounded-full badge-wiki-blue text-[11px] font-bold tracking-wider uppercase shadow-sm">
@@ -983,7 +1114,7 @@
                     </div>
 
                     <!-- Phase 2: Upstream Core Contributions (Wikimedia Green #339966) -->
-                    <div class="bento-card p-6 rounded-3xl border border-[#339966]/30 dark:border-[#339966]/40 bg-white/95 dark:bg-slate-900/90 shadow-md flex flex-col justify-between hover-elevate transition-all group">
+                    <div id="phase-card-2" class="bento-card spotlight-card p-6 rounded-3xl border border-[#339966]/30 dark:border-[#339966]/40 bg-white/95 dark:bg-slate-900/90 shadow-md flex flex-col justify-between hover-elevate transition-all group">
                         <div>
                             <div class="flex items-center justify-between mb-4">
                                 <span class="px-3 py-1 rounded-full badge-wiki-green text-[11px] font-bold tracking-wider uppercase shadow-sm">
@@ -1030,7 +1161,7 @@
                     </div>
 
                     <!-- Phase 3: Tool Specialization - Proofread & Translatewiki (Wikimedia Red #990000) -->
-                    <div class="bento-card p-6 rounded-3xl border border-[#990000]/30 dark:border-[#990000]/40 bg-white/95 dark:bg-slate-900/90 shadow-md flex flex-col justify-between hover-elevate transition-all group">
+                    <div id="phase-card-3" class="bento-card spotlight-card p-6 rounded-3xl border border-[#990000]/30 dark:border-[#990000]/40 bg-white/95 dark:bg-slate-900/90 shadow-md flex flex-col justify-between hover-elevate transition-all group">
                         <div>
                             <div class="flex items-center justify-between mb-4">
                                 <span class="px-3 py-1 rounded-full badge-wiki-red text-[11px] font-bold tracking-wider uppercase shadow-sm">
@@ -1552,7 +1683,7 @@
                         </div>
                         <div class="lg:col-span-5">
                             <div class="rounded-2xl overflow-hidden border border-white/15 shadow-2xl bg-slate-900 group-hover:border-[#38bdf8]/50 transition-all">
-                                <img src="assets/images/wiki/conclave/celebration-day-gurugram-poster.webp" alt="Official Road to Wiki Celebration Day Poster Gurugram" loading="lazy" class="w-full h-auto object-cover group-hover:scale-102 transition-transform duration-500">
+                                <img src="assets/images/wiki/conclave/celebration-day-gurugram-poster.webp" class="lightbox-trigger" data-full="assets/images/wiki/conclave/celebration-day-gurugram-poster.webp" data-caption="Official Road to Wiki Celebration Day Poster — Gurugram (Oct 2–4, 2026)" alt="Official Road to Wiki Celebration Day Poster Gurugram" loading="lazy" class="w-full h-auto object-cover group-hover:scale-102 transition-transform duration-500">
                             </div>
                         </div>
                     </div>
@@ -1604,7 +1735,7 @@
                         </div>
                         <div class="lg:col-span-5">
                             <div class="rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-700/80 shadow-xl bg-slate-900 group-hover:border-[#006699]/50 transition-all">
-                                <img src="assets/images/wiki/conclave/vande-bharat-journey-to-gurugram.jpg" alt="Gautam Kumar Maurya aboard Vande Bharat Express journey to Gurugram" loading="lazy" class="w-full h-auto object-cover group-hover:scale-102 transition-transform duration-500">
+                                <img src="assets/images/wiki/conclave/vande-bharat-journey-to-gurugram.jpg" class="lightbox-trigger" data-full="assets/images/wiki/conclave/vande-bharat-journey-to-gurugram.jpg" data-caption="Gautam Kumar Maurya aboard the Vande Bharat Express travelling from Prayagraj to the Gurugram Conclave" alt="Gautam Kumar Maurya aboard Vande Bharat Express journey to Gurugram" loading="lazy" class="w-full h-auto object-cover group-hover:scale-102 transition-transform duration-500">
                                 <div class="p-2.5 bg-slate-900 text-[11px] text-slate-300 text-center font-medium">
                                     🚆 En route from Prayagraj to Gurugram Conclave via Vande Bharat Express
                                 </div>
@@ -1620,7 +1751,7 @@
                     <div class="bento-card p-6 rounded-3xl border border-[#006699]/30 dark:border-[#006699]/40 bg-white/90 dark:bg-slate-900/80 flex flex-col justify-between hover-elevate transition-all">
                         <div>
                             <div class="aspect-16/10 rounded-2xl overflow-hidden mb-5 bg-slate-950 relative border border-slate-200/50 dark:border-slate-800">
-                                <img src="assets/images/wiki/conclave/conclave-swagat-turbans-graduates.webp" alt="Day 1 Hotel Swagat and Pagdi in Gurugram" loading="lazy" class="w-full h-full object-cover">
+                                <img src="assets/images/wiki/conclave/conclave-swagat-turbans-graduates.webp" class="lightbox-trigger" data-full="assets/images/wiki/conclave/conclave-swagat-turbans-graduates.webp" data-caption="Day 1 Traditional Swagat, Pagdi ceremony and welcoming fellows in Gurugram" alt="Day 1 Hotel Swagat and Pagdi in Gurugram" loading="lazy" class="w-full h-full object-cover">
                                 <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent"></div>
                                 <span class="absolute bottom-2.5 left-3 text-[10px] font-semibold text-white drop-shadow">Traditional Swagat &amp; Fellow Cohort Welcome</span>
                             </div>
@@ -1669,7 +1800,7 @@
                     <div class="bento-card p-6 rounded-3xl border border-[#339966]/40 dark:border-[#339966]/50 bg-gradient-to-br from-white via-emerald-50/15 to-slate-50 dark:from-slate-900 dark:via-[#339966]/10 dark:to-slate-950 flex flex-col justify-between shadow-md hover-elevate transition-all">
                         <div>
                             <div class="aspect-16/10 rounded-2xl overflow-hidden mb-5 bg-slate-950 relative border border-[#339966]/30 dark:border-emerald-800/40">
-                                <img src="assets/images/wiki/conclave/gautam-stage-award-handover.webp" alt="Gautam receiving Best Contributor and Developer honors on Day 2" loading="lazy" class="w-full h-full object-cover">
+                                <img src="assets/images/wiki/conclave/gautam-stage-award-handover.webp" class="lightbox-trigger" data-full="assets/images/wiki/conclave/gautam-stage-award-handover.webp" data-caption="Gautam receiving the Best Contributor and Cohort 2 honors on stage at Gurugram" alt="Gautam receiving Best Contributor and Developer honors on Day 2" loading="lazy" class="w-full h-full object-cover">
                                 <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent"></div>
                                 <span class="absolute bottom-2.5 left-3 text-[10px] font-semibold text-white drop-shadow">Stage Felicitation &amp; Award Presentation</span>
                             </div>
@@ -1718,7 +1849,7 @@
                     <div class="bento-card p-6 rounded-3xl border border-[#990000]/30 dark:border-[#990000]/40 bg-white/90 dark:bg-slate-900/80 flex flex-col justify-between hover-elevate transition-all">
                         <div>
                             <div class="aspect-16/10 rounded-2xl overflow-hidden mb-5 bg-slate-950 relative border border-slate-200/50 dark:border-slate-800">
-                                <img src="assets/images/wiki/conclave/curiosity-to-impact-graduates.webp" alt="Day 3 From Curiosity to Impact Graduates" loading="lazy" class="w-full h-full object-cover">
+                                <img src="assets/images/wiki/conclave/curiosity-to-impact-graduates.webp" class="lightbox-trigger" data-full="assets/images/wiki/conclave/curiosity-to-impact-graduates.webp" data-caption="Day 3 Curiosity to Impact — Fellowship Graduates and Mentors" alt="Day 3 From Curiosity to Impact Graduates" loading="lazy" class="w-full h-full object-cover">
                                 <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent"></div>
                                 <span class="absolute bottom-2.5 left-3 text-[10px] font-semibold text-white drop-shadow">From Curiosity to Impact — Fellowship Cohort</span>
                             </div>
@@ -1788,7 +1919,7 @@
                         <!-- Card 1: Gautam holding dual globe medals -->
                         <div class="bento-card rounded-3xl border border-slate-200/90 dark:border-slate-800 overflow-hidden bg-white/90 dark:bg-slate-900/80 hover-elevate transition-all group">
                             <div class="aspect-4/3 w-full overflow-hidden bg-slate-950 relative">
-                                <img src="assets/images/wiki/conclave/gautam-holding-wiki-awards.webp" alt="Gautam Kumar Maurya holding Road to Wiki Developer Circle and Contributor Awards" loading="lazy" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500">
+                                <img src="assets/images/wiki/conclave/gautam-holding-wiki-awards.webp" class="lightbox-trigger" data-full="assets/images/wiki/conclave/gautam-holding-wiki-awards.webp" data-caption="Gautam holding Best Contributor & Most Active Contributor awards at the conclave" alt="Gautam Kumar Maurya holding Road to Wiki Developer Circle and Contributor Awards" loading="lazy" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500">
                                 <div class="absolute inset-0 bg-gradient-to-t from-slate-950/85 via-transparent to-transparent"></div>
                                 <span class="absolute top-3 left-3 px-2.5 py-1 rounded-full badge-wiki-blue text-[10px] font-bold">
                                     🏆 Globe Medals Handover
@@ -2326,8 +2457,8 @@
                         
                         <!-- Photo 1: Dev, Anushka, Tejinder -->
                         <div class="bento-card rounded-3xl overflow-hidden border border-slate-200/90 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-md flex flex-col justify-between group hover-elevate transition-all">
-                            <div class="aspect-4/3 overflow-hidden bg-slate-950 relative">
-                                <img src="assets/images/wiki/conclave/fellow-contributors-dev-anushka-tejinder.jpg" alt="Meeting Dev Jadiya, Anushka Patel, Tejinder Kaur and Gautam Maurya" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            <div class="aspect-4/3 overflow-hidden bg-slate-950 relative lightbox-trigger-container group/zoom cursor-zoom-in">
+                                <img src="assets/images/wiki/conclave/fellow-contributors-dev-anushka-tejinder.jpg" class="lightbox-trigger" data-full="assets/images/wiki/conclave/fellow-contributors-dev-anushka-tejinder.jpg" data-caption="Meeting Dev Jadiya, Anushka Patel, Tejinder Kaur and fellow contributors in person" alt="Meeting Dev Jadiya, Anushka Patel, Tejinder Kaur and Gautam Maurya" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                                 <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent"></div>
                                 <span class="absolute bottom-3 left-3 text-[11px] font-bold text-white drop-shadow">Gurugram Conclave 2026</span>
                             </div>
@@ -2342,8 +2473,8 @@
 
                         <!-- Photo 2: Group Celebration -->
                         <div class="bento-card rounded-3xl overflow-hidden border border-slate-200/90 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-md flex flex-col justify-between group hover-elevate transition-all">
-                            <div class="aspect-4/3 overflow-hidden bg-slate-950 relative">
-                                <img src="assets/images/wiki/conclave/fellow-graduates-group-celebration.jpg" alt="Road to Wiki Cohort 2 Graduates Group Celebration" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            <div class="aspect-4/3 overflow-hidden bg-slate-950 relative lightbox-trigger-container group/zoom cursor-zoom-in">
+                                <img src="assets/images/wiki/conclave/fellow-graduates-group-celebration.jpg" class="lightbox-trigger" data-full="assets/images/wiki/conclave/fellow-graduates-group-celebration.jpg" data-caption="Cohort 2 National Fellowship Graduates celebration banquet in Gurugram" alt="Road to Wiki Cohort 2 Graduates Group Celebration" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                                 <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent"></div>
                                 <span class="absolute bottom-3 left-3 text-[11px] font-bold text-white drop-shadow">Cohort 2 National Graduates</span>
                             </div>
@@ -2358,8 +2489,8 @@
 
                         <!-- Photo 3: Networking & Mentorship -->
                         <div class="bento-card rounded-3xl overflow-hidden border border-slate-200/90 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-md flex flex-col justify-between group hover-elevate transition-all">
-                            <div class="aspect-4/3 overflow-hidden bg-slate-950 relative">
-                                <img src="assets/images/wiki/conclave/mentors-peers-networking-moments.jpg" alt="Mentors and peers networking moments in Gurugram" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            <div class="aspect-4/3 overflow-hidden bg-slate-950 relative lightbox-trigger-container group/zoom cursor-zoom-in">
+                                <img src="assets/images/wiki/conclave/mentors-peers-networking-moments.jpg" class="lightbox-trigger" data-full="assets/images/wiki/conclave/mentors-peers-networking-moments.jpg" data-caption="Robo build challenge, mentorship exchanges, and community bonding in Gurugram" alt="Mentors and peers networking moments in Gurugram" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                                 <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent"></div>
                                 <span class="absolute bottom-3 left-3 text-[11px] font-bold text-white drop-shadow">Mentorship &amp; Collaboration</span>
                             </div>
@@ -2398,11 +2529,54 @@
                     </p>
                 </div>
 
+                                <!-- Interactive Filter Controls & Live Search Bar -->
+                <div class="mb-10 space-y-4">
+                    <div class="flex flex-col lg:flex-row items-stretch lg:items-center justify-between gap-4">
+                        
+                        <!-- Filter Pill Buttons -->
+                        <div class="flex flex-wrap items-center gap-2" id="dispatch-filters">
+                            <button type="button" class="filter-tab-btn active px-3.5 py-1.5 rounded-full border border-[#006699] text-xs font-bold transition-all flex items-center gap-1.5" data-filter="all">
+                                <span>All Milestones</span>
+                                <span class="px-2 py-0.5 rounded-full bg-white/20 text-[10px] font-mono">14</span>
+                            </button>
+                            <button type="button" class="filter-tab-btn px-3.5 py-1.5 rounded-full border border-slate-200 dark:border-slate-800 bg-white/80 dark:bg-slate-900/80 text-slate-700 dark:text-slate-300 hover:text-[#006699] text-xs font-bold transition-all flex items-center gap-1.5" data-filter="induction">
+                                <span>Induction &amp; Tools</span>
+                                <span class="px-2 py-0.5 rounded-full bg-slate-100 dark:bg-slate-800 text-[10px] font-mono">4</span>
+                            </button>
+                            <button type="button" class="filter-tab-btn px-3.5 py-1.5 rounded-full border border-slate-200 dark:border-slate-800 bg-white/80 dark:bg-slate-900/80 text-slate-700 dark:text-slate-300 hover:text-[#339966] text-xs font-bold transition-all flex items-center gap-1.5" data-filter="marathon">
+                                <span>🏆 Marathon &amp; Awards</span>
+                                <span class="px-2 py-0.5 rounded-full bg-slate-100 dark:bg-slate-800 text-[10px] font-mono">3</span>
+                            </button>
+                            <button type="button" class="filter-tab-btn px-3.5 py-1.5 rounded-full border border-slate-200 dark:border-slate-800 bg-white/80 dark:bg-slate-900/80 text-slate-700 dark:text-slate-300 hover:text-[#006699] text-xs font-bold transition-all flex items-center gap-1.5" data-filter="systems">
+                                <span>Upstream Systems</span>
+                                <span class="px-2 py-0.5 rounded-full bg-slate-100 dark:bg-slate-800 text-[10px] font-mono">4</span>
+                            </button>
+                            <button type="button" class="filter-tab-btn px-3.5 py-1.5 rounded-full border border-slate-200 dark:border-slate-800 bg-white/80 dark:bg-slate-900/80 text-slate-700 dark:text-slate-300 hover:text-[#990000] text-xs font-bold transition-all flex items-center gap-1.5" data-filter="conclave">
+                                <span>Conclave &amp; Community</span>
+                                <span class="px-2 py-0.5 rounded-full bg-slate-100 dark:bg-slate-800 text-[10px] font-mono">3</span>
+                            </button>
+                        </div>
+
+                        <!-- Live Search Input -->
+                        <div class="relative w-full sm:w-80">
+                            <i data-lucide="search" class="w-4 h-4 absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400 pointer-events-none"></i>
+                            <input type="text" id="dispatch-search" placeholder="Search milestones, mentors, tools..." class="w-full pl-9 pr-8 py-2 rounded-full bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-xs text-slate-900 dark:text-white placeholder-slate-400 focus:outline-none focus:border-[#006699] dark:focus:border-[#38bdf8] transition-all shadow-sm">
+                            <button type="button" id="dispatch-search-clear" class="hidden absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 text-xs">
+                                <i data-lucide="x" class="w-3.5 h-3.5"></i>
+                            </button>
+                        </div>
+
+                    </div>
+                    <div id="dispatch-no-results" class="hidden p-8 text-center rounded-2xl bg-white/60 dark:bg-slate-900/60 border border-slate-200 dark:border-slate-800 text-slate-500 text-xs">
+                        No dispatches found matching your search. Try adjusting your query or filter.
+                    </div>
+                </div>
+
                 <!-- 14 Chronological Milestone Cards Bento Grid -->
                 <div class="grid md:grid-cols-2 lg:grid-cols-2 gap-6 sm:gap-8 mb-12">
 
                     <!-- Dispatch Card 01 -->
-                    <div class="bento-card p-6 sm:p-7 rounded-3xl border border-slate-200/90 dark:border-slate-800 bg-white/95 dark:bg-slate-900/90 shadow-md flex flex-col justify-between hover-elevate transition-all group">
+                    <div class="bento-card dispatch-card spotlight-card reveal-init" data-category="induction" data-keywords="gdg prayagraj volunteer ankit shadab rejection resilience" p-6 sm:p-7 rounded-3xl border border-slate-200/90 dark:border-slate-800 bg-white/95 dark:bg-slate-900/90 shadow-md flex flex-col justify-between hover-elevate transition-all group">
                         <div class="space-y-3.5">
                             <div class="flex items-center justify-between flex-wrap gap-2">
                                 <span class="px-2.5 py-1 rounded-full badge-wiki-blue text-[10px] font-bold uppercase tracking-wider">
@@ -2437,7 +2611,7 @@
                     </div>
 
                     <!-- Dispatch Card 02 -->
-                    <div class="bento-card p-6 sm:p-7 rounded-3xl border border-slate-200/90 dark:border-slate-800 bg-white/95 dark:bg-slate-900/90 shadow-md flex flex-col justify-between hover-elevate transition-all group">
+                    <div class="bento-card dispatch-card spotlight-card reveal-init" data-category="induction" data-keywords="git ssh cicd phabricator pratik aditya agamya sanskar sarthak" p-6 sm:p-7 rounded-3xl border border-slate-200/90 dark:border-slate-800 bg-white/95 dark:bg-slate-900/90 shadow-md flex flex-col justify-between hover-elevate transition-all group">
                         <div class="space-y-3.5">
                             <div class="flex items-center justify-between flex-wrap gap-2">
                                 <span class="px-2.5 py-1 rounded-full badge-wiki-green text-[10px] font-bold uppercase tracking-wider">
@@ -2472,7 +2646,7 @@
                     </div>
 
                     <!-- Dispatch Card 03 -->
-                    <div class="bento-card p-6 sm:p-7 rounded-3xl border border-slate-200/90 dark:border-slate-800 bg-white/95 dark:bg-slate-900/90 shadow-md flex flex-col justify-between hover-elevate transition-all group">
+                    <div class="bento-card dispatch-card spotlight-card reveal-init" data-category="marathon" data-keywords="1st position marathon gerrit phabricator exams uit prayagraj sprint award" p-6 sm:p-7 rounded-3xl border border-slate-200/90 dark:border-slate-800 bg-white/95 dark:bg-slate-900/90 shadow-md flex flex-col justify-between hover-elevate transition-all group">
                         <div class="space-y-3.5">
                             <div class="flex items-center justify-between flex-wrap gap-2">
                                 <span class="px-2.5 py-1 rounded-full badge-wiki-red text-[10px] font-bold uppercase tracking-wider">
@@ -2507,7 +2681,7 @@
                     </div>
 
                     <!-- Dispatch Card 04 -->
-                    <div class="bento-card p-6 sm:p-7 rounded-3xl border border-slate-200/90 dark:border-slate-800 bg-white/95 dark:bg-slate-900/90 shadow-md flex flex-col justify-between hover-elevate transition-all group">
+                    <div class="bento-card dispatch-card spotlight-card reveal-init" data-category="systems" data-keywords="database sql nosql redis elasticsearch varnish vrijraj ankit" p-6 sm:p-7 rounded-3xl border border-slate-200/90 dark:border-slate-800 bg-white/95 dark:bg-slate-900/90 shadow-md flex flex-col justify-between hover-elevate transition-all group">
                         <div class="space-y-3.5">
                             <div class="flex items-center justify-between flex-wrap gap-2">
                                 <span class="px-2.5 py-1 rounded-full badge-wiki-blue text-[10px] font-bold uppercase tracking-wider">
@@ -2542,7 +2716,7 @@
                     </div>
 
                     <!-- Dispatch Card 05 -->
-                    <div class="bento-card p-6 sm:p-7 rounded-3xl border border-slate-200/90 dark:border-slate-800 bg-white/95 dark:bg-slate-900/90 shadow-md flex flex-col justify-between hover-elevate transition-all group">
+                    <div class="bento-card dispatch-card spotlight-card reveal-init" data-category="systems" data-keywords="santhosh thottingal rtw-p2s3 praise engineering growth ankit live" p-6 sm:p-7 rounded-3xl border border-slate-200/90 dark:border-slate-800 bg-white/95 dark:bg-slate-900/90 shadow-md flex flex-col justify-between hover-elevate transition-all group">
                         <div class="space-y-3.5">
                             <div class="flex items-center justify-between flex-wrap gap-2">
                                 <span class="px-2.5 py-1 rounded-full badge-wiki-green text-[10px] font-bold uppercase tracking-wider">
@@ -2577,7 +2751,7 @@
                     </div>
 
                     <!-- Dispatch Card 06 -->
-                    <div class="bento-card p-6 sm:p-7 rounded-3xl border border-slate-200/90 dark:border-slate-800 bg-white/95 dark:bg-slate-900/90 shadow-md flex flex-col justify-between hover-elevate transition-all group">
+                    <div class="bento-card dispatch-card spotlight-card reveal-init" data-category="induction" data-keywords="sanskar dubey foundations code review gerrit open source" p-6 sm:p-7 rounded-3xl border border-slate-200/90 dark:border-slate-800 bg-white/95 dark:bg-slate-900/90 shadow-md flex flex-col justify-between hover-elevate transition-all group">
                         <div class="space-y-3.5">
                             <div class="flex items-center justify-between flex-wrap gap-2">
                                 <span class="px-2.5 py-1 rounded-full badge-wiki-red text-[10px] font-bold uppercase tracking-wider">
@@ -2612,7 +2786,7 @@
                     </div>
 
                     <!-- Dispatch Card 07 -->
-                    <div class="bento-card p-6 sm:p-7 rounded-3xl border border-slate-200/90 dark:border-slate-800 bg-white/95 dark:bg-slate-900/90 shadow-md flex flex-col justify-between hover-elevate transition-all group">
+                    <div class="bento-card dispatch-card spotlight-card reveal-init" data-category="induction" data-keywords="developer masterclass gerrit ssh workflows ankit sanskar sarthak aditya" p-6 sm:p-7 rounded-3xl border border-slate-200/90 dark:border-slate-800 bg-white/95 dark:bg-slate-900/90 shadow-md flex flex-col justify-between hover-elevate transition-all group">
                         <div class="space-y-3.5">
                             <div class="flex items-center justify-between flex-wrap gap-2">
                                 <span class="px-2.5 py-1 rounded-full badge-wiki-blue text-[10px] font-bold uppercase tracking-wider">
@@ -2647,7 +2821,7 @@
                     </div>
 
                     <!-- Dispatch Card 08 -->
-                    <div class="bento-card p-6 sm:p-7 rounded-3xl border border-slate-200/90 dark:border-slate-800 bg-white/95 dark:bg-slate-900/90 shadow-md flex flex-col justify-between hover-elevate transition-all group">
+                    <div class="bento-card dispatch-card spotlight-card reveal-init" data-category="systems" data-keywords="technical impact report iiit hyderabad oki pywikibot mediawiki minervaneue growthexperiments 8 patches" p-6 sm:p-7 rounded-3xl border border-slate-200/90 dark:border-slate-800 bg-white/95 dark:bg-slate-900/90 shadow-md flex flex-col justify-between hover-elevate transition-all group">
                         <div class="space-y-3.5">
                             <div class="flex items-center justify-between flex-wrap gap-2">
                                 <span class="px-2.5 py-1 rounded-full badge-wiki-green text-[10px] font-bold uppercase tracking-wider">
@@ -2682,7 +2856,7 @@
                     </div>
 
                     <!-- Dispatch Card 09 -->
-                    <div class="bento-card p-6 sm:p-7 rounded-3xl border border-slate-200/90 dark:border-slate-800 bg-white/95 dark:bg-slate-900/90 shadow-md flex flex-col justify-between hover-elevate transition-all group">
+                    <div class="bento-card dispatch-card spotlight-card reveal-init" data-category="systems" data-keywords="upstream patch authoring ci cd jenkins mediawiki core verification" p-6 sm:p-7 rounded-3xl border border-slate-200/90 dark:border-slate-800 bg-white/95 dark:bg-slate-900/90 shadow-md flex flex-col justify-between hover-elevate transition-all group">
                         <div class="space-y-3.5">
                             <div class="flex items-center justify-between flex-wrap gap-2">
                                 <span class="px-2.5 py-1 rounded-full badge-wiki-red text-[10px] font-bold uppercase tracking-wider">
@@ -2717,7 +2891,7 @@
                     </div>
 
                     <!-- Dispatch Card 10 -->
-                    <div class="bento-card p-6 sm:p-7 rounded-3xl border border-slate-200/90 dark:border-slate-800 bg-white/95 dark:bg-slate-900/90 shadow-md flex flex-col justify-between hover-elevate transition-all group">
+                    <div class="bento-card dispatch-card spotlight-card reveal-init" data-category="marathon" data-keywords="certificate of achievement 1st position rank wiki marathon trophy" p-6 sm:p-7 rounded-3xl border border-slate-200/90 dark:border-slate-800 bg-white/95 dark:bg-slate-900/90 shadow-md flex flex-col justify-between hover-elevate transition-all group">
                         <div class="space-y-3.5">
                             <div class="flex items-center justify-between flex-wrap gap-2">
                                 <span class="px-2.5 py-1 rounded-full badge-wiki-blue text-[10px] font-bold uppercase tracking-wider">
@@ -2752,7 +2926,7 @@
                     </div>
 
                     <!-- Dispatch Card 11 -->
-                    <div class="bento-card p-6 sm:p-7 rounded-3xl border border-slate-200/90 dark:border-slate-800 bg-white/95 dark:bg-slate-900/90 shadow-md flex flex-col justify-between hover-elevate transition-all group">
+                    <div class="bento-card dispatch-card spotlight-card reveal-init" data-category="marathon" data-keywords="ucoc universal code of conduct sync auto rickshaw dedication community" p-6 sm:p-7 rounded-3xl border border-slate-200/90 dark:border-slate-800 bg-white/95 dark:bg-slate-900/90 shadow-md flex flex-col justify-between hover-elevate transition-all group">
                         <div class="space-y-3.5">
                             <div class="flex items-center justify-between flex-wrap gap-2">
                                 <span class="px-2.5 py-1 rounded-full badge-wiki-green text-[10px] font-bold uppercase tracking-wider">
@@ -2787,7 +2961,7 @@
                     </div>
 
                     <!-- Dispatch Card 12 -->
-                    <div class="bento-card p-6 sm:p-7 rounded-3xl border border-slate-200/90 dark:border-slate-800 bg-white/95 dark:bg-slate-900/90 shadow-md flex flex-col justify-between hover-elevate transition-all group">
+                    <div class="bento-card dispatch-card spotlight-card reveal-init" data-category="conclave" data-keywords="keynote speaker open source day 100+ juniors uit prayagraj ankit shivaansh reeti" p-6 sm:p-7 rounded-3xl border border-slate-200/90 dark:border-slate-800 bg-white/95 dark:bg-slate-900/90 shadow-md flex flex-col justify-between hover-elevate transition-all group">
                         <div class="space-y-3.5">
                             <div class="flex items-center justify-between flex-wrap gap-2">
                                 <span class="px-2.5 py-1 rounded-full badge-wiki-red text-[10px] font-bold uppercase tracking-wider">
@@ -2822,7 +2996,7 @@
                     </div>
 
                     <!-- Dispatch Card 13 -->
-                    <div class="bento-card p-6 sm:p-7 rounded-3xl border border-slate-200/90 dark:border-slate-800 bg-white/95 dark:bg-slate-900/90 shadow-md flex flex-col justify-between hover-elevate transition-all group">
+                    <div class="bento-card dispatch-card spotlight-card reveal-init" data-category="conclave" data-keywords="phase 3 kickoff wikispeech proofread translatewiki sarthak shivaansh dev jadiya" p-6 sm:p-7 rounded-3xl border border-slate-200/90 dark:border-slate-800 bg-white/95 dark:bg-slate-900/90 shadow-md flex flex-col justify-between hover-elevate transition-all group">
                         <div class="space-y-3.5">
                             <div class="flex items-center justify-between flex-wrap gap-2">
                                 <span class="px-2.5 py-1 rounded-full badge-wiki-blue text-[10px] font-bold uppercase tracking-wider">
@@ -2857,7 +3031,7 @@
                     </div>
 
                     <!-- Dispatch Card 14 -->
-                    <div class="bento-card p-6 sm:p-7 rounded-3xl border border-slate-200/90 dark:border-slate-800 bg-white/95 dark:bg-slate-900/90 shadow-md flex flex-col justify-between hover-elevate transition-all group">
+                    <div class="bento-card dispatch-card spotlight-card reveal-init" data-category="conclave" data-keywords="graduation 2026 gurugram conclave vande bharat express best contributor 3 awards dev jadiya anushka tejinder pushpit shrey" p-6 sm:p-7 rounded-3xl border border-slate-200/90 dark:border-slate-800 bg-white/95 dark:bg-slate-900/90 shadow-md flex flex-col justify-between hover-elevate transition-all group">
                         <div class="space-y-3.5">
                             <div class="flex items-center justify-between flex-wrap gap-2">
                                 <span class="px-2.5 py-1 rounded-full badge-wiki-green text-[10px] font-bold uppercase tracking-wider">
@@ -3100,5 +3274,69 @@
             if (window.lucide) window.lucide.createIcons();
         });
     </script>
+
+    <!-- ═══════════════════════════════════════
+         INTERACTIVE FULLSCREEN PHOTO LIGHTBOX MODAL
+    ═══════════════════════════════════════ -->
+    <div id="photo-lightbox" class="fixed inset-0 z-[120] bg-slate-950/90 backdrop-blur-xl flex flex-col items-center justify-center p-4 sm:p-8 opacity-0 pointer-events-none transition-all duration-300">
+        
+        <!-- Top Toolbar -->
+        <div class="w-full max-w-5xl flex items-center justify-between pb-3 text-white z-10">
+            <div class="flex items-center gap-2">
+                <span class="w-2.5 h-2.5 rounded-full bg-[#006699] dark:bg-[#38bdf8] animate-pulse"></span>
+                <span class="text-xs font-bold uppercase tracking-wider text-slate-300 font-mono" id="lightbox-counter">Photo 1 of 9</span>
+            </div>
+            <div class="flex items-center gap-2">
+                <button type="button" id="lightbox-close" class="p-2 rounded-xl bg-white/10 hover:bg-red-500/80 text-white transition-all text-xs flex items-center gap-1.5" title="Close (Esc)">
+                    <i data-lucide="x" class="w-5 h-5"></i>
+                    <span class="text-[11px] font-semibold hidden sm:inline">Close</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Main Image Container -->
+        <div class="relative w-full max-w-5xl max-h-[75vh] flex items-center justify-center overflow-hidden rounded-2xl border border-white/15 bg-black/50 shadow-2xl">
+            <img id="lightbox-img" src="" alt="Fullscreen Conclave Photo" class="max-h-[75vh] max-w-full w-auto h-auto object-contain transition-transform duration-300 select-none">
+            
+            <!-- Left Arrow Button -->
+            <button type="button" id="lightbox-prev" class="absolute left-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-slate-900/80 hover:bg-slate-900 border border-white/20 text-white flex items-center justify-center transition-all shadow-lg hover:scale-105" title="Previous (Left Arrow)">
+                <i data-lucide="chevron-left" class="w-5 h-5"></i>
+            </button>
+            
+            <!-- Right Arrow Button -->
+            <button type="button" id="lightbox-next" class="absolute right-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-slate-900/80 hover:bg-slate-900 border border-white/20 text-white flex items-center justify-center transition-all shadow-lg hover:scale-105" title="Next (Right Arrow)">
+                <i data-lucide="chevron-right" class="w-5 h-5"></i>
+            </button>
+        </div>
+
+        <!-- Caption Strip -->
+        <div class="w-full max-w-5xl pt-3 text-center">
+            <p id="lightbox-caption" class="text-xs sm:text-sm text-slate-300 font-medium max-w-3xl mx-auto leading-relaxed"></p>
+        </div>
+
+    </div>
+
+    <!-- ═══════════════════════════════════════
+         FLOATING QUICK SUBNAV CAPSULE DOCK
+    ═══════════════════════════════════════ -->
+    <aside id="subnav-dock" aria-label="Page Quick Navigator" class="fixed bottom-6 left-1/2 -translate-x-1/2 z-40 hidden md:flex items-center gap-1 px-3 py-1.5 rounded-full bg-white/95 dark:bg-slate-900/95 border border-slate-200/90 dark:border-slate-800 shadow-2xl backdrop-blur-xl transition-all duration-300 opacity-0 translate-y-8 pointer-events-none">
+        <a href="#hero" class="subnav-pill px-3 py-1.5 rounded-full text-xs font-semibold text-slate-600 dark:text-slate-300 hover:text-[#006699] dark:hover:text-[#38bdf8] transition-colors" data-target="hero">Overview</a>
+        <a href="#origin-story" class="subnav-pill px-3 py-1.5 rounded-full text-xs font-semibold text-slate-600 dark:text-slate-300 hover:text-[#006699] dark:hover:text-[#38bdf8] transition-colors" data-target="origin-story">Story</a>
+        <a href="#three-phases" class="subnav-pill px-3 py-1.5 rounded-full text-xs font-semibold text-slate-600 dark:text-slate-300 hover:text-[#006699] dark:hover:text-[#38bdf8] transition-colors" data-target="three-phases">3 Phases</a>
+        <a href="#technical-impact" class="subnav-pill px-3 py-1.5 rounded-full text-xs font-semibold text-slate-600 dark:text-slate-300 hover:text-[#006699] dark:hover:text-[#38bdf8] transition-colors" data-target="technical-impact">Patches</a>
+        <a href="#graduation-conclave" class="subnav-pill px-3 py-1.5 rounded-full text-xs font-semibold text-slate-600 dark:text-slate-300 hover:text-[#006699] dark:hover:text-[#38bdf8] transition-colors" data-target="graduation-conclave">Conclave</a>
+        <a href="#awards-showcase" class="subnav-pill px-3 py-1.5 rounded-full text-xs font-semibold text-slate-600 dark:text-slate-300 hover:text-[#006699] dark:hover:text-[#38bdf8] transition-colors" data-target="awards-showcase">Awards</a>
+        <a href="#people-met" class="subnav-pill px-3 py-1.5 rounded-full text-xs font-semibold text-slate-600 dark:text-slate-300 hover:text-[#006699] dark:hover:text-[#38bdf8] transition-colors" data-target="people-met">Peers</a>
+        <a href="#linkedin-dispatches" class="subnav-pill px-3 py-1.5 rounded-full text-xs font-semibold text-slate-600 dark:text-slate-300 hover:text-[#006699] dark:hover:text-[#38bdf8] transition-colors" data-target="linkedin-dispatches">14 Dispatches</a>
+        <button type="button" id="subnav-top-btn" class="w-7 h-7 rounded-full bg-slate-100 dark:bg-slate-800 hover:bg-[#006699] hover:text-white dark:hover:bg-[#38bdf8] dark:hover:text-slate-950 flex items-center justify-center transition-all ml-1 text-slate-600 dark:text-slate-300" title="Back to top">
+            <i data-lucide="arrow-up" class="w-3.5 h-3.5"></i>
+        </button>
+    </aside>
+
+    <!-- Mobile Floating Top Button -->
+    <button type="button" id="mobile-top-btn" class="fixed bottom-6 right-6 z-40 md:hidden w-11 h-11 rounded-full bg-[#006699] text-white shadow-xl flex items-center justify-center transition-all duration-300 opacity-0 translate-y-6 pointer-events-none hover:scale-105 active:scale-95" title="Back to top">
+        <i data-lucide="arrow-up" class="w-5 h-5"></i>
+    </button>
+
 </body>
 </html>
