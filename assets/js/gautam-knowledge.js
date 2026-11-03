@@ -46,8 +46,9 @@ const GAUTAM_KNOWLEDGE = {
       degree: "Bachelor of Technology, Computer Science and Engineering (Data Science)",
       institution: "United Institute of Technology (UIT Prayagraj) / AKTU Lucknow",
       period: "Aug 2024 – Aug 2028",
-      grade: "SGPA: 8.5",
-      rank: "Rank 1 CSE (Data Science) Branch Topper & College Rank 5 Topper (AKTU)"
+      grade: "SGPA: 8.8",
+      rank: "Rank 1 CSE (Data Science) Branch Topper (SGPA 8.8) & College Rank 5 Topper (AKTU 1st Year)",
+      cyberSecurityTheory: "Score 65/70 (Theory) | Subject Rank 1 (Overall 95/100, highest recorded score at UIT)"
     },
     school: {
       institution: "Jwala Devi SVM Inter College Prayagraj",
@@ -55,13 +56,116 @@ const GAUTAM_KNOWLEDGE = {
       period: "Jul 2019 – Apr 2023",
       honors: [
         "Recognized and awarded by the Secretary, Uttar Pradesh Board of High School and Intermediate Education (UPMSP) for outstanding academic performance",
+        "Honored by Dainik Jagran in Prayagraj for top district performance",
         "5th Rank in Prayagraj District in Class 12 (UP Board) with 92.67%",
-        "1st Rank in the entire school in Class 11",
+        "1st Rank in the entire school in Class 11 (Issued by Vidya Bharti · Mar 2022)",
         "2nd Rank in the entire school in Class 10 (UP Board) with 91%",
         "5th Rank in the entire school in Class 9",
-        "Founder's Day Award"
+        "Founder's Day Award & Institutional Distinction by Principal of JDSVMIC"
       ]
-    }
+    },
+    testScores: [
+      {
+        test: "AKTU Cyber Security Examination",
+        score: "65/70 (Theory) | 95/100 (Overall)",
+        rank: "Subject Rank 1 (Highest recorded score in subject at institution)",
+        associatedWith: "United Institute of Technology (UIT Prayagraj)"
+      },
+      {
+        test: "AKTU Semester Examination",
+        score: "SGPA 8.8 / 10",
+        rank: "Branch Rank 1 Topper in CSE (Data Science)",
+        associatedWith: "United Institute of Technology / AKTU Lucknow"
+      },
+      {
+        test: "AKTU First Year Examination",
+        score: "College Rank 5",
+        rank: "Rank 5 Across All Engineering Branches & UIT 1st Year Topper",
+        associatedWith: "United Institute of Technology"
+      },
+      {
+        test: "UP Board Class 12 Examination",
+        score: "92.67% (Score: 93%)",
+        rank: "Prayagraj District Rank 5",
+        associatedWith: "Jwala Devi SVM Inter College (Awarded by Secretary, UPMSP & Dainik Jagran)"
+      },
+      {
+        test: "Class 11 Annual Examination",
+        score: "School Rank 1 Topper",
+        rank: "1st Rank Across All Science Streams (Vidya Bharti · Mar 2022)",
+        associatedWith: "Jwala Devi SVM Inter College"
+      },
+      {
+        test: "UP Board Class 10 Examination",
+        score: "91%",
+        rank: "School Rank 2",
+        associatedWith: "Jwala Devi SVM Inter College"
+      },
+      {
+        test: "Class 9 Annual Examination",
+        score: "School Rank 5",
+        rank: "5th Rank in School",
+        associatedWith: "Jwala Devi SVM Inter College"
+      }
+    ],
+    honorsAndAwards: [
+      {
+        title: "Honored by Dainik Jagran in Prayagraj",
+        issuer: "Dainik Jagran",
+        date: "Jul 2023",
+        url: "https://www.linkedin.com/in/gkm563/overlay/Honor/115543032/treasury/?profileId=ACoAAELRmwcB5D6Nca6MLh8d-CklqBAald3YYwA",
+        description: "State & regional media felicitation in Prayagraj for outstanding Class 12 UP Board district rank standing."
+      },
+      {
+        title: "Honored by Secretary UP Board",
+        issuer: "Secretary, Uttar Pradesh Board of High School and Intermediate Education (UPMSP)",
+        date: "Jun 2023",
+        url: "https://www.linkedin.com/in/gkm563/overlay/Honor/114214070/treasury/?profileId=ACoAAELRmwcB5D6Nca6MLh8d-CklqBAald3YYwA",
+        description: "Conferred official merit citation and medal on stage by the Secretary of UP Board for securing 5th Rank in Prayagraj District (92.67%)."
+      },
+      {
+        title: "Awarded by Principle of JDSVMIC",
+        issuer: "Principal, Jwala Devi Saraswati Vidya Mandir Inter College",
+        date: "Apr 2023",
+        url: "https://www.linkedin.com/in/gkm563/overlay/Honor/115092017/treasury/?profileId=ACoAAELRmwcB5D6Nca6MLh8d-CklqBAald3YYwA",
+        description: "Conferred institutional excellence honor by the Principal and Senior Faculty for unbroken academic distinction."
+      },
+      {
+        title: "Honored by United Group of Institutions in Prayagraj",
+        issuer: "United Group of Institutions (UGI)",
+        date: "Apr 2023",
+        url: "https://www.linkedin.com/in/gkm563/overlay/Honor/114666504/treasury/?profileId=ACoAAELRmwcB5D6Nca6MLh8d-CklqBAald3YYwA",
+        description: "Felicitated by senior leadership and trustees of UGI in Prayagraj for top academic rank standing and merit-based distinction."
+      },
+      {
+        title: "Class 11th 1st ranker",
+        issuer: "Vidya Bharti",
+        date: "Mar 2022",
+        url: "https://www.linkedin.com/in/gkm563/overlay/Honor/113410586/treasury/?profileId=ACoAAELRmwcB5D6Nca6MLh8d-CklqBAald3YYwA",
+        description: "Ranked 1st across all science streams in Class 11 by Vidya Bharti with 100% attendance."
+      },
+      {
+        title: "Awarded for being 1st Year Topper",
+        issuer: "United Institute Of Technology Naini Prayagraj UP",
+        date: "Jul 2024",
+        url: "https://www.linkedin.com/in/gkm563/",
+        description: "Awarded 1st Year Topper and secured College Rank 5 overall in AKTU university examinations."
+      },
+      {
+        title: "Secured 1st Rank in CSE (Data Science) – 2nd Year",
+        issuer: "United Institute Of Technology Naini Prayagraj UP",
+        date: "Jan 2025",
+        url: "https://www.linkedin.com/in/gkm563/",
+        description: "Ranked 1st across the entire Computer Science & Engineering (Data Science) department with an outstanding SGPA of 8.8."
+      },
+      {
+        title: "Best Content Creator Award",
+        issuer: "Amroha Police / Uttar Pradesh Police",
+        date: "Jul 2026",
+        url: "https://www.linkedin.com/in/gkm563/overlay/Honor/109562286/treasury/?profileId=ACoAAELRmwcB5D6Nca6MLh8d-CklqBAald3YYwA",
+        description: "Awarded by Amroha Police DSP Anjali Kataria Ma'am for outstanding cybersecurity content creation and awareness campaigns."
+      }
+    ]
   },
 
   experience: [
@@ -303,9 +407,12 @@ Current Roles:
 - GIIP Research Fellow @ Asian Institute of Technology (Bangkok, Thailand · BusSetu transit analytics)
 - Cybersecurity Trainee @ C3iHub, IIT Kanpur (CyberSuraksha Initiative)
 
-Academics:
-- B.Tech Computer Science & Engineering (Data Science) @ United Institute of Technology (UIT Prayagraj) / AKTU Lucknow (Aug 2024 – Aug 2028). SGPA: 8.5. Rank 1 CSE (Data Science) Branch Topper.
-- Jwala Devi SVM Inter College Prayagraj: Awarded by Secretary, UPMSP. 5th Rank in Prayagraj District in Class 12 (92.67%), School 2nd Rank in Class 10 (91%), School 1st Rank in Class 11.
+Academics & Official Test Scores:
+- B.Tech Computer Science & Engineering (Data Science) @ United Institute of Technology (UIT Prayagraj) / AKTU Lucknow (Aug 2024 – Aug 2028). SGPA: 8.8. Rank 1 CSE (Data Science) Branch Topper.
+- AKTU Cyber Security Theory Examination: Score 65/70 (Theory) | Subject Rank 1 (Overall 95/100, highest recorded score at UIT Prayagraj).
+- AKTU First Year Examination: College Rank 5 across all departments & UIT 1st Year Topper.
+- Jwala Devi SVM Inter College Prayagraj: Awarded by Secretary UPMSP & Dainik Jagran. 5th Rank in Prayagraj District in Class 12 (92.67%), Class 11 School Rank 1 (Vidya Bharti), Class 10 School Rank 2 (91%), Class 9 School Rank 5.
+- Honors: Honored by Secretary UP Board (Jun 2023), Dainik Jagran (Jul 2023), Principal JDSVMIC (Apr 2023), United Group of Institutions (Apr 2023), Best Content Creator Award by DSP Anjali Kataria (Jul 2026).
 
 Always answer visitors in first-person ("I am Gautam...", "In my work at Vindhya Millets...", "When we launched PrayagrajRooms...").
 Provide authentic, concrete numbers and metrics. Be humble, technically articulate, and friendly.

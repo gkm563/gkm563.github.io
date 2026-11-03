@@ -14,7 +14,7 @@ const JOURNEY_DATA = {
     expectedGraduationYear: 2027,
     currentYear: 3,
     currentSemester: 6,
-    currentStatusText: "3rd Year (Semester 6) · WikiClub Tech Envoy @ UIT · Academic Rank 1 Branch Topper · AIT Bangkok & UP Police Fellow"
+    currentStatusText: "3rd Year (Semester 6) · WikiClub Tech Envoy @ UIT · Academic Rank 1 Branch Topper (SGPA 8.8) · AKTU Cyber Theory 65/70 · AIT Bangkok & UP Police Fellow"
   },
 
   phases: [
@@ -154,17 +154,17 @@ const JOURNEY_DATA = {
       impact: "Laid the bedrock for pursuing B.Tech in CSE (Data Science).",
       evidence: {
         images: ["assets/images/gallery/gautam-kumar-maurya-upsmp.jpg"],
-        links: [],
+        links: ["https://www.linkedin.com/in/gkm563/overlay/Honor/115543032/treasury/?profileId=ACoAAELRmwcB5D6Nca6MLh8d-CklqBAald3YYwA"],
         github: null,
         certificate: null,
-        linkedin: null
+        linkedin: "https://www.linkedin.com/in/gkm563/overlay/Honor/114214070/treasury/?profileId=ACoAAELRmwcB5D6Nca6MLh8d-CklqBAald3YYwA"
       }
     },
     {
       id: "pre-college-class-11-topper",
-      title: "School Rank 1 Topper in Class 11 & Awarded by MNIT Professor",
-      shortDescription: "Secured 1st Rank across all streams in Class 11; awarded on stage by JDSVMIC Principal and visiting MNIT Professor.",
-      fullDescription: "Achieved 1st Rank in Class 11 at Jwala Devi SVM Inter College, maintaining 100% attendance and top marks across Physics, Chemistry, and Mathematics. Awarded directly by an MNIT (Malaviya National Institute of Technology) Professor.",
+      title: "Class 11th 1st ranker (Vidya Bharti) & Awarded by MNIT Professor",
+      shortDescription: "Secured 1st Rank across all streams in Class 11 by Vidya Bharti; awarded on stage by JDSVMIC Principal and visiting MNIT Professor.",
+      fullDescription: "Conferred 1st Rank across all science streams in Class 11 by Vidya Bharti Akhil Bharatiya Shiksha Sansthan, maintaining 100% attendance and scholastic excellence. Awarded on stage by visiting MNIT Professor and College Principal.",
       startDate: "Mar 2022",
       endDate: "Apr 2023",
       phaseId: "pre-college",
@@ -173,7 +173,7 @@ const JOURNEY_DATA = {
       status: "completed",
       importance: "major",
       skills: ["Mathematics", "Physics", "Academic Discipline", "100% Attendance"],
-      organization: "Jwala Devi SVM Inter College (JDSVMIC) / MNIT",
+      organization: "Vidya Bharti / JDSVMIC Prayagraj",
       role: "Class 11 School Topper",
       location: "Prayagraj, Uttar Pradesh, India",
       whatHappened: "Secured 1st Rank across all streams in Class 11 and received academic excellence award.",
@@ -182,10 +182,10 @@ const JOURNEY_DATA = {
       impact: "Prepared for Class 12 board examination success.",
       evidence: {
         images: ["assets/images/gallery/gautam-kumar-maurya-iita.jpg"],
-        links: [],
+        links: ["https://www.linkedin.com/in/gkm563/overlay/Honor/115092017/treasury/?profileId=ACoAAELRmwcB5D6Nca6MLh8d-CklqBAald3YYwA"],
         github: null,
         certificate: null,
-        linkedin: null
+        linkedin: "https://www.linkedin.com/in/gkm563/overlay/Honor/113410586/treasury/?profileId=ACoAAELRmwcB5D6Nca6MLh8d-CklqBAald3YYwA"
       }
     },
     {
@@ -342,9 +342,9 @@ const JOURNEY_DATA = {
 
     {
       id: "sem-3-aktu-rank-5-topper",
-      title: "CSE (Data Science) Branch Rank 1 Topper & AKTU Rank 5 Excellence Award",
-      shortDescription: "Ranked 1st in CSE (Data Science) branch and 5th overall across the college in AKTU semester exams.",
-      fullDescription: "Achieved top academic performance across Object-Oriented Programming (Java/Python), Operating Systems, Discrete Mathematics, and Computer Organization. Honored as Branch Rank 1 Topper and College Rank 5 Awardee.",
+      title: "CSE (Data Science) Branch Rank 1 Topper (SGPA 8.8) & AKTU Rank 5 Excellence Award",
+      shortDescription: "Ranked 1st in CSE (Data Science) branch with SGPA 8.8 and 5th overall across the college in AKTU semester exams.",
+      fullDescription: "Achieved top academic performance across Object-Oriented Programming (Java/Python), Operating Systems, Discrete Mathematics, and Computer Organization. Honored as Branch Rank 1 Topper with SGPA 8.8 and College Rank 5 Awardee.",
       startDate: "Aug 2024",
       endDate: "Jan 2025",
       phaseId: "year-2",
@@ -352,20 +352,48 @@ const JOURNEY_DATA = {
       category: "Academic",
       status: "completed",
       importance: "major",
-      skills: ["OOP (Java/Python)", "Operating Systems", "Discrete Math", "Academic Excellence"],
+      skills: ["SGPA 8.8", "OOP (Java/Python)", "Operating Systems", "Discrete Math", "Branch Rank 1"],
       organization: "United Institute of Technology (UIT Prayagraj) / AKTU Lucknow",
       role: "Branch Rank 1 Scholar",
       location: "Prayagraj, Uttar Pradesh, India",
-      whatHappened: "Secured Rank 1 in CSE (Data Science) branch and Rank 5 college-wide in AKTU exams.",
+      whatHappened: "Secured Rank 1 in CSE (Data Science) branch with SGPA 8.8 and Rank 5 college-wide in AKTU exams.",
       whyItMattered: "Validated deep theoretical understanding of core computer science systems.",
       whatILearned: "Process scheduling, memory management, discrete proofs, and OOP design patterns.",
       impact: "Earned academic prestige and student leadership opportunities within the department.",
       evidence: {
         images: ["assets/images/gallery/gautam-kumar-maurya-aktu.jpg", "assets/images/gallery/gautam-kumar-maurya-uit-topper.jpg"],
-        links: [],
+        links: ["verify.html#GKM-ACAD-AKTU-SEM-2025"],
         github: null,
         certificate: null,
-        linkedin: null
+        linkedin: "https://www.linkedin.com/in/gkm563/"
+      }
+    },
+    {
+      id: "sem-4-aktu-cyber-security-topper",
+      title: "AKTU Cyber Security Theory Subject Rank 1 (Score: 65/70 Theory, 95/100 Overall)",
+      shortDescription: "Scored 65/70 in AKTU Cyber Security theory exam (95/100 overall), achieving Subject Rank 1 across UIT Prayagraj.",
+      fullDescription: "Achieved the highest recorded score across United Institute of Technology in the Dr. A.P.J. Abdul Kalam Technical University (AKTU) Cyber Security examination. Secured 65 marks out of 70 in theory with 95/100 overall marks.",
+      startDate: "Feb 2025",
+      endDate: "Jun 2025",
+      phaseId: "year-2",
+      semesterId: "sem-4",
+      category: "Academic",
+      status: "completed",
+      importance: "major",
+      skills: ["Cyber Security", "Information Security", "Network Defense", "Cryptography", "65/70 Theory"],
+      organization: "United Institute of Technology / AKTU Lucknow",
+      role: "Subject Rank 1 Topper",
+      location: "Prayagraj, Uttar Pradesh, India",
+      whatHappened: "Secured highest Cyber Security theory examination marks across the institution (65/70).",
+      whyItMattered: "Demonstrated superior mastery in cybersecurity principles, threat models, and secure systems architecture.",
+      whatILearned: "Cryptographic protocols, access control matrices, authentication mechanisms, and vulnerability assessment.",
+      impact: "Solidified selection for the UP Police Cyber Security Fellowship (APCSIP-2026).",
+      evidence: {
+        images: [],
+        links: ["verify.html#GKM-ACAD-AKTU-CYBER-2026"],
+        github: null,
+        certificate: null,
+        linkedin: "https://www.linkedin.com/in/gkm563/"
       }
     },
     {
