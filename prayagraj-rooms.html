@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Instant Theme Detection Script -->
+    <script>
+        (function() {
+            try {
+                const savedTheme = localStorage.getItem('portfolio-theme') || localStorage.getItem('gkm_theme');
+                if (savedTheme === 'dark' || (!savedTheme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                    document.documentElement.classList.add('dark', 'dark-theme');
+                } else {
+                    document.documentElement.classList.remove('dark', 'dark-theme');
+                }
+            } catch (e) {}
+        })();
+    </script>
+    
+    <!-- Primary Meta Tags (SEO / AEO / GEO Optimized) -->
+    <title>PrayagrajRooms — Co-Founder & CTO Technical Case Study & Credential Verification | Gautam Kumar Maurya</title>
+    <meta name="title" content="PrayagrajRooms — Co-Founder & CTO Technical Case Study & Credential Verification | Gautam Kumar Maurya">
+    <meta name="description" content="Official technical case study & credential verification for Gautam Kumar Maurya's role as Co-Founder & CTO at PrayagrajRooms (Sep 2025 – Present). Engineered custom PHP, MySQL and JavaScript student rental platform with owner dashboards, listings and 5,000+ launch clicks.">
+    <meta name="keywords" content="PrayagrajRooms Gautam Kumar Maurya, PrayagrajRooms CTO, Prayagraj Rooms Co-Founder, student housing Prayagraj, PHP MySQL room rental portal, prayagrajrooms.in verification, gkm563 prayagrajrooms">
+    <meta name="author" content="Gautam Kumar Maurya">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+    <link rel="canonical" href="https://gkm563.github.io/prayagraj-rooms.html">
+
+    <!-- GEO / Local SEO -->
+    <meta name="geo.region" content="IN-UP">
+    <meta name="geo.placename" content="Prayagraj, Uttar Pradesh, India">
+
+    <!-- Open Graph SEO -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://gkm563.github.io/prayagraj-rooms.html">
+    <meta property="og:title" content="PrayagrajRooms — Co-Founder & CTO | Gautam Kumar Maurya">
+    <meta property="og:description" content="Official technical case study & credential verification: PropTech platform with owner dashboards, property listings, inquiry management, and 5,000+ platform clicks.">
+    <meta property="og:image" content="https://gkm563.github.io/assets/images/profile/Gautam_Kumar_Maurya.jpg">
+    <meta property="og:site_name" content="Gautam Kumar Maurya Portfolio & Verification Registry">
+
+    <!-- Twitter Card SEO -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:site" content="@gkm563">
+    <meta property="twitter:title" content="PrayagrajRooms — Co-Founder & CTO Verification | Gautam Kumar Maurya">
+    <meta property="twitter:description" content="Official technical verification: custom PHP, MySQL, JavaScript room-rental platform with 5,000+ launch week clicks.">
+
+    <!-- Favicons -->
+    <link rel="icon" type="image/x-icon" href="./favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png">
+
+    <!-- CSS Bundles -->
+    <link rel="stylesheet" href="./assets/css/portfolio.min.css?v=20261103">
+    <link rel="stylesheet" href="./assets/css/modern.css?v=20261103">
+
+    <!-- Font Awesome & Lucide Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script src="https://unpkg.com/lucide@latest" defer></script>
+
+    <!-- Schema.org JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://gkm563.github.io/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Verification Registry",
+              "item": "https://gkm563.github.io/verify.html"
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "name": "PrayagrajRooms Verification Dossier",
+              "item": "https://gkm563.github.io/prayagraj-rooms.html"
+            }
+          ]
+        },
+        {
+          "@type": "SoftwareApplication",
+          "name": "PrayagrajRooms",
+          "operatingSystem": "Web",
+          "applicationCategory": "BusinessApplication",
+          "url": "https://prayagrajrooms.in"
+        },
+        {
+          "@type": "Person",
+          "name": "Gautam Kumar Maurya",
+          "alternateName": "gkm563",
+          "jobTitle": "Co-Founder & Chief Technology Officer (CTO)",
+          "worksFor": {
+            "@type": "Organization",
+            "name": "PrayagrajRooms"
+          },
+          "url": "https://gkm563.github.io/"
+        }
+      ]
+    }
+    </script>
+</head>
+
+<body class="bg-slate-50 text-slate-900 dark:bg-slate-950 dark:text-slate-100 min-h-screen selection:bg-blue-600 selection:text-white transition-colors duration-200">
+
+    <!-- Scroll Progress Bar -->
+    <div id="scroll-progress" class="fixed top-0 left-0 h-1 bg-gradient-to-r from-blue-600 via-indigo-600 to-sky-500 z-50 transition-all duration-150" style="width: 0%;"></div>
+
+    <!-- ═══════════════════════════════════════
+         STICKY CAPSULE NAVBAR
+    ═══════════════════════════════════════ -->
+    <header id="navbar" class="fixed top-0 left-1/2 -translate-x-1/2 z-50 glass-nav transition-all duration-300">
+        <div class="nav-inner-wrapper max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
+            <a href="index.html" class="flex items-center gap-1.5 group shrink-0 pl-1 font-heading" title="Back to Portfolio">
+                <span class="text-blue-600 font-mono font-bold text-2xl leading-none">&lt;/&gt;</span>
+                <span class="text-2xl sm:text-3xl font-black text-slate-950 dark:text-white tracking-tight">GKM</span>
+                <span class="w-2.5 h-2.5 rounded-full bg-blue-600 inline-block ml-0.5"></span>
+            </a>
+
+            <nav class="hidden lg:flex items-center gap-2.5 xl:gap-5 text-xs xl:text-sm font-medium shrink min-w-0">
+                <a href="index.html" class="mockup-nav-link text-slate-600 dark:text-slate-300 hover:text-blue-600 transition-colors">Overview</a>
+                <a href="verify.html" class="mockup-nav-link text-blue-600 dark:text-blue-400 font-bold flex items-center gap-1.5">
+                    <span class="w-1.5 h-1.5 rounded-full bg-blue-500 animate-pulse"></span>
+                    <span>Verification Registry</span>
+                </a>
+                <a href="vindhya-millets.html" class="mockup-nav-link text-slate-600 dark:text-slate-300 hover:text-emerald-600">Vindhya Millets</a>
+                <a href="prayagraj-rooms.html" class="mockup-nav-link text-blue-600 dark:text-blue-400 font-bold">PrayagrajRooms</a>
+                <a href="heisyn-internship.html" class="mockup-nav-link text-slate-600 dark:text-slate-300 hover:text-blue-600">Heisyn</a>
+                <a href="road-to-wiki.html" class="mockup-nav-link text-slate-600 dark:text-slate-300 hover:text-blue-600">Road to Wiki</a>
+                <a href="achievements.html" class="mockup-nav-link text-slate-600 dark:text-slate-300 hover:text-blue-600">Achievements</a>
+            </nav>
+
+            <div class="flex items-center gap-2 sm:gap-3 shrink-0 pr-1">
+                <button id="theme-toggle" aria-label="Toggle Theme" title="Toggle Theme" class="w-9 h-9 rounded-full border border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition-all flex items-center justify-center shrink-0">
+                    <i data-lucide="moon" class="w-4 h-4 hidden dark:block"></i>
+                    <i data-lucide="sun" class="w-4 h-4 block dark:hidden"></i>
+                </button>
+                <a href="assets/docs/Gautam_Kumar_Maurya_Resume.pdf" target="_blank" rel="noopener" class="hidden sm:inline-flex items-center gap-1.5 px-3.5 py-2 rounded-full bg-slate-950 text-white hover:bg-slate-800 dark:bg-white dark:text-slate-950 dark:hover:bg-slate-200 text-xs font-bold shadow-md transition-all shrink-0">
+                    <i data-lucide="download" class="w-3.5 h-3.5"></i>
+                    <span>Resume</span>
+                </a>
+                <button id="mobile-menu-btn" aria-label="Open Navigation Menu" class="lg:hidden p-2 rounded-xl border border-slate-200 dark:border-slate-800 text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800">
+                    <i data-lucide="menu" class="w-5 h-5"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Drawer -->
+    <div id="mobile-drawer" class="fixed inset-0 z-[100] bg-slate-950/60 backdrop-blur-md translate-x-full transition-transform duration-300 lg:hidden">
+        <div class="absolute inset-0 bg-slate-900/50 backdrop-blur-sm" id="mobile-drawer-close"></div>
+        <div class="relative ml-auto w-4/5 max-w-sm h-full bg-white dark:bg-slate-900 shadow-2xl p-6 flex flex-col justify-between overflow-y-auto">
+            <div>
+                <div class="flex items-center justify-between pb-6 border-b border-slate-100 dark:border-slate-800">
+                    <div class="flex items-center gap-1.5 font-heading">
+                        <span class="text-blue-600 font-mono font-bold text-2xl">&lt;/&gt;</span>
+                        <span class="font-black text-2xl tracking-tight text-slate-950 dark:text-white">GKM</span>
+                    </div>
+                    <button id="mobile-drawer-close-btn" class="p-2 rounded-xl text-slate-500 hover:bg-slate-100 dark:hover:bg-slate-800">
+                        <i data-lucide="x" class="w-5 h-5"></i>
+                    </button>
+                </div>
+                <div class="py-6 space-y-4 text-sm font-medium">
+                    <a href="index.html" class="block py-2 text-slate-700 dark:text-slate-300">Overview</a>
+                    <a href="verify.html" class="block py-2 text-blue-600 font-bold">Verification Registry</a>
+                    <a href="prayagraj-rooms.html" class="block py-2 text-blue-600 dark:text-blue-400 font-bold">PrayagrajRooms Dossier</a>
+                    <a href="vindhya-millets.html" class="block py-2 text-slate-700 dark:text-slate-300">Vindhya Millets Dossier</a>
+                    <a href="heisyn-internship.html" class="block py-2 text-slate-700 dark:text-slate-300">Heisyn Dossier</a>
+                    <a href="ait-global-innovation-internship.html" class="block py-2 text-slate-700 dark:text-slate-300">AIT Bangkok GIIP</a>
+                    <a href="up-police-internship.html" class="block py-2 text-slate-700 dark:text-slate-300">UP Police APCSIP</a>
+                    <a href="road-to-wiki.html" class="block py-2 text-slate-700 dark:text-slate-300">Road to Wiki</a>
+                </div>
+            </div>
+            <div class="pt-6 border-t border-slate-100 dark:border-slate-800 text-xs text-slate-400">
+                &copy; 2026 Gautam Kumar Maurya. Verified Professional Dossier.
+            </div>
+        </div>
+    </div>
+
+    <!-- ═══════════════════════════════════════
+         MAIN HERO & VERIFICATION HEADER
+    ═══════════════════════════════════════ -->
+    <main class="pt-24 sm:pt-28">
+        
+        <section class="relative overflow-hidden py-12 sm:py-16 md:py-20 section-dot-grid border-b border-slate-200/60 dark:border-slate-800">
+            <!-- Ambient Glow -->
+            <div class="section-ambient-glow pointer-events-none absolute -top-24 -left-24 w-80 h-80 sm:w-[500px] sm:h-[500px] rounded-full blur-3xl opacity-60 bg-blue-500/15"></div>
+            <div class="section-ambient-glow pointer-events-none absolute top-12 -right-24 w-80 h-80 sm:w-[500px] sm:h-[500px] rounded-full blur-3xl opacity-50 bg-indigo-500/15"></div>
+
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                
+                <!-- Status Pill Strip -->
+                <div class="flex flex-wrap items-center gap-2 mb-6">
+                    <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-500/10 text-blue-600 dark:text-blue-400 border border-blue-500/20 text-xs font-bold uppercase tracking-wider">
+                        <i data-lucide="shield-check" class="w-3.5 h-3.5 text-blue-600 dark:text-blue-400"></i>
+                        <span>OFFICIALLY VERIFIED STARTUP</span>
+                    </span>
+                    <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700 text-xs font-semibold">
+                        <i data-lucide="tag" class="w-3.5 h-3.5 text-blue-500"></i>
+                        <span>ID: GKM-EXP-PR-2025</span>
+                    </span>
+                    <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700 text-xs font-semibold">
+                        <i data-lucide="calendar" class="w-3.5 h-3.5 text-blue-500"></i>
+                        <span>Sep 2025 – Present</span>
+                    </span>
+                    <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700 text-xs font-semibold">
+                        <i data-lucide="map-pin" class="w-3.5 h-3.5 text-blue-500"></i>
+                        <span>Prayagraj, India</span>
+                    </span>
+                    <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-500/10 text-blue-600 dark:text-blue-400 border border-blue-500/20 text-xs font-bold">
+                        <span class="w-2 h-2 rounded-full bg-blue-500 animate-ping"></span>
+                        <span>5,000+ CLICKS PROVEN</span>
+                    </span>
+                </div>
+
+                <!-- Main Grid -->
+                <div class="grid lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+                    
+                    <div class="lg:col-span-7 space-y-6">
+                        <div>
+                            <span class="text-xs font-bold uppercase tracking-wider text-blue-600 dark:text-blue-400 block mb-1">
+                                Student Housing PropTech Innovation
+                            </span>
+                            <h1 class="text-3xl sm:text-5xl font-black text-slate-950 dark:text-white tracking-tight leading-[1.1] font-heading">
+                                Prayagraj Rooms <br>
+                                <span class="bg-gradient-to-r from-blue-600 via-indigo-600 to-sky-500 bg-clip-text text-transparent">
+                                    Co-Founder &amp; Chief Technology Officer (CTO)
+                                </span>
+                            </h1>
+                        </div>
+
+                        <!-- Resume Match Quote Box -->
+                        <div class="p-5 rounded-2xl bg-white/90 dark:bg-slate-900/80 border border-slate-200/90 dark:border-slate-800 shadow-sm border-l-4 border-l-blue-600 space-y-2">
+                            <span class="text-[11px] font-bold uppercase tracking-wider text-slate-400 block font-mono">
+                                Exact Resume Verbatim Record
+                            </span>
+                            <p class="text-xs sm:text-sm text-slate-700 dark:text-slate-300 leading-relaxed italic">
+                                &bull; Developed a PHP, MySQL and JavaScript room-rental platform with owner dashboards, property listings and inquiry management.<br>
+                                &bull; Achieved 5,000+ platform clicks during its first promotional week.
+                            </p>
+                        </div>
+
+                        <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+                            PrayagrajRooms was founded to eliminate aggressive broker commissions and deceptive rental listings for thousands of university students moving to Prayagraj. As Co-Founder &amp; CTO, Gautam architected the database schema, built the owner management suite, and scaled the initial marketing launch to over 5,000 verified platform interactions.
+                        </p>
+
+                        <!-- Action Buttons -->
+                        <div class="flex flex-wrap items-center gap-3 pt-1">
+                            <a href="https://prayagrajrooms.in" target="_blank" rel="noopener" class="px-5 py-2.5 rounded-full bg-blue-600 hover:bg-blue-700 text-white font-bold text-xs shadow-md transition-all flex items-center gap-2">
+                                <i data-lucide="external-link" class="w-4 h-4"></i>
+                                <span>Visit Live Platform</span>
+                            </a>
+                            <a href="https://github.com/gkm563/prayagrajrooms" target="_blank" rel="noopener" class="px-5 py-2.5 rounded-full border border-slate-300 dark:border-slate-700 text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 font-bold text-xs transition-all flex items-center gap-2">
+                                <i class="fa-brands fa-github text-sm"></i>
+                                <span>GitHub Repository</span>
+                            </a>
+                            <a href="verify.html" class="px-4 py-2.5 rounded-full text-blue-600 dark:text-blue-400 hover:underline text-xs font-semibold flex items-center gap-1.5">
+                                <i data-lucide="arrow-left" class="w-3.5 h-3.5"></i>
+                                <span>Back to Registry</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Right Column: Venture Card -->
+                    <div class="lg:col-span-5">
+                        <div class="bento-card p-6 sm:p-7 rounded-3xl border border-slate-200/90 dark:border-slate-800 bg-white/95 dark:bg-slate-900/90 shadow-xl relative overflow-hidden">
+                            
+                            <div class="flex items-center justify-between mb-4 pb-4 border-b border-slate-100 dark:border-slate-800">
+                                <span class="text-xs font-bold uppercase tracking-wider text-slate-500">PropTech Startup</span>
+                                <span class="px-2.5 py-0.5 rounded-full bg-blue-50 dark:bg-blue-950/60 text-blue-700 dark:text-blue-300 text-[10px] font-bold">
+                                    Zero Brokerage Model
+                                </span>
+                            </div>
+
+                            <div class="p-6 rounded-2xl bg-blue-50/50 dark:bg-slate-950/80 border border-blue-100 dark:border-slate-800 text-center mb-5">
+                                <div class="w-14 h-14 rounded-2xl bg-blue-600 text-white flex items-center justify-center text-2xl mx-auto shadow-md mb-3">
+                                    <i class="fa-solid fa-house-chimney"></i>
+                                </div>
+                                <h3 class="text-xl font-black text-slate-900 dark:text-white font-heading">PrayagrajRooms.in</h3>
+                                <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">Direct Student-to-Owner Rental Discovery Platform</p>
+                            </div>
+
+                            <div class="grid grid-cols-2 gap-3 text-xs">
+                                <div class="p-3 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-100 dark:border-slate-800">
+                                    <span class="text-[10px] font-bold text-slate-400 uppercase block">Role</span>
+                                    <span class="font-bold text-slate-900 dark:text-white block mt-0.5">Co-Founder &amp; CTO</span>
+                                </div>
+                                <div class="p-3 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-100 dark:border-slate-800">
+                                    <span class="text-[10px] font-bold text-slate-400 uppercase block">Launch Traction</span>
+                                    <span class="font-bold text-blue-600 dark:text-blue-400 block mt-0.5">5,000+ Clicks Week 1</span>
+                                </div>
+                                <div class="p-3 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-100 dark:border-slate-800">
+                                    <span class="text-[10px] font-bold text-slate-400 uppercase block">Core Stack</span>
+                                    <span class="font-bold text-slate-900 dark:text-white block mt-0.5">PHP, MySQL, JS</span>
+                                </div>
+                                <div class="p-3 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-100 dark:border-slate-800">
+                                    <span class="text-[10px] font-bold text-slate-400 uppercase block">Audience</span>
+                                    <span class="font-bold text-slate-900 dark:text-white block mt-0.5 truncate">Students &amp; Owners</span>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ═══════════════════════════════════════
+             KEY DELIVERABLES & TECHNICAL SPECS
+        ═══════════════════════════════════════ -->
+        <section class="py-16 sm:py-24 bg-slate-50 dark:bg-slate-900/40 border-b border-slate-200/60 dark:border-slate-800">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="text-center mb-16">
+                    <span class="section-pill-tag mb-3 inline-flex items-center gap-1.5">
+                        <i data-lucide="code" class="w-3.5 h-3.5 text-blue-600"></i> Technical Architecture
+                    </span>
+                    <h2 class="text-3xl sm:text-4xl font-black text-slate-950 dark:text-white tracking-tight font-heading">
+                        Engineered for High-Velocity <span class="text-blue-600 dark:text-blue-400">Local Adoption</span>
+                    </h2>
+                    <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 mt-2 max-w-2xl mx-auto leading-relaxed">
+                        How Gautam built and shipped a full-featured PropTech platform solving real-world student housing bottlenecks.
+                    </p>
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-6 sm:gap-8 mb-12">
+                    
+                    <div class="bento-card p-6 sm:p-7 rounded-3xl border border-slate-200/90 dark:border-slate-800 bg-white/95 dark:bg-slate-900/90 shadow-md">
+                        <div class="w-10 h-10 rounded-2xl bg-blue-50 dark:bg-blue-950/60 text-blue-600 dark:text-blue-400 flex items-center justify-center font-bold mb-4">
+                            <i data-lucide="layout-dashboard" class="w-5 h-5"></i>
+                        </div>
+                        <h3 class="text-lg font-black text-slate-900 dark:text-white mb-2">Owner Dashboard Suite</h3>
+                        <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+                            Engineered an intuitive property onboarding portal allowing local homeowners to upload photos, specify room amenities (Wi-Fi, RO water, electricity terms), and set pricing without technical friction.
+                        </p>
+                    </div>
+
+                    <div class="bento-card p-6 sm:p-7 rounded-3xl border border-slate-200/90 dark:border-slate-800 bg-white/95 dark:bg-slate-900/90 shadow-md">
+                        <div class="w-10 h-10 rounded-2xl bg-indigo-50 dark:bg-indigo-950/60 text-indigo-600 dark:text-indigo-400 flex items-center justify-center font-bold mb-4">
+                            <i data-lucide="filter" class="w-5 h-5"></i>
+                        </div>
+                        <h3 class="text-lg font-black text-slate-900 dark:text-white mb-2">Locality-Based Search &amp; Filters</h3>
+                        <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+                            Implemented hyper-local search filtering across major university hubs in Prayagraj (Allenganj, Katra, Salori, Teliyarganj, Chhota Baghada) with budget ranges, sharing occupancy, and gender filters.
+                        </p>
+                    </div>
+
+                    <div class="bento-card p-6 sm:p-7 rounded-3xl border border-slate-200/90 dark:border-slate-800 bg-white/95 dark:bg-slate-900/90 shadow-md">
+                        <div class="w-10 h-10 rounded-2xl bg-sky-50 dark:bg-sky-950/60 text-sky-600 dark:text-sky-400 flex items-center justify-center font-bold mb-4">
+                            <i data-lucide="send" class="w-5 h-5"></i>
+                        </div>
+                        <h3 class="text-lg font-black text-slate-900 dark:text-white mb-2">Inquiry &amp; Direct Lead Routing</h3>
+                        <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+                            Streamlined direct tenant-to-owner contact using sanitized inquiry forms and instant notification mechanisms, cutting out middleman brokers and saving students up to ₹5,000 per admission season.
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ═══════════════════════════════════════
+             OFFICIAL CREDENTIAL VERIFICATION METADATA BOX
+        ═══════════════════════════════════════ -->
+        <section class="py-16 sm:py-24 bg-white dark:bg-slate-950 border-b border-slate-200/60 dark:border-slate-800">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="bento-card p-6 sm:p-10 rounded-3xl border-2 border-blue-500/40 dark:border-blue-500/50 bg-white dark:bg-slate-900 shadow-2xl relative overflow-hidden">
+                    
+                    <div class="flex items-center justify-between pb-6 border-b border-slate-200 dark:border-slate-800 flex-wrap gap-4">
+                        <div class="flex items-center gap-3">
+                            <div class="w-12 h-12 rounded-2xl bg-blue-500/10 text-blue-600 dark:text-blue-400 flex items-center justify-center text-xl font-bold border border-blue-500/20">
+                                <i data-lucide="badge-check" class="w-6 h-6"></i>
+                            </div>
+                            <div>
+                                <span class="text-[10px] font-mono text-blue-600 dark:text-blue-400 font-bold uppercase tracking-widest block">Official Verification Record</span>
+                                <h3 class="text-xl sm:text-2xl font-black text-slate-950 dark:text-white font-heading">Co-Founder &amp; CTO Verification Certificate</h3>
+                            </div>
+                        </div>
+                        <span class="px-3.5 py-1.5 rounded-full bg-blue-600 text-white text-xs font-bold shadow-md">
+                            VERIFIED AUTHENTIC
+                        </span>
+                    </div>
+
+                    <div class="grid sm:grid-cols-2 gap-4 py-6 text-xs border-b border-slate-200 dark:border-slate-800">
+                        <div class="p-3.5 rounded-2xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200/80 dark:border-slate-800">
+                            <span class="text-[10px] font-bold text-slate-400 uppercase tracking-wider block">Candidate / Founder</span>
+                            <span class="font-bold text-slate-900 dark:text-white text-sm mt-0.5 block">Gautam Kumar Maurya (gkm563)</span>
+                        </div>
+                        <div class="p-3.5 rounded-2xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200/80 dark:border-slate-800">
+                            <span class="text-[10px] font-bold text-slate-400 uppercase tracking-wider block">Position / Designation</span>
+                            <span class="font-bold text-slate-900 dark:text-white text-sm mt-0.5 block">Co-Founder &amp; Chief Technology Officer (CTO)</span>
+                        </div>
+                        <div class="p-3.5 rounded-2xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200/80 dark:border-slate-800">
+                            <span class="text-[10px] font-bold text-slate-400 uppercase tracking-wider block">Platform / Entity</span>
+                            <span class="font-bold text-slate-900 dark:text-white text-sm mt-0.5 block">PrayagrajRooms (PropTech)</span>
+                        </div>
+                        <div class="p-3.5 rounded-2xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200/80 dark:border-slate-800">
+                            <span class="text-[10px] font-bold text-slate-400 uppercase tracking-wider block">Tenure Period</span>
+                            <span class="font-bold text-blue-600 dark:text-blue-400 text-sm mt-0.5 block">September 2025 – Present</span>
+                        </div>
+                        <div class="p-3.5 rounded-2xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200/80 dark:border-slate-800">
+                            <span class="text-[10px] font-bold text-slate-400 uppercase tracking-wider block">Unique Verification ID</span>
+                            <span class="font-mono font-bold text-slate-900 dark:text-white text-xs mt-0.5 block">GKM-EXP-PR-2025</span>
+                        </div>
+                        <div class="p-3.5 rounded-2xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200/80 dark:border-slate-800">
+                            <span class="text-[10px] font-bold text-slate-400 uppercase tracking-wider block">Canonical Verification URL</span>
+                            <span class="font-mono text-blue-600 dark:text-blue-400 text-xs mt-0.5 block truncate">https://gkm563.github.io/prayagraj-rooms.html</span>
+                        </div>
+                    </div>
+
+                    <div class="pt-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+                        <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed text-center sm:text-left">
+                            Live platform verification available directly on <a href="https://prayagrajrooms.in" target="_blank" rel="noopener" class="text-blue-600 font-semibold underline">prayagrajrooms.in</a> and GitHub.
+                        </p>
+                        <button type="button" id="copy-verify-link" class="shrink-0 px-4 py-2 rounded-xl bg-slate-950 dark:bg-white text-white dark:text-slate-950 font-bold text-xs flex items-center gap-2 hover:opacity-90 transition-all shadow-md">
+                            <i data-lucide="copy" class="w-3.5 h-3.5"></i>
+                            <span id="copy-btn-text">Copy Verification Link</span>
+                        </button>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ═══════════════════════════════════════
+         FOOTER
+    ═══════════════════════════════════════ -->
+    <footer class="py-12 bg-white dark:bg-slate-950 border-t border-slate-200/60 dark:border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+                <div class="flex items-center gap-2">
+                    <span class="text-blue-600 font-mono font-bold text-lg">&lt;/&gt;</span>
+                    <span class="font-black text-slate-900 dark:text-white font-heading">Gautam Kumar Maurya</span>
+                    <span class="text-xs text-slate-400">&bull; Credential Registry</span>
+                </div>
+
+                <div class="flex flex-wrap items-center gap-4 text-xs text-slate-600 dark:text-slate-400 font-medium">
+                    <a href="index.html" class="hover:text-blue-600">Home</a>
+                    <a href="verify.html" class="hover:text-blue-600 font-bold">Verification Registry</a>
+                    <a href="prayagraj-rooms.html" class="text-blue-600 font-bold">PrayagrajRooms</a>
+                    <a href="vindhya-millets.html" class="hover:text-emerald-600">Vindhya Millets</a>
+                    <a href="heisyn-internship.html" class="hover:text-blue-600">Heisyn</a>
+                    <a href="ait-global-innovation-internship.html" class="hover:text-blue-600">AIT Bangkok</a>
+                    <a href="up-police-internship.html" class="hover:text-blue-600">UP Police</a>
+                    <a href="road-to-wiki.html" class="hover:text-blue-600">Road to Wiki</a>
+                </div>
+
+                <div class="text-xs text-slate-400">
+                    &copy; 2026 Gautam Kumar Maurya. All rights reserved.
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        const themeBtn = document.getElementById('theme-toggle');
+        const applyTheme = (theme) => {
+            if (theme === 'dark') {
+                document.documentElement.classList.add('dark', 'dark-theme');
+                document.body.classList.add('dark', 'dark-theme');
+            } else {
+                document.documentElement.classList.remove('dark', 'dark-theme');
+                document.body.classList.remove('dark', 'dark-theme');
+            }
+            try {
+                localStorage.setItem('portfolio-theme', theme);
+                localStorage.setItem('gkm_theme', theme);
+            } catch(e) {}
+        };
+        const currentTheme = localStorage.getItem('portfolio-theme') || localStorage.getItem('gkm_theme') || 'light';
+        applyTheme(currentTheme);
+        if (themeBtn) {
+            themeBtn.addEventListener('click', () => {
+                const isDark = document.documentElement.classList.contains('dark');
+                applyTheme(isDark ? 'light' : 'dark');
+            });
+        }
+
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileDrawer = document.getElementById('mobile-drawer');
+        const mobileDrawerClose = document.getElementById('mobile-drawer-close');
+        const mobileDrawerCloseBtn = document.getElementById('mobile-drawer-close-btn');
+        if (mobileMenuBtn && mobileDrawer) {
+            mobileMenuBtn.addEventListener('click', () => {
+                mobileDrawer.classList.remove('translate-x-full');
+                document.body.style.overflow = 'hidden';
+            });
+            const close = () => {
+                mobileDrawer.classList.add('translate-x-full');
+                document.body.style.overflow = '';
+            };
+            if (mobileDrawerClose) mobileDrawerClose.addEventListener('click', close);
+            if (mobileDrawerCloseBtn) mobileDrawerCloseBtn.addEventListener('click', close);
+        }
+
+        window.addEventListener('scroll', () => {
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const progress = scrollHeight > 0 ? (scrollTop / scrollHeight) * 100 : 0;
+            const bar = document.getElementById('scroll-progress');
+            if (bar) bar.style.width = progress + '%';
+        }, { passive: true });
+
+        const copyBtn = document.getElementById('copy-verify-link');
+        const copyBtnText = document.getElementById('copy-btn-text');
+        if (copyBtn) {
+            copyBtn.addEventListener('click', () => {
+                navigator.clipboard.writeText('https://gkm563.github.io/prayagraj-rooms.html').then(() => {
+                    copyBtnText.textContent = 'Copied!';
+                    setTimeout(() => { copyBtnText.textContent = 'Copy Verification Link'; }, 2000);
+                });
+            });
+        }
+
+        window.addEventListener('DOMContentLoaded', () => {
+            if (window.lucide) window.lucide.createIcons();
+        });
+    </script>
+</body>
+</html>
