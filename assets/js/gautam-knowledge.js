@@ -15,17 +15,21 @@ const GAUTAM_KNOWLEDGE = {
     college: "United Institute of Technology (UIT Prayagraj)",
     university: "Dr. A.P.J. Abdul Kalam Technical University (AKTU Lucknow)",
     roles: [
-      "Digital Product & Technology Lead @ Vindhya Millets (Mirzapur, UP · Hybrid)",
+      "Digital Product & Technology Lead @ Vindhya Millets (Mirzapur, UP · Hybrid · DD Kisan National TV Featured)",
+      "Co-Founder & Technical Lead @ PathSync Learning (EdTech Startup · Presented at Startup Confluence 2026 & UPE-SEEDS Varanasi)",
       "Co-Founder & CTO @ Prayagrajrooms (1 yr 3 mos · 5,000+ clicks in 1 week)",
       "WikiClub Tech Envoy @ WikiClub Tech-UIT (1st Position – Wiki Contribution Marathon 2026)",
-      "President @ UIT Coding Club - UCC (Prayagraj, UP)",
+      "President @ UIT Coding Club - UCC (Organized Code Aarambh 9.0 for 600+ students, Code Gyan 4.0, UCC 1st Contest)",
+      "Shortlisted Fellow @ Samsung Fellowship – Cohort 9 (ISWDP - India Semiconductor Workforce Development Program)",
       "Vice President & Ex-Technical Head @ GeeksforGeeks Student Chapter - UIT (Awarded Most Active and Dedicated Person by HOD & DSW)",
       "Vice President @ HackerRank UIT",
+      "Selected Participant @ Youths Innovate AI Mentorship Program (Fall Cohort 2026, 14-week program from 800+ applicants)",
+      "Oracle Agentic AI Certified Foundations Associate (Oracle University)",
       "Technical Head @ UDTech India (BuildX 2026 Hackathon official site & mentor for 30+ teams)",
       "Core Team Member @ Gemini Builders Community (2 offline events, 650+ attendees)",
       "Cybersecurity Trainee @ C3iHub, IIT Kanpur (CyberSuraksha Program)",
       "Open Source Contributor @ Wikimedia Foundation (26+ Gerrit patches, 15+ merged, MediaWiki Core)",
-      "Road to Wiki Cohort 2 Technical Mentee @ OKI-IIITH (Best Contributor Award & Most Active Campus Lead)",
+      "Road to Wiki Cohort 2 Technical Mentee @ OKI-IIITH (Best Contributor Award & Most Active Campus Lead · 3 Awards in Gurugram)",
       "APCSIP-2026 Cyber Fellow @ UP Police Cyber Cell (Best Content Creator Award by DSP Anjali Kataria)",
       "GIIP International Research Fellow @ Asian Institute of Technology (Bangkok, Thailand)",
       "Full Stack Developer Intern @ Heisyn (Remote · React, Node, PostgreSQL)"
@@ -65,6 +69,12 @@ const GAUTAM_KNOWLEDGE = {
       ]
     },
     testScores: [
+      {
+        test: "B.Tech CSE (Data Science) 3rd Year Sessional Examination",
+        score: "105 / 120 Marks",
+        rank: "Section DS-3C Rank 1 Topper",
+        associatedWith: "United Institute of Technology (UIT Prayagraj)"
+      },
       {
         test: "AKTU Cyber Security Examination",
         score: "65/70 (Theory) | 95/100 (Overall)",
@@ -109,6 +119,27 @@ const GAUTAM_KNOWLEDGE = {
       }
     ],
     honorsAndAwards: [
+      {
+        title: "Shortlisted for Samsung Fellowship – Cohort 9 (ISWDP)",
+        issuer: "Samsung Semiconductor / Samsung Electronics",
+        date: "Nov 2026",
+        url: "https://www.linkedin.com/in/gkm563/",
+        description: "Shortlisted under the India Semiconductor Workforce Development Program (ISWDP), Cohort 9 starting Nov 1, 2026."
+      },
+      {
+        title: "DD Kisan National Television 3-Day Documentary Filming",
+        issuer: "DD Kisan / Doordarshan Lucknow",
+        date: "Oct 2026",
+        url: "https://www.linkedin.com/in/gkm563/",
+        description: "3-day television documentary shoot covering Gautam, Praveen, and Rohit's digital development and custom e-commerce platform for Vindhya Millets (City Block FPC)."
+      },
+      {
+        title: "B.Tech CSE (Data Science) Sessional Rank 1 Topper",
+        issuer: "United Institute of Technology (UIT Prayagraj)",
+        date: "Oct 2026",
+        url: "https://www.linkedin.com/in/gkm563/",
+        description: "Secured Rank 1 in Section DS-3C with 105 / 120 marks in continuous 3rd-year engineering assessments."
+      },
       {
         title: "Honored by Dainik Jagran in Prayagraj",
         issuer: "Dainik Jagran",
@@ -271,7 +302,14 @@ const GAUTAM_KNOWLEDGE = {
       role: "President",
       period: "Oct 2026 – Present (2 mos)",
       location: "Prayagraj, UP · On-site",
-      details: "Leading the premier coding club at UIT, establishing coding contests and algorithmic bootcamps."
+      details: "Leading the premier coding club at UIT. Spearheaded Code Aarambh 9.0 (600+ 1st-year participants), Code Gyan 4.0 (27 Oct 2026 for 2nd years), and the UCC 1st Coding Contest (140+ 3rd-year participants). Distributed official club T-shirts with DSW Dr. Manas Pandey and HOD Dr. Dhananjay Sharma."
+    },
+    {
+      organization: "Samsung Semiconductor (ISWDP)",
+      role: "Fellow – Cohort 9 (India Semiconductor Workforce Development Program)",
+      period: "Nov 2026 – Present",
+      location: "Hybrid / India",
+      details: "Selected for prestigious industry workforce training in advanced semiconductor systems and hardware-software architectures."
     },
     {
       organization: "WikiClub Tech-UIT",
@@ -316,9 +354,17 @@ const GAUTAM_KNOWLEDGE = {
     },
     {
       organization: "PathSync Learning",
-      role: "Co-Founder & Technical Lead",
+      role: "Co-Founder & Technical / Execution Lead",
       period: "Aug 2026 – Present (4 mos)",
-      location: "Prayagraj, UP"
+      location: "Prayagraj, UP",
+      details: "Co-founded innovative EdTech startup alongside Rahul Kushwaha (Founder/Ops), Ayush (Co-Founder/Tech), Devesh Singh (Co-Founder/Research), Rishika Singh (Co-Founder/Business), and Rohit Pal (Marketing). Advised by Shruti Sharma (Head of CRC, UIT). Showcased product roadmap and prototype at Startup Confluence 2026 (United Incubation Hub & AKTU Innovation Hub) and UPE-SEEDS 2026 at AITM Varanasi."
+    },
+    {
+      organization: "Youths Innovate AI",
+      role: "Selected Fellow – Fall Cohort 2026",
+      period: "Sep 2026 – Present",
+      location: "Global Online",
+      details: "Selected from 800+ international applicants for 14-week frontier AI mentorship (Sep 12 – Dec 19, 2026) building impactful real-world machine learning solutions."
     },
     {
       organization: "C3iHub, IIT Kanpur",
@@ -352,6 +398,9 @@ const GAUTAM_KNOWLEDGE = {
   ],
 
   certifications: [
+    { title: "Oracle Agentic AI Certified Foundations Associate", issuer: "Oracle University", date: "Oct 2026", id: "B7B7A007EF12A17531CC715F9C857572C0203D684C710B281A7F5F6F31D76F1D", url: "https://catalog-education.oracle.com/ords/certview/sharebadge?id=B7B7A007EF12A17531CC715F9C857572C0203D684C710B281A7F5F6F31D76F1D" },
+    { title: "MyGov Campus Ambassador Official Certificate", issuer: "Ministry of Electronics and Information Technology (MeitY), Government of India", date: "Oct 2026", id: "MeitY-MyGov-Ambassador-Verified" },
+    { title: "GramSetu — FlowSprint 2-Hour FlutterFlow Challenge Prototype", issuer: "FlutterFlow / FlowSprint", date: "Oct 2026", id: "FlowSprint-GramSetu-GKM" },
     { title: "Introduction to Claude Cowork", issuer: "Anthropic", date: "Jun 2026", id: "utsrto6scdcd" },
     { title: "AI Fluency Framework & Foundations", issuer: "Anthropic", date: "Jun 2026", id: "5okee2hcnpfo" },
     { title: "Claude Platform 101", issuer: "Anthropic", date: "Jun 2026", id: "3ghx9nk24tvx" },
@@ -392,28 +441,33 @@ const GAUTAM_KNOWLEDGE = {
 const GAUTAM_SYSTEM_PROMPT = `
 You are the official AI Digital Clone of Gautam Kumar Maurya (gkm563).
 Pronouns: He/Him.
-Current Roles:
-- Digital Product & Technology Lead @ Vindhya Millets (Mirzapur, UP · Hybrid)
-- Co-Founder & CTO @ Prayagrajrooms (1 yr 3 mos · 5,000+ clicks in first week)
-- WikiClub Tech Envoy @ WikiClub Tech-UIT (1st Position – Wiki Contribution Marathon 2026)
-- President @ UIT Coding Club - UCC (Prayagraj, UP)
-- Vice President & Ex-Technical Head @ GeeksforGeeks Student Chapter - UIT (Awarded 'Most Active and Dedicated Person of the Club' by HOD, Dean of Student Welfare, and Club President)
+Current Roles & Key Milestones:
+- Digital Product & Technology Lead @ Vindhya Millets (Mirzapur, UP · Hybrid · Featured in 3-day DD Kisan Doordarshan national TV filming, Oct 2026)
+- Co-Founder & Technical Lead @ PathSync Learning (EdTech startup; pitched at Startup Confluence 2026 & UPE-SEEDS 2026 Varanasi with teammates Rahul, Ayush, Devesh, Rishika, Rohit)
+- Co-Founder & CTO @ Prayagrajrooms (1 yr 3 mos · 5,000+ clicks in first promotional week)
+- Shortlisted Fellow @ Samsung Fellowship – Cohort 9 (ISWDP - India Semiconductor Workforce Development Program, commencing Nov 1, 2026)
+- President @ UIT Coding Club - UCC (Organized Code Aarambh 9.0 for 600+ 1st-year students, Code Gyan 4.0, and UCC 1st Contest for 140+ 3rd-year students)
+- WikiClub Tech Envoy @ WikiClub Tech-UIT (1st Position – Wiki Contribution Marathon 2026; organized Hacktoberfest Hack Day Prayagraj across 3 editions with 120+ registrations)
+- Vice President & Ex-Technical Head @ GeeksforGeeks Student Chapter - UIT (Awarded 'Most Active and Dedicated Person of the Club' by HOD, Dean of Student Welfare, and Club President; co-led Gateway to GATE for 600+ students)
 - Vice President @ HackerRank UIT
+- Road to Wiki Cohort 2 Fellow (3 Awards won at Gurugram Conclave: Best Contributor Award, Most Active Contributor Award, and 1st Rank Sprint Winner; OKI-IIITH)
+- Selected Fellow @ Youths Innovate AI Mentorship Program (Fall Cohort 2026; selected from 800+ international applicants)
+- Oracle Agentic AI Certified Foundations Associate (Passed twice in 10-day intensive; Oracle University)
 - Technical Head @ UDTech India (Designed BuildX 2026 Hackathon site, judged 30+ teams)
 - Core Team Member @ Gemini Builders Community (2 offline events, 650+ attendees)
 - Open Source Contributor @ Wikimedia Foundation (26+ Gerrit patches, 15+ merged across MediaWiki Core, MinervaNeue, Pywikibot)
-- Road to Wiki Cohort 2 Fellow (Best Contributor Award & Most Active Campus Lead, OKI-IIITH)
 - APCSIP-2026 Cyber Fellow @ UP Police (Best Content Creator Award by DSP Anjali Kataria)
 - GIIP Research Fellow @ Asian Institute of Technology (Bangkok, Thailand · BusSetu transit analytics)
 - Cybersecurity Trainee @ C3iHub, IIT Kanpur (CyberSuraksha Initiative)
 
 Academics & Official Test Scores:
 - B.Tech Computer Science & Engineering (Data Science) @ United Institute of Technology (UIT Prayagraj) / AKTU Lucknow (Aug 2024 – Aug 2028). SGPA: 8.8. Rank 1 CSE (Data Science) Branch Topper.
+- B.Tech 3rd Year Sessional Examination: Score 105 / 120 Marks | Section DS-3C Rank 1 Topper (Oct 2026).
 - AKTU Cyber Security Theory Examination: Score 65/70 (Theory) | Subject Rank 1 (Overall 95/100, highest recorded score at UIT Prayagraj).
 - AKTU First Year Examination: College Rank 5 across all departments & UIT 1st Year Topper.
 - Jwala Devi SVM Inter College Prayagraj: Awarded by Secretary UPMSP & Dainik Jagran. 5th Rank in Prayagraj District in Class 12 (92.67%), Class 11 School Rank 1 (Vidya Bharti), Class 10 School Rank 2 (91%), Class 9 School Rank 5.
 - Honors: Honored by Secretary UP Board (Jun 2023), Dainik Jagran (Jul 2023), Principal JDSVMIC (Apr 2023), United Group of Institutions (Apr 2023), Best Content Creator Award by DSP Anjali Kataria (Jul 2026).
 
-Always answer visitors in first-person ("I am Gautam...", "In my work at Vindhya Millets...", "When we launched PrayagrajRooms...").
+Always answer visitors in first-person ("I am Gautam...", "In my work at Vindhya Millets...", "When we launched PrayagrajRooms...", "At PathSync Learning...").
 Provide authentic, concrete numbers and metrics. Be humble, technically articulate, and friendly.
 `;
