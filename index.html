@@ -435,49 +435,49 @@
          1. STICKY NAVIGATION BAR
     ═══════════════════════════════════════ -->
     <header id="navbar" class="fixed top-0 left-1/2 -translate-x-1/2 z-50 glass-nav transition-all duration-300">
-        <div class="nav-inner-wrapper max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
+        <div class="nav-inner-wrapper max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 flex items-center justify-between gap-3 sm:gap-4">
             
             <!-- Brand Logo (< /> GKM • from Mockup) -->
-            <a href="#hero" class="flex items-center gap-1.5 group shrink-0 pl-1 font-heading">
-                <span class="text-blue-600 font-mono font-bold text-2xl leading-none">&lt;/&gt;</span>
-                <span class="text-2xl sm:text-3xl font-black text-slate-950 dark:text-white tracking-tight">GKM</span>
-                <span class="w-2.5 h-2.5 rounded-full bg-blue-600 inline-block ml-0.5"></span>
+            <a href="#hero" class="flex items-center gap-1 sm:gap-1.5 group shrink-0 pl-0.5 sm:pl-1 font-heading" title="Gautam Kumar Maurya">
+                <span class="text-blue-600 font-mono font-bold text-xl sm:text-2xl leading-none">&lt;/&gt;</span>
+                <span class="text-xl sm:text-2xl lg:text-3xl font-black text-slate-950 dark:text-white tracking-tight">GKM</span>
+                <span class="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full bg-blue-600 inline-block ml-0.5"></span>
             </a>
 
-            <!-- Desktop Nav Links (Projects, Open Source, Experience, Education, Skills, Leadership, Awards, Events, Dossiers, Contact) -->
-            <nav class="hidden lg:flex items-center gap-1 xl:gap-2.5 2xl:gap-4 text-xs xl:text-sm font-medium shrink min-w-0">
-                <a href="#projects" class="mockup-nav-link">Projects</a>
-                <a href="#open-source" class="mockup-nav-link">Open Source</a>
-                <a href="#experience" class="mockup-nav-link">Experience</a>
-                <a href="#education" class="mockup-nav-link">Education</a>
-                <a href="#skills" class="mockup-nav-link hidden xl:inline-block">Skills</a>
-                <a href="#leadership" class="mockup-nav-link">Leadership</a>
-                <a href="#achievements" class="mockup-nav-link">Awards</a>
-                <a href="#events" class="mockup-nav-link hidden xl:inline-block">Events</a>
-                <a href="./verify.html" class="mockup-nav-link text-emerald-600 dark:text-emerald-400 font-bold flex items-center gap-1">
+            <!-- Desktop Nav Links with Intelligent Screen Tiering (No Overlap) -->
+            <nav class="hidden lg:flex items-center gap-1 xl:gap-2 2xl:gap-3 text-xs xl:text-sm font-medium shrink min-w-0 overflow-hidden">
+                <a href="#projects" class="mockup-nav-link shrink-0">Projects</a>
+                <a href="#open-source" class="mockup-nav-link shrink-0">Open Source</a>
+                <a href="#experience" class="mockup-nav-link shrink-0">Experience</a>
+                <a href="#education" class="mockup-nav-link shrink-0 hidden xl:inline-block">Education</a>
+                <a href="#skills" class="mockup-nav-link shrink-0 hidden 2xl:inline-block">Skills</a>
+                <a href="#leadership" class="mockup-nav-link shrink-0">Leadership</a>
+                <a href="#achievements" class="mockup-nav-link shrink-0 hidden xl:inline-block">Awards</a>
+                <a href="#events" class="mockup-nav-link shrink-0 hidden 2xl:inline-block">Events</a>
+                <a href="./verify.html" class="mockup-nav-link shrink-0 text-emerald-600 dark:text-emerald-400 font-bold flex items-center gap-1">
                     <i data-lucide="shield-check" class="w-3.5 h-3.5"></i>
                     <span>Verify</span>
                 </a>
-                <a href="#deep-dives" class="mockup-nav-link text-blue-600 dark:text-blue-400 font-bold">Dossiers</a>
-                <a href="#contact" class="mockup-nav-link">Contact</a>
+                <a href="#deep-dives" class="mockup-nav-link shrink-0 hidden 2xl:inline-block text-blue-600 dark:text-blue-400 font-bold">Dossiers</a>
+                <a href="#contact" class="mockup-nav-link shrink-0">Contact</a>
             </nav>
 
-            <!-- Action Buttons (Theme Toggle & Pill Resume Button from Mockup) -->
-            <div class="flex items-center gap-2 sm:gap-3 shrink-0 pr-1">
+            <!-- Action Buttons: Dedicated Non-Colliding Flex Group -->
+            <div class="nav-actions flex items-center gap-1.5 sm:gap-2.5 xl:gap-3 shrink-0 ml-auto z-20">
                 <!-- Theme Toggle Button -->
-                <button id="theme-toggle" aria-label="Toggle Theme" title="Toggle Theme" class="w-9 h-9 rounded-full border border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition-all flex items-center justify-center shrink-0">
+                <button id="theme-toggle" aria-label="Toggle Theme" title="Toggle Theme" class="w-8 h-8 sm:w-9 sm:h-9 rounded-full border border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition-all flex items-center justify-center shrink-0">
                     <i data-lucide="moon" class="w-4 h-4 hidden dark:block"></i>
                     <i data-lucide="sun" class="w-4 h-4 block dark:hidden"></i>
                 </button>
 
-                <!-- Pill CTA: Resume (Black pill from Mockup) -->
-                <a href="assets/docs/Gautam_Kumar_Maurya_Resume.pdf" target="_blank" rel="noopener" class="hidden sm:inline-flex items-center gap-1.5 xl:gap-2 px-3.5 py-2 xl:px-4.5 xl:py-2.5 rounded-full bg-slate-950 text-white hover:bg-slate-800 dark:bg-white dark:text-slate-950 dark:hover:bg-slate-200 text-xs xl:text-sm font-bold shadow-md transition-all shrink-0 whitespace-nowrap">
+                <!-- Pill CTA: Resume (Always fits, never overflows) -->
+                <a href="assets/docs/Gautam_Kumar_Maurya_Resume.pdf" target="_blank" rel="noopener" class="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 sm:px-3.5 sm:py-2 xl:px-4.5 xl:py-2.5 rounded-full bg-slate-950 text-white hover:bg-slate-800 dark:bg-white dark:text-slate-950 dark:hover:bg-slate-200 text-xs xl:text-sm font-bold shadow-md transition-all shrink-0 whitespace-nowrap">
                     <i data-lucide="download" class="w-3.5 h-3.5"></i>
                     <span>Resume</span>
                 </a>
 
                 <!-- Mobile Menu Hamburger Button -->
-                <button id="mobile-menu-btn" aria-label="Open Navigation Menu" class="lg:hidden p-2 rounded-xl border border-slate-200 dark:border-slate-800 text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
+                <button id="mobile-menu-btn" aria-label="Open Navigation Menu" class="lg:hidden p-1.5 sm:p-2 rounded-xl border border-slate-200 dark:border-slate-800 text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors shrink-0">
                     <i data-lucide="menu" class="w-5 h-5"></i>
                 </button>
             </div>

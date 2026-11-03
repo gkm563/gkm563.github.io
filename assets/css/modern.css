@@ -148,11 +148,36 @@ h1, h2, h3, h4, h5, h6 {
   padding: 0 1.5rem;
   max-width: 80rem;
   margin: 0 auto;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 1rem !important;
+  box-sizing: border-box !important;
   transition: height 0.38s cubic-bezier(0.16, 1, 0.3, 1),
               padding 0.38s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+#navbar nav {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  flex: 0 1 auto !important;
+  min-width: 0 !important;
+  max-width: 100% !important;
+  overflow: hidden !important;
+}
+
+#navbar .nav-actions {
+  display: flex !important;
+  align-items: center !important;
+  flex-shrink: 0 !important;
+  margin-left: auto !important;
+  z-index: 20 !important;
+  white-space: nowrap !important;
+}
+
+#navbar .nav-actions > * {
+  flex-shrink: 0 !important;
 }
 
 /* Floating Capsule State — Mathematically Centered across all screens */
@@ -172,6 +197,7 @@ h1, h2, h3, h4, h5, h6 {
   box-shadow: 0 16px 40px -8px rgba(15, 23, 42, 0.12), 
               0 0 25px rgba(37, 99, 235, 0.08),
               inset 0 1px 1px rgba(255, 255, 255, 0.9) !important;
+  box-sizing: border-box !important;
 }
 
 .dark #navbar.floating-nav-active,
@@ -185,19 +211,30 @@ h1, h2, h3, h4, h5, h6 {
 
 #navbar.floating-nav-active .nav-inner-wrapper {
   height: 3.75rem !important;
-  padding: 0 1.5rem !important;
+  padding: 0 1.25rem !important;
   max-width: 100% !important;
   width: 100% !important;
   box-sizing: border-box !important;
+  gap: 0.75rem !important;
 }
 
 @media (min-width: 1280px) {
   #navbar.floating-nav-active .nav-inner-wrapper {
-    padding: 0 1.75rem !important;
+    padding: 0 1.5rem !important;
+  }
+}
+
+@media (max-width: 1280px) and (min-width: 1024px) {
+  .mockup-nav-link {
+    padding: 0.25rem 0.35rem !important;
+    font-size: 0.8rem !important;
   }
 }
 
 @media (max-width: 1024px) {
+  #navbar nav {
+    display: none !important;
+  }
   #navbar.floating-nav-active {
     top: 0.5rem !important;
     left: 50% !important;
@@ -211,23 +248,35 @@ h1, h2, h3, h4, h5, h6 {
   #navbar.floating-nav-active .nav-inner-wrapper {
     height: 3.5rem !important;
     padding: 0 1rem !important;
+    gap: 0.5rem !important;
   }
 }
 
 @media (max-width: 640px) {
   #navbar.floating-nav-active {
-    top: 0.4rem !important;
+    top: 0.35rem !important;
     left: 50% !important;
     right: auto !important;
     transform: translateX(-50%) !important;
     margin: 0 !important;
-    width: calc(100% - 1rem) !important;
-    max-width: calc(100% - 1rem) !important;
+    width: calc(100% - 0.75rem) !important;
+    max-width: calc(100% - 0.75rem) !important;
     border-radius: 9999px !important;
   }
   #navbar.floating-nav-active .nav-inner-wrapper {
     height: 3.25rem !important;
-    padding: 0 0.75rem !important;
+    padding: 0 0.6rem !important;
+    gap: 0.35rem !important;
+  }
+  #navbar .nav-actions {
+    gap: 0.35rem !important;
+  }
+  #theme-toggle {
+    width: 2.1rem !important;
+    height: 2.1rem !important;
+  }
+  #mobile-menu-btn {
+    padding: 0.35rem !important;
   }
 }
 
