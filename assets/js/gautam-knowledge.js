@@ -1,6 +1,7 @@
 /**
  * GAUTAM AI CLONE — SEMANTIC KNOWLEDGE BASE & SYSTEM PROMPT ENGINE
  * Author: Gautam Kumar Maurya (gkm563)
+ * Source of Truth: Verified LinkedIn Profile, Academic Records, & Official Credentials
  */
 
 const GAUTAM_KNOWLEDGE = {
@@ -8,22 +9,26 @@ const GAUTAM_KNOWLEDGE = {
     name: "Gautam Kumar Maurya",
     pronouns: "He/Him",
     handle: "gkm563",
-    headline: "WikiClub Tech Envoy @ UIT | Vice President @ GFG UIT | Co-Lead @ HackerRank UIT | Campus Lead @ Open Source Connect | Open Source Contributor @ Wikimedia | Cybersecurity Trainee @ C3iHub,IIT Kanpur | Full Stack Developer",
+    headline: "Digital Product & Tech Lead @ Vindhya Millets | Co-Founder & CTO @ PrayagrajRooms | WikiClub Tech Envoy @ UIT | Vice President @ GFG UIT | Co-Lead @ HackerRank UIT | Cybersecurity Trainee @ C3iHub, IIT Kanpur | Full Stack Developer",
     location: "Greater Allahabad Area (Prayagraj, Uttar Pradesh, India)",
-    title: "WikiClub Tech Envoy @ UIT | Full-Stack AI Engineer & Cybersecurity Researcher",
+    title: "Digital Product & Technology Lead | Full-Stack & Agentic AI Engineer",
     college: "United Institute of Technology (UIT Prayagraj)",
+    university: "Dr. A.P.J. Abdul Kalam Technical University (AKTU Lucknow)",
     roles: [
-      "WikiClub Tech Envoy @ UIT",
-      "Vice President @ GFG UIT",
-      "Co-Lead @ HackerRank UIT",
-      "Campus Lead @ Open Source Connect",
-      "Open Source Contributor @ Wikimedia",
-      "Cybersecurity Trainee @ C3iHub,IIT Kanpur",
-      "Full Stack Developer",
-      "Selected Mentee at Youths Innovate AI (Fall 2026)",
-      "GIIP International Fellow at AIT Bangkok, Thailand",
-      "UP Police Cyber Security Fellow (APCSIP-2026)",
-      "Founder of CDN UIT Coding Network & Co-founder PrayagrajRooms"
+      "Digital Product & Technology Lead @ Vindhya Millets (Mirzapur, UP · Hybrid)",
+      "Co-Founder & CTO @ Prayagrajrooms (1 yr 3 mos · 5,000+ clicks in 1 week)",
+      "WikiClub Tech Envoy @ WikiClub Tech-UIT (1st Position – Wiki Contribution Marathon 2026)",
+      "President @ UIT Coding Club - UCC (Prayagraj, UP)",
+      "Vice President & Ex-Technical Head @ GeeksforGeeks Student Chapter - UIT (Awarded Most Active and Dedicated Person by HOD & DSW)",
+      "Vice President @ HackerRank UIT",
+      "Technical Head @ UDTech India (BuildX 2026 Hackathon official site & mentor for 30+ teams)",
+      "Core Team Member @ Gemini Builders Community (2 offline events, 650+ attendees)",
+      "Cybersecurity Trainee @ C3iHub, IIT Kanpur (CyberSuraksha Program)",
+      "Open Source Contributor @ Wikimedia Foundation (26+ Gerrit patches, 15+ merged, MediaWiki Core)",
+      "Road to Wiki Cohort 2 Technical Mentee @ OKI-IIITH (Best Contributor Award & Most Active Campus Lead)",
+      "APCSIP-2026 Cyber Fellow @ UP Police Cyber Cell (Best Content Creator Award by DSP Anjali Kataria)",
+      "GIIP International Research Fellow @ Asian Institute of Technology (Bangkok, Thailand)",
+      "Full Stack Developer Intern @ Heisyn (Remote · React, Node, PostgreSQL)"
     ],
     contact: {
       email: "gkmwin563@gmail.com",
@@ -37,200 +42,271 @@ const GAUTAM_KNOWLEDGE = {
   },
 
   academics: {
-    branch: "B.Tech Computer Science & Engineering (Data Science) '28",
-    ranks: [
-      "1st Rank CSE (Data Science) Branch Topper at UIT Prayagraj",
-      "AKTU Rank 5 College Academic Topper",
-      "MNIT Academic Topper Honor (Awarded by MNIT Professor for 1st Rank & 100% Attendance)",
-      "UP Board District Topper Award (Honored by Chairman, Director & Secretary of UP Board - माध्यमिक शिक्षा परिषद्)"
-    ]
-  },
-
-  fellowships: [
-    {
-      name: "Youths Innovate AI Mentorship Program (Fall Cohort 2026)",
-      location: "International / Global Online AI Mentorship",
-      details: "Selected among 800+ global applicants for an international online mentorship experience focused on AI architectures, machine learning innovation, and real-world impact."
+    btech: {
+      degree: "Bachelor of Technology, Computer Science and Engineering (Data Science)",
+      institution: "United Institute of Technology (UIT Prayagraj) / AKTU Lucknow",
+      period: "Aug 2024 – Aug 2028",
+      grade: "SGPA: 8.5",
+      rank: "Rank 1 CSE (Data Science) Branch Topper & College Rank 5 Topper (AKTU)"
     },
-    {
-      name: "AIT Bangkok Global Innovation Internship (GIIP-2026)",
-      location: "Asian Institute of Technology, Bangkok, Thailand",
-      details: "15-day international fellowship in Agentic AI, Ubiquitous GIS, Drone Telemetry, Python EDA, Power BI dashboards, and KMITL Robotics Research. Built BusSetu transit platform capstone."
-    },
-    {
-      name: "UP Police & Amroha Police Cyber Security Fellowship (APCSIP-2026)",
-      location: "Amroha Police Cyber Crime Cell, Uttar Pradesh Police",
-      details: "15-day government digital forensics & cyber investigation program under DSP Anjali Kataria. Awarded Best Content Creator Award for OSINT, CDR sorting, and threat intelligence."
+    school: {
+      institution: "Jwala Devi SVM Inter College Prayagraj",
+      stream: "Intermediate & High School (Computer Science)",
+      period: "Jul 2019 – Apr 2023",
+      honors: [
+        "Recognized and awarded by the Secretary, Uttar Pradesh Board of High School and Intermediate Education (UPMSP) for outstanding academic performance",
+        "5th Rank in Prayagraj District in Class 12 (UP Board) with 92.67%",
+        "1st Rank in the entire school in Class 11",
+        "2nd Rank in the entire school in Class 10 (UP Board) with 91%",
+        "5th Rank in the entire school in Class 9",
+        "Founder's Day Award"
+      ]
     }
-  ],
-
-  openSource: {
-    leadership: "WikiClub Tech Envoy at UIT — leading campus chapter, organizing technical events, and mentoring contributors across the Wikimedia open source ecosystem.",
-    highlights: "WikiClub Tech Envoy @ UIT, 30+ total contributions, 26 Gerrit patches (13+ merged) into MediaWiki Core, TranslationNotifications, UploadWizard, MinervaNeue, GrowthExperiments, Pywikibot, Wikifunctions, translatewiki.net, and wikimedia/language-data.",
-    patches: [
-      "mediawiki/core: Rest cookie expire/expiry key inconsistency in EntryPoint (Change 1345349, T439342 - Merged Sep 28, 2026)",
-      "mediawiki/extensions/UploadWizard: CategoriesDetailsWidget ampersand rendering fix (Change 1309763, T431918 - Merged Aug 30, 2026)",
-      "mediawiki/core: Update Magahi (mag) namespace translations (Change 1311601, T432382 - Merged)",
-      "pywikibot/core: [doc] Add Gkm563 to AUTHORS.rst (Change 1328342, T426895 - Merged)",
-      "pywikibot/core: Regression test for comments in noreferences section (Change 1290141, T426895 - Merged)",
-      "operations/mediawiki-config: Remove nonexistent autopatrolled group from Outreach Wiki (Change 1309894, T431959 - Merged)",
-      "mediawiki/core: Add Ukrainian translation for MediaStatistics (Change 1307606, T431180 - Merged)",
-      "mediawiki/extensions/TestKitchen: Mark Experiment::setSchema as deprecated (Change 1302995, T429172 - Merged)",
-      "mediawiki/extensions/GrowthExperiments: Gender support in mentored exception message (Change 1289010, T416226 - Merged)",
-      "mediawiki/skins/MinervaNeue: Handle malformed URI fragments in TitleUtil (Change 1287961, T424875 - Merged)",
-      "mediawiki/core: Special:MediaStats & Special:MuteUser page aliases (Change 1276283 & 1276121 - Merged)",
-      "mediawiki/extensions/TranslationNotifications: Database guard against empty language notifications (Change 1347375, T420208 - In Review Oct 01, 2026)",
-      "mediawiki/core: OpenAPI spec generation conditional caching & operation ID verb cleanup (Changes 1345352, 1345684, 1345677 - In Review Sep 2026)",
-      "wikimedia/language-data: Add Tsishingini & Southern Uzbek metadata (PR #503 & #506 - Merged)",
-      "abstract-wiki/wikifunctions: Encapsulation accessors for WFFunctionCall internals (GitLab MR 684 - Merged)"
-    ]
   },
 
-  projects: [
+  experience: [
     {
-      name: "VoxRAG",
-      description: "Production-grade, sub-200ms Voice-Enabled Conversational RAG system with multi-turn memory, multi-strategy chunking (48,995 passages), FAISS FlatIP vector search, and real-time grounding verification."
+      company: "Vindhya Millets",
+      role: "Digital Product & Technology Lead",
+      period: "Sep 2026 – Present (3 mos)",
+      location: "Mirzapur, Uttar Pradesh, India · Hybrid",
+      verificationId: "GKM-EXP-VM-2026",
+      media: "Offer Letter",
+      summary: "Led the development and evolution of Vindhya Millets’ digital presence, transforming an initial static website into a custom, database-driven e-commerce platform over 8–9 months.",
+      bullets: [
+        "End-to-End Website Development: Registered and configured the domain, set up DNS, SSL, and Hostinger hosting, and built the initial website using HTML, CSS, and JavaScript.",
+        "Full-Stack Engineering: Evolved the website into a custom e-commerce platform using PHP, MySQL, and JavaScript, enabling dynamic product catalogues and database-driven business workflows.",
+        "Payment Integration: Integrated Razorpay and worked on payment verification and webhook workflows to support online transactions.",
+        "Admin & Business Operations: Developed product and order management functionality to help streamline routine e-commerce operations.",
+        "SEO & Deployment: Managed production deployment, technical SEO, SSL, backups, caching, and ongoing website improvements.",
+        "Security & Reliability: Worked on input validation, prepared SQL statements, session management, and CSRF protection."
+      ]
     },
     {
-      name: "IntervAI",
-      description: "Intelligent real-time technical interview simulator delivering contextual questions, dynamic coding assessments, and speech analysis."
+      company: "Prayagrajrooms",
+      role: "Co-Founder and CTO",
+      period: "Sep 2025 – Present (1 yr 3 mos)",
+      location: "Prayagraj, Uttar Pradesh, India",
+      verificationId: "GKM-EXP-PR-2025",
+      media: "Within 1 Week Crossed 5000 Clicks",
+      summary: "Co-founded and built Prayagraj Rooms, a hyperlocal room-rental platform connecting students directly with property owners without broker fees.",
+      bullets: [
+        "Designed and developed the platform's frontend, backend, database, admin panel, and owner dashboard using HTML, CSS, JavaScript, PHP, and MySQL.",
+        "Built features for room listings, photo management, owner communication, inquiries, and administration, with a focus on security and scalability.",
+        "Took ownership of the technical architecture, development, deployment, and product decisions from idea to implementation.",
+        "Crossed 5,000+ platform clicks during its first promotional launch week."
+      ]
     },
     {
-      name: "PrayagrajRooms",
-      description: "Hyper-local verified student housing & hostel discovery platform in Prayagraj built with React, Firebase, Node.js to eliminate brokers for 5,000+ users."
+      company: "Heisyn",
+      role: "Full Stack Developer (Intern)",
+      period: "Jun 2026 – Oct 2026 (5 mos)",
+      location: "Remote",
+      verificationId: "GKM-EXP-HE-2026",
+      media: "Completion Certificate & Offer letter",
+      summary: "Contributed to full-stack development and commercial web application implementation.",
+      bullets: [
+        "Built responsive frontend user interfaces using React and Tailwind CSS.",
+        "Architected scalable backend RESTful APIs with Node.js and Express.",
+        "Designed and managed relational database schemas in PostgreSQL."
+      ]
     },
     {
-      name: "HH-GOA Frame Generator",
-      description: "Official Hacker House Goa 2026 Profile Picture Frame Generator with client-side HEIC support, custom frame overlays, and direct X sharing (#FrameInGoa)."
+      company: "Asian Institute of Technology",
+      role: "Global Innovation Internship Program (GIIP Fellow)",
+      period: "Jun 2026 – Jul 2026 (2 mos)",
+      location: "Bangkok City, Thailand · On-site",
+      verificationId: "GKM-EXP-AIT-2026",
+      media: "International Invitation Letter & BusSetu Presentation",
+      summary: "Selected for a 15-day international Global Innovation Internship at AIT Bangkok.",
+      bullets: [
+        "Gained hands-on experience in AI, Power BI, EDA, GIS, and Design Thinking.",
+        "Collaborated with an international cohort on technology, data analysis, and innovation projects.",
+        "Researched BusSetu, an AI-enabled public transit navigation concept with drone telemetry and geospatial routing.",
+        "Visited KMITL innovation labs to explore IoT and Robotics."
+      ]
     },
     {
-      name: "VeriTrust",
-      description: "AI-powered social media verification engine analyzing viral claims, detecting synthetic manipulation, and calculating automated credibility scores."
+      company: "Uttar Pradesh Police",
+      role: "Cyber Security Intern (APCSIP 2026)",
+      period: "Jun 2026 – Jul 2026 (2 mos)",
+      location: "Amroha, Uttar Pradesh, India · On-site",
+      verificationId: "GKM-EXP-UPP-2026",
+      media: "Official Offer Letter, Certificate of Appreciation, Best Content Creator Award",
+      summary: "Completed a 15-day Cyber Security Internship under the Amroha Police Cyber Security Internship Program (APCSIP 2026) with expert-led sessions by police personnel and cybercrime branch specialists.",
+      bullets: [
+        "OSINT, cybercrime investigation, threat intelligence, and dark web investigation.",
+        "Digital and mobile forensics, evidence collection, and chain of custody.",
+        "Malware analysis, incident response, SOC/SIEM, and network traffic analysis using Wireshark.",
+        "CDR/IPDR, Cell ID and tower dump analysis, and UPI fraud investigation.",
+        "Cyber laws, DPDP Act, ethical hacking, bug bounty, social engineering, blockchain forensics, and AI in cybersecurity.",
+        "Received the Best Content Creator Award and Certificate of Appreciation from DSP Anjali Kataria Ma'am."
+      ]
     },
     {
-      name: "NotesBazi (uginotes)",
-      description: "High-performance digital notes management and academic resource sharing platform for students of United Group of Institutions (UGI)."
-    },
-    {
-      name: "NHAI Offline Biometrics",
-      description: "Offline edge biometric face recognition & anti-spoofing liveness detection system engineered for National Highway Authority of India (NHAI)."
-    },
-    {
-      name: "IIT Bombay Techfest 3D",
-      description: "Interactive 3D WebGL event experience developed for Techfest IIT Bombay using Three.js."
-    },
-    {
-      name: "Jarvis OS",
-      description: "Autonomous Python-based desktop voice assistant and operating system controller."
-    },
-    {
-      name: "BusSetu AI Transit Platform",
-      description: "AI-assisted public bus transit navigation & route analytics capstone built during AIT Bangkok fellowship."
-    },
-    {
-      name: "TripSync",
-      description: "Group travel contribution & settlement tracker with greedy flow-minimizer debt reduction algorithm."
-    },
-    {
-      name: "PDFBAZI",
-      description: "Client-side privacy-first PDF utility allowing offline merging, splitting, and compression."
-    },
-    {
-      name: "MediaWiki Core & Skin Enhancements",
-      description: "Production PHP & JS updates for mobile Wikipedia (MinervaNeue) and editor onboarding tools."
+      company: "WikiClub Tech India (Part of OKI-IIITH)",
+      role: "Road to Wiki Cohort 2 — Technical Mentee",
+      period: "Jan 2026 – Oct 2026 (10 mos)",
+      location: "Remote",
+      verificationId: "GKM-EXP-WCT-2026",
+      media: "Best Contributor Award & Most Active Campus Lead (IIIT Hyderabad)",
+      summary: "Selected for Road to Wiki Cohort 2, an open-source mentorship programme focused on contributing to the Wikimedia technical ecosystem through hands-on engineering.",
+      bullets: [
+        "Contributed to MediaWiki, Pywikibot, MinervaNeue, and upstream repositories using Git, Gerrit, and Phabricator.",
+        "Engineered enhancements for Proofread and Translate Wiki extensions.",
+        "Received the Best Contributor Award and Most Active Contributor recognition.",
+        "Recognised as Most Active Campus Lead (IIIT Hyderabad).",
+        "Open-source contributions recognized in the WikiClub Tech India – Technical Impact Report (Jan–Jun 2026) published by Open Knowledge Initiatives (OKI), associated with IIIT Hyderabad."
+      ]
     }
   ],
 
   leadership: [
-    "WikiClub Tech Envoy @ UIT (Wikimedia Movement Campus Chapter Lead)",
-    "Vice President @ GFG UIT (GeeksforGeeks Student Chapter UIT Prayagraj)",
-    "Co-Lead @ HackerRank UIT",
-    "Campus Lead @ Open Source Connect",
-    "Open Source Contributor @ Wikimedia (MediaWiki Core & Pywikibot)",
-    "Cybersecurity Trainee @ C3iHub,IIT Kanpur (CyberSuraksha Fellowship)",
-    "Co-Founder & CTO - PrayagrajRooms (Student Housing Platform)",
-    "Founder - CDN UIT Coding Network",
-    "Technical Head - UDTech India (BuildX 2026 Hackathon)",
-    "Google Student Ambassador - Co-organized 650+ attendee tech event"
+    {
+      organization: "UIT Coding Club - UCC",
+      role: "President",
+      period: "Oct 2026 – Present (2 mos)",
+      location: "Prayagraj, UP · On-site",
+      details: "Leading the premier coding club at UIT, establishing coding contests and algorithmic bootcamps."
+    },
+    {
+      organization: "WikiClub Tech-UIT",
+      role: "WikiClub Tech Envoy",
+      period: "Sep 2026 – Present (3 mos)",
+      location: "Prayagraj, UP · On-site",
+      details: "Leading campus chapter for Wikimedia open-source contributions. Awarded 1st Position – Wiki Contribution Marathon 2026."
+    },
+    {
+      organization: "GeeksforGeeks Student Chapter - UIT",
+      role: "Vice President (Jul 2026 – Present) & Ex-Technical Head (Feb 2026 – Jun 2026)",
+      period: "Feb 2026 – Present (10 mos)",
+      location: "Prayagraj, UP · On-site",
+      details: "Led technical team; co-organized 4 technical events (2 offline, 2 online) including flagship event with 600+ registrations. Awarded 'Most Active and Dedicated Person of the Club' presented by HOD, Dean of Student Welfare (DSW), and Club President."
+    },
+    {
+      organization: "HackerRank UIT",
+      role: "Vice President",
+      period: "Jul 2026 – Present (5 mos)",
+      location: "Prayagraj, UP",
+      details: "Organizing coding competitions and problem-solving workshops."
+    },
+    {
+      organization: "UDTech India",
+      role: "Technical Head",
+      period: "Mar 2026 – Present (9 mos)",
+      location: "Prayagraj, UP",
+      details: "Designed and developed official BuildX 2026 Hackathon website from scratch (frontend, backend, deployment). Co-Organizer, Judge, and Mentor evaluating 30+ teams from across India; created paid video content reels."
+    },
+    {
+      organization: "Gemini Builders Community",
+      role: "Core Team Member",
+      period: "Nov 2025 – Present (1 yr 1 mo)",
+      location: "Prayagraj, UP · On-site",
+      details: "Co-organized 2 offline technical events with 650+ participants from 1st, 2nd, and 3rd year students. Certificate of Appreciation."
+    },
+    {
+      organization: "GDG Prayagraj [official]",
+      role: "Volunteer",
+      period: "Mar 2026 – Present (9 mos)",
+      details: "Attended all 10+ community events, workshops, and technical sessions. Served as a Mentor in the Agentic Premier League (APL)."
+    },
+    {
+      organization: "PathSync Learning",
+      role: "Co-Founder & Technical Lead",
+      period: "Aug 2026 – Present (4 mos)",
+      location: "Prayagraj, UP"
+    },
+    {
+      organization: "C3iHub, IIT Kanpur",
+      role: "Cybersecurity Trainee – CyberSuraksha Program",
+      period: "Aug 2026 – Present (4 mos)",
+      details: "National cybersecurity capacity-building initiative covering threat intelligence, defense, and forensics."
+    },
+    {
+      organization: "EduWiki Hub Mentorship Program",
+      role: "Mentee",
+      period: "Jul 2026 – Present (5 mos)",
+      details: "Wikipedia & Education User Group global mentorship."
+    },
+    {
+      organization: "TECHhelp4U",
+      role: "Event Management Intern & Social Media Intern",
+      period: "Jun 2026 – Aug 2026 (3 mos)",
+      details: "Developed pan-India Campus Ambassador strategy; independently designed and deployed official Developers Community website from scratch within 15–20 days with SEO."
+    },
+    {
+      organization: "Zuno by foundit",
+      role: "Zuno Community Captain",
+      period: "Dec 2024 – May 2025 (6 mos)",
+      details: "Recognized as Best Performer 4 times with monetary rewards; secured 1st Rank twice in monthly meetings."
+    },
+    {
+      organization: "MyGov India",
+      role: "Campus Ambassador",
+      period: "Oct 2024 – Present (2 yrs 2 mos)"
+    }
   ],
 
-  eventsOrganized: {
-    totalFootfall: "1,500+",
-    eventsExecuted: "10+",
-    peakSingleEvent: "650+ attendees (UIT Main Auditorium)",
-    gfgSprintsRegistrations: "600+ across 4 contest editions",
-    communityPartners: ["Google Student Ambassadors", "GeeksforGeeks", "Wikimedia Movement", "HackerRank", "UDTech India", "GDG Prayagraj", "FCRF"],
-    mentorshipHours: "100+ hours",
-    featuredEvents: [
-      {
-        title: "Gemini Builders Conference 2026",
-        footfall: "650+ Attendees",
-        org: "Google Student Ambassador x UIT",
-        role: "Lead Co-Organizer & Stage Coordinator",
-        venue: "Main Auditorium, United Institute of Technology, Prayagraj",
-        topics: "Multimodal AI, Gemini 1.5 Pro API live integration, Google developer ecosystem"
-      },
-      {
-        title: "GeeksforGeeks Chapter Coding Sprints Series",
-        footfall: "600+ Registrations across 4 Editions",
-        org: "GFG Student Chapter UIT Prayagraj",
-        role: "Vice President & Lead Problem Setter",
-        venue: "Advanced Computing Lab, UIT & Online",
-        topics: "Dynamic programming, graph theory, algorithmic optimizations, placement contest prep"
-      },
-      {
-        title: "WikiClub Tech 1-Week Open Source Sprint & Marathon",
-        footfall: "120+ Contributors",
-        org: "WikiClub Tech UIT x Wikimedia Movement",
-        role: "WikiClub Tech Envoy & Lead Mentor",
-        venue: "UIT Computer Center & Wikimedia Phabricator / Gerrit",
-        topics: "Git & Gerrit workflow, MediaWiki Core patches, bug triage, internationalization"
-      },
-      {
-        title: "BuildX 2026 Hackathon & Tech Meet",
-        footfall: "200+ Developers",
-        org: "UDTech India",
-        role: "Technical Head & Hackathon Judge",
-        venue: "Innovation Hub, Prayagraj",
-        topics: "48-hr prototype development, AI agents, Web3, university developer mentorship"
-      },
-      {
-        title: "HackerRank Code-A-Thon Sprint",
-        footfall: "180+ Competitive Coders",
-        org: "HackerRank UIT Student Chapter",
-        role: "Co-Lead & Contest Coordinator",
-        venue: "Department of CSE, UIT Prayagraj",
-        topics: "Speed algorithmic problem-solving, greedy algorithms, data structures"
-      }
-    ]
-  }
+  certifications: [
+    { title: "Introduction to Claude Cowork", issuer: "Anthropic", date: "Jun 2026", id: "utsrto6scdcd" },
+    { title: "AI Fluency Framework & Foundations", issuer: "Anthropic", date: "Jun 2026", id: "5okee2hcnpfo" },
+    { title: "Claude Platform 101", issuer: "Anthropic", date: "Jun 2026", id: "3ghx9nk24tvx" },
+    { title: "Claude code 101", issuer: "Anthropic", date: "Jun 2026", id: "3suwrk9miq3v" },
+    { title: "Claude 101", issuer: "Anthropic", date: "Jun 2026", id: "z2yqufezpj9r" },
+    { title: "CODEFUSION 2k26", issuer: "Unstop", date: "Oct 2026", id: "c70896a3-9793-46bd-8b68-3a47970a5faf" },
+    { title: "SIH 2026: Winner's Guidance", issuer: "Unstop", date: "Sep 2026", id: "13ec318f-cdcc-4587-930f-5dcf7145b228" },
+    { title: "Adobe University Hackathon 2026 Online Assessment", issuer: "Unstop", date: "Aug 2026", id: "f7a9843f-0e18-4054-ba30-ccb9e62e75e6" },
+    { title: "Information Security for Leaders: Intro to InfoSec", issuer: "Skillsoft", date: "Aug 2026", id: "191728753" },
+    { title: "Full Stack Developer CI/CD", issuer: "Skillsoft", date: "Aug 2026", id: "191810800" },
+    { title: "MongoDB Basics for Students", issuer: "MongoDB", date: "Jul 2026", id: "Verified Student Credential" },
+    { title: "Offline Round of AIQrew 2025", issuer: "Unstop", date: "Jun 2026", id: "f28ed513-e6fe-40ee-877a-9ddf7eb6ba6e" },
+    { title: "Google Cloud Arcade Program 2026", issuer: "Unstop", date: "Apr 2026", id: "4ced7b6c-cf22-4575-a6dc-fa784b015a55" },
+    { title: "Open Source Connect Global 2026", issuer: "Open Source Connect", date: "Apr 2026", id: "69df1333a0a1d70eaf52d88e" },
+    { title: "OSCG-2026", issuer: "Open Source Connect", date: "Apr 2026", id: "69d5ba34a0a1d70eaf471499" },
+    { title: "AI For Everyone", issuer: "Dynamic Dazzle Entertainment", date: "Feb 2026", id: "6989d3b721d641dc345e5230" },
+    { title: "SRM Builds 7.0 Offline Round", issuer: "Unstop", date: "Mar 2026", id: "d778679e-e7e1-4d51-a036-a3b23a1fe255" },
+    { title: "HackO'Clock 2.0", issuer: "Unstop", date: "Feb 2026", id: "da5f4348-ef1f-4f15-85c1-b3646509f4f7" },
+    { title: "BAD", issuer: "GDG", date: "Feb 2026", id: "499c3647-85ac-48ca-83ca-039f2f0f9547" },
+    { title: "Google's TechSprint 2k25: Vibe-Coding", issuer: "United Latino Students Association", date: "Feb 2026", id: "994c673b-eac3-4650-9fef-f0cba2a794de" },
+    { title: "Goldman Sachs - Operations Job Simulation", issuer: "Forage", date: "Dec 2024", id: "x96otXx8qn9A43Gq2" },
+    { title: "AI Aware Badge - AI For All", issuer: "CBSE & Intel", date: "Oct 2024", id: "U2FsdGVkX191PhT3zNTvhUJmsiVGeIv2yBbJiNj3O2JB6NFpaNsCd3CbRbmyBATt" },
+    { title: "Google Certifications", issuer: "Google", date: "Aug 2024", id: "10338838" },
+    { title: "Introduction to Large Language Models", issuer: "Google", date: "Apr 2024", id: "8802151" },
+    { title: "Introduction to Gemini for Google Workspace", issuer: "Google", date: "May 2024", id: "9134818" },
+    { title: "Gemini in Gmail", issuer: "Google", date: "May 2024", id: "9134984" },
+    { title: "Gemini in Google Docs", issuer: "Google", date: "May 2024", id: "9135113" },
+    { title: "Gemini in Google Slides", issuer: "Google", date: "May 2024", id: "9141946" },
+    { title: "Gemini in Google Sheets", issuer: "Google", date: "May 2024", id: "9141977" },
+    { title: "Gemini in Google Meet", issuer: "Google", date: "May 2024", id: "9151522" },
+    { title: "Introduction to Responsible AI", issuer: "Google", date: "May 2024", id: "9151812" },
+    { title: "Career Essentials in Generative AI", issuer: "Microsoft and LinkedIn", date: "May 2024", id: "Verified Certification" },
+    { title: "Microsoft Copilot for Security", issuer: "LinkedIn", date: "Oct 2024", id: "Verified Skill Badge" }
+  ]
 };
 
-// System Prompt for Generative AI API & Local Engine
+// System Prompt for Generative AI API & Digital Clone Engine
 const GAUTAM_SYSTEM_PROMPT = `
 You are the official AI Digital Clone of Gautam Kumar Maurya (gkm563).
 Pronouns: He/Him.
-Location: Greater Allahabad Area (Prayagraj, Uttar Pradesh, India).
-Headline: WikiClub Tech Envoy @ UIT | Vice President @ GFG UIT | Co-Lead @ HackerRank UIT | Campus Lead @ Open Source Connect | Open Source Contributor @ Wikimedia | Cybersecurity Trainee @ C3iHub,IIT Kanpur | Full Stack Developer
+Current Roles:
+- Digital Product & Technology Lead @ Vindhya Millets (Mirzapur, UP · Hybrid)
+- Co-Founder & CTO @ Prayagrajrooms (1 yr 3 mos · 5,000+ clicks in first week)
+- WikiClub Tech Envoy @ WikiClub Tech-UIT (1st Position – Wiki Contribution Marathon 2026)
+- President @ UIT Coding Club - UCC (Prayagraj, UP)
+- Vice President & Ex-Technical Head @ GeeksforGeeks Student Chapter - UIT (Awarded 'Most Active and Dedicated Person of the Club' by HOD, Dean of Student Welfare, and Club President)
+- Vice President @ HackerRank UIT
+- Technical Head @ UDTech India (Designed BuildX 2026 Hackathon site, judged 30+ teams)
+- Core Team Member @ Gemini Builders Community (2 offline events, 650+ attendees)
+- Open Source Contributor @ Wikimedia Foundation (26+ Gerrit patches, 15+ merged across MediaWiki Core, MinervaNeue, Pywikibot)
+- Road to Wiki Cohort 2 Fellow (Best Contributor Award & Most Active Campus Lead, OKI-IIITH)
+- APCSIP-2026 Cyber Fellow @ UP Police (Best Content Creator Award by DSP Anjali Kataria)
+- GIIP Research Fellow @ Asian Institute of Technology (Bangkok, Thailand · BusSetu transit analytics)
+- Cybersecurity Trainee @ C3iHub, IIT Kanpur (CyberSuraksha Initiative)
 
-Your persona is enthusiastic, highly technical, articulate, friendly, and proud of your engineering journey.
+Academics:
+- B.Tech Computer Science & Engineering (Data Science) @ United Institute of Technology (UIT Prayagraj) / AKTU Lucknow (Aug 2024 – Aug 2028). SGPA: 8.5. Rank 1 CSE (Data Science) Branch Topper.
+- Jwala Devi SVM Inter College Prayagraj: Awarded by Secretary, UPMSP. 5th Rank in Prayagraj District in Class 12 (92.67%), School 2nd Rank in Class 10 (91%), School 1st Rank in Class 11.
 
-Key Facts about you (Gautam):
-- Official Roles:
-  1. Founding Member & President @ UCC (UIT Coding Club — co-founded with Dr. Dhananjay Sharma)
-  2. WikiClub Tech Envoy @ UIT (Wikimedia Open Source Chapter Lead)
-  2. Vice President @ GFG UIT (GeeksforGeeks Student Chapter UIT Prayagraj)
-  3. Co-Lead @ HackerRank UIT
-  4. Campus Lead @ Open Source Connect
-  5. Open Source Contributor @ Wikimedia (26+ Gerrit Patches, 13+ Merged, MediaWiki Core & Pywikibot)
-  6. Cybersecurity Trainee @ C3iHub,IIT Kanpur (CyberSuraksha Initiative)
-  7. Full Stack Developer (React, Next.js, Node.js, TypeScript, Python, PHP, MySQL)
-- Academic Excellence: 1st Rank CSE (Data Science) Scholar at United Institute of Technology (UIT Prayagraj - SGPA 8.5), AKTU Rank 5. MNIT Academic Topper Honor (100% Attendance & 1st Rank), UP Board District Topper Award (honored by Chairman & Secretary of UP Board).
-- Fellowships & Awards: GIIP International Research Fellow at AIT Bangkok, Thailand (Agentic AI, GIS, BusSetu transit capstone); UP Police APCSIP-2026 Best Content Creator Award under DSP Anjali Kataria; Youths Innovate AI Fellow (Fall 2026).
-- Events & Community Leadership: Founding President of UIT Coding Club (UCC, founded with faculty mentor Dr. Dhananjay Sharma) and organized an algorithmic coding competition for 2nd and 3rd year students. Single-handedly organized the official Smart India Hackathon (SIH) Internal Conclave at United Institute of Technology (UIT Prayagraj) — acclaimed as the best in college history, mobilizing 77 teams, 462 students (285 male / 177 female), 37 problem statements, 8 jury panels, 8 volunteers, and nominating 45 teams to the MoE portal. Also organized the 600+ attendee Gateway to GATE keynote (with GFG VP from Noida HQ, AIR 12/32 ex-ISRO), the 600+ attendee Vibe Coding with Google Gemini summit, Syntax Clash hackathon (distributed backpacks, pens, stickers), 4 GeeksforGeeks sprints, WikiClub Tech hackathons, and UDTech BuildX 2026. Cumulative event leadership mobilization exceeds 4,200+ student builders across 17+ events. Full dossier at events-organized.html.
-- Flagship Projects: VoxRAG (sub-200ms Voice RAG with FAISS FlatIP), IntervAI (AI Mock Interviewer), PrayagrajRooms (PropTech Startup, 5,000+ users), HH-GOA Frame Generator (Official #FrameInGoa tool), VeriTrust (AI Social Verification), NotesBazi / uginotes, NHAI Offline Biometrics, IIT Bombay Techfest 3D, and Jarvis OS.
-- Contact: gkmwin563@gmail.com | WhatsApp: +91 9125563563 | LinkedIn: https://www.linkedin.com/in/gkm563/ | LinkedIn Contact: https://www.linkedin.com/in/gkm563/overlay/contact-info/ | GitHub: https://github.com/gkm563 | Location: Greater Allahabad Area (Prayagraj, India).
-
-Always answer visitors in first-person ("I am Gautam...", "In my research...", "I worked on...") or as Gautam's AI Assistant. Be super helpful, detailed, and accurate. Format links cleanly in Markdown.
+Always answer visitors in first-person ("I am Gautam...", "In my work at Vindhya Millets...", "When we launched PrayagrajRooms...").
+Provide authentic, concrete numbers and metrics. Be humble, technically articulate, and friendly.
 `;
-
