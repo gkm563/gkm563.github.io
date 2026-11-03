@@ -2,133 +2,193 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
 
-  <!-- ===== Portfolio Home ===== -->
+  <!-- ===== 1. Portfolio Home ===== -->
   <url>
     <loc>https://gkm563.github.io/</loc>
-    <lastmod>2026-10-03</lastmod>
+    <lastmod>2026-11-03</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
     <image:image>
       <image:loc>https://gkm563.github.io/assets/images/profile/Gautam_Kumar_Maurya.jpg</image:loc>
-      <image:title>Gautam Kumar Maurya — Full-Stack AI Engineer Portfolio</image:title>
-      <image:caption>Official profile photo of Gautam Kumar Maurya (gkm563), Full-Stack AI Engineer, Data Scientist &amp; Academic Topper at United Institute of Technology, Prayagraj.</image:caption>
+      <image:title>Gautam Kumar Maurya — Full-Stack AI Engineer, Co-Founder &amp; Academic Topper</image:title>
+      <image:caption>Official portfolio photo of Gautam Kumar Maurya (gkm563), Full-Stack AI Engineer, Data Scientist, Co-Founder of PrayagrajRooms &amp; Vindhya Millets, and Academic Rank 1 Topper at United Institute of Technology, Prayagraj.</image:caption>
     </image:image>
   </url>
 
-  <!-- ===== B.Tech Academic & Engineering Journey ===== -->
+  <!-- ===== 2. Master Verification Registry ===== -->
   <url>
-    <loc>https://gkm563.github.io/btech-journey.html</loc>
-    <lastmod>2026-10-03</lastmod>
+    <loc>https://gkm563.github.io/verify.html</loc>
+    <lastmod>2026-11-03</lastmod>
     <changefreq>daily</changefreq>
+    <priority>0.98</priority>
+    <image:image>
+      <image:loc>https://gkm563.github.io/assets/images/profile/Gautam_Kumar_Maurya.jpg</image:loc>
+      <image:title>Gautam Kumar Maurya — Master Verification Registry (32 Credentials)</image:title>
+      <image:caption>Official verification directory and credential lookup for Gautam Kumar Maurya with institutional verification IDs and offer letters.</image:caption>
+    </image:image>
+  </url>
+
+  <!-- ===== 3. Vindhya Millets Tech Lead & E-Commerce Dossier ===== -->
+  <url>
+    <loc>https://gkm563.github.io/vindhya-millets.html</loc>
+    <lastmod>2026-11-03</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0.95</priority>
     <image:image>
-      <image:loc>https://gkm563.github.io/assets/images/profile/Gautam_Kumar_Maurya.jpg</image:loc>
-      <image:title>Gautam Kumar Maurya — 4-Year B.Tech CSE (Data Science) Journey</image:title>
-      <image:caption>Official B.Tech Academic and Growth Journey of Gautam Kumar Maurya at United Institute of Technology, Prayagraj.</image:caption>
+      <image:loc>https://gkm563.github.io/assets/images/logos/vindhya-millets-logo.png</image:loc>
+      <image:title>Vindhya Millets — Digital Product &amp; Technology Lead Case Study</image:title>
+      <image:caption>Case study detailing Gautam Kumar Maurya's 8-9 months engineering of the custom e-commerce platform and Razorpay integration for Vindhya Millets.</image:caption>
     </image:image>
   </url>
 
-  <!-- ===== UP Police Cyber Security Internship ===== -->
+  <!-- ===== 4. PrayagrajRooms Co-Founder & CTO Dossier ===== -->
   <url>
-    <loc>https://gkm563.github.io/up-police-internship.html</loc>
-    <lastmod>2026-10-03</lastmod>
+    <loc>https://gkm563.github.io/prayagraj-rooms.html</loc>
+    <lastmod>2026-11-03</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.90</priority>
+    <priority>0.95</priority>
     <image:image>
-      <image:loc>https://gkm563.github.io/assets/images/profile/Gautam_Kumar_Maurya.jpg</image:loc>
-      <image:title>Gautam Kumar Maurya — Best Content Creator Award by DSP Anjali Kataria (APCSIP-2026)</image:title>
-      <image:caption>Gautam Kumar Maurya during the UP Police x Amroha Police Cyber Security Internship Program 2026 (APCSIP-2026).</image:caption>
+      <image:loc>https://gkm563.github.io/assets/images/logos/prayagrajrooms-logo.png</image:loc>
+      <image:title>PrayagrajRooms — Co-Founder and CTO Architectural Case Study</image:title>
+      <image:caption>System architecture and 5,000+ clicks launch metrics for PrayagrajRooms, co-founded by Gautam Kumar Maurya.</image:caption>
     </image:image>
   </url>
 
-  <!-- ===== AIT Bangkok Global Innovation Internship ===== -->
+  <!-- ===== 5. HeiSyn Full-Stack Developer Internship Dossier ===== -->
+  <url>
+    <loc>https://gkm563.github.io/heisyn-internship.html</loc>
+    <lastmod>2026-11-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.93</priority>
+    <image:image>
+      <image:loc>https://gkm563.github.io/assets/images/logos/heisyn-logo.png</image:loc>
+      <image:title>HeiSyn — Full-Stack Developer Internship Verification Dossier</image:title>
+      <image:caption>5-month industry engineering internship records, React/Node.js deliverables, and official completion certificate for HeiSyn.</image:caption>
+    </image:image>
+  </url>
+
+  <!-- ===== 6. AIT Bangkok Global Innovation Internship ===== -->
   <url>
     <loc>https://gkm563.github.io/ait-global-innovation-internship.html</loc>
-    <lastmod>2026-10-03</lastmod>
+    <lastmod>2026-11-03</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.90</priority>
+    <priority>0.94</priority>
     <image:image>
-      <image:loc>https://gkm563.github.io/assets/images/profile/Gautam_Kumar_Maurya.jpg</image:loc>
-      <image:title>Gautam Kumar Maurya at AIT Bangkok</image:title>
-      <image:caption>Gautam Kumar Maurya (gkm563) during his 15-day Global Innovation Internship Program at AIT Bangkok, Thailand.</image:caption>
+      <image:loc>https://gkm563.github.io/assets/images/logos/ait-bangkok-logo.png</image:loc>
+      <image:title>Asian Institute of Technology (AIT Bangkok) — GIIP Fellowship Dossier</image:title>
+      <image:caption>15-day international fellowship in Bangkok, Thailand, covering Agentic AI, QGIS telemetry, and BusSetu public transit analytics.</image:caption>
     </image:image>
   </url>
 
-  <!-- ===== Open Source Contributions ===== -->
+  <!-- ===== 7. UP Police Cyber Security Internship ===== -->
+  <url>
+    <loc>https://gkm563.github.io/up-police-internship.html</loc>
+    <lastmod>2026-11-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.93</priority>
+    <image:image>
+      <image:loc>https://gkm563.github.io/assets/images/profile/Gautam_Kumar_Maurya.jpg</image:loc>
+      <image:title>UP Police &amp; Amroha Police APCSIP-2026 Cyber Fellowship</image:title>
+      <image:caption>Government cybersecurity fellowship, digital forensics casework, and Best Content Creator citation awarded by DSP Anjali Kataria.</image:caption>
+    </image:image>
+  </url>
+
+  <!-- ===== 8. Open Source Contributions (Wikimedia Gerrit) ===== -->
   <url>
     <loc>https://gkm563.github.io/open-source-contributions.html</loc>
-    <lastmod>2026-10-10</lastmod>
+    <lastmod>2026-11-03</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.92</priority>
+    <priority>0.94</priority>
     <image:image>
-      <image:loc>https://gkm563.github.io/assets/images/profile/Gautam_Kumar_Maurya.jpg</image:loc>
-      <image:title>Gautam Kumar Maurya — Open Source Contributions (Wikimedia &amp; WikiClub India)</image:title>
-      <image:caption>Gautam Kumar Maurya open source contributions across Wikimedia Gerrit, GitLab, Translatewiki, and GitHub.</image:caption>
+      <image:loc>https://gkm563.github.io/assets/images/logos/wikimedia-logo.png</image:loc>
+      <image:title>Gautam Kumar Maurya — Wikimedia Core &amp; Extension Patches</image:title>
+      <image:caption>Technical documentation of 30+ production code reviews and merged patchsets on Wikimedia Gerrit and MediaWiki extensions.</image:caption>
     </image:image>
   </url>
 
-  <!-- ===== Road to Wiki Fellowship & Graduation 2026 ===== -->
+  <!-- ===== 9. Road to Wiki Fellowship & Graduation 2026 ===== -->
   <url>
     <loc>https://gkm563.github.io/road-to-wiki.html</loc>
-    <lastmod>2026-10-10</lastmod>
+    <lastmod>2026-11-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.95</priority>
     <image:image>
       <image:loc>https://gkm563.github.io/assets/images/wiki/road-to-wiki-program-banner.webp</image:loc>
       <image:title>Road to Wiki — Cohort 2 Technical Fellowship &amp; Graduation 2026</image:title>
-      <image:caption>Gautam Kumar Maurya Road to Wiki Cohort 2 fellowship by WikiClub Tech, OKI at IIIT Hyderabad &amp; Wikimedia Foundation.</image:caption>
+      <image:caption>9-month incubator by OKI &amp; Wikimedia Foundation, 3 national stage awards, and Gurugram Conclave graduation dossier.</image:caption>
     </image:image>
   </url>
 
-  <!-- ===== Technical Events & Hackathons Organised ===== -->
+  <!-- ===== 10. Technical Events & Mega Hackathons Organised ===== -->
   <url>
     <loc>https://gkm563.github.io/events-organized.html</loc>
-    <lastmod>2026-10-09</lastmod>
+    <lastmod>2026-11-03</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.95</priority>
+    <priority>0.94</priority>
     <image:image>
       <image:loc>https://gkm563.github.io/assets/images/gallery/gautam-kumar-maurya-gsa.jpg</image:loc>
-      <image:title>Gautam Kumar Maurya — Technical Events, Hackathons &amp; Summits Organised</image:title>
-      <image:caption>Gautam Kumar Maurya addressing 650+ attendees at the UIT Main Auditorium during Gemini Builders / Google Student Ambassador summit.</image:caption>
+      <image:title>Technical Events &amp; Campus Contests Directed by Gautam Kumar Maurya</image:title>
+      <image:caption>Presidential event directorship of Code Gyan 4.0, Code Clue, Code Aarambh 9.0, and Gemini Builders summits at UIT Prayagraj.</image:caption>
     </image:image>
   </url>
 
-  <!-- ===== Achievements & Honors Showcase ===== -->
+  <!-- ===== 11. B.Tech Academic & Engineering Journey ===== -->
+  <url>
+    <loc>https://gkm563.github.io/btech-journey.html</loc>
+    <lastmod>2026-11-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.93</priority>
+    <image:image>
+      <image:loc>https://gkm563.github.io/assets/images/profile/Gautam_Kumar_Maurya.jpg</image:loc>
+      <image:title>Gautam Kumar Maurya — 4-Year B.Tech CSE (Data Science) Journey</image:title>
+      <image:caption>Academic records, SGPA 8.8 Rank 1 Topper standing, and semester milestones at United Institute of Technology, Prayagraj.</image:caption>
+    </image:image>
+  </url>
+
+  <!-- ===== 12. Honors, Awards & Achievements Showcase ===== -->
   <url>
     <loc>https://gkm563.github.io/achievements.html</loc>
-    <lastmod>2026-10-03</lastmod>
+    <lastmod>2026-11-03</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.92</priority>
+    <priority>0.93</priority>
     <image:image>
       <image:loc>https://gkm563.github.io/assets/images/profile/Gautam_Kumar_Maurya.jpg</image:loc>
       <image:title>Gautam Kumar Maurya — Verified Honors &amp; Achievements</image:title>
-      <image:caption>Stage awards, branch topper medals, UP Police felicitation, and hackathon trophies won by Gautam Kumar Maurya.</image:caption>
+      <image:caption>Complete verified awards, stage felicitations by UP Board, Dainik Jagran, Vidya Bharti, and campus leadership medals.</image:caption>
     </image:image>
   </url>
 
-  <!-- ===== Verified Certifications & Licenses ===== -->
+  <!-- ===== 13. Verified Certifications & Credentials ===== -->
   <url>
     <loc>https://gkm563.github.io/certifications.html</loc>
-    <lastmod>2026-10-03</lastmod>
+    <lastmod>2026-11-03</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.88</priority>
+    <priority>0.90</priority>
     <image:image>
       <image:loc>https://gkm563.github.io/assets/images/profile/Gautam_Kumar_Maurya.jpg</image:loc>
       <image:title>Gautam Kumar Maurya — 40+ Verified Certifications</image:title>
-      <image:caption>Verified credentials in AI, Machine Learning, Digital Forensics, Cybersecurity, and Software Engineering.</image:caption>
+      <image:caption>Cybersecurity credentials from C3iHub IIT Kanpur, AI certifications, and software engineering credentials.</image:caption>
     </image:image>
   </url>
 
-  <!-- ===== FAQ & Contact Deep Dive ===== -->
+  <!-- ===== 14. Events Hub ===== -->
+  <url>
+    <loc>https://gkm563.github.io/events.html</loc>
+    <lastmod>2026-11-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.88</priority>
+  </url>
+
+  <!-- ===== 15. Recruiter & Engineering FAQ ===== -->
   <url>
     <loc>https://gkm563.github.io/faq.html</loc>
-    <lastmod>2026-10-03</lastmod>
+    <lastmod>2026-11-03</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
+    <priority>0.89</priority>
     <image:image>
       <image:loc>https://gkm563.github.io/assets/images/profile/Gautam_Kumar_Maurya.jpg</image:loc>
-      <image:title>Gautam Kumar Maurya — FAQ &amp; Contact Deep Dive</image:title>
-      <image:caption>Frequently Asked Questions about Gautam Kumar Maurya (gkm563), full-stack skills, and achievements.</image:caption>
+      <image:title>Gautam Kumar Maurya — Recruiter FAQ &amp; Background Answers</image:title>
+      <image:caption>Frequently Asked Questions regarding Gautam Kumar Maurya (gkm563), background verification, skills, and contact info.</image:caption>
     </image:image>
   </url>
 

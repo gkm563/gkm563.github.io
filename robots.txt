@@ -1,7 +1,9 @@
 User-agent: *
 Allow: /
 
-# Primary Search Engine Crawlers
+# ═════════════════════════════════════════
+# PRIMARY SEARCH ENGINE CRAWLERS
+# ═════════════════════════════════════════
 User-agent: Googlebot
 Allow: /
 
@@ -23,7 +25,9 @@ Allow: /
 User-agent: YandexBot
 Allow: /
 
-# Social Media Link Preview Crawlers
+# ═════════════════════════════════════════
+# SOCIAL MEDIA LINK PREVIEW CRAWLERS
+# ═════════════════════════════════════════
 User-agent: facebookexternalhit
 Allow: /
 
@@ -36,11 +40,22 @@ Allow: /
 User-agent: WhatsApp
 Allow: /
 
-# AI & AEO Search Engine Crawlers (Perplexity, ChatGPT, Claude, Gemini)
+User-agent: TelegramBot
+Allow: /
+
+User-agent: Discordbot
+Allow: /
+
+# ═════════════════════════════════════════
+# AI & AEO SEARCH ENGINE CRAWLERS (AEO / GEO)
+# ═════════════════════════════════════════
 User-agent: GPTBot
 Allow: /
 
 User-agent: ChatGPT-User
+Allow: /
+
+User-agent: OAI-SearchBot
 Allow: /
 
 User-agent: PerplexityBot
@@ -50,6 +65,12 @@ User-agent: ClaudeBot
 Allow: /
 
 User-agent: Google-Extended
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: Meta-ExternalAgent
 Allow: /
 
 # Host specification
