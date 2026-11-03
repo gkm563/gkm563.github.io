@@ -313,10 +313,108 @@ document.addEventListener('DOMContentLoaded', () => {
           }
         });
 
+        // Re-apply active subcategory filter when switching main experience tab
+        if (typeof window.applyActiveSubFilter === 'function') {
+          window.applyActiveSubFilter();
+        }
+
         if (window.lucide) window.lucide.createIcons();
       });
     });
   }
+
+  // --------------------------------------------------
+  // 5.6. Currently Active Roles Sub-Filter & Live Search
+  // --------------------------------------------------
+  function initActiveRolesInteractive() {
+    const activeSubBtns = document.querySelectorAll('.active-sub-btn');
+    const activeSearchInput = document.getElementById('activeSubSearch');
+    const clearActiveSearchBtn = document.getElementById('clearActiveSearch');
+    const activeRoleCards = document.querySelectorAll('.active-role-card');
+    const filteredCountEl = document.getElementById('activeFilteredCount');
+
+    if (!activeRoleCards.length) return;
+
+    let currentSubcat = 'all';
+    let currentSearchQuery = '';
+
+    window.applyActiveSubFilter = function() {
+      // Check if active section is hidden by main filter
+      const activeGroupHeader = document.querySelector('.exp-group-header[data-status="active"]');
+      if (activeGroupHeader && activeGroupHeader.style.display === 'none') {
+        return;
+      }
+
+      let visibleCount = 0;
+
+      activeRoleCards.forEach(card => {
+        const cardSubcat = card.getAttribute('data-active-subcat') || '';
+        const textContent = (card.innerText || card.textContent || '').toLowerCase();
+
+        const matchesSubcat = (currentSubcat === 'all') || (cardSubcat === currentSubcat);
+        const matchesSearch = !currentSearchQuery || textContent.includes(currentSearchQuery);
+
+        if (matchesSubcat && matchesSearch) {
+          card.style.display = 'flex';
+          card.style.opacity = '1';
+          visibleCount++;
+        } else {
+          card.style.display = 'none';
+          card.style.opacity = '0';
+        }
+      });
+
+      if (filteredCountEl) {
+        filteredCountEl.textContent = visibleCount;
+      }
+
+      if (clearActiveSearchBtn) {
+        if (currentSearchQuery) {
+          clearActiveSearchBtn.classList.remove('hidden');
+        } else {
+          clearActiveSearchBtn.classList.add('hidden');
+        }
+      }
+
+      if (window.lucide) window.lucide.createIcons();
+    };
+
+    activeSubBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        activeSubBtns.forEach(b => {
+          b.classList.remove('active', 'bg-blue-600', 'text-white', 'shadow-sm', 'shadow-blue-500/20');
+          b.classList.add('text-slate-600', 'dark:text-slate-400', 'bg-slate-100', 'dark:bg-slate-800/70');
+        });
+
+        btn.classList.add('active', 'bg-blue-600', 'text-white', 'shadow-sm', 'shadow-blue-500/20');
+        btn.classList.remove('text-slate-600', 'dark:text-slate-400', 'bg-slate-100', 'dark:bg-slate-800/70');
+
+        currentSubcat = btn.getAttribute('data-active-filter') || 'all';
+        window.applyActiveSubFilter();
+      });
+    });
+
+    if (activeSearchInput) {
+      activeSearchInput.addEventListener('input', (e) => {
+        currentSearchQuery = e.target.value.trim().toLowerCase();
+        window.applyActiveSubFilter();
+      });
+    }
+
+    if (clearActiveSearchBtn && activeSearchInput) {
+      clearActiveSearchBtn.addEventListener('click', () => {
+        activeSearchInput.value = '';
+        currentSearchQuery = '';
+        window.applyActiveSubFilter();
+        activeSearchInput.focus();
+      });
+    }
+
+    // Run initial filter on load
+    window.applyActiveSubFilter();
+  }
+
+  initActiveRolesInteractive();
 
   // --------------------------------------------------
   // 6. Contact Form Submission (Formspree AJAX)

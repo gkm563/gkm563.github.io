@@ -450,64 +450,87 @@ h1, h2, h3, h4, h5, h6 {
    HIGH-END HOVER EFFECTS (LIGHT & DARK MODE)
    ═══════════════════════════════════════ */
 
-/* 1. Interactive Card Elevate & Glow Sheen */
+/* 1. Calm, Executive Card Elevation (Zero Wobbly Bouncing) */
 .hover-elevate {
-  transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1), 
-              box-shadow 0.35s ease, 
-              border-color 0.35s ease,
-              background-color 0.35s ease;
+  transition: transform 0.22s cubic-bezier(0.16, 1, 0.3, 1), 
+              box-shadow 0.22s ease, 
+              border-color 0.22s ease,
+              background-color 0.22s ease;
   position: relative;
   will-change: transform;
 }
 
 .hover-elevate:hover {
-  transform: translateY(-8px) scale(1.015);
-  border-color: rgba(99, 102, 241, 0.45);
-  box-shadow: 0 20px 40px -10px rgba(59, 130, 246, 0.22), 0 0 25px rgba(139, 92, 246, 0.15);
+  transform: translateY(-2.5px);
+  border-color: rgba(99, 102, 241, 0.4);
+  box-shadow: 0 12px 28px -6px rgba(15, 23, 42, 0.08), 0 4px 10px -2px rgba(15, 23, 42, 0.04);
 }
 
 .dark .hover-elevate:hover {
-  border-color: rgba(96, 165, 250, 0.5);
-  box-shadow: 0 22px 45px -10px rgba(56, 189, 248, 0.3), 0 0 30px rgba(168, 85, 247, 0.22);
-  background-color: rgba(30, 41, 59, 0.82);
+  border-color: rgba(96, 165, 250, 0.4);
+  box-shadow: 0 14px 30px -6px rgba(0, 0, 0, 0.4), 0 0 1px 1px rgba(96, 165, 250, 0.15);
+  background-color: rgba(30, 41, 59, 0.85);
 }
 
-/* Icon tilt and float on card hover */
+/* Icon tilt and float completely removed to keep cards stable and professional */
 .hover-elevate:hover .w-10,
 .hover-elevate:hover .w-12,
 .hover-elevate:hover .shrink-0 {
-  transform: scale(1.15) translateY(-2px) rotate(6deg);
-  transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+  transform: none !important;
 }
 
-/* 2. Interactive Tech Stack Pills */
+/* 2. Professional Tech Stack Pills */
 .tech-pill {
-  font-size: 0.75rem;
+  font-size: 0.72rem;
   font-weight: 600;
-  padding: 0.25rem 0.7rem;
+  padding: 0.2rem 0.65rem;
   border-radius: 9999px;
   background-color: var(--bg-muted);
   color: var(--text-secondary);
   border: 1px solid var(--border-light);
-  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
-  will-change: transform;
+  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
   cursor: default;
   display: inline-block;
 }
 
 .tech-pill:hover {
-  transform: translateY(-3px) scale(1.06);
-  border-color: #3b82f6;
-  background: linear-gradient(135deg, rgba(37, 99, 235, 0.15) 0%, rgba(139, 92, 246, 0.15) 100%);
+  transform: none;
+  border-color: rgba(59, 130, 246, 0.45);
+  background: rgba(37, 99, 235, 0.08);
   color: #1d4ed8;
-  box-shadow: 0 6px 16px rgba(37, 99, 235, 0.2);
 }
 
 .dark .tech-pill:hover {
-  background: linear-gradient(135deg, rgba(56, 189, 248, 0.2) 0%, rgba(168, 85, 247, 0.2) 100%);
+  background: rgba(56, 189, 248, 0.12);
   color: #38bdf8;
-  border-color: rgba(96, 165, 250, 0.6);
-  box-shadow: 0 6px 18px rgba(56, 189, 248, 0.28);
+  border-color: rgba(96, 165, 250, 0.45);
+}
+
+/* 2b. Dedicated Active Roles Filter Tabs & Cards */
+.active-role-card {
+  transition: transform 0.22s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.22s ease,
+              border-color 0.22s ease,
+              opacity 0.2s ease;
+  will-change: transform;
+}
+.active-role-card:hover {
+  transform: translateY(-2.5px);
+}
+.active-filter-btn {
+  cursor: pointer;
+  user-select: none;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.active-filter-btn.active {
+  background-color: #2563eb !important;
+  color: #ffffff !important;
+  border-color: #2563eb !important;
+  box-shadow: 0 4px 14px -2px rgba(37, 99, 235, 0.35) !important;
+}
+.active-filter-btn.active span:last-child {
+  background-color: rgba(255, 255, 255, 0.25) !important;
+  color: #ffffff !important;
 }
 
 /* 3. Button Sheen & Glow Animations */
@@ -823,13 +846,13 @@ a[aria-label*="Profile"]:hover, a[aria-label*="Email"]:hover, a[aria-label*="Wha
 .float-delay-4 { animation-delay: 3.2s; }
 .float-delay-5 { animation-delay: 4.0s; }
 
-/* Interactive Hover Elevation */
+/* Interactive Hover Elevation - Calm and Steady */
 .hover-float-in-air {
-  transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.35s ease;
+  transition: transform 0.22s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.22s ease;
 }
 .hover-float-in-air:hover {
-  transform: translateY(-8px) scale(1.02);
-  box-shadow: 0 20px 35px -5px rgba(37, 99, 235, 0.18), 0 10px 15px -5px rgba(15, 23, 42, 0.08);
+  transform: translateY(-2.5px);
+  box-shadow: 0 12px 28px -6px rgba(15, 23, 42, 0.09);
 }
 
 /* Floating 3D Visual Preview Badges in Hero */
