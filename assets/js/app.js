@@ -259,6 +259,66 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // --------------------------------------------------
+  // 5.5. Experience Timeline Filter Tabs (Active vs Completed)
+  // --------------------------------------------------
+  const expFilterBtns = document.querySelectorAll('.exp-filter-btn');
+  const expCards = document.querySelectorAll('.exp-item-card');
+  const expGroupHeaders = document.querySelectorAll('.exp-group-header');
+
+  if (expFilterBtns.length > 0) {
+    expFilterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        expFilterBtns.forEach(b => {
+          b.classList.remove('active', 'bg-white', 'dark:bg-slate-800', 'text-blue-600', 'dark:text-blue-400', 'shadow-sm');
+          b.classList.add('text-slate-600', 'dark:text-slate-400');
+        });
+        btn.classList.add('active', 'bg-white', 'dark:bg-slate-800', 'text-blue-600', 'dark:text-blue-400', 'shadow-sm');
+        btn.classList.remove('text-slate-600', 'dark:text-slate-400');
+
+        const filter = btn.getAttribute('data-exp-filter');
+
+        expCards.forEach(card => {
+          const status = card.getAttribute('data-status');
+          const category = card.getAttribute('data-category') || '';
+
+          let match = false;
+          if (filter === 'all') {
+            match = true;
+          } else if (filter === 'active' && status === 'active') {
+            match = true;
+          } else if (filter === 'completed' && status === 'completed') {
+            match = true;
+          } else if (category.includes(filter)) {
+            match = true;
+          }
+
+          if (match) {
+            card.style.display = 'flex';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+
+        // Hide or show track group headers based on filter
+        expGroupHeaders.forEach(header => {
+          const headerStatus = header.getAttribute('data-status');
+          if (filter === 'all') {
+            header.style.display = 'block';
+          } else if (filter === 'active' && headerStatus === 'active') {
+            header.style.display = 'block';
+          } else if (filter === 'completed' && headerStatus === 'completed') {
+            header.style.display = 'block';
+          } else {
+            header.style.display = 'none';
+          }
+        });
+
+        if (window.lucide) window.lucide.createIcons();
+      });
+    });
+  }
+
+  // --------------------------------------------------
   // 6. Contact Form Submission (Formspree AJAX)
   // --------------------------------------------------
   const contactForm = document.getElementById('contact-form');
