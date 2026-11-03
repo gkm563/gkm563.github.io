@@ -65,6 +65,10 @@ function buildSystemPrompt() {
         `• ${a.title}${a.date ? ' (' + a.date + ')' : ''}: ${a.detail} [Source: ${a.source}]`
     ).join('\n');
 
+    const experienceList = (K.experience || []).map(e =>
+        `• ${e.company} — ${e.role} (${e.period}, Status: ${e.status}, Location: ${e.location}): ${e.summary} Key Details: ${e.bullets ? e.bullets.join('; ') : ''} [Proof: ${e.media || 'Verified'} | URL: ${e.proofUrl || 'https://gkm563.github.io/verify.html'}]`
+    ).join('\n');
+
     const communityList = K.communityRoles.map(c =>
         `• ${c.org} — ${c.role}: ${c.impact} [Source: ${c.source}]`
     ).join('\n');
@@ -129,6 +133,9 @@ function buildSystemPrompt() {
     ## My Achievements & Wins
     ${achievementsList}
     
+    ## My Verified Work Experience & Timelines (Present & Completed Careers)
+    ${experienceList}
+
     ## My Community Roles & Leadership
     ${communityList}
     
