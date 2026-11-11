@@ -410,6 +410,75 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     }
 
+    // Active Role Individual Card Expand/Collapse
+    document.addEventListener('click', (e) => {
+      const expandBtn = e.target.closest('.active-role-expand-btn');
+      if (!expandBtn) return;
+
+      e.preventDefault();
+      const card = expandBtn.closest('.active-role-card');
+      if (!card) return;
+
+      const details = card.querySelector('.active-role-details');
+      if (!details) return;
+
+      const isExpanded = expandBtn.getAttribute('aria-expanded') === 'true';
+      const stateLabel = expandBtn.querySelector('.expand-state-label');
+      const chevron = expandBtn.querySelector('.chevron-icon');
+
+      if (isExpanded) {
+        details.classList.add('hidden');
+        expandBtn.setAttribute('aria-expanded', 'false');
+        if (stateLabel) stateLabel.textContent = 'View';
+        if (chevron) chevron.style.transform = 'rotate(0deg)';
+      } else {
+        details.classList.remove('hidden');
+        expandBtn.setAttribute('aria-expanded', 'true');
+        if (stateLabel) stateLabel.textContent = 'Hide';
+        if (chevron) chevron.style.transform = 'rotate(180deg)';
+      }
+
+      if (window.lucide) window.lucide.createIcons();
+    });
+
+    // Toggle All Active Details Button
+    const toggleAllBtn = document.getElementById('toggleAllActiveDetails');
+    const toggleAllLabel = document.getElementById('toggleAllActiveLabel');
+    if (toggleAllBtn) {
+      let allExpanded = false;
+      toggleAllBtn.addEventListener('click', () => {
+        allExpanded = !allExpanded;
+        const visibleCards = Array.from(activeRoleCards).filter(c => c.style.display !== 'none');
+        
+        visibleCards.forEach(card => {
+          const btn = card.querySelector('.active-role-expand-btn');
+          const details = card.querySelector('.active-role-details');
+          const stateLabel = btn ? btn.querySelector('.expand-state-label') : null;
+          const chevron = btn ? btn.querySelector('.chevron-icon') : null;
+
+          if (details && btn) {
+            if (allExpanded) {
+              details.classList.remove('hidden');
+              btn.setAttribute('aria-expanded', 'true');
+              if (stateLabel) stateLabel.textContent = 'Hide';
+              if (chevron) chevron.style.transform = 'rotate(180deg)';
+            } else {
+              details.classList.add('hidden');
+              btn.setAttribute('aria-expanded', 'false');
+              if (stateLabel) stateLabel.textContent = 'View';
+              if (chevron) chevron.style.transform = 'rotate(0deg)';
+            }
+          }
+        });
+
+        if (toggleAllLabel) {
+          toggleAllLabel.textContent = allExpanded ? 'Collapse All Details' : 'Expand All Details';
+        }
+
+        if (window.lucide) window.lucide.createIcons();
+      });
+    }
+
     // Run initial filter on load
     window.applyActiveSubFilter();
   }
