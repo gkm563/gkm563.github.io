@@ -28,9 +28,9 @@ class GautamAIClone {
     root.id = 'gkm-clone-root';
     root.innerHTML = `
       <!-- FAB Floating Trigger Button -->
-      <div class="gkm-clone-fab" id="gkm-clone-fab" title="Chat with Gautam's AI Clone">
+      <div class="gkm-clone-fab" id="gkm-clone-fab" role="button" tabindex="0" aria-label="Open Gautam's AI clone chat" title="Chat with Gautam's AI Clone">
         <div class="gkm-fab-avatar-wrapper">
-          <img src="assets/images/profile/Gautam_Kumar_Maurya.jpg" alt="Gautam AI Clone" class="gkm-fab-avatar">
+          <img src="assets/images/profile/gautam-avatar-128.webp" alt="Gautam AI Clone" class="gkm-fab-avatar">
           <div class="gkm-fab-status-dot"></div>
         </div>
         <div class="gkm-fab-text">
@@ -44,11 +44,11 @@ class GautamAIClone {
         <!-- Header -->
         <div class="gkm-clone-header">
           <div class="gkm-header-user">
-            <img src="assets/images/profile/Gautam_Kumar_Maurya.jpg" alt="Gautam Kumar Maurya" class="gkm-header-avatar">
+            <img src="assets/images/profile/gautam-avatar-128.webp" alt="Gautam Kumar Maurya" class="gkm-header-avatar">
             <div>
               <div class="gkm-header-name">
                 <span>Gautam's AI Clone</span>
-                <i class="fa-solid fa-circle-check" style="color: #3B82F6; font-size: 13px;" title="Verified Official Clone"></i>
+                <svg class="gkm-verified" viewBox="0 0 24 24" fill="none" stroke="#3B82F6" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Verified official clone"><circle cx="12" cy="12" r="9"/><path d="m8 12 2.6 2.6L16 9"/></svg>
               </div>
               <div class="gkm-header-role">
                 <span class="status-dot-live" style="width: 7px; height: 7px; background: #10B981; border-radius: 50%; display: inline-block;"></span>
@@ -57,11 +57,11 @@ class GautamAIClone {
             </div>
           </div>
           <div class="gkm-header-actions">
-            <button class="gkm-header-btn" id="gkm-voice-btn" title="Toggle Voice Text-to-Speech">
-              <i class="fa-solid fa-volume-xmark"></i>
+            <button class="gkm-header-btn" id="gkm-voice-btn" type="button" title="Toggle Voice Text-to-Speech" aria-label="Toggle voice">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H3v6h3l5 4z"/><path d="m16 9.5 5 5M21 9.5l-5 5"/></svg>
             </button>
-            <button class="gkm-header-btn" id="gkm-close-btn" title="Close Chat">
-              <i class="fa-solid fa-xmark"></i>
+            <button class="gkm-header-btn" id="gkm-close-btn" type="button" title="Close Chat" aria-label="Close chat">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>
             </button>
           </div>
         </div>
@@ -82,8 +82,8 @@ class GautamAIClone {
         <!-- Input Area -->
         <div class="gkm-clone-input-area">
           <input type="text" class="gkm-clone-input" id="gkm-clone-input" placeholder="Ask me anything about Gautam..." autocomplete="off">
-          <button class="gkm-send-btn" id="gkm-send-btn" title="Send Message">
-            <i class="fa-solid fa-paper-plane"></i>
+          <button class="gkm-send-btn" id="gkm-send-btn" type="button" title="Send Message" aria-label="Send message">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 2 11 13"/><path d="M22 2 15 22l-4-9-9-4z"/></svg>
           </button>
         </div>
       </div>
@@ -100,15 +100,23 @@ class GautamAIClone {
     const input = document.getElementById('gkm-clone-input');
     const promptsContainer = document.getElementById('gkm-quick-prompts');
 
-    if (fab) fab.addEventListener('click', () => this.toggleWindow());
+    if (fab) {
+      fab.addEventListener('click', () => this.toggleWindow());
+      fab.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          this.toggleWindow();
+        }
+      });
+    }
     if (closeBtn) closeBtn.addEventListener('click', () => this.toggleWindow(false));
 
     if (voiceBtn) {
       voiceBtn.addEventListener('click', () => {
         this.isVoiceEnabled = !this.isVoiceEnabled;
         voiceBtn.innerHTML = this.isVoiceEnabled
-          ? `<i class="fa-solid fa-volume-high" style="color: #3B82F6;"></i>`
-          : `<i class="fa-solid fa-volume-xmark"></i>`;
+          ? `<svg viewBox="0 0 24 24" fill="none" stroke="#3B82F6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H3v6h3l5 4z"/><path d="M15.5 8.5a5 5 0 0 1 0 7M18.5 5.5a9 9 0 0 1 0 13"/></svg>`
+          : `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H3v6h3l5 4z"/><path d="m16 9.5 5 5M21 9.5l-5 5"/></svg>`;
         if (!this.isVoiceEnabled && this.synth) {
           this.synth.cancel();
         }
@@ -331,7 +339,7 @@ You can reach Gautam directly via **Phone/WhatsApp at [+91 9125563563](https://a
     msgDiv.className = `gkm-msg ${sender}`;
 
     const avatarSrc = sender === 'bot'
-      ? 'assets/images/profile/Gautam_Kumar_Maurya.jpg'
+      ? 'assets/images/profile/gautam-avatar-128.webp'
       : 'https://cdn-icons-png.flaticon.com/512/3177/3177440.png';
 
     const formattedText = this.formatMarkdown(text);
@@ -356,7 +364,7 @@ You can reach Gautam directly via **Phone/WhatsApp at [+91 9125563563](https://a
     typingDiv.id = 'gkm-typing-indicator';
     typingDiv.className = 'gkm-msg bot';
     typingDiv.innerHTML = `
-      <img src="assets/images/profile/Gautam_Kumar_Maurya.jpg" alt="Gautam AI" class="gkm-msg-avatar">
+      <img src="assets/images/profile/gautam-avatar-128.webp" alt="Gautam AI" class="gkm-msg-avatar">
       <div class="gkm-msg-bubble">
         <div class="gkm-typing-dots">
           <div class="gkm-typing-dot"></div>

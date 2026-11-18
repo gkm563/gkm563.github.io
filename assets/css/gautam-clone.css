@@ -253,6 +253,9 @@ html:not(.dark) .gkm-header-btn {
   background: #2563EB;
   color: #FFFFFF !important;
 }
+.gkm-header-btn svg { width: 15px; height: 15px; display: block; }
+.gkm-header-btn:hover svg { stroke: #FFFFFF; }
+.gkm-header-name .gkm-verified { width: 13px; height: 13px; flex: none; }
 
 /* 4. Chat Messages Stream Area */
 .gkm-clone-messages {
@@ -445,6 +448,7 @@ html:not(.dark) .gkm-clone-input {
   transform: scale(1.05);
   box-shadow: 0 4px 14px rgba(37, 99, 235, 0.4);
 }
+.gkm-send-btn svg { width: 18px; height: 18px; display: block; }
 
 /* Mobile Responsiveness for Chat Window */
 @media (max-width: 480px) {
@@ -473,4 +477,42 @@ html:not(.dark) .gkm-clone-input {
   .gkm-fab-subtitle {
     font-size: 10px !important;
   }
+}
+
+/* 2026 portfolio: compact avatar launcher, expands only on hover */
+.gkm-clone-fab {
+  width: 58px !important;
+  height: 58px !important;
+  padding: 7px !important;
+  gap: 0 !important;
+  justify-content: center !important;
+  border-radius: 50% !important;
+}
+.gkm-clone-fab .gkm-fab-text { display: none !important; }
+.gkm-clone-fab .gkm-fab-avatar-wrapper { width: 44px; height: 44px; }
+.gkm-clone-fab:hover,
+.gkm-clone-fab:focus-visible {
+  width: auto !important;
+  padding: 8px 18px 8px 9px !important;
+  gap: 11px !important;
+  border-radius: 99px !important;
+}
+.gkm-clone-fab:hover .gkm-fab-text,
+.gkm-clone-fab:focus-visible .gkm-fab-text { display: block !important; }
+
+@media (max-width: 480px) {
+  .gkm-clone-fab,
+  .gkm-clone-fab:hover,
+  .gkm-clone-fab:focus-visible {
+    bottom: 18px !important;
+    right: 16px !important;
+    width: 52px !important;
+    height: 52px !important;
+    padding: 5px !important;
+    gap: 0 !important;
+  }
+  .gkm-clone-fab .gkm-fab-text,
+  .gkm-clone-fab:hover .gkm-fab-text,
+  .gkm-clone-fab:focus-visible .gkm-fab-text { display: none !important; }
+  .gkm-clone-fab .gkm-fab-avatar-wrapper { width: 40px; height: 40px; }
 }
