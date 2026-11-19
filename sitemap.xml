@@ -147,14 +147,14 @@
 
   <!-- ===== 12. Honors, Awards & Achievements Showcase ===== -->
   <url>
-    <loc>https://gkm563.github.io/achievements.html</loc>
-    <lastmod>2026-11-03</lastmod>
+    <loc>https://gkm563.github.io/achievements/</loc>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.93</priority>
     <image:image>
-      <image:loc>https://gkm563.github.io/assets/images/profile/Gautam_Kumar_Maurya.jpg</image:loc>
-      <image:title>Gautam Kumar Maurya — Verified Honors &amp; Achievements</image:title>
-      <image:caption>Complete verified awards, stage felicitations by UP Board, Dainik Jagran, Vidya Bharti, and campus leadership medals.</image:caption>
+      <image:loc>https://gkm563.github.io/assets/images/og/og-achievements-1200x630.jpg</image:loc>
+      <image:title>Gautam Kumar Maurya — Honours ledger: proof, not promises</image:title>
+      <image:caption>35 dated honours across 8 categories, with LinkedIn treasury overlays, Oracle CertView, TruScholar and Gerrit proof links.</image:caption>
     </image:image>
   </url>
 

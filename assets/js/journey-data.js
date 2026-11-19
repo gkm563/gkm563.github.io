@@ -803,7 +803,7 @@ const JOURNEY_DATA = {
       impact: "National visibility for Vindhya Millets e-commerce and student engineering leadership.",
       evidence: {
         images: ["assets/images/vindhya-millets/logo.png"],
-        links: ["vindhya-millets.html", "achievements.html#awards-grid"],
+        links: ["vindhya-millets.html", "achievements/#archive"],
         github: "https://github.com/gkm563",
         certificate: null,
         linkedin: "https://www.linkedin.com/in/gkm563/"
@@ -915,7 +915,7 @@ const JOURNEY_DATA = {
       impact: "Selected among top engineering applicants across India for national workforce development.",
       evidence: {
         images: [],
-        links: ["achievements.html#awards-grid"],
+        links: ["achievements/#archive"],
         github: "https://github.com/gkm563",
         certificate: null,
         linkedin: "https://www.linkedin.com/in/gkm563/"

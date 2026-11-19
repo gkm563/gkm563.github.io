@@ -33,7 +33,7 @@ deliberately kept on separate pages and are not part of this ledger.
 - [Roles & responsibilities (HTML)](https://gkm563.github.io/roles-and-responsibilities/): Full ledger with filters, search and verification IDs.
 - [Roles data (JSON)](https://gkm563.github.io/assets/data/roles-2026.json): Structured feed of all 29 roles, dates, responsibilities and proof URLs.
 - [Portfolio home](https://gkm563.github.io/): Overview, selected work and biography.
-- [Achievements](https://gkm563.github.io/achievements.html): Awards and honours (separate from roles).
+- [Achievements](https://gkm563.github.io/achievements/): Honours ledger — 35 dated awards, academic registry and public proof links (separate from roles).
 - [Certifications](https://gkm563.github.io/certifications.html): Verified certificates and credentials.
 - [B.Tech journey](https://gkm563.github.io/btech-journey.html): Academic record and campus timeline.
 - [Legacy verification registry](https://gkm563.github.io/verify.html): Redirects into the current roles ledger and the relevant credential pages.
