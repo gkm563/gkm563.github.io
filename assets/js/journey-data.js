@@ -362,7 +362,7 @@ const JOURNEY_DATA = {
       impact: "Earned academic prestige and student leadership opportunities within the department.",
       evidence: {
         images: ["assets/images/gallery/gautam-kumar-maurya-aktu.jpg", "assets/images/gallery/gautam-kumar-maurya-uit-topper.jpg"],
-        links: ["verify.html#GKM-ACAD-AKTU-SEM-2025"],
+        links: ["btech-journey.html#react-journey-root"],
         github: null,
         certificate: null,
         linkedin: "https://www.linkedin.com/in/gkm563/"
@@ -390,7 +390,7 @@ const JOURNEY_DATA = {
       impact: "Solidified selection for the UP Police Cyber Security Fellowship (APCSIP-2026).",
       evidence: {
         images: [],
-        links: ["verify.html#GKM-ACAD-AKTU-CYBER-2026"],
+        links: ["btech-journey.html#react-journey-root"],
         github: null,
         certificate: null,
         linkedin: "https://www.linkedin.com/in/gkm563/"
@@ -803,7 +803,7 @@ const JOURNEY_DATA = {
       impact: "National visibility for Vindhya Millets e-commerce and student engineering leadership.",
       evidence: {
         images: ["assets/images/vindhya-millets/logo.png"],
-        links: ["vindhya-millets.html", "verify.html#GKM-MEDIA-DDKISAN-2026"],
+        links: ["vindhya-millets.html", "achievements.html#awards-grid"],
         github: "https://github.com/gkm563",
         certificate: null,
         linkedin: "https://www.linkedin.com/in/gkm563/"
@@ -887,7 +887,7 @@ const JOURNEY_DATA = {
       impact: "Integrating Oracle agentic patterns into full-stack and digital clone architectures.",
       evidence: {
         images: [],
-        links: ["https://catalog-education.oracle.com/ords/certview/sharebadge?id=B7B7A007EF12A17531CC715F9C857572C0203D684C710B281A7F5F6F31D76F1D", "verify.html#GKM-CERT-ORACLE-AI-2026"],
+        links: ["https://catalog-education.oracle.com/ords/certview/sharebadge?id=B7B7A007EF12A17531CC715F9C857572C0203D684C710B281A7F5F6F31D76F1D", "certifications.html#certs-grid"],
         github: "https://github.com/gkm563",
         certificate: "https://catalog-education.oracle.com/ords/certview/sharebadge?id=B7B7A007EF12A17531CC715F9C857572C0203D684C710B281A7F5F6F31D76F1D",
         linkedin: "https://www.linkedin.com/in/gkm563/"
@@ -915,7 +915,7 @@ const JOURNEY_DATA = {
       impact: "Selected among top engineering applicants across India for national workforce development.",
       evidence: {
         images: [],
-        links: ["verify.html#GKM-FELL-SAMSUNG-2026"],
+        links: ["achievements.html#awards-grid"],
         github: "https://github.com/gkm563",
         certificate: null,
         linkedin: "https://www.linkedin.com/in/gkm563/"
@@ -943,7 +943,7 @@ const JOURNEY_DATA = {
       impact: "Incubation pitch shortlists at AKTU Innovation Hub and UPE-SEEDS Varanasi.",
       evidence: {
         images: [],
-        links: ["verify.html#GKM-STARTUP-PATHSYNC-2026"],
+        links: ["roles-and-responsibilities/#GKM-STARTUP-PATHSYNC-2026"],
         github: "https://github.com/gkm563",
         certificate: null,
         linkedin: "https://www.linkedin.com/in/gkm563/"
@@ -971,7 +971,7 @@ const JOURNEY_DATA = {
       impact: "Maintains top department rank in B.Tech Computer Science & Engineering (Data Science).",
       evidence: {
         images: [],
-        links: ["verify.html#GKM-ACAD-AKTU-SESS-2026"],
+        links: ["btech-journey.html#react-journey-root"],
         github: "https://github.com/gkm563",
         certificate: null,
         linkedin: "https://www.linkedin.com/in/gkm563/"

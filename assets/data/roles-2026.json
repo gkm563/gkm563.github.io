@@ -1,0 +1,990 @@
+{
+  "generated": "2026-11-19",
+  "canonical": "https://gkm563.github.io/roles-and-responsibilities/",
+  "person": {
+    "name": "Gautam Kumar Maurya",
+    "alternateName": "gkm563",
+    "url": "https://gkm563.github.io/",
+    "email": "gkmwin563@gmail.com",
+    "telephone": "+91-9125563563",
+    "location": "Prayagraj, Uttar Pradesh, India"
+  },
+  "counts": {
+    "total": 29,
+    "current": 15,
+    "completed": 14,
+    "organisations": 27,
+    "internships": 6
+  },
+  "roles": [
+    {
+      "id": "GKM-EXP-VM-2026",
+      "aliases": [],
+      "role": "Digital Product & Technology Lead",
+      "company": "Vindhya Millets",
+      "period": "Sep 2026 – Present",
+      "start": "2026-09",
+      "end": null,
+      "current": true,
+      "category": "work",
+      "location": "Mirzapur, Uttar Pradesh, India · Hybrid",
+      "summary": "Leading the development and evolution of Vindhya Millets’ digital presence — from an initial static website to a custom, database-driven e-commerce platform.",
+      "responsibilities": [
+        "End-to-End Website Development: Registered domain, configured DNS, SSL, and Hostinger hosting, built website using HTML, CSS, and JavaScript.",
+        "Full-Stack Engineering: Evolved into custom e-commerce platform using PHP, MySQL, and JavaScript with dynamic product catalogues.",
+        "Payment Integration: Integrated Razorpay with payment verification and webhook workflows for secure online transactions.",
+        "Admin & Operations: Built product and order management functionality to streamline e-commerce operations.",
+        "SEO & Deployment: Managed production deployment, technical SEO, SSL, backups, caching, and maintenance.",
+        "Security & Reliability: Implemented input validation, prepared statements, session management, and CSRF protection."
+      ],
+      "highlights": [
+        "Custom e-commerce platform",
+        "Razorpay + webhooks",
+        "Hardened production stack"
+      ],
+      "tags": [
+        "PHP",
+        "MySQL",
+        "Razorpay",
+        "Technical SEO",
+        "Hostinger"
+      ],
+      "verification": {
+        "id": "GKM-EXP-VM-2026",
+        "url": "https://gkm563.github.io/roles-and-responsibilities/#GKM-EXP-VM-2026",
+        "proof": "https://www.linkedin.com/in/gkm563/overlay/Position/3028297680/treasury/?profileId=ACoAAELRmwcB5D6Nca6MLh8d-CklqBAald3YYwA",
+        "proofLabel": "Offer letter"
+      }
+    },
+    {
+      "id": "GKM-EXP-UCC-2026",
+      "aliases": [],
+      "role": "President",
+      "company": "UIT Coding Club - UCC",
+      "period": "Oct 2026 – Present",
+      "start": "2026-10",
+      "end": null,
+      "current": true,
+      "category": "leadership",
+      "location": "Prayagraj, Uttar Pradesh, India · On-site",
+      "summary": "Leading the premier coding club at UIT. Spearheaded Code Aarambh 9.0 (600+ freshmen), Code Gyan 4.0, and UCC 1st Advanced Contest (140+ 3rd years).",
+      "responsibilities": [
+        "Organized Code Aarambh 9.0 for 600+ first-year B.Tech students.",
+        "Organized Code Gyan 4.0 technical aptitude contest for 2nd-year CSE students on 27 Oct 2026.",
+        "Conducted UCC 1st Advanced Contest for 140+ 3rd-year engineering students.",
+        "Distributed official club T-shirts with DSW Dr. Manas Pandey and HOD Dr. Dhananjay Sharma."
+      ],
+      "highlights": [
+        "600+ freshmen at Code Aarambh 9.0",
+        "140+ in advanced contest"
+      ],
+      "tags": [
+        "Leadership",
+        "Coding club",
+        "Events",
+        "Mentoring"
+      ],
+      "verification": {
+        "id": "GKM-EXP-UCC-2026",
+        "url": "https://gkm563.github.io/roles-and-responsibilities/#GKM-EXP-UCC-2026",
+        "proof": "https://www.linkedin.com/in/gkm563/overlay/Position/3050585218/treasury/?profileId=ACoAAELRmwcB5D6Nca6MLh8d-CklqBAald3YYwA",
+        "proofLabel": "Appointment record"
+      }
+    },
+    {
+      "id": "GKM-EXP-WCT-2026",
+      "aliases": [],
+      "role": "WikiClub Tech Envoy",
+      "company": "WikiClub Tech-UIT",
+      "period": "Sep 2026 – Present",
+      "start": "2026-09",
+      "end": null,
+      "current": true,
+      "category": "leadership",
+      "location": "Prayagraj, Uttar Pradesh, India · On-site",
+      "summary": "Serving as official campus envoy for Wikimedia open-source programs and technical contribution initiatives.",
+      "responsibilities": [
+        "Secured 1st Position in Wiki Contribution Marathon 2026 for outstanding technical contributions.",
+        "Driving student engagement and open-source contributions to Wikimedia projects."
+      ],
+      "highlights": [
+        "1st position, Wiki Contribution Marathon 2026"
+      ],
+      "tags": [
+        "Wikimedia",
+        "Open source",
+        "Campus envoy"
+      ],
+      "verification": {
+        "id": "GKM-EXP-WCT-2026",
+        "url": "https://gkm563.github.io/roles-and-responsibilities/#GKM-EXP-WCT-2026",
+        "proof": "https://www.linkedin.com/in/gkm563/overlay/Position/3017760283/treasury/?profileId=ACoAAELRmwcB5D6Nca6MLh8d-CklqBAald3YYwA",
+        "proofLabel": "Offer + award record"
+      }
+    },
+    {
+      "id": "GKM-STARTUP-PATHSYNC-2026",
+      "aliases": [],
+      "role": "Co-Founder & Technical Lead",
+      "company": "PathSync Learning",
+      "period": "Aug 2026 – Present",
+      "start": "2026-08",
+      "end": null,
+      "current": true,
+      "category": "work",
+      "location": "Prayagraj, Uttar Pradesh, India · On-site",
+      "summary": "Co-founded tech-ed platform engineering curriculum tracking, learner roadmaps, and skills telemetry systems.",
+      "responsibilities": [
+        "Architected core web architecture, modular roadmap tracker, and dashboard.",
+        "Managing product roadmap and engineering workflows."
+      ],
+      "highlights": [
+        "Co-founded Aug 2026",
+        "Roadmap + telemetry architecture"
+      ],
+      "tags": [
+        "EdTech",
+        "Product",
+        "Architecture",
+        "Roadmaps"
+      ],
+      "verification": {
+        "id": "GKM-STARTUP-PATHSYNC-2026",
+        "url": "https://gkm563.github.io/roles-and-responsibilities/#GKM-STARTUP-PATHSYNC-2026",
+        "proof": "https://www.linkedin.com/in/gkm563/details/experience/",
+        "proofLabel": "LinkedIn experience"
+      }
+    },
+    {
+      "id": "GKM-EXP-C3I-2026",
+      "aliases": [],
+      "role": "Cybersecurity Trainee — CyberSuraksha",
+      "company": "C3iHub, IIT Kanpur",
+      "period": "Aug 2026 – Present",
+      "start": "2026-08",
+      "end": null,
+      "current": true,
+      "category": "internship",
+      "location": "Kanpur / Prayagraj · Hybrid",
+      "summary": "Selected for prestigious CyberSuraksha national security capacity-building program at C3iHub, IIT Kanpur.",
+      "responsibilities": [
+        "Undergoing rigorous training in cyber defense, vulnerability assessments, and threat mitigation.",
+        "Studying incident response, enterprise SOC telemetry, and network intrusion analysis."
+      ],
+      "highlights": [
+        "National CyberSuraksha cohort"
+      ],
+      "tags": [
+        "Cybersecurity",
+        "SOC",
+        "Incident response",
+        "Threat intel"
+      ],
+      "verification": {
+        "id": "GKM-EXP-C3I-2026",
+        "url": "https://gkm563.github.io/roles-and-responsibilities/#GKM-EXP-C3I-2026",
+        "proof": "https://www.linkedin.com/in/gkm563/overlay/Position/2997398975/treasury/?profileId=ACoAAELRmwcB5D6Nca6MLh8d-CklqBAald3YYwA",
+        "proofLabel": "Selection email"
+      }
+    },
+    {
+      "id": "GKM-EXP-HR-2026",
+      "aliases": [],
+      "role": "Vice President",
+      "company": "HackerRank UIT",
+      "period": "Jul 2026 – Present",
+      "start": "2026-07",
+      "end": null,
+      "current": true,
+      "category": "leadership",
+      "location": "Prayagraj, UP · On-site",
+      "summary": "Leading HackerRank student chapter, hosting departmental coding contests, and competitive programming meetups.",
+      "responsibilities": [
+        "Organized Orientation 2026 and inaugural Departmental Coding Contest for 140+ 2nd-year CSE students.",
+        "Promoting algorithmic problem-solving and technical readiness across campus."
+      ],
+      "highlights": [
+        "140+ in first departmental contest"
+      ],
+      "tags": [
+        "Leadership",
+        "Competitive programming",
+        "Events"
+      ],
+      "verification": {
+        "id": "GKM-EXP-HR-2026",
+        "url": "https://gkm563.github.io/roles-and-responsibilities/#GKM-EXP-HR-2026",
+        "proof": "https://www.linkedin.com/in/gkm563/overlay/Position/2974431189/treasury/?profileId=ACoAAELRmwcB5D6Nca6MLh8d-CklqBAald3YYwA",
+        "proofLabel": "Appointment email"
+      }
+    },
+    {
+      "id": "GKM-EXP-GFG-2026",
+      "aliases": [
+        "GKM-EXP-GFG-VP-2026"
+      ],
+      "role": "Vice President",
+      "company": "GeeksforGeeks Student Chapter UIT",
+      "period": "Jul 2026 – Present",
+      "start": "2026-07",
+      "end": null,
+      "current": true,
+      "category": "leadership",
+      "location": "Prayagraj, UP · On-site",
+      "summary": "Promoted to Vice President after serving as Technical Head. Leading chapter operations, flagship hackathons, and technical workshops.",
+      "responsibilities": [
+        "Overseeing student tech chapters, technical operations, and community growth.",
+        "Mentoring 500+ junior students in Data Structures, Algorithms, and Full-Stack Engineering."
+      ],
+      "highlights": [
+        "500+ juniors mentored"
+      ],
+      "tags": [
+        "Leadership",
+        "DSA",
+        "Mentoring",
+        "Hackathons"
+      ],
+      "verification": {
+        "id": "GKM-EXP-GFG-2026",
+        "url": "https://gkm563.github.io/roles-and-responsibilities/#GKM-EXP-GFG-2026",
+        "proof": "https://www.linkedin.com/in/gkm563/overlay/Position/2974399707/treasury/?profileId=ACoAAELRmwcB5D6Nca6MLh8d-CklqBAald3YYwA",
+        "proofLabel": "VP appointment"
+      }
+    },
+    {
+      "id": "GKM-EXP-EDUWIKI-2026",
+      "aliases": [],
+      "role": "EduWiki Hub Mentee (Mentorship Program)",
+      "company": "EduWiki Hub (Wikipedia & Education User Group)",
+      "period": "Jul 2026 – Present",
+      "start": "2026-07",
+      "end": null,
+      "current": true,
+      "category": "fellowship",
+      "location": "Hybrid · Internship",
+      "summary": "Selected for international mentorship program advancing educational outreach and technical integrations with Wikimedia tools.",
+      "responsibilities": [
+        "Collaborating with global mentors on open knowledge infrastructure.",
+        "Integrating technical tools for educational workflows and digital literacy."
+      ],
+      "highlights": [
+        "International Wikimedia mentorship"
+      ],
+      "tags": [
+        "Wikimedia",
+        "Education",
+        "Open knowledge"
+      ],
+      "verification": {
+        "id": "GKM-EXP-EDUWIKI-2026",
+        "url": "https://gkm563.github.io/roles-and-responsibilities/#GKM-EXP-EDUWIKI-2026",
+        "proof": "https://www.linkedin.com/in/gkm563/overlay/Position/2987005839/treasury/?profileId=ACoAAELRmwcB5D6Nca6MLh8d-CklqBAald3YYwA",
+        "proofLabel": "Mentorship email"
+      }
+    },
+    {
+      "id": "GKM-EXP-TE-2026",
+      "aliases": [],
+      "role": "Technical Associate & Content Writer",
+      "company": "TechEraa",
+      "period": "Apr 2026 – Present",
+      "start": "2026-04",
+      "end": null,
+      "current": true,
+      "category": "work",
+      "location": "Remote",
+      "summary": "Publishing developer guides, technical articles, and architectural teardowns.",
+      "responsibilities": [
+        "Writing in-depth content on Full-Stack systems, cloud tooling, and open-source ecosystems.",
+        "Assisting with community developer outreach and technical write-ups."
+      ],
+      "highlights": [
+        "Developer guides + architecture teardowns"
+      ],
+      "tags": [
+        "Technical writing",
+        "Full-stack",
+        "Developer outreach"
+      ],
+      "verification": {
+        "id": "GKM-EXP-TE-2026",
+        "url": "https://gkm563.github.io/roles-and-responsibilities/#GKM-EXP-TE-2026",
+        "proof": "https://www.linkedin.com/in/gkm563/details/experience/",
+        "proofLabel": "LinkedIn experience"
+      }
+    },
+    {
+      "id": "GKM-EXP-UDTECH-2026",
+      "aliases": [
+        "GKM-EXP-UDT-TH-2026"
+      ],
+      "role": "Technical Head",
+      "company": "UDTech India",
+      "period": "Mar 2026 – Present",
+      "start": "2026-03",
+      "end": null,
+      "current": true,
+      "category": "leadership",
+      "location": "Prayagraj, UP",
+      "summary": "Technical Head overseeing BuildX 2026 Hackathon engineering, platform development, and evaluation.",
+      "responsibilities": [
+        "Designed and developed the official BuildX 2026 Hackathon website from scratch (frontend, backend, deployment).",
+        "Served as Co-Organizer, Judge, and Mentor evaluating 30+ teams from across India.",
+        "Produced video content and collaborated on 6 technical reels with friends for participating sponsor."
+      ],
+      "highlights": [
+        "BuildX 2026 site built solo",
+        "30+ teams judged"
+      ],
+      "tags": [
+        "Hackathons",
+        "Full-stack",
+        "Judging",
+        "Mentoring"
+      ],
+      "verification": {
+        "id": "GKM-EXP-UDTECH-2026",
+        "url": "https://gkm563.github.io/roles-and-responsibilities/#GKM-EXP-UDTECH-2026",
+        "proof": "https://www.linkedin.com/in/gkm563/details/experience/",
+        "proofLabel": "LinkedIn experience"
+      }
+    },
+    {
+      "id": "GKM-EXP-GDG-2026",
+      "aliases": [],
+      "role": "Volunteer & Mentor",
+      "company": "GDG Prayagraj [official]",
+      "period": "Mar 2026 – Present",
+      "start": "2026-03",
+      "end": null,
+      "current": true,
+      "category": "community",
+      "location": "Prayagraj, UP · On-site",
+      "summary": "Active community volunteer and technical mentor for Google Developer Groups Prayagraj.",
+      "responsibilities": [
+        "Attended all 10+ community events, workshops, and technical sessions.",
+        "Served as Mentor in Agentic Premier League (APL), guiding participants throughout the AI competition."
+      ],
+      "highlights": [
+        "APL mentor",
+        "10+ community events"
+      ],
+      "tags": [
+        "Community",
+        "AI",
+        "Mentoring",
+        "Events"
+      ],
+      "verification": {
+        "id": "GKM-EXP-GDG-2026",
+        "url": "https://gkm563.github.io/roles-and-responsibilities/#GKM-EXP-GDG-2026",
+        "proof": "https://www.linkedin.com/in/gkm563/overlay/Position/2894650298/treasury/?profileId=ACoAAELRmwcB5D6Nca6MLh8d-CklqBAald3YYwA",
+        "proofLabel": "Mentor email"
+      }
+    },
+    {
+      "id": "GKM-EXP-GEMINI-2025",
+      "aliases": [],
+      "role": "Core Team Member",
+      "company": "Gemini Builders Community",
+      "period": "Nov 2025 – Present",
+      "start": "2025-11",
+      "end": null,
+      "current": true,
+      "category": "community",
+      "location": "Prayagraj, UP · On-site",
+      "summary": "Core team organizer leading offline Gemini and AI developer initiatives on campus.",
+      "responsibilities": [
+        "Co-organized 2 offline technical events with 650+ participants across 1st, 2nd, and 3rd year engineering batches.",
+        "Managed event planning, student registrations, and on-ground coordination.",
+        "Received official Certificate of Appreciation."
+      ],
+      "highlights": [
+        "650+ participants across 2 events"
+      ],
+      "tags": [
+        "Community",
+        "AI",
+        "Events",
+        "Partnerships"
+      ],
+      "verification": {
+        "id": "GKM-EXP-GEMINI-2025",
+        "url": "https://gkm563.github.io/roles-and-responsibilities/#GKM-EXP-GEMINI-2025",
+        "proof": "https://www.linkedin.com/in/gkm563/overlay/Position/2763009362/treasury/?profileId=ACoAAELRmwcB5D6Nca6MLh8d-CklqBAald3YYwA",
+        "proofLabel": "Certificate of appreciation"
+      }
+    },
+    {
+      "id": "GKM-EXP-PR-2025",
+      "aliases": [],
+      "role": "Co-Founder & CTO",
+      "company": "PrayagrajRooms",
+      "period": "Sep 2025 – Present",
+      "start": "2025-09",
+      "end": null,
+      "current": true,
+      "category": "work",
+      "location": "Prayagraj, Uttar Pradesh, India",
+      "summary": "Co-founded and built Prayagraj Rooms, a hyperlocal room-rental platform connecting students directly with property owners without broker fees.",
+      "responsibilities": [
+        "Designed and developed frontend, backend, database, admin panel, and owner dashboard using HTML, CSS, JavaScript, PHP, and MySQL.",
+        "Built room listings, photo management, owner communication, and inquiry workflows.",
+        "Took complete ownership of technical architecture, deployment, and product decisions.",
+        "Crossed 5,000+ platform clicks during its first promotional launch week."
+      ],
+      "highlights": [
+        "5,000+ clicks in launch week",
+        "Zero-broker rental model"
+      ],
+      "tags": [
+        "PHP",
+        "MySQL",
+        "PropTech",
+        "Full-stack",
+        "Product"
+      ],
+      "verification": {
+        "id": "GKM-EXP-PR-2025",
+        "url": "https://gkm563.github.io/roles-and-responsibilities/#GKM-EXP-PR-2025",
+        "proof": "https://www.linkedin.com/in/gkm563/overlay/Position/2989295379/treasury/?profileId=ACoAAELRmwcB5D6Nca6MLh8d-CklqBAald3YYwA",
+        "proofLabel": "Launch record"
+      }
+    },
+    {
+      "id": "GKM-EXP-WMF-2025",
+      "aliases": [
+        "GKM-EXP-WM-2025"
+      ],
+      "role": "Open Source Contributor",
+      "company": "Wikimedia Foundation",
+      "period": "Jul 2025 – Present",
+      "start": "2025-07",
+      "end": null,
+      "current": true,
+      "category": "opensource",
+      "location": "Global Remote",
+      "summary": "Contributing to Wikimedia technical projects and participating in the open-source engineering development lifecycle.",
+      "responsibilities": [
+        "Working with Git, Gerrit, Phabricator, code review, testing, and contribution workflows.",
+        "Contributing to MediaWiki, GrowthExperiments, MinervaNeue, and Function Orchestrator.",
+        "Authored patches for WFFunctionCall accessor methods, malformed URI fragment handling in MinervaNeue, and gender support for mentored messages in GrowthExperiments.",
+        "Collaborating with upstream engineers to uphold production standards."
+      ],
+      "highlights": [
+        "MediaWiki · GrowthExperiments · MinervaNeue",
+        "Reviewed upstream patches"
+      ],
+      "tags": [
+        "MediaWiki",
+        "Gerrit",
+        "Phabricator",
+        "PHP"
+      ],
+      "verification": {
+        "id": "GKM-EXP-WMF-2025",
+        "url": "https://gkm563.github.io/roles-and-responsibilities/#GKM-EXP-WMF-2025",
+        "proof": "https://gerrit.wikimedia.org/r/q/owner:gkm563",
+        "proofLabel": "Gerrit ledger"
+      }
+    },
+    {
+      "id": "GKM-GOV-MYGOV-2026",
+      "aliases": [],
+      "role": "Campus Ambassador",
+      "company": "MyGov India",
+      "period": "Oct 2024 – Present",
+      "start": "2024-10",
+      "end": null,
+      "current": true,
+      "category": "community",
+      "location": "Prayagraj, UP · National Program",
+      "summary": "Promoting national digital governance, open data hackathons, and citizen innovation programs by Ministry of Electronics & IT (MeitY).",
+      "responsibilities": [
+        "Advocating Digital India tools, Cyber Swachhta Kendra awareness, and tech policy challenges.",
+        "Serving 2+ years as dedicated campus liaison."
+      ],
+      "highlights": [
+        "2+ years as campus liaison"
+      ],
+      "tags": [
+        "Digital India",
+        "Campus liaison",
+        "Cyber awareness"
+      ],
+      "verification": {
+        "id": "GKM-GOV-MYGOV-2026",
+        "url": "https://gkm563.github.io/roles-and-responsibilities/#GKM-GOV-MYGOV-2026",
+        "proof": "https://www.linkedin.com/in/gkm563/details/experience/",
+        "proofLabel": "LinkedIn experience"
+      }
+    },
+    {
+      "id": "GKM-EXP-OSC-2026",
+      "aliases": [],
+      "role": "Campus Lead & Open Source Contributor",
+      "company": "Open Source Connect",
+      "period": "Aug 2026 – Oct 2026",
+      "start": "2026-08",
+      "end": "2026-10",
+      "current": false,
+      "category": "opensource",
+      "location": "Remote",
+      "summary": "Served as campus liaison and open source contributor for Open Source Connect.",
+      "responsibilities": [
+        "Promoted Git, GitHub, and open-source contribution culture across campus.",
+        "Participated in developer hackathons and mentored peers."
+      ],
+      "highlights": [
+        "Campus lead + OSS contributor"
+      ],
+      "tags": [
+        "Open source",
+        "Git",
+        "Campus lead",
+        "Hackathons"
+      ],
+      "verification": {
+        "id": "GKM-EXP-OSC-2026",
+        "url": "https://gkm563.github.io/roles-and-responsibilities/#GKM-EXP-OSC-2026",
+        "proof": "https://www.linkedin.com/in/gkm563/overlay/Position/2989291097/treasury/?profileId=ACoAAELRmwcB5D6Nca6MLh8d-CklqBAald3YYwA",
+        "proofLabel": "Badge + email"
+      }
+    },
+    {
+      "id": "GKM-EXP-HE-2026",
+      "aliases": [],
+      "role": "Full Stack Developer Intern",
+      "company": "Heisyn",
+      "period": "Jun 2026 – Oct 2026",
+      "start": "2026-06",
+      "end": "2026-10",
+      "current": false,
+      "category": "internship",
+      "location": "Remote",
+      "summary": "Contributed to full-stack development and commercial web application implementation.",
+      "responsibilities": [
+        "Built responsive frontend user interfaces using React and Tailwind CSS.",
+        "Architected scalable backend RESTful APIs with Node.js and Express.",
+        "Designed and managed relational database schemas in PostgreSQL."
+      ],
+      "highlights": [
+        "React + Tailwind frontends",
+        "Node/Express APIs",
+        "PostgreSQL schemas"
+      ],
+      "tags": [
+        "React",
+        "Node.js",
+        "PostgreSQL",
+        "Tailwind CSS"
+      ],
+      "verification": {
+        "id": "GKM-EXP-HE-2026",
+        "url": "https://gkm563.github.io/roles-and-responsibilities/#GKM-EXP-HE-2026",
+        "proof": "https://www.linkedin.com/in/gkm563/overlay/Position/2972650657/treasury/?profileId=ACoAAELRmwcB5D6Nca6MLh8d-CklqBAald3YYwA",
+        "proofLabel": "Completion certificate"
+      }
+    },
+    {
+      "id": "GKM-EXP-RTW-2026",
+      "aliases": [
+        "GKM-WCT-COHORT2-2026"
+      ],
+      "role": "Technical Mentee — Road to Wiki Cohort 2",
+      "company": "WikiClub Tech India (OKI-IIITH)",
+      "period": "Jan 2026 – Oct 2026",
+      "start": "2026-01",
+      "end": "2026-10",
+      "current": false,
+      "category": "fellowship",
+      "location": "Remote",
+      "summary": "Selected for Road to Wiki Cohort 2 open-source mentorship program focused on Wikimedia technical ecosystem.",
+      "responsibilities": [
+        "Contributed to MediaWiki, Pywikibot, and MinervaNeue repositories using Git, Gerrit, and Phabricator.",
+        "Awarded Best Contributor Award and Most Active Contributor recognition.",
+        "Recognised as Most Active Campus Lead (IIIT Hyderabad).",
+        "Contributions documented in WikiClub Tech India Technical Impact Report (Jan–Jun 2026) published by Open Knowledge Initiatives – India (OKI) at IIIT Hyderabad."
+      ],
+      "highlights": [
+        "Best Contributor Award",
+        "Most Active Campus Lead"
+      ],
+      "tags": [
+        "MediaWiki",
+        "Pywikibot",
+        "MinervaNeue",
+        "Open source"
+      ],
+      "verification": {
+        "id": "GKM-EXP-RTW-2026",
+        "url": "https://gkm563.github.io/roles-and-responsibilities/#GKM-EXP-RTW-2026",
+        "proof": "https://www.linkedin.com/in/gkm563/overlay/Position/2989288660/treasury/?profileId=ACoAAELRmwcB5D6Nca6MLh8d-CklqBAald3YYwA",
+        "proofLabel": "Award record"
+      }
+    },
+    {
+      "id": "GKM-EXP-TH4U-2026",
+      "aliases": [],
+      "role": "Event Management & Social Media Intern",
+      "company": "TECHhelp4U",
+      "period": "Jun 2026 – Aug 2026",
+      "start": "2026-06",
+      "end": "2026-08",
+      "current": false,
+      "category": "internship",
+      "location": "Remote",
+      "summary": "Dual internship handling community expansion strategy and developing official developers community website from scratch.",
+      "responsibilities": [
+        "Developed pan-India Campus Ambassador framework covering onboarding, roles, tracking, and recognition.",
+        "Built and deployed the official Developers Community website within 15–20 days.",
+        "Managed SEO and structured technical events repository."
+      ],
+      "highlights": [
+        "Community site shipped in 15–20 days",
+        "Pan-India CA framework"
+      ],
+      "tags": [
+        "Web development",
+        "Community",
+        "SEO",
+        "Program design"
+      ],
+      "verification": {
+        "id": "GKM-EXP-TH4U-2026",
+        "url": "https://gkm563.github.io/roles-and-responsibilities/#GKM-EXP-TH4U-2026",
+        "proof": "https://www.linkedin.com/in/gkm563/overlay/Position/2945494380/treasury/?profileId=ACoAAELRmwcB5D6Nca6MLh8d-CklqBAald3YYwA",
+        "proofLabel": "Verification email"
+      }
+    },
+    {
+      "id": "GKM-EXP-AIT-2026",
+      "aliases": [],
+      "role": "GIIP Fellow — Global Innovation Internship",
+      "company": "Asian Institute of Technology (AIT Bangkok)",
+      "period": "Jun 2026 – Jul 2026",
+      "start": "2026-06",
+      "end": "2026-07",
+      "current": false,
+      "category": "internship",
+      "location": "Bangkok City, Thailand · On-site",
+      "summary": "Selected for 15-day international Global Innovation Internship at AIT Bangkok, Thailand.",
+      "responsibilities": [
+        "Gained hands-on experience in AI, Power BI, Exploratory Data Analysis (EDA), GIS, and Design Thinking.",
+        "Researched and presented BusSetu, an AI-enabled public transit navigation concept.",
+        "Explored IoT and Robotics at KMITL Innovation Labs.",
+        "Strengthened cross-cultural technical leadership and global innovation problem solving."
+      ],
+      "highlights": [
+        "Presented BusSetu in Bangkok",
+        "KMITL IoT + robotics labs"
+      ],
+      "tags": [
+        "AI",
+        "Power BI",
+        "GIS",
+        "Design thinking",
+        "Thailand"
+      ],
+      "verification": {
+        "id": "GKM-EXP-AIT-2026",
+        "url": "https://gkm563.github.io/roles-and-responsibilities/#GKM-EXP-AIT-2026",
+        "proof": "https://www.linkedin.com/in/gkm563/overlay/Position/2951567530/treasury/?profileId=ACoAAELRmwcB5D6Nca6MLh8d-CklqBAald3YYwA",
+        "proofLabel": "Invitation letter"
+      }
+    },
+    {
+      "id": "GKM-EXP-UPP-2026",
+      "aliases": [],
+      "role": "Cyber Security Intern (APCSIP 2026)",
+      "company": "Uttar Pradesh Police",
+      "period": "Jun 2026 – Jul 2026",
+      "start": "2026-06",
+      "end": "2026-07",
+      "current": false,
+      "category": "internship",
+      "location": "Amroha, Uttar Pradesh, India · On-site",
+      "summary": "Completed 15-day Cyber Security Internship under Amroha Police Cyber Security Internship Program (APCSIP 2026).",
+      "responsibilities": [
+        "Studied OSINT, dark web threat intelligence, digital forensics, and evidence chain of custody.",
+        "Analyzed network traffic with Wireshark, malware response, CDR/IPDR, and tower dumps.",
+        "Examined UPI frauds, cyber law, DPDP Act, social engineering, and AI in cyber defense.",
+        "Conferred Best Content Creator Award by DSP Anjali Kataria Ma'am and received Certificate of Completion."
+      ],
+      "highlights": [
+        "Best Content Creator Award",
+        "4 media features"
+      ],
+      "tags": [
+        "OSINT",
+        "Digital forensics",
+        "Wireshark",
+        "Cyber law"
+      ],
+      "verification": {
+        "id": "GKM-EXP-UPP-2026",
+        "url": "https://gkm563.github.io/roles-and-responsibilities/#GKM-EXP-UPP-2026",
+        "proof": "https://www.linkedin.com/in/gkm563/overlay/Position/2940439298/treasury/?profileId=ACoAAELRmwcB5D6Nca6MLh8d-CklqBAald3YYwA",
+        "proofLabel": "Offer + certificate"
+      }
+    },
+    {
+      "id": "GKM-EXP-GFG-TH-2026",
+      "aliases": [],
+      "role": "Technical Head",
+      "company": "GeeksforGeeks Student Chapter UIT",
+      "period": "Feb 2026 – Jun 2026",
+      "start": "2026-02",
+      "end": "2026-06",
+      "current": false,
+      "category": "leadership",
+      "location": "Prayagraj, UP · On-site",
+      "summary": "Led technical operations of GFG UIT. Co-organized 4 technical events (2 offline, 2 online) including flagship event with 600+ registrations.",
+      "responsibilities": [
+        "Coordinated with faculty members, guest speakers, and student organizing teams.",
+        "Handled participant queries, technical platforms, and contest problems.",
+        "Awarded 'Most Active and Dedicated Person of the Club' presented by HOD, DSW, and Club President."
+      ],
+      "highlights": [
+        "600+ flagship registrations",
+        "Most Active Person Award"
+      ],
+      "tags": [
+        "Leadership",
+        "Events",
+        "Technical operations"
+      ],
+      "verification": {
+        "id": "GKM-EXP-GFG-TH-2026",
+        "url": "https://gkm563.github.io/roles-and-responsibilities/#GKM-EXP-GFG-TH-2026",
+        "proof": "https://www.linkedin.com/in/gkm563/overlay/Position/2848451969/treasury/?profileId=ACoAAELRmwcB5D6Nca6MLh8d-CklqBAald3YYwA",
+        "proofLabel": "Award record"
+      }
+    },
+    {
+      "id": "GKM-EXP-UDT-VOL-2026",
+      "aliases": [],
+      "role": "Community Growth Volunteer",
+      "company": "UDTech India",
+      "period": "Feb 2026 – Mar 2026",
+      "start": "2026-02",
+      "end": "2026-03",
+      "current": false,
+      "category": "community",
+      "location": "Prayagraj, UP",
+      "summary": "Contributed to Growth Team by promoting community events and driving student signups.",
+      "responsibilities": [
+        "Spearheaded technical community outreach and hackathon awareness.",
+        "Facilitated campus participation in regional workshops."
+      ],
+      "highlights": [
+        "Growth team volunteer"
+      ],
+      "tags": [
+        "Community growth",
+        "Outreach",
+        "Events"
+      ],
+      "verification": {
+        "id": "GKM-EXP-UDT-VOL-2026",
+        "url": "https://gkm563.github.io/roles-and-responsibilities/#GKM-EXP-UDT-VOL-2026",
+        "proof": "https://www.linkedin.com/in/gkm563/details/experience/",
+        "proofLabel": "LinkedIn experience"
+      }
+    },
+    {
+      "id": "GKM-EXP-EDC-2025",
+      "aliases": [],
+      "role": "Campus Ambassador",
+      "company": "eDC (Entrepreneurship Development Cell) IIT Delhi",
+      "period": "Dec 2025 – Feb 2026",
+      "start": "2025-12",
+      "end": "2026-02",
+      "current": false,
+      "category": "community",
+      "location": "Prayagraj / New Delhi",
+      "summary": "Represented IIT Delhi's Entrepreneurship Development Cell across regional engineering colleges.",
+      "responsibilities": [
+        "Promoted BECon (Business & Entrepreneurship Conclave) and national startup competitions.",
+        "Coordinated student participation in venture pitching sessions."
+      ],
+      "highlights": [
+        "BECon + national startup competitions"
+      ],
+      "tags": [
+        "Entrepreneurship",
+        "Campus ambassador",
+        "Startups"
+      ],
+      "verification": {
+        "id": "GKM-EXP-EDC-2025",
+        "url": "https://gkm563.github.io/roles-and-responsibilities/#GKM-EXP-EDC-2025",
+        "proof": "https://www.linkedin.com/in/gkm563/details/experience/",
+        "proofLabel": "LinkedIn experience"
+      }
+    },
+    {
+      "id": "GKM-EXP-FCRF-2025",
+      "aliases": [],
+      "role": "Campus Ambassador & Summit Intern",
+      "company": "Future Crime Research Foundation (FCRF)",
+      "period": "May 2025 – Sep 2025",
+      "start": "2025-05",
+      "end": "2025-09",
+      "current": false,
+      "category": "fellowship",
+      "location": "Remote / New Delhi",
+      "summary": "Selected in first batch of Campus Ambassadors for FCRF. Interned for Future Crime Summit.",
+      "responsibilities": [
+        "Gained deep exposure to cybercrime investigations and digital forensics ecosystems.",
+        "Networked with top cybersecurity leaders, law enforcement officers, and threat researchers."
+      ],
+      "highlights": [
+        "First ambassador batch",
+        "Future Crime Summit intern"
+      ],
+      "tags": [
+        "Cybercrime",
+        "Digital forensics",
+        "Summit"
+      ],
+      "verification": {
+        "id": "GKM-EXP-FCRF-2025",
+        "url": "https://gkm563.github.io/roles-and-responsibilities/#GKM-EXP-FCRF-2025",
+        "proof": "https://www.linkedin.com/in/gkm563/details/experience/",
+        "proofLabel": "LinkedIn experience"
+      }
+    },
+    {
+      "id": "GKM-EXP-MI-2024",
+      "aliases": [],
+      "role": "Indigo Squad Member",
+      "company": "Mood Indigo IIT Bombay",
+      "period": "Sep 2024 – Aug 2025",
+      "start": "2024-09",
+      "end": "2025-08",
+      "current": false,
+      "category": "community",
+      "location": "Mumbai / Remote",
+      "summary": "Campus representative for Asia's largest college cultural festival at IIT Bombay.",
+      "responsibilities": [
+        "Coordinated student delegations and regional promotional campaigns.",
+        "Engaged 1,000+ students across campus networks."
+      ],
+      "highlights": [
+        "1,000+ students engaged"
+      ],
+      "tags": [
+        "Campus marketing",
+        "Events",
+        "Delegations"
+      ],
+      "verification": {
+        "id": "GKM-EXP-MI-2024",
+        "url": "https://gkm563.github.io/roles-and-responsibilities/#GKM-EXP-MI-2024",
+        "proof": "https://www.linkedin.com/in/gkm563/details/experience/",
+        "proofLabel": "LinkedIn experience"
+      }
+    },
+    {
+      "id": "GKM-EXP-CR-2025",
+      "aliases": [],
+      "role": "Ethical Hacking Intern",
+      "company": "Code Resite",
+      "period": "Jun 2025 – Aug 2025",
+      "start": "2025-06",
+      "end": "2025-08",
+      "current": false,
+      "category": "internship",
+      "location": "Remote · Internship",
+      "summary": "First technical internship exploring Networking, Cybersecurity, Ethical Hacking, Git & GitHub, and DSA fundamentals.",
+      "responsibilities": [
+        "Learned network protocols, packet capturing, vulnerability analysis, and Git workflows.",
+        "Built early engineering foundation and began networking with developer communities."
+      ],
+      "highlights": [
+        "First technical internship"
+      ],
+      "tags": [
+        "Ethical hacking",
+        "Networking",
+        "Git",
+        "DSA"
+      ],
+      "verification": {
+        "id": "GKM-EXP-CR-2025",
+        "url": "https://gkm563.github.io/roles-and-responsibilities/#GKM-EXP-CR-2025",
+        "proof": "https://www.linkedin.com/in/gkm563/overlay/Position/2664671898/treasury/?profileId=ACoAAELRmwcB5D6Nca6MLh8d-CklqBAald3YYwA",
+        "proofLabel": "Internship record"
+      }
+    },
+    {
+      "id": "GKM-EXP-ZUNO-2025",
+      "aliases": [
+        "GKM-EXP-ZUNO-2024"
+      ],
+      "role": "Zuno Community Captain",
+      "company": "Zuno by foundit",
+      "period": "Dec 2024 – May 2025",
+      "start": "2024-12",
+      "end": "2025-05",
+      "current": false,
+      "category": "community",
+      "location": "Remote",
+      "summary": "Served as Community Captain for 6 months with consistent top-tier performance.",
+      "responsibilities": [
+        "Recognized as 'Best Performer' 4 times, receiving monetary rewards for each milestone.",
+        "Secured 1st Rank twice in national monthly performance reviews.",
+        "Demonstrated consistent leadership, competitive drive, and campus community building."
+      ],
+      "highlights": [
+        "4× Best Performer",
+        "2× Rank 1"
+      ],
+      "tags": [
+        "Community",
+        "Leadership",
+        "Performance"
+      ],
+      "verification": {
+        "id": "GKM-EXP-ZUNO-2025",
+        "url": "https://gkm563.github.io/roles-and-responsibilities/#GKM-EXP-ZUNO-2025",
+        "proof": "https://www.linkedin.com/in/gkm563/details/experience/",
+        "proofLabel": "LinkedIn experience"
+      }
+    },
+    {
+      "id": "GKM-EXP-LU-2024",
+      "aliases": [],
+      "role": "Campus Ambassador",
+      "company": "LetsUpgrade",
+      "period": "Oct 2024 – Nov 2024",
+      "start": "2024-10",
+      "end": "2024-11",
+      "current": false,
+      "category": "community",
+      "location": "Remote",
+      "summary": "First Campus Ambassador role at the beginning of college engineering journey.",
+      "responsibilities": [
+        "Learned fundamentals of developer networking, community organizing, and tech ecosystems.",
+        "Completed certified courses in HTML, CSS, SEO, and Python programming."
+      ],
+      "highlights": [
+        "First campus ambassador role"
+      ],
+      "tags": [
+        "Campus ambassador",
+        "HTML/CSS",
+        "SEO",
+        "Python"
+      ],
+      "verification": {
+        "id": "GKM-EXP-LU-2024",
+        "url": "https://gkm563.github.io/roles-and-responsibilities/#GKM-EXP-LU-2024",
+        "proof": "https://www.linkedin.com/in/gkm563/details/experience/",
+        "proofLabel": "LinkedIn experience"
+      }
+    }
+  ]
+}

@@ -64,6 +64,12 @@ Allow: /
 User-agent: ClaudeBot
 Allow: /
 
+User-agent: Claude-User
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
 User-agent: Google-Extended
 Allow: /
 
@@ -78,3 +84,6 @@ Host: https://gkm563.github.io
 
 # Sitemap location
 Sitemap: https://gkm563.github.io/sitemap.xml
+
+# LLM index (AEO / GEO)
+# llms.txt: https://gkm563.github.io/llms.txt

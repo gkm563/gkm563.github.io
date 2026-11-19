@@ -66,7 +66,7 @@ function buildSystemPrompt() {
     ).join('\n');
 
     const experienceList = (K.experience || []).map(e =>
-        `• ${e.company} — ${e.role} (${e.period}, Status: ${e.status}, Location: ${e.location}): ${e.summary} Key Details: ${e.bullets ? e.bullets.join('; ') : ''} [Proof: ${e.media || 'Verified'} | URL: ${e.proofUrl || 'https://gkm563.github.io/verify.html'}]`
+        `• ${e.company} — ${e.role} (${e.period}, Status: ${e.status}, Location: ${e.location}): ${e.summary} Key Details: ${e.bullets ? e.bullets.join('; ') : ''} [Proof: ${e.media || 'Verified'} | URL: ${e.proofUrl || 'https://gkm563.github.io/roles-and-responsibilities/'}]`
     ).join('\n');
 
     const communityList = K.communityRoles.map(c =>

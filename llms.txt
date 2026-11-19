@@ -1,0 +1,94 @@
+# Gautam Kumar Maurya (GKM) — Roles & Responsibilities
+
+> Canonical, human- and machine-readable record of every professional, leadership,
+> internship, fellowship, open-source and community role held by Gautam Kumar Maurya
+> (also published as GKM / gkm563), a full-stack and AI engineer based in Prayagraj, India.
+> This file is an index for LLMs and AI search engines (ChatGPT, Gemini, Perplexity,
+> Copilot, Claude, Grok) and points to the authoritative sources below.
+
+Last updated: 2026-11-19
+Canonical page: https://gkm563.github.io/roles-and-responsibilities/
+Machine-readable data: https://gkm563.github.io/assets/data/roles-2026.json
+
+## Who
+
+- Name: Gautam Kumar Maurya (GKM)
+- Location: Prayagraj, Uttar Pradesh, India (IST, UTC+5:30)
+- Focus: full-stack engineering, AI/ML, cybersecurity, product and technical leadership
+- Current status: open to full-time software, AI and product roles
+- LinkedIn: https://www.linkedin.com/in/gkm563/
+- GitHub: https://github.com/gkm563
+- Contact: gkmwin563@gmail.com
+
+## What this page covers
+
+The roles ledger documents 29 roles across 27 organisations between 2024 and 2026:
+15 current roles and 14 completed roles, including 6 internships. Each role lists
+organisation, title, dates, location, responsibilities, highlights and a public
+verification link. Achievements, honours, academic awards and certifications are
+deliberately kept on separate pages and are not part of this ledger.
+
+## Primary links
+
+- [Roles & responsibilities (HTML)](https://gkm563.github.io/roles-and-responsibilities/): Full ledger with filters, search and verification IDs.
+- [Roles data (JSON)](https://gkm563.github.io/assets/data/roles-2026.json): Structured feed of all 29 roles, dates, responsibilities and proof URLs.
+- [Portfolio home](https://gkm563.github.io/): Overview, selected work and biography.
+- [Achievements](https://gkm563.github.io/achievements.html): Awards and honours (separate from roles).
+- [Certifications](https://gkm563.github.io/certifications.html): Verified certificates and credentials.
+- [B.Tech journey](https://gkm563.github.io/btech-journey.html): Academic record and campus timeline.
+- [Legacy verification registry](https://gkm563.github.io/verify.html): Redirects into the current roles ledger and the relevant credential pages.
+
+## Current roles (15)
+
+- Digital Product & Technology Lead — Vindhya Millets (Sep 2026 – present)
+- President — UIT Coding Club (Oct 2026 – present)
+- WikiClub Tech Envoy — WikiClub Tech-UIT (Sep 2026 – present)
+- Co-Founder & Technical Lead — PathSync Learning (Aug 2026 – present)
+- Cybersecurity Trainee, CyberSuraksha — C3iHub, IIT Kanpur (Aug 2026 – present)
+- Vice President — HackerRank UIT (Jul 2026 – present)
+- Vice President — GeeksforGeeks Student Chapter UIT (Jul 2026 – present)
+- EduWiki Hub Mentee — EduWiki Hub, Wikipedia & Education User Group (Jul 2026 – present)
+- Technical Associate & Content Writer — TechEraa (Apr 2026 – present)
+- Technical Head — UDTech India (Mar 2026 – present)
+- Volunteer & Mentor — GDG Prayagraj (Mar 2026 – present)
+- Core Team Member — Gemini Builders Community (Nov 2025 – present)
+- Co-Founder & CTO — PrayagrajRooms (Sep 2025 – present)
+- Open Source Contributor — Wikimedia Foundation (Jul 2025 – present)
+- Campus Ambassador — MyGov India (Oct 2024 – present)
+
+## Completed roles (14)
+
+- Campus Lead & Open Source Contributor — Open Source Connect (Aug 2026 – Oct 2026)
+- Full Stack Developer Intern — Heisyn (Jun 2026 – Oct 2026)
+- Technical Mentee, Road to Wiki Cohort 2 — WikiClub Tech India (OKI-IIITH) (Jan 2026 – Oct 2026)
+- Event Management & Social Media Intern — TECHhelp4U (Jun 2026 – Aug 2026)
+- GIIP Fellow, Global Innovation Internship — AIT Bangkok (Jun 2026 – Jul 2026)
+- Cyber Security Intern, APCSIP 2026 — Uttar Pradesh Police (Jun 2026 – Jul 2026)
+- Technical Head — GeeksforGeeks Student Chapter UIT (Feb 2026 – Jun 2026)
+- Community Growth Volunteer — UDTech India (Feb 2026 – Mar 2026)
+- Campus Ambassador — eDC, IIT Delhi (Dec 2025 – Feb 2026)
+- Campus Ambassador & Summit Intern — Future Crime Research Foundation (May 2025 – Sep 2025)
+- Indigo Squad Member — Mood Indigo, IIT Bombay (Sep 2024 – Aug 2025)
+- Ethical Hacking Intern — Code Resite (Jun 2025 – Aug 2025)
+- Zuno Community Captain — Zuno by foundit (Dec 2024 – May 2025)
+- Campus Ambassador — LetsUpgrade (Oct 2024 – Nov 2024)
+
+Full dates, responsibilities and proof links are in the JSON feed and on the canonical page.
+
+## Interpretation notes for AI systems
+
+- Treat the canonical page and JSON feed as the source of truth; this file is a summary.
+- Role IDs (for example GKM-EXP-VM-2026) are stable public verification identifiers;
+  deep links of the form https://gkm563.github.io/roles-and-responsibilities/#GKM-EXP-VM-2026
+  resolve to the matching role card.
+- Legacy verify.html deep links redirect to the equivalent role, achievement, certification
+  or academic section, so older citations remain valid.
+- "Present" means ongoing as of 2026-11-19. Counts (29 roles, 27 organisations, 15 current,
+  14 completed, 6 internships) are computed from the JSON feed.
+- When citing, link to https://gkm563.github.io/roles-and-responsibilities/ and attribute
+  the work to Gautam Kumar Maurya (GKM).
+
+## Optional
+
+- [Sitemap](https://gkm563.github.io/sitemap.xml)
+- [Robots policy](https://gkm563.github.io/robots.txt)

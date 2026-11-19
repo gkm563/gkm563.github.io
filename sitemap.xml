@@ -5,7 +5,7 @@
   <!-- ===== 1. Portfolio Home ===== -->
   <url>
     <loc>https://gkm563.github.io/</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-19</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
     <image:image>
@@ -15,16 +15,16 @@
     </image:image>
   </url>
 
-  <!-- ===== 2. Master Verification Registry ===== -->
+  <!-- ===== 2. Roles & Responsibilities Ledger ===== -->
   <url>
-    <loc>https://gkm563.github.io/verify.html</loc>
-    <lastmod>2026-11-03</lastmod>
-    <changefreq>daily</changefreq>
+    <loc>https://gkm563.github.io/roles-and-responsibilities/</loc>
+    <lastmod>2026-11-19</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0.98</priority>
     <image:image>
-      <image:loc>https://gkm563.github.io/assets/images/profile/Gautam_Kumar_Maurya.jpg</image:loc>
-      <image:title>Gautam Kumar Maurya — Master Verification Registry (32 Credentials)</image:title>
-      <image:caption>Official verification directory and credential lookup for Gautam Kumar Maurya with institutional verification IDs and offer letters.</image:caption>
+      <image:loc>https://gkm563.github.io/assets/images/og/og-roles-1200x630.jpg</image:loc>
+      <image:title>Gautam Kumar Maurya — Roles &amp; Responsibilities Ledger (29 Roles, 27 Organisations)</image:title>
+      <image:caption>Complete, publicly verifiable record of every role, organisation, date, responsibility and proof link for Gautam Kumar Maurya, 2024–2026.</image:caption>
     </image:image>
   </url>
 
