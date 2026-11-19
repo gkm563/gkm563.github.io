@@ -2302,6 +2302,27 @@ html.js .timeline-grid[data-panel][hidden] { display: none; }
 }
 .dossier p { margin-top: 8px; font-size: 11.5px; line-height: 1.6; color: var(--muted); }
 .dossier:hover p { color: rgba(242, 239, 231, 0.66); }
+/* Dark-mode hover contrast fix for dossiers 01 through 11 (div 0 / .dossier--verify stays blue) */
+html.dark .dossier:not(.dossier--verify):hover p,
+body.dark .dossier:not(.dossier--verify):hover p,
+[data-theme="dark"] .dossier:not(.dossier--verify):hover p {
+  color: #2b313d;
+}
+html.dark .dossier:not(.dossier--verify):hover .dossier__tag,
+body.dark .dossier:not(.dossier--verify):hover .dossier__tag,
+[data-theme="dark"] .dossier:not(.dossier--verify):hover .dossier__tag {
+  color: #4b5563;
+}
+html.dark .dossier:not(.dossier--verify):hover .dossier__num,
+body.dark .dossier:not(.dossier--verify):hover .dossier__num,
+[data-theme="dark"] .dossier:not(.dossier--verify):hover .dossier__num {
+  color: #b45309;
+}
+html.dark .dossier:not(.dossier--verify):hover .dossier__arrow,
+body.dark .dossier:not(.dossier--verify):hover .dossier__arrow,
+[data-theme="dark"] .dossier:not(.dossier--verify):hover .dossier__arrow {
+  border-color: rgba(16, 19, 25, 0.35);
+}
 .dossier__arrow {
   margin-top: 20px;
   align-self: flex-start;
