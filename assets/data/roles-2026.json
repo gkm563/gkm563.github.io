@@ -29,6 +29,7 @@
       "category": "work",
       "location": "Mirzapur, Uttar Pradesh, India · Hybrid",
       "summary": "Leading the development and evolution of Vindhya Millets’ digital presence — from an initial static website to a custom, database-driven e-commerce platform.",
+      "positions": [],
       "responsibilities": [
         "End-to-End Website Development: Registered domain, configured DNS, SSL, and Hostinger hosting, built website using HTML, CSS, and JavaScript.",
         "Full-Stack Engineering: Evolved into custom e-commerce platform using PHP, MySQL, and JavaScript with dynamic product catalogues.",
@@ -68,6 +69,7 @@
       "category": "leadership",
       "location": "Prayagraj, Uttar Pradesh, India · On-site",
       "summary": "Leading the premier coding club at UIT. Spearheaded Code Aarambh 9.0 (600+ freshmen), Code Gyan 4.0, and UCC 1st Advanced Contest (140+ 3rd years).",
+      "positions": [],
       "responsibilities": [
         "Organized Code Aarambh 9.0 for 600+ first-year B.Tech students.",
         "Organized Code Gyan 4.0 technical aptitude contest for 2nd-year CSE students on 27 Oct 2026.",
@@ -103,6 +105,7 @@
       "category": "leadership",
       "location": "Prayagraj, Uttar Pradesh, India · On-site",
       "summary": "Serving as official campus envoy for Wikimedia open-source programs and technical contribution initiatives.",
+      "positions": [],
       "responsibilities": [
         "Secured 1st Position in Wiki Contribution Marathon 2026 for outstanding technical contributions.",
         "Driving student engagement and open-source contributions to Wikimedia projects."
@@ -134,6 +137,7 @@
       "category": "work",
       "location": "Prayagraj, Uttar Pradesh, India · On-site",
       "summary": "Co-founded tech-ed platform engineering curriculum tracking, learner roadmaps, and skills telemetry systems.",
+      "positions": [],
       "responsibilities": [
         "Architected core web architecture, modular roadmap tracker, and dashboard.",
         "Managing product roadmap and engineering workflows."
@@ -167,6 +171,7 @@
       "category": "internship",
       "location": "Kanpur / Prayagraj · Hybrid",
       "summary": "Selected for prestigious CyberSuraksha national security capacity-building program at C3iHub, IIT Kanpur.",
+      "positions": [],
       "responsibilities": [
         "Undergoing rigorous training in cyber defense, vulnerability assessments, and threat mitigation.",
         "Studying incident response, enterprise SOC telemetry, and network intrusion analysis."
@@ -199,6 +204,7 @@
       "category": "leadership",
       "location": "Prayagraj, UP · On-site",
       "summary": "Leading HackerRank student chapter, hosting departmental coding contests, and competitive programming meetups.",
+      "positions": [],
       "responsibilities": [
         "Organized Orientation 2026 and inaugural Departmental Coding Contest for 140+ 2nd-year CSE students.",
         "Promoting algorithmic problem-solving and technical readiness across campus."
@@ -232,6 +238,7 @@
       "category": "leadership",
       "location": "Prayagraj, UP · On-site",
       "summary": "Promoted to Vice President after serving as Technical Head. Leading chapter operations, flagship hackathons, and technical workshops.",
+      "positions": [],
       "responsibilities": [
         "Overseeing student tech chapters, technical operations, and community growth.",
         "Mentoring 500+ junior students in Data Structures, Algorithms, and Full-Stack Engineering."
@@ -264,6 +271,7 @@
       "category": "fellowship",
       "location": "Hybrid · Internship",
       "summary": "Selected for international mentorship program advancing educational outreach and technical integrations with Wikimedia tools.",
+      "positions": [],
       "responsibilities": [
         "Collaborating with global mentors on open knowledge infrastructure.",
         "Integrating technical tools for educational workflows and digital literacy."
@@ -295,6 +303,16 @@
       "category": "work",
       "location": "Remote",
       "summary": "Publishing developer guides, technical articles, and architectural teardowns.",
+      "positions": [
+        [
+          "Technical Associate",
+          "Apr 2026 – Present"
+        ],
+        [
+          "Content Writer",
+          "Apr 2026 – Present"
+        ]
+      ],
       "responsibilities": [
         "Writing in-depth content on Full-Stack systems, cloud tooling, and open-source ecosystems.",
         "Assisting with community developer outreach and technical write-ups."
@@ -328,6 +346,7 @@
       "category": "leadership",
       "location": "Prayagraj, UP",
       "summary": "Technical Head overseeing BuildX 2026 Hackathon engineering, platform development, and evaluation.",
+      "positions": [],
       "responsibilities": [
         "Designed and developed the official BuildX 2026 Hackathon website from scratch (frontend, backend, deployment).",
         "Served as Co-Organizer, Judge, and Mentor evaluating 30+ teams from across India.",
@@ -362,6 +381,7 @@
       "category": "community",
       "location": "Prayagraj, UP · On-site",
       "summary": "Active community volunteer and technical mentor for Google Developer Groups Prayagraj.",
+      "positions": [],
       "responsibilities": [
         "Attended all 10+ community events, workshops, and technical sessions.",
         "Served as Mentor in Agentic Premier League (APL), guiding participants throughout the AI competition."
@@ -395,6 +415,7 @@
       "category": "community",
       "location": "Prayagraj, UP · On-site",
       "summary": "Core team organizer leading offline Gemini and AI developer initiatives on campus.",
+      "positions": [],
       "responsibilities": [
         "Co-organized 2 offline technical events with 650+ participants across 1st, 2nd, and 3rd year engineering batches.",
         "Managed event planning, student registrations, and on-ground coordination.",
@@ -428,6 +449,7 @@
       "category": "work",
       "location": "Prayagraj, Uttar Pradesh, India",
       "summary": "Co-founded and built Prayagraj Rooms, a hyperlocal room-rental platform connecting students directly with property owners without broker fees.",
+      "positions": [],
       "responsibilities": [
         "Designed and developed frontend, backend, database, admin panel, and owner dashboard using HTML, CSS, JavaScript, PHP, and MySQL.",
         "Built room listings, photo management, owner communication, and inquiry workflows.",
@@ -466,6 +488,7 @@
       "category": "opensource",
       "location": "Global Remote",
       "summary": "Contributing to Wikimedia technical projects and participating in the open-source engineering development lifecycle.",
+      "positions": [],
       "responsibilities": [
         "Working with Git, Gerrit, Phabricator, code review, testing, and contribution workflows.",
         "Contributing to MediaWiki, GrowthExperiments, MinervaNeue, and Function Orchestrator.",
@@ -501,6 +524,7 @@
       "category": "community",
       "location": "Prayagraj, UP · National Program",
       "summary": "Promoting national digital governance, open data hackathons, and citizen innovation programs by Ministry of Electronics & IT (MeitY).",
+      "positions": [],
       "responsibilities": [
         "Advocating Digital India tools, Cyber Swachhta Kendra awareness, and tech policy challenges.",
         "Serving 2+ years as dedicated campus liaison."
@@ -532,6 +556,16 @@
       "category": "opensource",
       "location": "Remote",
       "summary": "Served as campus liaison and open source contributor for Open Source Connect.",
+      "positions": [
+        [
+          "Campus Lead",
+          "Aug 2026 – Oct 2026"
+        ],
+        [
+          "Open Source Contributor",
+          "Aug 2026 – Oct 2026"
+        ]
+      ],
       "responsibilities": [
         "Promoted Git, GitHub, and open-source contribution culture across campus.",
         "Participated in developer hackathons and mentored peers."
@@ -564,6 +598,7 @@
       "category": "internship",
       "location": "Remote",
       "summary": "Contributed to full-stack development and commercial web application implementation.",
+      "positions": [],
       "responsibilities": [
         "Built responsive frontend user interfaces using React and Tailwind CSS.",
         "Architected scalable backend RESTful APIs with Node.js and Express.",
@@ -601,6 +636,7 @@
       "category": "fellowship",
       "location": "Remote",
       "summary": "Selected for Road to Wiki Cohort 2 open-source mentorship program focused on Wikimedia technical ecosystem.",
+      "positions": [],
       "responsibilities": [
         "Contributed to MediaWiki, Pywikibot, and MinervaNeue repositories using Git, Gerrit, and Phabricator.",
         "Awarded Best Contributor Award and Most Active Contributor recognition.",
@@ -636,6 +672,16 @@
       "category": "internship",
       "location": "Remote",
       "summary": "Dual internship handling community expansion strategy and developing official developers community website from scratch.",
+      "positions": [
+        [
+          "Event Management Intern",
+          "Jun 2026 – Aug 2026"
+        ],
+        [
+          "Social Media Intern",
+          "Jun 2026 – Aug 2026"
+        ]
+      ],
       "responsibilities": [
         "Developed pan-India Campus Ambassador framework covering onboarding, roles, tracking, and recognition.",
         "Built and deployed the official Developers Community website within 15–20 days.",
@@ -670,6 +716,7 @@
       "category": "internship",
       "location": "Bangkok City, Thailand · On-site",
       "summary": "Selected for 15-day international Global Innovation Internship at AIT Bangkok, Thailand.",
+      "positions": [],
       "responsibilities": [
         "Gained hands-on experience in AI, Power BI, Exploratory Data Analysis (EDA), GIS, and Design Thinking.",
         "Researched and presented BusSetu, an AI-enabled public transit navigation concept.",
@@ -706,6 +753,7 @@
       "category": "internship",
       "location": "Amroha, Uttar Pradesh, India · On-site",
       "summary": "Completed 15-day Cyber Security Internship under Amroha Police Cyber Security Internship Program (APCSIP 2026).",
+      "positions": [],
       "responsibilities": [
         "Studied OSINT, dark web threat intelligence, digital forensics, and evidence chain of custody.",
         "Analyzed network traffic with Wireshark, malware response, CDR/IPDR, and tower dumps.",
@@ -741,6 +789,7 @@
       "category": "leadership",
       "location": "Prayagraj, UP · On-site",
       "summary": "Led technical operations of GFG UIT. Co-organized 4 technical events (2 offline, 2 online) including flagship event with 600+ registrations.",
+      "positions": [],
       "responsibilities": [
         "Coordinated with faculty members, guest speakers, and student organizing teams.",
         "Handled participant queries, technical platforms, and contest problems.",
@@ -774,6 +823,7 @@
       "category": "community",
       "location": "Prayagraj, UP",
       "summary": "Contributed to Growth Team by promoting community events and driving student signups.",
+      "positions": [],
       "responsibilities": [
         "Spearheaded technical community outreach and hackathon awareness.",
         "Facilitated campus participation in regional workshops."
@@ -805,6 +855,7 @@
       "category": "community",
       "location": "Prayagraj / New Delhi",
       "summary": "Represented IIT Delhi's Entrepreneurship Development Cell across regional engineering colleges.",
+      "positions": [],
       "responsibilities": [
         "Promoted BECon (Business & Entrepreneurship Conclave) and national startup competitions.",
         "Coordinated student participation in venture pitching sessions."
@@ -836,6 +887,7 @@
       "category": "fellowship",
       "location": "Remote / New Delhi",
       "summary": "Selected in first batch of Campus Ambassadors for FCRF. Interned for Future Crime Summit.",
+      "positions": [],
       "responsibilities": [
         "Gained deep exposure to cybercrime investigations and digital forensics ecosystems.",
         "Networked with top cybersecurity leaders, law enforcement officers, and threat researchers."
@@ -868,6 +920,7 @@
       "category": "community",
       "location": "Mumbai / Remote",
       "summary": "Campus representative for Asia's largest college cultural festival at IIT Bombay.",
+      "positions": [],
       "responsibilities": [
         "Coordinated student delegations and regional promotional campaigns.",
         "Engaged 1,000+ students across campus networks."
@@ -899,6 +952,7 @@
       "category": "internship",
       "location": "Remote · Internship",
       "summary": "First technical internship exploring Networking, Cybersecurity, Ethical Hacking, Git & GitHub, and DSA fundamentals.",
+      "positions": [],
       "responsibilities": [
         "Learned network protocols, packet capturing, vulnerability analysis, and Git workflows.",
         "Built early engineering foundation and began networking with developer communities."
@@ -933,6 +987,7 @@
       "category": "community",
       "location": "Remote",
       "summary": "Served as Community Captain for 6 months with consistent top-tier performance.",
+      "positions": [],
       "responsibilities": [
         "Recognized as 'Best Performer' 4 times, receiving monetary rewards for each milestone.",
         "Secured 1st Rank twice in national monthly performance reviews.",
@@ -966,6 +1021,7 @@
       "category": "community",
       "location": "Remote",
       "summary": "First Campus Ambassador role at the beginning of college engineering journey.",
+      "positions": [],
       "responsibilities": [
         "Learned fundamentals of developer networking, community organizing, and tech ecosystems.",
         "Completed certified courses in HTML, CSS, SEO, and Python programming."

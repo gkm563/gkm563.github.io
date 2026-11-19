@@ -849,6 +849,22 @@ html.js .tenure.is-in .tenure-bar { transform: none; }
 
 .role-summary { margin-top: 14px; font-size: 13.5px; line-height: 1.7; color: var(--ink-2); }
 .role-summary strong { color: var(--ink); }
+.role-positions { display: flex; flex-wrap: wrap; gap: 6px 8px; margin-top: 12px; }
+.role-positions li {
+  display: flex;
+  align-items: baseline;
+  gap: 7px;
+  padding: 4px 9px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+}
+.role-positions b {
+  font: 700 8px/1.3 var(--font-mono);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ink);
+}
+.role-positions span { font: 500 8px/1.3 var(--font-mono); color: var(--muted); }
 
 .role-resp { margin-top: 16px; padding-top: 14px; border-top: 1px solid var(--line); }
 .role-resp h4 {
