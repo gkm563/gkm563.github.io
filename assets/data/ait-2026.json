@@ -1,0 +1,628 @@
+{
+  "generated": "2026-11-20",
+  "canonical": "https://gkm563.github.io/ait-global-innovation-internship.html",
+  "title": "AIT Bangkok GIIP 2026 — 15 Days of Innovation | Gautam Kumar Maurya",
+  "description": "A photo-backed field journal of the Global Innovation Internship Program (GIIP 2026) at the Asian Institute of Technology, Bangkok: 15 days, 12 learning domains, 8 faculty mentors and the BusSetu real-time transit capstone, 1–15 June 2026.",
+  "person": {
+    "name": "Gautam Kumar Maurya",
+    "alternateName": "gkm563",
+    "url": "https://gkm563.github.io/",
+    "linkedin": "https://www.linkedin.com/in/gkm563/",
+    "github": "https://github.com/gkm563",
+    "location": "Prayagraj, Uttar Pradesh, India"
+  },
+  "programme": {
+    "name": "Global Innovation Internship Program (GIIP) 2026",
+    "host": "Asian Institute of Technology (AIT)",
+    "hostUrl": "https://ait.ac.th/",
+    "hostOffice": "Special Degree Programs (SDP)",
+    "location": "AIT Conference Center, Pathum Thani, Bangkok, Thailand",
+    "coordinates": {
+      "lat": 14.079,
+      "lng": 100.611
+    },
+    "timezone": "Asia/Bangkok (ICT, UTC+7)",
+    "start": "2026-06-01",
+    "end": "2026-06-15",
+    "days": 15,
+    "role": "GIIP Fellow",
+    "instructors": [
+      "Dr. Nitin Tripathi (Director, Special Degree Programs)",
+      "Dr. Chutiporn Anutariya (Associate Professor, Computer Science & Information Management)"
+    ],
+    "outcome": "Certificate of completion at the AIT closing ceremony, plus a team capstone (BusSetu) defended before an AIT faculty panel."
+  },
+  "capstone": {
+    "name": "BusSetu",
+    "summary": "A real-time public-transport platform that blends GTFS schedules with GPS telemetry to project bus arrival times on a vector map.",
+    "role": "Led the system architecture and low-latency map layer; presented the working prototype to the AIT panel.",
+    "stack": [
+      "JavaScript (ES6+)",
+      "Node.js",
+      "Google Maps API",
+      "GTFS",
+      "REST",
+      "Vercel Edge"
+    ],
+    "metrics": {
+      "mapLatency": "<1 s",
+      "etaAccuracy": "98%",
+      "grade": "Top"
+    },
+    "live": "https://bussetu-three.vercel.app/",
+    "source": "https://github.com/gkm563"
+  },
+  "counts": {
+    "days": 15,
+    "domains": 12,
+    "faculty": 8,
+    "galleryFrames": 18,
+    "photosOnPage": 33
+  },
+  "days": [
+    {
+      "day": "01",
+      "url": "https://gkm563.github.io/ait-global-innovation-internship.html#day-01",
+      "date": "2026-06-01",
+      "label": "Mon 01 Jun 2026",
+      "title": "Landfall in Bangkok, then north to AIT",
+      "summary": "Landed at Suvarnabhumi in the late morning and took the delegation transfer north to Pathum Thani. The first shock was scale: AIT's campus is a green research town, not a city block. Check-in at the AIT Conference Center, a quick tour, then a cohort dinner that made the next fortnight feel real.",
+      "notes": [
+        "Suvarnabhumi → AIT campus transfer with the delegation.",
+        "Campus orientation, conference-center check-in and welcome dinner."
+      ],
+      "tags": [
+        "Arrival",
+        "Bangkok",
+        "Cohort"
+      ],
+      "photo": "https://gkm563.github.io/assets/images/ait-bangkok/gautam-kumar-maurya-gkm-ait-bangkok-thailand-internship-2.jpg",
+      "photoCaption": "The GIIP 2026 cohort outside AIT's academic building",
+      "photoSub": "Day 01 · Pathum Thani"
+    },
+    {
+      "day": "02",
+      "url": "https://gkm563.github.io/ait-global-innovation-internship.html#day-02",
+      "date": "2026-06-02",
+      "label": "Tue 02 Jun 2026",
+      "title": "Induction, safety and the shape of the fortnight",
+      "summary": "The formal start. Dr. Nitin Tripathi welcomed the cohort on behalf of AIT's Special Degree Programs office, followed by a safety and lab-access briefing. We mapped deliverables against the calendar, met the teaching teams and split into project groups.",
+      "notes": [
+        "Welcome address and programme expectations from the SDP directorate.",
+        "Lab access, research ethics and cohort assignments."
+      ],
+      "tags": [
+        "Orientation",
+        "AIT",
+        "Research ethics"
+      ],
+      "photo": "https://gkm563.github.io/assets/images/ait-bangkok/gautam-kumar-maurya-gkm-ait-bangkok-thailand-internship-100.jpg",
+      "photoCaption": "Opening session in the AIT auditorium",
+      "photoSub": "Day 02 · AIT"
+    },
+    {
+      "day": "03",
+      "url": "https://gkm563.github.io/ait-global-innovation-internship.html#day-03",
+      "date": "2026-06-03",
+      "label": "Wed 03 Jun 2026",
+      "title": "AI and the discipline of a good prompt",
+      "summary": "An intensive day on large-language-model behaviour: system instructions, structured output, context limits and the difference between a demo and something you can ship. Most of the value was in the constraints — getting a model to return clean JSON, then testing it against edge cases.",
+      "notes": [
+        "System vs user instructions, chain-of-thought and output schemas.",
+        "Context-window budgeting and token-management strategies."
+      ],
+      "tags": [
+        "Artificial intelligence",
+        "Prompt engineering",
+        "LLMs"
+      ],
+      "photo": "https://gkm563.github.io/assets/images/ait-bangkok/gautam-kumar-maurya-gkm-ait-bangkok-thailand-internship-11.jpg",
+      "photoCaption": "A teaching-room session during the AI module",
+      "photoSub": "Day 03 · AIT"
+    },
+    {
+      "day": "04",
+      "url": "https://gkm563.github.io/ait-global-innovation-internship.html#day-04",
+      "date": "2026-06-04",
+      "label": "Thu 04 Jun 2026",
+      "title": "Ubiquitous GIS: the campus becomes a dataset",
+      "summary": "Field survey day. We built collection forms in EpiCollect5, walked the campus capturing spatial points, then pulled the export into QGIS. The lesson was less about software than integrity: a coordinate is only useful if you know how it was captured.",
+      "notes": [
+        "Mobile form design and spatial point capture with EpiCollect5.",
+        "First QGIS layer, coordinate checks and attribute cleanup."
+      ],
+      "tags": [
+        "Ubiquitous GIS",
+        "EpiCollect5",
+        "QGIS"
+      ],
+      "photo": "https://gkm563.github.io/assets/images/ait-bangkok/gautam-kumar-maurya-gkm-ait-bangkok-thailand-internship-19.jpg",
+      "photoCaption": "A field walk across the AIT campus",
+      "photoSub": "Day 04 · AIT"
+    },
+    {
+      "day": "05",
+      "url": "https://gkm563.github.io/ait-global-innovation-internship.html#day-05",
+      "date": "2026-06-05",
+      "label": "Fri 05 Jun 2026",
+      "title": "EDA: cleaning the survey before trusting it",
+      "summary": "Python, Pandas and a hundred-plus spatial points. We joined the survey export to the campus layers, checked missing values, fixed inconsistent categories and looked for the first honest patterns. Most of the day was spent on data quality — which is the point.",
+      "notes": [
+        "Pandas cleaning, joins and descriptive statistics on the survey set.",
+        "Plotting spatial distributions before making any claims."
+      ],
+      "tags": [
+        "Python",
+        "Pandas",
+        "EDA"
+      ],
+      "photo": "https://gkm563.github.io/assets/images/ait-bangkok/gautam-kumar-maurya-gkm-ait-bangkok-thailand-internship-14.jpg",
+      "photoCaption": "A workstation session in an AIT computer lab",
+      "photoSub": "Day 05 · AIT"
+    },
+    {
+      "day": "06",
+      "url": "https://gkm563.github.io/ait-global-innovation-internship.html#day-06",
+      "date": "2026-06-06",
+      "label": "Sat 06 Jun 2026",
+      "title": "IoT, sensors and the noise of the real world",
+      "summary": "From software to solder. The sensor benches covered microcontrollers, wiring, sampling and serial telemetry. Getting a stable reading was easy; getting a stable reading for an hour was the actual exercise. This was the day the programme's hardware thread became concrete.",
+      "notes": [
+        "Microcontroller setup, sensor wiring and serial output.",
+        "Reading noise, sampling rate and basic calibration."
+      ],
+      "tags": [
+        "IoT",
+        "Sensors",
+        "Embedded"
+      ],
+      "photo": "https://gkm563.github.io/assets/images/ait-bangkok/gautam-kumar-maurya-gkm-ait-bangkok-thailand-internship-61.jpg",
+      "photoCaption": "Hands-on sensor and hardware work",
+      "photoSub": "Day 06 · AIT"
+    },
+    {
+      "day": "07",
+      "url": "https://gkm563.github.io/ait-global-innovation-internship.html#day-07",
+      "date": "2026-06-07",
+      "label": "Sun 07 Jun 2026",
+      "title": "KMITL: six-axis arms and trajectory thinking",
+      "summary": "A visit to King Mongkut's Institute of Technology Ladkrabang (KMITL) for its robotics and automation work. Seeing six-axis arms move made kinematic constraints and path planning tangible — and made the gap between a scripted demo and a reliable cell obvious.",
+      "notes": [
+        "Robotic arm kinematics and trajectory planning, demonstrated on six-axis hardware.",
+        "Discussion of automation workflows and lab-to-industry translation."
+      ],
+      "tags": [
+        "Robotics",
+        "KMITL",
+        "Automation"
+      ],
+      "photo": "https://gkm563.github.io/assets/images/ait-bangkok/gautam-kumar-maurya-gkm-ait-bangkok-thailand-internship-63.jpg",
+      "photoCaption": "An embedded-systems bench session",
+      "photoSub": "Day 07 · AIT"
+    },
+    {
+      "day": "08",
+      "url": "https://gkm563.github.io/ait-global-innovation-internship.html#day-08",
+      "date": "2026-06-08",
+      "label": "Mon 08 Jun 2026",
+      "title": "Corporate communication: the pitch is the product",
+      "summary": "A shift from technical to human. The corporate-communication module covered executive pitch structure, cross-cultural framing and handling hard questions without losing the thread. We rehearsed short pitches in front of the room — useful preparation for the defence at the end of the fortnight.",
+      "notes": [
+        "Pitch structure for technical work: problem, evidence, demo, ask.",
+        "Cross-cultural communication and live question handling."
+      ],
+      "tags": [
+        "Communication",
+        "Leadership",
+        "Pitching"
+      ],
+      "photo": "https://gkm563.github.io/assets/images/ait-bangkok/gautam-kumar-maurya-gkm-ait-bangkok-thailand-internship-58.jpg",
+      "photoCaption": "A workshop led from the front of the room",
+      "photoSub": "Day 08 · AIT"
+    },
+    {
+      "day": "09",
+      "url": "https://gkm563.github.io/ait-global-innovation-internship.html#day-09",
+      "date": "2026-06-09",
+      "label": "Tue 09 Jun 2026",
+      "title": "A science museum, a city and a cultural evening",
+      "summary": "A day in Bangkok. We visited the National Science Museum and spent the evening with the cohort. The value was context: Thailand's investment in science communication, its design language and the way the city organises public space. It made the fortnight feel less like a bubble.",
+      "notes": [
+        "National Science Museum and Bangkok cultural immersion.",
+        "Cohort evening and informal exchange with international peers."
+      ],
+      "tags": [
+        "Bangkok",
+        "Culture",
+        "Museums"
+      ],
+      "photo": "https://gkm563.github.io/assets/images/ait-bangkok/gautam-kumar-maurya-gkm-ait-bangkok-thailand-internship-84.jpg",
+      "photoCaption": "A cultural performance during the Bangkok immersion",
+      "photoSub": "Day 09 · Bangkok"
+    },
+    {
+      "day": "10",
+      "url": "https://gkm563.github.io/ait-global-innovation-internship.html#day-10",
+      "date": "2026-06-10",
+      "label": "Wed 10 Jun 2026",
+      "title": "Design thinking, and the birth of BusSetu",
+      "summary": "Problem framing day. We mapped rider journeys, argued about scope and deliberately narrowed the first version: scheduled routes, live vehicle position, projected arrival. No payments, no accounts, no marketplace. The constraint made the next sprint possible.",
+      "notes": [
+        "Rider interviews and a journey map of the daily wait.",
+        "Scope decision: GTFS schedules + GPS telemetry + a map."
+      ],
+      "tags": [
+        "Design thinking",
+        "Product",
+        "BusSetu"
+      ],
+      "photo": "https://gkm563.github.io/assets/images/ait-bangkok/gautam-kumar-maurya-gkm-ait-bangkok-thailand-internship-144.jpg",
+      "photoCaption": "Framing the BusSetu problem on paper",
+      "photoSub": "Day 10 · AIT"
+    },
+    {
+      "day": "11",
+      "url": "https://gkm563.github.io/ait-global-innovation-internship.html#day-11",
+      "date": "2026-06-11",
+      "label": "Thu 11 Jun 2026",
+      "title": "Power BI: making the numbers legible",
+      "summary": "A dashboard day. We built a small model, wrote DAX measures and designed for an executive reader who has ninety seconds. The recurring lesson: a chart is an argument, not decoration. Every visual had to answer a specific question.",
+      "notes": [
+        "Data model and relationship design in Power BI.",
+        "DAX measures and a dashboard narrative for non-specialists."
+      ],
+      "tags": [
+        "Power BI",
+        "DAX",
+        "Analytics"
+      ],
+      "photo": "https://gkm563.github.io/assets/images/ait-bangkok/gautam-kumar-maurya-gkm-ait-bangkok-thailand-internship-18.jpg",
+      "photoCaption": "An analytics workshop in an AIT teaching room",
+      "photoSub": "Day 11 · AIT"
+    },
+    {
+      "day": "12",
+      "url": "https://gkm563.github.io/ait-global-innovation-internship.html#day-12",
+      "date": "2026-06-12",
+      "label": "Fri 12 Jun 2026",
+      "title": "Agentic AI: workflows that take a step",
+      "summary": "The final teaching block. Tool calling, task decomposition and memory patterns — how an agent chains steps instead of answering once. Most of the discussion was about guardrails: what the system may do, when it must stop and how a human stays in the loop.",
+      "notes": [
+        "Tool invocation, decomposition and short-term memory in agent loops.",
+        "Guardrails, observability and human checkpoints."
+      ],
+      "tags": [
+        "Agentic AI",
+        "LLMs",
+        "Automation"
+      ],
+      "photo": "https://gkm563.github.io/assets/images/ait-bangkok/gautam-kumar-maurya-gkm-ait-bangkok-thailand-internship-30.jpg",
+      "photoCaption": "A full-cohort session on agentic workflows",
+      "photoSub": "Day 12 · AIT"
+    },
+    {
+      "day": "13",
+      "url": "https://gkm563.github.io/ait-global-innovation-internship.html#day-13",
+      "date": "2026-06-13",
+      "label": "Sat 13 Jun 2026",
+      "title": "Build sprint: schedules in, a live map out",
+      "summary": "The build day. We parsed GTFS schedules, stitched in GPS telemetry and pushed arrival projections onto a vector map. I owned the architecture and the low-latency map layer; the team owned the surrounding flow. By evening the prototype was deployed on Vercel and holding under a demo load.",
+      "notes": [
+        "GTFS parser, GPS telemetry and Google Maps API integration.",
+        "Latency work on the map layer, then a Vercel deploy."
+      ],
+      "tags": [
+        "JavaScript",
+        "Node.js",
+        "GTFS",
+        "Vercel"
+      ],
+      "photo": "https://gkm563.github.io/assets/images/ait-bangkok/gautam-kumar-maurya-gkm-ait-bangkok-thailand-internship-121.jpg",
+      "photoCaption": "Reviewing the BusSetu prototype mid-sprint",
+      "photoSub": "Day 13 · AIT"
+    },
+    {
+      "day": "14",
+      "url": "https://gkm563.github.io/ait-global-innovation-internship.html#day-14",
+      "date": "2026-06-14",
+      "label": "Sun 14 Jun 2026",
+      "title": "The defence: architecture, latency, questions",
+      "summary": "Presentation day. We walked the AIT faculty panel through the rider problem, the data pipeline and a live demo, then took questions on accuracy, failure modes and what we would build next. The prototype held. The panel's feedback was direct and the project closed with a top commendation.",
+      "notes": [
+        "Architecture walkthrough, live demo and measured outcomes.",
+        "Panel Q&A on ETA accuracy, latency and operational limits."
+      ],
+      "tags": [
+        "BusSetu",
+        "Presentation",
+        "AIT panel"
+      ],
+      "photo": "https://gkm563.github.io/assets/images/ait-bangkok/gautam-kumar-maurya-gkm-ait-bangkok-thailand-internship-128.jpg",
+      "photoCaption": "Presentation day on the AIT stage",
+      "photoSub": "Day 14 · AIT"
+    },
+    {
+      "day": "15",
+      "url": "https://gkm563.github.io/ait-global-innovation-internship.html#day-15",
+      "date": "2026-06-15",
+      "label": "Mon 15 Jun 2026",
+      "title": "Certificates, photographs, and the flight home",
+      "summary": "The closing ceremony. Certificates were presented, the cohort took its last set of photographs and we swapped contacts over a farewell dinner. Then the airport run and a night flight back to India — fifteen days that reorganised how I think about building software.",
+      "notes": [
+        "GIIP 2026 certificate presentation and cohort photographs.",
+        "Farewell dinner, then the return flight to India."
+      ],
+      "tags": [
+        "GIIP 2026",
+        "Graduation",
+        "Bangkok"
+      ],
+      "photo": "https://gkm563.github.io/assets/images/ait-bangkok/gautam-kumar-maurya-gkm-ait-bangkok-thailand-internship-136.jpg",
+      "photoCaption": "Certificate presentation on the closing day",
+      "photoSub": "Day 15 · AIT"
+    }
+  ],
+  "domains": [
+    {
+      "num": "01",
+      "title": "Artificial Intelligence",
+      "summary": "Model behaviour, retrieval and evaluation — what to trust and what to test."
+    },
+    {
+      "num": "02",
+      "title": "Prompt Engineering",
+      "summary": "System instructions, structured JSON output and context-window discipline."
+    },
+    {
+      "num": "03",
+      "title": "Ubiquitous GIS",
+      "summary": "Mobile capture with EpiCollect5, then clean, defensible layers in QGIS."
+    },
+    {
+      "num": "04",
+      "title": "IoT & Sensors",
+      "summary": "Microcontroller benches, sensor streams and the reality of noisy telemetry."
+    },
+    {
+      "num": "05",
+      "title": "Robotics & Arms",
+      "summary": "Six-axis kinematics and trajectory planning, seen up close at KMITL."
+    },
+    {
+      "num": "06",
+      "title": "Exploratory Data Analysis",
+      "summary": "Pandas cleaning, joins and plots over 100+ spatial survey points."
+    },
+    {
+      "num": "07",
+      "title": "Power BI Analytics",
+      "summary": "Data models, DAX measures and dashboards built for an executive reader."
+    },
+    {
+      "num": "08",
+      "title": "Digital Strategy",
+      "summary": "Positioning, funnels and the difference between reach and retention."
+    },
+    {
+      "num": "09",
+      "title": "Corporate Communication",
+      "summary": "Pitching across cultures, handling questions and reading a room."
+    },
+    {
+      "num": "10",
+      "title": "Design Thinking",
+      "summary": "Problem framing, rider interviews and a deliberately narrow first scope."
+    },
+    {
+      "num": "11",
+      "title": "Agentic AI",
+      "summary": "Tool calling, task decomposition and memory patterns for autonomous workflows."
+    },
+    {
+      "num": "12",
+      "title": "QGIS & Drones",
+      "summary": "Layer hygiene, UAV flight planning and the limits of aerial telemetry."
+    }
+  ],
+  "faculty": [
+    {
+      "name": "Dr. Nitin Tripathi",
+      "role": "Director, Special Degree Programs",
+      "dept": "Remote Sensing & GIS · AIT"
+    },
+    {
+      "name": "Dr. Chutiporn Anutariya",
+      "role": "Department Head & Associate Professor",
+      "dept": "Computer Science & IM · AIT"
+    },
+    {
+      "name": "Dr. Prapas",
+      "role": "Professor & Research Director",
+      "dept": "AI & Robotics · AIT"
+    },
+    {
+      "name": "Dr. Rishi",
+      "role": "Specialist Research Faculty",
+      "dept": "Data Science & Spatial Analytics"
+    },
+    {
+      "name": "Prof. Manisha Bose",
+      "role": "International Corporate Trainer",
+      "dept": "Cross-cultural communication"
+    },
+    {
+      "name": "Dr. Vatcharunya",
+      "role": "Senior Research Specialist",
+      "dept": "IoT & Embedded Systems · AIT"
+    },
+    {
+      "name": "Dr. Sarawut",
+      "role": "Associate Research Director",
+      "dept": "Geoinformatics · AIT"
+    },
+    {
+      "name": "Prof. Napat",
+      "role": "Cultural Academic Liaison",
+      "dept": "International student affairs · AIT"
+    }
+  ],
+  "gallery": [
+    {
+      "category": "graduation",
+      "label": "Certificate day",
+      "caption": "GIIP 2026 · certificate day",
+      "sub": "Graduation · AIT",
+      "photo": "https://gkm563.github.io/assets/images/ait-bangkok/gautam-kumar-maurya-gkm-ait-bangkok-thailand-internship-145.jpg"
+    },
+    {
+      "category": "learning",
+      "label": "AI & Simulation Lab",
+      "caption": "Inside AIT's AI and Simulation Lab",
+      "sub": "Learning · AIT",
+      "photo": "https://gkm563.github.io/assets/images/ait-bangkok/gautam-kumar-maurya-gkm-ait-bangkok-thailand-internship-122.jpg"
+    },
+    {
+      "category": "campus",
+      "label": "Campus green",
+      "caption": "The campus green at AIT",
+      "sub": "Campus · Pathum Thani",
+      "photo": "https://gkm563.github.io/assets/images/ait-bangkok/gautam-kumar-maurya-gkm-ait-bangkok-thailand-internship-19.jpg"
+    },
+    {
+      "category": "learning",
+      "label": "Problem framing",
+      "caption": "Framing the BusSetu problem",
+      "sub": "Learning · AIT",
+      "photo": "https://gkm563.github.io/assets/images/ait-bangkok/gautam-kumar-maurya-gkm-ait-bangkok-thailand-internship-144.jpg"
+    },
+    {
+      "category": "culture",
+      "label": "Cultural evening",
+      "caption": "Cultural evening performance",
+      "sub": "Culture · Bangkok",
+      "photo": "https://gkm563.github.io/assets/images/ait-bangkok/gautam-kumar-maurya-gkm-ait-bangkok-thailand-internship-84.jpg"
+    },
+    {
+      "category": "learning",
+      "label": "Opening session",
+      "caption": "Opening session in the AIT auditorium",
+      "sub": "Learning · AIT",
+      "photo": "https://gkm563.github.io/assets/images/ait-bangkok/gautam-kumar-maurya-gkm-ait-bangkok-thailand-internship-100.jpg"
+    },
+    {
+      "category": "campus",
+      "label": "Cohort on the lawn",
+      "caption": "Cohort on the AIT campus",
+      "sub": "Campus · Pathum Thani",
+      "photo": "https://gkm563.github.io/assets/images/ait-bangkok/gautam-kumar-maurya-gkm-ait-bangkok-thailand-internship-26.jpg"
+    },
+    {
+      "category": "learning",
+      "label": "Sensor bench",
+      "caption": "Sensors and hardware, hands on",
+      "sub": "Learning · AIT",
+      "photo": "https://gkm563.github.io/assets/images/ait-bangkok/gautam-kumar-maurya-gkm-ait-bangkok-thailand-internship-61.jpg"
+    },
+    {
+      "category": "graduation",
+      "label": "Closing day",
+      "caption": "Certificates on the closing day",
+      "sub": "Graduation · AIT",
+      "photo": "https://gkm563.github.io/assets/images/ait-bangkok/gautam-kumar-maurya-gkm-ait-bangkok-thailand-internship-136.jpg"
+    },
+    {
+      "category": "culture",
+      "label": "Stage moment",
+      "caption": "A GIIP cohort stage moment",
+      "sub": "Culture · AIT",
+      "photo": "https://gkm563.github.io/assets/images/ait-bangkok/gautam-kumar-maurya-gkm-ait-bangkok-thailand-internship-108.jpg"
+    },
+    {
+      "category": "people",
+      "label": "Mid-programme",
+      "caption": "The cohort, mid-programme",
+      "sub": "People · AIT",
+      "photo": "https://gkm563.github.io/assets/images/ait-bangkok/gautam-kumar-maurya-gkm-ait-bangkok-thailand-internship-138.jpg"
+    },
+    {
+      "category": "learning",
+      "label": "Main hall",
+      "caption": "Presentations in the main hall",
+      "sub": "Learning · AIT",
+      "photo": "https://gkm563.github.io/assets/images/ait-bangkok/gautam-kumar-maurya-gkm-ait-bangkok-thailand-internship-74.jpg"
+    },
+    {
+      "category": "campus",
+      "label": "Campus walk",
+      "caption": "AIT campus walk",
+      "sub": "Campus · Pathum Thani",
+      "photo": "https://gkm563.github.io/assets/images/ait-bangkok/gautam-kumar-maurya-gkm-ait-bangkok-thailand-internship-27.jpg"
+    },
+    {
+      "category": "graduation",
+      "label": "Final defence",
+      "caption": "Final presentations on stage",
+      "sub": "Graduation · AIT",
+      "photo": "https://gkm563.github.io/assets/images/ait-bangkok/gautam-kumar-maurya-gkm-ait-bangkok-thailand-internship-128.jpg"
+    },
+    {
+      "category": "people",
+      "label": "In session",
+      "caption": "Learning block in session",
+      "sub": "People · AIT",
+      "photo": "https://gkm563.github.io/assets/images/ait-bangkok/gautam-kumar-maurya-gkm-ait-bangkok-thailand-internship-56.jpg"
+    },
+    {
+      "category": "culture",
+      "label": "Traditional dress",
+      "caption": "Traditional dress, Bangkok evening",
+      "sub": "Culture · AIT",
+      "photo": "https://gkm563.github.io/assets/images/ait-bangkok/gautam-kumar-maurya-gkm-ait-bangkok-thailand-internship-79.jpg"
+    },
+    {
+      "category": "learning",
+      "label": "AI & Simulation Lab",
+      "caption": "AI and Simulation Lab, AIT",
+      "sub": "Learning · AIT",
+      "photo": "https://gkm563.github.io/assets/images/ait-bangkok/gautam-kumar-maurya-gkm-ait-bangkok-thailand-internship-123.jpg"
+    },
+    {
+      "category": "campus",
+      "label": "Closing evening",
+      "caption": "The cohort on the closing night",
+      "sub": "Campus · Bangkok",
+      "photo": "https://gkm563.github.io/assets/images/ait-bangkok/gautam-kumar-maurya-gkm-ait-bangkok-thailand-internship-9.jpg"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What is GIIP 2026?",
+      "a": "GIIP 2026 is the Global Innovation Internship Program run at the Asian Institute of Technology in Thailand. The 15-day edition ran from 1 to 15 June 2026, covering AI, GIS, IoT, robotics and agentic workflows, and closed with a team capstone."
+    },
+    {
+      "q": "Where and when did it take place?",
+      "a": "At the Asian Institute of Technology campus in Pathum Thani, north of central Bangkok, from 1 to 15 June 2026. Sessions used AIT teaching rooms and labs, with a KMITL visit and a cultural day in Bangkok."
+    },
+    {
+      "q": "What did you build during the fellowship?",
+      "a": "BusSetu, a real-time public transport platform that combines GTFS schedules with GPS telemetry to project bus arrivals on a vector map. I led the architecture and map layer and presented the prototype to the AIT faculty panel."
+    },
+    {
+      "q": "Was this an internship, a course or a fellowship?",
+      "a": "It ran as a structured international innovation programme: taught modules, lab and field work, a team capstone and a certificate at the closing ceremony. AIT's Special Degree Programs office hosted the cohort."
+    },
+    {
+      "q": "How can I verify the programme or the certificate?",
+      "a": "The programme is recorded on the roles and responsibilities ledger and in the achievements dossier, with dates and context. The certificate was presented at the AIT closing ceremony, and the BusSetu prototype remains live."
+    },
+    {
+      "q": "What was the most useful part of the 15 days?",
+      "a": "The forced loop from field data to a working product: collect spatial data, clean it, model it, then defend a live interface built on top of it. The BusSetu sprint turned the whole fortnight into one testable system."
+    }
+  ],
+  "verification": {
+    "rolesLedger": "https://gkm563.github.io/roles-and-responsibilities/#GKM-EXP-AIT-2026",
+    "achievements": "https://gkm563.github.io/achievements/#ait-giip-2026",
+    "linkedin": "https://www.linkedin.com/in/gkm563/"
+  }
+}
