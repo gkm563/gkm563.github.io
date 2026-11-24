@@ -1,0 +1,263 @@
+{
+  "generated": "2026-11-24",
+  "canonical": "https://gkm563.github.io/up-police-internship.html",
+  "title": "UP Police Cyber Security Internship 2026 — 15 Days at Amroha | Gautam Kumar Maurya",
+  "description": "A day-by-day case file of the Amroha Police Cyber Security Internship Program (APCSIP-2026), 10–22 June 2026: 13 field logs, 12 domains taught by India's top cyber security experts, 45+ officers and experts met, and the Best Content Creator award.",
+  "person": {
+    "name": "Gautam Kumar Maurya",
+    "alternateName": "gkm563",
+    "url": "https://gkm563.github.io/",
+    "linkedin": "https://www.linkedin.com/in/gkm563/",
+    "github": "https://github.com/gkm563",
+    "location": "Prayagraj, Uttar Pradesh, India"
+  },
+  "programme": {
+    "name": "Amroha Police Cyber Security Internship Program (APCSIP) 2026",
+    "host": "Uttar Pradesh Police — Amroha Police Cyber Crime Cell",
+    "hostOffice": "Amroha Police Cyber Crime Cell",
+    "location": "Shri Venkateshwara University, Amroha, Uttar Pradesh, India",
+    "coordinates": {
+      "lat": 28.9039,
+      "lng": 78.4678
+    },
+    "timezone": "Asia/Kolkata (IST, UTC+5:30)",
+    "start": "2026-06-10",
+    "end": "2026-06-22",
+    "days": 15,
+    "role": "Cyber security intern — field log recorder",
+    "selection": [
+      "Online application (May 2026)",
+      "Screening shortlist (21–22 May 2026)",
+      "50-MCQ cyber aptitude exam (24 May 2026)",
+      "Offer letter issued",
+      "Document verification",
+      "Reporting at Amroha (10 Jun 2026)",
+      "12 operational days (11–22 Jun 2026)",
+      "Valedictory and certificate (22 Jun 2026)"
+    ],
+    "instructors": [
+      "DSP Anjali Kataria (Amroha Cyber Crime Cell)",
+      "Rakshit Tandon (senior consultant and advisor to law enforcement)",
+      "Amit Dubey (cyber crime investigator and author)",
+      "Saumay Srivastava (threat intelligence researcher)",
+      "Yugal Pathal (DFIR specialist)",
+      "Bhanu Sharma",
+      "Nitin Pandey (cyber security author)",
+      "Kailash D Agrawal (payment security consultant)",
+      "Pakhi Garg (cyber law advisor)"
+    ],
+    "outcome": "Programme completion certificate and the Best Content Creator award, presented by DSP Anjali Kataria at the valedictory on 22 June 2026, for the daily field logs published on LinkedIn throughout the fellowship."
+  },
+  "award": {
+    "name": "Best Content Creator — APCSIP-2026",
+    "presentedBy": "DSP Anjali Kataria",
+    "date": "2026-06-22",
+    "venue": "Valedictory, Shri Venkateshwara University, Amroha",
+    "evidence": {
+      "certificate": "https://gkm563.github.io/assets/images/up-police/opt/gkm-up-police-award-certificate.jpg",
+      "ceremonyPhoto": "https://gkm563.github.io/assets/images/up-police/opt/gkm-up-police-award-ceremony.jpg",
+      "achievementsEntry": "https://gkm563.github.io/achievements/#up-police-best-content-creator-2026",
+      "rolesLedger": "https://gkm563.github.io/roles-and-responsibilities/#GKM-EXP-UPP-2026"
+    }
+  },
+  "counts": {
+    "days": 15,
+    "logs": 13,
+    "domains": 12,
+    "mentors": 12,
+    "expertsMet": 45,
+    "linkedinProofs": 12,
+    "galleryFrames": 12
+  },
+  "days": [
+    {
+      "day": "01",
+      "url": "https://gkm563.github.io/up-police-internship.html#day-01",
+      "date": "2026-06-10",
+      "label": "Log 01 · Wed 10 Jun 2026",
+      "title": "Reporting, welcome kit and orientation",
+      "summary": "Arrived at Shri Venkateshwara University and reported to the APCSIP registration desk. Credential verification, the official welcome kit, the internship badge and the offer letter — then an afternoon briefing on discipline, attendance and assessment parameters."
+    },
+    {
+      "day": "02",
+      "url": "https://gkm563.github.io/up-police-internship.html#day-02",
+      "date": "2026-06-11",
+      "label": "Log 02 · Thu 11 Jun 2026",
+      "title": "Inauguration and the shape of the threat",
+      "summary": "The formal opening with Amroha Police officials and the programme's cyber security experts. Keynotes mapped the emerging cyber threat picture in Uttar Pradesh — financial scam networks, phishing ecosystems and how local cyber cells plug into the National Cyber Crime Reporting Portal.",
+      "proof": "https://www.linkedin.com/posts/activity-7470898048672546816-iicy"
+    },
+    {
+      "day": "03",
+      "url": "https://gkm563.github.io/up-police-internship.html#day-03",
+      "date": "2026-06-12",
+      "label": "Log 03 · Fri 12 Jun 2026",
+      "title": "Cyber psychology, then the OSINT bench",
+      "summary": "Morning on the human layer: urgency, fear and authority pretexts — how fraudsters actually manipulate victims. Afternoon on the OSINT bench with Maltego, Shodan, Google dorks, DeHashed and FotoForensics, finishing with an audit of our own digital footprints.",
+      "proof": "https://www.linkedin.com/posts/activity-7471212272728596480-CLCt"
+    },
+    {
+      "day": "04",
+      "url": "https://gkm563.github.io/up-police-internship.html#day-04",
+      "date": "2026-06-13",
+      "label": "Log 04 · Sat 13 Jun 2026",
+      "title": "Cyber law, research method and AI on the bench",
+      "summary": "The legal spine of the programme: India's IT Act 2000 and Section 66 offences, digital evidence rules and forensic case reporting. Afternoon paired ML and generative AI for threat-pattern recognition and log anomaly detection, then a career panel on CEH, CISSP and DFIR paths.",
+      "proof": "https://www.linkedin.com/posts/activity-7471581220217307137-Zheo"
+    },
+    {
+      "day": "05",
+      "url": "https://gkm563.github.io/up-police-internship.html#day-05",
+      "date": "2026-06-14",
+      "label": "Log 05 · Sun 14 Jun 2026",
+      "title": "Malware analysis and evidence imaging",
+      "summary": "Android malware from the inside: packaging, decompiling APKs, mapping command-and-control servers and disciplining analysis inside sandboxes. The afternoon was pure forensics — imaging with write-blockers, chain-of-custody rules and MD5/SHA-256 hash verification.",
+      "proof": "https://www.linkedin.com/posts/activity-7471934167786860544-eU9j"
+    },
+    {
+      "day": "06",
+      "url": "https://gkm563.github.io/up-police-internship.html#day-06",
+      "date": "2026-06-15",
+      "label": "Log 06 · Mon 15 Jun 2026",
+      "title": "SOC operations and bug bounty",
+      "summary": "A full day at the monitoring desk: SOC architecture, event correlation, SIEM and EDR platforms, live alert triage in Wazuh, Elastic, Wireshark and VirusTotal. The afternoon flipped to the attacker's view — subdomain enumeration, API endpoint auditing and responsible disclosure via HackerOne and Bugcrowd.",
+      "proof": "https://www.linkedin.com/posts/activity-7472285418227511296-1b2c"
+    },
+    {
+      "day": "07",
+      "url": "https://gkm563.github.io/up-police-internship.html#day-07",
+      "date": "2026-06-16",
+      "label": "Log 07 · Tue 16 Jun 2026",
+      "title": "DPDP compliance and following the mules",
+      "summary": "DPDP Act 2023 obligations — consent, purpose limitation, retention — read from an investigator's seat. The money trail followed next: mule accounts, RBI and I4C guidance, SWIFT CSP and reconstructing a fraud chain from the first UPI debit to the last withdrawal.",
+      "proof": "https://www.linkedin.com/posts/activity-7472651901113745409-qpZa"
+    },
+    {
+      "day": "08",
+      "url": "https://gkm563.github.io/up-police-internship.html#day-08",
+      "date": "2026-06-17",
+      "label": "Log 08 · Wed 17 Jun 2026",
+      "title": "Blockchain, crypto and real police cases",
+      "summary": "Blockchain structure, key cryptography, contract flaws and 51% attacks — then real Section 91 CrPC case studies on evidence handling and wallet tracing, walked through by officers from live investigations.",
+      "proof": "https://www.linkedin.com/posts/activity-7473031309607632896-VK_k"
+    },
+    {
+      "day": "09",
+      "url": "https://gkm563.github.io/up-police-internship.html#day-09",
+      "date": "2026-06-18",
+      "label": "Log 09 · Thu 18 Jun 2026",
+      "title": "Privacy as a fundamental right",
+      "summary": "The morning belonged to K.S. Puttaswamy v. Union of India — the Supreme Court ruling that made privacy a fundamental right — and what it means for ethics in emerging tech. The afternoon was a closed briefing on handling classified threat intelligence, officer discretion and professional ethics.",
+      "proof": "https://www.linkedin.com/posts/activity-7473377737886412802-0n2x"
+    },
+    {
+      "day": "10",
+      "url": "https://gkm563.github.io/up-police-internship.html#day-10",
+      "date": "2026-06-19",
+      "label": "Log 10 · Fri 19 Jun 2026",
+      "title": "Offensive security and the dark web",
+      "summary": "Thinking like the attacker, legally: system enumeration, directory brute-forcing, port scanning, web security headers and cross-origin configurations. Then the dark web — Tor onion routing, entry/middle/exit nodes, hidden service directories and cyber kill-chain mapping.",
+      "proof": "https://www.linkedin.com/posts/activity-7473737755009708032-xKky"
+    },
+    {
+      "day": "11",
+      "url": "https://gkm563.github.io/up-police-internship.html#day-11",
+      "date": "2026-06-20",
+      "label": "Log 11 · Sat 20 Jun 2026",
+      "title": "Reverse engineering — and the award announcement",
+      "summary": "The deepest technical day: malware detonated inside isolated FlareVM and REMnux virtual machines, process trees monitored with Process Hacker and Wireshark, behaviour documented like evidence, plus physical chip-off extraction from damaged devices. In the afternoon the Best Content Creator award was announced.",
+      "proof": "https://www.linkedin.com/posts/activity-7474098714874118144-IoRp"
+    },
+    {
+      "day": "12",
+      "url": "https://gkm563.github.io/up-police-internship.html#day-12",
+      "date": "2026-06-21",
+      "label": "Log 12 · Sun 21 Jun 2026",
+      "title": "Mobile acquisition, cyber hygiene and yoga",
+      "summary": "Hands-on mobile forensics — acquisition types, app artefacts and the discipline of custody — alongside cyber-hygiene drills for police teams. The day closed with a session on physical and mental resilience, with yoga, for officers who carry case stress daily.",
+      "proof": "https://www.linkedin.com/posts/activity-7474510708123140097-ECFF"
+    },
+    {
+      "day": "13",
+      "url": "https://gkm563.github.io/up-police-internship.html#day-13",
+      "date": "2026-06-22",
+      "label": "Log 13 · Mon 22 Jun 2026",
+      "title": "Valedictory defence and the certificate",
+      "summary": "The final defence: technical findings, OSINT case files and CDR analysis reports presented before the review panel. Then the graduation — the official APCSIP-2026 completion certificate, the Best Content Creator honour presented by DSP Anjali Kataria, and the last set of group photographs with the officers.",
+      "proof": "https://www.linkedin.com/posts/activity-7468310729755045888-mNhc"
+    }
+  ],
+  "domains": [
+    { "index": "01", "name": "OSINT & Recon", "summary": "Maltego, Shodan, Google dorks, DeHashed and FotoForensics — mapping a suspect from open registries." },
+    { "index": "02", "name": "Mobile Forensics & Chip-off", "summary": "Acquisition standards, custody documentation and physical extraction from damaged devices." },
+    { "index": "03", "name": "CDR & Tower Sorting", "summary": "Call detail records, tower dump sorting and location analysis that survive cross-examination." },
+    { "index": "04", "name": "IPDR & Netflow", "summary": "Internet protocol detail records — linking devices, sessions and timestamps to a case file." },
+    { "index": "05", "name": "Malware Analysis & RE", "summary": "APK decompilation, C2 mapping, FlareVM/REMnux sandboxes and hash-verified evidence." },
+    { "index": "06", "name": "SOC & SIEM Operations", "summary": "Wazuh, Elastic, Wireshark and VirusTotal — monitoring, correlation and alert triage." },
+    { "index": "07", "name": "UPI & Financial Fraud", "summary": "Mule account detection, RBI/I4C SEBI guidelines, SWIFT CSP and money-trail reconstruction." },
+    { "index": "08", "name": "Dark Web Investigation", "summary": "Tor circuits, hidden service directories and cyber kill-chain mapping for law enforcement." },
+    { "index": "09", "name": "Web & Network Auditing", "summary": "Header audits, subdomain enumeration, port scanning and responsible bug disclosure." },
+    { "index": "10", "name": "Cyber Laws & IT Act", "summary": "IT Act 2000, Section 66B certificates, DPDP Act 2023 and Section 91 CrPC notices." },
+    { "index": "11", "name": "Cyber Psychology", "summary": "Social-engineering pretexts, fraudster profiling and victim response dynamics." },
+    { "index": "12", "name": "Blockchain & Crypto Forensics", "summary": "Ledger tracing, wallet clustering, contract audit basics and suspect wallet monitoring." }
+  ],
+  "toolbelt": [
+    "Maltego", "Shodan", "Google Dorks", "DeHashed", "FotoForensics",
+    "Wireshark", "Wazuh", "Elastic", "VirusTotal", "FlareVM",
+    "REMnux", "PEStudio", "Process Hacker"
+  ],
+  "gallery": [
+    { "src": "https://gkm563.github.io/assets/images/up-police/opt/gkm-up-police-award-ceremony.jpg", "category": "award", "caption": "Best Content Creator award presentation at the APCSIP-2026 valedictory, Amroha", "credit": "UP Police · Amroha Police Cyber Crime Cell" },
+    { "src": "https://gkm563.github.io/assets/images/up-police/opt/gkm-up-police-award-certificate.jpg", "category": "award", "caption": "APCSIP-2026 completion and Best Content Creator certificate", "credit": "UP Police · Amroha Police Cyber Crime Cell" },
+    { "src": "https://gkm563.github.io/assets/images/up-police/opt/gkm-up-police-award-cup.jpg", "category": "award", "caption": "The Best Content Creator trophy", "credit": "UP Police · Amroha Police Cyber Crime Cell" },
+    { "src": "https://gkm563.github.io/assets/images/up-police/opt/gkm-up-police-40.jpg", "category": "sessions", "caption": "Live SOC board session at the Amroha cyber cell", "credit": "Gautam Kumar Maurya" },
+    { "src": "https://gkm563.github.io/assets/images/up-police/opt/gkm-up-police-15.jpg", "category": "officers", "caption": "Group photograph with Amroha Police officers", "credit": "Gautam Kumar Maurya" },
+    { "src": "https://gkm563.github.io/assets/images/up-police/opt/gkm-up-police-12.jpg", "category": "officers", "caption": "With the cyber cell team during field work", "credit": "Gautam Kumar Maurya" },
+    { "src": "https://gkm563.github.io/assets/images/up-police/opt/gkm-up-police-14.jpg", "category": "officers", "caption": "Officer briefing during the fellowship", "credit": "Gautam Kumar Maurya" },
+    { "src": "https://gkm563.github.io/assets/images/up-police/opt/gkm-up-police-21.jpg", "category": "officers", "caption": "With officers at Shri Venkateshwara University", "credit": "Gautam Kumar Maurya" },
+    { "src": "https://gkm563.github.io/assets/images/up-police/opt/gkm-up-police-24.jpg", "category": "sessions", "caption": "Mentor session during the APCSIP-2026 curriculum", "credit": "Gautam Kumar Maurya" },
+    { "src": "https://gkm563.github.io/assets/images/up-police/opt/gkm-up-police-25.jpg", "category": "sessions", "caption": "Classroom and lab sessions", "credit": "Gautam Kumar Maurya" },
+    { "src": "https://gkm563.github.io/assets/images/up-police/opt/gkm-up-police-10.jpg", "category": "sessions", "caption": "Field log day during the internship", "credit": "Gautam Kumar Maurya" },
+    { "src": "https://gkm563.github.io/assets/images/up-police/opt/gkm-up-police-11.jpg", "category": "sessions", "caption": "Hands-on practice during the fellowship", "credit": "Gautam Kumar Maurya" }
+  ],
+  "mentors": [
+    { "name": "Anjali Kataria", "role": "DSP, Amroha Cyber Crime Cell" },
+    { "name": "Rakshit Tandon", "role": "Senior consultant and advisor to law enforcement" },
+    { "name": "Amit Dubey", "role": "Cyber crime investigator and national security author" },
+    { "name": "Bhanu Sharma", "role": "Cyber crime cell operations" },
+    { "name": "Vikash Kumar", "role": "Student coordinator, APCSIP logistics" },
+    { "name": "Saumay Srivastava", "role": "Threat intelligence researcher" },
+    { "name": "Yugal Pathal", "role": "DFIR specialist" },
+    { "name": "Nitin Pandey", "role": "Cyber security author" },
+    { "name": "Kailash D Agrawal", "role": "Payment security consultant" },
+    { "name": "Pakhi Garg", "role": "Cyber law advisor" },
+    { "name": "Yash Chavhan", "role": "Web and crypto lead" },
+    { "name": "Manoj Kushwaha", "role": "Technical coordinator" }
+  ],
+  "faq": [
+    {
+      "q": "What was the UP Police cyber security internship (APCSIP-2026)?",
+      "a": "APCSIP-2026 was a 15-day cyber security fellowship run by the Amroha Police Cyber Crime Cell, Uttar Pradesh Police, from 10 to 22 June 2026 at Shri Venkateshwara University, Amroha. Gautam Kumar Maurya was selected through an eight-gate pipeline including a 50-question cyber aptitude exam."
+    },
+    {
+      "q": "What did Gautam Kumar Maurya do during the fellowship?",
+      "a": "Twelve operational days covering 12 domains — OSINT, mobile forensics, CDR/IPDR analysis, malware analysis, SOC and SIEM operations, UPI fraud tracing, dark web investigation, web and network auditing, IT Act law, cyber psychology and blockchain forensics — documented in 13 dated field logs, 12 of which were published on LinkedIn."
+    },
+    {
+      "q": "Who taught the programme?",
+      "a": "The faculty included Rakshit Tandon, Amit Dubey, DSP Anjali Kataria of the Amroha Cyber Crime Cell, and specialists such as Saumay Srivastava, Yugal Pathal, Nitin Pandey, Kailash D Agrawal, Pakhi Garg, Yash Chavhan and Manoj Kushwaha — more than 45 officers, experts and coordinators in total."
+    },
+    {
+      "q": "What award did Gautam Kumar Maurya receive?",
+      "a": "The Best Content Creator award at the APCSIP-2026 valedictory on 22 June 2026, presented by DSP Anjali Kataria, along with the official completion certificate — recognition for the daily field logs published on LinkedIn throughout the fellowship."
+    },
+    {
+      "q": "How was the selection done?",
+      "a": "Applications opened in May 2026, followed by a screening shortlist on 21–22 May, a 50-question multiple-choice cyber aptitude exam on 24 May, an offer letter, document verification and reporting at Amroha on 10 June 2026."
+    },
+    {
+      "q": "How can I verify the internship and the award?",
+      "a": "The 12 LinkedIn field logs linked from each entry on this page, the certificate image in the award section, the roles ledger entry GKM-EXP-UPP-2026 and the achievements dossier entry up-police-best-content-creator-2026."
+    }
+  ]
+}

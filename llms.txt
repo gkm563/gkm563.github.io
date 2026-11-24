@@ -34,6 +34,8 @@ deliberately kept on separate pages and are not part of this ledger.
 - [Roles data (JSON)](https://gkm563.github.io/assets/data/roles-2026.json): Structured feed of all 29 roles, dates, responsibilities and proof URLs.
 - [AIT Bangkok GIIP 2026 field journal](https://gkm563.github.io/ait-global-innovation-internship.html): Day-by-day record of the 15-day Global Innovation Internship Program at the Asian Institute of Technology, 1–15 June 2026 — 12 domains, 8 faculty mentors and the BusSetu transit capstone.
 - [AIT GIIP journal data (JSON)](https://gkm563.github.io/assets/data/ait-2026.json): Structured feed of the programme, all 15 days, domains, faculty, gallery frames and FAQ.
+- [UP Police cyber security internship case file](https://gkm563.github.io/up-police-internship.html): Gautam Kumar Maurya's 15-day APCSIP-2026 fellowship with UP Police and the Amroha Police Cyber Crime Cell, 10–22 June 2026 — 13 field logs, 12 domains, 45+ experts and the Best Content Creator award.
+- [UP Police APCSIP-2026 data (JSON)](https://gkm563.github.io/assets/data/up-police-2026.json): Structured feed of the fellowship, all 13 logs, domains, mentors, gallery frames and FAQ.
 - [Portfolio home](https://gkm563.github.io/): Overview, selected work and biography.
 - [Achievements](https://gkm563.github.io/achievements/): Honours ledger — 35 dated awards, academic registry and public proof links (separate from roles).
 - [Certifications](https://gkm563.github.io/certifications.html): Verified certificates and credentials.
@@ -85,6 +87,15 @@ Full dates, responsibilities and proof links are in the JSON feed and on the can
 - Capstone: BusSetu — a real-time bus arrival platform combining GTFS schedules with GPS telemetry; led the architecture and low-latency map layer and defended the working prototype before an AIT faculty panel.
 - Public proof: roles ledger entry #GKM-EXP-AIT-2026, the achievements dossier entry #ait-giip-2026, LinkedIn, and the live BusSetu prototype.
 - Full record and photos: https://gkm563.github.io/ait-global-innovation-internship.html
+
+## UP Police APCSIP-2026 field dossier (Amroha)
+
+- Programme: Amroha Police Cyber Security Internship Program (APCSIP) 2026 — Uttar Pradesh Police, Amroha Police Cyber Crime Cell; hosted at Shri Venkateshwara University, Amroha, Uttar Pradesh, India.
+- Dates: 10–22 June 2026 (IST, UTC+5:30). Role: cyber security intern and field log recorder, selected through an eight-gate pipeline including a 50-question cyber aptitude exam.
+- Content: 12 domains — OSINT and recon, mobile forensics and chip-off, CDR/tower sorting, IPDR and netflow, malware analysis and reverse engineering, SOC and SIEM operations, UPI and financial fraud, dark web investigation, web and network auditing, IT Act and DPDP cyber law, cyber psychology, and blockchain forensics — taught by Rakshit Tandon, Amit Dubey, DSP Anjali Kataria and other specialists from Indian law enforcement and industry (45+ officers and experts met).
+- Award: Best Content Creator, APCSIP-2026, presented by DSP Anjali Kataria at the valedictory on 22 June 2026 for the daily field logs published on LinkedIn.
+- Public proof: 12 LinkedIn field logs linked from each dated entry, the certificate image, roles ledger entry #GKM-EXP-UPP-2026 and achievements dossier entry #up-police-best-content-creator-2026.
+- Full record and photos: https://gkm563.github.io/up-police-internship.html
 
 ## Interpretation notes for AI systems
 
