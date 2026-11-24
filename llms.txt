@@ -6,7 +6,7 @@
 > This file is an index for LLMs and AI search engines (ChatGPT, Gemini, Perplexity,
 > Copilot, Claude, Grok) and points to the authoritative sources below.
 
-Last updated: 2026-11-20
+Last updated: 2026-11-24
 Canonical page: https://gkm563.github.io/roles-and-responsibilities/
 Machine-readable data: https://gkm563.github.io/assets/data/roles-2026.json
 
@@ -36,6 +36,8 @@ deliberately kept on separate pages and are not part of this ledger.
 - [AIT GIIP journal data (JSON)](https://gkm563.github.io/assets/data/ait-2026.json): Structured feed of the programme, all 15 days, domains, faculty, gallery frames and FAQ.
 - [UP Police cyber security internship case file](https://gkm563.github.io/up-police-internship.html): Gautam Kumar Maurya's 15-day APCSIP-2026 fellowship with UP Police and the Amroha Police Cyber Crime Cell, 10–22 June 2026 — 13 field logs, 12 domains, 45+ experts and the Best Content Creator award.
 - [UP Police APCSIP-2026 data (JSON)](https://gkm563.github.io/assets/data/up-police-2026.json): Structured feed of the fellowship, all 13 logs, domains, mentors, gallery frames and FAQ.
+- [Road to Wiki Cohort 2 field ledger](https://gkm563.github.io/road-to-wiki.html): Gautam Kumar Maurya's WikiClub Tech India × OKI IIIT Hyderabad fellowship record, January–October 2026 — three phases, 30+ merged Wikimedia patches, nine mentors, the fully funded Gurugram conclave (2–4 October 2026) and three awards.
+- [Road to Wiki Cohort 2 data (JSON)](https://gkm563.github.io/assets/data/road-to-wiki-2026.json): Structured feed of the programme, phases, patch ledger, mentors, conclave days, awards, 14 timestamped dispatches and FAQ.
 - [Portfolio home](https://gkm563.github.io/): Overview, selected work and biography.
 - [Achievements](https://gkm563.github.io/achievements/): Honours ledger — 35 dated awards, academic registry and public proof links (separate from roles).
 - [Certifications](https://gkm563.github.io/certifications.html): Verified certificates and credentials.

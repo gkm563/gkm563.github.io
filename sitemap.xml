@@ -109,9 +109,19 @@
   <!-- ===== 9. Road to Wiki Fellowship & Graduation 2026 ===== -->
   <url>
     <loc>https://gkm563.github.io/road-to-wiki.html</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.95</priority>
+    <image:image>
+      <image:loc>https://gkm563.github.io/assets/images/og/og-road-to-wiki-1200x630.jpg</image:loc>
+      <image:title>Road to Wiki Cohort 2 — 30+ Wikimedia patches, 3 awards | Gautam Kumar Maurya</image:title>
+      <image:caption>Fellowship dossier cover: from rejected volunteer to upstream contributor with 30+ merged Wikimedia patches and three graduation awards in Gurugram, 2026.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://gkm563.github.io/assets/images/wiki/commons/commons-group-photo-cohort2-gurugram.jpg</image:loc>
+      <image:title>Road to Wiki Cohort 2 graduates with mentors, Gurugram 2026</image:title>
+      <image:caption>Cohort 2 graduates and mentors at the Road to Wiki celebration in Gurugram, 2–4 October 2026. Photo: Dev Jadiya, CC BY-SA 4.0.</image:caption>
+    </image:image>
     <image:image>
       <image:loc>https://gkm563.github.io/assets/images/wiki/road-to-wiki-program-banner.webp</image:loc>
       <image:title>Road to Wiki — Cohort 2 Technical Fellowship &amp; Graduation 2026</image:title>

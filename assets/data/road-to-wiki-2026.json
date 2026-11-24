@@ -1,0 +1,456 @@
+{
+  "generated": "2026-11-24",
+  "canonical": "https://gkm563.github.io/road-to-wiki.html",
+  "title": "Road to Wiki Cohort 2 — 30+ Wikimedia Patches, 3 Awards | Gautam Kumar Maurya",
+  "description": "A field ledger of the WikiClub Tech India × OKI IIIT Hyderabad Road to Wiki Cohort 2 fellowship: three phases across eight to nine months, 30+ merged Wikimedia patches, a fully funded Vande Bharat journey to Gurugram and three graduation awards — Best Contributor, Most Active Contributor and 1st Rank.",
+  "person": {
+    "name": "Gautam Kumar Maurya",
+    "alternateName": "gkm563",
+    "url": "https://gkm563.github.io/",
+    "linkedin": "https://www.linkedin.com/in/gkm563/",
+    "github": "https://github.com/gkm563",
+    "meta": "https://meta.wikimedia.org/wiki/User:Gkm563",
+    "location": "Prayagraj, Uttar Pradesh, India"
+  },
+  "programme": {
+    "name": "Road to Wiki — Cohort 2",
+    "host": "WikiClub Tech India",
+    "hostUrl": "https://meta.wikimedia.org/wiki/IIITH-OKI/Wikiclub_Tech/Road_To_Wiki",
+    "partner": "Open Knowledge Initiatives (OKI), IIIT Hyderabad",
+    "supporter": "Wikimedia Foundation",
+    "location": "Online (Google Meet) · Graduation at Gurugram, Haryana, India",
+    "start": "2026-01-01",
+    "end": "2026-10-04",
+    "months": "8–9",
+    "phases": 3,
+    "cohortSize": "90+ students from 12 partner universities",
+    "role": "Cohort 2 fellow · WikiClub Tech campus envoy",
+    "outcome": "30+ merged Wikimedia patches, eight of them featured in the WikiClub Tech Technical Impact Report I (Jan–Jun 2026), and three awards presented at the national conclave in Gurugram, 2–4 October 2026."
+  },
+  "counts": {
+    "patches": "30+",
+    "patchesInImpactReport": 8,
+    "awards": 3,
+    "mentors": 9,
+    "dispatches": 14,
+    "phases": 3,
+    "cohortGraduates": "90+",
+    "partnerUniversities": 12
+  },
+  "phases": [
+    {
+      "num": "01",
+      "name": "Induction & technical foundations",
+      "window": "Jan – Apr 2026",
+      "format": "Live Google Meet masterclasses",
+      "highlights": [
+        "Weekly live architecture walkthroughs and open Q&A with mentors.",
+        "Git, CI/CD, SSH and Phabricator masterclass with Pratik Singh (GitLab), Aditya and Agamya.",
+        "Local MediaWiki dev environment (LAMP/Docker) and SSH authentication for Gerrit.",
+        "Selected as GDG Prayagraj Community Volunteer 2026–27 under Ankit Sir and Mohd Shadab Sir."
+      ],
+      "gate": "First patchset pushed to Wikimedia Gerrit."
+    },
+    {
+      "num": "02",
+      "name": "The upstream marathon & systems",
+      "window": "Apr – Jul 2026",
+      "format": "Production tickets and sprint marathon",
+      "highlights": [
+        "1st position, 1-Week Wiki Contribution Marathon (20–27 April 2026), during college sessional exams.",
+        "High-scale systems session: SQL vs NoSQL, Elasticsearch, Redis and Varnish with Vrijraj Singh and Ankit Sir.",
+        "RTW-P2S3 engineering-growth session with Santhosh Thottingal (WMF Principal Software Engineer).",
+        "Joined the Universal Code of Conduct sync live from an auto rickshaw while commuting home.",
+        "8 upstream patches featured in the IIIT Hyderabad Technical Impact Report I."
+      ],
+      "gate": "Marathon winner, eight production merges."
+    },
+    {
+      "num": "03",
+      "name": "Wikispeech, Proofread & translatewiki",
+      "window": "Aug – Sep 2026",
+      "format": "Group 3 tool specialisation",
+      "highlights": [
+        "Group 3 kickoff led by Sarthak Singh, Shivaansh Singh and Dev Jadiya.",
+        "Proofread Tool (Wikisource): OCR corrections, digitisation and transcription UX.",
+        "translatewiki.net: localisation tooling, i18n notifications and Indic wiki support.",
+        "Wikispeech accessibility work on top of crossing 30+ merged patches.",
+        "Keynote speaker at Open Source Day, UIT Prayagraj — speaking to 100+ juniors."
+      ],
+      "gate": "Tools shipped; the loop turns."
+    }
+  ],
+  "patches": [
+    {
+      "num": "01",
+      "title": "Pywikibot bot framework & test reliability",
+      "summary": "Hardened Python bot modules — test flake, async delays, network stability.",
+      "repo": "pywikibot/core",
+      "ticket": "WCT impact report",
+      "url": "https://github.com/wikimedia/pywikibot"
+    },
+    {
+      "num": "02",
+      "title": "WFFunctionCall accessor methods",
+      "summary": "Clean object accessors inside the Wikifunctions Function Orchestrator.",
+      "repo": "function-orchestrator",
+      "ticket": "T426338",
+      "url": "https://phabricator.wikimedia.org/T426338"
+    },
+    {
+      "num": "03",
+      "title": "Malformed URI fragment handling on mobile",
+      "summary": "Graceful fallback instead of an unhandled crash in the Minerva skin.",
+      "repo": "skins/MinervaNeue",
+      "ticket": "CR #1287961 · T424875",
+      "url": "https://gerrit.wikimedia.org/r/c/mediawiki/skins/MinervaNeue/+/1287961"
+    },
+    {
+      "num": "04",
+      "title": "Gender grammar for mentored messages",
+      "summary": "Grammar parameter handling in newcomer onboarding across inflected languages.",
+      "repo": "GrowthExperiments",
+      "ticket": "CR #1289010 · T416226",
+      "url": "https://gerrit.wikimedia.org/r/c/mediawiki/extensions/GrowthExperiments/+/1289010"
+    },
+    {
+      "num": "05",
+      "title": "REST EntryPoint cookie expiry normalisation",
+      "summary": "Aligned expire / expiry dictionary keys to stop silent session drops.",
+      "repo": "mediawiki/core",
+      "ticket": "CR #1345349",
+      "url": "https://gerrit.wikimedia.org/r/c/mediawiki/core/+/1345349"
+    },
+    {
+      "num": "06",
+      "title": "DifferenceEngine null RevisionStore guard",
+      "summary": "Prevented a null dereference when getRevisionById returns nothing.",
+      "repo": "mediawiki/core",
+      "ticket": "CR #1351157 · T435288",
+      "url": "https://gerrit.wikimedia.org/r/c/mediawiki/core/+/1351157"
+    },
+    {
+      "num": "07",
+      "title": "UploadWizard ampersand entity fix",
+      "summary": "Stopped double-escaped &amp; rendering in category chips; async QUnit.",
+      "repo": "UploadWizard",
+      "ticket": "CR #1309763 · T431918",
+      "url": "https://gerrit.wikimedia.org/r/c/mediawiki/extensions/UploadWizard/+/1309763"
+    },
+    {
+      "num": "08",
+      "title": "ProofreadPage toolbar-ready hook",
+      "summary": "Exposed ext.proofreadpage.toolbar-ready for reliable editor integrations.",
+      "repo": "ProofreadPage",
+      "ticket": "CR #1349040",
+      "url": "https://gerrit.wikimedia.org/r/c/mediawiki/extensions/ProofreadPage/+/1349040"
+    }
+  ],
+  "mentors": [
+    {
+      "name": "Santhosh Thottingal",
+      "role": "Internationalisation engineering",
+      "org": "Wikimedia Foundation",
+      "topic": "MediaWiki localisation pipelines, grammatical gender parameters and Indic language search routing."
+    },
+    {
+      "name": "Pratik Singh",
+      "role": "CI/CD core architecture",
+      "org": "Wikimedia Foundation",
+      "topic": "Gerrit automated test gates, Jenkins pipeline orchestration and regression prevention."
+    },
+    {
+      "name": "Krishna Chaitanya Velaga",
+      "role": "Developer tooling & data",
+      "org": "Wikimedia Foundation",
+      "topic": "Wikimedia developer tooling, database replicas, Pywikibot scripting and automation delays."
+    },
+    {
+      "name": "Debajit Mallick",
+      "role": "JavaScript masterclass",
+      "org": "Wikimedia Foundation",
+      "topic": "Defensive client-side JavaScript, URI fragment crash prevention and UI performance."
+    },
+    {
+      "name": "Vrijraj Singh",
+      "role": "Developer platform tools",
+      "org": "Wikimedia Foundation",
+      "topic": "Platform advocacy, developer onboarding ergonomics and ecosystem infrastructure."
+    },
+    {
+      "name": "Chakshu Gautam",
+      "role": "Code for GovTech (C4GT)",
+      "org": "Industry",
+      "topic": "Building digital public goods and scalable architectures for civic tech."
+    },
+    {
+      "name": "Vasanth Gopa",
+      "role": "Wikimedia developer ecosystem",
+      "org": "Industry",
+      "topic": "Community contribution pathways, Phabricator triage and upstream review etiquette."
+    },
+    {
+      "name": "Jay Prakash",
+      "role": "MediaWiki developer",
+      "org": "Industry",
+      "topic": "Debugging guidance on MediaWiki hooks, extension architecture and bot development."
+    },
+    {
+      "name": "Palivela Krupal Kashyap",
+      "role": "Toolforge infra & automation",
+      "org": "Industry",
+      "topic": "Toolforge Kubernetes containerisation, webservice hosting and bot deployment."
+    }
+  ],
+  "conclave": {
+    "name": "The Celebration Day — Road to Wiki graduation",
+    "location": "Gurugram, Haryana, India",
+    "start": "2026-10-02",
+    "end": "2026-10-04",
+    "travel": "Prayagraj (PRYJ) → Gurugram (GGN) on the Vande Bharat Express, fully funded",
+    "days": [
+      {
+        "day": "01",
+        "date": "2026-10-02",
+        "title": "Swagat, keynote & robo build",
+        "summary": "Arrived by train, checked in, and was received with a traditional swagat. The evening moved from the keynote “Beyond Road to Wiki” to a late-night robotics assembly session.",
+        "highlights": [
+          "Hotel check-in and traditional welcome",
+          "Keynote: Beyond Road to Wiki",
+          "Castle challenge and team formations",
+          "Soldering and wiring the combat robot"
+        ]
+      },
+      {
+        "day": "02",
+        "date": "2026-10-03",
+        "title": "Industry day, robo war & awards",
+        "summary": "Industry exposure day at the Wikimedia office — engineering talks, careers, AMA and a FOSS showcase — followed by the arena battles and the formal graduation gala.",
+        "highlights": [
+          "Office tour and engineering Q&A",
+          "Industry, FOSS and careers sessions",
+          "Robo-war tournament in the arena",
+          "Graduation and three-award presentation"
+        ]
+      },
+      {
+        "day": "03",
+        "date": "2026-10-04",
+        "title": "Yoga, goodbyes & the way back",
+        "summary": "Closed with morning yoga, a community breakfast and certificates in hand — then boarded the train back to Prayagraj carrying a mandate to teach.",
+        "highlights": [
+          "Morning yoga and community breakfast",
+          "Certificate and gift handover",
+          "Goodbyes with mentors and organisers",
+          "Return journey to Prayagraj"
+        ]
+      }
+    ],
+    "gallery": [
+      {
+        "caption": "Cohort 2 graduates with mentors at the Road to Wiki graduation, Gurugram",
+        "credit": "Wikimedia Commons · CC BY-SA 4.0 · Dev Jadiya",
+        "photo": "https://gkm563.github.io/assets/images/wiki/commons/commons-group-photo-cohort2-gurugram.jpg"
+      },
+      {
+        "caption": "With Dev, Anushka and Tejinder under the From Curiosity to Impact banner",
+        "credit": "Personal archive · Gurugram, October 2026",
+        "photo": "https://gkm563.github.io/assets/images/wiki/conclave/whatsapp-peers-from-curiosity-to-impact.jpg"
+      },
+      {
+        "caption": "Group selfie in the traditional orange pagdi at the conclave",
+        "credit": "Personal archive · Gurugram, October 2026",
+        "photo": "https://gkm563.github.io/assets/images/wiki/conclave/whatsapp-pagdi-group-selfie.jpg"
+      },
+      {
+        "caption": "National keynote — Together WE RISE",
+        "credit": "WikiClub Tech India · Gurugram conclave",
+        "photo": "https://gkm563.github.io/assets/images/wiki/conclave/conclave-keynote-podium.webp"
+      },
+      {
+        "caption": "Official Celebration Day key visual — Gurugram 2026",
+        "credit": "A year of community, contribution, ideas, impact",
+        "photo": "https://gkm563.github.io/assets/images/wiki/conclave/celebration-day-gurugram-poster.webp"
+      },
+      {
+        "caption": "Robo-war arena briefing during the hardware sprint",
+        "credit": "WikiClub Tech India · Gurugram conclave",
+        "photo": "https://gkm563.github.io/assets/images/wiki/conclave/conclave-robo-war-workshop.webp"
+      }
+    ]
+  },
+  "awards": [
+    {
+      "title": "Best Contributor",
+      "organiser": "WikiClub Tech India & OKI IIIT Hyderabad",
+      "date": "2026-10-03",
+      "location": "Gurugram",
+      "why": "The flagship honor — for code quality, architectural depth across MediaWiki core and proactive Gerrit review.",
+      "photo": "https://gkm563.github.io/assets/images/gallery/gautam-kumar-maurya-road-to-wiki-best-contributor.jpg"
+    },
+    {
+      "title": "Most Active Contributor",
+      "organiser": "WikiClub Tech India & OKI IIIT Hyderabad",
+      "date": "2026-10-03",
+      "location": "Gurugram",
+      "why": "Recognised for commit velocity, multi-repo ticket resolution and steady community problem-solving.",
+      "photo": "https://gkm563.github.io/assets/images/gallery/gautam-kumar-maurya-road-to-wiki-most-active-contributor.jpg"
+    },
+    {
+      "title": "Marathon 1st Rank",
+      "organiser": "WikiClub Tech–UIT",
+      "date": "2026-04-20/2026-04-27",
+      "location": "United Institute of Technology, Prayagraj",
+      "why": "First place across United Institute of Technology for the highest volume of merged upstream patches in one week.",
+      "photo": "https://gkm563.github.io/assets/images/gallery/gautam-kumar-maurya-wikiclub-marathon-1st.jpg"
+    }
+  ],
+  "dispatches": [
+    {
+      "id": "01",
+      "category": "induction",
+      "date": "2026-03",
+      "title": "Selected as GDG Prayagraj Community Volunteer 2026–27",
+      "quote": "Last year I also applied but wasn't selected. Instead of stopping there, I kept learning, improving and staying connected with the community — and this time it worked.",
+      "url": "https://www.linkedin.com/posts/gkm563_gdg-googledevelopergroups-gdgprayagraj-share-7436831299065126912-YGu0/"
+    },
+    {
+      "id": "02",
+      "category": "induction",
+      "date": "2026-04",
+      "title": "Mastering Git, SSH, CI/CD and Phabricator workflows",
+      "quote": "Over the past few sessions I got to dive deep into open source and developer workflows through Road to Wiki. Gained clarity, confidence and motivation to contribute actively.",
+      "url": "https://www.linkedin.com/posts/gkm563_git-contributions-git-ugcPost-7460519858569502720-05az/"
+    },
+    {
+      "id": "03",
+      "category": "marathon",
+      "date": "2026-04-20/2026-04-27",
+      "title": "First position in the one-week WikiClub Tech contribution marathon",
+      "quote": "During this journey I explored real open-source workflows using Gerrit, Phabricator and Git. Managing this during college sessional exams taught me consistency, time management and dedication.",
+      "url": "https://www.linkedin.com/posts/gkm563_1st-gerrit-phabricator-ugcPost-7460537698651623424-xoqG/"
+    },
+    {
+      "id": "04",
+      "category": "systems",
+      "date": "2026-05",
+      "title": "SQL vs NoSQL and how Wikimedia handles distributed traffic",
+      "quote": "One of the most engaging technical sessions — database design, SQL vs NoSQL trade-offs, Redis caching, Elasticsearch indexing and how Wikimedia handles massive distributed traffic.",
+      "url": "https://www.linkedin.com/posts/gkm563_roadtowiki-sql-nosql-ugcPost-7461486506407387136-BFkq/"
+    },
+    {
+      "id": "05",
+      "category": "systems",
+      "date": "2026-05",
+      "title": "Engineering growth with Santhosh Thottingal — and live praise",
+      "quote": "Participated in RTW-P2S3 on open source contributions to engineering growth. A special highlight was Ankit Sir publicly appreciating my contributions live during the session.",
+      "url": "https://www.linkedin.com/posts/gkm563_roadabrtoabrwiki-opensource-roadtowiki-share-7468912087524818944-Ro0j/"
+    },
+    {
+      "id": "06",
+      "category": "induction",
+      "date": "2026-06",
+      "title": "Foundations of open source and code review with Sanskar Dubey",
+      "quote": "A crystal-clear understanding of how open-source communities work, review culture, and how contributors make meaningful impact through patient Gerrit workflows.",
+      "url": "https://www.linkedin.com/posts/gkm563_roadabrtoabrwiki-gerrit-roadtowiki-ugcPost-7471207981850841090-24bG/"
+    },
+    {
+      "id": "07",
+      "category": "induction",
+      "date": "2026-06",
+      "title": "The two-hour developer masterclass: Gerrit, SSH and workflows",
+      "quote": "A power-packed two-hour technical deep-dive into FOSS fundamentals, Gerrit code reviews, git rebases, SSH key setup and Phabricator project boards.",
+      "url": "https://www.linkedin.com/posts/gkm563_roadabrtoabrwiki-opensource-opensourcecommunity-ugcPost-7475889875406303232-TaJL/"
+    },
+    {
+      "id": "08",
+      "category": "systems",
+      "date": "2026-07",
+      "title": "Eight patches published in the WikiClub Tech Impact Report I",
+      "quote": "Honored to share that my open-source contributions have been officially recognized in the Technical Impact Report (Jan–June 2026) published by OKI at IIIT Hyderabad — eight production patches.",
+      "url": "https://www.linkedin.com/posts/gkm563_roadtowiki-roadabrtoabrwiki-wikimedia-ugcPost-7480374534584553473-OqMl/"
+    },
+    {
+      "id": "09",
+      "category": "systems",
+      "date": "2026-08",
+      "title": "Authoring upstream patches and passing CI/CD in MediaWiki",
+      "quote": "Working directly with Wikimedia Gerrit, passing automated Jenkins pipelines, resolving reviewer comments and ensuring backward compatibility across high-traffic MediaWiki codebases.",
+      "url": "https://www.linkedin.com/posts/gkm563_roadtowiki-wikiclubtechindia-wikimedia-share-7488412116216090624-QFN8/"
+    },
+    {
+      "id": "10",
+      "category": "marathon",
+      "date": "2026-08",
+      "title": "Certificate of Achievement for 1st rank in the Wiki Marathon",
+      "quote": "Honored to receive the official Certificate of Achievement for securing 1st position in the Wiki Contribution Marathon 2026, organized by WikiClub Tech–UIT.",
+      "url": "https://www.linkedin.com/posts/gkm563_wikiclubtech-wikiclubindia-wikiclubuit-ugcPost-7490439807282819074-FZUN/"
+    },
+    {
+      "id": "11",
+      "category": "marathon",
+      "date": "2026-08",
+      "title": "Joining the Universal Code of Conduct sync live from an auto",
+      "quote": "While returning home from college I received the link for the UCoC sync and joined immediately — even while travelling in an auto. Community values, safety and mutual respect matter wherever you are.",
+      "url": "https://www.linkedin.com/posts/gkm563_wikimedia-ucoc-universalcodeofconduct-ugcPost-7493309027444203520-0M8P/"
+    },
+    {
+      "id": "12",
+      "category": "conclave",
+      "date": "2026-09",
+      "title": "Speaking on open source at UIT Prayagraj to 100+ juniors",
+      "quote": "Organized by WikiClub Tech–UIT with GDG on Campus. After securing 1st rank, speaking to 100+ students about how open source really works, how to get started, and why real-world code matters.",
+      "url": "https://www.linkedin.com/posts/gkm563_gautamkumarmaurya-gkm563-gkm563-ugcPost-7497136920280616960-09-X/"
+    },
+    {
+      "id": "13",
+      "category": "conclave",
+      "date": "2026-09",
+      "title": "Phase 3 begins: advanced Wikimedia tooling",
+      "quote": "Working on real Wikimedia tools — Wikispeech, Proofread Tool (Wikisource) and translatewiki.net. A massive shift from learning to architecting upstream tools.",
+      "url": "https://www.linkedin.com/posts/gkm563_roadtowiki-roadtowikicohort2-phase3-ugcPost-7504201936959594496-DP3G/"
+    },
+    {
+      "id": "14",
+      "category": "conclave",
+      "date": "2026-10",
+      "title": "Graduation 2026: Best Contributor, Vande Bharat and three awards",
+      "quote": "Eight to ten months culminating in Gurugram. Travelling from Prayagraj on the Vande Bharat Express for this fully funded conclave. Won three awards — Best Contributor and Most Active Contributor — and finally met Dev, Anushka, Tejinder, Pushpit, Shrey, Kavaljeet, Hridyesh, Shivaansh, Harsh, Adarsh, Arohi, Priyanshika, Neelima, Sanskar and Ankit Sir in person.",
+      "url": "https://www.linkedin.com/posts/gkm563_roadtowiki-roadtowiki2026-wikiclubtech-ugcPost-7512792879476572160-Keet/"
+    }
+  ],
+  "faq": [
+    {
+      "q": "What is Road to Wiki Cohort 2?",
+      "a": "Road to Wiki is the flagship technical program of WikiClub Tech India, run with the Open Knowledge Initiatives (OKI) at IIIT Hyderabad and supported by the Wikimedia Foundation. Cohort 2 brought 90+ students from 12 partner universities through three phases across 8–9 months — from January to the October 2026 graduation in Gurugram."
+    },
+    {
+      "q": "How many upstream patches did you merge?",
+      "a": "30+ across Wikimedia repositories. Eight were featured in the WikiClub Tech Technical Impact Report I (January–June 2026), spanning Pywikibot, the Function Orchestrator, MinervaNeue, GrowthExperiments, MediaWiki core, UploadWizard and ProofreadPage. The patch ledger on the page links each one."
+    },
+    {
+      "q": "Which awards did you win at graduation?",
+      "a": "Three: Best Contributor, Most Active Contributor, and 1st Rank in the one-week WikiClub Tech marathon. All three were presented at the conclave in Gurugram on 2–4 October 2026."
+    },
+    {
+      "q": "How can I verify the contributions independently?",
+      "a": "Every patch sits on the Wikimedia Gerrit under owner:gkm563, tasks appear on Phabricator as Gkm563, and the program record lives on Meta under IIITH-OKI/Wikiclub Tech/Road To Wiki, including the Contribution Ledger and The Celebration Day pages."
+    },
+    {
+      "q": "What does “a community is a loop, not a line” mean?",
+      "a": "Learners enter, grow into contributors, and the strongest return as mentors for the next cohort. I crossed that loop during Cohort 2 and now mentor juniors at United Institute of Technology, Prayagraj, as a WikiClub Tech campus envoy."
+    }
+  ],
+  "verification": {
+    "metaUser": "https://meta.wikimedia.org/wiki/User:Gkm563",
+    "gerrit": "https://gerrit.wikimedia.org/r/q/owner:gkm563",
+    "phabricator": "https://phabricator.wikimedia.org/p/Gkm563/",
+    "contributionLedger": "https://meta.wikimedia.org/wiki/IIITH-OKI/Wikiclub_Tech/Road_To_Wiki/Contribution_Ledger",
+    "celebrationDay": "https://meta.wikimedia.org/wiki/IIITH-OKI/Wikiclub_Tech/Road_To_Wiki/The_Celebration_Day",
+    "programmePage": "https://meta.wikimedia.org/wiki/IIITH-OKI/Wikiclub_Tech/Road_To_Wiki",
+    "impactReport": "https://commons.wikimedia.org/wiki/File:(1)WikiClubTech_Technical_Impact_Report_Jan_Jun_2026_(1).pdf",
+    "technicalAnalysis": "https://upload.wikimedia.org/wikipedia/commons/e/e7/WikiClubTech_High-Impact_Technical_Contribution_Analysis.pdf",
+    "careerLedger": "https://gkm563.github.io/roles-and-responsibilities/",
+    "achievements": "https://gkm563.github.io/achievements/"
+  }
+}
